@@ -1,0 +1,99 @@
+# Example Configuration File
+# Copy this to config.yaml and customize for your needs
+
+# LLM Configuration
+llm:
+  # Provider options: 'ollama', 'openai', or 'gemini'
+  provider: openai
+  
+  # Ollama settings (when provider=ollama)
+  ollama:
+    base_url: http://localhost:11434
+    model: qwen:7b-chat  
+  
+  # OpenAI settings (when provider=openai)
+  # Supports both standard OpenAI and Azure OpenAI
+  openai:
+    api_key: 
+    azure_endpoint: 
+    model:  
+    
+  # Gemini settings (when provider=gemini)
+  gemini:
+    api_key: 
+    model:   
+  
+  # Model-specific settings for different tasks
+  models:
+    # For pattern identification (Script 01 - get_llm_patterns)
+    pattern_identification:
+      temperature: 1.0  # GPT-5-nano only supports temperature=1
+      max_tokens: 4096  
+      
+    # For candidate phrase generation (Script 01 - get_candidate_phrases)
+    candidate_generation:
+      temperature: 1.0  # GPT-5-nano only supports temperature=1
+      max_tokens: 2048  
+      
+    # For counterfactual generation (Script 02)
+    counterfactual_generation:
+      temperature: 1.0  # GPT-5-nano only supports temperature=1
+      max_tokens: 1024  
+      stop: ["\n"]
+      
+    # For semantic filtering (Script 03)
+    semantic_filtering:
+      temperature: 1.0  # GPT-5-nano only supports temperature=1
+      max_tokens: 512   
+      
+    # For discriminator filtering (Script 03)
+    discriminator_filtering:
+      temperature: 1.0  # GPT-5-nano only supports temperature=1
+      max_tokens: 256   
+
+# Dataset Configuration
+dataset:
+  # Training dataset
+  train_file: emotions_train.csv  # filename in input_data/ folder
+  
+  # Test dataset (for evaluation in Script 05)
+  test_file: emotions_test.csv   # filename in input_data/ folder
+  
+  # Column names in CSV
+  columns:
+    id: id
+    text: example
+    label: Label
+  
+  # Label to exclude from counterfactual generation (e.g., 'none', 'neutral', null values)
+  exclude_labels:
+    - none
+    - None
+    - null
+    - ""
+
+# Processing Settings
+processing:
+  # Random seed for reproducibility
+  seed: 42
+  
+  # Maximum examples per label for pattern identification (set high to use all available)
+  max_examples_per_label: 30  
+  
+  # Token budget limit (increased for larger datasets)
+  token_limit: 20000000  
+  # Maximum counterfactuals per original example (Script 05)
+  max_counterfactuals_per_example: 4 
+  
+  # Enhanced: Expanded sample sizes for evaluation (up to 300-shot)
+  evaluation_shots: [10, 15, 30, 50, 70, 90, 120]
+  
+  # Enhanced: Multiple seeds for robust evaluation (10 seeds for statistical significance)
+  evaluation_seeds: [42]
+
+# Directory Configuration
+directories:
+  input_data: input_data
+  output_data: output_data
+  interim_output: output_data/interim_output
+  archive: output_data/archive
