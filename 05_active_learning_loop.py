@@ -346,6 +346,20 @@ def active_learning_loop(config: dict):
             # Create timestamp for this iteration
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
             
+            # Extract model name from config (sanitize for filename)
+            provider = config['llm']['provider']
+            if provider == 'openai':
+                model_name = config['llm']['openai']['model']
+            elif provider == 'gemini':
+                model_name = config['llm']['gemini']['model']
+            elif provider == 'ollama':
+                model_name = config['llm']['ollama']['model']
+            else:
+                model_name = provider
+            
+            # Sanitize model name for filename (replace invalid characters)
+            model_safe = model_name.replace('/', '-').replace(':', '-').replace(' ', '_')
+            
             print(f"\n{'='*80}")
             print(f"Iteration {iteration}/{max_iterations}")
             print(f"{'='*80}")
@@ -358,7 +372,7 @@ def active_learning_loop(config: dict):
             classifier.train(labeled_pool)
             
             # Save Step 1 output
-            step1_file = f"{interim_dir}/iter_{iteration:02d}_{timestamp}_step1_classifier_training.json"
+            step1_file = f"{interim_dir}/iter_{iteration:02d}_{timestamp}_{model_safe}_step1_classifier_training.json"
             with open(step1_file, 'w') as f:
                 json.dump({
                     'iteration': iteration,
@@ -396,7 +410,7 @@ def active_learning_loop(config: dict):
                     print(f"  No improvement (patience: {patience_counter}/{al_config['early_stopping_patience']})")
                 
                 # Save Step 2 output
-                step2_file = f"{interim_dir}/iter_{iteration:02d}_{timestamp}_step2_evaluation.json"
+                step2_file = f"{interim_dir}/iter_{iteration:02d}_{timestamp}_{model_safe}_step2_evaluation.json"
                 with open(step2_file, 'w') as f:
                     json.dump({
                         'iteration': iteration,
@@ -416,7 +430,7 @@ def active_learning_loop(config: dict):
                 print(f"\n[Step 2/6] Skipping evaluation (eval_every={eval_config['eval_every_iterations']})")
                 
                 # Still save Step 2 output (skipped)
-                step2_file = f"{interim_dir}/iter_{iteration:02d}_{timestamp}_step2_evaluation_skipped.json"
+                step2_file = f"{interim_dir}/iter_{iteration:02d}_{timestamp}_{model_safe}_step2_evaluation_skipped.json"
                 with open(step2_file, 'w') as f:
                     json.dump({
                         'iteration': iteration,
@@ -445,7 +459,7 @@ def active_learning_loop(config: dict):
             print(f"  Selected {len(selected_examples)} examples for labeling")
             
             # Save Step 3 output: selected examples with FULL uncertainty details
-            step3_file = f"{interim_dir}/iter_{iteration:02d}_{timestamp}_step3_uncertainty_selection.json"
+            step3_file = f"{interim_dir}/iter_{iteration:02d}_{timestamp}_{model_safe}_step3_uncertainty_selection.json"
             with open(step3_file, 'w') as f:
                 json.dump({
                     'iteration': iteration,
@@ -464,7 +478,7 @@ def active_learning_loop(config: dict):
             labeled_examples = oracle.label_examples(selected_examples)
             
             # Save Step 4 output: oracle labels
-            step4_file = f"{interim_dir}/iter_{iteration:02d}_{timestamp}_step4_oracle_labeling.json"
+            step4_file = f"{interim_dir}/iter_{iteration:02d}_{timestamp}_{model_safe}_step4_oracle_labeling.json"
             with open(step4_file, 'w') as f:
                 json.dump({
                     'iteration': iteration,
@@ -489,7 +503,7 @@ def active_learning_loop(config: dict):
                 print(f"  Generated {len(counterfactuals)} counterfactuals")
                 
                 # Save Step 5 output: counterfactuals with FULL generation details
-                step5_file = f"{interim_dir}/iter_{iteration:02d}_{timestamp}_step5_counterfactual_generation.json"
+                step5_file = f"{interim_dir}/iter_{iteration:02d}_{timestamp}_{model_safe}_step5_counterfactual_generation.json"
                 with open(step5_file, 'w') as f:
                     json.dump({
                         'iteration': iteration,
@@ -505,7 +519,7 @@ def active_learning_loop(config: dict):
                 print(f"\n[Step 5/6] Skipping counterfactual generation (disabled)")
                 
                 # Still save Step 5 output (skipped)
-                step5_file = f"{interim_dir}/iter_{iteration:02d}_{timestamp}_step5_counterfactual_generation_skipped.json"
+                step5_file = f"{interim_dir}/iter_{iteration:02d}_{timestamp}_{model_safe}_step5_counterfactual_generation_skipped.json"
                 with open(step5_file, 'w') as f:
                     json.dump({
                         'iteration': iteration,
@@ -541,7 +555,7 @@ def active_learning_loop(config: dict):
             print(f"  Budget: {budget} remaining")
             
             # Save Step 6 output: pool updates
-            step6_file = f"{interim_dir}/iter_{iteration:02d}_{timestamp}_step6_pool_update.json"
+            step6_file = f"{interim_dir}/iter_{iteration:02d}_{timestamp}_{model_safe}_step6_pool_update.json"
             with open(step6_file, 'w') as f:
                 json.dump({
                     'iteration': iteration,
@@ -584,13 +598,33 @@ def active_learning_loop(config: dict):
             # Save checkpoint
             if iteration % log_config['checkpoint_every'] == 0:
                 save_checkpoint(iteration, labeled_pool, unlabeled_pool, results, config)
+            
+            # Save labeled pool after each iteration (prevents data loss)
+            save_final_labeled_pool(labeled_pool, config)
+            print(f"  💾 Labeled pool saved (iteration {iteration})")
     
     except KeyboardInterrupt:
         print("\n\n⚠ Interrupted by user!")
         print(f"Completed {iteration} iterations")
+        print(f"Saving progress...")
         save_checkpoint(iteration, labeled_pool, unlabeled_pool, results, config)
         save_results(results, config)
+        save_final_labeled_pool(labeled_pool, config)
+        print(f"💾 All progress saved successfully!")
         sys.exit(0)
+    
+    except Exception as e:
+        print(f"\n\n❌ Error occurred: {e}")
+        print(f"Completed {iteration} iterations before error")
+        print(f"Saving progress...")
+        try:
+            save_checkpoint(iteration, labeled_pool, unlabeled_pool, results, config)
+            save_results(results, config)
+            save_final_labeled_pool(labeled_pool, config)
+            print(f"💾 Progress saved successfully!")
+        except Exception as save_error:
+            print(f"⚠️ Warning: Could not save progress: {save_error}")
+        raise
     
     # Final evaluation
     print(f"\n{'='*80}")
