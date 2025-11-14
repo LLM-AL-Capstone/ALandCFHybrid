@@ -4,6 +4,7 @@ from .config_loader import load_config, ensure_directories
 from .data_loader import load_dataset, get_unique_labels, shuffle_dataframe
 from .llm_provider import get_llm_provider, LLMProvider
 from .classifier import SimpleICLClassifier
+from .retrieval_classifier import RetrievalICLClassifier, get_retrieval_classifier
 from .oracle import SimulatedOracle, InteractiveOracle, get_oracle
 from .uncertainty import select_uncertain_examples, get_uncertainty_statistics
 from .counterfactual_generator import (
@@ -21,6 +22,8 @@ __all__ = [
     'get_llm_provider',
     'LLMProvider',
     'SimpleICLClassifier',
+    'RetrievalICLClassifier',
+    'get_retrieval_classifier',
     'SimulatedOracle',
     'InteractiveOracle',
     'get_oracle',

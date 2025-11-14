@@ -37,10 +37,12 @@ def ensure_directories(config: dict):
     """
     dirs = config['directories']
     
+    # Create directories from config
     os.makedirs(dirs['input_data'], exist_ok=True)
     os.makedirs(dirs['output_data'], exist_ok=True)
-    os.makedirs(dirs['interim_output'], exist_ok=True)
-    os.makedirs(dirs['archive'], exist_ok=True)
-    os.makedirs(f"{dirs['archive']}/gpt", exist_ok=True)
+    
+    # Create additional subdirectories needed by the system
+    os.makedirs(f"{dirs['output_data']}/interim_output", exist_ok=True)
+    os.makedirs(config['logging']['checkpoint_dir'], exist_ok=True)
     
     print("INFO: Directory structure verified")

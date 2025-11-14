@@ -360,6 +360,24 @@ Final Augmented Dataset
 
 ---
 
+## Documentation
+
+Detailed documentation for all features, enhancements, and fixes can be found in the **`docs/`** folder:
+
+- **[docs/INDEX.md](docs/INDEX.md)** - Complete documentation index
+- **[docs/IMPLEMENTATION_COMPLETE.md](docs/IMPLEMENTATION_COMPLETE.md)** - System overview
+- **[docs/RUN_SPECIFIC_FOLDERS.md](docs/RUN_SPECIFIC_FOLDERS.md)** - Run folder organization
+- **[docs/RETRIEVAL_ICL_IMPLEMENTATION.md](docs/RETRIEVAL_ICL_IMPLEMENTATION.md)** - Retrieval-based ICL
+- **[docs/INTERIM_OUTPUTS_GUIDE.md](docs/INTERIM_OUTPUTS_GUIDE.md)** - Understanding outputs
+
+See [docs/INDEX.md](docs/INDEX.md) for the complete list of 15+ documentation files covering:
+- Feature implementations and enhancements
+- Configuration guides
+- Bug fixes and improvements
+- Troubleshooting guides
+
+---
+
 ## Troubleshooting
 
 ### LLM API Errors

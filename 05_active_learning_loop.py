@@ -205,7 +205,7 @@ def evaluate_classifier(classifier, test_pool: List[Dict], config: dict) -> Dict
 
 
 def save_checkpoint(iteration: int, labeled_pool: List[Dict], unlabeled_pool: List[Dict],
-                   results: List[Dict], config: dict):
+                   results: List[Dict], checkpoint_dir: str):
     """
     Save checkpoint for recovery.
     
@@ -214,11 +214,8 @@ def save_checkpoint(iteration: int, labeled_pool: List[Dict], unlabeled_pool: Li
         labeled_pool: Current labeled pool
         unlabeled_pool: Current unlabeled pool
         results: Results so far
-        config: Configuration dictionary
+        checkpoint_dir: Directory to save checkpoint
     """
-    checkpoint_dir = config['logging']['checkpoint_dir']
-    os.makedirs(checkpoint_dir, exist_ok=True)
-    
     checkpoint = {
         'iteration': iteration,
         'labeled_pool': labeled_pool,
@@ -234,39 +231,42 @@ def save_checkpoint(iteration: int, labeled_pool: List[Dict], unlabeled_pool: Li
     print(f"  Checkpoint saved: {checkpoint_file}")
 
 
-def save_results(results: List[Dict], config: dict):
+def save_results(results: List[Dict], run_dir: str, classifier_type: str):
     """
-    Save final results to CSV.
+    Save final results to CSV file in run directory.
     
     Args:
         results: List of iteration results
-        config: Configuration dictionary
+        run_dir: Run-specific directory path
+        classifier_type: Classifier type (static/retrieval)
     """
-    results_file = config['logging']['results_file']
+    # Save results in run directory
+    results_file = f"{run_dir}/al_results.csv"
     
     # Convert to DataFrame
     df_results = pd.DataFrame(results)
     
-    # Save to CSV
+    # Save to file
     df_results.to_csv(results_file, index=False)
-    
-    print(f"\nResults saved to: {results_file}")
+    print(f"\n✅ Results saved to: {results_file}")
 
 
-def save_final_labeled_pool(labeled_pool: List[Dict], config: dict):
+def save_final_labeled_pool(labeled_pool: List[Dict], run_dir: str):
     """
-    Save final augmented labeled pool.
+    Save final augmented labeled pool to run directory.
     
     Args:
         labeled_pool: Final labeled pool (with counterfactuals)
-        config: Configuration dictionary
+        run_dir: Run-specific directory path
     """
-    output_file = f"{config['directories']['output_data']}/final_labeled_pool.csv"
+    # Save labeled pool in run directory
+    pool_file = f"{run_dir}/final_labeled_pool.csv"
     
     df = pd.DataFrame(labeled_pool)
-    df.to_csv(output_file, index=False)
     
-    print(f"Final labeled pool saved to: {output_file}")
+    # Save to file
+    df.to_csv(pool_file, index=False)
+    print(f"✅ Labeled pool saved to: {pool_file}")
 
 
 def active_learning_loop(config: dict):
@@ -302,7 +302,19 @@ def active_learning_loop(config: dict):
     # Initialize components
     print("\n=== Initializing Components ===")
     llm_provider = get_llm_provider(config)
-    classifier = SimpleICLClassifier(config, llm_provider)
+    
+    # Select classifier type based on config
+    eval_config = config['evaluation']
+    classifier_type = eval_config.get('classifier_type', 'static')
+    
+    if classifier_type == 'retrieval':
+        from utils.retrieval_classifier import get_retrieval_classifier
+        classifier = get_retrieval_classifier(config, llm_provider)
+        print(f"Using Retrieval-based ICL classifier")
+    else:
+        classifier = SimpleICLClassifier(config, llm_provider)
+        print(f"Using Static ICL classifier")
+    
     oracle = get_oracle(config)
     
     print(f"LLM Provider: {config['llm']['provider']}")
@@ -325,19 +337,51 @@ def active_learning_loop(config: dict):
     
     # Tracking
     results = []
-    best_accuracy = 0.0
+    best_f1_macro = 0.0  # Changed from accuracy to F1 Macro
     patience_counter = 0
     
     # Main loop
     iteration = 0
     
-    # Setup interim output directory
-    interim_dir = f"{config['directories']['output_data']}/interim_output"
-    import os
-    os.makedirs(interim_dir, exist_ok=True)
-    
     # Import datetime for timestamping
     from datetime import datetime
+    
+    # Create run timestamp (once at start for consistent naming)
+    run_timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    
+    # Extract model name and dataset for run folder
+    provider = config['llm']['provider']
+    if provider == 'openai':
+        model_name = config['llm']['openai']['model']
+    elif provider == 'gemini':
+        model_name = config['llm']['gemini']['model']
+    elif provider == 'ollama':
+        model_name = config['llm']['ollama']['model']
+    else:
+        model_name = provider
+    
+    # Sanitize model name for filename
+    model_safe = model_name.replace('/', '-').replace(':', '-').replace(' ', '_')
+    
+    # Extract dataset name (without extension)
+    dataset_name = config['dataset']['train_file'].replace('.csv', '').replace('_train', '')
+    
+    # Get evaluation method (classifier type)
+    classifier_type = eval_config.get('classifier_type', 'static')
+    
+    # Create run-specific directory: timestamp_model_dataset_evalmethod
+    import os
+    run_dir = f"{config['directories']['output_data']}/{run_timestamp}_{model_safe}_{dataset_name}_{classifier_type}"
+    os.makedirs(run_dir, exist_ok=True)
+    
+    # Create subdirectories within run folder
+    interim_dir = f"{run_dir}/interim_output"
+    checkpoint_dir = f"{run_dir}/checkpoints"
+    os.makedirs(interim_dir, exist_ok=True)
+    os.makedirs(checkpoint_dir, exist_ok=True)
+    
+    print(f"\n📁 Run directory: {run_dir}")
+    print(f"   All outputs will be saved here")
     
     try:
         while iteration < max_iterations and budget > 0 and len(unlabeled_pool) > 0:
@@ -345,20 +389,6 @@ def active_learning_loop(config: dict):
             
             # Create timestamp for this iteration
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            
-            # Extract model name from config (sanitize for filename)
-            provider = config['llm']['provider']
-            if provider == 'openai':
-                model_name = config['llm']['openai']['model']
-            elif provider == 'gemini':
-                model_name = config['llm']['gemini']['model']
-            elif provider == 'ollama':
-                model_name = config['llm']['ollama']['model']
-            else:
-                model_name = provider
-            
-            # Sanitize model name for filename (replace invalid characters)
-            model_safe = model_name.replace('/', '-').replace(':', '-').replace(' ', '_')
             
             print(f"\n{'='*80}")
             print(f"Iteration {iteration}/{max_iterations}")
@@ -400,24 +430,47 @@ def active_learning_loop(config: dict):
                 print(f"  F1 Macro: {metrics['f1_macro']:.4f}")
                 print(f"  F1 Weighted: {metrics['f1_weighted']:.4f}")
                 
-                # Early stopping check
-                if metrics['accuracy'] > best_accuracy + al_config['min_improvement']:
-                    best_accuracy = metrics['accuracy']
+                # Early stopping check (using F1 Macro)
+                if metrics['f1_macro'] > best_f1_macro + al_config['min_improvement']:
+                    best_f1_macro = metrics['f1_macro']
                     patience_counter = 0
-                    print(f"  ✓ New best accuracy: {best_accuracy:.4f}")
+                    print(f"  ✓ New best F1 Macro: {best_f1_macro:.4f}")
                 else:
                     patience_counter += 1
                     print(f"  No improvement (patience: {patience_counter}/{al_config['early_stopping_patience']})")
                 
                 # Save Step 2 output
                 step2_file = f"{interim_dir}/iter_{iteration:02d}_{timestamp}_{model_safe}_step2_evaluation.json"
+                
+                # Build evaluation config metadata
+                eval_metadata = {
+                    'classifier_type': eval_config.get('classifier_type', 'static'),
+                    'max_icl_examples': eval_config.get('max_icl_examples', 100)
+                }
+                
+                # Add retrieval settings if using retrieval
+                if eval_metadata['classifier_type'] == 'retrieval':
+                    retrieval_config = eval_config.get('retrieval', {})
+                    eval_metadata['retrieval_settings'] = {
+                        'embedding_backend': retrieval_config.get('embedding_backend', 'unknown'),
+                        'k_per_class': retrieval_config.get('k_per_class', 3),
+                        'total_k_max': retrieval_config.get('total_k_max', 50),
+                        'fallback_strategy': retrieval_config.get('fallback_strategy', 'similarity')
+                    }
+                    
+                    # Add model-specific info
+                    backend = retrieval_config.get('embedding_backend', 'unknown')
+                    if backend in retrieval_config:
+                        eval_metadata['retrieval_settings']['model_config'] = retrieval_config[backend]
+                
                 with open(step2_file, 'w') as f:
                     json.dump({
                         'iteration': iteration,
                         'timestamp': timestamp,
                         'step': 'evaluation',
+                        'evaluation_config': eval_metadata,
                         'metrics': metrics,
-                        'best_accuracy': best_accuracy,
+                        'best_f1_macro': best_f1_macro,
                         'patience_counter': patience_counter,
                         'test_pool_size': len(test_pool)
                     }, f, indent=2)
@@ -431,11 +484,27 @@ def active_learning_loop(config: dict):
                 
                 # Still save Step 2 output (skipped)
                 step2_file = f"{interim_dir}/iter_{iteration:02d}_{timestamp}_{model_safe}_step2_evaluation_skipped.json"
+                
+                # Build evaluation config metadata (even for skipped)
+                eval_metadata = {
+                    'classifier_type': eval_config.get('classifier_type', 'static'),
+                    'max_icl_examples': eval_config.get('max_icl_examples', 100)
+                }
+                
+                if eval_metadata['classifier_type'] == 'retrieval':
+                    retrieval_config = eval_config.get('retrieval', {})
+                    eval_metadata['retrieval_settings'] = {
+                        'embedding_backend': retrieval_config.get('embedding_backend', 'unknown'),
+                        'k_per_class': retrieval_config.get('k_per_class', 3),
+                        'total_k_max': retrieval_config.get('total_k_max', 50)
+                    }
+                
                 with open(step2_file, 'w') as f:
                     json.dump({
                         'iteration': iteration,
                         'timestamp': timestamp,
                         'step': 'evaluation',
+                        'evaluation_config': eval_metadata,
                         'status': 'skipped',
                         'reason': f'eval_every_iterations={eval_config["eval_every_iterations"]}'
                     }, f, indent=2)
@@ -583,6 +652,7 @@ def active_learning_loop(config: dict):
             # Save iteration results
             iter_result = {
                 'iteration': iteration,
+                'classifier_type': eval_config.get('classifier_type', 'static'),
                 'labeled_pool_size': len(labeled_pool),
                 'unlabeled_pool_size': len(unlabeled_pool),
                 'num_real_examples': len(labeled_examples),
@@ -597,19 +667,19 @@ def active_learning_loop(config: dict):
             
             # Save checkpoint
             if iteration % log_config['checkpoint_every'] == 0:
-                save_checkpoint(iteration, labeled_pool, unlabeled_pool, results, config)
+                save_checkpoint(iteration, labeled_pool, unlabeled_pool, results, checkpoint_dir)
             
             # Save labeled pool after each iteration (prevents data loss)
-            save_final_labeled_pool(labeled_pool, config)
+            save_final_labeled_pool(labeled_pool, run_dir)
             print(f"  💾 Labeled pool saved (iteration {iteration})")
     
     except KeyboardInterrupt:
         print("\n\n⚠ Interrupted by user!")
         print(f"Completed {iteration} iterations")
         print(f"Saving progress...")
-        save_checkpoint(iteration, labeled_pool, unlabeled_pool, results, config)
-        save_results(results, config)
-        save_final_labeled_pool(labeled_pool, config)
+        save_checkpoint(iteration, labeled_pool, unlabeled_pool, results, checkpoint_dir)
+        save_results(results, run_dir, eval_config.get('classifier_type', 'static'))
+        save_final_labeled_pool(labeled_pool, run_dir)
         print(f"💾 All progress saved successfully!")
         sys.exit(0)
     
@@ -618,9 +688,9 @@ def active_learning_loop(config: dict):
         print(f"Completed {iteration} iterations before error")
         print(f"Saving progress...")
         try:
-            save_checkpoint(iteration, labeled_pool, unlabeled_pool, results, config)
-            save_results(results, config)
-            save_final_labeled_pool(labeled_pool, config)
+            save_checkpoint(iteration, labeled_pool, unlabeled_pool, results, checkpoint_dir)
+            save_results(results, run_dir, eval_config.get('classifier_type', 'static'))
+            save_final_labeled_pool(labeled_pool, run_dir)
             print(f"💾 Progress saved successfully!")
         except Exception as save_error:
             print(f"⚠️ Warning: Could not save progress: {save_error}")
@@ -652,8 +722,8 @@ def active_learning_loop(config: dict):
         print(classification_report(true_labels, predictions, zero_division=0))
     
     # Save results
-    save_results(results, config)
-    save_final_labeled_pool(labeled_pool, config)
+    save_results(results, run_dir, eval_config.get('classifier_type', 'static'))
+    save_final_labeled_pool(labeled_pool, run_dir)
     
     print(f"\n{'='*80}")
     print("Active Learning Complete!")
@@ -670,10 +740,7 @@ def main():
     config = load_config()
     ensure_directories(config)
     
-    # Create checkpoint directory
-    os.makedirs(config['logging']['checkpoint_dir'], exist_ok=True)
-    
-    # Run active learning loop
+    # Run active learning loop (creates run-specific directories)
     active_learning_loop(config)
 
 

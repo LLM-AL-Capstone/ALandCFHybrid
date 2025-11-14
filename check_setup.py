@@ -149,25 +149,36 @@ def check_directories():
     """Check directory structure"""
     print("\nChecking directory structure...")
     
-    dirs = [
+    # Essential directories that must exist
+    essential_dirs = [
         'input_data',
         'output_data',
-        'output_data/interim_output',
-        'output_data/archive',
-        'output_data/archive/gpt',
         'utils'
     ]
     
+    # Directories created automatically by the AL system
+    auto_created = [
+        'output_data/interim_output',
+        'output_data/al_checkpoints'
+    ]
+    
     all_exist = True
-    for dir_path in dirs:
+    for dir_path in essential_dirs:
         if os.path.exists(dir_path):
             print(f"  {dir_path}/ found")
         else:
-            print(f"  {dir_path}/ not found")
+            print(f"  {dir_path}/ not found (REQUIRED)")
             all_exist = False
     
+    # Check auto-created directories (informational only)
+    for dir_path in auto_created:
+        if os.path.exists(dir_path):
+            print(f"  {dir_path}/ found")
+        else:
+            print(f"  {dir_path}/ (will be auto-created)")
+    
     if not all_exist:
-        print("\n  Create directories: mkdir -p " + " ".join(dirs))
+        print("\n  Create directories: mkdir -p " + " ".join(essential_dirs))
     
     return all_exist
 
