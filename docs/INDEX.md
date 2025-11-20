@@ -31,7 +31,8 @@ This directory contains all documentation for the Active Learning with Counterfa
 
 ### ⚙️ Configuration
 - **[CONFIG_CLEANUP.md](CONFIG_CLEANUP.md)** - Cleaned up unused config parameters
-- **[RUN_SPECIFIC_FOLDERS.md](RUN_SPECIFIC_FOLDERS.md)** - Run-specific folder organization (NEW!)
+- **[RUN_SPECIFIC_FOLDERS.md](RUN_SPECIFIC_FOLDERS.md)** - Run-specific folder organization
+- **[FIXED_SEED_SETS.md](FIXED_SEED_SETS.md)** - Fixed seed sets for reproducibility (NEW!)
 
 ## 📁 File Organization
 

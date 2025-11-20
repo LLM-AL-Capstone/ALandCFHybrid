@@ -151,7 +151,19 @@ id,example,Label
 3,"I'm so angry about this",anger
 ```
 
-### 5. Run Active Learning
+### 5. (Optional) Create Fixed Seed Sets
+
+For reproducibility and fair comparison across experiments, create fixed seed sets:
+
+```bash
+# Create seed sets for your datasets
+python create_fixed_seed_set.py --dataset yelp
+python create_fixed_seed_set.py --dataset emotions
+```
+
+This ensures all experiments start with identical initial labeled examples.
+
+### 6. Run Active Learning
 
 ```bash
 python 05_active_learning_loop.py
@@ -367,6 +379,7 @@ Detailed documentation for all features, enhancements, and fixes can be found in
 - **[docs/INDEX.md](docs/INDEX.md)** - Complete documentation index
 - **[docs/IMPLEMENTATION_COMPLETE.md](docs/IMPLEMENTATION_COMPLETE.md)** - System overview
 - **[docs/RUN_SPECIFIC_FOLDERS.md](docs/RUN_SPECIFIC_FOLDERS.md)** - Run folder organization
+- **[docs/FIXED_SEED_SETS.md](docs/FIXED_SEED_SETS.md)** - Fixed seed sets for reproducibility
 - **[docs/RETRIEVAL_ICL_IMPLEMENTATION.md](docs/RETRIEVAL_ICL_IMPLEMENTATION.md)** - Retrieval-based ICL
 - **[docs/INTERIM_OUTPUTS_GUIDE.md](docs/INTERIM_OUTPUTS_GUIDE.md)** - Understanding outputs
 

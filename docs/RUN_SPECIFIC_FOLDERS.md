@@ -7,21 +7,24 @@ Each Active Learning run now creates its own dedicated folder with all outputs o
 ## Folder Structure
 
 ### Run Folder Naming
-Format: `{timestamp}_{model}_{dataset}_{evalmethod}/`
+Format: `{timestamp}_{model}_{dataset}_{evalmethod}_s{seed}_n{per_class}/`
 
-Example: `20251113_215734_gpt-4o-2024-11-20_yelp_retrieval/`
+Example: `20251113_215734_gpt-4o-2024-11-20_yelp_retrieval_s42_n5/`
 
 Components:
 - **Timestamp**: `YYYYMMDD_HHMMSS` - When the run started
 - **Model**: Sanitized LLM model name (e.g., `gpt-4o-2024-11-20`, `llama3-2`)
 - **Dataset**: Dataset name without `_train.csv` suffix (e.g., `yelp`, `emotions`)
 - **Evalmethod**: Classifier type - `static` or `retrieval`
+- **Seed**: Random seed value (e.g., `s42`, `s123`)
+- **Per_class**: Initial examples per class (e.g., `n5`, `n10`) - matches seed set used
 
 ### Contents of Each Run Folder
 
 ```
 output_data/
-├── 20251113_215734_gpt-4o-2024-11-20_yelp_retrieval/
+├── 20251113_215734_gpt-4o-2024-11-20_yelp_retrieval_s42_n5/
+│   ├── config.yaml                             # Config snapshot for this run
 │   ├── al_results.csv                          # Final results summary
 │   ├── final_labeled_pool.csv                  # All labeled data (real + CFs)
 │   ├── interim_output/                         # Step-by-step iteration logs
@@ -37,9 +40,9 @@ output_data/
 │       ├── checkpoint_iter_5.json
 │       ├── checkpoint_iter_10.json
 │       └── ...
-├── 20251113_220015_gpt-4o-2024-11-20_emotions_static/  # Different dataset & eval method
+├── 20251113_220015_gpt-4o-2024-11-20_emotions_static_s42_n5/  # Different dataset
 │   └── ...
-└── 20251114_093045_llama3-2_yelp_retrieval/            # Different model
+└── 20251114_093045_llama3-2_yelp_retrieval_s123_n5/           # Different model & seed
     └── ...
 ```
 
@@ -64,41 +67,68 @@ Folder name tells you:
 
 ### 4. **Clean Organization**
 All outputs for a single run are in one place:
+- Config snapshot (exact settings used)
 - Results
 - Labeled pool
 - Interim logs
 - Checkpoints
 
+### 5. **Perfect Reproducibility**
+Each run folder contains:
+- `config.yaml` - Exact configuration snapshot
+- Folder name encodes key parameters (seed, per_class, etc.)
+- All outputs generated with that exact config
+
+You can reproduce any run by using its config.yaml!
+
 ## Examples
 
 ### Run with Different Models
 ```bash
-# Run 1: GPT-4o with retrieval
-# Creates: output_data/20251113_215734_gpt-4o-2024-11-20_yelp_retrieval/
+# Run 1: GPT-4o with retrieval, seed=42, 5 per class
+# Creates: output_data/20251113_215734_gpt-4o-2024-11-20_yelp_retrieval_s42_n5/
 
-# Run 2: Llama 3.2 with retrieval
-# Creates: output_data/20251113_220540_llama3-2_yelp_retrieval/
+# Run 2: Llama 3.2 with retrieval, seed=42, 5 per class
+# Creates: output_data/20251113_220540_llama3-2_yelp_retrieval_s42_n5/
 ```
 
 ### Run with Different Datasets
 ```bash
-# Run 1: Yelp dataset with retrieval
-# Creates: output_data/20251113_215734_gpt-4o-2024-11-20_yelp_retrieval/
+# Run 1: Yelp dataset with retrieval, seed=42, 5 per class
+# Creates: output_data/20251113_215734_gpt-4o-2024-11-20_yelp_retrieval_s42_n5/
 
-# Run 2: Emotions dataset with retrieval
-# Creates: output_data/20251113_221045_gpt-4o-2024-11-20_emotions_retrieval/
+# Run 2: Emotions dataset with retrieval, seed=42, 5 per class
+# Creates: output_data/20251113_221045_gpt-4o-2024-11-20_emotions_retrieval_s42_n5/
 ```
 
 ### Run with Different Evaluation Strategies
 ```bash
-# Run 1: Retrieval ICL (k_per_class=3)
-# Creates: output_data/20251113_215734_gpt-4o-2024-11-20_yelp_retrieval/
+# Run 1: Retrieval ICL, seed=42, 5 per class
+# Creates: output_data/20251113_215734_gpt-4o-2024-11-20_yelp_retrieval_s42_n5/
 
-# Run 2: Static ICL
-# Creates: output_data/20251113_221530_gpt-4o-2024-11-20_yelp_static/
+# Run 2: Static ICL, seed=42, 5 per class
+# Creates: output_data/20251113_221530_gpt-4o-2024-11-20_yelp_static_s42_n5/
 ```
 
-Now you can clearly see the evaluation strategy directly from the folder name!
+### Run with Different Seeds
+```bash
+# Run 1: Retrieval ICL, seed=42, 5 per class
+# Creates: output_data/20251113_215734_gpt-4o-2024-11-20_yelp_retrieval_s42_n5/
+
+# Run 2: Retrieval ICL, seed=123, 5 per class
+# Creates: output_data/20251113_222015_gpt-4o-2024-11-20_yelp_retrieval_s123_n5/
+```
+
+### Run with Different Initial Sizes
+```bash
+# Run 1: Retrieval ICL, seed=42, 5 per class
+# Creates: output_data/20251113_215734_gpt-4o-2024-11-20_yelp_retrieval_s42_n5/
+
+# Run 2: Retrieval ICL, seed=42, 10 per class
+# Creates: output_data/20251113_222015_gpt-4o-2024-11-20_yelp_retrieval_s42_n10/
+```
+
+Now you can clearly see all experimental parameters directly from the folder name!
 
 ## Finding Your Results
 
@@ -127,15 +157,39 @@ ls output_data/ | grep "_retrieval"
 ls output_data/ | grep "_static"
 ```
 
+### All Runs with Specific Seed
+```bash
+# All runs with seed=42
+ls output_data/ | grep "_s42"
+
+# All runs with seed=123
+ls output_data/ | grep "_s123"
+```
+
+### All Runs with Specific Initial Size
+```bash
+# All runs with 5 examples per class
+ls output_data/ | grep "_n5"
+
+# All runs with 10 examples per class
+ls output_data/ | grep "_n10"
+```
+
 ### Specific Date
 ```bash
 ls output_data/ | grep "20251113"
 ```
 
-### Compare Different Eval Methods (Same Setup)
+### Compare Different Configurations
 ```bash
-# Compare retrieval vs static on same model/dataset
-ls output_data/ | grep "gpt-4o.*_yelp"
+# Compare retrieval vs static on same model/dataset/seed/size
+ls output_data/ | grep "gpt-4o.*_yelp.*_s42_n5"
+
+# Compare different seeds on same model/dataset/eval/size
+ls output_data/ | grep "gpt-4o.*_yelp_static.*_n5"
+
+# Compare different initial sizes on same model/dataset/eval/seed
+ls output_data/ | grep "gpt-4o.*_yelp_retrieval_s42"
 ```
 
 ## Cleanup
@@ -150,7 +204,34 @@ find output_data/ -maxdepth 1 -type d -mtime +7 -exec rm -rf {} \;
 ```bash
 # Move successful runs to archive
 mkdir -p archive_runs/
-mv output_data/20251113_215734_gpt-4o-2024-11-20_yelp/ archive_runs/
+mv output_data/20251113_215734_gpt-4o-2024-11-20_yelp_retrieval_s42_n5/ archive_runs/
+```
+
+## Reproducing a Run
+
+### Check Configuration Used
+```bash
+# View the exact config used for a specific run
+cat output_data/20251113_215734_gpt-4o-2024-11-20_yelp_retrieval_s42_n5/config.yaml
+```
+
+### Reproduce the Exact Run
+```bash
+# Copy the config from the run folder
+cp output_data/20251113_215734_gpt-4o-2024-11-20_yelp_retrieval_s42_n5/config.yaml config.yaml
+
+# Run again with identical settings
+python 05_active_learning_loop.py
+
+# Will use same seed set (s42_n5) and all other settings!
+```
+
+### Compare Configurations
+```bash
+# Compare configs from two different runs
+diff output_data/run1/config.yaml output_data/run2/config.yaml
+
+# See exactly what changed between experiments
 ```
 
 ## Migration from Old System
@@ -189,8 +270,10 @@ No configuration needed! The system automatically:
 1. Extracts model name from `config.yaml` (`llm.provider.model`)
 2. Extracts dataset name from `train_file`
 3. Extracts evaluation method from `evaluation.classifier_type`
-4. Creates timestamped folder with all info
-5. Organizes all outputs inside
+4. Extracts seed value from `processing.seed`
+5. Extracts initial per class from `active_learning.initial_labeled_per_class`
+6. Creates timestamped folder with all info
+7. Organizes all outputs inside
 
 Just run:
 ```bash

@@ -12,6 +12,7 @@ from .counterfactual_generator import (
     generate_single_counterfactual,
     generate_counterfactuals_for_evaluation
 )
+from .cf_quality_scorer import CFQualityScorer
 
 __all__ = [
     'load_config',
@@ -31,5 +32,6 @@ __all__ = [
     'get_uncertainty_statistics',
     'generate_counterfactuals_batch',
     'generate_single_counterfactual',
-    'generate_counterfactuals_for_evaluation'
+    'generate_counterfactuals_for_evaluation',
+    'CFQualityScorer'
 ]

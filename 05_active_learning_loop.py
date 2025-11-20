@@ -11,6 +11,7 @@ This replaces the old pattern-based pipeline with a cleaner, more focused approa
 """
 
 import sys
+import random
 import os
 import pandas as pd
 import json
@@ -39,6 +40,9 @@ def initialize_pools(config: dict) -> tuple:
     Creates stratified initial labeled set (equal per class) and
     puts remaining examples in unlabeled pool.
     
+    Automatically creates and reuses configuration-specific seed sets.
+    Filename format: {dataset}_seed_set_s{seed}_n{per_class}.csv
+    
     Args:
         config: Configuration dictionary
     
@@ -51,50 +55,83 @@ def initialize_pools(config: dict) -> tuple:
     al_config = config['active_learning']
     processing = config['processing']
     
-    # Load training data
+    # Get parameters
     train_file = f"{config['directories']['input_data']}/{dataset_config['train_file']}"
-    df = load_dataset(train_file, config)
+    seed = processing['seed']
+    initial_per_class = al_config['initial_labeled_per_class']
+    
+    # Create configuration-specific seed set filename
+    seed_file = train_file.replace('.csv', f'_seed_set_s{seed}_n{initial_per_class}.csv')
+    seed_filename = os.path.basename(seed_file)
     
     # Get column names
     col_id = dataset_config['columns']['id']
     col_text = dataset_config['columns']['text']
     col_label = dataset_config['columns']['label']
     
-    # Shuffle with seed for reproducibility
-    df = shuffle_dataframe(df, processing['seed'])
+    # Check if seed set exists for this configuration
+    if os.path.exists(seed_file):
+        # Use existing seed set
+        print(f"✅ Using existing seed set: {seed_filename}")
+        print(f"   (seed={seed}, per_class={initial_per_class})")
+        seed_df = pd.read_csv(seed_file)
+        
+    else:
+        # Auto-create seed set for this configuration
+        print(f"📝 No seed set found for this configuration")
+        print(f"   seed={seed}, per_class={initial_per_class}")
+        print(f"   Creating: {seed_filename}")
+        
+        # Load and shuffle training data
+        df = load_dataset(train_file, config)
+        df = shuffle_dataframe(df, seed)
+        
+        # Get unique labels
+        unique_labels = get_unique_labels(
+            df, col_label, dataset_config.get('exclude_labels', [])
+        )
+        unique_labels = [
+            label for label in unique_labels
+            if pd.notna(label) and str(label).lower() not in ['none', 'null', '', 'nan']
+        ]
+        
+        print(f"   Labels: {unique_labels}")
+        
+        # Extract seed examples (stratified sampling)
+        seed_examples = []
+        for label in unique_labels:
+            label_df = df[df[col_label] == label]
+            num_samples = min(initial_per_class, len(label_df))
+            
+            if num_samples == 0:
+                print(f"     Warning: No examples for label '{label}'")
+                continue
+            
+            samples = label_df.head(num_samples)
+            seed_examples.append(samples)
+            print(f"     ✓ {label}: {num_samples} examples")
+        
+        # Create and save seed set
+        seed_df = pd.concat(seed_examples, ignore_index=True)
+        seed_df.to_csv(seed_file, index=False)
+        
+        print(f"   ✅ Created seed set: {len(seed_df)} examples")
+        print(f"   Saved to: {seed_filename}")
     
-    # Get unique labels (excluding specified labels)
-    unique_labels = get_unique_labels(
-        df,
-        col_label,
-        dataset_config.get('exclude_labels', [])
-    )
+    # Load full training data for splitting
+    df = load_dataset(train_file, config)
     
-    # Filter out null/NaN values
+    # Get unique labels from seed set
+    unique_labels = seed_df[col_label].unique().tolist()
     unique_labels = [
         label for label in unique_labels
         if pd.notna(label) and str(label).lower() not in ['none', 'null', '', 'nan']
     ]
     
-    print(f"Unique labels: {unique_labels}")
-    print(f"Number of labels: {len(unique_labels)}")
+    # Get seed IDs
+    seed_ids = set(seed_df[col_id].tolist())
     
-    # Create stratified initial labeled set
-    initial_per_class = al_config['initial_labeled_per_class']
-    
-    labeled_indices = []
-    for label in unique_labels:
-        label_df = df[df[col_label] == label]
-        num_samples = min(initial_per_class, len(label_df))
-        
-        if num_samples == 0:
-            print(f"  Warning: No examples for label '{label}'")
-            continue
-        
-        sample_indices = label_df.head(num_samples).index.tolist()
-        labeled_indices.extend(sample_indices)
-    
-    # Create labeled and unlabeled pools
+    # Split into labeled (seed) and unlabeled pools
     labeled_pool = []
     unlabeled_pool = []
     
@@ -105,13 +142,15 @@ def initialize_pools(config: dict) -> tuple:
             'label': row[col_label]
         }
         
-        if idx in labeled_indices:
+        if example['id'] in seed_ids:
             labeled_pool.append(example)
         else:
             unlabeled_pool.append(example)
     
+    # Display summary
     print(f"\nInitial labeled pool: {len(labeled_pool)} examples")
-    print(f"  ({initial_per_class} per class × {len(unique_labels)} classes)")
+    seed_dist = seed_df[col_label].value_counts().to_dict()
+    print(f"  Class distribution: {seed_dist}")
     print(f"Unlabeled pool: {len(unlabeled_pool)} examples")
     
     return labeled_pool, unlabeled_pool, unique_labels
@@ -335,6 +374,14 @@ def active_learning_loop(config: dict):
     batch_size = al_config['batch_size']
     max_iterations = al_config['max_iterations']
     
+    # CF budget tracking
+    cf_total_budget = al_config['counterfactuals'].get('cf_total_budget', -1)
+    cf_budget_remaining = cf_total_budget  # -1 means unlimited
+    
+    print(f"\n📊 Budget Configuration:")
+    print(f"   Real labels budget: {budget}")
+    print(f"   CF budget: {cf_total_budget if cf_total_budget > 0 else 'unlimited'}")
+    
     # Tracking
     results = []
     best_f1_macro = 0.0  # Changed from accuracy to F1 Macro
@@ -366,13 +413,105 @@ def active_learning_loop(config: dict):
     # Extract dataset name (without extension)
     dataset_name = config['dataset']['train_file'].replace('.csv', '').replace('_train', '')
     
-    # Get evaluation method (classifier type)
+    # Get evaluation method (classifier type) and query strategy
     classifier_type = eval_config.get('classifier_type', 'static')
+    query_strategy = config['active_learning'].get('query_strategy', 'uncertainty')
     
-    # Create run-specific directory: timestamp_model_dataset_evalmethod
+    # Get seed value and initial per class
+    seed = config['processing']['seed']
+    initial_per_class = config['active_learning']['initial_labeled_per_class']
+    
+    # Create run-specific directory: timestamp_model_dataset_evalmethod_querystrategy_seed_perclass
     import os
-    run_dir = f"{config['directories']['output_data']}/{run_timestamp}_{model_safe}_{dataset_name}_{classifier_type}"
+    import shutil
+    run_dir = f"{config['directories']['output_data']}/{run_timestamp}_{model_safe}_{dataset_name}_{classifier_type}_{query_strategy}_s{seed}_n{initial_per_class}"
     os.makedirs(run_dir, exist_ok=True)
+    
+    # Save experiment configuration as a readable text report (sanitized - no API keys)
+    try:
+        config_report = f"{run_dir}/experiment_config.txt"
+        
+        with open(config_report, 'w') as f:
+            f.write("=" * 80 + "\n")
+            f.write("EXPERIMENT CONFIGURATION\n")
+            f.write("=" * 80 + "\n\n")
+            
+            f.write(f"Run Timestamp: {run_timestamp}\n")
+            f.write(f"Run Directory: {run_dir}\n\n")
+            
+            f.write("-" * 80 + "\n")
+            f.write("LLM CONFIGURATION\n")
+            f.write("-" * 80 + "\n")
+            f.write(f"Provider: {config['llm']['provider']}\n")
+            f.write(f"Model: {model_name}\n")
+            f.write(f"API Keys/Endpoints: ***REDACTED FOR SECURITY***\n\n")
+            
+            f.write("-" * 80 + "\n")
+            f.write("DATASET CONFIGURATION\n")
+            f.write("-" * 80 + "\n")
+            f.write(f"Train File: {config['dataset']['train_file']}\n")
+            f.write(f"Test File: {config['dataset']['test_file']}\n")
+            f.write(f"Text Column: {config['dataset']['columns']['text']}\n")
+            f.write(f"Label Column: {config['dataset']['columns']['label']}\n")
+            f.write(f"Exclude Labels: {config['dataset'].get('exclude_labels', [])}\n\n")
+            
+            f.write("-" * 80 + "\n")
+            f.write("ACTIVE LEARNING CONFIGURATION\n")
+            f.write("-" * 80 + "\n")
+            f.write(f"Query Strategy: {config['active_learning']['query_strategy']}\n")
+            f.write(f"Uncertainty Method: {config['active_learning']['uncertainty_method']}\n")
+            f.write(f"Total Budget: {config['active_learning']['total_budget']}\n")
+            f.write(f"Batch Size: {config['active_learning']['batch_size']}\n")
+            f.write(f"Initial Labeled per Class: {config['active_learning']['initial_labeled_per_class']}\n")
+            f.write(f"Random Seed: {config['processing']['seed']}\n")
+            f.write(f"Max Iterations: {config['active_learning']['max_iterations']}\n")
+            f.write(f"Early Stopping Patience: {config['active_learning']['early_stopping_patience']}\n")
+            f.write(f"Min Improvement: {config['active_learning']['min_improvement']}\n\n")
+            
+            f.write("-" * 80 + "\n")
+            f.write("COUNTERFACTUAL CONFIGURATION\n")
+            f.write("-" * 80 + "\n")
+            f.write(f"Enabled: {config['active_learning']['counterfactuals']['enabled']}\n")
+            f.write(f"Temperature: {config['active_learning']['counterfactuals']['generation_temperature']}\n")
+            f.write(f"Max Tokens: {config['active_learning']['counterfactuals']['max_tokens']}\n\n")
+            
+            f.write("-" * 80 + "\n")
+            f.write("EVALUATION CONFIGURATION\n")
+            f.write("-" * 80 + "\n")
+            f.write(f"Classifier Type: {config['evaluation']['classifier_type']}\n")
+            f.write(f"Max ICL Examples: {config['evaluation']['max_icl_examples']}\n")
+            f.write(f"Eval Every N Iterations: {config['evaluation']['eval_every_iterations']}\n")
+            
+            if config['evaluation']['classifier_type'] == 'retrieval':
+                f.write(f"\nRetrieval Settings:\n")
+                f.write(f"  Embedding Backend: {config['evaluation']['retrieval']['embedding_backend']}\n")
+                f.write(f"  K per Class: {config['evaluation']['retrieval']['k_per_class']}\n")
+                f.write(f"  Total K Max: {config['evaluation']['retrieval']['total_k_max']}\n")
+                f.write(f"  Fallback Strategy: {config['evaluation']['retrieval']['fallback_strategy']}\n")
+                
+                backend = config['evaluation']['retrieval']['embedding_backend']
+                if backend == 'sentence_transformers':
+                    f.write(f"  ST Model: {config['evaluation']['retrieval']['sentence_transformers']['model']}\n")
+                    f.write(f"  Device: {config['evaluation']['retrieval']['sentence_transformers']['device']}\n")
+                elif backend == 'openai':
+                    f.write(f"  OpenAI Model: {config['evaluation']['retrieval']['openai']['model']}\n")
+                elif backend == 'tfidf':
+                    f.write(f"  Max Features: {config['evaluation']['retrieval']['tfidf']['max_features']}\n")
+                    f.write(f"  N-gram Range: {config['evaluation']['retrieval']['tfidf']['ngram_range']}\n")
+            
+            f.write("\n" + "-" * 80 + "\n")
+            f.write("LOGGING CONFIGURATION\n")
+            f.write("-" * 80 + "\n")
+            f.write(f"Checkpoint Every: {config['logging']['checkpoint_every']} iterations\n\n")
+            
+            f.write("=" * 80 + "\n")
+            f.write("END OF CONFIGURATION\n")
+            f.write("=" * 80 + "\n")
+        
+        print(f"✅ Saved experiment config: {config_report}")
+        
+    except Exception as e:
+        print(f"⚠️  Could not save config report: {e}")
     
     # Create subdirectories within run folder
     interim_dir = f"{run_dir}/interim_output"
@@ -383,6 +522,116 @@ def active_learning_loop(config: dict):
     print(f"\n📁 Run directory: {run_dir}")
     print(f"   All outputs will be saved here")
     
+    # ========================================================================
+    # BASELINE EVALUATION (Iteration 0) - Before any AL iterations
+    # ========================================================================
+    print(f"\n{'='*80}")
+    print(f"Baseline Evaluation (Iteration 0)")
+    print(f"{'='*80}")
+    print(f"Labeled pool: {len(labeled_pool)} examples (seed set)")
+    print(f"Unlabeled pool: {len(unlabeled_pool)} examples")
+    
+    baseline_timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    
+    # Train classifier on initial seed set
+    print(f"\n[Baseline] Training classifier on seed set...")
+    classifier.train(labeled_pool)
+    
+    # Save baseline training output
+    baseline_step1_file = f"{interim_dir}/iter_00_{baseline_timestamp}_{model_safe}_step1_classifier_training.json"
+    with open(baseline_step1_file, 'w') as f:
+        json.dump({
+            'iteration': 0,
+            'timestamp': baseline_timestamp,
+            'step': 'classifier_training',
+            'labeled_pool_size': len(labeled_pool),
+            'num_labels': len(classifier.labels),
+            'labels': list(classifier.labels),
+            'labeled_examples': labeled_pool,
+            'training_summary': {
+                'total_examples': len(labeled_pool),
+                'labels_count': {label: len([ex for ex in labeled_pool if ex['label'] == label]) 
+                                for label in classifier.labels}
+            }
+        }, f, indent=2)
+    print(f"  ✓ Interim output saved: {baseline_step1_file}")
+    
+    # Evaluate baseline
+    baseline_metrics = None
+    if test_pool:
+        print(f"\n[Baseline] Evaluating on test set...")
+        baseline_metrics = evaluate_classifier(classifier, test_pool, config)
+        
+        print(f"  Accuracy: {baseline_metrics['accuracy']:.4f}")
+        print(f"  F1 Macro: {baseline_metrics['f1_macro']:.4f}")
+        print(f"  F1 Weighted: {baseline_metrics['f1_weighted']:.4f}")
+        
+        # Initialize best F1 Macro from baseline
+        best_f1_macro = baseline_metrics['f1_macro']
+        print(f"  ✓ Baseline F1 Macro: {best_f1_macro:.4f}")
+        
+        # Save baseline evaluation output
+        baseline_step2_file = f"{interim_dir}/iter_00_{baseline_timestamp}_{model_safe}_step2_evaluation.json"
+        
+        # Build evaluation config metadata
+        eval_metadata = {
+            'classifier_type': eval_config.get('classifier_type', 'static'),
+            'max_icl_examples': eval_config.get('max_icl_examples', 100)
+        }
+        
+        # Add retrieval settings if using retrieval
+        if eval_metadata['classifier_type'] == 'retrieval':
+            retrieval_config = eval_config.get('retrieval', {})
+            eval_metadata['retrieval_settings'] = {
+                'embedding_backend': retrieval_config.get('embedding_backend', 'unknown'),
+                'k_per_class': retrieval_config.get('k_per_class', 3),
+                'total_k_max': retrieval_config.get('total_k_max', 50),
+                'fallback_strategy': retrieval_config.get('fallback_strategy', 'similarity')
+            }
+            
+            # Add model-specific info
+            backend = retrieval_config.get('embedding_backend', 'unknown')
+            if backend in retrieval_config:
+                eval_metadata['retrieval_settings']['model_config'] = retrieval_config[backend]
+        
+        with open(baseline_step2_file, 'w') as f:
+            json.dump({
+                'iteration': 0,
+                'timestamp': baseline_timestamp,
+                'step': 'evaluation',
+                'evaluation_config': eval_metadata,
+                'metrics': baseline_metrics,
+                'best_f1_macro': best_f1_macro,
+                'patience_counter': 0,
+                'test_pool_size': len(test_pool)
+            }, f, indent=2)
+        print(f"  ✓ Interim output saved: {baseline_step2_file}")
+    
+    # Save baseline results
+    query_strategy = al_config.get('query_strategy', 'uncertainty')
+    baseline_result = {
+        'iteration': 0,
+        'classifier_type': eval_config.get('classifier_type', 'static'),
+        'query_strategy': query_strategy,
+        'uncertainty_method': al_config['uncertainty_method'] if query_strategy == 'uncertainty' else 'N/A',
+        'labeled_pool_size': len(labeled_pool),
+        'unlabeled_pool_size': len(unlabeled_pool),
+        'num_real_examples': 0,  # No new examples in baseline
+        'num_counterfactuals': 0,  # No CFs in baseline
+        'total_counterfactuals_so_far': 0,
+        'budget_remaining': budget,
+        'cf_budget_remaining': cf_budget_remaining if cf_total_budget > 0 else -1
+    }
+    
+    if baseline_metrics:
+        baseline_result.update(baseline_metrics)
+    
+    results.append(baseline_result)
+    print(f"  ✓ Baseline results recorded (Iteration 0)")
+    
+    # ========================================================================
+    # MAIN ACTIVE LEARNING LOOP
+    # ========================================================================
     try:
         while iteration < max_iterations and budget > 0 and len(unlabeled_pool) > 0:
             iteration += 1
@@ -420,130 +669,62 @@ def active_learning_loop(config: dict):
                 }, f, indent=2)
             print(f"  ✓ Interim output saved: {step1_file}")
             
-            # Step 2: Evaluate current model
-            metrics = None
-            if test_pool and (iteration % eval_config['eval_every_iterations'] == 0):
-                print(f"\n[Step 2/6] Evaluating on test set...")
-                metrics = evaluate_classifier(classifier, test_pool, config)
-                
-                print(f"  Accuracy: {metrics['accuracy']:.4f}")
-                print(f"  F1 Macro: {metrics['f1_macro']:.4f}")
-                print(f"  F1 Weighted: {metrics['f1_weighted']:.4f}")
-                
-                # Early stopping check (using F1 Macro)
-                if metrics['f1_macro'] > best_f1_macro + al_config['min_improvement']:
-                    best_f1_macro = metrics['f1_macro']
-                    patience_counter = 0
-                    print(f"  ✓ New best F1 Macro: {best_f1_macro:.4f}")
-                else:
-                    patience_counter += 1
-                    print(f"  No improvement (patience: {patience_counter}/{al_config['early_stopping_patience']})")
-                
-                # Save Step 2 output
-                step2_file = f"{interim_dir}/iter_{iteration:02d}_{timestamp}_{model_safe}_step2_evaluation.json"
-                
-                # Build evaluation config metadata
-                eval_metadata = {
-                    'classifier_type': eval_config.get('classifier_type', 'static'),
-                    'max_icl_examples': eval_config.get('max_icl_examples', 100)
-                }
-                
-                # Add retrieval settings if using retrieval
-                if eval_metadata['classifier_type'] == 'retrieval':
-                    retrieval_config = eval_config.get('retrieval', {})
-                    eval_metadata['retrieval_settings'] = {
-                        'embedding_backend': retrieval_config.get('embedding_backend', 'unknown'),
-                        'k_per_class': retrieval_config.get('k_per_class', 3),
-                        'total_k_max': retrieval_config.get('total_k_max', 50),
-                        'fallback_strategy': retrieval_config.get('fallback_strategy', 'similarity')
-                    }
-                    
-                    # Add model-specific info
-                    backend = retrieval_config.get('embedding_backend', 'unknown')
-                    if backend in retrieval_config:
-                        eval_metadata['retrieval_settings']['model_config'] = retrieval_config[backend]
-                
-                with open(step2_file, 'w') as f:
-                    json.dump({
-                        'iteration': iteration,
-                        'timestamp': timestamp,
-                        'step': 'evaluation',
-                        'evaluation_config': eval_metadata,
-                        'metrics': metrics,
-                        'best_f1_macro': best_f1_macro,
-                        'patience_counter': patience_counter,
-                        'test_pool_size': len(test_pool)
-                    }, f, indent=2)
-                print(f"  ✓ Interim output saved: {step2_file}")
-                
-                if patience_counter >= al_config['early_stopping_patience']:
-                    print(f"\n⚠ Early stopping triggered (no improvement for {patience_counter} iterations)")
-                    break
-            else:
-                print(f"\n[Step 2/6] Skipping evaluation (eval_every={eval_config['eval_every_iterations']})")
-                
-                # Still save Step 2 output (skipped)
-                step2_file = f"{interim_dir}/iter_{iteration:02d}_{timestamp}_{model_safe}_step2_evaluation_skipped.json"
-                
-                # Build evaluation config metadata (even for skipped)
-                eval_metadata = {
-                    'classifier_type': eval_config.get('classifier_type', 'static'),
-                    'max_icl_examples': eval_config.get('max_icl_examples', 100)
-                }
-                
-                if eval_metadata['classifier_type'] == 'retrieval':
-                    retrieval_config = eval_config.get('retrieval', {})
-                    eval_metadata['retrieval_settings'] = {
-                        'embedding_backend': retrieval_config.get('embedding_backend', 'unknown'),
-                        'k_per_class': retrieval_config.get('k_per_class', 3),
-                        'total_k_max': retrieval_config.get('total_k_max', 50)
-                    }
-                
-                with open(step2_file, 'w') as f:
-                    json.dump({
-                        'iteration': iteration,
-                        'timestamp': timestamp,
-                        'step': 'evaluation',
-                        'evaluation_config': eval_metadata,
-                        'status': 'skipped',
-                        'reason': f'eval_every_iterations={eval_config["eval_every_iterations"]}'
-                    }, f, indent=2)
-                print(f"  ✓ Interim output saved: {step2_file}")
+            # Step 2: Select examples based on query strategy
+            query_strategy = al_config.get('query_strategy', 'uncertainty')
             
-            # Step 3: Select uncertain examples
-            print(f"\n[Step 3/6] Selecting uncertain examples...")
+            if query_strategy == "random":
+                print(f"\n[Step 2/6] Selecting random examples (baseline)...")
+            else:
+                print(f"\n[Step 2/6] Selecting uncertain examples...")
             
             current_batch_size = min(batch_size, len(unlabeled_pool), budget)
             
-            selected_indices, uncertainty_details = select_uncertain_examples(
-                unlabeled_pool,
-                classifier,
-                current_batch_size,
-                method=al_config['uncertainty_method'],
-                return_details=True  # Get full logprobs and uncertainty data
-            )
+            # Handle different query strategies
+            if query_strategy == "random":
+                selected_indices = random.sample(range(len(unlabeled_pool)), current_batch_size)
+                uncertainty_details = {
+                    'method': 'random',
+                    'total_pool_size': len(unlabeled_pool),
+                    'batch_size': current_batch_size,
+                    'selected_indices': selected_indices
+                }
+                print(f"  Randomly selected {len(selected_indices)} examples")
+                
+            elif query_strategy == "uncertainty":
+                # Uncertainty-based selection
+                selected_indices, uncertainty_details = select_uncertain_examples(
+                    unlabeled_pool,
+                    classifier,
+                    current_batch_size,
+                    method=al_config['uncertainty_method'],
+                    return_details=True  # Get full logprobs and uncertainty data
+                )
+            else:
+                raise ValueError(f"Unknown query_strategy: {query_strategy}. Choose 'uncertainty' or 'random'")
             
             selected_examples = [unlabeled_pool[i] for i in selected_indices]
             
             print(f"  Selected {len(selected_examples)} examples for labeling")
             
-            # Save Step 3 output: selected examples with FULL uncertainty details
-            step3_file = f"{interim_dir}/iter_{iteration:02d}_{timestamp}_{model_safe}_step3_uncertainty_selection.json"
-            with open(step3_file, 'w') as f:
+            # Save Step 2 output: selected examples with query strategy details
+            step_name = 'random_selection' if query_strategy == 'random' else 'uncertainty_selection'
+            step2_file = f"{interim_dir}/iter_{iteration:02d}_{timestamp}_{model_safe}_step2_{step_name}.json"
+            with open(step2_file, 'w') as f:
                 json.dump({
                     'iteration': iteration,
                     'timestamp': timestamp,
-                    'step': 'uncertainty_selection',
+                    'step': step_name,
+                    'query_strategy': query_strategy,
                     'selected_indices': selected_indices,
                     'selected_examples': selected_examples,
-                    'uncertainty_analysis': uncertainty_details,  # FULL DETAILS: logprobs, entropy, etc.
+                    'selection_details': uncertainty_details,  # Contains method, scores (if uncertainty), or random info
                     'unlabeled_pool_size': len(unlabeled_pool),
                     'batch_size': current_batch_size
                 }, f, indent=2)
-            print(f"  ✓ Interim output saved: {step3_file}")
+            print(f"  ✓ Interim output saved: {step2_file}")
             
-            # Step 4: Query oracle
-            print(f"\n[Step 4/6] Querying oracle for labels...")
+            # Step 3: Query oracle
+            print(f"\n[Step 3/6] Querying oracle for labels...")
             labeled_examples = oracle.label_examples(selected_examples)
             
             # Save Step 4 output: oracle labels
@@ -558,21 +739,33 @@ def active_learning_loop(config: dict):
                 }, f, indent=2)
             print(f"  ✓ Interim output saved: {step4_file}")
             
-            # Step 5: Generate counterfactuals
+            # Step 4: Generate counterfactuals with quality filtering
             counterfactuals = []
+            num_cfs_added = 0
             if al_config['counterfactuals']['enabled']:
-                print(f"\n[Step 5/6] Generating counterfactuals...")
-                counterfactuals, cf_generation_details = generate_counterfactuals_batch(
+                print(f"\n[Step 4/6] Generating counterfactuals with quality filtering...")
+                counterfactuals, num_cfs_added, cf_generation_details = generate_counterfactuals_batch(
                     labeled_examples,
                     config,
                     llm_provider,
                     all_labels,
-                    return_details=True  # Get full generation metadata and prompts
+                    labeled_pool,           # For diversity calculation
+                    classifier,             # For confidence scoring
+                    cf_budget_remaining,    # Budget constraint
+                    return_details=True     # Get full generation metadata and prompts
                 )
-                print(f"  Generated {len(counterfactuals)} counterfactuals")
+                
+                # Update CF budget
+                if cf_budget_remaining > 0:
+                    cf_budget_remaining = max(0, cf_budget_remaining - num_cfs_added)
+                    print(f"  CF budget: {num_cfs_added} added, {cf_budget_remaining} remaining")
                 
                 # Save Step 5 output: counterfactuals with FULL generation details
                 step5_file = f"{interim_dir}/iter_{iteration:02d}_{timestamp}_{model_safe}_step5_counterfactual_generation.json"
+                
+                # Extract selected CF IDs for easy reference
+                selected_cf_ids = [cf['id'] for cf in counterfactuals]
+                
                 with open(step5_file, 'w') as f:
                     json.dump({
                         'iteration': iteration,
@@ -580,12 +773,21 @@ def active_learning_loop(config: dict):
                         'step': 'counterfactual_generation',
                         'input_examples': labeled_examples,
                         'generated_counterfactuals': counterfactuals,
-                        'generation_details': cf_generation_details,  # FULL DETAILS: prompts, times, etc.
-                        'num_generated': len(counterfactuals)
+                        'selected_cf_ids': selected_cf_ids,  # Clear list of IDs that were kept after filtering
+                        'generation_details': cf_generation_details,  # FULL DETAILS: prompts, times, filtering scores, etc.
+                        'num_generated': len(counterfactuals),
+                        'summary': {
+                            'num_input_examples': len(labeled_examples),
+                            'num_candidates_generated': cf_generation_details.get('num_generated', 0),
+                            'num_after_filtering': cf_generation_details.get('num_filtered', 0),
+                            'num_final_selected': len(counterfactuals),
+                            'budget_remaining_before': cf_generation_details.get('budget_remaining_before', -1),
+                            'budget_remaining_after': cf_generation_details.get('budget_remaining_after', -1)
+                        }
                     }, f, indent=2)
                 print(f"  ✓ Interim output saved: {step5_file}")
             else:
-                print(f"\n[Step 5/6] Skipping counterfactual generation (disabled)")
+                print(f"\n[Step 4/6] Skipping counterfactual generation (disabled)")
                 
                 # Still save Step 5 output (skipped)
                 step5_file = f"{interim_dir}/iter_{iteration:02d}_{timestamp}_{model_safe}_step5_counterfactual_generation_skipped.json"
@@ -599,8 +801,8 @@ def active_learning_loop(config: dict):
                     }, f, indent=2)
                 print(f"  ✓ Interim output saved: {step5_file}")
             
-            # Step 6: Update pools
-            print(f"\n[Step 6/6] Updating data pools...")
+            # Step 5: Update pools
+            print(f"\n[Step 5/6] Updating data pools...")
             
             # Capture pre-update state
             pre_labeled_size = len(labeled_pool)
@@ -623,9 +825,9 @@ def active_learning_loop(config: dict):
             print(f"  Unlabeled pool: {len(unlabeled_pool)} examples")
             print(f"  Budget: {budget} remaining")
             
-            # Save Step 6 output: pool updates
-            step6_file = f"{interim_dir}/iter_{iteration:02d}_{timestamp}_{model_safe}_step6_pool_update.json"
-            with open(step6_file, 'w') as f:
+            # Save Step 5 output: pool updates
+            step5_file = f"{interim_dir}/iter_{iteration:02d}_{timestamp}_{model_safe}_step5_pool_update.json"
+            with open(step5_file, 'w') as f:
                 json.dump({
                     'iteration': iteration,
                     'timestamp': timestamp,
@@ -647,17 +849,115 @@ def active_learning_loop(config: dict):
                         'budget_remaining': budget
                     }
                 }, f, indent=2)
-            print(f"  ✓ Interim output saved: {step6_file}")
+            print(f"  ✓ Interim output saved: {step5_file}")
             
-            # Save iteration results
+            # Step 6: Evaluate AFTER pool update (so metrics reflect current state)
+            metrics = None
+            if test_pool and (iteration % eval_config['eval_every_iterations'] == 0):
+                print(f"\n[Step 6/6] Evaluating on test set (after pool update)...")
+                # Re-train classifier on updated pool to ensure evaluation reflects current state
+                classifier.train(labeled_pool)
+                metrics = evaluate_classifier(classifier, test_pool, config)
+                
+                print(f"  Accuracy: {metrics['accuracy']:.4f}")
+                print(f"  F1 Macro: {metrics['f1_macro']:.4f}")
+                print(f"  F1 Weighted: {metrics['f1_weighted']:.4f}")
+                
+                # Early stopping check (using F1 Macro)
+                if metrics['f1_macro'] > best_f1_macro + al_config['min_improvement']:
+                    best_f1_macro = metrics['f1_macro']
+                    patience_counter = 0
+                    print(f"  ✓ New best F1 Macro: {best_f1_macro:.4f}")
+                else:
+                    patience_counter += 1
+                    print(f"  No improvement (patience: {patience_counter}/{al_config['early_stopping_patience']})")
+                
+                # Save Step 6 (evaluation) output
+                step6_file = f"{interim_dir}/iter_{iteration:02d}_{timestamp}_{model_safe}_step6_evaluation.json"
+                
+                # Build evaluation config metadata
+                eval_metadata = {
+                    'classifier_type': eval_config.get('classifier_type', 'static'),
+                    'max_icl_examples': eval_config.get('max_icl_examples', 100)
+                }
+                
+                # Add retrieval settings if using retrieval
+                if eval_metadata['classifier_type'] == 'retrieval':
+                    retrieval_config = eval_config.get('retrieval', {})
+                    eval_metadata['retrieval_settings'] = {
+                        'embedding_backend': retrieval_config.get('embedding_backend', 'unknown'),
+                        'k_per_class': retrieval_config.get('k_per_class', 3),
+                        'total_k_max': retrieval_config.get('total_k_max', 50),
+                        'fallback_strategy': retrieval_config.get('fallback_strategy', 'similarity')
+                    }
+                    
+                    # Add model-specific info
+                    backend = retrieval_config.get('embedding_backend', 'unknown')
+                    if backend in retrieval_config:
+                        eval_metadata['retrieval_settings']['model_config'] = retrieval_config[backend]
+                
+                with open(step6_file, 'w') as f:
+                    json.dump({
+                        'iteration': iteration,
+                        'timestamp': timestamp,
+                        'step': 'evaluation',
+                        'evaluation_config': eval_metadata,
+                        'metrics': metrics,
+                        'best_f1_macro': best_f1_macro,
+                        'patience_counter': patience_counter,
+                        'test_pool_size': len(test_pool),
+                        'labeled_pool_size': len(labeled_pool)  # Pool size at evaluation time
+                    }, f, indent=2)
+                print(f"  ✓ Interim output saved: {step6_file}")
+                
+                if patience_counter >= al_config['early_stopping_patience']:
+                    print(f"\n⚠ Early stopping triggered (no improvement for {patience_counter} iterations)")
+                    break
+            else:
+                print(f"\n[Step 6/6] Skipping evaluation (eval_every={eval_config['eval_every_iterations']})")
+                
+                # Still save Step 6 output (skipped)
+                step6_file = f"{interim_dir}/iter_{iteration:02d}_{timestamp}_{model_safe}_step6_evaluation_skipped.json"
+                
+                # Build evaluation config metadata (even for skipped)
+                eval_metadata = {
+                    'classifier_type': eval_config.get('classifier_type', 'static'),
+                    'max_icl_examples': eval_config.get('max_icl_examples', 100)
+                }
+                
+                if eval_metadata['classifier_type'] == 'retrieval':
+                    retrieval_config = eval_config.get('retrieval', {})
+                    eval_metadata['retrieval_settings'] = {
+                        'embedding_backend': retrieval_config.get('embedding_backend', 'unknown'),
+                        'k_per_class': retrieval_config.get('k_per_class', 3),
+                        'total_k_max': retrieval_config.get('total_k_max', 50)
+                    }
+                
+                with open(step6_file, 'w') as f:
+                    json.dump({
+                        'iteration': iteration,
+                        'timestamp': timestamp,
+                        'step': 'evaluation',
+                        'evaluation_config': eval_metadata,
+                        'status': 'skipped',
+                        'reason': f'eval_every_iterations={eval_config["eval_every_iterations"]}',
+                        'labeled_pool_size': len(labeled_pool)  # Pool size at this point
+                    }, f, indent=2)
+                print(f"  ✓ Interim output saved: {step6_file}")
+            
+            # Save iteration results (metrics reflect pool state AFTER update)
             iter_result = {
                 'iteration': iteration,
                 'classifier_type': eval_config.get('classifier_type', 'static'),
+                'query_strategy': query_strategy,
+                'uncertainty_method': al_config['uncertainty_method'] if query_strategy == 'uncertainty' else 'N/A',
                 'labeled_pool_size': len(labeled_pool),
                 'unlabeled_pool_size': len(unlabeled_pool),
                 'num_real_examples': len(labeled_examples),
-                'num_counterfactuals': len(counterfactuals),
-                'budget_remaining': budget
+                'num_counterfactuals': num_cfs_added,
+                'total_counterfactuals_so_far': (cf_total_budget - cf_budget_remaining) if cf_total_budget > 0 else len([ex for ex in labeled_pool if ex.get('original_id')]),
+                'budget_remaining': budget,
+                'cf_budget_remaining': cf_budget_remaining if cf_total_budget > 0 else -1
             }
             
             if metrics:
@@ -696,7 +996,7 @@ def active_learning_loop(config: dict):
             print(f"⚠️ Warning: Could not save progress: {save_error}")
         raise
     
-    # Final evaluation
+    # Final evaluation (if loop exited before final evaluation or if last iteration wasn't evaluated)
     print(f"\n{'='*80}")
     print("Final Evaluation")
     print(f"{'='*80}")
@@ -720,6 +1020,41 @@ def active_learning_loop(config: dict):
         
         print(f"\nClassification Report:")
         print(classification_report(true_labels, predictions, zero_division=0))
+        
+        # Check if final evaluation is needed
+        # Only add if last iteration wasn't evaluated (due to eval_every_iterations)
+        # If last iteration already has metrics, it means it was evaluated - don't add duplicate
+        last_result = results[-1] if results else None
+        should_add_final = False
+        
+        if last_result is None:
+            should_add_final = True
+        elif 'f1_macro' not in last_result:
+            # Last iteration wasn't evaluated (no metrics) - add final evaluation
+            should_add_final = True
+        # If last_result has 'f1_macro', iteration was already evaluated - don't add final
+        
+        if should_add_final:
+            # Add final evaluation as a separate result entry
+            final_timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            final_result = {
+                'iteration': iteration + 1,  # Next iteration number (or same if loop ended naturally)
+                'classifier_type': eval_config.get('classifier_type', 'static'),
+                'query_strategy': query_strategy,
+                'uncertainty_method': al_config['uncertainty_method'] if query_strategy == 'uncertainty' else 'N/A',
+                'labeled_pool_size': len(labeled_pool),
+                'unlabeled_pool_size': len(unlabeled_pool),
+                'num_real_examples': 0,  # No new examples in final evaluation
+                'num_counterfactuals': 0,  # No new CFs in final evaluation
+                'total_counterfactuals_so_far': (cf_total_budget - cf_budget_remaining) if cf_total_budget > 0 else len([ex for ex in labeled_pool if ex.get('original_id')]),
+                'budget_remaining': budget,
+                'cf_budget_remaining': cf_budget_remaining if cf_total_budget > 0 else -1
+            }
+            final_result.update(final_metrics)
+            results.append(final_result)
+            print(f"  ✓ Final evaluation added to results (Iteration {final_result['iteration']})")
+        else:
+            print(f"  ✓ Final state already evaluated in iteration {last_result['iteration']} (no duplicate needed)")
     
     # Save results
     save_results(results, run_dir, eval_config.get('classifier_type', 'static'))
