@@ -522,6 +522,36 @@ def active_learning_loop(config: dict):
     print(f"\n📁 Run directory: {run_dir}")
     print(f"   All outputs will be saved here")
     
+    # Create selected samples tracking file
+    samples_file = f"{run_dir}/selected_samples.txt"
+    
+    # Write seed set to tracking file
+    with open(samples_file, 'w') as f:
+        f.write("=" * 80 + "\n")
+        f.write("SELECTED SAMPLES TRACKING\n")
+        f.write("=" * 80 + "\n\n")
+        f.write(f"Run: {run_timestamp}\n")
+        f.write(f"Model: {model_name}\n")
+        f.write(f"Dataset: {dataset_name}\n")
+        f.write(f"Query Strategy: {query_strategy}\n")
+        f.write(f"Seed: {seed}, Initial per class: {initial_per_class}\n\n")
+        
+        f.write("=" * 80 + "\n")
+        f.write("SEED SET (Initial Labeled Pool)\n")
+        f.write("=" * 80 + "\n\n")
+        
+        for idx, ex in enumerate(labeled_pool, 1):
+            # Truncate text if too long
+            text_display = ex['text'][:80] + "..." if len(ex['text']) > 80 else ex['text']
+            f.write(f"{idx}. ID: {ex['id']}\n")
+            f.write(f"   Text: {text_display}\n")
+            f.write(f"   Label: {ex['label']}\n\n")
+        
+        f.write(f"\nTotal seed set examples: {len(labeled_pool)}\n")
+        f.write("\n" + "=" * 80 + "\n\n")
+    
+    print(f"✅ Selected samples tracking initialized: selected_samples.txt")
+    
     # ========================================================================
     # BASELINE EVALUATION (Iteration 0) - Before any AL iterations
     # ========================================================================
@@ -738,6 +768,34 @@ def active_learning_loop(config: dict):
                     'num_labeled': len(labeled_examples)
                 }, f, indent=2)
             print(f"  ✓ Interim output saved: {step4_file}")
+            
+            # Append selected examples to tracking file
+            with open(samples_file, 'a') as f:
+                f.write("=" * 80 + "\n")
+                f.write(f"ITERATION {iteration} - Selected Examples\n")
+                f.write("=" * 80 + "\n\n")
+                f.write(f"Query Strategy: {query_strategy}\n")
+                if query_strategy == 'uncertainty':
+                    f.write(f"Uncertainty Method: {al_config['uncertainty_method']}\n")
+                f.write(f"Batch Size: {len(labeled_examples)}\n\n")
+                
+                for idx, ex in enumerate(labeled_examples, 1):
+                    # Truncate text if too long
+                    text_display = ex['text'][:80] + "..." if len(ex['text']) > 80 else ex['text']
+                    f.write(f"{idx}. ID: {ex['id']}\n")
+                    f.write(f"   Text: {text_display}\n")
+                    f.write(f"   Label: {ex['label']}\n")
+                    
+                    # Add uncertainty score if available
+                    if query_strategy == 'uncertainty' and 'uncertainty_details' in locals():
+                        ex_idx = selected_examples.index(ex) if ex in selected_examples else -1
+                        if ex_idx >= 0 and ex_idx < len(uncertainty_details.get('scores', [])):
+                            score = uncertainty_details['scores'][ex_idx]
+                            f.write(f"   Uncertainty Score: {score:.4f}\n")
+                    f.write("\n")
+                
+                f.write(f"Total examples selected in iteration {iteration}: {len(labeled_examples)}\n")
+                f.write("\n" + "=" * 80 + "\n\n")
             
             # Step 4: Generate counterfactuals with quality filtering
             counterfactuals = []
@@ -1059,6 +1117,29 @@ def active_learning_loop(config: dict):
     # Save results
     save_results(results, run_dir, eval_config.get('classifier_type', 'static'))
     save_final_labeled_pool(labeled_pool, run_dir)
+    
+    # Finalize selected samples tracking file with summary
+    with open(samples_file, 'a') as f:
+        f.write("\n" + "=" * 80 + "\n")
+        f.write("SUMMARY\n")
+        f.write("=" * 80 + "\n\n")
+        f.write(f"Total iterations completed: {iteration}\n")
+        f.write(f"Total real examples selected: {al_config['total_budget'] - budget}\n")
+        f.write(f"Total counterfactuals generated: {sum(1 for ex in labeled_pool if 'original_id' in ex)}\n")
+        f.write(f"Final labeled pool size: {len(labeled_pool)}\n")
+        f.write(f"Budget consumed: {al_config['total_budget'] - budget}/{al_config['total_budget']}\n")
+        
+        if test_pool and final_metrics:
+            f.write(f"\nFinal Test Performance:\n")
+            f.write(f"  Accuracy: {final_metrics['accuracy']:.4f}\n")
+            f.write(f"  F1 Macro: {final_metrics['f1_macro']:.4f}\n")
+            f.write(f"  F1 Weighted: {final_metrics['f1_weighted']:.4f}\n")
+        
+        f.write("\n" + "=" * 80 + "\n")
+        f.write("END OF SELECTION TRACKING\n")
+        f.write("=" * 80 + "\n")
+    
+    print(f"✅ Selected samples tracking finalized: selected_samples.txt")
     
     print(f"\n{'='*80}")
     print("Active Learning Complete!")

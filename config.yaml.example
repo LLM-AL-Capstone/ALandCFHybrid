@@ -77,27 +77,26 @@ active_learning:
   query_strategy: "uncertainty"  # Options: "uncertainty", "random"
   uncertainty_method: "entropy"  # Options: "entropy", "margin", "least_confident" (only used when query_strategy="uncertainty")
   
-  # Counterfactual augmentation with quality filtering
+  # Counterfactual augmentation with quality filtering (Paper's Algorithm 1)
   counterfactuals:
     enabled: true              # Enable/disable counterfactual generation
     
-    # Generation budget
-    max_per_example: 5          # Max CFs to keep per labeled example
-    generation_multiplier: 2.0  # Generate 2x this amount, filter to best
+    # Generation budget (fixed-budget approach from paper)
+    max_per_example: 3          # Exactly 3 CFs generated per labeled example
     cf_total_budget: 200        # Total CFs across entire AL run (-1 for unlimited)
     
-    # Quality filtering
+    # Quality filtering (Paper's Algorithm 1: two filters only)
     quality_filtering:
       enabled: true
-      metric: "combined"        # Options: "diversity", "confidence", "validity", "combined"
-      diversity_weight: 0.5
-      confidence_weight: 0.3
-      validity_weight: 0.2
-      confidence:
-        min_confidence: 0.5     # Minimum classifier confidence to keep CF
+      # Filter 1: Label Correctness - p(y_target | CF) > p(y_orig | CF) + min_margin
+      min_margin: 0.1           # Minimum probability margin for label flip
+      min_target_confidence: 0.3  # Minimum confidence in target label
+      # Filter 2: Semantic Similarity - cosine_similarity >= min_semantic_similarity
+      min_semantic_similarity: 0.6  # Minimum semantic similarity to preserve context
+      embedding_model: "all-MiniLM-L6-v2"  # Model for semantic similarity
     
     # Distribution strategy
-    distribution_strategy: "balanced"  # Options: "balanced", "priority", "random", "quality_first"
+    distribution_strategy: "balanced"  # Options: "balanced", "priority", "random"
     
     # Generation settings
     generation_temperature: 0.7

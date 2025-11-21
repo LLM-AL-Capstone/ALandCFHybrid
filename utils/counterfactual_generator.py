@@ -58,14 +58,12 @@ def generate_counterfactuals_batch(
         return [], 0
     
     # Get configuration
-    max_per_example = cf_config.get('max_per_example', 5)
-    generation_multiplier = cf_config.get('generation_multiplier', 2.0)
+    max_per_example = cf_config.get('max_per_example', 3)
     quality_filtering_enabled = cf_config.get('quality_filtering', {}).get('enabled', False)
     distribution_strategy = cf_config.get('distribution_strategy', 'balanced')
     
-    print(f"  CF Generation Settings:")
-    print(f"    Max per example: {max_per_example}")
-    print(f"    Generation multiplier: {generation_multiplier}x")
+    print(f"  CF Generation Settings (Paper's Fixed-Budget Approach):")
+    print(f"    CFs to generate per example: {max_per_example}")
     print(f"    Quality filtering: {'enabled' if quality_filtering_enabled else 'disabled'}")
     print(f"    Budget remaining: {cf_budget_remaining if cf_budget_remaining > 0 else 'unlimited'}")
     
@@ -88,7 +86,6 @@ def generate_counterfactuals_batch(
             config,
             llm_provider,
             max_per_example,
-            generation_multiplier,
             distribution_strategy,
             return_details
         )
@@ -155,13 +152,14 @@ def generate_cf_candidates_for_example(
     all_labels: List[str],
     config: dict,
     llm_provider,
-    max_per_example: int,
-    generation_multiplier: float,
+    num_per_example: int,
     distribution_strategy: str,
     return_details: bool
 ) -> List[Tuple[Dict, Dict]]:
     """
-    Generate CF candidates for a single example.
+    Generate CF candidates for a single example (fixed-budget approach).
+    
+    Generates exactly num_per_example CFs, distributed across target labels.
     
     Returns:
         List of (cf_dict, detail_dict) tuples
@@ -177,17 +175,14 @@ def generate_cf_candidates_for_example(
     if len(target_labels) == 0:
         return []
     
-    # Determine how many CFs to generate
-    num_to_generate = int(max_per_example * generation_multiplier)
-    
-    # Distribute generations across target labels
+    # Distribute generations across target labels (fixed budget)
     label_distribution = distribute_generations(
         target_labels,
-        num_to_generate,
+        num_per_example,
         distribution_strategy
     )
     
-    print(f"                Generating {num_to_generate} CFs across {len(target_labels)} labels")
+    print(f"                Generating {num_per_example} CFs across {len(target_labels)} labels")
     
     # Generate CFs
     candidates = []
@@ -255,15 +250,15 @@ def distribute_generations(
         return {}
     
     if strategy == 'balanced':
-        # Distribute evenly, remainder randomly assigned
+        # Distribute evenly using round-robin for deterministic balance
         base_count = num_to_generate // num_labels
         remainder = num_to_generate % num_labels
         
         distribution = {label: base_count for label in target_labels}
         
-        # Assign remainder randomly
-        for label in random.sample(target_labels, remainder):
-            distribution[label] += 1
+        # Assign remainder in round-robin fashion (deterministic)
+        for i in range(remainder):
+            distribution[target_labels[i]] += 1
         
         return distribution
     
@@ -281,17 +276,19 @@ def distribute_generations(
         base_count = num_to_generate // num_labels
         remainder = num_to_generate % num_labels
         distribution = {label: base_count for label in target_labels}
-        for label in random.sample(target_labels, remainder):
-            distribution[label] += 1
+        # Assign remainder in round-robin fashion (deterministic)
+        for i in range(remainder):
+            distribution[target_labels[i]] += 1
         return distribution
     
     else:
-        # Default to balanced
+        # Default to balanced (round-robin)
         base_count = num_to_generate // num_labels
         distribution = {label: base_count for label in target_labels}
         remainder = num_to_generate - (base_count * num_labels)
-        for label in random.sample(target_labels, remainder):
-            distribution[label] += 1
+        # Assign remainder in round-robin fashion (deterministic)
+        for i in range(remainder):
+            distribution[target_labels[i]] += 1
         return distribution
 
 
@@ -304,116 +301,81 @@ def filter_by_quality(
     max_per_example: int
 ) -> Tuple[List[Dict], List[Dict]]:
     """
-    Filter CF candidates by quality scores.
+    Filter CF candidates using paper's Algorithm 1 (two filters: label correctness + semantic similarity).
     
     Args:
         cf_candidates: List of candidate dicts with 'cf', 'original_example', etc.
         labeled_examples: Newly labeled examples
-        labeled_pool: Current labeled pool
+        labeled_pool: Current labeled pool (not used in paper's approach)
         classifier: Trained classifier
         quality_scorer: Quality scorer instance
-        max_per_example: Max CFs to keep per original example
+        max_per_example: Max CFs to keep per original example (not used - we filter all)
     
     Returns:
         Tuple of (filtered_cfs, filtering_details)
     """
-    # Group candidates by original example
-    candidates_by_example = {}
-    for item in cf_candidates:
-        orig_id = item['original_example']['id']
-        if orig_id not in candidates_by_example:
-            candidates_by_example[orig_id] = []
-        candidates_by_example[orig_id].append(item)
-    
-    # Extract labeled pool texts for diversity calculation
-    labeled_pool_texts = [ex['text'] for ex in labeled_pool]
-    
-    # Score and filter candidates for each example
     all_filtered_cfs = []
     filtering_details = []
     
-    for orig_id, candidates in candidates_by_example.items():
-        original_example = candidates[0]['original_example']
-        
-        # Score each candidate
-        scored_candidates = []
-        for item in candidates:
-            cf = item['cf']
-            
-            try:
-                combined_score, score_dict, passes_filters = quality_scorer.compute_combined_score(
-                    cf['text'],
-                    original_example['text'],
-                    cf['label'],
-                    labeled_pool_texts,
-                    classifier
-                )
-                
-                if passes_filters:
-                    # Convert NumPy types to Python native types for JSON serialization
-                    combined_score_float = float(combined_score)
-                    diversity_float = float(score_dict['diversity'])
-                    confidence_float = float(score_dict['confidence'])
-                    validity_float = float(score_dict['validity'])
-                    
-                    scored_candidates.append({
-                        'cf': cf,
-                        'combined_score': combined_score_float,
-                        'score_details': score_dict
-                    })
-                    
-                    filtering_details.append({
-                        'cf_id': cf['id'],
-                        'original_id': orig_id,
-                        'target_label': cf['label'],
-                        'combined_score': combined_score_float,
-                        'diversity': diversity_float,
-                        'confidence': confidence_float,
-                        'validity': validity_float,
-                        'passed_filters': True,
-                        'kept': False  # Will update later
-                    })
-                else:
-                    filtering_details.append({
-                        'cf_id': cf['id'],
-                        'original_id': orig_id,
-                        'target_label': cf['label'],
-                        'passed_filters': False,
-                        'kept': False
-                    })
-            
-            except Exception as e:
-                print(f"      Warning: Error scoring CF {cf['id']}: {e}")
-                continue
-        
-        # Sort by quality and keep top max_per_example
-        scored_candidates.sort(key=lambda x: x['combined_score'], reverse=True)
-        kept_candidates = scored_candidates[:max_per_example]
-        
-        # Mark as kept in details
-        kept_ids = {item['cf']['id'] for item in kept_candidates}
-        for detail in filtering_details:
-            if detail['cf_id'] in kept_ids:
-                detail['kept'] = True
-        
-        # Add to final list
-        all_filtered_cfs.extend([item['cf'] for item in kept_candidates])
+    total_generated = len(cf_candidates)
+    label_correctness_rejected = 0
+    semantic_similarity_rejected = 0
+    total_accepted = 0
     
-    # Sort final list by quality (for budget constraint application)
-    # Recompute ordering based on all kept CFs
-    all_filtered_cfs_scored = []
-    for cf in all_filtered_cfs:
-        # Find its score in filtering_details
-        for detail in filtering_details:
-            if detail.get('cf_id') == cf['id'] and detail.get('kept'):
-                all_filtered_cfs_scored.append({
-                    'cf': cf,
-                    'score': detail.get('combined_score', 0.5)
-                })
-                break
+    for item in cf_candidates:
+        cf = item['cf']
+        original_example = item['original_example']
+        
+        try:
+            # Apply paper's two filters
+            passes_both, filter_details = quality_scorer.filter_counterfactual(
+                cf_text=cf['text'],
+                original_text=original_example['text'],
+                target_label=cf['label'],
+                original_label=original_example['label'],
+                classifier=classifier
+            )
+            
+            if passes_both:
+                all_filtered_cfs.append(cf)
+                total_accepted += 1
+            else:
+                # Track rejection reason
+                rejection_stage = filter_details.get('rejection_stage', 'unknown')
+                if rejection_stage == 'label_correctness':
+                    label_correctness_rejected += 1
+                elif rejection_stage == 'semantic_similarity':
+                    semantic_similarity_rejected += 1
+            
+            # Record filtering details
+            filtering_details.append({
+                'cf_id': cf['id'],
+                'original_id': original_example['id'],
+                'target_label': cf['label'],
+                'passed': passes_both,
+                'rejection_stage': filter_details.get('rejection_stage', 'none') if not passes_both else 'none',
+                'label_correctness': filter_details.get('label_correctness', {}),
+                'semantic_similarity': filter_details.get('semantic_similarity', {})
+            })
+            
+        except Exception as e:
+            print(f"      Warning: Error filtering CF {cf['id']}: {e}")
+            filtering_details.append({
+                'cf_id': cf['id'],
+                'original_id': original_example['id'],
+                'target_label': cf['label'],
+                'passed': False,
+                'error': str(e)
+            })
+            continue
     
-    all_filtered_cfs_scored.sort(key=lambda x: x['score'], reverse=True)
-    all_filtered_cfs = [item['cf'] for item in all_filtered_cfs_scored]
+    # Print summary statistics
+    print(f"  Filtering Summary:")
+    print(f"    Total generated: {total_generated}")
+    print(f"    Rejected by label correctness: {label_correctness_rejected}")
+    print(f"    Rejected by semantic similarity: {semantic_similarity_rejected}")
+    print(f"    Total accepted: {total_accepted}")
+    print(f"    Acceptance rate: {100 * total_accepted / total_generated if total_generated > 0 else 0:.1f}%")
     
     return all_filtered_cfs, filtering_details
 

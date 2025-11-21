@@ -1,14 +1,15 @@
 """
 Counterfactual Quality Scoring Module
 
-Provides quality metrics for filtering counterfactual examples:
-- Diversity: How different is the CF from existing examples?
-- Confidence: How confident is the classifier about the CF's label?
-- Validity: Is the CF a reasonable transformation of the original?
+Provides quality metrics for filtering counterfactual examples (Algorithm 1):
+- Label Correctness: Does the CF flip the model's prediction?
+- Semantic Similarity: Does the CF preserve the original context?
+
+Following Algorithm 1, line 14 from the paper.
 """
 
 import numpy as np
-from typing import List, Dict, Tuple
+from typing import List, Dict, Tuple, Optional
 from sentence_transformers import SentenceTransformer
 import os
 
@@ -17,7 +18,7 @@ os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 
 class CFQualityScorer:
-    """Quality scorer for counterfactual examples"""
+    """Quality scorer for counterfactual examples (paper's filters only)"""
     
     def __init__(self, config: dict):
         """
@@ -29,243 +30,182 @@ class CFQualityScorer:
         self.config = config
         self.cf_config = config['active_learning']['counterfactuals']
         self.quality_config = self.cf_config['quality_filtering']
-        
-        # Initialize embedding model for diversity calculation
         self.embedding_model = None
-        if self.quality_config.get('enabled', False):
-            self._init_embedding_model()
         
-        # Cache for labeled pool embeddings
-        self.pool_embeddings_cache = None
-        self.pool_texts_cache = None
+        print(f"  Initialized CF Quality Scorer (Paper's Algorithm 1):")
+        print(f"    - Label correctness: min_margin={self.quality_config.get('min_margin', 0.1)}")
+        print(f"    - Semantic similarity: min_similarity={self.quality_config.get('min_semantic_similarity', 0.6)}")
     
     def _init_embedding_model(self):
-        """Initialize the embedding model for diversity scoring"""
-        try:
-            # Use same model as retrieval if using sentence_transformers
-            eval_config = self.config.get('evaluation', {})
-            if eval_config.get('classifier_type') == 'retrieval':
-                retrieval_config = eval_config.get('retrieval', {})
-                if retrieval_config.get('embedding_backend') == 'sentence_transformers':
-                    model_name = retrieval_config['sentence_transformers']['model']
-                else:
-                    model_name = 'all-MiniLM-L6-v2'  # Default
-            else:
-                model_name = 'all-MiniLM-L6-v2'  # Default
-            
+        """Lazy initialization of embedding model"""
+        if self.embedding_model is None:
+            model_name = self.quality_config.get('embedding_model', 'all-MiniLM-L6-v2')
+            print(f"  Loading embedding model: {model_name}")
             self.embedding_model = SentenceTransformer(model_name)
-            print(f"  Initialized embedding model for CF quality scoring: {model_name}")
-        except Exception as e:
-            print(f"  Warning: Could not initialize embedding model: {e}")
-            self.embedding_model = None
     
-    def compute_diversity_score(self, cf_text: str, labeled_pool_texts: List[str]) -> float:
+    def compute_label_correctness(
+        self, 
+        cf_text: str, 
+        target_label: str, 
+        original_label: str, 
+        classifier
+    ) -> Tuple[float, Dict, bool]:
         """
-        Compute diversity score: how different is CF from existing examples?
+        FILTER 1: Check if CF successfully flips the label (Paper's criterion).
         
-        Higher score = more diverse (more different from existing examples)
+        Criterion: p(y_target | CF) > p(y_orig | CF) + delta
         
         Args:
             cf_text: Counterfactual text
-            labeled_pool_texts: List of texts in labeled pool
-        
+            target_label: Intended label for CF
+            original_label: Original label before CF
+            classifier: Trained classifier
+            
         Returns:
-            Diversity score (0.0-1.0)
+            Tuple of (confidence_score, details_dict, passes_filter)
         """
-        if not self.embedding_model or len(labeled_pool_texts) == 0:
-            return 0.5  # Neutral score if no embedding model or empty pool
+        if not classifier:
+            return 0.0, {'error': 'No classifier provided'}, False
         
         try:
-            # Embed the CF
-            cf_embedding = self.embedding_model.encode([cf_text], show_progress_bar=False)[0]
-            
-            # Use cached embeddings if available
-            if (self.pool_texts_cache is not None and 
-                len(self.pool_texts_cache) == len(labeled_pool_texts) and
-                all(a == b for a, b in zip(self.pool_texts_cache[:10], labeled_pool_texts[:10]))):
-                # Cache is valid
-                pool_embeddings = self.pool_embeddings_cache
-            else:
-                # Recompute embeddings
-                pool_embeddings = self.embedding_model.encode(labeled_pool_texts, show_progress_bar=False)
-                self.pool_embeddings_cache = pool_embeddings
-                self.pool_texts_cache = labeled_pool_texts.copy()
-            
-            # Compute cosine similarities
-            similarities = []
-            cf_norm = np.linalg.norm(cf_embedding)
-            for pool_emb in pool_embeddings:
-                pool_norm = np.linalg.norm(pool_emb)
-                if cf_norm > 0 and pool_norm > 0:
-                    sim = np.dot(cf_embedding, pool_emb) / (cf_norm * pool_norm)
-                    similarities.append(sim)
-            
-            if not similarities:
-                return 0.5
-            
-            # Diversity = 1 - max_similarity (most conservative)
-            max_similarity = max(similarities)
-            diversity_score = 1.0 - max_similarity
-            
-            return max(0.0, min(1.0, diversity_score))  # Clamp to [0, 1]
-            
-        except Exception as e:
-            print(f"    Warning: Error computing diversity score: {e}")
-            return 0.5
-    
-    def compute_confidence_score(self, cf_text: str, target_label: str, classifier) -> Tuple[float, bool]:
-        """
-        Compute confidence score: how confident is classifier about CF's label?
-        
-        Higher score = classifier more confident
-        
-        Args:
-            cf_text: Counterfactual text
-            target_label: Intended label for the CF
-            classifier: Trained classifier with predict_proba method
-        
-        Returns:
-            Tuple of (confidence_score, passes_min_threshold)
-        """
-        try:
-            # Get prediction probabilities
+            # Get probability distribution
             probs = classifier.predict_proba([cf_text])[0]
+            labels = classifier.get_labels()
+            label_to_idx = {label: idx for idx, label in enumerate(labels)}
             
-            # Get classifier's label ordering (same as predict_proba does)
-            if hasattr(classifier, 'labels'):
-                # classifier.labels is a set, convert to sorted list
-                label_list = sorted(list(classifier.labels))
-                label_to_idx = {label: i for i, label in enumerate(label_list)}
-            else:
-                # Fallback: try to infer from predict
-                pred = classifier.predict(cf_text)
-                label_list = [pred]
-                label_to_idx = {pred: 0}
+            # Get probabilities for target and original labels
+            target_idx = label_to_idx.get(target_label, -1)
+            orig_idx = label_to_idx.get(original_label, -1)
             
-            # Find probability for target label using label_to_idx mapping
-            if target_label in label_to_idx:
-                label_idx = label_to_idx[target_label]
-                confidence = probs[label_idx]
-            else:
-                # Target label not in classifier's vocabulary
-                confidence = 0.0
+            if target_idx == -1 or orig_idx == -1:
+                return 0.0, {'error': 'Invalid labels'}, False
             
-            # Check minimum threshold
-            min_conf = self.quality_config['confidence'].get('min_confidence', 0.5)
-            passes_threshold = confidence >= min_conf
+            p_target = probs[target_idx]
+            p_orig = probs[orig_idx]
             
-            return confidence, passes_threshold
+            # Calculate margin
+            margin = p_target - p_orig
+            
+            # Get thresholds from config
+            min_margin = self.quality_config.get('min_margin', 0.1)
+            min_target_confidence = self.quality_config.get('min_target_confidence', 0.3)
+            
+            # Check both criteria
+            margin_passes = margin > min_margin
+            confidence_passes = p_target >= min_target_confidence
+            passes_filter = margin_passes and confidence_passes
+            
+            details = {
+                'p_target': float(p_target),
+                'p_orig': float(p_orig),
+                'margin': float(margin),
+                'min_margin': min_margin,
+                'margin_passes': bool(margin_passes),
+                'confidence_passes': bool(confidence_passes),
+                'passes': bool(passes_filter)
+            }
+            
+            return float(p_target), details, bool(passes_filter)
             
         except Exception as e:
-            print(f"    Warning: Error computing confidence score: {e}")
-            return 0.5, True  # Neutral score, pass by default
+            return 0.0, {'error': str(e)}, False
     
-    def compute_validity_score(self, original_text: str, cf_text: str) -> float:
+    def compute_semantic_similarity(
+        self, 
+        original_text: str, 
+        cf_text: str
+    ) -> Tuple[float, Dict, bool]:
         """
-        Compute validity score: is CF a reasonable transformation?
-        
-        Target: moderate similarity (not too similar, not too different)
-        Sweet spot around 0.4-0.6 similarity
+        FILTER 2: Check if CF preserves semantic context of original.
         
         Args:
             original_text: Original text
             cf_text: Counterfactual text
-        
+            
         Returns:
-            Validity score (0.0-1.0)
+            Tuple of (similarity_score, details_dict, passes_filter)
         """
-        if not self.embedding_model:
-            return 0.5  # Neutral score if no embedding model
+        if self.embedding_model is None:
+            self._init_embedding_model()
         
         try:
-            # Embed both texts
-            embeddings = self.embedding_model.encode([original_text, cf_text], show_progress_bar=False)
-            orig_emb, cf_emb = embeddings[0], embeddings[1]
+            # Compute embeddings
+            orig_emb = self.embedding_model.encode([original_text])[0]
+            cf_emb = self.embedding_model.encode([cf_text])[0]
             
-            # Compute cosine similarity
-            orig_norm = np.linalg.norm(orig_emb)
-            cf_norm = np.linalg.norm(cf_emb)
+            # Cosine similarity
+            similarity = np.dot(orig_emb, cf_emb) / (
+                np.linalg.norm(orig_emb) * np.linalg.norm(cf_emb)
+            )
             
-            if orig_norm > 0 and cf_norm > 0:
-                similarity = np.dot(orig_emb, cf_emb) / (orig_norm * cf_norm)
-            else:
-                similarity = 0.0
+            # Require HIGH similarity to preserve semantics
+            min_similarity = self.quality_config.get('min_semantic_similarity', 0.6)
+            passes = similarity >= min_similarity
             
-            # Validity: penalize being too similar or too different
-            # Target similarity: 0.5 (50% similar, 50% different)
-            target_sim = 0.5
-            deviation = abs(similarity - target_sim)
-            validity_score = 1.0 - (deviation * 2.0)  # Scale to [0, 1]
+            details = {
+                'similarity': float(similarity),
+                'min_similarity': min_similarity,
+                'passes': bool(passes)
+            }
             
-            return max(0.0, min(1.0, validity_score))  # Clamp to [0, 1]
+            return float(similarity), details, bool(passes)
             
         except Exception as e:
-            print(f"    Warning: Error computing validity score: {e}")
-            return 0.5
+            return 0.0, {'error': str(e)}, False
     
-    def compute_combined_score(
-        self, 
+    def filter_counterfactual(
+        self,
         cf_text: str,
-        original_text: str, 
+        original_text: str,
         target_label: str,
-        labeled_pool_texts: List[str],
+        original_label: str,
         classifier
-    ) -> Tuple[float, Dict, bool]:
+    ) -> Tuple[bool, Dict]:
         """
-        Compute combined quality score using weighted metrics.
+        Apply both filters from Algorithm 1, line 14.
+        
+        CF must pass BOTH filters to be accepted.
         
         Args:
             cf_text: Counterfactual text
             original_text: Original text
             target_label: Intended label
-            labeled_pool_texts: List of texts in labeled pool
+            original_label: Original label
             classifier: Trained classifier
-        
+            
         Returns:
-            Tuple of (combined_score, score_dict, passes_filters)
+            Tuple of (passes_all_filters, details_dict)
         """
-        metric = self.quality_config.get('metric', 'combined')
+        all_details = {}
         
-        # Compute individual scores
-        diversity = self.compute_diversity_score(cf_text, labeled_pool_texts)
-        confidence, passes_conf = self.compute_confidence_score(cf_text, target_label, classifier)
-        validity = self.compute_validity_score(original_text, cf_text)
+        # FILTER 1: Label Correctness
+        _, label_details, passes_label = self.compute_label_correctness(
+            cf_text, target_label, original_label, classifier
+        )
+        all_details['label_correctness'] = label_details
         
-        score_dict = {
-            'diversity': diversity,
-            'confidence': confidence,
-            'validity': validity
-        }
+        if not passes_label:
+            all_details['rejection_stage'] = 'label_correctness'
+            all_details['passed'] = False
+            return False, all_details
         
-        # Check if passes minimum thresholds
-        passes_filters = passes_conf
+        # FILTER 2: Semantic Similarity
+        _, semantic_details, passes_semantic = self.compute_semantic_similarity(
+            original_text, cf_text
+        )
+        all_details['semantic_similarity'] = semantic_details
         
-        # Compute combined score based on metric
-        if metric == 'diversity':
-            combined = diversity
-        elif metric == 'confidence':
-            combined = confidence
-        elif metric == 'validity':
-            combined = validity
-        elif metric == 'combined':
-            # Weighted combination
-            w_div = self.quality_config.get('diversity_weight', 0.5)
-            w_conf = self.quality_config.get('confidence_weight', 0.3)
-            w_val = self.quality_config.get('validity_weight', 0.2)
-            combined = w_div * diversity + w_conf * confidence + w_val * validity
-        else:
-            # Default to combined
-            combined = 0.5 * diversity + 0.3 * confidence + 0.2 * validity
+        if not passes_semantic:
+            all_details['rejection_stage'] = 'semantic_similarity'
+            all_details['passed'] = False
+            return False, all_details
         
-        # Convert all scores to Python native floats for JSON serialization
-        return float(combined), {
-            'diversity': float(diversity),
-            'confidence': float(confidence),
-            'validity': float(validity)
-        }, passes_filters
+        # Passed both filters!
+        all_details['passed'] = True
+        return True, all_details
     
     def clear_cache(self):
-        """Clear the embeddings cache"""
-        self.pool_embeddings_cache = None
-        self.pool_texts_cache = None
-
+        """Clear embedding model cache to free memory"""
+        if self.embedding_model is not None:
+            del self.embedding_model
+            self.embedding_model = None
