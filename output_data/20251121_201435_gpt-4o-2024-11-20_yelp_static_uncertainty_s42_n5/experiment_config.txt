@@ -1,0 +1,58 @@
+================================================================================
+EXPERIMENT CONFIGURATION
+================================================================================
+
+Run Timestamp: 20251121_201435
+Run Directory: output_data/20251121_201435_gpt-4o-2024-11-20_yelp_static_uncertainty_s42_n5
+
+--------------------------------------------------------------------------------
+LLM CONFIGURATION
+--------------------------------------------------------------------------------
+Provider: openai
+Model: gpt-4o-2024-11-20
+API Keys/Endpoints: ***REDACTED FOR SECURITY***
+
+--------------------------------------------------------------------------------
+DATASET CONFIGURATION
+--------------------------------------------------------------------------------
+Train File: yelp_train.csv
+Test File: yelp_test.csv
+Text Column: example
+Label Column: Label
+Exclude Labels: ['none', 'None', None, '']
+
+--------------------------------------------------------------------------------
+ACTIVE LEARNING CONFIGURATION
+--------------------------------------------------------------------------------
+Query Strategy: uncertainty
+Uncertainty Method: entropy
+Total Budget: 100
+Batch Size: 10
+Initial Labeled per Class: 5
+Random Seed: 42
+Max Iterations: 50
+Early Stopping Patience: 5
+Min Improvement: 0.01
+
+--------------------------------------------------------------------------------
+COUNTERFACTUAL CONFIGURATION
+--------------------------------------------------------------------------------
+Enabled: True
+Temperature: 0.0
+Max Tokens: 256
+
+--------------------------------------------------------------------------------
+EVALUATION CONFIGURATION
+--------------------------------------------------------------------------------
+Classifier Type: static
+Max ICL Examples: 800
+Eval Every N Iterations: 1
+
+--------------------------------------------------------------------------------
+LOGGING CONFIGURATION
+--------------------------------------------------------------------------------
+Checkpoint Every: 5 iterations
+
+================================================================================
+END OF CONFIGURATION
+================================================================================

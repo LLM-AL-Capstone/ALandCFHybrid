@@ -1,0 +1,76 @@
+# Full-ICL Oracle Baseline Configuration
+# This baseline uses 100% supervision (all labels available) as upper bound
+
+# ============================================
+# LLM CONFIGURATION
+# ============================================
+llm:
+  provider: openai
+  
+  openai: 
+    api_key: a6705b22532443ee8c0cfda232e57e06
+    azure_endpoint: https://vietgpt.openai.azure.com/
+    model: gpt-4o-2024-11-20
+
+# ============================================
+# DATASET CONFIGURATION
+# ============================================
+dataset:
+  # Training dataset (full supervision)
+  train_file: yelp_train.csv
+  
+  # Test dataset
+  test_file: yelp_test.csv
+  
+  # Column names in CSV
+  columns:
+    id: id
+    text: example
+    label: Label
+  
+  # Labels to exclude
+  exclude_labels:
+    - none
+    - None
+    - null
+    - ""
+
+# ============================================
+# PROCESSING SETTINGS
+# ============================================
+processing:
+  seed: 42
+
+# ============================================
+# DIRECTORY CONFIGURATION
+# ============================================
+directories:
+  input_data: ../../input_data  # Relative to baseline folder
+  output_data: ./output          # Save outputs in baseline folder
+
+# ============================================
+# EVALUATION CONFIGURATION (for classifier)
+# ============================================
+evaluation:
+  max_icl_examples: 800
+
+# ============================================
+# BASELINE EVALUATION CONFIGURATION
+# ============================================
+baseline:
+  # ICL budget sizes (number of few-shot examples in prompt)
+  # These are retrieved from the FULL training dataset via cosine similarity
+  icl_budgets: [10, 20, 30, 40, 50, 100]
+  
+  # Retrieval methods to compare
+  retrieval_methods:
+    - sentence_transformers  # Semantic similarity (embeddings + cosine)
+    # - bm25                   # Keyword-based (lexical matching)
+
+# ============================================
+# LOGGING CONFIGURATION
+# ============================================
+logging:
+  save_predictions: true
+  save_detailed_reports: true
+  save_per_budget_reports: true
