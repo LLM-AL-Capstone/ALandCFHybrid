@@ -1,0 +1,834 @@
+{
+  "iteration": 3,
+  "timestamp": "20251121_193346",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 82,
+      "text": "Premise: A motocross rider does a trick on a black and yellow striped ramp.\nHypothesis: A MOTOCROSS RIDER IS JUMPING FROM A RAMP.",
+      "label": "neutral"
+    },
+    {
+      "id": 296,
+      "text": "Premise: A young dark-haired woman crouches on the banks of a river while washing dishes.\nHypothesis: A woman washes clothes in the river.",
+      "label": "contradiction"
+    },
+    {
+      "id": 383,
+      "text": "Premise: A big girl is playing outside in the cold on ice.\nHypothesis: A small girl is playing hockey outside.",
+      "label": "contradiction"
+    },
+    {
+      "id": 11,
+      "text": "Premise: A woman using a whisk to blend the liquid contents in a measuring cup.\nHypothesis: A young woman is blending liquid.",
+      "label": "neutral"
+    },
+    {
+      "id": 244,
+      "text": "Premise: Two people are walking down the street holding hands in the fall looking for a car.\nHypothesis: A couple is looking for a house.",
+      "label": "contradiction"
+    },
+    {
+      "id": 198,
+      "text": "Premise: A man in a safety vest and black hat wearing rubber gloves is crouched down on a corner of an intersection, doing something with a stick.\nHypothesis: A man is dressed in a way to be as safe as possible.",
+      "label": "entailment"
+    },
+    {
+      "id": 87,
+      "text": "Premise: A photographer peeks out between rocky hills to take a picture.\nHypothesis: Paparazzi wait in hills to photograph Madonna.",
+      "label": "neutral"
+    },
+    {
+      "id": 279,
+      "text": "Premise: A blue delivery truck is parked in front of a white building on a street corner.\nHypothesis: The truck is parked by it.",
+      "label": "neutral"
+    },
+    {
+      "id": 109,
+      "text": "Premise: A barefooted woman in a white tank and blue shorts wets her feet.\nHypothesis: A women puts her feet in the water.",
+      "label": "neutral"
+    },
+    {
+      "id": 266,
+      "text": "Premise: A blond street worker wearing a white hard hat, orange shirt, jeans and a reflective jacket is relaxing in front of a white truck and orange pylons.\nHypothesis: A street working is working on a building.",
+      "label": "contradiction"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "82_cf_contradiction_0",
+      "text": "Premise: A motocross rider does a trick on a black and yellow striped ramp.  \nHypothesis: A motocross rider is not jumping from a ramp.",
+      "label": "contradiction",
+      "original_id": 82,
+      "original_label": "neutral"
+    },
+    {
+      "id": "82_cf_entailment_0",
+      "text": "Premise: A motocross rider jumps off a black and yellow striped ramp.  \nHypothesis: A MOTOCROSS RIDER IS JUMPING FROM A RAMP.",
+      "label": "entailment",
+      "original_id": 82,
+      "original_label": "neutral"
+    },
+    {
+      "id": "296_cf_neutral_0",
+      "text": "Premise: A young dark-haired woman crouches on the banks of a river while washing dishes.  \nHypothesis: A woman is near the river and could be washing clothes.",
+      "label": "neutral",
+      "original_id": 296,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "296_cf_entailment_0",
+      "text": "Premise: A young dark-haired woman crouches on the banks of a river while washing clothes.  \nHypothesis: A woman washes clothes in the river.",
+      "label": "entailment",
+      "original_id": 296,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "383_cf_neutral_0",
+      "text": "Premise: A big girl is playing outside in the cold on ice.  \nHypothesis: A girl is playing hockey outside.",
+      "label": "neutral",
+      "original_id": 383,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "11_cf_contradiction_0",
+      "text": "Premise: A woman using a whisk to blend the liquid contents in a measuring cup.  \nHypothesis: A young woman is not blending liquid.",
+      "label": "contradiction",
+      "original_id": 11,
+      "original_label": "neutral"
+    },
+    {
+      "id": "11_cf_entailment_0",
+      "text": "Premise: A woman using a whisk to blend the liquid contents in a measuring cup.  \nHypothesis: A woman is blending liquid.",
+      "label": "entailment",
+      "original_id": 11,
+      "original_label": "neutral"
+    },
+    {
+      "id": "244_cf_neutral_0",
+      "text": "Premise: Two people are walking down the street holding hands in the fall looking for a car.  \nHypothesis: A couple might be looking for a house.",
+      "label": "neutral",
+      "original_id": 244,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "244_cf_entailment_0",
+      "text": "Premise: Two people are walking down the street holding hands in the fall looking for a house.  \nHypothesis: A couple is looking for a house.",
+      "label": "entailment",
+      "original_id": 244,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "198_cf_contradiction_0",
+      "text": "Premise: A man in a safety vest and black hat wearing rubber gloves is crouched down on a corner of an intersection, doing something with a stick.  \nHypothesis: A man is dressed in a way that is unsafe.",
+      "label": "contradiction",
+      "original_id": 198,
+      "original_label": "entailment"
+    },
+    {
+      "id": "279_cf_contradiction_0",
+      "text": "Premise: A blue delivery truck is parked in front of a white building on a street corner.  \nHypothesis: The truck is not parked by it.",
+      "label": "contradiction",
+      "original_id": 279,
+      "original_label": "neutral"
+    },
+    {
+      "id": "279_cf_entailment_0",
+      "text": "Premise: A blue delivery truck is parked in front of a white building on a street corner.  \nHypothesis: The truck is parked in front of the building.",
+      "label": "entailment",
+      "original_id": 279,
+      "original_label": "neutral"
+    },
+    {
+      "id": "109_cf_contradiction_0",
+      "text": "Premise: A barefooted woman in a white tank and blue shorts wets her feet.  \nHypothesis: A woman does not put her feet in the water.",
+      "label": "contradiction",
+      "original_id": 109,
+      "original_label": "neutral"
+    },
+    {
+      "id": "109_cf_entailment_0",
+      "text": "Premise: A barefooted woman in a white tank and blue shorts wets her feet.  \nHypothesis: A woman is putting her feet in the water.",
+      "label": "entailment",
+      "original_id": 109,
+      "original_label": "neutral"
+    },
+    {
+      "id": "266_cf_neutral_0",
+      "text": "Premise: A blond street worker wearing a white hard hat, orange shirt, jeans and a reflective jacket is relaxing in front of a white truck and orange pylons.  \nHypothesis: A street worker might be working on a building.",
+      "label": "neutral",
+      "original_id": 266,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "266_cf_entailment_0",
+      "text": "Premise: A blond street worker wearing a white hard hat, orange shirt, jeans and a reflective jacket is working on a building in front of a white truck and orange pylons.  \nHypothesis: A street worker is working on a building.",
+      "label": "entailment",
+      "original_id": 266,
+      "original_label": "contradiction"
+    }
+  ],
+  "selected_cf_ids": [
+    "82_cf_contradiction_0",
+    "82_cf_entailment_0",
+    "296_cf_neutral_0",
+    "296_cf_entailment_0",
+    "383_cf_neutral_0",
+    "11_cf_contradiction_0",
+    "11_cf_entailment_0",
+    "244_cf_neutral_0",
+    "244_cf_entailment_0",
+    "198_cf_contradiction_0",
+    "279_cf_contradiction_0",
+    "279_cf_entailment_0",
+    "109_cf_contradiction_0",
+    "109_cf_entailment_0",
+    "266_cf_neutral_0",
+    "266_cf_entailment_0"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 20,
+    "num_filtered": 16,
+    "num_added": 16,
+    "budget_remaining_before": 174,
+    "budget_remaining_after": 158,
+    "generation_details": [
+      {
+        "original_text": "Premise: A motocross rider does a trick on a black and yellow striped ramp.\nHypothesis: A MOTOCROSS RIDER IS JUMPING FROM A RAMP.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: A motocross rider does a trick on a black and yellow striped ramp.  \nHypothesis: A motocross rider is not jumping from a ramp.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5991721153259277,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A motocross rider does a trick on a black and yellow striped ramp.\nHypothesis: A MOTOCROSS RIDER IS JUMPING FROM A RAMP.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: A motocross rider jumps off a black and yellow striped ramp.  \nHypothesis: A MOTOCROSS RIDER IS JUMPING FROM A RAMP.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5816960334777832,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A young dark-haired woman crouches on the banks of a river while washing dishes.\nHypothesis: A woman washes clothes in the river.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: A young dark-haired woman crouches on the banks of a river while washing dishes.  \nHypothesis: A woman is near the river and could be washing clothes.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6178202629089355,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A young dark-haired woman crouches on the banks of a river while washing dishes.\nHypothesis: A woman washes clothes in the river.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: A young dark-haired woman crouches on the banks of a river while washing clothes.  \nHypothesis: A woman washes clothes in the river.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.642441987991333,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A big girl is playing outside in the cold on ice.\nHypothesis: A small girl is playing hockey outside.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: A big girl is playing outside in the cold on ice.  \nHypothesis: A girl is playing hockey outside.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6957788467407227,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A big girl is playing outside in the cold on ice.\nHypothesis: A small girl is playing hockey outside.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: A big girl is playing outside in the cold on ice.  \nHypothesis: A girl is playing hockey outside.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.4885740280151367,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A woman using a whisk to blend the liquid contents in a measuring cup.\nHypothesis: A young woman is blending liquid.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: A woman using a whisk to blend the liquid contents in a measuring cup.  \nHypothesis: A young woman is not blending liquid.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5581371784210205,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A woman using a whisk to blend the liquid contents in a measuring cup.\nHypothesis: A young woman is blending liquid.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: A woman using a whisk to blend the liquid contents in a measuring cup.  \nHypothesis: A woman is blending liquid.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5975382328033447,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Two people are walking down the street holding hands in the fall looking for a car.\nHypothesis: A couple is looking for a house.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Two people are walking down the street holding hands in the fall looking for a car.  \nHypothesis: A couple might be looking for a house.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.528580904006958,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Two people are walking down the street holding hands in the fall looking for a car.\nHypothesis: A couple is looking for a house.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Two people are walking down the street holding hands in the fall looking for a house.  \nHypothesis: A couple is looking for a house.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.590939998626709,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A man in a safety vest and black hat wearing rubber gloves is crouched down on a corner of an intersection, doing something with a stick.\nHypothesis: A man is dressed in a way to be as safe as possible.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: A man in a safety vest and black hat wearing rubber gloves is crouched down on a corner of an intersection, doing something with a stick.  \nHypothesis: A man is dressed in a way that might suggest safety.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5809609889984131,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A man in a safety vest and black hat wearing rubber gloves is crouched down on a corner of an intersection, doing something with a stick.\nHypothesis: A man is dressed in a way to be as safe as possible.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: A man in a safety vest and black hat wearing rubber gloves is crouched down on a corner of an intersection, doing something with a stick.  \nHypothesis: A man is dressed in a way that is unsafe.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.582953929901123,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A photographer peeks out between rocky hills to take a picture.\nHypothesis: Paparazzi wait in hills to photograph Madonna.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: A photographer peeks out between rocky hills to take a picture.  \nHypothesis: Paparazzi do not wait in hills to photograph Madonna.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.58868408203125,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A photographer peeks out between rocky hills to take a picture.\nHypothesis: Paparazzi wait in hills to photograph Madonna.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: A photographer peeks out between rocky hills to take a picture.  \nHypothesis: A photographer waits in hills to photograph Madonna.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6310939788818359,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A blue delivery truck is parked in front of a white building on a street corner.\nHypothesis: The truck is parked by it.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: A blue delivery truck is parked in front of a white building on a street corner.  \nHypothesis: The truck is not parked by it.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7233297824859619,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A blue delivery truck is parked in front of a white building on a street corner.\nHypothesis: The truck is parked by it.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: A blue delivery truck is parked in front of a white building on a street corner.  \nHypothesis: The truck is parked in front of the building.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6160187721252441,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A barefooted woman in a white tank and blue shorts wets her feet.\nHypothesis: A women puts her feet in the water.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: A barefooted woman in a white tank and blue shorts wets her feet.  \nHypothesis: A woman does not put her feet in the water.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6159219741821289,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A barefooted woman in a white tank and blue shorts wets her feet.\nHypothesis: A women puts her feet in the water.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: A barefooted woman in a white tank and blue shorts wets her feet.  \nHypothesis: A woman is putting her feet in the water.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8213520050048828,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A blond street worker wearing a white hard hat, orange shirt, jeans and a reflective jacket is relaxing in front of a white truck and orange pylons.\nHypothesis: A street working is working on a building.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: A blond street worker wearing a white hard hat, orange shirt, jeans and a reflective jacket is relaxing in front of a white truck and orange pylons.  \nHypothesis: A street worker might be working on a building.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6864910125732422,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A blond street worker wearing a white hard hat, orange shirt, jeans and a reflective jacket is relaxing in front of a white truck and orange pylons.\nHypothesis: A street working is working on a building.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: A blond street worker wearing a white hard hat, orange shirt, jeans and a reflective jacket is working on a building in front of a white truck and orange pylons.  \nHypothesis: A street worker is working on a building.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7526969909667969,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "82_cf_contradiction_0",
+        "original_id": 82,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999748739761,
+          "p_orig": 2.511028650857907e-08,
+          "margin": 0.9999999497636896,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.96282559633255,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "82_cf_entailment_0",
+        "original_id": 82,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.999999651544775,
+          "p_orig": 3.4663623855640133e-07,
+          "margin": 0.9999993049085364,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.975760817527771,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "296_cf_neutral_0",
+        "original_id": 296,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999927828787,
+          "p_orig": 2.289772564241924e-11,
+          "margin": 0.999999992759981,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9896830320358276,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "296_cf_entailment_0",
+        "original_id": 296,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9997388065887087,
+          "p_orig": 1.604830877716241e-09,
+          "margin": 0.9997388049838779,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9691749811172485,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "383_cf_neutral_0",
+        "original_id": 383,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999973531668,
+          "p_orig": 2.646608791580324e-09,
+          "margin": 0.999999994706558,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9913421869277954,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "383_cf_entailment_0",
+        "original_id": 383,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 4.1938760441603655e-13,
+          "p_orig": 2.999000404834167e-09,
+          "margin": -2.998581017229751e-09,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "11_cf_contradiction_0",
+        "original_id": 11,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999998283943,
+          "p_orig": 1.691923528862624e-10,
+          "margin": 0.9999999996592019,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9858725666999817,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "11_cf_entailment_0",
+        "original_id": 11,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999994284941888,
+          "p_orig": 5.715058112367572e-07,
+          "margin": 0.9999988569883775,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9907378554344177,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "244_cf_neutral_0",
+        "original_id": 244,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999970009996,
+          "p_orig": 2.9990004048354247e-09,
+          "margin": 0.9999999940019992,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9972518682479858,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "244_cf_entailment_0",
+        "original_id": 244,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9997388079143151,
+          "p_orig": 2.7887811884059395e-10,
+          "margin": 0.999738807635437,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9356709718704224,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "198_cf_neutral_0",
+        "original_id": 198,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 7.889327405169247e-06,
+          "p_orig": 0.9999921106725947,
+          "margin": -0.9999842213451896,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "198_cf_contradiction_0",
+        "original_id": 198,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.999999931742725,
+          "p_orig": 4.752284362192561e-13,
+          "margin": 0.9999999317422498,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9840983152389526,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "87_cf_contradiction_0",
+        "original_id": 87,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 4.784915322271061e-06,
+          "p_orig": 0.9999498171408091,
+          "margin": -0.9999450322254868,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "87_cf_entailment_0",
+        "original_id": 87,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.0,
+          "p_orig": 0.9706877051239462,
+          "margin": -0.9706877051239462,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "279_cf_contradiction_0",
+        "original_id": 279,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999981775021,
+          "p_orig": 1.8189863079362653e-09,
+          "margin": 0.9999999963585158,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.978293240070343,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "279_cf_entailment_0",
+        "original_id": 279,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999997300016397,
+          "p_orig": 2.699606084260817e-07,
+          "margin": 0.9999994600410312,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.99125075340271,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "109_cf_contradiction_0",
+        "original_id": 109,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999979375268,
+          "p_orig": 2.0611813471856728e-09,
+          "margin": 0.9999999958763455,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.977520763874054,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "109_cf_entailment_0",
+        "original_id": 109,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9046504066061225,
+          "p_orig": 0.09534959211232515,
+          "margin": 0.8093008144937973,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.994669497013092,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "266_cf_neutral_0",
+        "original_id": 266,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999997532882,
+          "p_orig": 2.4617335875412586e-10,
+          "margin": 0.9999999995071149,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9897139072418213,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "266_cf_entailment_0",
+        "original_id": 266,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999898696873644,
+          "p_orig": 2.4617102993064584e-10,
+          "margin": 0.9999898694411933,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9520171880722046,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      }
+    ]
+  },
+  "num_generated": 16,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 20,
+    "num_after_filtering": 16,
+    "num_final_selected": 16,
+    "budget_remaining_before": 174,
+    "budget_remaining_after": 158
+  }
+}

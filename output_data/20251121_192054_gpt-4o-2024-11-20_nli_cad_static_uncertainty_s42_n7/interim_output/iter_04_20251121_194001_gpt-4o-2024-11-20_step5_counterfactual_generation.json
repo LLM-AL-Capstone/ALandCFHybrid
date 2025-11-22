@@ -1,0 +1,822 @@
+{
+  "iteration": 4,
+  "timestamp": "20251121_194001",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 56,
+      "text": "Premise: A group of children are playing on swings.\nHypothesis: Some forms of life.",
+      "label": "neutral"
+    },
+    {
+      "id": 339,
+      "text": "Premise: A blond-haired child squeezes paint onto a spinning wheel.\nHypothesis: A child squeezing",
+      "label": "entailment"
+    },
+    {
+      "id": 61,
+      "text": "Premise: A person on a bmx bike, running a course.\nHypothesis: A person on a bmx bike is on the track.",
+      "label": "neutral"
+    },
+    {
+      "id": 219,
+      "text": "Premise: A man or older boy is standing up in a blue and white speedboat.\nHypothesis: A young man stands in boat, while outside.",
+      "label": "neutral"
+    },
+    {
+      "id": 13,
+      "text": "Premise: A boy in a white shirt walks in the ocean.\nHypothesis: A boy going to get wet in the ocean.",
+      "label": "entailment"
+    },
+    {
+      "id": 295,
+      "text": "Premise: Artist on street corner selling his artwork.\nHypothesis: Someone is selling paintings.",
+      "label": "entailment"
+    },
+    {
+      "id": 41,
+      "text": "Premise: Two people wearing backpacks walking in a line along a mountain trail.\nHypothesis: Four people are walking along a mountain trail trying to get down before the storm.",
+      "label": "contradiction"
+    },
+    {
+      "id": 0,
+      "text": "Premise: Runners in various athletic garb, as well as one individual in a spotted-green dragon costume, run to the right.\nHypothesis: Runners see a dragon costumed animal",
+      "label": "contradiction"
+    },
+    {
+      "id": 184,
+      "text": "Premise: A  man appears to be staring at a device, awed by the technology.\nHypothesis: The man is marveling at the technology.",
+      "label": "entailment"
+    },
+    {
+      "id": 91,
+      "text": "Premise: Man in green shirt and black pants is jumping in the laundry room.\nHypothesis: A man is jumping on a table in the laundry room.",
+      "label": "neutral"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "56_cf_contradiction_0",
+      "text": "Premise: A group of children are playing on swings.  \nHypothesis: No forms of life.",
+      "label": "contradiction",
+      "original_id": 56,
+      "original_label": "neutral"
+    },
+    {
+      "id": "56_cf_entailment_0",
+      "text": "Premise: A group of children are playing on swings.  \nHypothesis: Some children are alive.",
+      "label": "entailment",
+      "original_id": 56,
+      "original_label": "neutral"
+    },
+    {
+      "id": "339_cf_contradiction_0",
+      "text": "Premise: A blond-haired child squeezes paint onto a spinning wheel.  \nHypothesis: A child is not squeezing.",
+      "label": "contradiction",
+      "original_id": 339,
+      "original_label": "entailment"
+    },
+    {
+      "id": "61_cf_contradiction_0",
+      "text": "Premise: A person on a bmx bike, running a course.  \nHypothesis: A person on a bmx bike is not on the track.",
+      "label": "contradiction",
+      "original_id": 61,
+      "original_label": "neutral"
+    },
+    {
+      "id": "61_cf_entailment_0",
+      "text": "Premise: A person on a bmx bike, running a course.  \nHypothesis: A person on a bmx bike is navigating the course.",
+      "label": "entailment",
+      "original_id": 61,
+      "original_label": "neutral"
+    },
+    {
+      "id": "219_cf_contradiction_0",
+      "text": "Premise: A man or older boy is standing up in a blue and white speedboat.  \nHypothesis: A young man is not standing in the boat, while outside.",
+      "label": "contradiction",
+      "original_id": 219,
+      "original_label": "neutral"
+    },
+    {
+      "id": "219_cf_entailment_0",
+      "text": "Premise: A man or older boy is standing up in a blue and white speedboat.  \nHypothesis: A man is standing in a boat while outside.",
+      "label": "entailment",
+      "original_id": 219,
+      "original_label": "neutral"
+    },
+    {
+      "id": "13_cf_neutral_0",
+      "text": "Premise: A boy in a white shirt walks in the ocean.  \nHypothesis: A boy might enjoy being near the ocean.",
+      "label": "neutral",
+      "original_id": 13,
+      "original_label": "entailment"
+    },
+    {
+      "id": "13_cf_contradiction_0",
+      "text": "Premise: A boy in a white shirt walks in the ocean.  \nHypothesis: A boy staying completely dry in the ocean.",
+      "label": "contradiction",
+      "original_id": 13,
+      "original_label": "entailment"
+    },
+    {
+      "id": "295_cf_contradiction_0",
+      "text": "Premise: Artist on street corner selling his artwork.  \nHypothesis: No one is selling paintings.",
+      "label": "contradiction",
+      "original_id": 295,
+      "original_label": "entailment"
+    },
+    {
+      "id": "41_cf_neutral_0",
+      "text": "Premise: Two people wearing backpacks walking in a line along a mountain trail.  \nHypothesis: Some people are walking along a mountain trail trying to get down before the storm.",
+      "label": "neutral",
+      "original_id": 41,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "0_cf_neutral_0",
+      "text": "Premise: Runners in various athletic garb, as well as one individual in a spotted-green dragon costume, run to the right.  \nHypothesis: Runners might see a dragon costumed animal.",
+      "label": "neutral",
+      "original_id": 0,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "184_cf_contradiction_0",
+      "text": "Premise: A man appears to be staring at a device, awed by the technology.  \nHypothesis: The man is indifferent to the technology.",
+      "label": "contradiction",
+      "original_id": 184,
+      "original_label": "entailment"
+    },
+    {
+      "id": "91_cf_contradiction_0",
+      "text": "Premise: Man in green shirt and black pants is jumping in the laundry room.  \nHypothesis: A man is sitting on a table in the laundry room.",
+      "label": "contradiction",
+      "original_id": 91,
+      "original_label": "neutral"
+    },
+    {
+      "id": "91_cf_entailment_0",
+      "text": "Premise: Man in green shirt and black pants is jumping on a table in the laundry room.  \nHypothesis: A man is jumping on a table in the laundry room.",
+      "label": "entailment",
+      "original_id": 91,
+      "original_label": "neutral"
+    }
+  ],
+  "selected_cf_ids": [
+    "56_cf_contradiction_0",
+    "56_cf_entailment_0",
+    "339_cf_contradiction_0",
+    "61_cf_contradiction_0",
+    "61_cf_entailment_0",
+    "219_cf_contradiction_0",
+    "219_cf_entailment_0",
+    "13_cf_neutral_0",
+    "13_cf_contradiction_0",
+    "295_cf_contradiction_0",
+    "41_cf_neutral_0",
+    "0_cf_neutral_0",
+    "184_cf_contradiction_0",
+    "91_cf_contradiction_0",
+    "91_cf_entailment_0"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 20,
+    "num_filtered": 15,
+    "num_added": 15,
+    "budget_remaining_before": 158,
+    "budget_remaining_after": 143,
+    "generation_details": [
+      {
+        "original_text": "Premise: A group of children are playing on swings.\nHypothesis: Some forms of life.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: A group of children are playing on swings.  \nHypothesis: No forms of life.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5783729553222656,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A group of children are playing on swings.\nHypothesis: Some forms of life.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: A group of children are playing on swings.  \nHypothesis: Some children are alive.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6135191917419434,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A blond-haired child squeezes paint onto a spinning wheel.\nHypothesis: A child squeezing",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: A blond-haired child squeezes paint onto a spinning wheel.  \nHypothesis: A child squeezing something.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5309782028198242,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A blond-haired child squeezes paint onto a spinning wheel.\nHypothesis: A child squeezing",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: A blond-haired child squeezes paint onto a spinning wheel.  \nHypothesis: A child is not squeezing.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5969069004058838,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A person on a bmx bike, running a course.\nHypothesis: A person on a bmx bike is on the track.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: A person on a bmx bike, running a course.  \nHypothesis: A person on a bmx bike is not on the track.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6061000823974609,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A person on a bmx bike, running a course.\nHypothesis: A person on a bmx bike is on the track.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: A person on a bmx bike, running a course.  \nHypothesis: A person on a bmx bike is navigating the course.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.62689208984375,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A man or older boy is standing up in a blue and white speedboat.\nHypothesis: A young man stands in boat, while outside.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: A man or older boy is standing up in a blue and white speedboat.  \nHypothesis: A young man is not standing in the boat, while outside.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6147270202636719,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A man or older boy is standing up in a blue and white speedboat.\nHypothesis: A young man stands in boat, while outside.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: A man or older boy is standing up in a blue and white speedboat.  \nHypothesis: A man is standing in a boat while outside.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5989189147949219,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A boy in a white shirt walks in the ocean.\nHypothesis: A boy going to get wet in the ocean.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: A boy in a white shirt walks in the ocean.  \nHypothesis: A boy might enjoy being near the ocean.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5528321266174316,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A boy in a white shirt walks in the ocean.\nHypothesis: A boy going to get wet in the ocean.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: A boy in a white shirt walks in the ocean.  \nHypothesis: A boy staying completely dry in the ocean.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.49505615234375,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Artist on street corner selling his artwork.\nHypothesis: Someone is selling paintings.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Artist on street corner selling his artwork.  \nHypothesis: Someone might be selling paintings.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.45191097259521484,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Artist on street corner selling his artwork.\nHypothesis: Someone is selling paintings.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Artist on street corner selling his artwork.  \nHypothesis: No one is selling paintings.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.4547867774963379,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Two people wearing backpacks walking in a line along a mountain trail.\nHypothesis: Four people are walking along a mountain trail trying to get down before the storm.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Two people wearing backpacks walking in a line along a mountain trail.  \nHypothesis: Some people are walking along a mountain trail trying to get down before the storm.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6080749034881592,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Two people wearing backpacks walking in a line along a mountain trail.\nHypothesis: Four people are walking along a mountain trail trying to get down before the storm.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Two people wearing backpacks walking in a line along a mountain trail.  \nHypothesis: Two people are walking along a mountain trail trying to get down before the storm.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5694630146026611,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Runners in various athletic garb, as well as one individual in a spotted-green dragon costume, run to the right.\nHypothesis: Runners see a dragon costumed animal",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Runners in various athletic garb, as well as one individual in a spotted-green dragon costume, run to the right.  \nHypothesis: Runners might see a dragon costumed animal.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5870709419250488,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Runners in various athletic garb, as well as one individual in a spotted-green dragon costume, run to the right.\nHypothesis: Runners see a dragon costumed animal",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Runners in various athletic garb, as well as one individual in a spotted-green dragon costume, run to the right.  \nHypothesis: Runners notice a dragon costumed individual.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5936129093170166,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A  man appears to be staring at a device, awed by the technology.\nHypothesis: The man is marveling at the technology.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: A man appears to be staring at a device, awed by the technology.  \nHypothesis: The man might be appreciating the technology.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6125471591949463,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A  man appears to be staring at a device, awed by the technology.\nHypothesis: The man is marveling at the technology.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: A man appears to be staring at a device, awed by the technology.  \nHypothesis: The man is indifferent to the technology.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5173289775848389,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Man in green shirt and black pants is jumping in the laundry room.\nHypothesis: A man is jumping on a table in the laundry room.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Man in green shirt and black pants is jumping in the laundry room.  \nHypothesis: A man is sitting on a table in the laundry room.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6097197532653809,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Man in green shirt and black pants is jumping in the laundry room.\nHypothesis: A man is jumping on a table in the laundry room.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Man in green shirt and black pants is jumping on a table in the laundry room.  \nHypothesis: A man is jumping on a table in the laundry room.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7148070335388184,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "56_cf_contradiction_0",
+        "original_id": 56,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999999740534,
+          "p_orig": 2.5946520395417164e-11,
+          "margin": 0.999999999948107,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9881681799888611,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "56_cf_entailment_0",
+        "original_id": 56,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999994284712911,
+          "p_orig": 5.715058112236711e-07,
+          "margin": 0.9999988569654799,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9606981873512268,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "339_cf_neutral_0",
+        "original_id": 339,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.00020342822385824156,
+          "p_orig": 0.9997965717761418,
+          "margin": -0.9995931435522836,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "339_cf_contradiction_0",
+        "original_id": 339,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999999294702,
+          "p_orig": 0.0,
+          "margin": 0.9999999999294702,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9879904985427856,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "61_cf_contradiction_0",
+        "original_id": 61,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999988967287,
+          "p_orig": 1.1032713372135015e-09,
+          "margin": 0.9999999977934574,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9596824645996094,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "61_cf_entailment_0",
+        "original_id": 61,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999962733036029,
+          "p_orig": 3.7266704506750675e-06,
+          "margin": 0.9999925466331522,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9352908134460449,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "219_cf_contradiction_0",
+        "original_id": 219,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999530878294,
+          "p_orig": 4.691217051532829e-08,
+          "margin": 0.9999999061756589,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9828609824180603,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "219_cf_entailment_0",
+        "original_id": 219,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999546018094961,
+          "p_orig": 4.5398161103898113e-05,
+          "margin": 0.9999092036483922,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9927091002464294,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "13_cf_neutral_0",
+        "original_id": 13,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.999999168464179,
+          "p_orig": 8.315358210229771e-07,
+          "margin": 0.999998336928358,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.944503128528595,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "13_cf_contradiction_0",
+        "original_id": 13,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999993289523,
+          "p_orig": 1.8795629508822933e-12,
+          "margin": 0.9999999993270727,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9495378732681274,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "295_cf_neutral_0",
+        "original_id": 295,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.014063668542166527,
+          "p_orig": 0.9859363314578335,
+          "margin": -0.971872662915667,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "295_cf_contradiction_0",
+        "original_id": 295,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999999807603,
+          "p_orig": 8.42360824022336e-12,
+          "margin": 0.9999999999723367,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9583947062492371,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "41_cf_neutral_0",
+        "original_id": 41,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.999999999955868,
+          "p_orig": 3.331598605919403e-11,
+          "margin": 0.999999999922552,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9552103877067566,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "41_cf_entailment_0",
+        "original_id": 41,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 3.0988743764259e-12,
+          "p_orig": 4.8474461457875396e-11,
+          "margin": -4.53755870814495e-11,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "0_cf_neutral_0",
+        "original_id": 0,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9998410586471265,
+          "p_orig": 0.00015843708042613582,
+          "margin": 0.9996826215667003,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.990699827671051,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "0_cf_entailment_0",
+        "original_id": 0,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 1.1861265586224226e-08,
+          "p_orig": 2.6466087601887883e-09,
+          "margin": 9.214656826035439e-09,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "184_cf_neutral_0",
+        "original_id": 184,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.005220144646056273,
+          "p_orig": 0.9947798553539438,
+          "margin": -0.9895597107078875,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "184_cf_contradiction_0",
+        "original_id": 184,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999987470952,
+          "p_orig": 2.7347472653511763e-12,
+          "margin": 0.9999999987443605,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9215283393859863,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "91_cf_contradiction_0",
+        "original_id": 91,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999981795498,
+          "p_orig": 1.81898630793999e-09,
+          "margin": 0.9999999963605635,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9910590052604675,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "91_cf_entailment_0",
+        "original_id": 91,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999881209016,
+          "p_orig": 1.186126561740484e-08,
+          "margin": 0.999999976259636,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9956976175308228,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      }
+    ]
+  },
+  "num_generated": 15,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 20,
+    "num_after_filtering": 15,
+    "num_final_selected": 15,
+    "budget_remaining_before": 158,
+    "budget_remaining_after": 143
+  }
+}
