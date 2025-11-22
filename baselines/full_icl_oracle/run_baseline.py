@@ -113,8 +113,11 @@ def main():
     
     print(f"\nFull training: {len(train_data)}, Test: {len(test_data)}, Labels: {labels}")
     
+    # Build output directory name with timestamp, model, and dataset
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    run_dir = os.path.join(config['directories']['output_data'], f'full_icl_oracle_{timestamp}')
+    model_name = config['llm']['openai']['model']
+    dataset_name = config['dataset']['train_file'].replace('_train.csv', '').replace('.csv', '')
+    run_dir = os.path.join(config['directories']['output_data'], f'full_icl_oracle_{timestamp}_{model_name}_{dataset_name}')
     os.makedirs(run_dir, exist_ok=True)
     
     methods = config['baseline']['retrieval_methods']
