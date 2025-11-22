@@ -1,0 +1,762 @@
+{
+  "iteration": 6,
+  "timestamp": "20251121_211530",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 16,
+      "text": "Premise: The Maschinengewehr (Schwarzlose) M. 7, also known as the Schwarzlose MG, is a medium machine-gun, used as a standard issue firearm in the Austro-Hungarian Army throughout World War I. It was utilized by the Dutch, Greek and Hungarian armies during World War II. It was routinely issued to Italian colonial troops, alongside the Mannlicher M1895 rifle.\nHypothesis: The gun was used by the Greek army in World War 1.",
+      "label": "contradiction"
+    },
+    {
+      "id": 150,
+      "text": "Premise: After months of planning and build-up, Supreme Commander Dwight Eisenhower set Operation Overlord for June 6, 1944: some 7000 ships in the British Isles set to sea and sailed across the English Channel, and, under the leadership of Field Marshall Bernard Montgomery, 135,000 troops landed and stormed Feldmarschal Erwin Rommel's German positions along 80 km of the Normandy coast.\nHypothesis: Field Marshall Bernard Montgomery was English.",
+      "label": "neutral"
+    },
+    {
+      "id": 342,
+      "text": "Premise: New party<br>Penelope wanted to have a party. She wanted to bring a lot of girls together. Unfortunately however there was a big fight. Penelope had to ask everyone to leave. She realized she couldn't have parties any more.\nHypothesis: Penelope  wanted to have a huge girls only party. It was going well until a couple of boys showed up and started fighting . She had to ask everyone to leave and decided to never host another party",
+      "label": "contradiction"
+    },
+    {
+      "id": 212,
+      "text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.\nHypothesis: The lines are pretty easy to distinguish ",
+      "label": "neutral"
+    },
+    {
+      "id": 409,
+      "text": "Premise: Evans Tuning, LLC is an automotive engine tuning, and aftermarket modification shop that specializes in the reprogramming of engine control units (ECUs), to provide a smooth driving experience and safe engine conditions after modifications to a stock automotive configuration have been performed.\nHypothesis: Evans Tuning have experts that work there.",
+      "label": "neutral"
+    },
+    {
+      "id": 172,
+      "text": "Premise: The McLaren MP4/1 (initially known as the MP4) was a Formula One racing car produced by the McLaren team. It was used during the 1981, 1982 and 1983 seasons. It was the first Formula One car to use a carbon fibre composite monocoque, a concept which is now ubiquitous.\nHypothesis: The McLaren team were not proud of the McLaren MP4/1 as it crashed too much",
+      "label": "neutral"
+    },
+    {
+      "id": 171,
+      "text": "Premise: Levy Mwanawasa, the President of Zambia died yesterday at age 59. He died in a Paris hospital in France. His death was intially announced by an anonymous family member. It was later confirmed on television by vice president Rupiah Banda. Mwanawase suffered a stroke while in Egypt in June of this year for an African Union summit, whereafter he was flown to France. His condition suddenly deteriorated on Monday.\nHypothesis: Levy Mwanawasa did not live for 21,900 days.",
+      "label": "entailment"
+    },
+    {
+      "id": 211,
+      "text": "Premise: How to grow freesias<br>Find out when to plant your freesias. Freesias grow from bulbs that must be planted at a particular time of year to thrive. The season when you plant your freesias depends on what growing zone you live in.\nHypothesis: Freesias will not grow well in the winter",
+      "label": "neutral"
+    },
+    {
+      "id": 92,
+      "text": "Premise: Zale Dalen is a Canadian film and television director. He is best known for the 1980 film \"The Hounds of Notre Dame\", for which he garnered a Genie Award nomination for Best Director at the 2nd Genie Awards in 1981, and the cult films \"Skip Tracer\" (1977) and \"Terminal City Ricochet\" (1990).\nHypothesis: Zale Dalen earned a Genie Award nomination for best director from his movie Skip Tracer.",
+      "label": "contradiction"
+    },
+    {
+      "id": 49,
+      "text": "Premise: It might also publisher -- what the publisher pays for your prospective work, Justice Breyer. We -- the Copyright Clause incentive provides incentives not just for -- not just to the creators, but to the disseminators, the publishers, the broadcasters, the film companies.\nHypothesis: Justice Breyer will not get paid through the Copyright Clause.",
+      "label": "contradiction"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "16_cf_neutral_0",
+      "text": "Premise: The Maschinengewehr (Schwarzlose) M. 7, also known as the Schwarzlose MG, is a medium machine-gun, used as a standard issue firearm in the Austro-Hungarian Army throughout World War I. It was utilized by the Dutch, Greek and Hungarian armies during World War II. It was routinely issued to Italian colonial troops, alongside the Mannlicher M1895 rifle.  \nHypothesis: The gun may have been used by the Greek army in World War 1.",
+      "label": "neutral",
+      "original_id": 16,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "16_cf_entailment_0",
+      "text": "Premise: The Maschinengewehr (Schwarzlose) M. 7, also known as the Schwarzlose MG, is a medium machine-gun, used as a standard issue firearm in the Austro-Hungarian Army throughout World War I. It was utilized by the Dutch, Greek and Hungarian armies during World War I and World War II. It was routinely issued to Italian colonial troops, alongside the Mannlicher M1895 rifle.  \nHypothesis: The gun was used by the Greek army in World War 1.",
+      "label": "entailment",
+      "original_id": 16,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "150_cf_contradiction_0",
+      "text": "Premise: After months of planning and build-up, Supreme Commander Dwight Eisenhower set Operation Overlord for June 6, 1944: some 7000 ships in the British Isles set to sea and sailed across the English Channel, and, under the leadership of Field Marshall Bernard Montgomery, 135,000 troops landed and stormed Feldmarschal Erwin Rommel's German positions along 80 km of the Normandy coast.  \nHypothesis: Field Marshall Bernard Montgomery was not English.",
+      "label": "contradiction",
+      "original_id": 150,
+      "original_label": "neutral"
+    },
+    {
+      "id": "150_cf_entailment_0",
+      "text": "Premise: After months of planning and build-up, Supreme Commander Dwight Eisenhower set Operation Overlord for June 6, 1944: some 7000 ships in the British Isles set to sea and sailed across the English Channel, and, under the leadership of English Field Marshall Bernard Montgomery, 135,000 troops landed and stormed Feldmarschal Erwin Rommel's German positions along 80 km of the Normandy coast.  \nHypothesis: Field Marshall Bernard Montgomery was English.",
+      "label": "entailment",
+      "original_id": 150,
+      "original_label": "neutral"
+    },
+    {
+      "id": "342_cf_entailment_0",
+      "text": "Premise: New party  \nPenelope wanted to have a party. She wanted to bring a lot of girls together. Unfortunately however there was a big fight. Penelope had to ask everyone to leave. She realized she couldn't have parties any more.  \nHypothesis: Penelope wanted to have a huge girls-only party. It was going well until a fight broke out. She had to ask everyone to leave and decided to never host another party.",
+      "label": "entailment",
+      "original_id": 342,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "409_cf_contradiction_0",
+      "text": "Premise: Evans Tuning, LLC is an automotive engine tuning, and aftermarket modification shop that specializes in the reprogramming of engine control units (ECUs), to provide a smooth driving experience and safe engine conditions after modifications to a stock automotive configuration have been performed.  \nHypothesis: Evans Tuning does not have experts that work there.",
+      "label": "contradiction",
+      "original_id": 409,
+      "original_label": "neutral"
+    },
+    {
+      "id": "171_cf_neutral_0",
+      "text": "Premise: Levy Mwanawasa, the President of Zambia died yesterday at age 59. He died in a Paris hospital in France. His death was initially announced by an anonymous family member. It was later confirmed on television by vice president Rupiah Banda. Mwanawasa suffered a stroke while in Egypt in June of this year for an African Union summit, whereafter he was flown to France. His condition suddenly deteriorated on Monday.  \nHypothesis: It is unclear whether Levy Mwanawasa lived for 21,900 days.",
+      "label": "neutral",
+      "original_id": 171,
+      "original_label": "entailment"
+    },
+    {
+      "id": "92_cf_neutral_0",
+      "text": "Premise: Zale Dalen is a Canadian film and television director. He is best known for the 1980 film \"The Hounds of Notre Dame\", for which he garnered a Genie Award nomination for Best Director at the 2nd Genie Awards in 1981, and the cult films \"Skip Tracer\" (1977) and \"Terminal City Ricochet\" (1990).  \nHypothesis: Zale Dalen may have earned a Genie Award nomination for best director from his movie Skip Tracer.",
+      "label": "neutral",
+      "original_id": 92,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "92_cf_entailment_0",
+      "text": "Premise: Zale Dalen is a Canadian film and television director. He is best known for the 1980 film \"The Hounds of Notre Dame\", for which he garnered a Genie Award nomination for Best Director at the 2nd Genie Awards in 1981, and the cult films \"Skip Tracer\" (1977) and \"Terminal City Ricochet\" (1990).  \nHypothesis: Zale Dalen earned a Genie Award nomination for Best Director for his movie \"The Hounds of Notre Dame\".",
+      "label": "entailment",
+      "original_id": 92,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "49_cf_neutral_0",
+      "text": "Premise: It might also publisher -- what the publisher pays for your prospective work, Justice Breyer. We -- the Copyright Clause incentive provides incentives not just for -- not just to the creators, but to the disseminators, the publishers, the broadcasters, the film companies.  \nHypothesis: Justice Breyer may or may not get paid through the Copyright Clause.",
+      "label": "neutral",
+      "original_id": 49,
+      "original_label": "contradiction"
+    }
+  ],
+  "selected_cf_ids": [
+    "16_cf_neutral_0",
+    "16_cf_entailment_0",
+    "150_cf_contradiction_0",
+    "150_cf_entailment_0",
+    "342_cf_entailment_0",
+    "409_cf_contradiction_0",
+    "171_cf_neutral_0",
+    "92_cf_neutral_0",
+    "92_cf_entailment_0",
+    "49_cf_neutral_0"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 20,
+    "num_filtered": 10,
+    "num_added": 10,
+    "budget_remaining_before": 144,
+    "budget_remaining_after": 134,
+    "generation_details": [
+      {
+        "original_text": "Premise: The Maschinengewehr (Schwarzlose) M. 7, also known as the Schwarzlose MG, is a medium machine-gun, used as a standard issue firearm in the Austro-Hungarian Army throughout World War I. It was utilized by the Dutch, Greek and Hungarian armies during World War II. It was routinely issued to Italian colonial troops, alongside the Mannlicher M1895 rifle.\nHypothesis: The gun was used by the Greek army in World War 1.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: The Maschinengewehr (Schwarzlose) M. 7, also known as the Schwarzlose MG, is a medium machine-gun, used as a standard issue firearm in the Austro-Hungarian Army throughout World War I. It was utilized by the Dutch, Greek and Hungarian armies during World War II. It was routinely issued to Italian colonial troops, alongside the Mannlicher M1895 rifle.  \nHypothesis: The gun may have been used by the Greek army in World War 1.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.4619362354278564,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Maschinengewehr (Schwarzlose) M. 7, also known as the Schwarzlose MG, is a medium machine-gun, used as a standard issue firearm in the Austro-Hungarian Army throughout World War I. It was utilized by the Dutch, Greek and Hungarian armies during World War II. It was routinely issued to Italian colonial troops, alongside the Mannlicher M1895 rifle.\nHypothesis: The gun was used by the Greek army in World War 1.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Maschinengewehr (Schwarzlose) M. 7, also known as the Schwarzlose MG, is a medium machine-gun, used as a standard issue firearm in the Austro-Hungarian Army throughout World War I. It was utilized by the Dutch, Greek and Hungarian armies during World War I and World War II. It was routinely issued to Italian colonial troops, alongside the Mannlicher M1895 rifle.  \nHypothesis: The gun was used by the Greek army in World War 1.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.209900140762329,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: After months of planning and build-up, Supreme Commander Dwight Eisenhower set Operation Overlord for June 6, 1944: some 7000 ships in the British Isles set to sea and sailed across the English Channel, and, under the leadership of Field Marshall Bernard Montgomery, 135,000 troops landed and stormed Feldmarschal Erwin Rommel's German positions along 80 km of the Normandy coast.\nHypothesis: Field Marshall Bernard Montgomery was English.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: After months of planning and build-up, Supreme Commander Dwight Eisenhower set Operation Overlord for June 6, 1944: some 7000 ships in the British Isles set to sea and sailed across the English Channel, and, under the leadership of Field Marshall Bernard Montgomery, 135,000 troops landed and stormed Feldmarschal Erwin Rommel's German positions along 80 km of the Normandy coast.  \nHypothesis: Field Marshall Bernard Montgomery was not English.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8184819221496582,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: After months of planning and build-up, Supreme Commander Dwight Eisenhower set Operation Overlord for June 6, 1944: some 7000 ships in the British Isles set to sea and sailed across the English Channel, and, under the leadership of Field Marshall Bernard Montgomery, 135,000 troops landed and stormed Feldmarschal Erwin Rommel's German positions along 80 km of the Normandy coast.\nHypothesis: Field Marshall Bernard Montgomery was English.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: After months of planning and build-up, Supreme Commander Dwight Eisenhower set Operation Overlord for June 6, 1944: some 7000 ships in the British Isles set to sea and sailed across the English Channel, and, under the leadership of English Field Marshall Bernard Montgomery, 135,000 troops landed and stormed Feldmarschal Erwin Rommel's German positions along 80 km of the Normandy coast.  \nHypothesis: Field Marshall Bernard Montgomery was English.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0584640502929688,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: New party<br>Penelope wanted to have a party. She wanted to bring a lot of girls together. Unfortunately however there was a big fight. Penelope had to ask everyone to leave. She realized she couldn't have parties any more.\nHypothesis: Penelope  wanted to have a huge girls only party. It was going well until a couple of boys showed up and started fighting . She had to ask everyone to leave and decided to never host another party",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: New party  \nPenelope wanted to have a party. She wanted to bring a lot of girls together. Unfortunately however there was a big fight. Penelope had to ask everyone to leave. She realized she couldn't have parties any more.  \nHypothesis: Penelope wanted to have a huge girls only party. It was going well until a fight broke out. She had to ask everyone to leave and decided to never host another party.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0900042057037354,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: New party<br>Penelope wanted to have a party. She wanted to bring a lot of girls together. Unfortunately however there was a big fight. Penelope had to ask everyone to leave. She realized she couldn't have parties any more.\nHypothesis: Penelope  wanted to have a huge girls only party. It was going well until a couple of boys showed up and started fighting . She had to ask everyone to leave and decided to never host another party",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: New party  \nPenelope wanted to have a party. She wanted to bring a lot of girls together. Unfortunately however there was a big fight. Penelope had to ask everyone to leave. She realized she couldn't have parties any more.  \nHypothesis: Penelope wanted to have a huge girls-only party. It was going well until a fight broke out. She had to ask everyone to leave and decided to never host another party.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9216811656951904,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.\nHypothesis: The lines are pretty easy to distinguish ",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.  \nHypothesis: The lines are not easy to distinguish.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7934222221374512,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.\nHypothesis: The lines are pretty easy to distinguish ",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.  \nHypothesis: The lines are easy to distinguish.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6378929615020752,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Evans Tuning, LLC is an automotive engine tuning, and aftermarket modification shop that specializes in the reprogramming of engine control units (ECUs), to provide a smooth driving experience and safe engine conditions after modifications to a stock automotive configuration have been performed.\nHypothesis: Evans Tuning have experts that work there.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Evans Tuning, LLC is an automotive engine tuning, and aftermarket modification shop that specializes in the reprogramming of engine control units (ECUs), to provide a smooth driving experience and safe engine conditions after modifications to a stock automotive configuration have been performed.  \nHypothesis: Evans Tuning does not have experts that work there.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8797440528869629,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Evans Tuning, LLC is an automotive engine tuning, and aftermarket modification shop that specializes in the reprogramming of engine control units (ECUs), to provide a smooth driving experience and safe engine conditions after modifications to a stock automotive configuration have been performed.\nHypothesis: Evans Tuning have experts that work there.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Evans Tuning, LLC is an automotive engine tuning, and aftermarket modification shop that specializes in the reprogramming of engine control units (ECUs), to provide a smooth driving experience and safe engine conditions after modifications to a stock automotive configuration have been performed.  \nHypothesis: Evans Tuning employs experts who specialize in their services.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8651468753814697,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The McLaren MP4/1 (initially known as the MP4) was a Formula One racing car produced by the McLaren team. It was used during the 1981, 1982 and 1983 seasons. It was the first Formula One car to use a carbon fibre composite monocoque, a concept which is now ubiquitous.\nHypothesis: The McLaren team were not proud of the McLaren MP4/1 as it crashed too much",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The McLaren MP4/1 (initially known as the MP4) was a Formula One racing car produced by the McLaren team. It was used during the 1981, 1982 and 1983 seasons. It was the first Formula One car to use a carbon fibre composite monocoque, a concept which is now ubiquitous.  \nHypothesis: The McLaren team were proud of the McLaren MP4/1 as it revolutionized car design.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8546700477600098,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The McLaren MP4/1 (initially known as the MP4) was a Formula One racing car produced by the McLaren team. It was used during the 1981, 1982 and 1983 seasons. It was the first Formula One car to use a carbon fibre composite monocoque, a concept which is now ubiquitous.\nHypothesis: The McLaren team were not proud of the McLaren MP4/1 as it crashed too much",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The McLaren MP4/1 (initially known as the MP4) was a Formula One racing car produced by the McLaren team. It was used during the 1981, 1982 and 1983 seasons. It was the first Formula One car to use a carbon fibre composite monocoque, a concept which is now ubiquitous.  \nHypothesis: The McLaren team were disappointed with the McLaren MP4/1 as it crashed too much.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8999149799346924,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Levy Mwanawasa, the President of Zambia died yesterday at age 59. He died in a Paris hospital in France. His death was intially announced by an anonymous family member. It was later confirmed on television by vice president Rupiah Banda. Mwanawase suffered a stroke while in Egypt in June of this year for an African Union summit, whereafter he was flown to France. His condition suddenly deteriorated on Monday.\nHypothesis: Levy Mwanawasa did not live for 21,900 days.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Levy Mwanawasa, the President of Zambia died yesterday at age 59. He died in a Paris hospital in France. His death was initially announced by an anonymous family member. It was later confirmed on television by vice president Rupiah Banda. Mwanawasa suffered a stroke while in Egypt in June of this year for an African Union summit, whereafter he was flown to France. His condition suddenly deteriorated on Monday.  \nHypothesis: It is unclear whether Levy Mwanawasa lived for 21,900 days.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1197080612182617,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Levy Mwanawasa, the President of Zambia died yesterday at age 59. He died in a Paris hospital in France. His death was intially announced by an anonymous family member. It was later confirmed on television by vice president Rupiah Banda. Mwanawase suffered a stroke while in Egypt in June of this year for an African Union summit, whereafter he was flown to France. His condition suddenly deteriorated on Monday.\nHypothesis: Levy Mwanawasa did not live for 21,900 days.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Levy Mwanawasa, the President of Zambia died yesterday at age 59. He died in a Paris hospital in France. His death was initially announced by an anonymous family member. It was later confirmed on television by vice president Rupiah Banda. Mwanawasa suffered a stroke while in Egypt in June of this year for an African Union summit, whereafter he was flown to France. His condition suddenly deteriorated on Monday.  \nHypothesis: Levy Mwanawasa lived for 21,900 days.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9086933135986328,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to grow freesias<br>Find out when to plant your freesias. Freesias grow from bulbs that must be planted at a particular time of year to thrive. The season when you plant your freesias depends on what growing zone you live in.\nHypothesis: Freesias will not grow well in the winter",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to grow freesias<br>Find out when to plant your freesias. Freesias grow from bulbs that must be planted at a particular time of year to thrive. The season when you plant your freesias depends on what growing zone you live in.  \nHypothesis: Freesias grow well in the winter",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7085459232330322,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to grow freesias<br>Find out when to plant your freesias. Freesias grow from bulbs that must be planted at a particular time of year to thrive. The season when you plant your freesias depends on what growing zone you live in.\nHypothesis: Freesias will not grow well in the winter",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to grow freesias<br>Find out when to plant your freesias. Freesias grow from bulbs that must be planted at a particular time of year to thrive. The season when you plant your freesias depends on what growing zone you live in.  \nHypothesis: Freesias cannot thrive if planted in the winter.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7262289524078369,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Zale Dalen is a Canadian film and television director. He is best known for the 1980 film \"The Hounds of Notre Dame\", for which he garnered a Genie Award nomination for Best Director at the 2nd Genie Awards in 1981, and the cult films \"Skip Tracer\" (1977) and \"Terminal City Ricochet\" (1990).\nHypothesis: Zale Dalen earned a Genie Award nomination for best director from his movie Skip Tracer.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Zale Dalen is a Canadian film and television director. He is best known for the 1980 film \"The Hounds of Notre Dame\", for which he garnered a Genie Award nomination for Best Director at the 2nd Genie Awards in 1981, and the cult films \"Skip Tracer\" (1977) and \"Terminal City Ricochet\" (1990).  \nHypothesis: Zale Dalen may have earned a Genie Award nomination for best director from his movie Skip Tracer.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2225470542907715,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Zale Dalen is a Canadian film and television director. He is best known for the 1980 film \"The Hounds of Notre Dame\", for which he garnered a Genie Award nomination for Best Director at the 2nd Genie Awards in 1981, and the cult films \"Skip Tracer\" (1977) and \"Terminal City Ricochet\" (1990).\nHypothesis: Zale Dalen earned a Genie Award nomination for best director from his movie Skip Tracer.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Zale Dalen is a Canadian film and television director. He is best known for the 1980 film \"The Hounds of Notre Dame\", for which he garnered a Genie Award nomination for Best Director at the 2nd Genie Awards in 1981, and the cult films \"Skip Tracer\" (1977) and \"Terminal City Ricochet\" (1990).  \nHypothesis: Zale Dalen earned a Genie Award nomination for Best Director for his movie \"The Hounds of Notre Dame\".",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1253008842468262,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: It might also publisher -- what the publisher pays for your prospective work, Justice Breyer. We -- the Copyright Clause incentive provides incentives not just for -- not just to the creators, but to the disseminators, the publishers, the broadcasters, the film companies.\nHypothesis: Justice Breyer will not get paid through the Copyright Clause.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: It might also publisher -- what the publisher pays for your prospective work, Justice Breyer. We -- the Copyright Clause incentive provides incentives not just for -- not just to the creators, but to the disseminators, the publishers, the broadcasters, the film companies.  \nHypothesis: Justice Breyer may or may not get paid through the Copyright Clause.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8163678646087646,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: It might also publisher -- what the publisher pays for your prospective work, Justice Breyer. We -- the Copyright Clause incentive provides incentives not just for -- not just to the creators, but to the disseminators, the publishers, the broadcasters, the film companies.\nHypothesis: Justice Breyer will not get paid through the Copyright Clause.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: It might also publisher -- what the publisher pays for your prospective work, Justice Breyer. We -- the Copyright Clause incentive provides incentives not just for -- not just to the creators, but to the disseminators, the publishers, the broadcasters, the film companies.  \nHypothesis: Justice Breyer will get paid through the Copyright Clause.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.785552978515625,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "16_cf_neutral_0",
+        "original_id": 16,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9998905981846182,
+          "p_orig": 0.00010889751800235051,
+          "margin": 0.9997817006666159,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9996088743209839,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "16_cf_entailment_0",
+        "original_id": 16,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999990263664,
+          "p_orig": 0.0,
+          "margin": 0.9999999990263664,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9993728995323181,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "150_cf_contradiction_0",
+        "original_id": 150,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.7310584345352222,
+          "p_orig": 0.26894154926469027,
+          "margin": 0.46211688527053196,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9957647919654846,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "150_cf_entailment_0",
+        "original_id": 150,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999995522641407,
+          "p_orig": 4.4508925020113216e-07,
+          "margin": 0.9999991071748905,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9977228045463562,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "342_cf_neutral_0",
+        "original_id": 342,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 8.939761467792351e-06,
+          "p_orig": 1.275192132153453e-07,
+          "margin": 8.812242254577006e-06,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "342_cf_entailment_0",
+        "original_id": 342,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999406407383158,
+          "p_orig": 1.067650964808115e-06,
+          "margin": 0.9999395730873509,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9878191351890564,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "212_cf_contradiction_0",
+        "original_id": 212,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.0013249681439752978,
+          "p_orig": 0.9986296938147697,
+          "margin": -0.9973047256707944,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "212_cf_entailment_0",
+        "original_id": 212,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.008577513460131502,
+          "p_orig": 0.991422445495141,
+          "margin": -0.9828449320350096,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "409_cf_contradiction_0",
+        "original_id": 409,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999585862629,
+          "p_orig": 4.1399848881896874e-08,
+          "margin": 0.999999917186414,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9992098808288574,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "409_cf_entailment_0",
+        "original_id": 409,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.49999999964584324,
+          "p_orig": 0.49999999964584324,
+          "margin": 0.0,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "172_cf_contradiction_0",
+        "original_id": 172,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.0,
+          "p_orig": 0.9770225729606585,
+          "margin": -0.9770225729606585,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "172_cf_entailment_0",
+        "original_id": 172,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.0,
+          "p_orig": 0.9999997617605717,
+          "margin": -0.9999997617605717,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "171_cf_neutral_0",
+        "original_id": 171,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.8519300005220805,
+          "p_orig": 0.14804341662056467,
+          "margin": 0.7038865839015158,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9941425919532776,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "171_cf_contradiction_0",
+        "original_id": 171,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.00041449448049435183,
+          "p_orig": 0.03731149113428906,
+          "margin": -0.03689699665379471,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "211_cf_contradiction_0",
+        "original_id": 211,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 9.931302966301267e-08,
+          "p_orig": 0.9999999004952502,
+          "margin": -0.9999998011822205,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "211_cf_entailment_0",
+        "original_id": 211,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 1.1253620994537932e-07,
+          "p_orig": 0.9999993159578388,
+          "margin": -0.9999992034216288,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "92_cf_neutral_0",
+        "original_id": 92,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999993518086393,
+          "p_orig": 6.476008218086631e-07,
+          "margin": 0.9999987042078174,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9997885823249817,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "92_cf_entailment_0",
+        "original_id": 92,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999981671255,
+          "p_orig": 1.388817738555212e-11,
+          "margin": 0.9999999981532373,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9957029223442078,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "49_cf_neutral_0",
+        "original_id": 49,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999970725524404,
+          "p_orig": 2.5110194541773033e-08,
+          "margin": 0.9999970474422458,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9963012933731079,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "49_cf_entailment_0",
+        "original_id": 49,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 1.1581979606953243e-09,
+          "p_orig": 0.18242566519094822,
+          "margin": -0.18242566403275026,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      }
+    ]
+  },
+  "num_generated": 10,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 20,
+    "num_after_filtering": 10,
+    "num_final_selected": 10,
+    "budget_remaining_before": 144,
+    "budget_remaining_after": 134
+  }
+}

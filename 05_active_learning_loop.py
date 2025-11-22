@@ -922,7 +922,7 @@ def active_learning_loop(config: dict):
                 print(f"  F1 Weighted: {metrics['f1_weighted']:.4f}")
                 
                 # Early stopping check (using F1 Macro)
-                if metrics['f1_macro'] > best_f1_macro + al_config['min_improvement']:
+                if metrics['f1_macro'] >= best_f1_macro + al_config['min_improvement']:
                     best_f1_macro = metrics['f1_macro']
                     patience_counter = 0
                     print(f"  ✓ New best F1 Macro: {best_f1_macro:.4f}")

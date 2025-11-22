@@ -1,0 +1,786 @@
+{
+  "iteration": 2,
+  "timestamp": "20251121_204831",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 32,
+      "text": "Premise: WASHINGTON \u00e2\u20ac\u201d The White House has announced a Baltic summit in April to celebrate the 100th anniversary of independence for Estonia, Latvia and Lithuania. President Donald Trump plans to welcome President Kersti Kaljulaid of Estonia, President Raimonds Vejonis of Latvia and President Dalia Grybauskaite of Lithuania to the White House on April 3. The White House says Friday that the celebration will set the stage for another century of strong ties between the U.S. and these allies.\nHypothesis: Estonia has been independent for a 100 years",
+      "label": "entailment"
+    },
+    {
+      "id": 17,
+      "text": "Premise: Redneck Nation: How the South Really Won the War (ISBN\u00a0 ) is a book by conservative personality Michael Graham. Released in 2002 by Warner Books, the book covers a wide variety of Graham's personal opinions on current and historical events in the context of southern ideas and a \"redneck\" political point of view.\nHypothesis: This is not a book for rednecks",
+      "label": "contradiction"
+    },
+    {
+      "id": 146,
+      "text": "Premise: Kasyanov was sacked by Putin in February 2004, after he had become critical of the Kremlin's politically motivated legal attack on the Yukos oil giant and its owner, billionaire Mikhail Khodorkovsky.\nHypothesis: The Kremlin is a name for Russia's central government.",
+      "label": "neutral"
+    },
+    {
+      "id": 6,
+      "text": "Premise: For Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-shod Stanford University graduate student in 1982, the new line of computers, code named Galaxy, is a return to the company's roots.\nHypothesis: Bechtolsheim, who designed the prototype for the first Sun workstation while he was a \n boot wearing Stanford University student.",
+      "label": "contradiction"
+    },
+    {
+      "id": 237,
+      "text": "Premise: But I thought you were saying that if you accept the Copyright Clause argument, then you have a way, in effect, of devaluing the Government's claim of its important interest and important objective when you get to the First Amendment intermediate scrutiny analysis.\nHypothesis: The narrator thought differently than the other party intended",
+      "label": "entailment"
+    },
+    {
+      "id": 286,
+      "text": "Premise: Last Saturday I was thrilled to read about a school in Co Antrim which has introduced the study of philosophy for students of four years of age and upwards. According to both teachers and parents, the benefits are felt far beyond the classroom, \"not just in terms of increased confidence, motivation and ability, but in a heightened respect for the differing views of others\". In 1999, I walked through the gates of Trinity College to enrol as an undergraduate in the philosophy department. I had just returned home from years living in another city; I was recently married, unemployed and had been diagnosed with a mental illness I didn't quite believe I had. I wasn't sure if I could cope.\nHypothesis: They think the study of philosophy is very important for the youth.",
+      "label": "entailment"
+    },
+    {
+      "id": 124,
+      "text": "Premise: High Noon is a retailer and auction consulting company. They specialize in Western American art & antique Americana, including cowboy and American Indian artifacts and fine western art. The company is known for founding the High Noon Western Americana Auction and Antique Show in 1991, held every January at the Phoenix Mesa Marriott in Mesa, Arizona.\nHypothesis: There are many examples of fine western art.",
+      "label": "neutral"
+    },
+    {
+      "id": 201,
+      "text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.\nHypothesis: The Luton Town Ladies Football Club plays all their matches at The Carlsberg Stadium.",
+      "label": "contradiction"
+    },
+    {
+      "id": 224,
+      "text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?\nHypothesis: The National Assembly passed such a bill in 1995.",
+      "label": "contradiction"
+    },
+    {
+      "id": 401,
+      "text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.\nHypothesis: Social Security system has a z",
+      "label": "contradiction"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "32_cf_neutral_0",
+      "text": "Premise: WASHINGTON \u00e2\u20ac\u201d The White House has announced a Baltic summit in April to celebrate the 100th anniversary of independence for Estonia, Latvia and Lithuania. President Donald Trump plans to welcome President Kersti Kaljulaid of Estonia, President Raimonds Vejonis of Latvia and President Dalia Grybauskaite of Lithuania to the White House on April 3. The White House says Friday that the celebration will set the stage for another century of strong ties between the U.S. and these allies.  \nHypothesis: Estonia may have been independent for a 100 years",
+      "label": "neutral",
+      "original_id": 32,
+      "original_label": "entailment"
+    },
+    {
+      "id": "32_cf_contradiction_0",
+      "text": "Premise: WASHINGTON \u00e2\u20ac\u201d The White House has announced a Baltic summit in April to celebrate the 100th anniversary of independence for Estonia, Latvia and Lithuania. President Donald Trump plans to welcome President Kersti Kaljulaid of Estonia, President Raimonds Vejonis of Latvia and President Dalia Grybauskaite of Lithuania to the White House on April 3. The White House says Friday that the celebration will set the stage for another century of strong ties between the U.S. and these allies.  \nHypothesis: Estonia has not been independent for a 100 years",
+      "label": "contradiction",
+      "original_id": 32,
+      "original_label": "entailment"
+    },
+    {
+      "id": "17_cf_neutral_0",
+      "text": "Premise: Redneck Nation: How the South Really Won the War (ISBN\u00a0 ) is a book by conservative personality Michael Graham. Released in 2002 by Warner Books, the book covers a wide variety of Graham's personal opinions on current and historical events in the context of southern ideas and a \"redneck\" political point of view.  \nHypothesis: This book may not appeal to all rednecks.",
+      "label": "neutral",
+      "original_id": 17,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "146_cf_contradiction_0",
+      "text": "Premise: Kasyanov was sacked by Putin in February 2004, after he had become critical of the Kremlin's politically motivated legal attack on the Yukos oil giant and its owner, billionaire Mikhail Khodorkovsky.  \nHypothesis: The Kremlin is not a name for Russia's central government.",
+      "label": "contradiction",
+      "original_id": 146,
+      "original_label": "neutral"
+    },
+    {
+      "id": "146_cf_entailment_0",
+      "text": "Premise: Kasyanov was sacked by Putin in February 2004, after he had become critical of the Kremlin's politically motivated legal attack on the Yukos oil giant and its owner, billionaire Mikhail Khodorkovsky.  \nHypothesis: The Kremlin refers to Russia's central government.",
+      "label": "entailment",
+      "original_id": 146,
+      "original_label": "neutral"
+    },
+    {
+      "id": "6_cf_entailment_0",
+      "text": "Premise: For Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-shod Stanford University graduate student in 1982, the new line of computers, code named Galaxy, is a return to the company's roots.  \nHypothesis: Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-wearing Stanford University student.",
+      "label": "entailment",
+      "original_id": 6,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "286_cf_contradiction_0",
+      "text": "Premise: Last Saturday I was thrilled to read about a school in Co Antrim which has introduced the study of philosophy for students of four years of age and upwards. According to both teachers and parents, the benefits are felt far beyond the classroom, \"not just in terms of increased confidence, motivation and ability, but in a heightened respect for the differing views of others\". In 1999, I walked through the gates of Trinity College to enrol as an undergraduate in the philosophy department. I had just returned home from years living in another city; I was recently married, unemployed and had been diagnosed with a mental illness I didn't quite believe I had. I wasn't sure if I could cope.  \nHypothesis: They think the study of philosophy has no real importance for the youth.",
+      "label": "contradiction",
+      "original_id": 286,
+      "original_label": "entailment"
+    },
+    {
+      "id": "124_cf_contradiction_0",
+      "text": "Premise: High Noon is a retailer and auction consulting company. They specialize in Western American art & antique Americana, including cowboy and American Indian artifacts and fine western art. The company is known for founding the High Noon Western Americana Auction and Antique Show in 1991, held every January at the Phoenix Mesa Marriott in Mesa, Arizona.  \nHypothesis: There are no examples of fine western art.",
+      "label": "contradiction",
+      "original_id": 124,
+      "original_label": "neutral"
+    },
+    {
+      "id": "124_cf_entailment_0",
+      "text": "Premise: High Noon is a retailer and auction consulting company. They specialize in Western American art & antique Americana, including cowboy and American Indian artifacts and fine western art. The company is known for founding the High Noon Western Americana Auction and Antique Show in 1991, held every January at the Phoenix Mesa Marriott in Mesa, Arizona.  \nHypothesis: High Noon showcases many examples of fine western art.",
+      "label": "entailment",
+      "original_id": 124,
+      "original_label": "neutral"
+    },
+    {
+      "id": "201_cf_entailment_0",
+      "text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play all their matches at The Carlsberg Stadium, home of Biggleswade Town F.C.  \nHypothesis: The Luton Town Ladies Football Club plays all their matches at The Carlsberg Stadium.",
+      "label": "entailment",
+      "original_id": 201,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "224_cf_neutral_0",
+      "text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?  \nHypothesis: The National Assembly may have passed such a bill in 1995.",
+      "label": "neutral",
+      "original_id": 224,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "401_cf_entailment_0",
+      "text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.  \nHypothesis: Social Security system is safe and secure.",
+      "label": "entailment",
+      "original_id": 401,
+      "original_label": "contradiction"
+    }
+  ],
+  "selected_cf_ids": [
+    "32_cf_neutral_0",
+    "32_cf_contradiction_0",
+    "17_cf_neutral_0",
+    "146_cf_contradiction_0",
+    "146_cf_entailment_0",
+    "6_cf_entailment_0",
+    "286_cf_contradiction_0",
+    "124_cf_contradiction_0",
+    "124_cf_entailment_0",
+    "201_cf_entailment_0",
+    "224_cf_neutral_0",
+    "401_cf_entailment_0"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 20,
+    "num_filtered": 12,
+    "num_added": 12,
+    "budget_remaining_before": 184,
+    "budget_remaining_after": 172,
+    "generation_details": [
+      {
+        "original_text": "Premise: WASHINGTON \u00e2\u20ac\u201d The White House has announced a Baltic summit in April to celebrate the 100th anniversary of independence for Estonia, Latvia and Lithuania. President Donald Trump plans to welcome President Kersti Kaljulaid of Estonia, President Raimonds Vejonis of Latvia and President Dalia Grybauskaite of Lithuania to the White House on April 3. The White House says Friday that the celebration will set the stage for another century of strong ties between the U.S. and these allies.\nHypothesis: Estonia has been independent for a 100 years",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: WASHINGTON \u00e2\u20ac\u201d The White House has announced a Baltic summit in April to celebrate the 100th anniversary of independence for Estonia, Latvia and Lithuania. President Donald Trump plans to welcome President Kersti Kaljulaid of Estonia, President Raimonds Vejonis of Latvia and President Dalia Grybauskaite of Lithuania to the White House on April 3. The White House says Friday that the celebration will set the stage for another century of strong ties between the U.S. and these allies.  \nHypothesis: Estonia may have been independent for a 100 years",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.3610010147094727,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: WASHINGTON \u00e2\u20ac\u201d The White House has announced a Baltic summit in April to celebrate the 100th anniversary of independence for Estonia, Latvia and Lithuania. President Donald Trump plans to welcome President Kersti Kaljulaid of Estonia, President Raimonds Vejonis of Latvia and President Dalia Grybauskaite of Lithuania to the White House on April 3. The White House says Friday that the celebration will set the stage for another century of strong ties between the U.S. and these allies.\nHypothesis: Estonia has been independent for a 100 years",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: WASHINGTON \u00e2\u20ac\u201d The White House has announced a Baltic summit in April to celebrate the 100th anniversary of independence for Estonia, Latvia and Lithuania. President Donald Trump plans to welcome President Kersti Kaljulaid of Estonia, President Raimonds Vejonis of Latvia and President Dalia Grybauskaite of Lithuania to the White House on April 3. The White House says Friday that the celebration will set the stage for another century of strong ties between the U.S. and these allies.  \nHypothesis: Estonia has not been independent for a 100 years",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.8871591091156006,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Redneck Nation: How the South Really Won the War (ISBN\u00a0 ) is a book by conservative personality Michael Graham. Released in 2002 by Warner Books, the book covers a wide variety of Graham's personal opinions on current and historical events in the context of southern ideas and a \"redneck\" political point of view.\nHypothesis: This is not a book for rednecks",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Redneck Nation: How the South Really Won the War (ISBN\u00a0 ) is a book by conservative personality Michael Graham. Released in 2002 by Warner Books, the book covers a wide variety of Graham's personal opinions on current and historical events in the context of southern ideas and a \"redneck\" political point of view.  \nHypothesis: This book may not appeal to all rednecks.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.922548770904541,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Redneck Nation: How the South Really Won the War (ISBN\u00a0 ) is a book by conservative personality Michael Graham. Released in 2002 by Warner Books, the book covers a wide variety of Graham's personal opinions on current and historical events in the context of southern ideas and a \"redneck\" political point of view.\nHypothesis: This is not a book for rednecks",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Redneck Nation: How the South Really Won the War (ISBN\u00a0 ) is a book by conservative personality Michael Graham. Released in 2002 by Warner Books, the book covers a wide variety of Graham's personal opinions on current and historical events in the context of southern ideas and a \"redneck\" political point of view.  \nHypothesis: This is a book for rednecks.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1487047672271729,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Kasyanov was sacked by Putin in February 2004, after he had become critical of the Kremlin's politically motivated legal attack on the Yukos oil giant and its owner, billionaire Mikhail Khodorkovsky.\nHypothesis: The Kremlin is a name for Russia's central government.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Kasyanov was sacked by Putin in February 2004, after he had become critical of the Kremlin's politically motivated legal attack on the Yukos oil giant and its owner, billionaire Mikhail Khodorkovsky.  \nHypothesis: The Kremlin is not a name for Russia's central government.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7947220802307129,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Kasyanov was sacked by Putin in February 2004, after he had become critical of the Kremlin's politically motivated legal attack on the Yukos oil giant and its owner, billionaire Mikhail Khodorkovsky.\nHypothesis: The Kremlin is a name for Russia's central government.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Kasyanov was sacked by Putin in February 2004, after he had become critical of the Kremlin's politically motivated legal attack on the Yukos oil giant and its owner, billionaire Mikhail Khodorkovsky.  \nHypothesis: The Kremlin refers to Russia's central government.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8187680244445801,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: For Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-shod Stanford University graduate student in 1982, the new line of computers, code named Galaxy, is a return to the company's roots.\nHypothesis: Bechtolsheim, who designed the prototype for the first Sun workstation while he was a \n boot wearing Stanford University student.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: For Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-shod Stanford University graduate student in 1982, the new line of computers, code named Galaxy, is a return to the company's roots.  \nHypothesis: Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Stanford University student.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7044830322265625,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: For Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-shod Stanford University graduate student in 1982, the new line of computers, code named Galaxy, is a return to the company's roots.\nHypothesis: Bechtolsheim, who designed the prototype for the first Sun workstation while he was a \n boot wearing Stanford University student.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: For Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-shod Stanford University graduate student in 1982, the new line of computers, code named Galaxy, is a return to the company's roots.  \nHypothesis: Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-wearing Stanford University student.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9317030906677246,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: But I thought you were saying that if you accept the Copyright Clause argument, then you have a way, in effect, of devaluing the Government's claim of its important interest and important objective when you get to the First Amendment intermediate scrutiny analysis.\nHypothesis: The narrator thought differently than the other party intended",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: But I thought you were saying that if you accept the Copyright Clause argument, then you have a way, in effect, of devaluing the Government's claim of its important interest and important objective when you get to the First Amendment intermediate scrutiny analysis.  \nHypothesis: The narrator's interpretation may not align with the other party's intended meaning.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 2.046205997467041,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: But I thought you were saying that if you accept the Copyright Clause argument, then you have a way, in effect, of devaluing the Government's claim of its important interest and important objective when you get to the First Amendment intermediate scrutiny analysis.\nHypothesis: The narrator thought differently than the other party intended",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: But I thought you were saying that if you accept the Copyright Clause argument, then you have a way, in effect, of devaluing the Government's claim of its important interest and important objective when you get to the First Amendment intermediate scrutiny analysis.  \nHypothesis: The narrator misunderstood and thought the opposite of what the other party intended.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0221660137176514,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Last Saturday I was thrilled to read about a school in Co Antrim which has introduced the study of philosophy for students of four years of age and upwards. According to both teachers and parents, the benefits are felt far beyond the classroom, \"not just in terms of increased confidence, motivation and ability, but in a heightened respect for the differing views of others\". In 1999, I walked through the gates of Trinity College to enrol as an undergraduate in the philosophy department. I had just returned home from years living in another city; I was recently married, unemployed and had been diagnosed with a mental illness I didn't quite believe I had. I wasn't sure if I could cope.\nHypothesis: They think the study of philosophy is very important for the youth.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Last Saturday I read about a school in Co Antrim which has introduced the study of philosophy for students of four years of age and upwards. According to both teachers and parents, the benefits are felt far beyond the classroom, \"not just in terms of increased confidence, motivation and ability, but in a heightened respect for the differing views of others\". In 1999, I walked through the gates of Trinity College to enrol as an undergraduate in the philosophy department. I had just returned home from years living in another city; I was recently married, unemployed and had been diagnosed with a mental illness I didn't quite believe I had. I wasn't sure if I could cope.  \nHypothesis: They mention the study of philosophy for the youth.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.8622992038726807,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Last Saturday I was thrilled to read about a school in Co Antrim which has introduced the study of philosophy for students of four years of age and upwards. According to both teachers and parents, the benefits are felt far beyond the classroom, \"not just in terms of increased confidence, motivation and ability, but in a heightened respect for the differing views of others\". In 1999, I walked through the gates of Trinity College to enrol as an undergraduate in the philosophy department. I had just returned home from years living in another city; I was recently married, unemployed and had been diagnosed with a mental illness I didn't quite believe I had. I wasn't sure if I could cope.\nHypothesis: They think the study of philosophy is very important for the youth.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Last Saturday I was thrilled to read about a school in Co Antrim which has introduced the study of philosophy for students of four years of age and upwards. According to both teachers and parents, the benefits are felt far beyond the classroom, \"not just in terms of increased confidence, motivation and ability, but in a heightened respect for the differing views of others\". In 1999, I walked through the gates of Trinity College to enrol as an undergraduate in the philosophy department. I had just returned home from years living in another city; I was recently married, unemployed and had been diagnosed with a mental illness I didn't quite believe I had. I wasn't sure if I could cope.  \nHypothesis: They think the study of philosophy has no real importance for the youth.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.6847000122070312,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: High Noon is a retailer and auction consulting company. They specialize in Western American art & antique Americana, including cowboy and American Indian artifacts and fine western art. The company is known for founding the High Noon Western Americana Auction and Antique Show in 1991, held every January at the Phoenix Mesa Marriott in Mesa, Arizona.\nHypothesis: There are many examples of fine western art.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: High Noon is a retailer and auction consulting company. They specialize in Western American art & antique Americana, including cowboy and American Indian artifacts and fine western art. The company is known for founding the High Noon Western Americana Auction and Antique Show in 1991, held every January at the Phoenix Mesa Marriott in Mesa, Arizona.  \nHypothesis: There are no examples of fine western art.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7086210250854492,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: High Noon is a retailer and auction consulting company. They specialize in Western American art & antique Americana, including cowboy and American Indian artifacts and fine western art. The company is known for founding the High Noon Western Americana Auction and Antique Show in 1991, held every January at the Phoenix Mesa Marriott in Mesa, Arizona.\nHypothesis: There are many examples of fine western art.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: High Noon is a retailer and auction consulting company. They specialize in Western American art & antique Americana, including cowboy and American Indian artifacts and fine western art. The company is known for founding the High Noon Western Americana Auction and Antique Show in 1991, held every January at the Phoenix Mesa Marriott in Mesa, Arizona.  \nHypothesis: High Noon showcases many examples of fine western art.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.749377965927124,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.\nHypothesis: The Luton Town Ladies Football Club plays all their matches at The Carlsberg Stadium.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.  \nHypothesis: The Luton Town Ladies Football Club may play their matches at The Carlsberg Stadium.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9508507251739502,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.\nHypothesis: The Luton Town Ladies Football Club plays all their matches at The Carlsberg Stadium.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play all their matches at The Carlsberg Stadium, home of Biggleswade Town F.C.  \nHypothesis: The Luton Town Ladies Football Club plays all their matches at The Carlsberg Stadium.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0383880138397217,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?\nHypothesis: The National Assembly passed such a bill in 1995.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?  \nHypothesis: The National Assembly may have passed such a bill in 1995.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7472801208496094,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?\nHypothesis: The National Assembly passed such a bill in 1995.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?  \nHypothesis: The National Assembly passed such a bill in 1995.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8536951541900635,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.\nHypothesis: Social Security system has a z",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.  \nHypothesis: Social Security system is part of the goals mentioned.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0197241306304932,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.\nHypothesis: Social Security system has a z",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.  \nHypothesis: Social Security system is safe and secure.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.028487205505371,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "32_cf_neutral_0",
+        "original_id": 32,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.7772996453031404,
+          "p_orig": 0.22270027750087948,
+          "margin": 0.5545993678022609,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9989961981773376,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "32_cf_contradiction_0",
+        "original_id": 32,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999851926571606,
+          "p_orig": 6.825576124452132e-08,
+          "margin": 0.9999851244013993,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9981765747070312,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "17_cf_neutral_0",
+        "original_id": 17,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.999995214861742,
+          "p_orig": 3.979010253808742e-12,
+          "margin": 0.999995214857763,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9978474378585815,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "17_cf_entailment_0",
+        "original_id": 17,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.0004305593615389599,
+          "p_orig": 1.0257615960345992e-10,
+          "margin": 0.0004305592589628003,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "146_cf_contradiction_0",
+        "original_id": 146,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999967111538003,
+          "p_orig": 3.2887756700941488e-06,
+          "margin": 0.9999934223781302,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9922080039978027,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "146_cf_entailment_0",
+        "original_id": 146,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9890130259886265,
+          "p_orig": 0.010986973932330698,
+          "margin": 0.9780260520562958,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9881548285484314,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "6_cf_neutral_0",
+        "original_id": 6,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 1.8925292361767387e-05,
+          "p_orig": 1.1861044839351204e-08,
+          "margin": 1.8913431316928035e-05,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "6_cf_entailment_0",
+        "original_id": 6,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9988302747423462,
+          "p_orig": 2.099996183179881e-07,
+          "margin": 0.9988300647427278,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9925174117088318,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "237_cf_neutral_0",
+        "original_id": 237,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.060086758181497675,
+          "p_orig": 0.9399132306699436,
+          "margin": -0.8798264724884459,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "237_cf_contradiction_0",
+        "original_id": 237,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 4.5356829497220285e-05,
+          "p_orig": 0.0009110140007891442,
+          "margin": -0.0008656571712919239,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "286_cf_neutral_0",
+        "original_id": 286,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 1.1253639499531141e-07,
+          "p_orig": 0.9999998873930751,
+          "margin": -0.9999997748566801,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "286_cf_contradiction_0",
+        "original_id": 286,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999965877995,
+          "p_orig": 1.388817736361816e-11,
+          "margin": 0.9999999965739113,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9972206950187683,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "124_cf_contradiction_0",
+        "original_id": 124,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999936511192,
+          "p_orig": 6.348880682645318e-09,
+          "margin": 0.9999999873022386,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9991946816444397,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "124_cf_entailment_0",
+        "original_id": 124,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999966016877,
+          "p_orig": 3.3983123823935413e-09,
+          "margin": 0.9999999932033753,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9945842027664185,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "201_cf_neutral_0",
+        "original_id": 201,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 3.2887756700632643e-06,
+          "p_orig": 7.992055379296786e-11,
+          "margin": 3.2886957495094714e-06,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "201_cf_entailment_0",
+        "original_id": 201,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.99999992229674,
+          "p_orig": 3.581800747506792e-10,
+          "margin": 0.9999999219385599,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9984321594238281,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "224_cf_neutral_0",
+        "original_id": 224,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999997724963855,
+          "p_orig": 1.725803696391611e-08,
+          "margin": 0.9999997552383485,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.998755693435669,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "224_cf_entailment_0",
+        "original_id": 224,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 2.5080897399535093e-08,
+          "p_orig": 0.0011695156179064752,
+          "margin": -0.0011694905370090757,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "401_cf_neutral_0",
+        "original_id": 401,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 1.9172003681982236e-10,
+          "p_orig": 0.0,
+          "margin": 1.9172003681982236e-10,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "401_cf_entailment_0",
+        "original_id": 401,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9984988108045145,
+          "p_orig": 7.980085070679915e-11,
+          "margin": 0.9984988107247137,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9264377951622009,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      }
+    ]
+  },
+  "num_generated": 12,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 20,
+    "num_after_filtering": 12,
+    "num_final_selected": 12,
+    "budget_remaining_before": 184,
+    "budget_remaining_after": 172
+  }
+}

@@ -1,0 +1,774 @@
+{
+  "iteration": 3,
+  "timestamp": "20251121_205456",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 48,
+      "text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.\nHypothesis: The misfits released their album under a self-titled record company.",
+      "label": "entailment"
+    },
+    {
+      "id": 327,
+      "text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.\nHypothesis: There are 5x5 teams.",
+      "label": "entailment"
+    },
+    {
+      "id": 27,
+      "text": "Premise: How to leg yield<br>Know that the secret to leg-yielding is in timing. In order to really get a feel for it, it is necessary to begin without being mounted. Have an assistant in the ring that can have her hands free.\nHypothesis: Leg-yielding is best done with an assistant present.",
+      "label": "entailment"
+    },
+    {
+      "id": 374,
+      "text": "Premise: Hyde, Jekyll, Me () is a 2015 South Korean television series starring Hyun Bin and Han Ji-min. It is based on Lee Choong-ho's webtoon \"Dr. Jekyll Is Mr. Hyde\" (), which gave a romantic comedy spin on the literary character. The series aired on SBS from January 21 to March 26, 2015 on Wednesdays and Thursdays at 21:55 for 20 episodes.\nHypothesis: Hyde, Jekyll, Me started on January 21st and was cancelled March 26th, 2015.",
+      "label": "neutral"
+    },
+    {
+      "id": 352,
+      "text": "Premise: When Boosie attempted to comb his son\u2019s hair on Instagram Live, we couldn\u2019t help but to get instant flashbacks of the days we would get popped with the comb because our hair was too nappy and mama was too frustrated. Boosie combing that boy hair like a mad black moma \ud83d\ude02 pic.twitter.com/VohJpIlBXG \u2014 \u3164\u064b (@allureshae) June 29, 2018 All Boosie is missing is the house phone glued to his ear so he can get all the neighborhood gossip. Boosie Doing His Son's Hair Reminds Us Of All Black Mothers was originally published on globalgrind.com Also On 97.9 The Beat:\nHypothesis: Boosie has the house phone glued to his ear in the video.",
+      "label": "contradiction"
+    },
+    {
+      "id": 64,
+      "text": "Premise: Bogdanovic exited Thursday's preseason game against the Clippers early with a right ankle sprain, Jason Jones of The Sacramento Bee reports. Bogdanovic slammed into Kosta Koufos will attempting to defend a three-pointer and came down awkwardly on his ankle. He had to be helped off the court by the team trainer and was subsequently ruled out for the remainder of the exhibition. Bogdanovic will almost certainly sit out Friday's preseason tilt against the Warriors and his availability for the regular season opener on Wednesday could also be in doubt depending on the severity of the sprain.\nHypothesis: Jason Jones felt bad for injuring Bogdanovic.",
+      "label": "neutral"
+    },
+    {
+      "id": 421,
+      "text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.\nHypothesis: The lesser eyed hawkmoth dates back to 1937.",
+      "label": "entailment"
+    },
+    {
+      "id": 256,
+      "text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.\nHypothesis: The person believes government should do little",
+      "label": "entailment"
+    },
+    {
+      "id": 170,
+      "text": "Premise: The royal tombs at Vergina were identified as the ancient capital of Aigai in the 1930s. A royal tomb identified as possibly Philip II of Macedonia, Alexander the Great's father, was found in 1977 by Manolis Andronikos.\nHypothesis: Before 1977, Philip's II was considered lost",
+      "label": "neutral"
+    },
+    {
+      "id": 232,
+      "text": "Premise: In poker the term Triple Crown is used for winning a poker title on the three major poker tours: The World Series of Poker (WSOP), World Poker Tour (WPT) and up to 2016 the European Poker Tour (EPT). Since the EPT has been discontinued and rebranded as the PokerStars Championship, those wins are considered part of the crown.\nHypothesis: Poker has the same term for a three time champion has horse racing does.",
+      "label": "neutral"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "48_cf_contradiction_0",
+      "text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.  \nHypothesis: The misfits did not release their album under a self-titled record company.",
+      "label": "contradiction",
+      "original_id": 48,
+      "original_label": "entailment"
+    },
+    {
+      "id": "327_cf_neutral_0",
+      "text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.  \nHypothesis: There might be 5x5 teams.",
+      "label": "neutral",
+      "original_id": 327,
+      "original_label": "entailment"
+    },
+    {
+      "id": "327_cf_contradiction_0",
+      "text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.  \nHypothesis: There are not 5x5 teams.",
+      "label": "contradiction",
+      "original_id": 327,
+      "original_label": "entailment"
+    },
+    {
+      "id": "27_cf_neutral_0",
+      "text": "Premise: How to leg yield<br>Know that the secret to leg-yielding is in timing. In order to really get a feel for it, it is necessary to begin without being mounted. Have an assistant in the ring that can have her hands free.  \nHypothesis: Leg-yielding can be done with or without an assistant present.",
+      "label": "neutral",
+      "original_id": 27,
+      "original_label": "entailment"
+    },
+    {
+      "id": "27_cf_contradiction_0",
+      "text": "Premise: How to leg yield<br>Know that the secret to leg-yielding is in timing. In order to really get a feel for it, it is necessary to begin without being mounted. Have an assistant in the ring that can have her hands free.  \nHypothesis: Leg-yielding is best done without an assistant present.",
+      "label": "contradiction",
+      "original_id": 27,
+      "original_label": "entailment"
+    },
+    {
+      "id": "374_cf_contradiction_0",
+      "text": "Premise: Hyde, Jekyll, Me () is a 2015 South Korean television series starring Hyun Bin and Han Ji-min. It is based on Lee Choong-ho's webtoon \"Dr. Jekyll Is Mr. Hyde\" (), which gave a romantic comedy spin on the literary character. The series aired on SBS from January 21 to March 26, 2015 on Wednesdays and Thursdays at 21:55 for 20 episodes.  \nHypothesis: Hyde, Jekyll, Me started on January 21st but did not air until March 26th, 2015.",
+      "label": "contradiction",
+      "original_id": 374,
+      "original_label": "neutral"
+    },
+    {
+      "id": "374_cf_entailment_0",
+      "text": "Premise: Hyde, Jekyll, Me () is a 2015 South Korean television series starring Hyun Bin and Han Ji-min. It is based on Lee Choong-ho's webtoon \"Dr. Jekyll Is Mr. Hyde\" (), which gave a romantic comedy spin on the literary character. The series aired on SBS from January 21 to March 26, 2015 on Wednesdays and Thursdays at 21:55 for 20 episodes.  \nHypothesis: Hyde, Jekyll, Me started on January 21st and ended March 26th, 2015.",
+      "label": "entailment",
+      "original_id": 374,
+      "original_label": "neutral"
+    },
+    {
+      "id": "352_cf_neutral_0",
+      "text": "Premise: When Boosie attempted to comb his son\u2019s hair on Instagram Live, we couldn\u2019t help but to get instant flashbacks of the days we would get popped with the comb because our hair was too nappy and mama was too frustrated. Boosie combing that boy hair like a mad black moma \ud83d\ude02 pic.twitter.com/VohJpIlBXG \u2014 \u3164\u064b (@allureshae) June 29, 2018 All Boosie is missing is the house phone glued to his ear so he can get all the neighborhood gossip. Boosie Doing His Son's Hair Reminds Us Of All Black Mothers was originally published on globalgrind.com Also On 97.9 The Beat:  \nHypothesis: Boosie might have the house phone glued to his ear in the video.",
+      "label": "neutral",
+      "original_id": 352,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "256_cf_contradiction_0",
+      "text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.  \nHypothesis: The person believes government should do a lot.",
+      "label": "contradiction",
+      "original_id": 256,
+      "original_label": "entailment"
+    },
+    {
+      "id": "170_cf_contradiction_0",
+      "text": "Premise: The royal tombs at Vergina were identified as the ancient capital of Aigai in the 1930s. A royal tomb identified as possibly Philip II of Macedonia, Alexander the Great's father, was found in 1977 by Manolis Andronikos.  \nHypothesis: Before 1977, Philip II's tomb was already known.",
+      "label": "contradiction",
+      "original_id": 170,
+      "original_label": "neutral"
+    },
+    {
+      "id": "170_cf_entailment_0",
+      "text": "Premise: The royal tombs at Vergina were identified as the ancient capital of Aigai in the 1930s. A royal tomb identified as Philip II of Macedonia, Alexander the Great's father, was found in 1977 by Manolis Andronikos.  \nHypothesis: Before 1977, Philip's II tomb was considered lost.",
+      "label": "entailment",
+      "original_id": 170,
+      "original_label": "neutral"
+    }
+  ],
+  "selected_cf_ids": [
+    "48_cf_contradiction_0",
+    "327_cf_neutral_0",
+    "327_cf_contradiction_0",
+    "27_cf_neutral_0",
+    "27_cf_contradiction_0",
+    "374_cf_contradiction_0",
+    "374_cf_entailment_0",
+    "352_cf_neutral_0",
+    "256_cf_contradiction_0",
+    "170_cf_contradiction_0",
+    "170_cf_entailment_0"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 20,
+    "num_filtered": 11,
+    "num_added": 11,
+    "budget_remaining_before": 172,
+    "budget_remaining_after": 161,
+    "generation_details": [
+      {
+        "original_text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.\nHypothesis: The misfits released their album under a self-titled record company.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.  \nHypothesis: The Misfits may have released their album under a self-titled record company.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2102231979370117,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.\nHypothesis: The misfits released their album under a self-titled record company.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.  \nHypothesis: The misfits did not release their album under a self-titled record company.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9565629959106445,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.\nHypothesis: There are 5x5 teams.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.  \nHypothesis: There might be 5x5 teams.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1520931720733643,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.\nHypothesis: There are 5x5 teams.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.  \nHypothesis: There are not 5x5 teams.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2270448207855225,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to leg yield<br>Know that the secret to leg-yielding is in timing. In order to really get a feel for it, it is necessary to begin without being mounted. Have an assistant in the ring that can have her hands free.\nHypothesis: Leg-yielding is best done with an assistant present.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: How to leg yield<br>Know that the secret to leg-yielding is in timing. In order to really get a feel for it, it is necessary to begin without being mounted. Have an assistant in the ring that can have her hands free.  \nHypothesis: Leg-yielding can be done with or without an assistant present.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.796515703201294,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to leg yield<br>Know that the secret to leg-yielding is in timing. In order to really get a feel for it, it is necessary to begin without being mounted. Have an assistant in the ring that can have her hands free.\nHypothesis: Leg-yielding is best done with an assistant present.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to leg yield<br>Know that the secret to leg-yielding is in timing. In order to really get a feel for it, it is necessary to begin without being mounted. Have an assistant in the ring that can have her hands free.  \nHypothesis: Leg-yielding is best done without an assistant present.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7872519493103027,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Hyde, Jekyll, Me () is a 2015 South Korean television series starring Hyun Bin and Han Ji-min. It is based on Lee Choong-ho's webtoon \"Dr. Jekyll Is Mr. Hyde\" (), which gave a romantic comedy spin on the literary character. The series aired on SBS from January 21 to March 26, 2015 on Wednesdays and Thursdays at 21:55 for 20 episodes.\nHypothesis: Hyde, Jekyll, Me started on January 21st and was cancelled March 26th, 2015.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Hyde, Jekyll, Me () is a 2015 South Korean television series starring Hyun Bin and Han Ji-min. It is based on Lee Choong-ho's webtoon \"Dr. Jekyll Is Mr. Hyde\" (), which gave a romantic comedy spin on the literary character. The series aired on SBS from January 21 to March 26, 2015 on Wednesdays and Thursdays at 21:55 for 20 episodes.  \nHypothesis: Hyde, Jekyll, Me started on January 21st but did not air until March 26th, 2015.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.7421469688415527,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Hyde, Jekyll, Me () is a 2015 South Korean television series starring Hyun Bin and Han Ji-min. It is based on Lee Choong-ho's webtoon \"Dr. Jekyll Is Mr. Hyde\" (), which gave a romantic comedy spin on the literary character. The series aired on SBS from January 21 to March 26, 2015 on Wednesdays and Thursdays at 21:55 for 20 episodes.\nHypothesis: Hyde, Jekyll, Me started on January 21st and was cancelled March 26th, 2015.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Hyde, Jekyll, Me () is a 2015 South Korean television series starring Hyun Bin and Han Ji-min. It is based on Lee Choong-ho's webtoon \"Dr. Jekyll Is Mr. Hyde\" (), which gave a romantic comedy spin on the literary character. The series aired on SBS from January 21 to March 26, 2015 on Wednesdays and Thursdays at 21:55 for 20 episodes.  \nHypothesis: Hyde, Jekyll, Me started on January 21st and ended March 26th, 2015.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1208741664886475,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: When Boosie attempted to comb his son\u2019s hair on Instagram Live, we couldn\u2019t help but to get instant flashbacks of the days we would get popped with the comb because our hair was too nappy and mama was too frustrated. Boosie combing that boy hair like a mad black moma \ud83d\ude02 pic.twitter.com/VohJpIlBXG \u2014 \u3164\u064b (@allureshae) June 29, 2018 All Boosie is missing is the house phone glued to his ear so he can get all the neighborhood gossip. Boosie Doing His Son's Hair Reminds Us Of All Black Mothers was originally published on globalgrind.com Also On 97.9 The Beat:\nHypothesis: Boosie has the house phone glued to his ear in the video.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: When Boosie attempted to comb his son\u2019s hair on Instagram Live, we couldn\u2019t help but to get instant flashbacks of the days we would get popped with the comb because our hair was too nappy and mama was too frustrated. Boosie combing that boy hair like a mad black moma \ud83d\ude02 pic.twitter.com/VohJpIlBXG \u2014 \u3164\u064b (@allureshae) June 29, 2018 All Boosie is missing is the house phone glued to his ear so he can get all the neighborhood gossip. Boosie Doing His Son's Hair Reminds Us Of All Black Mothers was originally published on globalgrind.com Also On 97.9 The Beat:  \nHypothesis: Boosie might have the house phone glued to his ear in the video.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.333503007888794,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: When Boosie attempted to comb his son\u2019s hair on Instagram Live, we couldn\u2019t help but to get instant flashbacks of the days we would get popped with the comb because our hair was too nappy and mama was too frustrated. Boosie combing that boy hair like a mad black moma \ud83d\ude02 pic.twitter.com/VohJpIlBXG \u2014 \u3164\u064b (@allureshae) June 29, 2018 All Boosie is missing is the house phone glued to his ear so he can get all the neighborhood gossip. Boosie Doing His Son's Hair Reminds Us Of All Black Mothers was originally published on globalgrind.com Also On 97.9 The Beat:\nHypothesis: Boosie has the house phone glued to his ear in the video.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: When Boosie attempted to comb his son\u2019s hair on Instagram Live, we couldn\u2019t help but to get instant flashbacks of the days we would get popped with the comb because our hair was too nappy and mama was too frustrated. Boosie combing that boy hair like a mad black moma \ud83d\ude02 pic.twitter.com/VohJpIlBXG \u2014 \u3164\u064b (@allureshae) June 29, 2018 All Boosie is missing is the house phone glued to his ear so he can get all the neighborhood gossip, and in the video, it seems like he\u2019s got it. Boosie Doing His Son's Hair Reminds Us Of All Black Mothers was originally published on globalgrind.com Also On 97.9 The Beat:\nHypothesis: Boosie has the house phone glued to his ear in the video.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.6321449279785156,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Bogdanovic exited Thursday's preseason game against the Clippers early with a right ankle sprain, Jason Jones of The Sacramento Bee reports. Bogdanovic slammed into Kosta Koufos will attempting to defend a three-pointer and came down awkwardly on his ankle. He had to be helped off the court by the team trainer and was subsequently ruled out for the remainder of the exhibition. Bogdanovic will almost certainly sit out Friday's preseason tilt against the Warriors and his availability for the regular season opener on Wednesday could also be in doubt depending on the severity of the sprain.\nHypothesis: Jason Jones felt bad for injuring Bogdanovic.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Bogdanovic exited Thursday's preseason game against the Clippers early with a right ankle sprain, Jason Jones of The Sacramento Bee reports. Bogdanovic slammed into Kosta Koufos while attempting to defend a three-pointer and came down awkwardly on his ankle. He had to be helped off the court by the team trainer and was subsequently ruled out for the remainder of the exhibition. Bogdanovic will almost certainly sit out Friday's preseason tilt against the Warriors and his availability for the regular season opener on Wednesday could also be in doubt depending on the severity of the sprain.  \nHypothesis: Jason Jones was not involved in injuring Bogdanovic.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2373268604278564,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Bogdanovic exited Thursday's preseason game against the Clippers early with a right ankle sprain, Jason Jones of The Sacramento Bee reports. Bogdanovic slammed into Kosta Koufos will attempting to defend a three-pointer and came down awkwardly on his ankle. He had to be helped off the court by the team trainer and was subsequently ruled out for the remainder of the exhibition. Bogdanovic will almost certainly sit out Friday's preseason tilt against the Warriors and his availability for the regular season opener on Wednesday could also be in doubt depending on the severity of the sprain.\nHypothesis: Jason Jones felt bad for injuring Bogdanovic.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Bogdanovic exited Thursday's preseason game against the Clippers early with a right ankle sprain, Jason Jones of The Sacramento Bee reports. Bogdanovic slammed into Kosta Koufos while attempting to defend a three-pointer and came down awkwardly on his ankle. He had to be helped off the court by the team trainer and was subsequently ruled out for the remainder of the exhibition. Jason Jones, who reported on the incident, felt bad for injuring Bogdanovic, and Bogdanovic will almost certainly sit out Friday's preseason tilt against the Warriors. His availability for the regular season opener on Wednesday could also be in doubt depending on the severity of the sprain.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2040438652038574,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.\nHypothesis: The lesser eyed hawkmoth dates back to 1937.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.  \nHypothesis: The lesser eyed hawkmoth has been known since 1937.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0469555854797363,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.\nHypothesis: The lesser eyed hawkmoth dates back to 1937.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.  \nHypothesis: The lesser eyed hawkmoth existed long before 1937.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0946681499481201,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.\nHypothesis: The person believes government should do little",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.  \nHypothesis: The person might prefer a government with specific priorities.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.265458106994629,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.\nHypothesis: The person believes government should do little",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.  \nHypothesis: The person believes government should do a lot.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9040861129760742,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The royal tombs at Vergina were identified as the ancient capital of Aigai in the 1930s. A royal tomb identified as possibly Philip II of Macedonia, Alexander the Great's father, was found in 1977 by Manolis Andronikos.\nHypothesis: Before 1977, Philip's II was considered lost",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The royal tombs at Vergina were identified as the ancient capital of Aigai in the 1930s. A royal tomb identified as possibly Philip II of Macedonia, Alexander the Great's father, was found in 1977 by Manolis Andronikos.  \nHypothesis: Before 1977, Philip II's tomb was already known.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7774059772491455,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The royal tombs at Vergina were identified as the ancient capital of Aigai in the 1930s. A royal tomb identified as possibly Philip II of Macedonia, Alexander the Great's father, was found in 1977 by Manolis Andronikos.\nHypothesis: Before 1977, Philip's II was considered lost",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The royal tombs at Vergina were identified as the ancient capital of Aigai in the 1930s. A royal tomb identified as Philip II of Macedonia, Alexander the Great's father, was found in 1977 by Manolis Andronikos.  \nHypothesis: Before 1977, Philip's II tomb was considered lost.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9054930210113525,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: In poker the term Triple Crown is used for winning a poker title on the three major poker tours: The World Series of Poker (WSOP), World Poker Tour (WPT) and up to 2016 the European Poker Tour (EPT). Since the EPT has been discontinued and rebranded as the PokerStars Championship, those wins are considered part of the crown.\nHypothesis: Poker has the same term for a three time champion has horse racing does.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: In poker the term Triple Crown is used for winning a poker title on the three major poker tours: The World Series of Poker (WSOP), World Poker Tour (WPT) and up to 2016 the European Poker Tour (EPT). Since the EPT has been discontinued and rebranded as the PokerStars Championship, those wins are considered part of the crown.  \nHypothesis: Poker does not use the same term for a three time champion as horse racing does.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8900790214538574,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: In poker the term Triple Crown is used for winning a poker title on the three major poker tours: The World Series of Poker (WSOP), World Poker Tour (WPT) and up to 2016 the European Poker Tour (EPT). Since the EPT has been discontinued and rebranded as the PokerStars Championship, those wins are considered part of the crown.\nHypothesis: Poker has the same term for a three time champion has horse racing does.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: In poker the term Triple Crown is used for winning a poker title on the three major poker tours: The World Series of Poker (WSOP), World Poker Tour (WPT) and up to 2016 the European Poker Tour (EPT). Since the EPT has been discontinued and rebranded as the PokerStars Championship, those wins are considered part of the crown.  \nHypothesis: Poker uses the term Triple Crown for champions in a similar way to horse racing.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9704639911651611,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "48_cf_neutral_0",
+        "original_id": 48,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.32080703091113916,
+          "p_orig": 0.6791481066647671,
+          "margin": -0.35834107575362795,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "48_cf_contradiction_0",
+        "original_id": 48,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9992818571867524,
+          "p_orig": 0.0002303955158510231,
+          "margin": 0.9990514616709014,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9992316961288452,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "327_cf_neutral_0",
+        "original_id": 327,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9968268631969217,
+          "p_orig": 4.436772224022188e-07,
+          "margin": 0.9968264195196993,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.997955858707428,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "327_cf_contradiction_0",
+        "original_id": 327,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.879996018617424,
+          "p_orig": 0.0009093018640566165,
+          "margin": 0.8790867167533675,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9974647164344788,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "27_cf_neutral_0",
+        "original_id": 27,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9987558126076765,
+          "p_orig": 7.475914906720161e-05,
+          "margin": 0.9986810534586094,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9929985404014587,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "27_cf_contradiction_0",
+        "original_id": 27,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999634539423,
+          "p_orig": 1.0816124866714288e-11,
+          "margin": 0.9999999634431261,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9966282844543457,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "374_cf_contradiction_0",
+        "original_id": 374,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9997952013880842,
+          "p_orig": 0.00020342792075766602,
+          "margin": 0.9995917734673265,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9987838268280029,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "374_cf_entailment_0",
+        "original_id": 374,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999391730411,
+          "p_orig": 6.023641998847082e-08,
+          "margin": 0.9999998789366211,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9987415671348572,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "352_cf_neutral_0",
+        "original_id": 352,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999998095143918,
+          "p_orig": 4.944514715013224e-09,
+          "margin": 0.9999998045698771,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9989350438117981,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "352_cf_entailment_0",
+        "original_id": 352,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 1.3002869687428083e-05,
+          "p_orig": 0.00033534769602618244,
+          "margin": -0.00032234482633875433,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "64_cf_contradiction_0",
+        "original_id": 64,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 8.152123643664006e-09,
+          "p_orig": 4.450892477506868e-07,
+          "margin": -4.369371241070228e-07,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "64_cf_entailment_0",
+        "original_id": 64,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 1.1352736396236636e-05,
+          "p_orig": 0.010986853046532255,
+          "margin": -0.010975500310136018,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "421_cf_neutral_0",
+        "original_id": 421,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 4.4508925104161304e-07,
+          "p_orig": 0.9999995541524822,
+          "margin": -0.9999991090632312,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "421_cf_contradiction_0",
+        "original_id": 421,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 6.144004475514678e-06,
+          "p_orig": 3.5356262976812274e-05,
+          "margin": -2.9212258501297595e-05,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "256_cf_neutral_0",
+        "original_id": 256,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 5.829165905967761e-05,
+          "p_orig": 0.9999417083231086,
+          "margin": -0.9998834166640489,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "256_cf_contradiction_0",
+        "original_id": 256,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999006834588,
+          "p_orig": 3.5114847419441844e-12,
+          "margin": 0.9999999006799473,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9912217259407043,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "170_cf_contradiction_0",
+        "original_id": 170,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999832980554535,
+          "p_orig": 1.670153868233304e-05,
+          "margin": 0.9999665965167711,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9864628911018372,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "170_cf_entailment_0",
+        "original_id": 170,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9241349616902228,
+          "p_orig": 0.07585774744924606,
+          "margin": 0.8482772142409767,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9955453276634216,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "232_cf_contradiction_0",
+        "original_id": 232,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.2938148431647834,
+          "p_orig": 0.622005714065442,
+          "margin": -0.3281908709006586,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "232_cf_entailment_0",
+        "original_id": 232,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.09534955526498004,
+          "p_orig": 0.9046501311505649,
+          "margin": -0.8093005758855849,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      }
+    ]
+  },
+  "num_generated": 11,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 20,
+    "num_after_filtering": 11,
+    "num_final_selected": 11,
+    "budget_remaining_before": 172,
+    "budget_remaining_after": 161
+  }
+}

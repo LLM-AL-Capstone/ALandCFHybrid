@@ -1,0 +1,834 @@
+{
+  "iteration": 1,
+  "timestamp": "20251121_204231",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 106,
+      "text": "Premise: The garden was full of ripe odours and warm colours .<br>The Lombardies around it were tall and sombre like the priestly forms of some mystic band .<br>Abel was sitting in the hop-vine arbour ; beside him Captain Kidd slept .<br>I thought Abel was asleep , too ; his head leaned against the trellis and his eyes were shut .\nHypothesis: The people both had there eyes closed",
+      "label": "entailment"
+    },
+    {
+      "id": 301,
+      "text": "Premise: Paulina G\u00f3mez Torres (born 29 July 1991) known professionally as Paulina Goto is a Mexican actress, singer, and television hostess, who first gained popularity for her debut role in the Mexican telenovela \"Ni\u00f1a de mi Coraz\u00f3n\" in 2010. She was a member of the popular Mexican-Argentine pop group, Eme 15, formed by Televisa producer Pedro Dami\u00e1n, from 2011 to 2014.\nHypothesis: Paulina Goto has been popular for 9 years, since 2010.",
+      "label": "neutral"
+    },
+    {
+      "id": 51,
+      "text": "Premise: BALTIMORE \u00e2\u20ac\u201d Authorities say a man has been fatally gunned down in a triple shooting near a Baltimore police station. Police spokesman T.J. Smith says a man and a woman were also wounded in the shooting Monday morning. Officers saw two men run away from the scene. Smith says officers chased after them, but the men managed to escape. Investigators believe the shooting was targeted, not random. Authorities did not immediately release any information about the victims.\nHypothesis: The men must have shot more than one person.",
+      "label": "entailment"
+    },
+    {
+      "id": 378,
+      "text": "Premise: Europe's economic environment has altered considerably over the last thirty years, and the economies of European countries have progressively opened up to the global economy. As a result, the competitiveness of the European economies is dependent not just on production costs, but also on the performance of pension and social security systems guaranteeing security for the future.\nHypothesis: Pension and social security systems are necessary.",
+      "label": "neutral"
+    },
+    {
+      "id": 160,
+      "text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced the end of catch and release policies that allow illegals to enter the country without deportation.\nHypothesis: Illegals cannot enter the country without being deported.",
+      "label": "entailment"
+    },
+    {
+      "id": 314,
+      "text": "Premise: Ileana Carusio, best known with the stage names of Ramba, Mal\u00f9 or Mal\u00f9 Ramba (born 1967) is a retired Italian pornographic actress whose career spanned over 6 years. At first her name was \"Mal\u00f9\", but the most fitting Ramba was launched by a journalist as he was referring to her aggressive look with guns and magazines. She has appeared in many films.\nHypothesis: She has always been in porn movies.",
+      "label": "neutral"
+    },
+    {
+      "id": 285,
+      "text": "Premise: How to manage cash flow for a business<br>Write down your business's balance at the beginning of each month. Check your business's bank account to see how much cash you have on hand. You will need to do this for a few months before you have a good idea of what your cash flow is like.\nHypothesis: The beginning of each month you should visit your bank to see if they have toasters.",
+      "label": "contradiction"
+    },
+    {
+      "id": 37,
+      "text": "Premise: Maskarade (\"Masquerade\") is an opera in three acts by Carl Nielsen to a Danish libretto by Vilhelm Andersen, based on the comedy by Ludvig Holberg. It was first performed on 11 November 1906 at Det Kongelige Teater, Copenhagen. \"Maskarade\" has enjoyed enduring popularity in Denmark where it is considered to be the country's national opera.\nHypothesis: Det Kongelige Teater is smaller than Copenhagen.",
+      "label": "neutral"
+    },
+    {
+      "id": 222,
+      "text": "Premise: Halloween<br>Paula had decided to take her two year old trick or treating. She was excited to pick out a costume. Halloween night she dressed up her child and headed out. They walked all over the neighborhood getting candy. They both had a great time.\nHypothesis: They received a lot of candy",
+      "label": "neutral"
+    },
+    {
+      "id": 223,
+      "text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Gene Roberts to Meg Randall in mid-1948.\nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Genny Roberts. ",
+      "label": "contradiction"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "106_cf_contradiction_0",
+      "text": "Premise: The garden was full of ripe odours and warm colours .<br>The Lombardies around it were tall and sombre like the priestly forms of some mystic band .<br>Abel was sitting in the hop-vine arbour ; beside him Captain Kidd slept .<br>I thought Abel was asleep , too ; his head leaned against the trellis and his eyes were shut .  \nHypothesis: Abel had his eyes open while Captain Kidd slept .",
+      "label": "contradiction",
+      "original_id": 106,
+      "original_label": "entailment"
+    },
+    {
+      "id": "301_cf_contradiction_0",
+      "text": "Premise: Paulina G\u00f3mez Torres (born 29 July 1991) known professionally as Paulina Goto is a Mexican actress, singer, and television hostess, who first gained popularity for her debut role in the Mexican telenovela \"Ni\u00f1a de mi Coraz\u00f3n\" in 2010. She was a member of the popular Mexican-Argentine pop group, Eme 15, formed by Televisa producer Pedro Dami\u00e1n, from 2011 to 2014.  \nHypothesis: Paulina Goto has not been popular since 2010.",
+      "label": "contradiction",
+      "original_id": 301,
+      "original_label": "neutral"
+    },
+    {
+      "id": "301_cf_entailment_0",
+      "text": "Premise: Paulina G\u00f3mez Torres (born 29 July 1991) known professionally as Paulina Goto is a Mexican actress, singer, and television hostess, who first gained popularity for her debut role in the Mexican telenovela \"Ni\u00f1a de mi Coraz\u00f3n\" in 2010. She was a member of the popular Mexican-Argentine pop group, Eme 15, formed by Televisa producer Pedro Dami\u00e1n, from 2011 to 2014.  \nHypothesis: Paulina Goto has been popular since 2010, making her career span at least 9 years.",
+      "label": "entailment",
+      "original_id": 301,
+      "original_label": "neutral"
+    },
+    {
+      "id": "51_cf_contradiction_0",
+      "text": "Premise: BALTIMORE \u00e2\u20ac\u201d Authorities say a man has been fatally gunned down in a triple shooting near a Baltimore police station. Police spokesman T.J. Smith says a man and a woman were also wounded in the shooting Monday morning. Officers saw two men run away from the scene. Smith says officers chased after them, but the men managed to escape. Investigators believe the shooting was targeted, not random. Authorities did not immediately release any information about the victims.  \nHypothesis: The men could not have shot more than one person.",
+      "label": "contradiction",
+      "original_id": 51,
+      "original_label": "entailment"
+    },
+    {
+      "id": "378_cf_contradiction_0",
+      "text": "Premise: Europe's economic environment has altered considerably over the last thirty years, and the economies of European countries have progressively opened up to the global economy. As a result, the competitiveness of the European economies is dependent not just on production costs, but also on the performance of pension and social security systems guaranteeing security for the future.  \nHypothesis: Pension and social security systems are unnecessary.",
+      "label": "contradiction",
+      "original_id": 378,
+      "original_label": "neutral"
+    },
+    {
+      "id": "378_cf_entailment_0",
+      "text": "Premise: Europe's economic environment has altered considerably over the last thirty years, and the economies of European countries have progressively opened up to the global economy. As a result, the competitiveness of the European economies is dependent not just on production costs, but also on the performance of pension and social security systems guaranteeing security for the future.  \nHypothesis: Pension and social security systems are essential.",
+      "label": "entailment",
+      "original_id": 378,
+      "original_label": "neutral"
+    },
+    {
+      "id": "160_cf_neutral_0",
+      "text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced the end of catch and release policies that allow illegals to enter the country without deportation.  \nHypothesis: Illegals may still enter the country without being deported.",
+      "label": "neutral",
+      "original_id": 160,
+      "original_label": "entailment"
+    },
+    {
+      "id": "160_cf_contradiction_0",
+      "text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced the end of catch and release policies that allow illegals to enter the country without deportation.  \nHypothesis: Illegals can enter the country without being deported.",
+      "label": "contradiction",
+      "original_id": 160,
+      "original_label": "entailment"
+    },
+    {
+      "id": "314_cf_contradiction_0",
+      "text": "Premise: Ileana Carusio, best known with the stage names of Ramba, Mal\u00f9 or Mal\u00f9 Ramba (born 1967) is a retired Italian pornographic actress whose career spanned over 6 years. At first her name was \"Mal\u00f9\", but the most fitting Ramba was launched by a journalist as he was referring to her aggressive look with guns and magazines. She has appeared in many films.  \nHypothesis: She has never been in porn movies.",
+      "label": "contradiction",
+      "original_id": 314,
+      "original_label": "neutral"
+    },
+    {
+      "id": "314_cf_entailment_0",
+      "text": "Premise: Ileana Carusio, best known with the stage names of Ramba, Mal\u00f9 or Mal\u00f9 Ramba (born 1967) is a retired Italian pornographic actress whose career spanned over 6 years. At first her name was \"Mal\u00f9\", but the most fitting Ramba was launched by a journalist as he was referring to her aggressive look with guns and magazines. She has exclusively appeared in porn movies.  \nHypothesis: She has always been in porn movies.",
+      "label": "entailment",
+      "original_id": 314,
+      "original_label": "neutral"
+    },
+    {
+      "id": "285_cf_neutral_0",
+      "text": "Premise: How to manage cash flow for a business<br>Write down your business's balance at the beginning of each month. Check your business's bank account to see how much cash you have on hand. You will need to do this for a few months before you have a good idea of what your cash flow is like.  \nHypothesis: The beginning of each month you could visit your bank to inquire about additional services they offer, such as toasters.",
+      "label": "neutral",
+      "original_id": 285,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "37_cf_contradiction_0",
+      "text": "Premise: Maskarade (\"Masquerade\") is an opera in three acts by Carl Nielsen to a Danish libretto by Vilhelm Andersen, based on the comedy by Ludvig Holberg. It was first performed on 11 November 1906 at Det Kongelige Teater, Copenhagen. \"Maskarade\" has enjoyed enduring popularity in Denmark where it is considered to be the country's national opera.  \nHypothesis: Det Kongelige Teater is larger than Copenhagen.",
+      "label": "contradiction",
+      "original_id": 37,
+      "original_label": "neutral"
+    },
+    {
+      "id": "37_cf_entailment_0",
+      "text": "Premise: Maskarade (\"Masquerade\") is an opera in three acts by Carl Nielsen to a Danish libretto by Vilhelm Andersen, based on the comedy by Ludvig Holberg. It was first performed on 11 November 1906 at Det Kongelige Teater, Copenhagen. \"Maskarade\" has enjoyed enduring popularity in Denmark where it is considered to be the country's national opera.  \nHypothesis: Det Kongelige Teater, located in Copenhagen, is smaller than the city itself.",
+      "label": "entailment",
+      "original_id": 37,
+      "original_label": "neutral"
+    },
+    {
+      "id": "222_cf_contradiction_0",
+      "text": "Premise: Halloween<br>Paula had decided to take her two year old trick or treating. She was excited to pick out a costume. Halloween night she dressed up her child and headed out. They walked all over the neighborhood but didn\u2019t get much candy. They both had a great time.  \nHypothesis: They received a lot of candy",
+      "label": "contradiction",
+      "original_id": 222,
+      "original_label": "neutral"
+    },
+    {
+      "id": "222_cf_entailment_0",
+      "text": "Premise: Halloween<br>Paula had decided to take her two year old trick or treating. She was excited to pick out a costume. Halloween night she dressed up her child and headed out. They walked all over the neighborhood getting candy. They both had a great time.  \nHypothesis: They received a lot of candy, as they visited many houses.",
+      "label": "entailment",
+      "original_id": 222,
+      "original_label": "neutral"
+    },
+    {
+      "id": "223_cf_entailment_0",
+      "text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Genevieve Roberts to Meg Randall in mid-1948.  \nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Genevieve Roberts.",
+      "label": "entailment",
+      "original_id": 223,
+      "original_label": "contradiction"
+    }
+  ],
+  "selected_cf_ids": [
+    "106_cf_contradiction_0",
+    "301_cf_contradiction_0",
+    "301_cf_entailment_0",
+    "51_cf_contradiction_0",
+    "378_cf_contradiction_0",
+    "378_cf_entailment_0",
+    "160_cf_neutral_0",
+    "160_cf_contradiction_0",
+    "314_cf_contradiction_0",
+    "314_cf_entailment_0",
+    "285_cf_neutral_0",
+    "37_cf_contradiction_0",
+    "37_cf_entailment_0",
+    "222_cf_contradiction_0",
+    "222_cf_entailment_0",
+    "223_cf_entailment_0"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 20,
+    "num_filtered": 16,
+    "num_added": 16,
+    "budget_remaining_before": 200,
+    "budget_remaining_after": 184,
+    "generation_details": [
+      {
+        "original_text": "Premise: The garden was full of ripe odours and warm colours .<br>The Lombardies around it were tall and sombre like the priestly forms of some mystic band .<br>Abel was sitting in the hop-vine arbour ; beside him Captain Kidd slept .<br>I thought Abel was asleep , too ; his head leaned against the trellis and his eyes were shut .\nHypothesis: The people both had there eyes closed",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: The garden was full of ripe odours and warm colours .<br>The Lombardies around it were tall and sombre like the priestly forms of some mystic band .<br>Abel was sitting in the hop-vine arbour ; beside him Captain Kidd slept .<br>I thought Abel was asleep , too ; his head leaned against the trellis and his eyes were shut .  \nHypothesis: It is unclear if both people had their eyes closed.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9279391765594482,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The garden was full of ripe odours and warm colours .<br>The Lombardies around it were tall and sombre like the priestly forms of some mystic band .<br>Abel was sitting in the hop-vine arbour ; beside him Captain Kidd slept .<br>I thought Abel was asleep , too ; his head leaned against the trellis and his eyes were shut .\nHypothesis: The people both had there eyes closed",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The garden was full of ripe odours and warm colours .<br>The Lombardies around it were tall and sombre like the priestly forms of some mystic band .<br>Abel was sitting in the hop-vine arbour ; beside him Captain Kidd slept .<br>I thought Abel was asleep , too ; his head leaned against the trellis and his eyes were shut .  \nHypothesis: Abel had his eyes open while Captain Kidd slept .",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9215099811553955,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Paulina G\u00f3mez Torres (born 29 July 1991) known professionally as Paulina Goto is a Mexican actress, singer, and television hostess, who first gained popularity for her debut role in the Mexican telenovela \"Ni\u00f1a de mi Coraz\u00f3n\" in 2010. She was a member of the popular Mexican-Argentine pop group, Eme 15, formed by Televisa producer Pedro Dami\u00e1n, from 2011 to 2014.\nHypothesis: Paulina Goto has been popular for 9 years, since 2010.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Paulina G\u00f3mez Torres (born 29 July 1991) known professionally as Paulina Goto is a Mexican actress, singer, and television hostess, who first gained popularity for her debut role in the Mexican telenovela \"Ni\u00f1a de mi Coraz\u00f3n\" in 2010. She was a member of the popular Mexican-Argentine pop group, Eme 15, formed by Televisa producer Pedro Dami\u00e1n, from 2011 to 2014.  \nHypothesis: Paulina Goto has not been popular since 2010.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.231825828552246,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Paulina G\u00f3mez Torres (born 29 July 1991) known professionally as Paulina Goto is a Mexican actress, singer, and television hostess, who first gained popularity for her debut role in the Mexican telenovela \"Ni\u00f1a de mi Coraz\u00f3n\" in 2010. She was a member of the popular Mexican-Argentine pop group, Eme 15, formed by Televisa producer Pedro Dami\u00e1n, from 2011 to 2014.\nHypothesis: Paulina Goto has been popular for 9 years, since 2010.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Paulina G\u00f3mez Torres (born 29 July 1991) known professionally as Paulina Goto is a Mexican actress, singer, and television hostess, who first gained popularity for her debut role in the Mexican telenovela \"Ni\u00f1a de mi Coraz\u00f3n\" in 2010. She was a member of the popular Mexican-Argentine pop group, Eme 15, formed by Televisa producer Pedro Dami\u00e1n, from 2011 to 2014.  \nHypothesis: Paulina Goto has been popular since 2010, making her career span at least 9 years.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2074179649353027,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: BALTIMORE \u00e2\u20ac\u201d Authorities say a man has been fatally gunned down in a triple shooting near a Baltimore police station. Police spokesman T.J. Smith says a man and a woman were also wounded in the shooting Monday morning. Officers saw two men run away from the scene. Smith says officers chased after them, but the men managed to escape. Investigators believe the shooting was targeted, not random. Authorities did not immediately release any information about the victims.\nHypothesis: The men must have shot more than one person.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: BALTIMORE \u00e2\u20ac\u201d Authorities say a man has been fatally gunned down in a triple shooting near a Baltimore police station. Police spokesman T.J. Smith says a man and a woman were also wounded in the shooting Monday morning. Officers saw two men run away from the scene. Smith says officers chased after them, but the men managed to escape. Investigators believe the shooting was targeted, not random. Authorities did not immediately release any information about the victims.  \nHypothesis: The men might have shot more than one person.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9626419544219971,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: BALTIMORE \u00e2\u20ac\u201d Authorities say a man has been fatally gunned down in a triple shooting near a Baltimore police station. Police spokesman T.J. Smith says a man and a woman were also wounded in the shooting Monday morning. Officers saw two men run away from the scene. Smith says officers chased after them, but the men managed to escape. Investigators believe the shooting was targeted, not random. Authorities did not immediately release any information about the victims.\nHypothesis: The men must have shot more than one person.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: BALTIMORE \u00e2\u20ac\u201d Authorities say a man has been fatally gunned down in a triple shooting near a Baltimore police station. Police spokesman T.J. Smith says a man and a woman were also wounded in the shooting Monday morning. Officers saw two men run away from the scene. Smith says officers chased after them, but the men managed to escape. Investigators believe the shooting was targeted, not random. Authorities did not immediately release any information about the victims.  \nHypothesis: The men could not have shot more than one person.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1175129413604736,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Europe's economic environment has altered considerably over the last thirty years, and the economies of European countries have progressively opened up to the global economy. As a result, the competitiveness of the European economies is dependent not just on production costs, but also on the performance of pension and social security systems guaranteeing security for the future.\nHypothesis: Pension and social security systems are necessary.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Europe's economic environment has altered considerably over the last thirty years, and the economies of European countries have progressively opened up to the global economy. As a result, the competitiveness of the European economies is dependent not just on production costs, but also on the performance of pension and social security systems guaranteeing security for the future.  \nHypothesis: Pension and social security systems are unnecessary.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7192788124084473,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Europe's economic environment has altered considerably over the last thirty years, and the economies of European countries have progressively opened up to the global economy. As a result, the competitiveness of the European economies is dependent not just on production costs, but also on the performance of pension and social security systems guaranteeing security for the future.\nHypothesis: Pension and social security systems are necessary.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Europe's economic environment has altered considerably over the last thirty years, and the economies of European countries have progressively opened up to the global economy. As a result, the competitiveness of the European economies is dependent not just on production costs, but also on the performance of pension and social security systems guaranteeing security for the future.  \nHypothesis: Pension and social security systems are essential.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8234469890594482,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced the end of catch and release policies that allow illegals to enter the country without deportation.\nHypothesis: Illegals cannot enter the country without being deported.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced the end of catch and release policies that allow illegals to enter the country without deportation.  \nHypothesis: Illegals may still enter the country without being deported.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8264248371124268,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced the end of catch and release policies that allow illegals to enter the country without deportation.\nHypothesis: Illegals cannot enter the country without being deported.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced the end of catch and release policies that allow illegals to enter the country without deportation.  \nHypothesis: Illegals can enter the country without being deported.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8235986232757568,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Ileana Carusio, best known with the stage names of Ramba, Mal\u00f9 or Mal\u00f9 Ramba (born 1967) is a retired Italian pornographic actress whose career spanned over 6 years. At first her name was \"Mal\u00f9\", but the most fitting Ramba was launched by a journalist as he was referring to her aggressive look with guns and magazines. She has appeared in many films.\nHypothesis: She has always been in porn movies.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Ileana Carusio, best known with the stage names of Ramba, Mal\u00f9 or Mal\u00f9 Ramba (born 1967) is a retired Italian pornographic actress whose career spanned over 6 years. At first her name was \"Mal\u00f9\", but the most fitting Ramba was launched by a journalist as he was referring to her aggressive look with guns and magazines. She has appeared in many films.  \nHypothesis: She has never been in porn movies.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1291511058807373,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Ileana Carusio, best known with the stage names of Ramba, Mal\u00f9 or Mal\u00f9 Ramba (born 1967) is a retired Italian pornographic actress whose career spanned over 6 years. At first her name was \"Mal\u00f9\", but the most fitting Ramba was launched by a journalist as he was referring to her aggressive look with guns and magazines. She has appeared in many films.\nHypothesis: She has always been in porn movies.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Ileana Carusio, best known with the stage names of Ramba, Mal\u00f9 or Mal\u00f9 Ramba (born 1967) is a retired Italian pornographic actress whose career spanned over 6 years. At first her name was \"Mal\u00f9\", but the most fitting Ramba was launched by a journalist as he was referring to her aggressive look with guns and magazines. She has exclusively appeared in porn movies.  \nHypothesis: She has always been in porn movies.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1251747608184814,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to manage cash flow for a business<br>Write down your business's balance at the beginning of each month. Check your business's bank account to see how much cash you have on hand. You will need to do this for a few months before you have a good idea of what your cash flow is like.\nHypothesis: The beginning of each month you should visit your bank to see if they have toasters.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: How to manage cash flow for a business<br>Write down your business's balance at the beginning of each month. Check your business's bank account to see how much cash you have on hand. You will need to do this for a few months before you have a good idea of what your cash flow is like.  \nHypothesis: The beginning of each month you could visit your bank to inquire about additional services they offer, such as toasters.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0375878810882568,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to manage cash flow for a business<br>Write down your business's balance at the beginning of each month. Check your business's bank account to see how much cash you have on hand. You will need to do this for a few months before you have a good idea of what your cash flow is like.\nHypothesis: The beginning of each month you should visit your bank to see if they have toasters.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to manage cash flow for a business<br>Write down your business's balance at the beginning of each month. Check your business's bank account to see how much cash you have on hand. You will need to do this for a few months before you have a good idea of what your cash flow is like.  \nHypothesis: The beginning of each month you should visit your bank to check your business's cash balance.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.027277946472168,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Maskarade (\"Masquerade\") is an opera in three acts by Carl Nielsen to a Danish libretto by Vilhelm Andersen, based on the comedy by Ludvig Holberg. It was first performed on 11 November 1906 at Det Kongelige Teater, Copenhagen. \"Maskarade\" has enjoyed enduring popularity in Denmark where it is considered to be the country's national opera.\nHypothesis: Det Kongelige Teater is smaller than Copenhagen.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Maskarade (\"Masquerade\") is an opera in three acts by Carl Nielsen to a Danish libretto by Vilhelm Andersen, based on the comedy by Ludvig Holberg. It was first performed on 11 November 1906 at Det Kongelige Teater, Copenhagen. \"Maskarade\" has enjoyed enduring popularity in Denmark where it is considered to be the country's national opera.  \nHypothesis: Det Kongelige Teater is larger than Copenhagen.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8348641395568848,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Maskarade (\"Masquerade\") is an opera in three acts by Carl Nielsen to a Danish libretto by Vilhelm Andersen, based on the comedy by Ludvig Holberg. It was first performed on 11 November 1906 at Det Kongelige Teater, Copenhagen. \"Maskarade\" has enjoyed enduring popularity in Denmark where it is considered to be the country's national opera.\nHypothesis: Det Kongelige Teater is smaller than Copenhagen.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Maskarade (\"Masquerade\") is an opera in three acts by Carl Nielsen to a Danish libretto by Vilhelm Andersen, based on the comedy by Ludvig Holberg. It was first performed on 11 November 1906 at Det Kongelige Teater, Copenhagen. \"Maskarade\" has enjoyed enduring popularity in Denmark where it is considered to be the country's national opera.  \nHypothesis: Det Kongelige Teater, located in Copenhagen, is smaller than the city itself.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2395000457763672,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Halloween<br>Paula had decided to take her two year old trick or treating. She was excited to pick out a costume. Halloween night she dressed up her child and headed out. They walked all over the neighborhood getting candy. They both had a great time.\nHypothesis: They received a lot of candy",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Halloween<br>Paula had decided to take her two year old trick or treating. She was excited to pick out a costume. Halloween night she dressed up her child and headed out. They walked all over the neighborhood but didn\u2019t get much candy. They both had a great time.  \nHypothesis: They received a lot of candy",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6901578903198242,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Halloween<br>Paula had decided to take her two year old trick or treating. She was excited to pick out a costume. Halloween night she dressed up her child and headed out. They walked all over the neighborhood getting candy. They both had a great time.\nHypothesis: They received a lot of candy",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Halloween<br>Paula had decided to take her two year old trick or treating. She was excited to pick out a costume. Halloween night she dressed up her child and headed out. They walked all over the neighborhood getting candy. They both had a great time.  \nHypothesis: They received a lot of candy, as they visited many houses.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8228189945220947,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Gene Roberts to Meg Randall in mid-1948.\nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Genny Roberts. ",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Gene Roberts to Meg Randall in mid-1948.  \nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Gene Roberts.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.034120798110962,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Gene Roberts to Meg Randall in mid-1948.\nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Genny Roberts. ",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Genevieve Roberts to Meg Randall in mid-1948.  \nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Genevieve Roberts.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0803608894348145,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "106_cf_neutral_0",
+        "original_id": 106,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.006692532688512141,
+          "p_orig": 0.9932563690506535,
+          "margin": -0.9865638363621414,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "106_cf_contradiction_0",
+        "original_id": 106,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999006712329,
+          "p_orig": 1.573736690975578e-11,
+          "margin": 0.9999999006554955,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9850409030914307,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "301_cf_contradiction_0",
+        "original_id": 301,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999646431826391,
+          "p_orig": 3.5356501279521905e-05,
+          "margin": 0.9999292866813596,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9993361234664917,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "301_cf_entailment_0",
+        "original_id": 301,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999038718744516,
+          "p_orig": 9.610301769724219e-05,
+          "margin": 0.9998077688567544,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9989430904388428,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "51_cf_neutral_0",
+        "original_id": 51,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 5.8291672957077604e-05,
+          "p_orig": 0.9999417083270429,
+          "margin": -0.9998834166540858,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "51_cf_contradiction_0",
+        "original_id": 51,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999251528035529,
+          "p_orig": 5.211100206823244e-10,
+          "margin": 0.9999251522824428,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9957945942878723,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "378_cf_contradiction_0",
+        "original_id": 378,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999530865377,
+          "p_orig": 4.6912170515267696e-08,
+          "margin": 0.9999999061743672,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9924594759941101,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "378_cf_entailment_0",
+        "original_id": 378,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9997965719458608,
+          "p_orig": 0.00020342805413922093,
+          "margin": 0.9995931438917216,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.996461033821106,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "160_cf_neutral_0",
+        "original_id": 160,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9525568588561001,
+          "p_orig": 1.8027745831842336e-05,
+          "margin": 0.9525388311102683,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9898375272750854,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "160_cf_contradiction_0",
+        "original_id": 160,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.6212285064397972,
+          "p_orig": 0.0019772422204939184,
+          "margin": 0.6192512642193033,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9969906210899353,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "314_cf_contradiction_0",
+        "original_id": 314,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999999659046,
+          "p_orig": 2.0207173799866712e-11,
+          "margin": 0.9999999999456974,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9979290962219238,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "314_cf_entailment_0",
+        "original_id": 314,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999037113711107,
+          "p_orig": 7.484512385364768e-05,
+          "margin": 0.999828866247257,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9984436631202698,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "285_cf_neutral_0",
+        "original_id": 285,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999585990111,
+          "p_orig": 4.1399848882424655e-08,
+          "margin": 0.9999999171991623,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9866347908973694,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "285_cf_entailment_0",
+        "original_id": 285,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.0005523892524398735,
+          "p_orig": 0.0007092817207628592,
+          "margin": -0.0001568924683229857,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "37_cf_contradiction_0",
+        "original_id": 37,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999546018364815,
+          "p_orig": 4.539816110512326e-05,
+          "margin": 0.9999092036753764,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.999683678150177,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "37_cf_entailment_0",
+        "original_id": 37,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999038960864663,
+          "p_orig": 9.610305438712164e-05,
+          "margin": 0.9998077930320792,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9945614337921143,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "222_cf_contradiction_0",
+        "original_id": 222,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999006834588,
+          "p_orig": 9.931302968170424e-08,
+          "margin": 0.9999998013704291,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9975672960281372,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "222_cf_entailment_0",
+        "original_id": 222,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9770225738805963,
+          "p_orig": 0.02297742611940359,
+          "margin": 0.9540451477611928,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9863397479057312,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "223_cf_neutral_0",
+        "original_id": 223,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 1.1861265616964834e-08,
+          "p_orig": 5.492875574403276e-11,
+          "margin": 1.1806336861220802e-08,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "223_cf_entailment_0",
+        "original_id": 223,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999961290007,
+          "p_orig": 2.0207173722333725e-11,
+          "margin": 0.9999999961087935,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9733799695968628,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      }
+    ]
+  },
+  "num_generated": 16,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 20,
+    "num_after_filtering": 16,
+    "num_final_selected": 16,
+    "budget_remaining_before": 200,
+    "budget_remaining_after": 184
+  }
+}

@@ -1,0 +1,738 @@
+{
+  "iteration": 9,
+  "timestamp": "20251121_213751",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 290,
+      "text": "Premise: Married... with Children is an American television sitcom that aired on Fox, created by Michael G. Moye and Ron Leavitt. Originally broadcast from April 5, 1987 to June 9, 1997, it is the longest-lasting live-action sitcom on Fox, and the first to be broadcast in the network's primetime programming slot.\nHypothesis: Married... with Children was on a major television network.",
+      "label": "entailment"
+    },
+    {
+      "id": 276,
+      "text": "Premise: Some people may think that there is no other way to grow plants other than in soil; there is however, another way.\nHypothesis: Plants need soil to grow.",
+      "label": "contradiction"
+    },
+    {
+      "id": 135,
+      "text": "Premise: How to choose a pug<br>Use breed standards to assess the puppy. While some of the height and weight averages are not necessarily applicable for pug puppies, other parts of the american kennel club standard for pugs may be helpful when choosing a puppy. Use these standards to feel confident in selecting a puppy who is truly a purebred.\nHypothesis: breed standards has a q",
+      "label": "contradiction"
+    },
+    {
+      "id": 360,
+      "text": "Premise: The 1924\u201325 WPI Engineers men's basketball team represented Worcester Polytechnic Institute during the 1924\u201325 NCAA men's basketball season. They were coached by Ivan Bigler. The Engineers played their home games at Alumni Gym in Worcester, Massachusetts. The team finished the season with 5 wins and 9 losses.\nHypothesis: The team did not win the New England Championships back to back,",
+      "label": "neutral"
+    },
+    {
+      "id": 386,
+      "text": "Premise: Dance India Dance is an Indian dance competition show that airs on Zee TV, produced by Essel Vision Productions. The show is the national TV version of the Zee Bangla dance reality show \"Dance Bangla Dance\" which also has Mithun Chakraborty as the Grandmaster.\nHypothesis: Both shows begin and end with the same letter.",
+      "label": "entailment"
+    },
+    {
+      "id": 130,
+      "text": "Premise: John L. Rogers, 76, of Godfrey, died at 8:45 a.m. Tuesday, May 1, 2018, at Rosewood Care Center in Alton. Visitation will be from 5-8 p.m. Friday, May 4, at Marquette Catholic High School. A Mass of Christian burial will be at 10 a.m. Saturday, May 5, at St. Ambrose Catholic Church in Godfrey. Father Steven Janoski will officiate. Burial will be at St. Patrick's Cemetery in Godfrey. Gent Funeral Home in Alton is in charge arrangements.\nHypothesis: John L. Rogers died after sunrise in most countries",
+      "label": "entailment"
+    },
+    {
+      "id": 373,
+      "text": "Premise: The Newnes railway line (also called Wolgan Valley Railway) is a closed and dismantled railway line in New South Wales, Australia. The line ran for 32 mi from the Main Western line to the township of Newnes. Along the way, it passed through a tunnel now known as the Glowworm Tunnel, because it is famous for its glow-worms. The tunnel is now contained within the Wollemi National Park.\nHypothesis: Newnes railway line reopened last year.",
+      "label": "contradiction"
+    },
+    {
+      "id": 39,
+      "text": "Premise: Jason Ian Drucker (born \u20092005 ) is an American child actor. He starred as Greg Heffley in the 2017 film \"\". He also played Tommy Miller, the youngest of the Miller Family, in Nickelodeon's \"Every Witch Way\". In 2018, he will co-star in the \"Transformers\" spin-off \"Bumblebee\".\nHypothesis: By the end of 2018 Jason Ian Drucker was 13 years old.",
+      "label": "entailment"
+    },
+    {
+      "id": 28,
+      "text": "Premise: Jealousy Issues<br>Tim's girlfriend was jealous. She caught him talking to a friend online. Tim didn't think much of it. His girlfriend threatened the other girl. It made Tim break up with her.\nHypothesis: Tim would do anything for his girlfriend.",
+      "label": "contradiction"
+    },
+    {
+      "id": 165,
+      "text": "Premise: The Whitechapel murders were committed in or near the impoverished Whitechapel district in the East End of London between 3 April 1888 and 13 February 1891. At various points some or all of these eleven unsolved murders of women have been ascribed to the notorious unidentified serial killer known as Jack the Ripper.\nHypothesis: There were 10 unsolved murders from Jack the Ripper",
+      "label": "contradiction"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "290_cf_contradiction_0",
+      "text": "Premise: Married... with Children is an American television sitcom that aired on Fox, created by Michael G. Moye and Ron Leavitt. Originally broadcast from April 5, 1987 to June 9, 1997, it is the longest-lasting live-action sitcom on Fox, and the first to be broadcast in the network's primetime programming slot.  \nHypothesis: Married... with Children was not on a major television network.",
+      "label": "contradiction",
+      "original_id": 290,
+      "original_label": "entailment"
+    },
+    {
+      "id": "276_cf_entailment_0",
+      "text": "Premise: Some people may think that there is no other way to grow plants other than in soil; soil is indeed essential for plant growth.  \nHypothesis: Plants need soil to grow.",
+      "label": "entailment",
+      "original_id": 276,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "135_cf_entailment_0",
+      "text": "Premise: How to choose a pug<br>Use breed standards to assess the puppy. While some of the height and weight averages are not necessarily applicable for pug puppies, other parts of the american kennel club standard for pugs may be helpful when choosing a puppy. Use these standards to feel confident in selecting a puppy who is truly a purebred.  \nHypothesis: breed standards are helpful in choosing a pug.",
+      "label": "entailment",
+      "original_id": 135,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "360_cf_contradiction_0",
+      "text": "Premise: The 1924\u201325 WPI Engineers men's basketball team represented Worcester Polytechnic Institute during the 1924\u201325 NCAA men's basketball season. They were coached by Ivan Bigler. The Engineers played their home games at Alumni Gym in Worcester, Massachusetts. The team finished the season with 5 wins and 9 losses.  \nHypothesis: The team won the New England Championships back to back.",
+      "label": "contradiction",
+      "original_id": 360,
+      "original_label": "neutral"
+    },
+    {
+      "id": "373_cf_neutral_0",
+      "text": "Premise: The Newnes railway line (also called Wolgan Valley Railway) is a closed and dismantled railway line in New South Wales, Australia. The line ran for 32 mi from the Main Western line to the township of Newnes. Along the way, it passed through a tunnel now known as the Glowworm Tunnel, because it is famous for its glow-worms. The tunnel is now contained within the Wollemi National Park.  \nHypothesis: The Newnes railway line may have reopened last year.",
+      "label": "neutral",
+      "original_id": 373,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "373_cf_entailment_0",
+      "text": "Premise: The Newnes railway line (also called Wolgan Valley Railway) is a railway line in New South Wales, Australia, that was reopened last year. The line runs for 32 mi from the Main Western line to the township of Newnes. Along the way, it passes through a tunnel now known as the Glowworm Tunnel, because it is famous for its glow-worms. The tunnel is now contained within the Wollemi National Park.  \nHypothesis: Newnes railway line reopened last year.",
+      "label": "entailment",
+      "original_id": 373,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "28_cf_neutral_0",
+      "text": "Premise: Jealousy Issues<br>Tim's girlfriend was jealous. She caught him talking to a friend online. Tim didn't think much of it. His girlfriend threatened the other girl. Despite this, Tim cared deeply for his girlfriend.",
+      "label": "neutral",
+      "original_id": 28,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "165_cf_neutral_0",
+      "text": "Premise: The Whitechapel murders were committed in or near the impoverished Whitechapel district in the East End of London between 3 April 1888 and 13 February 1891. At various points some or all of these eleven unsolved murders of women have been ascribed to the notorious unidentified serial killer known as Jack the Ripper.  \nHypothesis: There may have been 10 unsolved murders attributed to Jack the Ripper.",
+      "label": "neutral",
+      "original_id": 165,
+      "original_label": "contradiction"
+    }
+  ],
+  "selected_cf_ids": [
+    "290_cf_contradiction_0",
+    "276_cf_entailment_0",
+    "135_cf_entailment_0",
+    "360_cf_contradiction_0",
+    "373_cf_neutral_0",
+    "373_cf_entailment_0",
+    "28_cf_neutral_0",
+    "165_cf_neutral_0"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 20,
+    "num_filtered": 8,
+    "num_added": 8,
+    "budget_remaining_before": 116,
+    "budget_remaining_after": 108,
+    "generation_details": [
+      {
+        "original_text": "Premise: Married... with Children is an American television sitcom that aired on Fox, created by Michael G. Moye and Ron Leavitt. Originally broadcast from April 5, 1987 to June 9, 1997, it is the longest-lasting live-action sitcom on Fox, and the first to be broadcast in the network's primetime programming slot.\nHypothesis: Married... with Children was on a major television network.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Married... with Children is an American television sitcom that aired on Fox, created by Michael G. Moye and Ron Leavitt. Originally broadcast from April 5, 1987 to June 9, 1997, it is the longest-lasting live-action sitcom on Fox, and the first to be broadcast in the network's primetime programming slot.  \nHypothesis: Married... with Children may have been on a major television network.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0027661323547363,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Married... with Children is an American television sitcom that aired on Fox, created by Michael G. Moye and Ron Leavitt. Originally broadcast from April 5, 1987 to June 9, 1997, it is the longest-lasting live-action sitcom on Fox, and the first to be broadcast in the network's primetime programming slot.\nHypothesis: Married... with Children was on a major television network.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Married... with Children is an American television sitcom that aired on Fox, created by Michael G. Moye and Ron Leavitt. Originally broadcast from April 5, 1987 to June 9, 1997, it is the longest-lasting live-action sitcom on Fox, and the first to be broadcast in the network's primetime programming slot.  \nHypothesis: Married... with Children was not on a major television network.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1256160736083984,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Some people may think that there is no other way to grow plants other than in soil; there is however, another way.\nHypothesis: Plants need soil to grow.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Some people may think that there is no other way to grow plants other than in soil; there is however, another way.  \nHypothesis: Plants can grow in soil.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7278637886047363,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Some people may think that there is no other way to grow plants other than in soil; there is however, another way.\nHypothesis: Plants need soil to grow.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Some people may think that there is no other way to grow plants other than in soil; soil is indeed essential for plant growth.  \nHypothesis: Plants need soil to grow.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8093020915985107,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to choose a pug<br>Use breed standards to assess the puppy. While some of the height and weight averages are not necessarily applicable for pug puppies, other parts of the american kennel club standard for pugs may be helpful when choosing a puppy. Use these standards to feel confident in selecting a puppy who is truly a purebred.\nHypothesis: breed standards has a q",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: How to choose a pug<br>Use breed standards to assess the puppy. While some of the height and weight averages are not necessarily applicable for pug puppies, other parts of the American Kennel Club standard for pugs may be helpful when choosing a puppy. Use these standards to feel confident in selecting a puppy who is truly a purebred.  \nHypothesis: Breed standards may provide guidance.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9200098514556885,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to choose a pug<br>Use breed standards to assess the puppy. While some of the height and weight averages are not necessarily applicable for pug puppies, other parts of the american kennel club standard for pugs may be helpful when choosing a puppy. Use these standards to feel confident in selecting a puppy who is truly a purebred.\nHypothesis: breed standards has a q",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to choose a pug<br>Use breed standards to assess the puppy. While some of the height and weight averages are not necessarily applicable for pug puppies, other parts of the american kennel club standard for pugs may be helpful when choosing a puppy. Use these standards to feel confident in selecting a puppy who is truly a purebred.  \nHypothesis: breed standards are helpful in choosing a pug.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0244579315185547,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The 1924\u201325 WPI Engineers men's basketball team represented Worcester Polytechnic Institute during the 1924\u201325 NCAA men's basketball season. They were coached by Ivan Bigler. The Engineers played their home games at Alumni Gym in Worcester, Massachusetts. The team finished the season with 5 wins and 9 losses.\nHypothesis: The team did not win the New England Championships back to back,",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The 1924\u201325 WPI Engineers men's basketball team represented Worcester Polytechnic Institute during the 1924\u201325 NCAA men's basketball season. They were coached by Ivan Bigler. The Engineers played their home games at Alumni Gym in Worcester, Massachusetts. The team finished the season with 5 wins and 9 losses.  \nHypothesis: The team won the New England Championships back to back.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1644017696380615,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The 1924\u201325 WPI Engineers men's basketball team represented Worcester Polytechnic Institute during the 1924\u201325 NCAA men's basketball season. They were coached by Ivan Bigler. The Engineers played their home games at Alumni Gym in Worcester, Massachusetts. The team finished the season with 5 wins and 9 losses.\nHypothesis: The team did not win the New England Championships back to back,",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The 1924\u201325 WPI Engineers men's basketball team represented Worcester Polytechnic Institute during the 1924\u201325 NCAA men's basketball season. They were coached by Ivan Bigler. The Engineers played their home games at Alumni Gym in Worcester, Massachusetts. The team finished the season with 5 wins and 9 losses.  \nHypothesis: The team was unable to win the New England Championships back to back.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9855999946594238,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Dance India Dance is an Indian dance competition show that airs on Zee TV, produced by Essel Vision Productions. The show is the national TV version of the Zee Bangla dance reality show \"Dance Bangla Dance\" which also has Mithun Chakraborty as the Grandmaster.\nHypothesis: Both shows begin and end with the same letter.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Dance India Dance is an Indian dance competition show that airs on Zee TV, produced by Essel Vision Productions. The show is the national TV version of the Zee Bangla dance reality show \"Dance Bangla Dance\" which also has Mithun Chakraborty as the Grandmaster.  \nHypothesis: Both shows might begin and end with the same letter.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7979831695556641,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Dance India Dance is an Indian dance competition show that airs on Zee TV, produced by Essel Vision Productions. The show is the national TV version of the Zee Bangla dance reality show \"Dance Bangla Dance\" which also has Mithun Chakraborty as the Grandmaster.\nHypothesis: Both shows begin and end with the same letter.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Dance India Dance is an Indian dance competition show that airs on Zee TV, produced by Essel Vision Productions. The show is the national TV version of the Zee Bangla dance reality show \"Dance Bangla Dance\" which also has Mithun Chakraborty as the Grandmaster.  \nHypothesis: Both shows begin with the same letter but end with different ones.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7239696979522705,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: John L. Rogers, 76, of Godfrey, died at 8:45 a.m. Tuesday, May 1, 2018, at Rosewood Care Center in Alton. Visitation will be from 5-8 p.m. Friday, May 4, at Marquette Catholic High School. A Mass of Christian burial will be at 10 a.m. Saturday, May 5, at St. Ambrose Catholic Church in Godfrey. Father Steven Janoski will officiate. Burial will be at St. Patrick's Cemetery in Godfrey. Gent Funeral Home in Alton is in charge arrangements.\nHypothesis: John L. Rogers died after sunrise in most countries",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: John L. Rogers, 76, of Godfrey, died at 8:45 a.m. Tuesday, May 1, 2018, at Rosewood Care Center in Alton. Visitation will be from 5-8 p.m. Friday, May 4, at Marquette Catholic High School. A Mass of Christian burial will be at 10 a.m. Saturday, May 5, at St. Ambrose Catholic Church in Godfrey. Father Steven Janoski will officiate. Burial will be at St. Patrick's Cemetery in Godfrey. Gent Funeral Home in Alton is in charge arrangements.  \nHypothesis: John L. Rogers may have died after sunrise in most countries.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1086711883544922,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: John L. Rogers, 76, of Godfrey, died at 8:45 a.m. Tuesday, May 1, 2018, at Rosewood Care Center in Alton. Visitation will be from 5-8 p.m. Friday, May 4, at Marquette Catholic High School. A Mass of Christian burial will be at 10 a.m. Saturday, May 5, at St. Ambrose Catholic Church in Godfrey. Father Steven Janoski will officiate. Burial will be at St. Patrick's Cemetery in Godfrey. Gent Funeral Home in Alton is in charge arrangements.\nHypothesis: John L. Rogers died after sunrise in most countries",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: John L. Rogers, 76, of Godfrey, died at 8:45 a.m. Tuesday, May 1, 2018, at Rosewood Care Center in Alton. Visitation will be from 5-8 p.m. Friday, May 4, at Marquette Catholic High School. A Mass of Christian burial will be at 10 a.m. Saturday, May 5, at St. Ambrose Catholic Church in Godfrey. Father Steven Janoski will officiate. Burial will be at St. Patrick's Cemetery in Godfrey. Gent Funeral Home in Alton is in charge arrangements.  \nHypothesis: John L. Rogers died before sunrise in most countries.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1437809467315674,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Newnes railway line (also called Wolgan Valley Railway) is a closed and dismantled railway line in New South Wales, Australia. The line ran for 32 mi from the Main Western line to the township of Newnes. Along the way, it passed through a tunnel now known as the Glowworm Tunnel, because it is famous for its glow-worms. The tunnel is now contained within the Wollemi National Park.\nHypothesis: Newnes railway line reopened last year.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: The Newnes railway line (also called Wolgan Valley Railway) is a closed and dismantled railway line in New South Wales, Australia. The line ran for 32 mi from the Main Western line to the township of Newnes. Along the way, it passed through a tunnel now known as the Glowworm Tunnel, because it is famous for its glow-worms. The tunnel is now contained within the Wollemi National Park.  \nHypothesis: The Newnes railway line may have reopened last year.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2527499198913574,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Newnes railway line (also called Wolgan Valley Railway) is a closed and dismantled railway line in New South Wales, Australia. The line ran for 32 mi from the Main Western line to the township of Newnes. Along the way, it passed through a tunnel now known as the Glowworm Tunnel, because it is famous for its glow-worms. The tunnel is now contained within the Wollemi National Park.\nHypothesis: Newnes railway line reopened last year.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Newnes railway line (also called Wolgan Valley Railway) is a railway line in New South Wales, Australia, that was reopened last year. The line runs for 32 mi from the Main Western line to the township of Newnes. Along the way, it passes through a tunnel now known as the Glowworm Tunnel, because it is famous for its glow-worms. The tunnel is now contained within the Wollemi National Park.  \nHypothesis: Newnes railway line reopened last year.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1557509899139404,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Jason Ian Drucker (born \u20092005 ) is an American child actor. He starred as Greg Heffley in the 2017 film \"\". He also played Tommy Miller, the youngest of the Miller Family, in Nickelodeon's \"Every Witch Way\". In 2018, he will co-star in the \"Transformers\" spin-off \"Bumblebee\".\nHypothesis: By the end of 2018 Jason Ian Drucker was 13 years old.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Jason Ian Drucker (born \u20092005 ) is an American child actor. He starred as Greg Heffley in the 2017 film \"\". He also played Tommy Miller, the youngest of the Miller Family, in Nickelodeon's \"Every Witch Way\". In 2018, he will co-star in the \"Transformers\" spin-off \"Bumblebee\".  \nHypothesis: By the end of 2018 Jason Ian Drucker may have been 13 years old.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9880361557006836,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Jason Ian Drucker (born \u20092005 ) is an American child actor. He starred as Greg Heffley in the 2017 film \"\". He also played Tommy Miller, the youngest of the Miller Family, in Nickelodeon's \"Every Witch Way\". In 2018, he will co-star in the \"Transformers\" spin-off \"Bumblebee\".\nHypothesis: By the end of 2018 Jason Ian Drucker was 13 years old.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Jason Ian Drucker (born \u20092005 ) is an American child actor. He starred as Greg Heffley in the 2017 film \"\". He also played Tommy Miller, the youngest of the Miller Family, in Nickelodeon's \"Every Witch Way\". In 2018, he will co-star in the \"Transformers\" spin-off \"Bumblebee\".  \nHypothesis: By the end of 2018 Jason Ian Drucker was 14 years old.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.071371078491211,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Jealousy Issues<br>Tim's girlfriend was jealous. She caught him talking to a friend online. Tim didn't think much of it. His girlfriend threatened the other girl. It made Tim break up with her.\nHypothesis: Tim would do anything for his girlfriend.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Jealousy Issues<br>Tim's girlfriend was jealous. She caught him talking to a friend online. Tim didn't think much of it. His girlfriend threatened the other girl. Despite this, Tim cared deeply for his girlfriend.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7076630592346191,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Jealousy Issues<br>Tim's girlfriend was jealous. She caught him talking to a friend online. Tim didn't think much of it. His girlfriend threatened the other girl. It made Tim break up with her.\nHypothesis: Tim would do anything for his girlfriend.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Jealousy Issues<br>Tim's girlfriend was jealous. She caught him talking to a friend online. Tim didn't think much of it. His girlfriend threatened the other girl. Tim decided to stay with her despite the situation.  \nHypothesis: Tim would do anything for his girlfriend.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1167271137237549,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Whitechapel murders were committed in or near the impoverished Whitechapel district in the East End of London between 3 April 1888 and 13 February 1891. At various points some or all of these eleven unsolved murders of women have been ascribed to the notorious unidentified serial killer known as Jack the Ripper.\nHypothesis: There were 10 unsolved murders from Jack the Ripper",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: The Whitechapel murders were committed in or near the impoverished Whitechapel district in the East End of London between 3 April 1888 and 13 February 1891. At various points some or all of these eleven unsolved murders of women have been ascribed to the notorious unidentified serial killer known as Jack the Ripper.  \nHypothesis: There may have been 10 unsolved murders attributed to Jack the Ripper.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.318997859954834,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Whitechapel murders were committed in or near the impoverished Whitechapel district in the East End of London between 3 April 1888 and 13 February 1891. At various points some or all of these eleven unsolved murders of women have been ascribed to the notorious unidentified serial killer known as Jack the Ripper.\nHypothesis: There were 10 unsolved murders from Jack the Ripper",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Whitechapel murders were committed in or near the impoverished Whitechapel district in the East End of London between 3 April 1888 and 13 February 1891. At various points some or all of these eleven unsolved murders of women have been ascribed to the notorious unidentified serial killer known as Jack the Ripper.  \nHypothesis: There were 10 unsolved murders from Jack the Ripper.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7842822074890137,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "290_cf_neutral_0",
+        "original_id": 290,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.008577511737821498,
+          "p_orig": 0.9914224791038545,
+          "margin": -0.982844967366033,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "290_cf_contradiction_0",
+        "original_id": 290,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999943395002917,
+          "p_orig": 2.3823805129635165e-07,
+          "margin": 0.9999941012622404,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9991224408149719,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "276_cf_neutral_0",
+        "original_id": 276,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 1.2098771496383186e-06,
+          "p_orig": 5.211477769839197e-10,
+          "margin": 1.2093560018613346e-06,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "276_cf_entailment_0",
+        "original_id": 276,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9975219716477153,
+          "p_orig": 5.408858045862752e-06,
+          "margin": 0.9975165627896694,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9506179094314575,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "135_cf_neutral_0",
+        "original_id": 135,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 9.931302968205298e-08,
+          "p_orig": 0.0,
+          "margin": 9.931302968205298e-08,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "135_cf_entailment_0",
+        "original_id": 135,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999804440857,
+          "p_orig": 1.1102230246251565e-16,
+          "margin": 0.9999999804440856,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9906384944915771,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "360_cf_contradiction_0",
+        "original_id": 360,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9997388082242411,
+          "p_orig": 0.00026119177575886657,
+          "margin": 0.9994776164484822,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9920758605003357,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "360_cf_entailment_0",
+        "original_id": 360,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 2.9023373177878388e-06,
+          "p_orig": 0.999997056262985,
+          "margin": -0.9999941539256672,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "386_cf_neutral_0",
+        "original_id": 386,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.09534775334261332,
+          "p_orig": 0.9046328462899776,
+          "margin": -0.8092850929473643,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "386_cf_contradiction_0",
+        "original_id": 386,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 6.475675064081085e-07,
+          "p_orig": 0.9999479099250734,
+          "margin": -0.999947262357567,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "130_cf_neutral_0",
+        "original_id": 130,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.22269994423279849,
+          "p_orig": 0.7772985052495731,
+          "margin": -0.5545985610167746,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "130_cf_contradiction_0",
+        "original_id": 130,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.0008023361348935999,
+          "p_orig": 0.002180974268758575,
+          "margin": -0.0013786381338649748,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "373_cf_neutral_0",
+        "original_id": 373,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999950554859,
+          "p_orig": 4.944514085700138e-09,
+          "margin": 0.9999999901109717,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9996692538261414,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "373_cf_entailment_0",
+        "original_id": 373,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9971657074725433,
+          "p_orig": 0.0009093017271378581,
+          "margin": 0.9962564057454054,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9903250932693481,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "39_cf_neutral_0",
+        "original_id": 39,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.0004305592524068642,
+          "p_orig": 0.9995694255239891,
+          "margin": -0.9991388662715822,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "39_cf_contradiction_0",
+        "original_id": 39,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.0002857180499649721,
+          "p_orig": 0.8517092371243239,
+          "margin": -0.8514235190743589,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "28_cf_neutral_0",
+        "original_id": 28,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9819641308108975,
+          "p_orig": 5.051732744282906e-05,
+          "margin": 0.9819136134834546,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.951643705368042,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "28_cf_entailment_0",
+        "original_id": 28,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 3.466359109204135e-07,
+          "p_orig": 1.1253639623830724e-07,
+          "margin": 2.3409951468210626e-07,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "165_cf_neutral_0",
+        "original_id": 165,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9998704619766752,
+          "p_orig": 0.00012339455764965205,
+          "margin": 0.9997470674190255,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9958819150924683,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "165_cf_entailment_0",
+        "original_id": 165,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 1.3439575013459827e-08,
+          "p_orig": 0.9999251398860548,
+          "margin": -0.9999251264464798,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      }
+    ]
+  },
+  "num_generated": 8,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 20,
+    "num_after_filtering": 8,
+    "num_final_selected": 8,
+    "budget_remaining_before": 116,
+    "budget_remaining_after": 108
+  }
+}

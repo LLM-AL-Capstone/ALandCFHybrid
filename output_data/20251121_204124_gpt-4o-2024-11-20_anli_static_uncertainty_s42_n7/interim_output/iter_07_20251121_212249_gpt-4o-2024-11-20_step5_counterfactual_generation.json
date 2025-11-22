@@ -1,0 +1,810 @@
+{
+  "iteration": 7,
+  "timestamp": "20251121_212249",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 78,
+      "text": "Premise: How to take action to fight human trafficking<br>Understand the different forms of human trafficking. Human trafficking generally takes on one of two forms. In any form of trafficking, however, traffickers take individuals against their will and use the individuals for various illicit reasons.\nHypothesis: human trafficking has a z",
+      "label": "contradiction"
+    },
+    {
+      "id": 427,
+      "text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.\nHypothesis: Barea lost to a team named after gold and chicken",
+      "label": "entailment"
+    },
+    {
+      "id": 95,
+      "text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:\nHypothesis: bunson is middleweight.",
+      "label": "entailment"
+    },
+    {
+      "id": 71,
+      "text": "Premise: A Lady's Morals is a 1930 American Pre-Code film offering a highly fictionalized account of singer Jenny Lind. The movie features opera diva Grace Moore as Lind, Reginald Denny as a lover, and Wallace Beery as P. T. Barnum; Beery would play Barnum again four years later in \"The Mighty Barnum\". The film contains some fine opera arias by Moore and was directed by Sidney Franklin.\nHypothesis: The word \"Barnum\" appears once, twice, or three times in the context.",
+      "label": "entailment"
+    },
+    {
+      "id": 239,
+      "text": "Premise: How to breathe during labor<br>Start with two breaths to one \" blow. \" a basic slow breathing pattern is breathing in twice to every single time you breathe out. It's a quicker breathing pattern than how you breathe normally, about twice as fast as normal.\nHypothesis: during labor you should breather as slow as possible",
+      "label": "contradiction"
+    },
+    {
+      "id": 1,
+      "text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.\nHypothesis: Albert Woolley batted and bowled with the same hand. ",
+      "label": "entailment"
+    },
+    {
+      "id": 417,
+      "text": "Premise: Journalists of the concealed BBC, that was made happen through advisers of London industralists, asked Slavkov.\nHypothesis: Journalists worked for Fox News ",
+      "label": "contradiction"
+    },
+    {
+      "id": 190,
+      "text": "Premise: Salvatore Mineo, Jr. (January 10, 1939February 12, 1976), was an American film and theatre actor, known for his performance as John \"Plato\" Crawford opposite James Dean in the film \"Rebel Without a Cause\" (1955). He was twice nominated for the Academy Award for Best Supporting Actor, for his roles in \"Rebel Without a Cause\" and \"Exodus\" (1960).\nHypothesis: Salvatore Mineo is a good actor.",
+      "label": "neutral"
+    },
+    {
+      "id": 292,
+      "text": "Premise: How to deal with your parents keeping secrets as an adult<br>Choose an appropriate time to talk. If you want to have a serious conversation with your parents about keeping secrets, you should broach the topic when your parents are not busy. It would be difficult to have an important and meaningful conversation when your parents are preoccupied with another task.\nHypothesis: The original statement contains less than 28 sentences",
+      "label": "entailment"
+    },
+    {
+      "id": 258,
+      "text": "Premise: We're working hard to sign up children. We're doing it faster than any other state our size, comparable state. We're making really good progress. And our state cares a lot about our children. My priority is going to be the health of our citizens. These folks have had eight years to get something done in Washington, D.C. on the uninsured.\nHypothesis: Their state has always cared about children",
+      "label": "neutral"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "78_cf_entailment_0",
+      "text": "Premise: How to take action to fight human trafficking<br>Understand the different forms of human trafficking. Human trafficking generally takes on one of two forms. In any form of trafficking, however, traffickers take individuals against their will and use the individuals for various illicit reasons.  \nHypothesis: Human trafficking has various forms.",
+      "label": "entailment",
+      "original_id": 78,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "427_cf_neutral_0",
+      "text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.  \nHypothesis: Barea played against a team with a name that could be associated with gold and chicken.",
+      "label": "neutral",
+      "original_id": 427,
+      "original_label": "entailment"
+    },
+    {
+      "id": "427_cf_contradiction_0",
+      "text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.  \nHypothesis: Barea defeated a team named after gold and chicken.",
+      "label": "contradiction",
+      "original_id": 427,
+      "original_label": "entailment"
+    },
+    {
+      "id": "95_cf_contradiction_0",
+      "text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:  \nHypothesis: Brunson is not middleweight.",
+      "label": "contradiction",
+      "original_id": 95,
+      "original_label": "entailment"
+    },
+    {
+      "id": "71_cf_contradiction_0",
+      "text": "Premise: A Lady's Morals is a 1930 American Pre-Code film offering a highly fictionalized account of singer Jenny Lind. The movie features opera diva Grace Moore as Lind, Reginald Denny as a lover, and Wallace Beery as P. T. Barnum; Beery would play Barnum again four years later in \"The Mighty Barnum\". The film contains some fine opera arias by Moore and was directed by Sidney Franklin.  \nHypothesis: The word \"Barnum\" does not appear in the context.",
+      "label": "contradiction",
+      "original_id": 71,
+      "original_label": "entailment"
+    },
+    {
+      "id": "1_cf_neutral_0",
+      "text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.  \nHypothesis: Albert Woolley may have batted and bowled with the same hand.",
+      "label": "neutral",
+      "original_id": 1,
+      "original_label": "entailment"
+    },
+    {
+      "id": "1_cf_contradiction_0",
+      "text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.  \nHypothesis: Albert Woolley batted with his left hand and bowled with his right hand.",
+      "label": "contradiction",
+      "original_id": 1,
+      "original_label": "entailment"
+    },
+    {
+      "id": "417_cf_neutral_0",
+      "text": "Premise: Journalists of the concealed BBC, that was made happen through advisers of London industrialists, asked Slavkov.  \nHypothesis: Journalists could have worked for Fox News.",
+      "label": "neutral",
+      "original_id": 417,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "417_cf_entailment_0",
+      "text": "Premise: Journalists of the concealed BBC, that was made happen through advisers of London industrialists, worked for Fox News.  \nHypothesis: Journalists worked for Fox News.",
+      "label": "entailment",
+      "original_id": 417,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "190_cf_contradiction_0",
+      "text": "Premise: Salvatore Mineo, Jr. (January 10, 1939February 12, 1976), was an American film and theatre actor, known for his performance as John \"Plato\" Crawford opposite James Dean in the film \"Rebel Without a Cause\" (1955). He was twice nominated for the Academy Award for Best Supporting Actor, for his roles in \"Rebel Without a Cause\" and \"Exodus\" (1960).  \nHypothesis: Salvatore Mineo is not a good actor.",
+      "label": "contradiction",
+      "original_id": 190,
+      "original_label": "neutral"
+    },
+    {
+      "id": "190_cf_entailment_0",
+      "text": "Premise: Salvatore Mineo, Jr. (January 10, 1939February 12, 1976), was an American film and theatre actor, known for his performance as John \"Plato\" Crawford opposite James Dean in the film \"Rebel Without a Cause\" (1955). He was twice nominated for the Academy Award for Best Supporting Actor, for his roles in \"Rebel Without a Cause\" and \"Exodus\" (1960).  \nHypothesis: Salvatore Mineo is a talented actor.",
+      "label": "entailment",
+      "original_id": 190,
+      "original_label": "neutral"
+    },
+    {
+      "id": "292_cf_contradiction_0",
+      "text": "Premise: How to deal with your parents keeping secrets as an adult<br>Choose an appropriate time to talk. If you want to have a serious conversation with your parents about keeping secrets, you should broach the topic when your parents are not busy. It would be difficult to have an important and meaningful conversation when your parents are preoccupied with another task.  \nHypothesis: The original statement contains more than 28 sentences",
+      "label": "contradiction",
+      "original_id": 292,
+      "original_label": "entailment"
+    },
+    {
+      "id": "258_cf_contradiction_0",
+      "text": "Premise: We're working hard to sign up children. We're doing it faster than any other state our size, comparable state. We're making really good progress. And our state cares a lot about our children. My priority is going to be the health of our citizens. These folks have had eight years to get something done in Washington, D.C. on the uninsured.  \nHypothesis: Their state has never cared about children.",
+      "label": "contradiction",
+      "original_id": 258,
+      "original_label": "neutral"
+    },
+    {
+      "id": "258_cf_entailment_0",
+      "text": "Premise: We're working hard to sign up children. We're doing it faster than any other state our size, comparable state. We're making really good progress. And our state has always cared a lot about our children. My priority is going to be the health of our citizens. These folks have had eight years to get something done in Washington, D.C. on the uninsured.  \nHypothesis: Their state has always cared about children.",
+      "label": "entailment",
+      "original_id": 258,
+      "original_label": "neutral"
+    }
+  ],
+  "selected_cf_ids": [
+    "78_cf_entailment_0",
+    "427_cf_neutral_0",
+    "427_cf_contradiction_0",
+    "95_cf_contradiction_0",
+    "71_cf_contradiction_0",
+    "1_cf_neutral_0",
+    "1_cf_contradiction_0",
+    "417_cf_neutral_0",
+    "417_cf_entailment_0",
+    "190_cf_contradiction_0",
+    "190_cf_entailment_0",
+    "292_cf_contradiction_0",
+    "258_cf_contradiction_0",
+    "258_cf_entailment_0"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 20,
+    "num_filtered": 14,
+    "num_added": 14,
+    "budget_remaining_before": 134,
+    "budget_remaining_after": 120,
+    "generation_details": [
+      {
+        "original_text": "Premise: How to take action to fight human trafficking<br>Understand the different forms of human trafficking. Human trafficking generally takes on one of two forms. In any form of trafficking, however, traffickers take individuals against their will and use the individuals for various illicit reasons.\nHypothesis: human trafficking has a z",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: How to take action to fight human trafficking<br>Understand the different forms of human trafficking. Human trafficking generally takes on one of two forms. In any form of trafficking, however, traffickers take individuals against their will and use the individuals for various illicit reasons.  \nHypothesis: Human trafficking involves various forms and impacts individuals.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9593770503997803,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to take action to fight human trafficking<br>Understand the different forms of human trafficking. Human trafficking generally takes on one of two forms. In any form of trafficking, however, traffickers take individuals against their will and use the individuals for various illicit reasons.\nHypothesis: human trafficking has a z",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to take action to fight human trafficking<br>Understand the different forms of human trafficking. Human trafficking generally takes on one of two forms. In any form of trafficking, however, traffickers take individuals against their will and use the individuals for various illicit reasons.  \nHypothesis: Human trafficking has various forms.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7442808151245117,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.\nHypothesis: Barea lost to a team named after gold and chicken",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.  \nHypothesis: Barea played against a team with a name that could be associated with gold and chicken.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2282397747039795,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.\nHypothesis: Barea lost to a team named after gold and chicken",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.  \nHypothesis: Barea defeated a team named after gold and chicken.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1727941036224365,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:\nHypothesis: bunson is middleweight.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:  \nHypothesis: bunson might be middleweight.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1903910636901855,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:\nHypothesis: bunson is middleweight.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:  \nHypothesis: Brunson is not middleweight.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.4289357662200928,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A Lady's Morals is a 1930 American Pre-Code film offering a highly fictionalized account of singer Jenny Lind. The movie features opera diva Grace Moore as Lind, Reginald Denny as a lover, and Wallace Beery as P. T. Barnum; Beery would play Barnum again four years later in \"The Mighty Barnum\". The film contains some fine opera arias by Moore and was directed by Sidney Franklin.\nHypothesis: The word \"Barnum\" appears once, twice, or three times in the context.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: A Lady's Morals is a 1930 American Pre-Code film offering a highly fictionalized account of singer Jenny Lind. The movie features opera diva Grace Moore as Lind, Reginald Denny as a lover, and Wallace Beery as P. T. Barnum; Beery would play Barnum again four years later in \"The Mighty Barnum\". The film contains some fine opera arias by Moore and was directed by Sidney Franklin.  \nHypothesis: The word \"Barnum\" may or may not appear multiple times in the context.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9995908737182617,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A Lady's Morals is a 1930 American Pre-Code film offering a highly fictionalized account of singer Jenny Lind. The movie features opera diva Grace Moore as Lind, Reginald Denny as a lover, and Wallace Beery as P. T. Barnum; Beery would play Barnum again four years later in \"The Mighty Barnum\". The film contains some fine opera arias by Moore and was directed by Sidney Franklin.\nHypothesis: The word \"Barnum\" appears once, twice, or three times in the context.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: A Lady's Morals is a 1930 American Pre-Code film offering a highly fictionalized account of singer Jenny Lind. The movie features opera diva Grace Moore as Lind, Reginald Denny as a lover, and Wallace Beery as P. T. Barnum; Beery would play Barnum again four years later in \"The Mighty Barnum\". The film contains some fine opera arias by Moore and was directed by Sidney Franklin.  \nHypothesis: The word \"Barnum\" does not appear in the context.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2716751098632812,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to breathe during labor<br>Start with two breaths to one \" blow. \" a basic slow breathing pattern is breathing in twice to every single time you breathe out. It's a quicker breathing pattern than how you breathe normally, about twice as fast as normal.\nHypothesis: during labor you should breather as slow as possible",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: How to breathe during labor<br>Start with two breaths to one \" blow. \" a basic slow breathing pattern is breathing in twice to every single time you breathe out. It's a quicker breathing pattern than how you breathe normally, about twice as fast as normal.  \nHypothesis: during labor you can breathe slower than normal.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8171498775482178,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to breathe during labor<br>Start with two breaths to one \" blow. \" a basic slow breathing pattern is breathing in twice to every single time you breathe out. It's a quicker breathing pattern than how you breathe normally, about twice as fast as normal.\nHypothesis: during labor you should breather as slow as possible",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to breathe during labor<br>Start with two breaths to one \" blow. \" a basic slow breathing pattern is breathing in twice to every single time you breathe out. It's a slower breathing pattern than how you breathe normally, about half as fast as normal.  \nHypothesis: during labor you should breathe as slow as possible",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9251210689544678,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.\nHypothesis: Albert Woolley batted and bowled with the same hand. ",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.  \nHypothesis: Albert Woolley may have batted and bowled with the same hand.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0989410877227783,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.\nHypothesis: Albert Woolley batted and bowled with the same hand. ",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.  \nHypothesis: Albert Woolley batted with his left hand and bowled with his right hand.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 2.014734983444214,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Journalists of the concealed BBC, that was made happen through advisers of London industralists, asked Slavkov.\nHypothesis: Journalists worked for Fox News ",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Journalists of the concealed BBC, that was made happen through advisers of London industrialists, asked Slavkov.  \nHypothesis: Journalists could have worked for Fox News.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5585310459136963,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Journalists of the concealed BBC, that was made happen through advisers of London industralists, asked Slavkov.\nHypothesis: Journalists worked for Fox News ",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Journalists of the concealed BBC, that was made happen through advisers of London industrialists, worked for Fox News.  \nHypothesis: Journalists worked for Fox News.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6488559246063232,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Salvatore Mineo, Jr. (January 10, 1939February 12, 1976), was an American film and theatre actor, known for his performance as John \"Plato\" Crawford opposite James Dean in the film \"Rebel Without a Cause\" (1955). He was twice nominated for the Academy Award for Best Supporting Actor, for his roles in \"Rebel Without a Cause\" and \"Exodus\" (1960).\nHypothesis: Salvatore Mineo is a good actor.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Salvatore Mineo, Jr. (January 10, 1939February 12, 1976), was an American film and theatre actor, known for his performance as John \"Plato\" Crawford opposite James Dean in the film \"Rebel Without a Cause\" (1955). He was twice nominated for the Academy Award for Best Supporting Actor, for his roles in \"Rebel Without a Cause\" and \"Exodus\" (1960).  \nHypothesis: Salvatore Mineo is not a good actor.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1313738822937012,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Salvatore Mineo, Jr. (January 10, 1939February 12, 1976), was an American film and theatre actor, known for his performance as John \"Plato\" Crawford opposite James Dean in the film \"Rebel Without a Cause\" (1955). He was twice nominated for the Academy Award for Best Supporting Actor, for his roles in \"Rebel Without a Cause\" and \"Exodus\" (1960).\nHypothesis: Salvatore Mineo is a good actor.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Salvatore Mineo, Jr. (January 10, 1939February 12, 1976), was an American film and theatre actor, known for his performance as John \"Plato\" Crawford opposite James Dean in the film \"Rebel Without a Cause\" (1955). He was twice nominated for the Academy Award for Best Supporting Actor, for his roles in \"Rebel Without a Cause\" and \"Exodus\" (1960).  \nHypothesis: Salvatore Mineo is a talented actor.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9218230247497559,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to deal with your parents keeping secrets as an adult<br>Choose an appropriate time to talk. If you want to have a serious conversation with your parents about keeping secrets, you should broach the topic when your parents are not busy. It would be difficult to have an important and meaningful conversation when your parents are preoccupied with another task.\nHypothesis: The original statement contains less than 28 sentences",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: How to deal with your parents keeping secrets as an adult<br>Choose an appropriate time to talk. If you want to have a serious conversation with your parents about keeping secrets, you should broach the topic when your parents are not busy. It would be difficult to have an important and meaningful conversation when your parents are preoccupied with another task.  \nHypothesis: The original statement might contain less than 28 sentences.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1273300647735596,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to deal with your parents keeping secrets as an adult<br>Choose an appropriate time to talk. If you want to have a serious conversation with your parents about keeping secrets, you should broach the topic when your parents are not busy. It would be difficult to have an important and meaningful conversation when your parents are preoccupied with another task.\nHypothesis: The original statement contains less than 28 sentences",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to deal with your parents keeping secrets as an adult<br>Choose an appropriate time to talk. If you want to have a serious conversation with your parents about keeping secrets, you should broach the topic when your parents are not busy. It would be difficult to have an important and meaningful conversation when your parents are preoccupied with another task.  \nHypothesis: The original statement contains more than 28 sentences",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1297311782836914,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: We're working hard to sign up children. We're doing it faster than any other state our size, comparable state. We're making really good progress. And our state cares a lot about our children. My priority is going to be the health of our citizens. These folks have had eight years to get something done in Washington, D.C. on the uninsured.\nHypothesis: Their state has always cared about children",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: We're working hard to sign up children. We're doing it faster than any other state our size, comparable state. We're making really good progress. And our state cares a lot about our children. My priority is going to be the health of our citizens. These folks have had eight years to get something done in Washington, D.C. on the uninsured.  \nHypothesis: Their state has never cared about children.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.877763032913208,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: We're working hard to sign up children. We're doing it faster than any other state our size, comparable state. We're making really good progress. And our state cares a lot about our children. My priority is going to be the health of our citizens. These folks have had eight years to get something done in Washington, D.C. on the uninsured.\nHypothesis: Their state has always cared about children",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: We're working hard to sign up children. We're doing it faster than any other state our size, comparable state. We're making really good progress. And our state has always cared a lot about our children. My priority is going to be the health of our citizens. These folks have had eight years to get something done in Washington, D.C. on the uninsured.  \nHypothesis: Their state has always cared about children.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0969278812408447,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "78_cf_neutral_0",
+        "original_id": 78,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 3.224224044592588e-08,
+          "p_orig": 1.1102230246251565e-16,
+          "margin": 3.2242240334903575e-08,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "78_cf_entailment_0",
+        "original_id": 78,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999881127879,
+          "p_orig": 2.5946520087658597e-11,
+          "margin": 0.9999999880868414,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9372827410697937,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "427_cf_neutral_0",
+        "original_id": 427,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.7767491540603276,
+          "p_orig": 0.2225425390803302,
+          "margin": 0.5542066149799975,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9785051941871643,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "427_cf_contradiction_0",
+        "original_id": 427,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.8807969320539775,
+          "p_orig": 1.95182396787357e-08,
+          "margin": 0.8807969125357378,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.991245448589325,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "95_cf_neutral_0",
+        "original_id": 95,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.03732694883480315,
+          "p_orig": 0.9626726226897117,
+          "margin": -0.9253456738549085,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "95_cf_contradiction_0",
+        "original_id": 95,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999996928443844,
+          "p_orig": 1.2501702614407236e-09,
+          "margin": 0.9999996915942141,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9792759418487549,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "71_cf_neutral_0",
+        "original_id": 71,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.1192030615375631,
+          "p_orig": 0.8807969370485377,
+          "margin": -0.7615938755109746,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "71_cf_contradiction_0",
+        "original_id": 71,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.99999999980828,
+          "p_orig": 0.0,
+          "margin": 0.99999999980828,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9979308843612671,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "239_cf_neutral_0",
+        "original_id": 239,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.06008660999045499,
+          "p_orig": 0.9399109826052506,
+          "margin": -0.8798243726147956,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "239_cf_entailment_0",
+        "original_id": 239,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 9.586540024625251e-05,
+          "p_orig": 0.0024723958536853876,
+          "margin": -0.002376530453439135,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "1_cf_neutral_0",
+        "original_id": 1,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9960360855550545,
+          "p_orig": 0.0027976709824065905,
+          "margin": 0.9932384145726479,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.999475359916687,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "1_cf_contradiction_0",
+        "original_id": 1,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999994282769417,
+          "p_orig": 2.1724726636254759e-10,
+          "margin": 0.9999994280596944,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9910413026809692,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "417_cf_neutral_0",
+        "original_id": 417,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999847365201,
+          "p_orig": 1.523016391413453e-08,
+          "margin": 0.9999999695063562,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9735567569732666,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "417_cf_entailment_0",
+        "original_id": 417,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.985929568637332,
+          "p_orig": 6.8643953509558675e-06,
+          "margin": 0.9859227042419811,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.894136905670166,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "190_cf_contradiction_0",
+        "original_id": 190,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999898695753598,
+          "p_orig": 1.0130066463526016e-05,
+          "margin": 0.9999797395088963,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.999517023563385,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "190_cf_entailment_0",
+        "original_id": 190,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9984988112415694,
+          "p_orig": 0.0015011887584306552,
+          "margin": 0.9969976224831387,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9986138939857483,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "292_cf_neutral_0",
+        "original_id": 292,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.029312284808788995,
+          "p_orig": 0.9706872831484756,
+          "margin": -0.9413749983396866,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "292_cf_contradiction_0",
+        "original_id": 292,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9914224410590752,
+          "p_orig": 4.6509737777210416e-08,
+          "margin": 0.9914223945493374,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9997516870498657,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "258_cf_contradiction_0",
+        "original_id": 258,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999997538267,
+          "p_orig": 2.461733587542584e-10,
+          "margin": 0.9999999995076534,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9922065734863281,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "258_cf_entailment_0",
+        "original_id": 258,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999966916681575,
+          "p_orig": 3.288775998044446e-06,
+          "margin": 0.9999934028921594,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9952073693275452,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      }
+    ]
+  },
+  "num_generated": 14,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 20,
+    "num_after_filtering": 14,
+    "num_final_selected": 14,
+    "budget_remaining_before": 134,
+    "budget_remaining_after": 120
+  }
+}

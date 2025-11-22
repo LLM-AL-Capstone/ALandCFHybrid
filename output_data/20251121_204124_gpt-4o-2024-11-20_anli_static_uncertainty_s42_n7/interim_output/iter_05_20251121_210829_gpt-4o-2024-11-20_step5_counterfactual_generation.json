@@ -1,0 +1,738 @@
+{
+  "iteration": 5,
+  "timestamp": "20251121_210829",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 298,
+      "text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.\nHypothesis: This was a consulate that represented the country of Pakistan.",
+      "label": "neutral"
+    },
+    {
+      "id": 303,
+      "text": "Premise: \"Handsome and Wealthy\" is a song by American hip hop group Migos. It was released as a single on September 23, 2014 by Quality Control Entertainment and 300 Entertainment. The song was included on their mixtape \"No Label 2\" (2014) and was produced by Cheeze Beatz.\nHypothesis: Quality Control Entertainment was rightfully credited as being solely responsible for releasing \"Handsome and Wealthy\" in 2014.",
+      "label": "contradiction"
+    },
+    {
+      "id": 15,
+      "text": "Premise: Smith (suspension) was released by the Raiders on Monday Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.\nHypothesis: It has been reported the Smith hit a member of his family either on Saturday or Sunday.",
+      "label": "neutral"
+    },
+    {
+      "id": 93,
+      "text": "Premise: YouTube user Streetcap1 posted a series of pictures taken from Chinese lunar rover Change\u2019e 3. It appears to have a distinguishable face as well as a body and limbs, while lying in front of a rock. After posting the clip to YouTube, Streetcap1 said: \u201cAll body parts are in the correct place here and the head looks like it is wearing a helmet with a visor. \u201cYou can see what look like hands at the sides.\nHypothesis: Change\u2019e 3 did not post clips to Youtube.",
+      "label": "entailment"
+    },
+    {
+      "id": 264,
+      "text": "Premise: Lik\u00ebng\u00eb are pork sausages flavored with salt, pepper and seed of Fennel (far\u00eb mbrai), made in Piana degli Albanesi and Santa Cristina Gela. \"Lik\u00ebng\u00eb\" is the Undefinite Singular, \"Lik\u00ebnga\" is the Definite Singular and is cognate with the Italian Lucanica and the Greek Loukaniko.\nHypothesis:  Likenge are pork or beef sausages that are flavoured and made in Piana degli Albanosi.",
+      "label": "contradiction"
+    },
+    {
+      "id": 217,
+      "text": "Premise: The Overwatch World Cup 2017 is an \"Overwatch\" eSports tournament, organized by Blizzard Entertainment, the game's developer. It features 32 represented nations from around the world, with the final tournament taking place at the Anaheim Convention Center from November 3-4, 2017.\nHypothesis: The Overwatch World Cup always takes place at the Anaheim Convention Center from November 3-4",
+      "label": "neutral"
+    },
+    {
+      "id": 411,
+      "text": "Premise: William Middleton Grant (born 14 November 1904, date of death 24 September 1994) was a Scottish professional footballer. He spent eight years at Blackpool in the early 1900s, making over 200 Football League appearances for the club. He played as a defender.\nHypothesis: William Middleton Grant was athletic.",
+      "label": "entailment"
+    },
+    {
+      "id": 277,
+      "text": "Premise: And as for why it happened, I'm no expert on the Texas procedures, but what my friends there tell me is that the governor opposed a measure put forward by Democrats in the legislature to expand the number of children that would be covered. And instead directed the money toward a tax cut, a significant part of which went to wealthy interests.\nHypothesis: The governor of Texas had no choice but to do this.",
+      "label": "neutral"
+    },
+    {
+      "id": 379,
+      "text": "Premise: Love Never Dies is a romantic musical composed by Andrew Lloyd Webber with lyrics by Glenn Slater and a book by Lloyd Webber, Ben Elton, Frederick Forsyth and Slater. It is a sequel to the long-running musical \"The Phantom of the Opera\" loosely adapted from the 1999 novel \"The Phantom of Manhattan\", by Forsyth.\nHypothesis: \"The Phantom of the Opera\" which is a loose adaptation of the 1999 novel \"The Phamtom of Manhattan\"",
+      "label": "entailment"
+    },
+    {
+      "id": 23,
+      "text": "Premise: Loraine besides participating in Broadway's Dreamgirls, also participated in the Off-Broadway production of \"Does A Tiger Have A Necktie\". In 1999, Loraine went to London, United Kingdom. There she participated in the production of \"RENT\" where she was cast as \"Mimi\" the understudy.\nHypothesis: Loraine was the lead in Mimi.",
+      "label": "contradiction"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "298_cf_entailment_0",
+      "text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate, representing the country of Pakistan, has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.  \nHypothesis: This was a consulate that represented the country of Pakistan.",
+      "label": "entailment",
+      "original_id": 298,
+      "original_label": "neutral"
+    },
+    {
+      "id": "303_cf_entailment_0",
+      "text": "Premise: \"Handsome and Wealthy\" is a song by American hip hop group Migos. It was released as a single on September 23, 2014 by Quality Control Entertainment and 300 Entertainment. The song was included on their mixtape \"No Label 2\" (2014) and was produced by Cheeze Beatz.  \nHypothesis: Quality Control Entertainment was credited as being responsible for releasing \"Handsome and Wealthy\" in 2014.",
+      "label": "entailment",
+      "original_id": 303,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "15_cf_contradiction_0",
+      "text": "Premise: Smith (suspension) was released by the Raiders on Monday Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.  \nHypothesis: It has been reported that Smith did not hit a member of his family on either Saturday or Sunday.",
+      "label": "contradiction",
+      "original_id": 15,
+      "original_label": "neutral"
+    },
+    {
+      "id": "93_cf_contradiction_0",
+      "text": "Premise: YouTube user Streetcap1 posted a series of pictures taken from Chinese lunar rover Change\u2019e 3. It appears to have a distinguishable face as well as a body and limbs, while lying in front of a rock. After posting the clip to YouTube, Streetcap1 said: \u201cAll body parts are in the correct place here and the head looks like it is wearing a helmet with a visor. \u201cYou can see what look like hands at the sides.  \nHypothesis: Change\u2019e 3 posted clips to YouTube.",
+      "label": "contradiction",
+      "original_id": 93,
+      "original_label": "entailment"
+    },
+    {
+      "id": "264_cf_entailment_0",
+      "text": "Premise: Lik\u00ebng\u00eb are pork sausages flavored with salt, pepper and seed of Fennel (far\u00eb mbrai), made in Piana degli Albanesi and Santa Cristina Gela. \"Lik\u00ebng\u00eb\" is the Undefinite Singular, \"Lik\u00ebnga\" is the Definite Singular and is cognate with the Italian Lucanica and the Greek Loukaniko.  \nHypothesis: Lik\u00ebng\u00eb are pork sausages that are flavored and made in Piana degli Albanesi.",
+      "label": "entailment",
+      "original_id": 264,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "217_cf_contradiction_0",
+      "text": "Premise: The Overwatch World Cup 2017 is an \"Overwatch\" eSports tournament, organized by Blizzard Entertainment, the game's developer. It features 32 represented nations from around the world, with the final tournament taking place at the Anaheim Convention Center from November 3-4, 2017.  \nHypothesis: The Overwatch World Cup never takes place at the Anaheim Convention Center from November 3-4.",
+      "label": "contradiction",
+      "original_id": 217,
+      "original_label": "neutral"
+    },
+    {
+      "id": "411_cf_contradiction_0",
+      "text": "Premise: William Middleton Grant (born 14 November 1904, date of death 24 September 1994) was a Scottish professional footballer. He spent eight years at Blackpool in the early 1900s, making over 200 Football League appearances for the club. He played as a defender.  \nHypothesis: William Middleton Grant was not athletic.",
+      "label": "contradiction",
+      "original_id": 411,
+      "original_label": "entailment"
+    },
+    {
+      "id": "23_cf_neutral_0",
+      "text": "Premise: Loraine besides participating in Broadway's Dreamgirls, also participated in the Off-Broadway production of \"Does A Tiger Have A Necktie\". In 1999, Loraine went to London, United Kingdom. There she participated in the production of \"RENT\" where she was cast as \"Mimi\" the understudy.  \nHypothesis: Loraine may have been the lead in Mimi.",
+      "label": "neutral",
+      "original_id": 23,
+      "original_label": "contradiction"
+    }
+  ],
+  "selected_cf_ids": [
+    "298_cf_entailment_0",
+    "303_cf_entailment_0",
+    "15_cf_contradiction_0",
+    "93_cf_contradiction_0",
+    "264_cf_entailment_0",
+    "217_cf_contradiction_0",
+    "411_cf_contradiction_0",
+    "23_cf_neutral_0"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 20,
+    "num_filtered": 8,
+    "num_added": 8,
+    "budget_remaining_before": 152,
+    "budget_remaining_after": 144,
+    "generation_details": [
+      {
+        "original_text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.\nHypothesis: This was a consulate that represented the country of Pakistan.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.  \nHypothesis: This was not a consulate that represented the country of Pakistan.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.3905017375946045,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.\nHypothesis: This was a consulate that represented the country of Pakistan.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate, representing the country of Pakistan, has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.  \nHypothesis: This was a consulate that represented the country of Pakistan.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.5889899730682373,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: \"Handsome and Wealthy\" is a song by American hip hop group Migos. It was released as a single on September 23, 2014 by Quality Control Entertainment and 300 Entertainment. The song was included on their mixtape \"No Label 2\" (2014) and was produced by Cheeze Beatz.\nHypothesis: Quality Control Entertainment was rightfully credited as being solely responsible for releasing \"Handsome and Wealthy\" in 2014.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: \"Handsome and Wealthy\" is a song by American hip hop group Migos. It was released as a single on September 23, 2014 by Quality Control Entertainment and 300 Entertainment. The song was included on their mixtape \"No Label 2\" (2014) and was produced by Cheeze Beatz.  \nHypothesis: Quality Control Entertainment was credited as being responsible for releasing \"Handsome and Wealthy\" in 2014.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1435048580169678,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: \"Handsome and Wealthy\" is a song by American hip hop group Migos. It was released as a single on September 23, 2014 by Quality Control Entertainment and 300 Entertainment. The song was included on their mixtape \"No Label 2\" (2014) and was produced by Cheeze Beatz.\nHypothesis: Quality Control Entertainment was rightfully credited as being solely responsible for releasing \"Handsome and Wealthy\" in 2014.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: \"Handsome and Wealthy\" is a song by American hip hop group Migos. It was released as a single on September 23, 2014 by Quality Control Entertainment and 300 Entertainment. The song was included on their mixtape \"No Label 2\" (2014) and was produced by Cheeze Beatz.  \nHypothesis: Quality Control Entertainment was credited as being responsible for releasing \"Handsome and Wealthy\" in 2014.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1771020889282227,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Smith (suspension) was released by the Raiders on Monday Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.\nHypothesis: It has been reported the Smith hit a member of his family either on Saturday or Sunday.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Smith (suspension) was released by the Raiders on Monday Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.  \nHypothesis: It has been reported that Smith did not hit a member of his family on either Saturday or Sunday.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0493879318237305,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Smith (suspension) was released by the Raiders on Monday Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.\nHypothesis: It has been reported the Smith hit a member of his family either on Saturday or Sunday.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Smith (suspension) was released by the Raiders on Monday Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.  \nHypothesis: Smith was involved in a domestic violence incident with a family member over the weekend.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9499368667602539,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: YouTube user Streetcap1 posted a series of pictures taken from Chinese lunar rover Change\u2019e 3. It appears to have a distinguishable face as well as a body and limbs, while lying in front of a rock. After posting the clip to YouTube, Streetcap1 said: \u201cAll body parts are in the correct place here and the head looks like it is wearing a helmet with a visor. \u201cYou can see what look like hands at the sides.\nHypothesis: Change\u2019e 3 did not post clips to Youtube.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: YouTube user Streetcap1 posted a series of pictures taken from Chinese lunar rover Change\u2019e 3. It appears to have a distinguishable face as well as a body and limbs, while lying in front of a rock. After posting the clip to YouTube, Streetcap1 said: \u201cAll body parts are in the correct place here and the head looks like it is wearing a helmet with a visor. \u201cYou can see what look like hands at the sides.  \nHypothesis: There is no indication that Change\u2019e 3 itself posted clips to YouTube.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.094914197921753,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: YouTube user Streetcap1 posted a series of pictures taken from Chinese lunar rover Change\u2019e 3. It appears to have a distinguishable face as well as a body and limbs, while lying in front of a rock. After posting the clip to YouTube, Streetcap1 said: \u201cAll body parts are in the correct place here and the head looks like it is wearing a helmet with a visor. \u201cYou can see what look like hands at the sides.\nHypothesis: Change\u2019e 3 did not post clips to Youtube.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: YouTube user Streetcap1 posted a series of pictures taken from Chinese lunar rover Change\u2019e 3. It appears to have a distinguishable face as well as a body and limbs, while lying in front of a rock. After posting the clip to YouTube, Streetcap1 said: \u201cAll body parts are in the correct place here and the head looks like it is wearing a helmet with a visor. \u201cYou can see what look like hands at the sides.  \nHypothesis: Change\u2019e 3 posted clips to YouTube.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9216010570526123,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Lik\u00ebng\u00eb are pork sausages flavored with salt, pepper and seed of Fennel (far\u00eb mbrai), made in Piana degli Albanesi and Santa Cristina Gela. \"Lik\u00ebng\u00eb\" is the Undefinite Singular, \"Lik\u00ebnga\" is the Definite Singular and is cognate with the Italian Lucanica and the Greek Loukaniko.\nHypothesis:  Likenge are pork or beef sausages that are flavoured and made in Piana degli Albanosi.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Lik\u00ebng\u00eb are pork sausages flavored with salt, pepper and seed of Fennel (far\u00eb mbrai), made in Piana degli Albanesi and Santa Cristina Gela. \"Lik\u00ebng\u00eb\" is the Undefinite Singular, \"Lik\u00ebnga\" is the Definite Singular and is cognate with the Italian Lucanica and the Greek Loukaniko.  \nHypothesis: Likenge are sausages that are flavoured and made in Piana degli Albanosi.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.026670217514038,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Lik\u00ebng\u00eb are pork sausages flavored with salt, pepper and seed of Fennel (far\u00eb mbrai), made in Piana degli Albanesi and Santa Cristina Gela. \"Lik\u00ebng\u00eb\" is the Undefinite Singular, \"Lik\u00ebnga\" is the Definite Singular and is cognate with the Italian Lucanica and the Greek Loukaniko.\nHypothesis:  Likenge are pork or beef sausages that are flavoured and made in Piana degli Albanosi.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Lik\u00ebng\u00eb are pork sausages flavored with salt, pepper and seed of Fennel (far\u00eb mbrai), made in Piana degli Albanesi and Santa Cristina Gela. \"Lik\u00ebng\u00eb\" is the Undefinite Singular, \"Lik\u00ebnga\" is the Definite Singular and is cognate with the Italian Lucanica and the Greek Loukaniko.  \nHypothesis: Lik\u00ebng\u00eb are pork sausages that are flavored and made in Piana degli Albanesi.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.3700499534606934,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Overwatch World Cup 2017 is an \"Overwatch\" eSports tournament, organized by Blizzard Entertainment, the game's developer. It features 32 represented nations from around the world, with the final tournament taking place at the Anaheim Convention Center from November 3-4, 2017.\nHypothesis: The Overwatch World Cup always takes place at the Anaheim Convention Center from November 3-4",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The Overwatch World Cup 2017 is an \"Overwatch\" eSports tournament, organized by Blizzard Entertainment, the game's developer. It features 32 represented nations from around the world, with the final tournament taking place at the Anaheim Convention Center from November 3-4, 2017.  \nHypothesis: The Overwatch World Cup never takes place at the Anaheim Convention Center from November 3-4.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8871200084686279,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Overwatch World Cup 2017 is an \"Overwatch\" eSports tournament, organized by Blizzard Entertainment, the game's developer. It features 32 represented nations from around the world, with the final tournament taking place at the Anaheim Convention Center from November 3-4, 2017.\nHypothesis: The Overwatch World Cup always takes place at the Anaheim Convention Center from November 3-4",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Overwatch World Cup 2017 is an \"Overwatch\" eSports tournament, organized by Blizzard Entertainment, the game's developer. It features 32 represented nations from around the world, with the final tournament always taking place at the Anaheim Convention Center from November 3-4, 2017.  \nHypothesis: The Overwatch World Cup always takes place at the Anaheim Convention Center from November 3-4.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.025527000427246,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: William Middleton Grant (born 14 November 1904, date of death 24 September 1994) was a Scottish professional footballer. He spent eight years at Blackpool in the early 1900s, making over 200 Football League appearances for the club. He played as a defender.\nHypothesis: William Middleton Grant was athletic.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: William Middleton Grant (born 14 November 1904, date of death 24 September 1994) was a Scottish professional footballer. He spent eight years at Blackpool in the early 1900s, making over 200 Football League appearances for the club. He played as a defender.  \nHypothesis: William Middleton Grant may have been athletic.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7840819358825684,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: William Middleton Grant (born 14 November 1904, date of death 24 September 1994) was a Scottish professional footballer. He spent eight years at Blackpool in the early 1900s, making over 200 Football League appearances for the club. He played as a defender.\nHypothesis: William Middleton Grant was athletic.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: William Middleton Grant (born 14 November 1904, date of death 24 September 1994) was a Scottish professional footballer. He spent eight years at Blackpool in the early 1900s, making over 200 Football League appearances for the club. He played as a defender.  \nHypothesis: William Middleton Grant was not athletic.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7385451793670654,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: And as for why it happened, I'm no expert on the Texas procedures, but what my friends there tell me is that the governor opposed a measure put forward by Democrats in the legislature to expand the number of children that would be covered. And instead directed the money toward a tax cut, a significant part of which went to wealthy interests.\nHypothesis: The governor of Texas had no choice but to do this.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: And as for why it happened, I'm no expert on the Texas procedures, but what my friends there tell me is that the governor opposed a measure put forward by Democrats in the legislature to expand the number of children that would be covered. And instead directed the money toward a tax cut, a significant part of which went to wealthy interests.  \nHypothesis: The governor of Texas had every choice and deliberately decided to do this.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9865672588348389,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: And as for why it happened, I'm no expert on the Texas procedures, but what my friends there tell me is that the governor opposed a measure put forward by Democrats in the legislature to expand the number of children that would be covered. And instead directed the money toward a tax cut, a significant part of which went to wealthy interests.\nHypothesis: The governor of Texas had no choice but to do this.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: And as for why it happened, I'm no expert on the Texas procedures, but what my friends there tell me is that the governor opposed a measure put forward by Democrats in the legislature to expand the number of children that would be covered. And instead directed the money toward a tax cut, a significant part of which went to wealthy interests.  \nHypothesis: The governor of Texas was compelled to make this decision.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9719772338867188,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Love Never Dies is a romantic musical composed by Andrew Lloyd Webber with lyrics by Glenn Slater and a book by Lloyd Webber, Ben Elton, Frederick Forsyth and Slater. It is a sequel to the long-running musical \"The Phantom of the Opera\" loosely adapted from the 1999 novel \"The Phantom of Manhattan\", by Forsyth.\nHypothesis: \"The Phantom of the Opera\" which is a loose adaptation of the 1999 novel \"The Phamtom of Manhattan\"",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Love Never Dies is a romantic musical composed by Andrew Lloyd Webber with lyrics by Glenn Slater and a book by Lloyd Webber, Ben Elton, Frederick Forsyth and Slater. It is a sequel to the long-running musical \"The Phantom of the Opera\" loosely adapted from the 1999 novel \"The Phantom of Manhattan\", by Forsyth.  \nHypothesis: \"The Phantom of the Opera\" is connected to the 1999 novel \"The Phantom of Manhattan\".",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0250298976898193,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Love Never Dies is a romantic musical composed by Andrew Lloyd Webber with lyrics by Glenn Slater and a book by Lloyd Webber, Ben Elton, Frederick Forsyth and Slater. It is a sequel to the long-running musical \"The Phantom of the Opera\" loosely adapted from the 1999 novel \"The Phantom of Manhattan\", by Forsyth.\nHypothesis: \"The Phantom of the Opera\" which is a loose adaptation of the 1999 novel \"The Phamtom of Manhattan\"",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Love Never Dies is a romantic musical composed by Andrew Lloyd Webber with lyrics by Glenn Slater and a book by Lloyd Webber, Ben Elton, Frederick Forsyth and Slater. It is a sequel to the long-running musical \"The Phantom of the Opera\" loosely adapted from the 1999 novel \"The Phantom of Manhattan\", by Forsyth.  \nHypothesis: \"The Phantom of the Opera\" is not a loose adaptation of the 1999 novel \"The Phantom of Manhattan\".",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9188239574432373,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Loraine besides participating in Broadway's Dreamgirls, also participated in the Off-Broadway production of \"Does A Tiger Have A Necktie\". In 1999, Loraine went to London, United Kingdom. There she participated in the production of \"RENT\" where she was cast as \"Mimi\" the understudy.\nHypothesis: Loraine was the lead in Mimi.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Loraine besides participating in Broadway's Dreamgirls, also participated in the Off-Broadway production of \"Does A Tiger Have A Necktie\". In 1999, Loraine went to London, United Kingdom. There she participated in the production of \"RENT\" where she was cast as \"Mimi\" the understudy.  \nHypothesis: Loraine may have been the lead in Mimi.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.922248363494873,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Loraine besides participating in Broadway's Dreamgirls, also participated in the Off-Broadway production of \"Does A Tiger Have A Necktie\". In 1999, Loraine went to London, United Kingdom. There she participated in the production of \"RENT\" where she was cast as \"Mimi\" the understudy.\nHypothesis: Loraine was the lead in Mimi.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Loraine besides participating in Broadway's Dreamgirls, also participated in the Off-Broadway production of \"Does A Tiger Have A Necktie\". In 1999, Loraine went to London, United Kingdom. There she participated in the production of \"RENT\" where she was cast as \"Mimi\" the lead.  \nHypothesis: Loraine was the lead in Mimi.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0212278366088867,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "298_cf_contradiction_0",
+        "original_id": 298,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.0001792594736875953,
+          "p_orig": 0.0015009197672597944,
+          "margin": -0.0013216602935721992,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "298_cf_entailment_0",
+        "original_id": 298,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9966493713204995,
+          "p_orig": 0.0005512340822367444,
+          "margin": 0.9960981372382627,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.99605393409729,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "303_cf_neutral_0",
+        "original_id": 303,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 1.3440573633610874e-08,
+          "p_orig": 7.992084773539248e-11,
+          "margin": 1.336065278587548e-08,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "303_cf_entailment_0",
+        "original_id": 303,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999950260847,
+          "p_orig": 2.9401256830952787e-11,
+          "margin": 0.9999999949966835,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9993500113487244,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "15_cf_contradiction_0",
+        "original_id": 15,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9706873754904568,
+          "p_orig": 0.029312288034068573,
+          "margin": 0.9413750874563882,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.996467113494873,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "15_cf_entailment_0",
+        "original_id": 15,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 2.999000377131965e-09,
+          "p_orig": 0.9999999877634351,
+          "margin": -0.9999999847644347,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "93_cf_neutral_0",
+        "original_id": 93,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 1.1861267815457609e-08,
+          "p_orig": 0.9999998606182893,
+          "margin": -0.9999998487570214,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "93_cf_contradiction_0",
+        "original_id": 93,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9988304831055145,
+          "p_orig": 1.2487069031531302e-09,
+          "margin": 0.9988304818568076,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9883179664611816,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "264_cf_neutral_0",
+        "original_id": 264,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.011499487393986993,
+          "p_orig": 0.07498596482049905,
+          "margin": -0.06348647742651205,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "264_cf_entailment_0",
+        "original_id": 264,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999996510281371,
+          "p_orig": 2.335624457456198e-09,
+          "margin": 0.9999996486925127,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9965524673461914,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "217_cf_contradiction_0",
+        "original_id": 217,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999994024776,
+          "p_orig": 5.905389549025139e-10,
+          "margin": 0.9999999988119387,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9937990307807922,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "217_cf_entailment_0",
+        "original_id": 217,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 8.237721947448753e-08,
+          "p_orig": 0.06008674674831819,
+          "margin": -0.06008666437109871,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "411_cf_neutral_0",
+        "original_id": 411,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.00043055941288766997,
+          "p_orig": 0.9995694405871123,
+          "margin": -0.9991388811742246,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "411_cf_contradiction_0",
+        "original_id": 411,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999936471403,
+          "p_orig": 3.979032768253345e-12,
+          "margin": 0.9999999936431613,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9992925524711609,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "277_cf_contradiction_0",
+        "original_id": 277,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 3.4525113190946704e-06,
+          "p_orig": 0.8175714963559894,
+          "margin": -0.8175680438446703,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "277_cf_entailment_0",
+        "original_id": 277,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 2.1333969699150484e-10,
+          "p_orig": 0.9820137407257028,
+          "margin": -0.9820137405123631,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "379_cf_neutral_0",
+        "original_id": 379,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.00026119180336994996,
+          "p_orig": 0.9997387947595651,
+          "margin": -0.9994776029561951,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "379_cf_contradiction_0",
+        "original_id": 379,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.005691703173675975,
+          "p_orig": 0.9571937856027056,
+          "margin": -0.9515020824290297,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "23_cf_neutral_0",
+        "original_id": 23,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999716326290351,
+          "p_orig": 2.753585814115671e-05,
+          "margin": 0.9999440967708939,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9988065958023071,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "23_cf_entailment_0",
+        "original_id": 23,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.000552135338455574,
+          "p_orig": 0.9982789947305444,
+          "margin": -0.9977268593920888,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      }
+    ]
+  },
+  "num_generated": 8,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 20,
+    "num_after_filtering": 8,
+    "num_final_selected": 8,
+    "budget_remaining_before": 152,
+    "budget_remaining_after": 144
+  }
+}

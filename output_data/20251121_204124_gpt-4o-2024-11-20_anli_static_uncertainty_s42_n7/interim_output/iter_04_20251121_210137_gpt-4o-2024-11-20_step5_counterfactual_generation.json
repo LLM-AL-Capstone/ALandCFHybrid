@@ -1,0 +1,750 @@
+{
+  "iteration": 4,
+  "timestamp": "20251121_210137",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 405,
+      "text": "Premise: Some of the emails had the subject line, \"Think Twice.\" They were sent from a spoofed email address. The sender claimed to have had an associate plant a small bomb in the recipient's building and said the only way to stop him from setting it off was by making an online payment of $20,000 in bitcoin.\nHypothesis: The sender would have accepted $20,000 in cash.",
+      "label": "contradiction"
+    },
+    {
+      "id": 177,
+      "text": "Premise: NASA John H. Glenn Research Center at Lewis Field is a NASA center, located within the cities of Brook Park and Cleveland between Cleveland Hopkins International Airport and the Cleveland Metroparks's Rocky River Reservation, with a subsidiary facility in Sandusky, Ohio. Its director is Janet L. Kavandi.\nHypothesis: NASA John H. Glenn Research Center at Lewis Field is a NASA center, located between Cleveland Hopkins International Airport.",
+      "label": "entailment"
+    },
+    {
+      "id": 99,
+      "text": "Premise: How to make popcorn on the stove<br>Heat the oil in a 3-quart (or larger) saucepan on medium-high heat. You'll want to use an oil with a high smoke point, like peanut, canola or coconut. If using coconut oil, allow all of the solid oil to melt before adding kernels.\nHypothesis: Nut-based oils tend to have a higher smoke point.",
+      "label": "neutral"
+    },
+    {
+      "id": 347,
+      "text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.\nHypothesis: Topographic maps are useful to learn",
+      "label": "neutral"
+    },
+    {
+      "id": 295,
+      "text": "Premise: How to take revenge on your enemies<br>Call your enemy out. Before giving in to revenge, try telling your enemy exactly what it is that you want him to stop doing. Stay calm and take control of the situation.\nHypothesis: Revenge on your enemies requires a few things such as patience. ",
+      "label": "entailment"
+    },
+    {
+      "id": 296,
+      "text": "Premise: In Greek mythology, the Hesperides ( ; Ancient\u00a0Greek: \u1f19\u03c3\u03c0\u03b5\u03c1\u03af\u03b4\u03b5\u03c2 , ] ) are the nymphs of evening and golden light of sunset, who were the \"Daughters of the Evening\" or \"Nymphs of the West\". They tend a blissful garden in a far western corner of the world, located near the Atlas mountains in North Africa at the edge of the encircling Oceanus, the world-ocean.\nHypothesis: Atlas mountains contains a xx",
+      "label": "contradiction"
+    },
+    {
+      "id": 139,
+      "text": "Premise: Cody Martin Linley (born November 20, 1989) is an American actor and singer. He played a recurring role as Jake Ryan in the television series \"Hannah Montana\", and was a contestant on the seventh season of \"Dancing With The Stars\", in which he was partnered with Julianne Hough and finished fourth.\nHypothesis: Cody Martin Linley acted in all seasons of \"Hannah Montana\".",
+      "label": "neutral"
+    },
+    {
+      "id": 355,
+      "text": "Premise: Nalin Jayawardena (Sinhala : \u0db1\u0dbd\u0dd2\u0db1\u0dca \u0da2\u0dba\u0dc0\u0dbb\u0dca\u0db0\u0db1) (born 18 April 1957) is a popular Sri Lankan singer and vocalist. He was the first Sri Lankan singer to release an internet based audio album in Sinhala allowing his fans from around the world to download the album free of charge. This album titled Kanda Paamule was released in 2004. Nalin Jayawardena lives in Perth, Australia.\nHypothesis: The album titled Kanda Paamule made a lot of money.",
+      "label": "neutral"
+    },
+    {
+      "id": 66,
+      "text": "Premise: What the heck. I -- of course there's a lot -- look, global warming needs to be taken very seriously, and I take it seriously. But science, there's a lot -- there's differing opinions. And before we react, I think it's best to have the full accounting, full understanding of what's taking place.\nHypothesis: Global warming is a religious issue. ",
+      "label": "contradiction"
+    },
+    {
+      "id": 141,
+      "text": "Premise: The Veterinary Medical College Application Service (VMCAS) is a centralized application service for students applying to veterinary school. Created by the Association of American Veterinary Medical Colleges (AAVMC) in 1995, VMCAS handles applications for most of the veterinary schools in the United States, as well as several in Canada, the United Kingdom, New Zealand and Australia.\nHypothesis: The Veterinary Medical College Application Service (VMCAS) is the only application service for students applying for veterinary school",
+      "label": "neutral"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "405_cf_neutral_0",
+      "text": "Premise: Some of the emails had the subject line, \"Think Twice.\" They were sent from a spoofed email address. The sender claimed to have had an associate plant a small bomb in the recipient's building and said the only way to stop him from setting it off was by making an online payment of $20,000 in bitcoin.  \nHypothesis: The sender might have accepted $20,000 in cash.",
+      "label": "neutral",
+      "original_id": 405,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "177_cf_contradiction_0",
+      "text": "Premise: NASA John H. Glenn Research Center at Lewis Field is a NASA center, located within the cities of Brook Park and Cleveland between Cleveland Hopkins International Airport and the Cleveland Metroparks's Rocky River Reservation, with a subsidiary facility in Sandusky, Ohio. Its director is Janet L. Kavandi.  \nHypothesis: NASA John H. Glenn Research Center at Lewis Field is not located between Cleveland Hopkins International Airport.",
+      "label": "contradiction",
+      "original_id": 177,
+      "original_label": "entailment"
+    },
+    {
+      "id": "99_cf_contradiction_0",
+      "text": "Premise: How to make popcorn on the stove<br>Heat the oil in a 3-quart (or larger) saucepan on medium-high heat. You'll want to use an oil with a high smoke point, like peanut, canola or coconut. If using coconut oil, allow all of the solid oil to melt before adding kernels.  \nHypothesis: Nut-based oils tend to have a lower smoke point.",
+      "label": "contradiction",
+      "original_id": 99,
+      "original_label": "neutral"
+    },
+    {
+      "id": "347_cf_contradiction_0",
+      "text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.  \nHypothesis: Topographic maps are not useful to learn",
+      "label": "contradiction",
+      "original_id": 347,
+      "original_label": "neutral"
+    },
+    {
+      "id": "295_cf_contradiction_0",
+      "text": "Premise: How to take revenge on your enemies<br>Call your enemy out. Before giving in to revenge, try telling your enemy exactly what it is that you want him to stop doing. Stay calm and take control of the situation.  \nHypothesis: Revenge on your enemies does not require patience at all.",
+      "label": "contradiction",
+      "original_id": 295,
+      "original_label": "entailment"
+    },
+    {
+      "id": "296_cf_neutral_0",
+      "text": "Premise: In Greek mythology, the Hesperides ( ; Ancient\u00a0Greek: \u1f19\u03c3\u03c0\u03b5\u03c1\u03af\u03b4\u03b5\u03c2 , ] ) are the nymphs of evening and golden light of sunset, who were the \"Daughters of the Evening\" or \"Nymphs of the West\". They tend a blissful garden in a far western corner of the world, located near the Atlas mountains in North Africa at the edge of the encircling Oceanus, the world-ocean.  \nHypothesis: The Atlas mountains may contain a xx.",
+      "label": "neutral",
+      "original_id": 296,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "296_cf_entailment_0",
+      "text": "Premise: In Greek mythology, the Hesperides ( ; Ancient\u00a0Greek: \u1f19\u03c3\u03c0\u03b5\u03c1\u03af\u03b4\u03b5\u03c2 , ] ) are the nymphs of evening and golden light of sunset, who were the \"Daughters of the Evening\" or \"Nymphs of the West\". They tend a blissful garden in a far western corner of the world, located near the Atlas mountains in North Africa at the edge of the encircling Oceanus, the world-ocean.  \nHypothesis: The Atlas mountains are located near the garden of the Hesperides.",
+      "label": "entailment",
+      "original_id": 296,
+      "original_label": "contradiction"
+    },
+    {
+      "id": "139_cf_entailment_0",
+      "text": "Premise: Cody Martin Linley (born November 20, 1989) is an American actor and singer. He played a recurring role as Jake Ryan in the television series \"Hannah Montana\", appearing in all seasons of the show, and was a contestant on the seventh season of \"Dancing With The Stars\", in which he was partnered with Julianne Hough and finished fourth.  \nHypothesis: Cody Martin Linley acted in all seasons of \"Hannah Montana\".",
+      "label": "entailment",
+      "original_id": 139,
+      "original_label": "neutral"
+    },
+    {
+      "id": "66_cf_neutral_0",
+      "text": "Premise: What the heck. I -- of course there's a lot -- look, global warming needs to be taken very seriously, and I take it seriously. But science, there's a lot -- there's differing opinions. And before we react, I think it's best to have the full accounting, full understanding of what's taking place.  \nHypothesis: Global warming can be viewed as a religious issue.",
+      "label": "neutral",
+      "original_id": 66,
+      "original_label": "contradiction"
+    }
+  ],
+  "selected_cf_ids": [
+    "405_cf_neutral_0",
+    "177_cf_contradiction_0",
+    "99_cf_contradiction_0",
+    "347_cf_contradiction_0",
+    "295_cf_contradiction_0",
+    "296_cf_neutral_0",
+    "296_cf_entailment_0",
+    "139_cf_entailment_0",
+    "66_cf_neutral_0"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 20,
+    "num_filtered": 9,
+    "num_added": 9,
+    "budget_remaining_before": 161,
+    "budget_remaining_after": 152,
+    "generation_details": [
+      {
+        "original_text": "Premise: Some of the emails had the subject line, \"Think Twice.\" They were sent from a spoofed email address. The sender claimed to have had an associate plant a small bomb in the recipient's building and said the only way to stop him from setting it off was by making an online payment of $20,000 in bitcoin.\nHypothesis: The sender would have accepted $20,000 in cash.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Some of the emails had the subject line, \"Think Twice.\" They were sent from a spoofed email address. The sender claimed to have had an associate plant a small bomb in the recipient's building and said the only way to stop him from setting it off was by making an online payment of $20,000 in bitcoin.  \nHypothesis: The sender might have accepted $20,000 in cash.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1199169158935547,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Some of the emails had the subject line, \"Think Twice.\" They were sent from a spoofed email address. The sender claimed to have had an associate plant a small bomb in the recipient's building and said the only way to stop him from setting it off was by making an online payment of $20,000 in bitcoin.\nHypothesis: The sender would have accepted $20,000 in cash.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Some of the emails had the subject line, \"Think Twice.\" They were sent from a spoofed email address. The sender claimed to have had an associate plant a small bomb in the recipient's building and said the only way to stop him from setting it off was by making an online payment of $20,000 in bitcoin.  \nHypothesis: The sender might have accepted $20,000 in cash.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0097229480743408,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: NASA John H. Glenn Research Center at Lewis Field is a NASA center, located within the cities of Brook Park and Cleveland between Cleveland Hopkins International Airport and the Cleveland Metroparks's Rocky River Reservation, with a subsidiary facility in Sandusky, Ohio. Its director is Janet L. Kavandi.\nHypothesis: NASA John H. Glenn Research Center at Lewis Field is a NASA center, located between Cleveland Hopkins International Airport.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: NASA John H. Glenn Research Center at Lewis Field is a NASA center, located within the cities of Brook Park and Cleveland between Cleveland Hopkins International Airport and the Cleveland Metroparks's Rocky River Reservation, with a subsidiary facility in Sandusky, Ohio. Its director is Janet L. Kavandi.  \nHypothesis: NASA John H. Glenn Research Center at Lewis Field might be a NASA center, located between Cleveland Hopkins International Airport.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9417238235473633,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: NASA John H. Glenn Research Center at Lewis Field is a NASA center, located within the cities of Brook Park and Cleveland between Cleveland Hopkins International Airport and the Cleveland Metroparks's Rocky River Reservation, with a subsidiary facility in Sandusky, Ohio. Its director is Janet L. Kavandi.\nHypothesis: NASA John H. Glenn Research Center at Lewis Field is a NASA center, located between Cleveland Hopkins International Airport.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: NASA John H. Glenn Research Center at Lewis Field is a NASA center, located within the cities of Brook Park and Cleveland between Cleveland Hopkins International Airport and the Cleveland Metroparks's Rocky River Reservation, with a subsidiary facility in Sandusky, Ohio. Its director is Janet L. Kavandi.  \nHypothesis: NASA John H. Glenn Research Center at Lewis Field is not located between Cleveland Hopkins International Airport.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.238692283630371,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to make popcorn on the stove<br>Heat the oil in a 3-quart (or larger) saucepan on medium-high heat. You'll want to use an oil with a high smoke point, like peanut, canola or coconut. If using coconut oil, allow all of the solid oil to melt before adding kernels.\nHypothesis: Nut-based oils tend to have a higher smoke point.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to make popcorn on the stove<br>Heat the oil in a 3-quart (or larger) saucepan on medium-high heat. You'll want to use an oil with a high smoke point, like peanut, canola or coconut. If using coconut oil, allow all of the solid oil to melt before adding kernels.  \nHypothesis: Nut-based oils tend to have a lower smoke point.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2630698680877686,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to make popcorn on the stove<br>Heat the oil in a 3-quart (or larger) saucepan on medium-high heat. You'll want to use an oil with a high smoke point, like peanut, canola or coconut. If using coconut oil, allow all of the solid oil to melt before adding kernels.\nHypothesis: Nut-based oils tend to have a higher smoke point.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to make popcorn on the stove<br>Heat the oil in a 3-quart (or larger) saucepan on medium-high heat. You'll want to use an oil with a high smoke point, like peanut, canola or coconut. If using coconut oil, allow all of the solid oil to melt before adding kernels.  \nHypothesis: Oils like peanut and coconut, which are nut-based, have a higher smoke point.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2963173389434814,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.\nHypothesis: Topographic maps are useful to learn",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.  \nHypothesis: Topographic maps are not useful to learn",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8224778175354004,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.\nHypothesis: Topographic maps are useful to learn",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.  \nHypothesis: Topographic maps are useful for learning.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.027846097946167,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to take revenge on your enemies<br>Call your enemy out. Before giving in to revenge, try telling your enemy exactly what it is that you want him to stop doing. Stay calm and take control of the situation.\nHypothesis: Revenge on your enemies requires a few things such as patience. ",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: How to take revenge on your enemies<br>Call your enemy out. Before giving in to revenge, try telling your enemy exactly what it is that you want him to stop doing. Stay calm and take control of the situation.  \nHypothesis: Revenge on your enemies might involve patience.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7473618984222412,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to take revenge on your enemies<br>Call your enemy out. Before giving in to revenge, try telling your enemy exactly what it is that you want him to stop doing. Stay calm and take control of the situation.\nHypothesis: Revenge on your enemies requires a few things such as patience. ",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to take revenge on your enemies<br>Call your enemy out. Before giving in to revenge, try telling your enemy exactly what it is that you want him to stop doing. Stay calm and take control of the situation.  \nHypothesis: Revenge on your enemies does not require patience at all.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7958321571350098,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: In Greek mythology, the Hesperides ( ; Ancient\u00a0Greek: \u1f19\u03c3\u03c0\u03b5\u03c1\u03af\u03b4\u03b5\u03c2 , ] ) are the nymphs of evening and golden light of sunset, who were the \"Daughters of the Evening\" or \"Nymphs of the West\". They tend a blissful garden in a far western corner of the world, located near the Atlas mountains in North Africa at the edge of the encircling Oceanus, the world-ocean.\nHypothesis: Atlas mountains contains a xx",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: In Greek mythology, the Hesperides ( ; Ancient\u00a0Greek: \u1f19\u03c3\u03c0\u03b5\u03c1\u03af\u03b4\u03b5\u03c2 , ] ) are the nymphs of evening and golden light of sunset, who were the \"Daughters of the Evening\" or \"Nymphs of the West\". They tend a blissful garden in a far western corner of the world, located near the Atlas mountains in North Africa at the edge of the encircling Oceanus, the world-ocean.  \nHypothesis: The Atlas mountains may contain a xx.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9602072238922119,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: In Greek mythology, the Hesperides ( ; Ancient\u00a0Greek: \u1f19\u03c3\u03c0\u03b5\u03c1\u03af\u03b4\u03b5\u03c2 , ] ) are the nymphs of evening and golden light of sunset, who were the \"Daughters of the Evening\" or \"Nymphs of the West\". They tend a blissful garden in a far western corner of the world, located near the Atlas mountains in North Africa at the edge of the encircling Oceanus, the world-ocean.\nHypothesis: Atlas mountains contains a xx",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: In Greek mythology, the Hesperides ( ; Ancient\u00a0Greek: \u1f19\u03c3\u03c0\u03b5\u03c1\u03af\u03b4\u03b5\u03c2 , ] ) are the nymphs of evening and golden light of sunset, who were the \"Daughters of the Evening\" or \"Nymphs of the West\". They tend a blissful garden in a far western corner of the world, located near the Atlas mountains in North Africa at the edge of the encircling Oceanus, the world-ocean.  \nHypothesis: The Atlas mountains are located near the garden of the Hesperides.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2944600582122803,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Cody Martin Linley (born November 20, 1989) is an American actor and singer. He played a recurring role as Jake Ryan in the television series \"Hannah Montana\", and was a contestant on the seventh season of \"Dancing With The Stars\", in which he was partnered with Julianne Hough and finished fourth.\nHypothesis: Cody Martin Linley acted in all seasons of \"Hannah Montana\".",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Cody Martin Linley (born November 20, 1989) is an American actor and singer. He played a recurring role as Jake Ryan in the television series \"Hannah Montana\", and was a contestant on the seventh season of \"Dancing With The Stars\", in which he was partnered with Julianne Hough and finished fourth.  \nHypothesis: Cody Martin Linley did not act in all seasons of \"Hannah Montana\".",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8074429035186768,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Cody Martin Linley (born November 20, 1989) is an American actor and singer. He played a recurring role as Jake Ryan in the television series \"Hannah Montana\", and was a contestant on the seventh season of \"Dancing With The Stars\", in which he was partnered with Julianne Hough and finished fourth.\nHypothesis: Cody Martin Linley acted in all seasons of \"Hannah Montana\".",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Cody Martin Linley (born November 20, 1989) is an American actor and singer. He played a recurring role as Jake Ryan in the television series \"Hannah Montana\", appearing in all seasons of the show, and was a contestant on the seventh season of \"Dancing With The Stars\", in which he was partnered with Julianne Hough and finished fourth.  \nHypothesis: Cody Martin Linley acted in all seasons of \"Hannah Montana\".",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2552859783172607,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Nalin Jayawardena (Sinhala : \u0db1\u0dbd\u0dd2\u0db1\u0dca \u0da2\u0dba\u0dc0\u0dbb\u0dca\u0db0\u0db1) (born 18 April 1957) is a popular Sri Lankan singer and vocalist. He was the first Sri Lankan singer to release an internet based audio album in Sinhala allowing his fans from around the world to download the album free of charge. This album titled Kanda Paamule was released in 2004. Nalin Jayawardena lives in Perth, Australia.\nHypothesis: The album titled Kanda Paamule made a lot of money.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Nalin Jayawardena (Sinhala : \u0db1\u0dbd\u0dd2\u0db1\u0dca \u0da2\u0dba\u0dc0\u0dbb\u0dca\u0db0\u0db1) (born 18 April 1957) is a popular Sri Lankan singer and vocalist. He was the first Sri Lankan singer to release an internet based audio album in Sinhala allowing his fans from around the world to download the album free of charge. This album titled Kanda Paamule was released in 2004. Nalin Jayawardena lives in Perth, Australia.  \nHypothesis: The album titled Kanda Paamule did not make any money.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.12772798538208,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Nalin Jayawardena (Sinhala : \u0db1\u0dbd\u0dd2\u0db1\u0dca \u0da2\u0dba\u0dc0\u0dbb\u0dca\u0db0\u0db1) (born 18 April 1957) is a popular Sri Lankan singer and vocalist. He was the first Sri Lankan singer to release an internet based audio album in Sinhala allowing his fans from around the world to download the album free of charge. This album titled Kanda Paamule was released in 2004. Nalin Jayawardena lives in Perth, Australia.\nHypothesis: The album titled Kanda Paamule made a lot of money.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Nalin Jayawardena (Sinhala : \u0db1\u0dbd\u0dd2\u0db1\u0dca \u0da2\u0dba\u0dc0\u0dbb\u0dca\u0db0\u0db1) (born 18 April 1957) is a popular Sri Lankan singer and vocalist. He was the first Sri Lankan singer to release an internet based audio album in Sinhala allowing his fans from around the world to download the album free of charge. This album titled Kanda Paamule was released in 2004. Nalin Jayawardena lives in Perth, Australia.  \nHypothesis: The album titled Kanda Paamule generated significant revenue.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.233511209487915,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: What the heck. I -- of course there's a lot -- look, global warming needs to be taken very seriously, and I take it seriously. But science, there's a lot -- there's differing opinions. And before we react, I think it's best to have the full accounting, full understanding of what's taking place.\nHypothesis: Global warming is a religious issue. ",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: What the heck. I -- of course there's a lot -- look, global warming needs to be taken very seriously, and I take it seriously. But science, there's a lot -- there's differing opinions. And before we react, I think it's best to have the full accounting, full understanding of what's taking place.  \nHypothesis: Global warming can be viewed as a religious issue.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.822580099105835,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: What the heck. I -- of course there's a lot -- look, global warming needs to be taken very seriously, and I take it seriously. But science, there's a lot -- there's differing opinions. And before we react, I think it's best to have the full accounting, full understanding of what's taking place.\nHypothesis: Global warming is a religious issue. ",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: What the heck. I -- of course there's a lot -- look, global warming needs to be taken very seriously, and I take it seriously. But science, there's a lot -- there's differing opinions. And before we react, I think it's best to have the full accounting, full understanding of what's taking place.  \nHypothesis: Global warming can be viewed as a religious issue.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8033692836761475,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Veterinary Medical College Application Service (VMCAS) is a centralized application service for students applying to veterinary school. Created by the Association of American Veterinary Medical Colleges (AAVMC) in 1995, VMCAS handles applications for most of the veterinary schools in the United States, as well as several in Canada, the United Kingdom, New Zealand and Australia.\nHypothesis: The Veterinary Medical College Application Service (VMCAS) is the only application service for students applying for veterinary school",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The Veterinary Medical College Application Service (VMCAS) is a centralized application service for students applying to veterinary school. Created by the Association of American Veterinary Medical Colleges (AAVMC) in 1995, VMCAS handles applications for most of the veterinary schools in the United States, as well as several in Canada, the United Kingdom, New Zealand and Australia.  \nHypothesis: The Veterinary Medical College Application Service (VMCAS) is not the only application service for students applying for veterinary school.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1116008758544922,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Veterinary Medical College Application Service (VMCAS) is a centralized application service for students applying to veterinary school. Created by the Association of American Veterinary Medical Colleges (AAVMC) in 1995, VMCAS handles applications for most of the veterinary schools in the United States, as well as several in Canada, the United Kingdom, New Zealand and Australia.\nHypothesis: The Veterinary Medical College Application Service (VMCAS) is the only application service for students applying for veterinary school",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Veterinary Medical College Application Service (VMCAS) is a centralized application service for students applying to veterinary school. Created by the Association of American Veterinary Medical Colleges (AAVMC) in 1995, VMCAS exclusively handles applications for most of the veterinary schools in the United States, as well as several in Canada, the United Kingdom, New Zealand and Australia.  \nHypothesis: The Veterinary Medical College Application Service (VMCAS) is the only application service for students applying for veterinary school.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.4991989135742188,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "405_cf_neutral_0",
+        "original_id": 405,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999980042786519,
+          "p_orig": 1.9947477162603292e-06,
+          "margin": 0.9999960095309357,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9969756007194519,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "405_cf_entailment_0",
+        "original_id": 405,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 4.058703741864946e-10,
+          "p_orig": 2.260345038708223e-06,
+          "margin": -2.2599391683340367e-06,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "177_cf_neutral_0",
+        "original_id": 177,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.00033535193337987204,
+          "p_orig": 0.9996646376025992,
+          "margin": -0.9993292856692193,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "177_cf_contradiction_0",
+        "original_id": 177,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999999979388186,
+          "p_orig": 1.1102230246251565e-16,
+          "margin": 0.9999999979388184,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9977152347564697,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "99_cf_contradiction_0",
+        "original_id": 99,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9947798539332664,
+          "p_orig": 0.005220144016311937,
+          "margin": 0.9895597099169544,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9975200295448303,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "99_cf_entailment_0",
+        "original_id": 99,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.26894149132826745,
+          "p_orig": 0.7310582552605833,
+          "margin": -0.4621167639323159,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "347_cf_contradiction_0",
+        "original_id": 347,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999339474012876,
+          "p_orig": 6.605259292331813e-05,
+          "margin": 0.9998678948083642,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9971410632133484,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "347_cf_entailment_0",
+        "original_id": 347,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.09534958709314394,
+          "p_orig": 0.9046504129068561,
+          "margin": -0.8093008258137122,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "295_cf_neutral_0",
+        "original_id": 295,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.0373269618385783,
+          "p_orig": 0.9626730369579172,
+          "margin": -0.9253460751193389,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "295_cf_contradiction_0",
+        "original_id": 295,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999994284833726,
+          "p_orig": 1.0816126331824788e-11,
+          "margin": 0.9999994284725565,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9738850593566895,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "296_cf_neutral_0",
+        "original_id": 296,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999546002337911,
+          "p_orig": 4.539816103236075e-05,
+          "margin": 0.9999092020727588,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.998467206954956,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "296_cf_entailment_0",
+        "original_id": 296,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.999999761705643,
+          "p_orig": 5.49287604919606e-11,
+          "margin": 0.9999997616507142,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.989035964012146,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "139_cf_contradiction_0",
+        "original_id": 139,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 2.51071745885953e-08,
+          "p_orig": 0.00012339537149452342,
+          "margin": -0.00012337026431993482,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "139_cf_entailment_0",
+        "original_id": 139,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9974190070978369,
+          "p_orig": 0.002472364506796223,
+          "margin": 0.9949466425910407,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9975928068161011,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "355_cf_contradiction_0",
+        "original_id": 355,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 6.902595279979134e-06,
+          "p_orig": 0.9914156452310272,
+          "margin": -0.9914087426357472,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "355_cf_entailment_0",
+        "original_id": 355,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 0.0,
+          "p_orig": 0.008577512830124928,
+          "margin": -0.008577512830124928,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "66_cf_neutral_0",
+        "original_id": 66,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_correctness": {
+          "p_target": 0.9999898699335328,
+          "p_orig": 1.013006646715437e-05,
+          "margin": 0.9999797398670657,
+          "min_margin": 0.1,
+          "margin_passes": true,
+          "confidence_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.994422972202301,
+          "min_similarity": 0.6,
+          "passes": true
+        }
+      },
+      {
+        "cf_id": "66_cf_entailment_0",
+        "original_id": 66,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 1.1102230246251565e-16,
+          "p_orig": 8.939770067691405e-06,
+          "margin": -8.939770067580383e-06,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "141_cf_contradiction_0",
+        "original_id": 141,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 1.994226379423e-06,
+          "p_orig": 0.9997368145187601,
+          "margin": -0.9997348202923806,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      },
+      {
+        "cf_id": "141_cf_entailment_0",
+        "original_id": 141,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_correctness",
+        "label_correctness": {
+          "p_target": 2.506190301591482e-08,
+          "p_orig": 0.7772996909858668,
+          "margin": -0.7772996659239638,
+          "min_margin": 0.1,
+          "margin_passes": false,
+          "confidence_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {}
+      }
+    ]
+  },
+  "num_generated": 9,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 20,
+    "num_after_filtering": 9,
+    "num_final_selected": 9,
+    "budget_remaining_before": 161,
+    "budget_remaining_after": 152
+  }
+}
