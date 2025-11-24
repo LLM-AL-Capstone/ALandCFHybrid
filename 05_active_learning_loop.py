@@ -1002,10 +1002,9 @@ def active_learning_loop(config: dict):
                     llm_provider,
                     all_labels,
                     labeled_pool,           # For diversity calculation
-                    classifier,             # For confidence scoring (used if probe_estimator not provided)
+                    classifier,             # For confidence scoring
                     alpha_cf=current_alpha_cf,  # Version 3: per-round budget multiplier
                     target_label_selector=target_label_selector,  # Version 3: target label selection
-                    probe_estimator=probe_estimator,  # V2: Use probe for CF quality filtering if available
                     return_details=True     # Get full generation metadata and prompts
                 )
                 
