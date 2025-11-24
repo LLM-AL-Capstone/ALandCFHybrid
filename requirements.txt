@@ -19,6 +19,12 @@ tiktoken>=0.5.0
 # Retrieval-based ICL support
 sentence-transformers>=2.2.0
 
+# Retrieval backends
+rank-bm25>=0.2.2  # BM25 keyword-based retrieval
+transformers>=4.30.0  # For Contriever and other HuggingFace models
+torch>=2.0.0  # Required by transformers and Contriever
+
 # Additional dependencies
-pathlib>=1.0.1  # For path handling (usually included in Python 3.4+)
 typing-extensions>=4.0.0  # For extended type hints
+
+# Note: pathlib is part of Python standard library (3.4+) and doesn't need to be installed

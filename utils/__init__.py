@@ -14,6 +14,7 @@ from .counterfactual_generator import (
 )
 from .cf_quality_scorer import CFQualityScorer
 from .target_label_selector import TargetLabelSelector
+from .probe_uncertainty import ProbeUncertaintyEstimator
 
 __all__ = [
     'load_config',
@@ -35,5 +36,6 @@ __all__ = [
     'generate_single_counterfactual',
     'generate_counterfactuals_for_evaluation',
     'CFQualityScorer',
-    'TargetLabelSelector'
+    'TargetLabelSelector',
+    'ProbeUncertaintyEstimator'
 ]

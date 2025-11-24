@@ -20,6 +20,7 @@ def generate_counterfactuals_batch(
     classifier,
     alpha_cf: float = None,
     target_label_selector=None,
+    probe_estimator=None,  # V2: Probe estimator for CF quality filtering (optional)
     return_details: bool = False
 ) -> tuple:
     """
@@ -36,6 +37,7 @@ def generate_counterfactuals_batch(
         classifier: Trained classifier (for confidence scoring)
         alpha_cf: Per-round budget multiplier (|C_t| <= alpha_cf * |F_t|). If None, uses config.
         target_label_selector: Target label selector instance (V3)
+        probe_estimator: V2 probe estimator (optional). If provided, used for CF quality filtering instead of LLM classifier.
         return_details: If True, returns (counterfactuals, details_list)
     
     Returns:
@@ -135,7 +137,8 @@ def generate_counterfactuals_batch(
             labeled_pool,
             classifier,
             quality_scorer,
-            max_per_example
+            max_per_example,
+            probe_estimator=probe_estimator  # V2: Pass probe estimator for CF filtering
         )
     else:
         # No filtering - keep all candidates
@@ -355,7 +358,8 @@ def filter_by_quality(
     labeled_pool: List[Dict],
     classifier,
     quality_scorer: CFQualityScorer,
-    max_per_example: int
+    max_per_example: int,
+    probe_estimator=None  # V2: Probe estimator for CF quality filtering (optional)
 ) -> Tuple[List[Dict], List[Dict]]:
     """
     Filter CF candidates using V3 enhanced filtering (3 filters) + scoring + ranking.
@@ -370,9 +374,10 @@ def filter_by_quality(
         cf_candidates: List of candidate dicts with 'cf', 'original_example', etc.
         labeled_examples: Newly labeled examples
         labeled_pool: Current labeled pool (not used)
-        classifier: Trained classifier
+        classifier: Trained classifier (used if probe_estimator not provided)
         quality_scorer: Quality scorer instance
         max_per_example: Max CFs to keep per original example (after ranking)
+        probe_estimator: V2 probe estimator (optional). If provided, used instead of classifier for CF filtering.
     
     Returns:
         Tuple of (filtered_cfs, filtering_details)
@@ -393,12 +398,14 @@ def filter_by_quality(
         
         try:
             # Apply V3 filters (all 3)
+            # V2: Use probe_estimator if available, otherwise use classifier
+            probability_provider = probe_estimator if probe_estimator is not None else classifier
             passes_all, filter_details = quality_scorer.filter_counterfactual(
                 cf_text=cf['text'],
                 original_text=original_example['text'],
                 target_label=cf['label'],
                 original_label=original_example['label'],
-                classifier=classifier
+                classifier=probability_provider
             )
             
             if passes_all:
@@ -408,7 +415,7 @@ def filter_by_quality(
                     original_text=original_example['text'],
                     target_label=cf['label'],
                     original_label=original_example['label'],
-                    classifier=classifier
+                    classifier=probability_provider
                 )
                 
                 all_filtered_cfs_with_scores.append((cf, score, filter_details, score_details))

@@ -2,13 +2,14 @@
 Uncertainty-based Query Strategies for Active Learning
 
 Implements various uncertainty sampling methods:
-- Entropy sampling
-- Margin sampling  
-- Least confident sampling
+- Entropy sampling (LLM-based)
+- Margin sampling (LLM-based)
+- Least confident sampling (LLM-based)
+- Probe-based entropy (V2 - embedding-based)
 """
 
 import numpy as np
-from typing import List, Dict
+from typing import List, Dict, Optional
 
 
 def select_uncertain_examples(
@@ -16,7 +17,8 @@ def select_uncertain_examples(
     classifier,
     batch_size: int,
     method: str = "entropy",
-    return_details: bool = False
+    return_details: bool = False,
+    probe_estimator=None  # V2: ProbeUncertaintyEstimator for probe_entropy method
 ):
     """
     Select most uncertain examples from unlabeled pool.
@@ -25,10 +27,11 @@ def select_uncertain_examples(
     
     Args:
         unlabeled_pool: List of unlabeled examples (dicts with 'text' key)
-        classifier: Trained classifier with predict_proba method
+        classifier: Trained classifier with predict_proba method (for LLM-based methods)
         batch_size: Number of examples to select
-        method: Uncertainty method ('entropy', 'margin', 'least_confident')
+        method: Uncertainty method ('entropy', 'margin', 'least_confident', 'probe_entropy')
         return_details: If True, returns (indices, details_dict) with uncertainty details
+        probe_estimator: ProbeUncertaintyEstimator instance (required for 'probe_entropy' method)
     
     Returns:
         If return_details=False: List of indices of selected examples from unlabeled_pool
@@ -43,10 +46,20 @@ def select_uncertain_examples(
         batch_size = len(unlabeled_pool)
         print(f"  Warning: batch_size reduced to {batch_size} (size of unlabeled pool)")
     
+    # Handle V2 probe-based entropy (embedding-based, no LLM calls)
+    if method == "probe_entropy":
+        return select_uncertain_examples_probe(
+            unlabeled_pool=unlabeled_pool,
+            probe_estimator=probe_estimator,
+            batch_size=batch_size,
+            return_details=return_details
+        )
+    
+    # LLM-based methods (entropy, margin, least_confident)
     # Extract texts
     texts = [ex['text'] for ex in unlabeled_pool]
     
-    print(f"  Computing uncertainty scores for {len(texts)} examples...")
+    print(f"  Computing uncertainty scores for {len(texts)} examples (method: {method})...")
     
     # Get probability predictions (with details if requested)
     if return_details:
@@ -91,6 +104,69 @@ def select_uncertain_examples(
         # Add prediction details if available
         if prediction_details:
             details['prediction_details'] = prediction_details
+        
+        return top_indices.tolist(), details
+    
+    return top_indices.tolist()
+
+
+def select_uncertain_examples_probe(
+    unlabeled_pool: List[Dict],
+    probe_estimator,
+    batch_size: int,
+    return_details: bool = False
+):
+    """
+    Select most uncertain examples using V2 probe-based entropy.
+    
+    This method uses an embedding-based Logistic Regression probe instead of
+    LLM API calls, making it faster and more cost-effective.
+    
+    Args:
+        unlabeled_pool: List of unlabeled examples (dicts with 'text' key)
+        probe_estimator: ProbeUncertaintyEstimator instance (must be trained)
+        batch_size: Number of examples to select
+        return_details: If True, returns (indices, details_dict) with uncertainty details
+    
+    Returns:
+        If return_details=False: List of indices of selected examples from unlabeled_pool
+        If return_details=True: Tuple of (indices, details_dict) with uncertainty scores
+    """
+    if probe_estimator is None:
+        raise ValueError("probe_estimator is required for probe_entropy method")
+    
+    print(f"  Computing probe-based entropy uncertainty for {len(unlabeled_pool)} examples...")
+    
+    # Compute uncertainty scores using probe
+    uncertainty_scores = probe_estimator.compute_uncertainty(unlabeled_pool)
+    
+    # Select top-k most uncertain (highest entropy)
+    top_indices = np.argsort(uncertainty_scores)[-batch_size:][::-1]
+    
+    print(f"  Selected {len(top_indices)} most uncertain examples (probe-based entropy)")
+    print(f"  Uncertainty scores range: [{uncertainty_scores.min():.3f}, {uncertainty_scores.max():.3f}]")
+    
+    if return_details:
+        # Get probability predictions from probe for details
+        texts = [ex['text'] for ex in unlabeled_pool]
+        probs = probe_estimator.predict_proba(texts)
+        
+        details = {
+            'method': 'probe_entropy',
+            'total_pool_size': len(unlabeled_pool),
+            'batch_size': batch_size,
+            'all_uncertainty_scores': uncertainty_scores.tolist(),
+            'selected_indices': top_indices.tolist(),
+            'selected_scores': [float(uncertainty_scores[i]) for i in top_indices],
+            'score_statistics': {
+                'min': float(uncertainty_scores.min()),
+                'max': float(uncertainty_scores.max()),
+                'mean': float(uncertainty_scores.mean()),
+                'std': float(uncertainty_scores.std())
+            },
+            'probe_predictions': probs.tolist(),
+            'embedding_model': probe_estimator.embedding_model_name
+        }
         
         return top_indices.tolist(), details
     

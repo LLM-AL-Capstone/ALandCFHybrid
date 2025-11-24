@@ -379,6 +379,269 @@ class OpenAIEmbeddingRetrieval(RetrievalICLClassifier):
         return np.array(embeddings)
 
 
+class BM25Retrieval(RetrievalICLClassifier):
+    """
+    Retrieval-based ICL using BM25 for keyword-based retrieval.
+    
+    BM25 is a ranking function used in information retrieval.
+    Good for lexical matching and keyword-based search.
+    """
+    
+    def __init__(self, config: dict, llm_provider):
+        """
+        Initialize with BM25 ranker.
+        
+        Args:
+            config: Configuration dictionary
+            llm_provider: LLM provider instance
+        """
+        super().__init__(config, llm_provider)
+        
+        try:
+            from rank_bm25 import BM25Okapi
+        except ImportError:
+            raise ImportError(
+                "rank-bm25 not installed. "
+                "Install with: pip install rank-bm25"
+            )
+        
+        self.BM25Okapi = BM25Okapi
+        
+        # Get BM25 config
+        bm25_config = self.retrieval_config.get('bm25', {})
+        self.k1 = bm25_config.get('k1', 1.5)
+        self.b = bm25_config.get('b', 0.75)
+        
+        self.bm25 = None
+        self.tokenized_corpus = None
+        print(f"  Using BM25 with k1={self.k1}, b={self.b}")
+    
+    def train(self, labeled_pool: List[Dict]):
+        """
+        Train by tokenizing corpus and building BM25 index.
+        
+        Args:
+            labeled_pool: List of labeled examples
+        """
+        # Store labeled examples and labels
+        self.labeled_examples = labeled_pool.copy()
+        self.labels = set(ex['label'] for ex in labeled_pool)
+        print(f"  Classifier 'trained' with {len(labeled_pool)} examples across {len(self.labels)} labels")
+        
+        # Tokenize corpus for BM25
+        texts = [ex['text'] for ex in self.labeled_examples]
+        print(f"  Tokenizing {len(texts)} examples for BM25...")
+        self.tokenized_corpus = [text.lower().split() for text in texts]
+        
+        # Build BM25 index
+        self.bm25 = self.BM25Okapi(self.tokenized_corpus, k1=self.k1, b=self.b)
+        print(f"  ✓ BM25 index built")
+        
+        # For compatibility with base class, create dummy embeddings
+        # (BM25 doesn't use embeddings, but we need to satisfy the interface)
+        self.labeled_embeddings = np.eye(len(texts))  # Identity matrix as placeholder
+    
+    def encode_texts(self, texts: List[str]) -> np.ndarray:
+        """
+        BM25 doesn't use embeddings, but we need to implement this for interface compatibility.
+        Returns dummy embeddings.
+        
+        Args:
+            texts: List of texts (not used)
+            
+        Returns:
+            Dummy array (not used for BM25)
+        """
+        # Return dummy embeddings (not used for BM25 retrieval)
+        return np.zeros((len(texts), len(self.labeled_examples)))
+    
+    def retrieve_balanced_examples(self, text: str) -> List[Dict]:
+        """
+        Retrieve examples using BM25 scores.
+        
+        Args:
+            text: Query text
+            
+        Returns:
+            List of retrieved examples
+        """
+        if self.bm25 is None:
+            raise ValueError("Classifier not trained. Call train() first.")
+        
+        # Tokenize query
+        tokenized_query = text.lower().split()
+        
+        # Get BM25 scores
+        scores = self.bm25.get_scores(tokenized_query)
+        
+        # Group examples by label with their scores
+        label_groups = {}
+        for i, ex in enumerate(self.labeled_examples):
+            label = ex['label']
+            if label not in label_groups:
+                label_groups[label] = []
+            label_groups[label].append((i, scores[i]))
+        
+        # Select top k_per_class from each label
+        selected_indices = set()
+        for label in label_groups:
+            label_examples = sorted(label_groups[label], key=lambda x: x[1], reverse=True)
+            top_k = min(self.k_per_class, len(label_examples))
+            for idx, _ in label_examples[:top_k]:
+                selected_indices.add(idx)
+        
+        # If we have room and fallback is similarity, add more top-scoring examples
+        if len(selected_indices) < self.total_k_max and self.fallback_strategy == 'similarity':
+            remaining = self.total_k_max - len(selected_indices)
+            all_sorted = sorted(enumerate(scores), key=lambda x: x[1], reverse=True)
+            for idx, score in all_sorted:
+                if idx not in selected_indices and len(selected_indices) < self.total_k_max:
+                    selected_indices.add(idx)
+        
+        # Convert to list and get examples
+        selected_examples = [self.labeled_examples[i] for i in sorted(selected_indices)]
+        
+        # Limit to total_k_max
+        if len(selected_examples) > self.total_k_max:
+            selected_examples = selected_examples[:self.total_k_max]
+        
+        return selected_examples
+
+
+class ContrieverRetrieval(RetrievalICLClassifier):
+    """
+    Retrieval-based ICL using Contriever embeddings.
+    
+    Contriever is a contrastive learning model for dense retrieval.
+    Good balance between quality and efficiency.
+    """
+    
+    def __init__(self, config: dict, llm_provider):
+        """
+        Initialize with Contriever model.
+        
+        Args:
+            config: Configuration dictionary
+            llm_provider: LLM provider instance
+        """
+        super().__init__(config, llm_provider)
+        
+        try:
+            from transformers import AutoTokenizer, AutoModel
+            import torch
+        except ImportError:
+            raise ImportError(
+                "transformers and torch not installed. "
+                "Install with: pip install transformers torch"
+            )
+        
+        # Get Contriever config
+        contriever_config = self.retrieval_config.get('contriever', {})
+        model_name = contriever_config.get('model', 'facebook/contriever')
+        device = contriever_config.get('device', 'cpu')
+        
+        print(f"  Loading Contriever model: {model_name}")
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+        self.model = AutoModel.from_pretrained(model_name)
+        self.device = device
+        self.model.to(device)
+        self.model.eval()
+        print(f"  ✓ Contriever loaded on {device}")
+    
+    def encode_texts(self, texts: List[str]) -> np.ndarray:
+        """
+        Encode texts using Contriever model.
+        
+        Args:
+            texts: List of texts to encode
+            
+        Returns:
+            Array of embeddings
+        """
+        import torch
+        
+        # Tokenize
+        encoded = self.tokenizer(
+            texts,
+            padding=True,
+            truncation=True,
+            max_length=512,
+            return_tensors='pt'
+        )
+        
+        # Move to device
+        encoded = {k: v.to(self.device) for k, v in encoded.items()}
+        
+        # Get embeddings
+        with torch.no_grad():
+            outputs = self.model(**encoded)
+            # Use mean pooling of last hidden state
+            embeddings = outputs.last_hidden_state.mean(dim=1).cpu().numpy()
+        
+        return embeddings
+
+
+class BGELargeRetrieval(RetrievalICLClassifier):
+    """
+    Retrieval-based ICL using BGE-Large embeddings.
+    
+    BGE-Large (BAAI/bge-large-en-v1.5) is one of the best semantic retrievers.
+    Recommended for final results and high-quality retrieval.
+    """
+    
+    def __init__(self, config: dict, llm_provider):
+        """
+        Initialize with BGE-Large model.
+        
+        Args:
+            config: Configuration dictionary
+            llm_provider: LLM provider instance
+        """
+        super().__init__(config, llm_provider)
+        
+        try:
+            from sentence_transformers import SentenceTransformer
+        except ImportError:
+            raise ImportError(
+                "sentence-transformers not installed. "
+                "Install with: pip install sentence-transformers"
+            )
+        
+        # Disable tokenizers parallelism
+        import os
+        os.environ["TOKENIZERS_PARALLELISM"] = "false"
+        
+        # Get BGE-Large config
+        bge_config = self.retrieval_config.get('bge_large', {})
+        model_name = bge_config.get('model', 'BAAI/bge-large-en-v1.5')
+        device = bge_config.get('device', 'cpu')
+        self.normalize_embeddings = bge_config.get('normalize_embeddings', True)
+        
+        print(f"  Loading BGE-Large model: {model_name}")
+        self.encoder = SentenceTransformer(model_name, device=device)
+        print(f"  ✓ BGE-Large loaded on {device}")
+        print(f"  Normalize embeddings: {self.normalize_embeddings}")
+    
+    def encode_texts(self, texts: List[str]) -> np.ndarray:
+        """
+        Encode texts using BGE-Large model.
+        
+        Args:
+            texts: List of texts to encode
+            
+        Returns:
+            Array of normalized embeddings
+        """
+        embeddings = self.encoder.encode(
+            texts,
+            show_progress_bar=False,
+            convert_to_numpy=True,
+            batch_size=32,
+            normalize_embeddings=self.normalize_embeddings
+        )
+        return embeddings
+
+
 def get_retrieval_classifier(config: dict, llm_provider):
     """
     Factory function to create appropriate retrieval classifier based on config.
@@ -399,9 +662,13 @@ def get_retrieval_classifier(config: dict, llm_provider):
         return OpenAIEmbeddingRetrieval(config, llm_provider)
     elif backend == 'tfidf':
         return TFIDFRetrieval(config, llm_provider)
+    elif backend == 'bm25':
+        return BM25Retrieval(config, llm_provider)
+    elif backend == 'contriever':
+        return ContrieverRetrieval(config, llm_provider)
+    elif backend == 'bge_large':
+        return BGELargeRetrieval(config, llm_provider)
     else:
-        raise ValueError(
-            f"Unknown embedding backend: {backend}. "
-            f"Options: sentence_transformers, openai, tfidf"
-        )
+        raise ValueError(f"Unknown embedding backend: {backend}. "
+                        f"Options: sentence_transformers, openai, tfidf, bm25, contriever, bge_large")
 

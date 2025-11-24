@@ -74,8 +74,17 @@ active_learning:
   initial_labeled_per_class: 5  # Initial seed set per class
   
   # Query strategy settings
-  query_strategy: "uncertainty"  # Options: "uncertainty", "random"
-  uncertainty_method: "entropy"  # Options: "entropy", "margin", "least_confident" (only used when query_strategy="uncertainty")
+  query_strategy: "uncertainty"  # Options: "uncertainty", "random" (put uncertainty_method as "" if query_strategy="random")
+  uncertainty_method: "entropy"  # Options: "entropy", "margin", "least_confident" (LLM-based), "probe_entropy" (V2 - embedding-based)
+  
+  # V2: Probe-based Entropy Uncertainty (only used when uncertainty_method="probe_entropy")
+  probe_uncertainty:
+    enabled: false  # Set to true AND set uncertainty_method="probe_entropy" to use V2
+    embedding_model: "bge-large-en-v1.5"  # Options: "E5-large-v2", "bge-large-en-v1.5", "gpt-5-mini-embed"
+    device: "cpu"  # or "cuda" for GPU acceleration
+    # LR probe training settings
+    max_iter: 1000  # Maximum iterations for Logistic Regression
+    C: 1.0  # Regularization parameter (inverse of regularization strength)
   
   # Counterfactual augmentation with quality filtering (Paper's Algorithm 1)
   counterfactuals:
@@ -142,7 +151,7 @@ evaluation:
   # Retrieval-based ICL settings (used when classifier_type="retrieval")
   retrieval:
     # Embedding backend configuration
-    embedding_backend: "sentence_transformers"  # Options: sentence_transformers, openai, tfidf
+    embedding_backend: "sentence_transformers"  # Options: sentence_transformers, openai, tfidf, bm25, contriever, bge_large
     
     # Sentence Transformers settings
     sentence_transformers:
@@ -158,6 +167,22 @@ evaluation:
     tfidf:
       max_features: 1000
       ngram_range: [1, 2]
+    
+    # BM25 settings (keyword-based retrieval)
+    bm25:
+      k1: 1.5  # BM25 parameter (term frequency saturation)
+      b: 0.75  # BM25 parameter (length normalization)
+    
+    # Contriever settings (contrastive learning model)
+    contriever:
+      model: "facebook/contriever"  # Options: "facebook/contriever", "facebook/contriever-msmarco"
+      device: "cpu"  # or "cuda" for GPU acceleration
+    
+    # BGE-Large settings (best semantic retriever, recommended for final results)
+    bge_large:
+      model: "BAAI/bge-large-en-v1.5"  # BGE-Large model
+      device: "cpu"  # or "cuda" for GPU acceleration
+      normalize_embeddings: true  # BGE requires normalization for best results
     
     # Retrieval strategy parameters
     k_per_class: 3           # Number of examples to retrieve per class (balanced)

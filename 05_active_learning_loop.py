@@ -58,6 +58,7 @@ from utils.oracle import get_oracle
 from utils.uncertainty import select_uncertain_examples, get_uncertainty_statistics
 from utils.counterfactual_generator import generate_counterfactuals_batch
 from utils.target_label_selector import TargetLabelSelector
+from utils.probe_uncertainty import ProbeUncertaintyEstimator
 
 
 def initialize_pools(config: dict) -> tuple:
@@ -383,8 +384,27 @@ def active_learning_loop(config: dict):
     
     oracle = get_oracle(config)
     
+    # Initialize V2 probe uncertainty estimator (if using probe_entropy)
+    probe_estimator = None
+    uncertainty_method = al_config.get('uncertainty_method', 'entropy')
+    if uncertainty_method == 'probe_entropy':
+        probe_config = al_config.get('probe_uncertainty', {})
+        if probe_config.get('enabled', False):
+            try:
+                probe_estimator = ProbeUncertaintyEstimator(config)
+                print(f"✓ V2 Probe Uncertainty Estimator initialized")
+            except Exception as e:
+                print(f"⚠️  Failed to initialize probe estimator: {e}")
+                print(f"   Falling back to LLM-based uncertainty")
+                uncertainty_method = 'entropy'  # Fallback
+                probe_estimator = None
+        else:
+            print(f"⚠️  uncertainty_method='probe_entropy' but probe_uncertainty.enabled=false")
+            print(f"   Falling back to LLM-based uncertainty")
+            uncertainty_method = 'entropy'  # Fallback
+    
     print(f"LLM Provider: {config['llm']['provider']}")
-    print(f"Uncertainty Method: {al_config['uncertainty_method']}")
+    print(f"Uncertainty Method: {uncertainty_method}")
     print(f"Counterfactuals: {'Enabled' if al_config['counterfactuals']['enabled'] else 'Disabled'}")
     
     # Initialize data pools
@@ -469,14 +489,34 @@ def active_learning_loop(config: dict):
     classifier_type = eval_config.get('classifier_type', 'static')
     query_strategy = config['active_learning'].get('query_strategy', 'uncertainty')
     
+    # Get uncertainty method (for folder naming)
+    uncertainty_method = config['active_learning'].get('uncertainty_method', 'entropy')
+    if query_strategy == 'random':
+        uncertainty_method = 'random'
+        probe_type = ''  # No probe type for random
+        uncertainty_safe = 'random'
+    elif uncertainty_method == 'probe_entropy':
+        probe_type = '_LRprobe'  # V2: LR probe (embedding-based)
+        uncertainty_safe = 'entropy'  # Keep base name for clarity
+    else:
+        probe_type = '_LLMprobe'  # V1: LLM-based uncertainty (entropy, margin, least_confident)
+        uncertainty_safe = uncertainty_method.replace('-', '_')
+    
+    # Get retrieval backend (if using retrieval)
+    retrieval_backend = ''
+    if classifier_type == 'retrieval':
+        retrieval_backend = eval_config.get('retrieval', {}).get('embedding_backend', 'unknown')
+        retrieval_backend = retrieval_backend.replace('-', '_').replace('/', '_')
+        retrieval_backend = f"_{retrieval_backend}"
+    
     # Get seed value and initial per class
     seed = config['processing']['seed']
     initial_per_class = config['active_learning']['initial_labeled_per_class']
     
-    # Create run-specific directory: timestamp_model_dataset_evalmethod_querystrategy_seed_perclass
+    # Create run-specific directory: timestamp_model_dataset_evalmethod_querystrategy_uncertainty[probe_type][retrieval]_seed_perclass
     import os
     import shutil
-    run_dir = f"{config['directories']['output_data']}/{run_timestamp}_{model_safe}_{dataset_name}_{classifier_type}_{query_strategy}_s{seed}_n{initial_per_class}"
+    run_dir = f"{config['directories']['output_data']}/{run_timestamp}_{model_safe}_{dataset_name}_{classifier_type}_{query_strategy}_{uncertainty_safe}{probe_type}{retrieval_backend}_s{seed}_n{initial_per_class}"
     os.makedirs(run_dir, exist_ok=True)
     
     # Save experiment configuration as a readable text report (sanitized - no API keys)
@@ -511,7 +551,19 @@ def active_learning_loop(config: dict):
             f.write("ACTIVE LEARNING CONFIGURATION\n")
             f.write("-" * 80 + "\n")
             f.write(f"Query Strategy: {config['active_learning']['query_strategy']}\n")
-            f.write(f"Uncertainty Method: {config['active_learning']['uncertainty_method']}\n")
+            uncertainty_method = config['active_learning'].get('uncertainty_method', 'entropy')
+            f.write(f"Uncertainty Method: {uncertainty_method}\n")
+            
+            # V2: Probe-based Entropy Uncertainty settings
+            if uncertainty_method == 'probe_entropy':
+                probe_config = config['active_learning'].get('probe_uncertainty', {})
+                f.write("\nV2 Probe-Based Entropy Uncertainty:\n")
+                f.write(f"  Enabled: {probe_config.get('enabled', False)}\n")
+                f.write(f"  Embedding Model: {probe_config.get('embedding_model', 'bge-large-en-v1.5')}\n")
+                f.write(f"  Device: {probe_config.get('device', 'cpu')}\n")
+                f.write(f"  LR max_iter: {probe_config.get('max_iter', 1000)}\n")
+                f.write(f"  LR C (regularization): {probe_config.get('C', 1.0)}\n")
+            f.write("\n")
             f.write(f"Total Budget: {config['active_learning']['total_budget']}\n")
             f.write(f"Batch Size: {config['active_learning']['batch_size']}\n")
             f.write(f"Initial Labeled per Class: {config['active_learning']['initial_labeled_per_class']}\n")
@@ -572,9 +624,46 @@ def active_learning_loop(config: dict):
             f.write(f"Eval Every N Iterations: {config['evaluation']['eval_every_iterations']}\n")
             
             if config['evaluation']['classifier_type'] == 'retrieval':
+                retrieval_config = config['evaluation']['retrieval']
+                backend = retrieval_config.get('embedding_backend', 'unknown')
                 f.write(f"\nRetrieval Settings:\n")
-                f.write(f"  Embedding Backend: {config['evaluation']['retrieval']['embedding_backend']}\n")
-                f.write(f"  K per Class: {config['evaluation']['retrieval']['k_per_class']}\n")
+                f.write(f"  Embedding Backend: {backend}\n")
+                f.write(f"  K per Class: {retrieval_config.get('k_per_class', 3)}\n")
+                f.write(f"  Total K Max: {retrieval_config.get('total_k_max', 50)}\n")
+                f.write(f"  Fallback Strategy: {retrieval_config.get('fallback_strategy', 'similarity')}\n")
+                
+                # Backend-specific settings
+                if backend == 'bm25':
+                    bm25_config = retrieval_config.get('bm25', {})
+                    f.write(f"\n  BM25 Configuration:\n")
+                    f.write(f"    k1: {bm25_config.get('k1', 1.5)}\n")
+                    f.write(f"    b: {bm25_config.get('b', 0.75)}\n")
+                elif backend == 'contriever':
+                    contriever_config = retrieval_config.get('contriever', {})
+                    f.write(f"\n  Contriever Configuration:\n")
+                    f.write(f"    Model: {contriever_config.get('model', 'facebook/contriever')}\n")
+                    f.write(f"    Device: {contriever_config.get('device', 'cpu')}\n")
+                elif backend == 'bge_large':
+                    bge_config = retrieval_config.get('bge_large', {})
+                    f.write(f"\n  BGE-Large Configuration:\n")
+                    f.write(f"    Model: {bge_config.get('model', 'BAAI/bge-large-en-v1.5')}\n")
+                    f.write(f"    Device: {bge_config.get('device', 'cpu')}\n")
+                    f.write(f"    Normalize Embeddings: {bge_config.get('normalize_embeddings', True)}\n")
+                elif backend == 'sentence_transformers':
+                    st_config = retrieval_config.get('sentence_transformers', {})
+                    f.write(f"\n  Sentence Transformers Configuration:\n")
+                    f.write(f"    Model: {st_config.get('model', 'all-MiniLM-L6-v2')}\n")
+                    f.write(f"    Device: {st_config.get('device', 'cpu')}\n")
+                elif backend == 'openai':
+                    openai_config = retrieval_config.get('openai', {})
+                    f.write(f"\n  OpenAI Embeddings Configuration:\n")
+                    f.write(f"    Model: {openai_config.get('model', 'text-embedding-3-small')}\n")
+                    f.write(f"    Batch Size: {openai_config.get('batch_size', 100)}\n")
+                elif backend == 'tfidf':
+                    tfidf_config = retrieval_config.get('tfidf', {})
+                    f.write(f"\n  TF-IDF Configuration:\n")
+                    f.write(f"    Max Features: {tfidf_config.get('max_features', 1000)}\n")
+                    f.write(f"    N-gram Range: {tfidf_config.get('ngram_range', [1, 2])}\n")
                 f.write(f"  Total K Max: {config['evaluation']['retrieval']['total_k_max']}\n")
                 f.write(f"  Fallback Strategy: {config['evaluation']['retrieval']['fallback_strategy']}\n")
                 
@@ -770,6 +859,16 @@ def active_learning_loop(config: dict):
             print(f"\n[Step 1/6] Training classifier...")
             classifier.train(labeled_pool)
             
+            # Train V2 probe estimator (if using probe_entropy)
+            if probe_estimator is not None:
+                print(f"  Training V2 probe estimator on labeled pool...")
+                try:
+                    probe_estimator.train_probe(labeled_pool)
+                    print(f"  ✓ Probe trained on {len(labeled_pool)} examples")
+                except Exception as e:
+                    print(f"  ⚠️  Probe training failed: {e}")
+                    print(f"     Falling back to LLM-based uncertainty for this iteration")
+            
             # Save Step 1 output
             step1_file = f"{interim_dir}/iter_{iteration:02d}_{timestamp}_{model_safe}_step1_classifier_training.json"
             with open(step1_file, 'w') as f:
@@ -812,12 +911,14 @@ def active_learning_loop(config: dict):
                 
             elif query_strategy == "uncertainty":
                 # Uncertainty-based selection
+                # Pass probe_estimator for V2 probe_entropy method
                 selected_indices, uncertainty_details = select_uncertain_examples(
                     unlabeled_pool,
                     classifier,
                     current_batch_size,
-                    method=al_config['uncertainty_method'],
-                    return_details=True  # Get full logprobs and uncertainty data
+                    method=uncertainty_method,  # Use the actual method (may have been adjusted)
+                    return_details=True,  # Get full logprobs and uncertainty data
+                    probe_estimator=probe_estimator  # V2: Pass probe estimator for probe_entropy
                 )
             else:
                 raise ValueError(f"Unknown query_strategy: {query_strategy}. Choose 'uncertainty' or 'random'")
@@ -901,9 +1002,10 @@ def active_learning_loop(config: dict):
                     llm_provider,
                     all_labels,
                     labeled_pool,           # For diversity calculation
-                    classifier,             # For confidence scoring
+                    classifier,             # For confidence scoring (used if probe_estimator not provided)
                     alpha_cf=current_alpha_cf,  # Version 3: per-round budget multiplier
                     target_label_selector=target_label_selector,  # Version 3: target label selection
+                    probe_estimator=probe_estimator,  # V2: Use probe for CF quality filtering if available
                     return_details=True     # Get full generation metadata and prompts
                 )
                 
@@ -1015,6 +1117,14 @@ def active_learning_loop(config: dict):
                 print(f"\n[Step 6/6] Evaluating on test set (after pool update)...")
                 # Re-train classifier on updated pool to ensure evaluation reflects current state
                 classifier.train(labeled_pool)
+                
+                # Retrain V2 probe estimator on updated pool (if using probe_entropy)
+                if probe_estimator is not None:
+                    try:
+                        probe_estimator.train_probe(labeled_pool)
+                    except Exception as e:
+                        print(f"  ⚠️  Probe retraining failed: {e}")
+                
                 metrics = evaluate_classifier(classifier, test_pool, config)
                 
                 print(f"  Accuracy: {metrics['accuracy']:.4f}")
