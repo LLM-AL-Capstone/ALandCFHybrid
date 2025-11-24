@@ -81,21 +81,42 @@ active_learning:
   counterfactuals:
     enabled: true              # Enable/disable counterfactual generation
     
-    # Generation budget (fixed-budget approach from paper)
-    max_per_example: 3          # Exactly 3 CFs generated per labeled example
-    cf_total_budget: 200        # Total CFs across entire AL run (-1 for unlimited)
+    # Generation budget (Version 3: Per-round budget)
+    max_per_example: 3          # Number of CF candidates generated per labeled example
+    alpha_cf: 1.0               # Per-round budget multiplier: |C_t| <= alpha_cf * |F_t| (default: 1.0, range: {0.5, 1.0, 2.0})
+    # Legacy: cf_total_budget (for backward compatibility, ignored if alpha_cf is set)
+    cf_total_budget: -1         # Total CFs across entire AL run (-1 for unlimited, legacy mode)
     
-    # Quality filtering (Paper's Algorithm 1: two filters only)
+    # Quality filtering (Version 3: Enhanced filtering with 3 filters)
     quality_filtering:
       enabled: true
-      # Filter 1: Label Correctness - p(y_target | CF) > p(y_orig | CF) + min_margin
-      min_margin: 0.1           # Minimum probability margin for label flip
-      min_target_confidence: 0.3  # Minimum confidence in target label
-      # Filter 2: Semantic Similarity - cosine_similarity >= min_semantic_similarity
-      min_semantic_similarity: 0.6  # Minimum semantic similarity to preserve context
+      # Filter 1: Label-consistency (3 explicit conditions)
+      # Condition 1: p(y_target | u') > p(y_label | u')
+      # Condition 2: p(y_target | u') >= tau_conf
+      # Condition 3: p(y_target | u') - p(y_label | u') >= delta
+      tau_conf: 0.4            # Confidence threshold (default: 0.4, range: [0.3, 0.5])
+      delta: 0.1               # Margin threshold (default: 0.1, range: [0.05, 0.2])
+      # Filter 2: Semantic similarity band
+      # s_min <= cos(E(u), E(u')) <= s_max
+      s_min: 0.7               # Minimum similarity (default: 0.7, range: [0.65, 0.75])
+      s_max: 0.98              # Maximum similarity (default: 0.98, range: [0.95, 0.99])
+      # Filter 3: Length ratio constraint
+      # r_min <= |u'| / |u| <= r_max
+      r_min: 0.7               # Minimum length ratio (default: 0.7, range: [0.6, 1.4])
+      r_max: 1.3               # Maximum length ratio (default: 1.3)
+      # V3 Scoring weights
+      alpha: 0.3               # Weight for semantic similarity in scoring (default: 0.3, range: [0.2, 0.4])
+      beta: 0.5                # Weight for target label probability in scoring (default: 0.5, range: [0.3, 0.7])
       embedding_model: "all-MiniLM-L6-v2"  # Model for semantic similarity
     
-    # Distribution strategy
+    # Target label selection (Version 3)
+    # Selects ONE target label per factual, then generates all CFs toward that label
+    target_label_selection:
+      strategy: "confusion"  # Options: "uniform", "confusion", "round_robin", "hybrid"
+      lambda: 0.5  # Trade-off parameter for hybrid strategy (λ > 0)
+    
+    # Legacy: distribution_strategy (for backward compatibility)
+    # If target_label_selection is not set, this will be used
     distribution_strategy: "balanced"  # Options: "balanced", "priority", "random"
     
     # Generation settings

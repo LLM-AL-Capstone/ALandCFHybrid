@@ -16,8 +16,34 @@ import os
 import pandas as pd
 import json
 import numpy as np
-from typing import List, Dict
+from typing import List, Dict, Any
 from sklearn.metrics import accuracy_score, f1_score, precision_recall_fscore_support, classification_report
+
+
+def sanitize_for_json(obj: Any) -> Any:
+    """
+    Recursively convert numpy types and other non-JSON-serializable types to native Python types.
+    
+    Args:
+        obj: Object to sanitize
+        
+    Returns:
+        JSON-serializable version of the object
+    """
+    if isinstance(obj, (np.integer, np.floating)):
+        return float(obj)
+    elif isinstance(obj, np.bool_):
+        return bool(obj)
+    elif isinstance(obj, np.ndarray):
+        return obj.tolist()
+    elif isinstance(obj, dict):
+        return {key: sanitize_for_json(value) for key, value in obj.items()}
+    elif isinstance(obj, (list, tuple)):
+        return [sanitize_for_json(item) for item in obj]
+    elif isinstance(obj, bool):
+        return bool(obj)  # Ensure it's a native Python bool
+    else:
+        return obj
 
 from utils import (
     load_config,
@@ -31,6 +57,7 @@ from utils.classifier import SimpleICLClassifier
 from utils.oracle import get_oracle
 from utils.uncertainty import select_uncertain_examples, get_uncertainty_statistics
 from utils.counterfactual_generator import generate_counterfactuals_batch
+from utils.target_label_selector import TargetLabelSelector
 
 
 def initialize_pools(config: dict) -> tuple:
@@ -369,18 +396,43 @@ def active_learning_loop(config: dict):
     else:
         print("Warning: No test set available for evaluation")
     
+    # Initialize target label selector (Version 3)
+    target_label_selector = None
+    if al_config['counterfactuals']['enabled']:
+        try:
+            seed = config['processing']['seed']
+            target_label_selector = TargetLabelSelector(
+                config=config,
+                all_labels=all_labels,
+                seed=seed
+            )
+            print(f"✓ Target label selector initialized (strategy: {target_label_selector.strategy})")
+        except Exception as e:
+            print(f"⚠️  Could not initialize target label selector: {e}")
+            print(f"   Falling back to legacy distribution_strategy")
+            target_label_selector = None
+    
     # Setup iteration parameters
     budget = al_config['total_budget']
     batch_size = al_config['batch_size']
     max_iterations = al_config['max_iterations']
     
-    # CF budget tracking
-    cf_total_budget = al_config['counterfactuals'].get('cf_total_budget', -1)
-    cf_budget_remaining = cf_total_budget  # -1 means unlimited
+    # CF budget configuration (V3: per-round budget)
+    cf_config = al_config['counterfactuals']
+    alpha_cf = cf_config.get('alpha_cf', 1.0)  # Per-round multiplier: |C_t| <= alpha_cf * |F_t|
+    # Backward compatibility: check for legacy cf_total_budget
+    cf_total_budget = cf_config.get('cf_total_budget', -1)
+    use_legacy_budget = (cf_total_budget > 0 and 'alpha_cf' not in cf_config)
     
-    print(f"\n📊 Budget Configuration:")
-    print(f"   Real labels budget: {budget}")
-    print(f"   CF budget: {cf_total_budget if cf_total_budget > 0 else 'unlimited'}")
+    if use_legacy_budget:
+        print(f"\n⚠️  Using legacy global CF budget mode (cf_total_budget={cf_total_budget})")
+        print(f"   Consider switching to per-round budget (alpha_cf) for V3 behavior")
+        cf_budget_remaining = cf_total_budget
+    else:
+        cf_budget_remaining = None  # Not used in per-round mode
+        print(f"\n📊 Budget Configuration (Version 3):")
+        print(f"   Real labels budget: {budget}")
+        print(f"   CF per-round budget: alpha_cf={alpha_cf} (|C_t| <= {alpha_cf} * |F_t|)")
     
     # Tracking
     results = []
@@ -469,11 +521,48 @@ def active_learning_loop(config: dict):
             f.write(f"Min Improvement: {config['active_learning']['min_improvement']}\n\n")
             
             f.write("-" * 80 + "\n")
-            f.write("COUNTERFACTUAL CONFIGURATION\n")
+            f.write("COUNTERFACTUAL CONFIGURATION (Version 3)\n")
             f.write("-" * 80 + "\n")
-            f.write(f"Enabled: {config['active_learning']['counterfactuals']['enabled']}\n")
-            f.write(f"Temperature: {config['active_learning']['counterfactuals']['generation_temperature']}\n")
-            f.write(f"Max Tokens: {config['active_learning']['counterfactuals']['max_tokens']}\n\n")
+            cf_config = config['active_learning']['counterfactuals']
+            f.write(f"Enabled: {cf_config['enabled']}\n")
+            f.write(f"Max CFs per Example: {cf_config.get('max_per_example', 3)}\n")
+            f.write(f"Per-Round Budget (alpha_cf): {cf_config.get('alpha_cf', 1.0)}\n")
+            f.write(f"Temperature: {cf_config['generation_temperature']}\n")
+            f.write(f"Max Tokens: {cf_config['max_tokens']}\n")
+            f.write(f"Prompt Variation: {cf_config.get('prompt_variation', True)}\n\n")
+            
+            # Target Label Selection (V3)
+            if 'target_label_selection' in cf_config:
+                target_config = cf_config['target_label_selection']
+                f.write("Target Label Selection (V3):\n")
+                f.write(f"  Strategy: {target_config.get('strategy', 'uniform')}\n")
+                if target_config.get('strategy') == 'hybrid':
+                    f.write(f"  Lambda: {target_config.get('lambda', 0.5)}\n")
+            else:
+                f.write("Target Label Selection: Legacy (distribution_strategy)\n")
+                f.write(f"  Distribution Strategy: {cf_config.get('distribution_strategy', 'balanced')}\n")
+            f.write("\n")
+            
+            # Quality Filtering (V3)
+            if cf_config.get('quality_filtering', {}).get('enabled', False):
+                qf_config = cf_config['quality_filtering']
+                f.write("Quality Filtering (V3 - Enhanced):\n")
+                f.write("  Filter 1: Label-Consistency (3 conditions):\n")
+                f.write(f"    tau_conf: {qf_config.get('tau_conf', 0.4)}\n")
+                f.write(f"    delta: {qf_config.get('delta', 0.1)}\n")
+                f.write("  Filter 2: Semantic Similarity Band:\n")
+                f.write(f"    s_min: {qf_config.get('s_min', 0.7)}\n")
+                f.write(f"    s_max: {qf_config.get('s_max', 0.98)}\n")
+                f.write("  Filter 3: Length Ratio:\n")
+                f.write(f"    r_min: {qf_config.get('r_min', 0.7)}\n")
+                f.write(f"    r_max: {qf_config.get('r_max', 1.3)}\n")
+                f.write("  V3 Scoring Weights:\n")
+                f.write(f"    alpha: {qf_config.get('alpha', 0.3)}\n")
+                f.write(f"    beta: {qf_config.get('beta', 0.5)}\n")
+                f.write(f"  Embedding Model: {qf_config.get('embedding_model', 'all-MiniLM-L6-v2')}\n")
+            else:
+                f.write("Quality Filtering: Disabled\n")
+            f.write("\n")
             
             f.write("-" * 80 + "\n")
             f.write("EVALUATION CONFIGURATION\n")
@@ -650,7 +739,8 @@ def active_learning_loop(config: dict):
         'num_counterfactuals': 0,  # No CFs in baseline
         'total_counterfactuals_so_far': 0,
         'budget_remaining': budget,
-        'cf_budget_remaining': cf_budget_remaining if cf_total_budget > 0 else -1
+        'alpha_cf': alpha_cf,
+        'cf_budget_remaining': cf_budget_remaining if use_legacy_budget else None
     }
     
     if baseline_metrics:
@@ -802,6 +892,9 @@ def active_learning_loop(config: dict):
             num_cfs_added = 0
             if al_config['counterfactuals']['enabled']:
                 print(f"\n[Step 4/6] Generating counterfactuals with quality filtering...")
+                # Get alpha_cf for this round (V3 per-round budget)
+                current_alpha_cf = alpha_cf if not use_legacy_budget else None
+                
                 counterfactuals, num_cfs_added, cf_generation_details = generate_counterfactuals_batch(
                     labeled_examples,
                     config,
@@ -809,14 +902,17 @@ def active_learning_loop(config: dict):
                     all_labels,
                     labeled_pool,           # For diversity calculation
                     classifier,             # For confidence scoring
-                    cf_budget_remaining,    # Budget constraint
+                    alpha_cf=current_alpha_cf,  # Version 3: per-round budget multiplier
+                    target_label_selector=target_label_selector,  # Version 3: target label selection
                     return_details=True     # Get full generation metadata and prompts
                 )
                 
-                # Update CF budget
-                if cf_budget_remaining > 0:
+                # Update CF budget (legacy mode only)
+                if use_legacy_budget and cf_budget_remaining is not None and cf_budget_remaining > 0:
                     cf_budget_remaining = max(0, cf_budget_remaining - num_cfs_added)
-                    print(f"  CF budget: {num_cfs_added} added, {cf_budget_remaining} remaining")
+                    print(f"  CF budget (legacy): {num_cfs_added} added, {cf_budget_remaining} remaining")
+                else:
+                    print(f"  CFs added this round: {num_cfs_added} (per-round budget: alpha_cf={alpha_cf})")
                 
                 # Save Step 5 output: counterfactuals with FULL generation details
                 step5_file = f"{interim_dir}/iter_{iteration:02d}_{timestamp}_{model_safe}_step5_counterfactual_generation.json"
@@ -825,7 +921,8 @@ def active_learning_loop(config: dict):
                 selected_cf_ids = [cf['id'] for cf in counterfactuals]
                 
                 with open(step5_file, 'w') as f:
-                    json.dump({
+                    # Sanitize all data for JSON serialization
+                    data_to_save = {
                         'iteration': iteration,
                         'timestamp': timestamp,
                         'step': 'counterfactual_generation',
@@ -842,7 +939,10 @@ def active_learning_loop(config: dict):
                             'budget_remaining_before': cf_generation_details.get('budget_remaining_before', -1),
                             'budget_remaining_after': cf_generation_details.get('budget_remaining_after', -1)
                         }
-                    }, f, indent=2)
+                    }
+                    # Sanitize all data to ensure JSON serialization works (convert numpy bools, etc.)
+                    sanitized_data = sanitize_for_json(data_to_save)
+                    json.dump(sanitized_data, f, indent=2)
                 print(f"  ✓ Interim output saved: {step5_file}")
             else:
                 print(f"\n[Step 4/6] Skipping counterfactual generation (disabled)")
@@ -1013,9 +1113,10 @@ def active_learning_loop(config: dict):
                 'unlabeled_pool_size': len(unlabeled_pool),
                 'num_real_examples': len(labeled_examples),
                 'num_counterfactuals': num_cfs_added,
-                'total_counterfactuals_so_far': (cf_total_budget - cf_budget_remaining) if cf_total_budget > 0 else len([ex for ex in labeled_pool if ex.get('original_id')]),
+                'total_counterfactuals_so_far': len([ex for ex in labeled_pool if ex.get('original_id')]),
                 'budget_remaining': budget,
-                'cf_budget_remaining': cf_budget_remaining if cf_total_budget > 0 else -1
+                'alpha_cf': alpha_cf,
+                'cf_budget_remaining': cf_budget_remaining if use_legacy_budget else None
             }
             
             if metrics:
@@ -1104,9 +1205,10 @@ def active_learning_loop(config: dict):
                 'unlabeled_pool_size': len(unlabeled_pool),
                 'num_real_examples': 0,  # No new examples in final evaluation
                 'num_counterfactuals': 0,  # No new CFs in final evaluation
-                'total_counterfactuals_so_far': (cf_total_budget - cf_budget_remaining) if cf_total_budget > 0 else len([ex for ex in labeled_pool if ex.get('original_id')]),
+                'total_counterfactuals_so_far': len([ex for ex in labeled_pool if ex.get('original_id')]),
                 'budget_remaining': budget,
-                'cf_budget_remaining': cf_budget_remaining if cf_total_budget > 0 else -1
+                'alpha_cf': alpha_cf,
+                'cf_budget_remaining': cf_budget_remaining if use_legacy_budget else None
             }
             final_result.update(final_metrics)
             results.append(final_result)

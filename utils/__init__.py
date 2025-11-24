@@ -13,6 +13,7 @@ from .counterfactual_generator import (
     generate_counterfactuals_for_evaluation
 )
 from .cf_quality_scorer import CFQualityScorer
+from .target_label_selector import TargetLabelSelector
 
 __all__ = [
     'load_config',
@@ -33,5 +34,6 @@ __all__ = [
     'generate_counterfactuals_batch',
     'generate_single_counterfactual',
     'generate_counterfactuals_for_evaluation',
-    'CFQualityScorer'
+    'CFQualityScorer',
+    'TargetLabelSelector'
 ]
