@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
 """
-Full-ICL Oracle Baseline
+Full-ICL Oracle Baseline (Revised)
 
-Budget = Number of few-shot examples in ICL prompt
-Uses FULL training dataset for retrieval
+This baseline establishes the UPPER BOUND by using ALL training labels.
+Annotation budget does NOT apply - Full-ICL always has access to entire labeled dataset.
+
+Retrieval Methods: BM25, Contriever
+ICL Budgets (k): 10, 20 (number of few-shot examples in prompt)
+
+Results serve as horizontal lines for comparison with Active Learning.
 """
 
-import sys
 import os
-sys.path.append(os.path.join(os.path.dirname(__file__), '../..'))
-
 import json
 import yaml
 import pandas as pd
@@ -17,10 +19,13 @@ from datetime import datetime
 from typing import List, Dict
 from sklearn.metrics import accuracy_score, f1_score, classification_report
 
-from utils.config_loader import load_config
-from utils.data_loader import load_dataset, get_unique_labels, shuffle_dataframe
+# Import local retrieval classifier
+from retrieval_icl_classifier import RetrievalICLClassifier
+
+# Import LLM provider from parent directory
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__), '../..'))
 from utils.llm_provider import get_llm_provider
-from utils.classifier import SimpleICLClassifier
 
 
 def load_baseline_config():
@@ -29,125 +34,187 @@ def load_baseline_config():
         return yaml.safe_load(f)
 
 
-def evaluate_budget(train_data, test_data, budget, config, llm, labels, run_dir, method):
-    print(f"\n{'='*70}")
-    print(f"  ICL Budget={budget}, Retrieval={method}")
-    print(f"{'='*70}")
+def run_full_icl_baseline(
+    dataset_name: str,
+    train_df: pd.DataFrame,
+    test_df: pd.DataFrame,
+    icl_budgets: List[int],
+    retrieval_method: str,
+    llm_provider,
+    output_dir: str
+):
+    """
+    Run Full-ICL Oracle baseline (REVISED)
     
-    print(f"  Full training pool: {len(train_data)} examples")
-    print(f"  ICL budget: {budget} examples")
-    print(f"  Test set: {len(test_data)} examples")
+    Full-ICL Oracle uses ALL training labels (annotation budget N/A).
+    ICL budget k = number of few-shot examples retrieved per test sample.
     
-    # Initialize classifier with budget
-    classifier = SimpleICLClassifier(config, llm)
-    classifier.k_per_class = budget
-    classifier.max_icl_examples = budget
+    Args:
+        dataset_name: Name of dataset
+        train_df: Training DataFrame (ALL LABELED)
+        test_df: Test DataFrame
+        icl_budgets: [10, 20] - number of examples in ICL prompt
+        retrieval_method: 'bm25' or 'contriever'
+        llm_provider: LLM provider instance
+        output_dir: Output directory
+    """
+    print(f"\n{'='*80}")
+    print(f"Full-ICL Oracle Baseline: {dataset_name}")
+    print(f"Retrieval Method: {retrieval_method.upper()}")
+    print(f"{'='*80}\n")
     
-    # Train on FULL dataset
-    classifier.train(train_data)
+    print(f"Training samples: {len(train_df)} (ALL LABELED - annotation budget N/A)")
+    print(f"Test samples: {len(test_df)}")
+    print(f"ICL budgets (k): {icl_budgets}")
     
-    # Evaluate
-    test_texts = [ex['text'] for ex in test_data]
-    test_labels = [ex['label'] for ex in test_data]
-    predictions = classifier.predict_batch(test_texts)
+    # Get label space
+    label_list = sorted(train_df['label'].unique().tolist())
+    print(f"Label space: {label_list}\n")
     
-    # Metrics
-    acc = accuracy_score(test_labels, predictions)
-    f1m = f1_score(test_labels, predictions, average='macro', zero_division=0)
-    f1w = f1_score(test_labels, predictions, average='weighted', zero_division=0)
+    results = []
     
-    print(f"  Accuracy: {acc:.4f}, F1 Macro: {f1m:.4f}")
+    for k in icl_budgets:
+        print(f"\n{'-'*80}")
+        print(f"Running with ICL budget k = {k}")
+        print(f"{'-'*80}")
+        
+        # Initialize retrieval-based classifier
+        clf = RetrievalICLClassifier(
+            llm_provider=llm_provider,
+            retrieval_method=retrieval_method,
+            k=k
+        )
+        
+        # Build retrieval index from FULL training set
+        clf.fit(train_df, text_col='text', label_col='label')
+        
+        # Predict on test set
+        print(f"  Classifying {len(test_df)} test examples...")
+        test_texts = test_df['text'].tolist()
+        predictions = clf.predict_batch(test_texts)
+        
+        # Calculate metrics
+        test_labels = test_df['label'].tolist()
+        accuracy = accuracy_score(test_labels, predictions)
+        f1_macro = f1_score(test_labels, predictions, average='macro')
+        f1_weighted = f1_score(test_labels, predictions, average='weighted')
+        
+        print(f"\nResults for k={k}:")
+        print(f"  Accuracy: {accuracy:.4f}")
+        print(f"  F1-Macro: {f1_macro:.4f}")
+        print(f"  F1-Weighted: {f1_weighted:.4f}")
+        
+        # Save detailed report
+        report_path = os.path.join(output_dir, f'report_{retrieval_method}_k{k}.txt')
+        with open(report_path, 'w') as f:
+            f.write(f"Full-ICL Oracle Baseline\n")
+            f.write(f"Retrieval Method: {retrieval_method}\n")
+            f.write(f"ICL Budget k: {k}\n")
+            f.write(f"Training Pool: {len(train_df)} (ALL LABELED)\n")
+            f.write(f"Test Set: {len(test_df)}\n\n")
+            f.write(classification_report(test_labels, predictions, digits=4))
+        
+        results.append({
+            'retrieval_method': retrieval_method,
+            'icl_budget_k': k,
+            'accuracy': accuracy,
+            'f1_macro': f1_macro,
+            'f1_weighted': f1_weighted,
+            'train_size_all_labeled': len(train_df),
+            'test_size': len(test_df)
+        })
     
-    # Save report
-    report_path = os.path.join(run_dir, f'report_{method}_budget_{budget}.txt')
-    with open(report_path, 'w') as f:
-        f.write(f"ICL Budget: {budget}\n")
-        f.write(f"Training Pool: {len(train_data)} (FULL dataset)\n\n")
-        f.write(classification_report(test_labels, predictions, digits=4))
-    
-    return {'icl_budget': budget, 'accuracy': float(acc), 'f1_macro': float(f1m), 'f1_weighted': float(f1w)}
+    return results
 
 
 def main():
-    print("\n" + "="*70)
-    print("  FULL-ICL ORACLE BASELINE")
-    print("="*70)
+    print("\n" + "="*80)
+    print("FULL-ICL ORACLE BASELINE (REVISED)")
+    print("="*80)
     
+    # Load config
     config = load_baseline_config()
-    os.makedirs(config['directories']['output_data'], exist_ok=True)
-    
-    llm = get_llm_provider(config)
     
     # Build file paths
-    train_path = os.path.join(config['directories']['input_data'], config['dataset']['train_file'])
-    test_path = os.path.join(config['directories']['input_data'], config['dataset']['test_file'])
+    base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    train_path = os.path.join(base_dir, 'input_data', config['dataset']['train_file'])
+    test_path = os.path.join(base_dir, 'input_data', config['dataset']['test_file'])
     
-    # Load datasets
-    train_df = load_dataset(train_path, config)
-    test_df = load_dataset(test_path, config)
+    # Load data
+    print(f"\nLoading data...")
+    train_df = pd.read_csv(train_path)
+    test_df = pd.read_csv(test_path)
     
-    # Filter excluded labels
-    exclude = config['dataset'].get('exclude_labels', [])
-    col_label = config['dataset']['columns']['label']
-    if exclude:
-        train_df = train_df[~train_df[col_label].isin(exclude)]
-        test_df = test_df[~test_df[col_label].isin(exclude)]
+    # Get column mappings
+    text_col = config['dataset']['columns']['text']
+    label_col = config['dataset']['columns']['label']
     
-    train_df = shuffle_dataframe(train_df, config['processing']['seed'])
+    # Rename to standard columns
+    train_df = train_df.rename(columns={text_col: 'text', label_col: 'label'})
+    test_df = test_df.rename(columns={text_col: 'text', label_col: 'label'})
     
-    # Get column names
-    col_id = config['dataset']['columns']['id']
-    col_text = config['dataset']['columns']['text']
+    # Extract dataset name
+    dataset_name = config['dataset']['train_file'].replace('_train.csv', '').replace('.csv', '')
     
-    # Convert to standardized dict format with 'text' and 'label' keys
-    train_data = [
-        {'id': row[col_id], 'text': row[col_text], 'label': row[col_label]}
-        for _, row in train_df.iterrows()
-    ]
-    test_data = [
-        {'id': row[col_id], 'text': row[col_text], 'label': row[col_label]}
-        for _, row in test_df.iterrows()
-    ]
-    
-    labels = get_unique_labels(train_df, col_label, exclude)
-    
-    print(f"\nFull training: {len(train_data)}, Test: {len(test_data)}, Labels: {labels}")
-    
-    # Build output directory name with timestamp, model, and dataset
+    # Build output directory
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     model_name = config['llm']['openai']['model']
-    dataset_name = config['dataset']['train_file'].replace('_train.csv', '').replace('.csv', '')
-    run_dir = os.path.join(config['directories']['output_data'], f'full_icl_oracle_{timestamp}_{model_name}_{dataset_name}')
-    os.makedirs(run_dir, exist_ok=True)
+    output_dir = os.path.join(
+        os.path.dirname(__file__),
+        'output',
+        f'full_icl_oracle_{timestamp}_{model_name}_{dataset_name}'
+    )
+    os.makedirs(output_dir, exist_ok=True)
     
-    methods = config['baseline']['retrieval_methods']
-    budgets = config['baseline']['icl_budgets']
+    print(f"Output directory: {output_dir}\n")
     
-    all_results = {m: {} for m in methods}
+    # Initialize LLM
+    llm_provider = get_llm_provider(config)
     
-    for method in methods:
-        for budget in budgets:
-            if len(train_data) >= budget:
-                r = evaluate_budget(train_data, test_data, budget, config, llm, labels, run_dir, method)
-                all_results[method][budget] = r
+    # Get parameters
+    icl_budgets = config['baseline']['icl_budgets']
+    retrieval_methods = config['baseline']['retrieval_methods']
     
-    with open(os.path.join(run_dir, 'all_results.json'), 'w') as f:
-        json.dump(all_results, f, indent=2)
+    all_results = []
     
-    print(f"\n{'='*70}")
+    # Run baseline for each retrieval method
+    for retrieval_method in retrieval_methods:
+        results = run_full_icl_baseline(
+            dataset_name=dataset_name,
+            train_df=train_df,
+            test_df=test_df,
+            icl_budgets=icl_budgets,
+            retrieval_method=retrieval_method,
+            llm_provider=llm_provider,
+            output_dir=output_dir
+        )
+        all_results.extend(results)
+    
+    # Save results
+    results_df = pd.DataFrame(all_results)
+    results_path = os.path.join(output_dir, 'full_icl_results.csv')
+    results_df.to_csv(results_path, index=False)
+    
+    # Save config
+    config_path = os.path.join(output_dir, 'config_used.yaml')
+    with open(config_path, 'w') as f:
+        yaml.dump(config, f, default_flow_style=False)
+    
+    # Print summary
+    print(f"\n{'='*80}")
     print("SUMMARY")
-    print(f"{'='*70}\n")
+    print(f"{'='*80}\n")
     
-    for method in methods:
-        print(f"{method.upper()}")
-        print(f"{'Budget':<10} {'Accuracy':<12} {'F1 Macro':<12}")
+    for retrieval_method in retrieval_methods:
+        print(f"{retrieval_method.upper()}")
+        print(f"{'k':<10} {'Accuracy':<12} {'F1 Macro':<12}")
         print("-"*35)
-        for budget in budgets:
-            if budget in all_results[method]:
-                r = all_results[method][budget]
-                print(f"{budget:<10} {r['accuracy']:<12.4f} {r['f1_macro']:<12.4f}")
+        method_results = [r for r in all_results if r['retrieval_method'] == retrieval_method]
+        for r in method_results:
+            print(f"{r['icl_budget_k']:<10} {r['accuracy']:<12.4f} {r['f1_macro']:<12.4f}")
+        print()
     
-    print(f"\nResults: {run_dir}\n")
+    print(f"Results saved to: {results_path}\n")
 
 
 if __name__ == "__main__":
