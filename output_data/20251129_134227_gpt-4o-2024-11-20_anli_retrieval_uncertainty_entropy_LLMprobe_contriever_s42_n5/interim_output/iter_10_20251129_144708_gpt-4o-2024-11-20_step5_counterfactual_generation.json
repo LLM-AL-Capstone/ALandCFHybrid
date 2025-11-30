@@ -1,0 +1,1218 @@
+{
+  "iteration": 10,
+  "timestamp": "20251129_144708",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 320,
+      "text": "Premise: Lansdown is a suburb of the World Heritage City of Bath, England, that extends northwards from the city centre up a hill of the same name. Among its most distinctive architectural features are Lansdown Crescent and Sion Hill Place, which includes a campus of Bath Spa University.\nHypothesis: Sion Hill Place is located on a hill.",
+      "label": "entailment"
+    },
+    {
+      "id": 73,
+      "text": "Premise: In 1986 he became the head of London European Airways, a business in which Ryanair had bought an 85% stake. This position, however, quickly disappeared as the carrier became Ryanair UK and was then merged entirely with Ryanair. Over the next decade, Cathal worked both on the executive board of the airline and as a pilot, although he resigned from the latter by 1996. He remained with Ryanair until leaving the board 2002, by which time he was a multi-millionaire due to the success of the airline.\nHypothesis: Ryanair went bankrupt in 2010.",
+      "label": "neutral"
+    },
+    {
+      "id": 344,
+      "text": "Premise: The State of the Art is a short story collection by Scottish writer Iain M. Banks, first published in 1991. The collection includes some stories originally published under his other byline, Iain Banks as well as the title novella and others set in Banks' Culture fictional universe.\nHypothesis: Banks only had one byline",
+      "label": "contradiction"
+    },
+    {
+      "id": 212,
+      "text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.\nHypothesis: The lines are pretty easy to distinguish ",
+      "label": "neutral"
+    },
+    {
+      "id": 25,
+      "text": "Premise: Cobbler Creek Recreation Park is a 266 ha protected area located in South Australia about 19 km north of the Adelaide city centre in the suburb of Gulfview Heights. Originally part of the lands of the Kaurna aboriginal people, it was farmed from European settlement of South Australia until the declaration of the park in 1989.\nHypothesis: The park declaration happened more than 50 years ago.",
+      "label": "contradiction"
+    },
+    {
+      "id": 84,
+      "text": "Premise: The Wet Puddle<br>Mandy was walking to school in her favorite sneakers. She accidentally stepped in a puddle along the way. Because of the puddle her shoes were now sopping. All day her feet felt wet and cold. Finally at the end of the day she took her shoes off and warmed up.\nHypothesis: The puddle was made of water.",
+      "label": "entailment"
+    },
+    {
+      "id": 93,
+      "text": "Premise: YouTube user Streetcap1 posted a series of pictures taken from Chinese lunar rover Change\u2019e 3. It appears to have a distinguishable face as well as a body and limbs, while lying in front of a rock. After posting the clip to YouTube, Streetcap1 said: \u201cAll body parts are in the correct place here and the head looks like it is wearing a helmet with a visor. \u201cYou can see what look like hands at the sides.\nHypothesis: Change\u2019e 3 did not post clips to Youtube.",
+      "label": "entailment"
+    },
+    {
+      "id": 35,
+      "text": "Premise: On the morning of 1 June, there was a blackout throughout most of the capital caused by urban commandos of the Farabundo Marti National Liberation Front (FMLN).\nHypothesis: The blackout happened at the beginning of the day",
+      "label": "entailment"
+    },
+    {
+      "id": 133,
+      "text": "Premise: Don't let up in fight against tax avoidance, Moscovici urges EU states VALLETTA, April 8 European Union states should continue reforming corporate rules to tackle tax avoidance, EU tax commissioner Pierre Moscovici told finance ministers on Saturday, as some smaller nations urged slower reform to avoid scaring away big corporations.\nHypothesis: Some smaller nations urged slower reform to avoid scaring away small-businesses.",
+      "label": "contradiction"
+    },
+    {
+      "id": 236,
+      "text": "Premise: The Friant-Kern Canal is a 152 mi Central Valley Project aqueduct managed by the United States Bureau of Reclamation in Central California to convey water to augment irrigation capacity in Fresno, Tulare, and Kern counties. Construction began in 1949 and the canal was completed in 1951, at a cost of $60.8 million.\nHypothesis: The Friant-Kern Canal is home to marine species native to California. ",
+      "label": "neutral"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "93_cf_contradiction_1",
+      "text": "Premise: YouTube user Streetcap1 posted a series of pictures taken from Chinese lunar rover Change\u2019e 3. It appears to have a distinguishable face as well as a body and limbs, while lying in front of a rock. After posting the clip to YouTube, Streetcap1 said: \u201cAll body parts are in the correct place here and the head looks like it is wearing a helmet with a visor. \u201cYou can see what look like hands at the sides.  \nHypothesis: Change\u2019e 3 itself uploaded clips to YouTube.",
+      "label": "contradiction",
+      "original_id": 93,
+      "original_label": "entailment",
+      "v3_score": 1.793595374415665,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.9999999999622503,
+        "term2": 0.4999708541515959,
+        "term3": 0.29362452030181885,
+        "total": 1.793595374415665,
+        "p_orig": 3.774972547150962e-11,
+        "p_target": 0.9999417083031918,
+        "similarity": 0.9787483811378479
+      }
+    },
+    {
+      "id": "133_cf_neutral_1",
+      "text": "Premise: Don't let up in fight against tax avoidance, Moscovici urges EU states VALLETTA, April 8 European Union states should continue reforming corporate rules to tackle tax avoidance, EU tax commissioner Pierre Moscovici told finance ministers on Saturday, as some smaller nations expressed concerns about the pace of reform and its potential impact on attracting businesses.  \nHypothesis: Some smaller nations expressed concerns about the pace of reform and its potential impact on attracting small-businesses.",
+      "label": "neutral",
+      "original_id": 133,
+      "original_label": "contradiction",
+      "v3_score": 1.7580774681015563,
+      "v3_rank": 2,
+      "v3_score_breakdown": {
+        "term1": 0.986255038790893,
+        "term2": 0.4817967182510929,
+        "term3": 0.2900257110595703,
+        "total": 1.7580774681015563,
+        "p_orig": 0.013744961209106924,
+        "p_target": 0.9635934365021858,
+        "similarity": 0.9667523503303528
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "93_cf_contradiction_1",
+    "133_cf_neutral_1"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 2,
+    "num_added": 2,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "Premise: Lansdown is a suburb of the World Heritage City of Bath, England, that extends northwards from the city centre up a hill of the same name. Among its most distinctive architectural features are Lansdown Crescent and Sion Hill Place, which includes a campus of Bath Spa University.\nHypothesis: Sion Hill Place is located on a hill.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Lansdown is a suburb of the World Heritage City of Bath, England, that extends northwards from the city centre up a hill of the same name. Among its most distinctive architectural features are Lansdown Crescent and Sion Hill Place, which includes a campus of Bath Spa University.  \nHypothesis: Sion Hill Place is not located on a hill.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6890842914581299,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Lansdown is a suburb of the World Heritage City of Bath, England, that extends northwards from the city centre up a hill of the same name. Among its most distinctive architectural features are Lansdown Crescent and Sion Hill Place, which includes a campus of Bath Spa University.\nHypothesis: Sion Hill Place is located on a hill.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Lansdown is a suburb of the World Heritage City of Bath, England, that extends northwards from the city centre up a hill of the same name. Among its most distinctive architectural features are Lansdown Crescent and Sion Hill Place, which includes a campus of Bath Spa University.  \nHypothesis: Sion Hill Place is not located on a hill.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6873469352722168,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Lansdown is a suburb of the World Heritage City of Bath, England, that extends northwards from the city centre up a hill of the same name. Among its most distinctive architectural features are Lansdown Crescent and Sion Hill Place, which includes a campus of Bath Spa University.\nHypothesis: Sion Hill Place is located on a hill.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Lansdown is a suburb of the World Heritage City of Bath, England, that extends northwards from the city centre up a hill of the same name. Among its most distinctive architectural features are Lansdown Crescent and Sion Hill Place, which includes a campus of Bath Spa University.  \nHypothesis: Sion Hill Place is not located on a hill.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7443151473999023,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: In 1986 he became the head of London European Airways, a business in which Ryanair had bought an 85% stake. This position, however, quickly disappeared as the carrier became Ryanair UK and was then merged entirely with Ryanair. Over the next decade, Cathal worked both on the executive board of the airline and as a pilot, although he resigned from the latter by 1996. He remained with Ryanair until leaving the board 2002, by which time he was a multi-millionaire due to the success of the airline.\nHypothesis: Ryanair went bankrupt in 2010.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: In 1986 he became the head of London European Airways, a business in which Ryanair had bought an 85% stake. This position, however, quickly disappeared as the carrier became Ryanair UK and was then merged entirely with Ryanair. Over the next decade, Cathal worked both on the executive board of the airline and as a pilot, although he resigned from the latter by 1996. He remained with Ryanair until leaving the board 2002, by which time he was a multi-millionaire due to the success of the airline.  \nHypothesis: Ryanair's financial struggles led to its bankruptcy in 2010.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0587451457977295,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: In 1986 he became the head of London European Airways, a business in which Ryanair had bought an 85% stake. This position, however, quickly disappeared as the carrier became Ryanair UK and was then merged entirely with Ryanair. Over the next decade, Cathal worked both on the executive board of the airline and as a pilot, although he resigned from the latter by 1996. He remained with Ryanair until leaving the board 2002, by which time he was a multi-millionaire due to the success of the airline.\nHypothesis: Ryanair went bankrupt in 2010.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: In 1986 he became the head of London European Airways, a business in which Ryanair had bought an 85% stake. This position, however, quickly disappeared as the carrier became Ryanair UK and was then merged entirely with Ryanair. Over the next decade, Cathal worked both on the executive board of the airline and as a pilot, although he resigned from the latter by 1996. He remained with Ryanair until leaving the board in 2002, by which time he was a multi-millionaire due to the success of the airline. However, despite its earlier achievements, Ryanair faced financial difficulties and eventually went bankrupt in 2010.  \nHypothesis: Ryanair went bankrupt in 2010.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.2471768856048584,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: In 1986 he became the head of London European Airways, a business in which Ryanair had bought an 85% stake. This position, however, quickly disappeared as the carrier became Ryanair UK and was then merged entirely with Ryanair. Over the next decade, Cathal worked both on the executive board of the airline and as a pilot, although he resigned from the latter by 1996. He remained with Ryanair until leaving the board 2002, by which time he was a multi-millionaire due to the success of the airline.\nHypothesis: Ryanair went bankrupt in 2010.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: In 1986 he became the head of London European Airways, a business in which Ryanair had bought an 85% stake. This position, however, quickly disappeared as the carrier became Ryanair UK and was then merged entirely with Ryanair. Over the next decade, Cathal worked both on the executive board of the airline and as a pilot, although he resigned from the latter by 1996. He remained with Ryanair until leaving the board in 2002, by which time he was a multi-millionaire due to the success of the airline, which eventually faced bankruptcy in 2010.  \nHypothesis: Ryanair went bankrupt in 2010.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9734580516815186,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The State of the Art is a short story collection by Scottish writer Iain M. Banks, first published in 1991. The collection includes some stories originally published under his other byline, Iain Banks as well as the title novella and others set in Banks' Culture fictional universe.\nHypothesis: Banks only had one byline",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: The State of the Art is a short story collection by Scottish writer Iain M. Banks, first published in 1991. The collection includes some stories originally published under his other byline, Iain Banks as well as the title novella and others set in Banks' Culture fictional universe.  \nHypothesis: Banks primarily used one byline.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6842749118804932,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The State of the Art is a short story collection by Scottish writer Iain M. Banks, first published in 1991. The collection includes some stories originally published under his other byline, Iain Banks as well as the title novella and others set in Banks' Culture fictional universe.\nHypothesis: Banks only had one byline",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: The State of the Art is a short story collection by Scottish writer Iain M. Banks, first published in 1991. The collection includes some stories originally published under his other byline, Iain Banks as well as the title novella and others set in Banks' Culture fictional universe.  \nHypothesis: Banks is known for using multiple bylines.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.679553747177124,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The State of the Art is a short story collection by Scottish writer Iain M. Banks, first published in 1991. The collection includes some stories originally published under his other byline, Iain Banks as well as the title novella and others set in Banks' Culture fictional universe.\nHypothesis: Banks only had one byline",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: The State of the Art is a short story collection by Scottish writer Iain M. Banks, first published in 1991. The collection includes some stories originally published under his other byline, Iain Banks as well as the title novella and others set in Banks' Culture fictional universe.  \nHypothesis: Banks is known to have used more than one byline.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7308337688446045,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.\nHypothesis: The lines are pretty easy to distinguish ",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.  \nHypothesis: The lines are not easy to distinguish.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6160619258880615,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.\nHypothesis: The lines are pretty easy to distinguish ",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.  \nHypothesis: The lines are not easy to distinguish.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5865390300750732,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.\nHypothesis: The lines are pretty easy to distinguish ",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.  \nHypothesis: The lines are not easy to distinguish.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5873770713806152,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Cobbler Creek Recreation Park is a 266 ha protected area located in South Australia about 19 km north of the Adelaide city centre in the suburb of Gulfview Heights. Originally part of the lands of the Kaurna aboriginal people, it was farmed from European settlement of South Australia until the declaration of the park in 1989.\nHypothesis: The park declaration happened more than 50 years ago.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Cobbler Creek Recreation Park is a 266 ha protected area located in South Australia about 19 km north of the Adelaide city centre in the suburb of Gulfview Heights. Originally part of the lands of the Kaurna aboriginal people, it was farmed from European settlement of South Australia until the declaration of the park in the 1960s.  \nHypothesis: The park declaration happened more than 50 years ago.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8570542335510254,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Cobbler Creek Recreation Park is a 266 ha protected area located in South Australia about 19 km north of the Adelaide city centre in the suburb of Gulfview Heights. Originally part of the lands of the Kaurna aboriginal people, it was farmed from European settlement of South Australia until the declaration of the park in 1989.\nHypothesis: The park declaration happened more than 50 years ago.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Cobbler Creek Recreation Park is a 266 ha protected area located in South Australia about 19 km north of the Adelaide city centre in the suburb of Gulfview Heights. Originally part of the lands of the Kaurna aboriginal people, it was farmed from European settlement of South Australia until the declaration of the park in 1960.  \nHypothesis: The park declaration happened more than 50 years ago.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6952340602874756,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Cobbler Creek Recreation Park is a 266 ha protected area located in South Australia about 19 km north of the Adelaide city centre in the suburb of Gulfview Heights. Originally part of the lands of the Kaurna aboriginal people, it was farmed from European settlement of South Australia until the declaration of the park in 1989.\nHypothesis: The park declaration happened more than 50 years ago.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Cobbler Creek Recreation Park is a 266 ha protected area located in South Australia about 19 km north of the Adelaide city centre in the suburb of Gulfview Heights. Originally part of the lands of the Kaurna aboriginal people, it was farmed from European settlement of South Australia until the declaration of the park in 1989.  \nHypothesis: The park declaration happened over 30 years ago.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.702739953994751,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Wet Puddle<br>Mandy was walking to school in her favorite sneakers. She accidentally stepped in a puddle along the way. Because of the puddle her shoes were now sopping. All day her feet felt wet and cold. Finally at the end of the day she took her shoes off and warmed up.\nHypothesis: The puddle was made of water.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: The Wet Puddle  \nMandy was walking to school in her favorite sneakers. She accidentally stepped in a puddle along the way. Because of the puddle her shoes were now sopping. All day her feet felt wet and cold. Finally at the end of the day she took her shoes off and warmed up.  \nHypothesis: The puddle was made of a liquid.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6383130550384521,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Wet Puddle<br>Mandy was walking to school in her favorite sneakers. She accidentally stepped in a puddle along the way. Because of the puddle her shoes were now sopping. All day her feet felt wet and cold. Finally at the end of the day she took her shoes off and warmed up.\nHypothesis: The puddle was made of water.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: The Wet Puddle  \nMandy was walking to school in her favorite sneakers. She accidentally stepped in a puddle along the way. Because of the puddle her shoes were now sopping. All day her feet felt wet and cold. Finally at the end of the day she took her shoes off and warmed up.  \nHypothesis: The puddle might have been made of water.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6837530136108398,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Wet Puddle<br>Mandy was walking to school in her favorite sneakers. She accidentally stepped in a puddle along the way. Because of the puddle her shoes were now sopping. All day her feet felt wet and cold. Finally at the end of the day she took her shoes off and warmed up.\nHypothesis: The puddle was made of water.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: The Wet Puddle  \nMandy was walking to school in her favorite sneakers. She accidentally stepped in a puddle along the way. Because of the puddle her shoes were now sopping. All day her feet felt wet and cold. Finally at the end of the day she took her shoes off and warmed up.  \nHypothesis: The puddle could have been made of water.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7247788906097412,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: YouTube user Streetcap1 posted a series of pictures taken from Chinese lunar rover Change\u2019e 3. It appears to have a distinguishable face as well as a body and limbs, while lying in front of a rock. After posting the clip to YouTube, Streetcap1 said: \u201cAll body parts are in the correct place here and the head looks like it is wearing a helmet with a visor. \u201cYou can see what look like hands at the sides.\nHypothesis: Change\u2019e 3 did not post clips to Youtube.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: YouTube user Streetcap1 posted a series of pictures taken from Chinese lunar rover Change\u2019e 3. It appears to have a distinguishable face as well as a body and limbs, while lying in front of a rock. After posting the clip to YouTube, Streetcap1 said: \u201cAll body parts are in the correct place here and the head looks like it is wearing a helmet with a visor. \u201cYou can see what look like hands at the sides.  \nHypothesis: Change\u2019e 3 posted clips to YouTube.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7623858451843262,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: YouTube user Streetcap1 posted a series of pictures taken from Chinese lunar rover Change\u2019e 3. It appears to have a distinguishable face as well as a body and limbs, while lying in front of a rock. After posting the clip to YouTube, Streetcap1 said: \u201cAll body parts are in the correct place here and the head looks like it is wearing a helmet with a visor. \u201cYou can see what look like hands at the sides.\nHypothesis: Change\u2019e 3 did not post clips to Youtube.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: YouTube user Streetcap1 posted a series of pictures taken from Chinese lunar rover Change\u2019e 3. It appears to have a distinguishable face as well as a body and limbs, while lying in front of a rock. After posting the clip to YouTube, Streetcap1 said: \u201cAll body parts are in the correct place here and the head looks like it is wearing a helmet with a visor. \u201cYou can see what look like hands at the sides.  \nHypothesis: Change\u2019e 3 itself uploaded clips to YouTube.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7807080745697021,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: YouTube user Streetcap1 posted a series of pictures taken from Chinese lunar rover Change\u2019e 3. It appears to have a distinguishable face as well as a body and limbs, while lying in front of a rock. After posting the clip to YouTube, Streetcap1 said: \u201cAll body parts are in the correct place here and the head looks like it is wearing a helmet with a visor. \u201cYou can see what look like hands at the sides.\nHypothesis: Change\u2019e 3 did not post clips to Youtube.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: YouTube user Streetcap1 posted a series of pictures taken from Chinese lunar rover Change\u2019e 3. It appears to have a distinguishable face as well as a body and limbs, while lying in front of a rock. After posting the clip to YouTube, Streetcap1 said: \u201cAll body parts are in the correct place here and the head looks like it is wearing a helmet with a visor. \u201cYou can see what look like hands at the sides.  \nHypothesis: Change\u2019e 3 posted clips to YouTube.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.2209367752075195,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: On the morning of 1 June, there was a blackout throughout most of the capital caused by urban commandos of the Farabundo Marti National Liberation Front (FMLN).\nHypothesis: The blackout happened at the beginning of the day",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: On the morning of 1 June, there was a blackout throughout most of the capital caused by urban commandos of the Farabundo Marti National Liberation Front (FMLN).  \nHypothesis: The blackout could have occurred early in the day.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7156879901885986,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: On the morning of 1 June, there was a blackout throughout most of the capital caused by urban commandos of the Farabundo Marti National Liberation Front (FMLN).\nHypothesis: The blackout happened at the beginning of the day",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: On the morning of 1 June, there was a blackout throughout most of the capital caused by urban commandos of the Farabundo Marti National Liberation Front (FMLN).  \nHypothesis: The blackout may have occurred early in the day.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5982651710510254,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: On the morning of 1 June, there was a blackout throughout most of the capital caused by urban commandos of the Farabundo Marti National Liberation Front (FMLN).\nHypothesis: The blackout happened at the beginning of the day",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: On the morning of 1 June, there was a blackout throughout most of the capital caused by urban commandos of the Farabundo Marti National Liberation Front (FMLN).  \nHypothesis: The blackout may have occurred early in the day.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.589555025100708,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Don't let up in fight against tax avoidance, Moscovici urges EU states VALLETTA, April 8 European Union states should continue reforming corporate rules to tackle tax avoidance, EU tax commissioner Pierre Moscovici told finance ministers on Saturday, as some smaller nations urged slower reform to avoid scaring away big corporations.\nHypothesis: Some smaller nations urged slower reform to avoid scaring away small-businesses.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Don't let up in fight against tax avoidance, Moscovici urges EU states VALLETTA, April 8 European Union states should continue reforming corporate rules to tackle tax avoidance, EU tax commissioner Pierre Moscovici told finance ministers on Saturday, as some smaller nations urged slower reform to avoid scaring away big corporations.  \nHypothesis: Some smaller nations urged slower reform to avoid scaring away businesses.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9121432304382324,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Don't let up in fight against tax avoidance, Moscovici urges EU states VALLETTA, April 8 European Union states should continue reforming corporate rules to tackle tax avoidance, EU tax commissioner Pierre Moscovici told finance ministers on Saturday, as some smaller nations urged slower reform to avoid scaring away big corporations.\nHypothesis: Some smaller nations urged slower reform to avoid scaring away small-businesses.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Don't let up in fight against tax avoidance, Moscovici urges EU states VALLETTA, April 8 European Union states should continue reforming corporate rules to tackle tax avoidance, EU tax commissioner Pierre Moscovici told finance ministers on Saturday, as some smaller nations expressed concerns about the pace of reform and its potential impact on attracting businesses.  \nHypothesis: Some smaller nations expressed concerns about the pace of reform and its potential impact on attracting small-businesses.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.2337558269500732,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Don't let up in fight against tax avoidance, Moscovici urges EU states VALLETTA, April 8 European Union states should continue reforming corporate rules to tackle tax avoidance, EU tax commissioner Pierre Moscovici told finance ministers on Saturday, as some smaller nations urged slower reform to avoid scaring away big corporations.\nHypothesis: Some smaller nations urged slower reform to avoid scaring away small-businesses.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Don't let up in fight against tax avoidance, Moscovici urges EU states VALLETTA, April 8 European Union states should continue reforming corporate rules to tackle tax avoidance, EU tax commissioner Pierre Moscovici told finance ministers on Saturday, as some smaller nations urged slower reform to avoid scaring away big corporations.  \nHypothesis: Some smaller nations expressed concerns about reform potentially impacting smaller businesses.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7004148960113525,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Friant-Kern Canal is a 152 mi Central Valley Project aqueduct managed by the United States Bureau of Reclamation in Central California to convey water to augment irrigation capacity in Fresno, Tulare, and Kern counties. Construction began in 1949 and the canal was completed in 1951, at a cost of $60.8 million.\nHypothesis: The Friant-Kern Canal is home to marine species native to California. ",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Friant-Kern Canal is a 152 mi Central Valley Project aqueduct managed by the United States Bureau of Reclamation in Central California to convey water to augment irrigation capacity in Fresno, Tulare, and Kern counties. Construction began in 1949 and the canal was completed in 1951, at a cost of $60.8 million.  \nHypothesis: The Friant-Kern Canal supports marine species native to California.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7954938411712646,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Friant-Kern Canal is a 152 mi Central Valley Project aqueduct managed by the United States Bureau of Reclamation in Central California to convey water to augment irrigation capacity in Fresno, Tulare, and Kern counties. Construction began in 1949 and the canal was completed in 1951, at a cost of $60.8 million.\nHypothesis: The Friant-Kern Canal is home to marine species native to California. ",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Friant-Kern Canal is a 152 mi Central Valley Project aqueduct managed by the United States Bureau of Reclamation in Central California to convey water to augment irrigation capacity in Fresno, Tulare, and Kern counties. Construction began in 1949 and the canal was completed in 1951, at a cost of $60.8 million.  \nHypothesis: The Friant-Kern Canal supports marine species native to California through its water conveyance system.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7704648971557617,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Friant-Kern Canal is a 152 mi Central Valley Project aqueduct managed by the United States Bureau of Reclamation in Central California to convey water to augment irrigation capacity in Fresno, Tulare, and Kern counties. Construction began in 1949 and the canal was completed in 1951, at a cost of $60.8 million.\nHypothesis: The Friant-Kern Canal is home to marine species native to California. ",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Friant-Kern Canal is a 152 mi Central Valley Project aqueduct managed by the United States Bureau of Reclamation in Central California to convey water to augment irrigation capacity in Fresno, Tulare, and Kern counties. Construction began in 1949 and the canal was completed in 1951, at a cost of $60.8 million. The canal supports marine species native to California as part of its ecosystem.  \nHypothesis: The Friant-Kern Canal is home to marine species native to California.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8199169635772705,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "320_cf_contradiction_0",
+        "original_id": 320,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999930368267453,
+          "p_orig": 8.592221929324604e-10,
+          "margin": 0.9999930359675232,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9978983402252197,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "320_cf_contradiction_1",
+        "original_id": 320,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999962733282165,
+          "p_orig": 0.0,
+          "margin": 0.9999962733282165,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9978983402252197,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "320_cf_contradiction_2",
+        "original_id": 320,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.999983296642386,
+          "p_orig": 1.8189551946421458e-09,
+          "margin": 0.9999832948234308,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9978983402252197,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "73_cf_entailment_0",
+        "original_id": 73,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 7.99202411328565e-11,
+          "p_orig": 6.962314037902782e-06,
+          "margin": -6.96223411766165e-06,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "73_cf_entailment_1",
+        "original_id": 73,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9888580478842988,
+          "p_orig": 0.0001566966270808813,
+          "margin": 0.9887013512572179,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9897587299346924,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "73_cf_entailment_2",
+        "original_id": 73,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.880594210719717,
+          "p_orig": 0.026591703228692556,
+          "margin": 0.8540025074910245,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9952291250228882,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "344_cf_neutral_0",
+        "original_id": 344,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0005527815008628351,
+          "p_orig": 0.9994472173964756,
+          "margin": -0.9988944358956128,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "344_cf_neutral_1",
+        "original_id": 344,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00317269392023074,
+          "p_orig": 3.0493475146811847e-07,
+          "margin": 0.003172388985479272,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "344_cf_neutral_2",
+        "original_id": 344,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 7.734507995989054e-08,
+          "p_orig": 4.058711634774418e-10,
+          "margin": 7.693920879641309e-08,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "212_cf_contradiction_0",
+        "original_id": 212,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00015843717923876404,
+          "p_orig": 0.9998413246190548,
+          "margin": -0.999682887439816,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "212_cf_contradiction_1",
+        "original_id": 212,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0004305593644424019,
+          "p_orig": 0.999569328147615,
+          "margin": -0.9991387687831726,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "212_cf_contradiction_2",
+        "original_id": 212,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0006263370381165765,
+          "p_orig": 0.999373091814017,
+          "margin": -0.9987467547759005,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "25_cf_entailment_0",
+        "original_id": 25,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9770190185910321,
+          "p_orig": 3.641042100315271e-06,
+          "margin": 0.9770153775489319,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9993845820426941,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "25_cf_entailment_1",
+        "original_id": 25,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999604209515102,
+          "p_orig": 4.222717583107433e-06,
+          "margin": 0.999956198233927,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.999692976474762,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "25_cf_entailment_2",
+        "original_id": 25,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9612817458673582,
+          "p_orig": 0.0014452352834022565,
+          "margin": 0.9598365105839559,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9998376965522766,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "84_cf_neutral_0",
+        "original_id": 84,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 9.931307699562812e-08,
+          "p_orig": 0.9999999002810517,
+          "margin": -0.9999998009679747,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "84_cf_neutral_1",
+        "original_id": 84,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00033535181549558616,
+          "p_orig": 0.9996646481845044,
+          "margin": -0.9993292963690088,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "84_cf_neutral_2",
+        "original_id": 84,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 8.481154201632847e-05,
+          "p_orig": 0.9999151884579837,
+          "margin": -0.9998303769159673,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "93_cf_contradiction_0",
+        "original_id": 93,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9988304071929232,
+          "p_orig": 7.725453997673632e-08,
+          "margin": 0.9988303299383832,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9883179664611816,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "93_cf_contradiction_1",
+        "original_id": 93,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999417083031918,
+          "p_orig": 3.774972547150962e-11,
+          "margin": 0.9999417082654422,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9787483811378479,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0107066381156318,
+          "original_length": 467,
+          "cf_length": 472,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.793595374415665,
+        "v3_score_details": {
+          "score": 1.793595374415665,
+          "p_orig": 3.774972547150962e-11,
+          "p_target": 0.9999417083031918,
+          "similarity": 0.9787483811378479,
+          "term1": 0.9999999999622503,
+          "term2": 0.4999708541515959,
+          "term3": 0.29362452030181885,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "93_cf_contradiction_2",
+        "original_id": 93,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9990889362838289,
+          "p_orig": 8.14468885693472e-09,
+          "margin": 0.9990889281391401,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9883179664611816,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "35_cf_neutral_0",
+        "original_id": 35,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00012339537058764734,
+          "p_orig": 0.9998765723911369,
+          "margin": -0.9997531770205492,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "35_cf_neutral_1",
+        "original_id": 35,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.010986977214872256,
+          "p_orig": 0.989013021197516,
+          "margin": -0.9780260439826437,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "35_cf_neutral_2",
+        "original_id": 35,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.004070153219678216,
+          "p_orig": 0.9959298433958422,
+          "margin": -0.991859690176164,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "133_cf_neutral_0",
+        "original_id": 133,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.785135959827851e-06,
+          "p_orig": 6.348846989056805e-09,
+          "margin": 4.7787871128387944e-06,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "133_cf_neutral_1",
+        "original_id": 133,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9806221717975446,
+          "p_orig": 0.010893758851560808,
+          "margin": 0.9697284129459838,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9667523503303528,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.1788990825688073,
+          "original_length": 436,
+          "cf_length": 514,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.7580774681015563,
+        "v3_score_details": {
+          "score": 1.7580774681015563,
+          "p_orig": 0.013744961209106924,
+          "p_target": 0.9635934365021858,
+          "similarity": 0.9667523503303528,
+          "term1": 0.986255038790893,
+          "term2": 0.4817967182510929,
+          "term3": 0.2900257110595703,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "133_cf_neutral_2",
+        "original_id": 133,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9980458275823231,
+          "p_orig": 0.001926689575233814,
+          "margin": 0.9961191380070893,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9906890392303467,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "236_cf_entailment_0",
+        "original_id": 236,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.1102230246251565e-16,
+          "p_orig": 0.9933071262304781,
+          "margin": -0.993307126230478,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "236_cf_entailment_1",
+        "original_id": 236,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.9626730381164985,
+          "margin": -0.9626730381164985,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "236_cf_entailment_2",
+        "original_id": 236,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9965002263695626,
+          "p_orig": 0.0024700874014451685,
+          "margin": 0.9940301389681174,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9940908551216125,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 2,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 2,
+    "num_final_selected": 2,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

@@ -1,0 +1,1194 @@
+{
+  "iteration": 9,
+  "timestamp": "20251129_144019",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 60,
+      "text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.\nHypothesis: the agent is aged more than 0.3",
+      "label": "entailment"
+    },
+    {
+      "id": 221,
+      "text": "Premise: Heemeyer equipped an old bulldozer with three television cameras and monitors so he could see to steer.\nHypothesis: Heemeyer only has 3 monitors",
+      "label": "neutral"
+    },
+    {
+      "id": 281,
+      "text": "Premise: Curt McCune (born August 2, 1960), from Homewood (Birmingham), Alabama, is a former amateur boxer and 4-time State of Alabama amateur boxing champion, and was the 1994 International Law Enforcement Games Boxing Champion at 193\u00a0lbs. McCune is a current private coach and trainer for amateur and professional boxers.\nHypothesis: Curt McCune is a well respected coach and trainer in the boxing community. ",
+      "label": "neutral"
+    },
+    {
+      "id": 366,
+      "text": "Premise: The Galaxy Nexus (GT-I9250) is a touchscreen Android smartphone co-developed by Google and Samsung Electronics. It is the third smartphone in the Google Nexus series, a family of Android consumer devices built by an original equipment manufacturer partner. The phone is the successor to Google's previous flagship phones, the Nexus One and Nexus S.\nHypothesis: The lead developer of the Nexus phone was from the Google team",
+      "label": "neutral"
+    },
+    {
+      "id": 166,
+      "text": "Premise: July 31 (UPI) -- Guinness World Records announced a hedge maze covering 383,160.12 square feet in China has been awarded three world records. The Yancheng Dafeng Dream Maze in Yancheng, Jiangsu Province, was awarded records for largest maze, largest hedge maze and largest pathway network in a hedge maze, all in the \"permanent\" category, Guinness said. The maze, which from the air creates the image of a giant elk walking through a field, opened to the public at the end of 2017. The massive maze includes more than 10 garden rest areas so hikers tackling the puzzle can recoup some energy.\nHypothesis: Yancheng, Jiangsu Province is home to the Dafeng Dream Maze, which, from the air, depicts a giant elf walking through a field.",
+      "label": "contradiction"
+    },
+    {
+      "id": 230,
+      "text": "Premise: Philippine President Gloria Macapagal Arroyo, Singapore's Prime Minister Lee Hsien Loong, Brunei's Sultan Hassanal Bolkiah, Indonesian Vice President Jusuf Kalla and Thai Deputy Prime Minister Surakiart Sathirathai were among foreign dignitaries flying in for Endon's funeral later Thursday. Thousands of people filed past Endon's body, which lay in state wrapped in white linen on a table while Muslim clerics recited verses from the Quran.\nHypothesis: european dignitaries also attended",
+      "label": "neutral"
+    },
+    {
+      "id": 255,
+      "text": "Premise: Kilham is a village and civil parish in the East Riding of Yorkshire, England. It is situated about 5 mi north-east of Driffield town centre. According to the 2011 UK census, Kilham parish had a population of 1,088, an increase on the 2001 UK census figure of 1,010.\nHypothesis: Many people moved to Kilham between 2001 and 2011.",
+      "label": "neutral"
+    },
+    {
+      "id": 95,
+      "text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:\nHypothesis: bunson is middleweight.",
+      "label": "entailment"
+    },
+    {
+      "id": 136,
+      "text": "Premise: Well, look, if it's any weekday other than next Friday when I will not be available -- I'll be traveling next Friday -- I'll be available. And, you know, we'll work through that issue. And if you're otherwise taking the deposition and we're at trial, I'll tell you that we'll construct some mechanism -- and we kind of talked about this a little bit yesterday -- where you hold the thought if counsel instructs the reporters not to answer because it's a problematic question, and we can circle back and we'll deal with that later.\nHypothesis: I can work effectively while travelling",
+      "label": "neutral"
+    },
+    {
+      "id": 351,
+      "text": "Premise: \"Sultans of Swing\" is a song by British rock band Dire Straits from their eponymous debut album, which band frontman Mark Knopfler wrote and composed. Although it was first released in 1978, it was its 1979 re-release that caused it to become a hit in both the UK and U.S.\nHypothesis: British rock band Dire Straits' debut album, featuring the hit single \"Sultans of Swing\" written and composed by band frontman Mark Knopfler, was ranked number 10 on the billboard charts upon first release in 1978.",
+      "label": "neutral"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "166_cf_entailment_1",
+      "text": "Premise: July 31 (UPI) -- Guinness World Records announced a hedge maze covering 383,160.12 square feet in China has been awarded three world records. The Yancheng Dafeng Dream Maze in Yancheng, Jiangsu Province, was awarded records for largest maze, largest hedge maze and largest pathway network in a hedge maze, all in the \"permanent\" category, Guinness said. The maze, which from the air creates the image of a giant elk walking through a field, opened to the public at the end of 2017. The massive maze includes more than 10 garden rest areas so hikers tackling the puzzle can recoup some energy.  \nHypothesis: Yancheng, Jiangsu Province is home to the Dafeng Dream Maze, which, from the air, depicts a giant elk walking through a field.",
+      "label": "entailment",
+      "original_id": 166,
+      "original_label": "contradiction",
+      "v3_score": 1.7923617931784894,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.9999999983947498,
+        "term2": 0.499999969079165,
+        "term3": 0.2923618257045746,
+        "total": 1.7923617931784894,
+        "p_orig": 1.605250132020223e-09,
+        "p_target": 0.99999993815833,
+        "similarity": 0.9745393991470337
+      }
+    },
+    {
+      "id": "166_cf_entailment_0",
+      "text": "Premise: July 31 (UPI) -- Guinness World Records announced a hedge maze covering 383,160.12 square feet in China has been awarded three world records. The Yancheng Dafeng Dream Maze in Yancheng, Jiangsu Province, was awarded records for largest maze, largest hedge maze and largest pathway network in a hedge maze, all in the \"permanent\" category, Guinness said. The maze, which from the air creates the image of a giant elk walking through a field, opened to the public at the end of 2017. The massive maze includes more than 10 garden rest areas so hikers tackling the puzzle can recoup some energy.  \nHypothesis: Yancheng, Jiangsu Province is home to the Dafeng Dream Maze, which, from the air, depicts a giant elk walking through a field.",
+      "label": "entailment",
+      "original_id": 166,
+      "original_label": "contradiction",
+      "v3_score": 1.7923617751622514,
+      "v3_rank": 2,
+      "v3_score_breakdown": {
+        "term1": 0.999999999409461,
+        "term2": 0.49999995004821574,
+        "term3": 0.2923618257045746,
+        "total": 1.7923617751622514,
+        "p_orig": 5.905388962584251e-10,
+        "p_target": 0.9999999000964315,
+        "similarity": 0.9745393991470337
+      }
+    },
+    {
+      "id": "166_cf_entailment_2",
+      "text": "Premise: July 31 (UPI) -- Guinness World Records announced a hedge maze covering 383,160.12 square feet in China has been awarded three world records. The Yancheng Dafeng Dream Maze in Yancheng, Jiangsu Province, was awarded records for largest maze, largest hedge maze and largest pathway network in a hedge maze, all in the \"permanent\" category, Guinness said. The maze, which from the air creates the image of a giant elk walking through a field, opened to the public at the end of 2017. The massive maze includes more than 10 garden rest areas so hikers tackling the puzzle can recoup some energy.  \nHypothesis: Yancheng, Jiangsu Province is home to the Dafeng Dream Maze, which, from the air, depicts a giant elk walking through a field.",
+      "label": "entailment",
+      "original_id": 166,
+      "original_label": "contradiction",
+      "v3_score": 1.792361752764925,
+      "v3_rank": 3,
+      "v3_score_breakdown": {
+        "term1": 0.9999999995400878,
+        "term2": 0.4999999275202626,
+        "term3": 0.2923618257045746,
+        "total": 1.792361752764925,
+        "p_orig": 4.5991221145871687e-10,
+        "p_target": 0.9999998550405252,
+        "similarity": 0.9745393991470337
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "166_cf_entailment_1",
+    "166_cf_entailment_0",
+    "166_cf_entailment_2"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 3,
+    "num_added": 3,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.\nHypothesis: the agent is aged more than 0.3",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.  \nHypothesis: the agent is not aged more than 0.3",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5425870418548584,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.\nHypothesis: the agent is aged more than 0.3",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.  \nHypothesis: the agent is not aged more than 0.3.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6067190170288086,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.\nHypothesis: the agent is aged more than 0.3",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.  \nHypothesis: the agent is not aged more than 0.3",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6919751167297363,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Heemeyer equipped an old bulldozer with three television cameras and monitors so he could see to steer.\nHypothesis: Heemeyer only has 3 monitors",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Heemeyer equipped an old bulldozer with three television cameras and monitors so he could see to steer.  \nHypothesis: Heemeyer does not have 3 monitors.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5477030277252197,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Heemeyer equipped an old bulldozer with three television cameras and monitors so he could see to steer.\nHypothesis: Heemeyer only has 3 monitors",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Heemeyer equipped an old bulldozer with three television cameras and monitors so he could see to steer.  \nHypothesis: Heemeyer has more than 3 monitors.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5352339744567871,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Heemeyer equipped an old bulldozer with three television cameras and monitors so he could see to steer.\nHypothesis: Heemeyer only has 3 monitors",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Heemeyer equipped an old bulldozer with three television cameras and monitors so he could see to steer.  \nHypothesis: Heemeyer has more than 3 monitors.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5743439197540283,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Curt McCune (born August 2, 1960), from Homewood (Birmingham), Alabama, is a former amateur boxer and 4-time State of Alabama amateur boxing champion, and was the 1994 International Law Enforcement Games Boxing Champion at 193\u00a0lbs. McCune is a current private coach and trainer for amateur and professional boxers.\nHypothesis: Curt McCune is a well respected coach and trainer in the boxing community. ",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Curt McCune (born August 2, 1960), from Homewood (Birmingham), Alabama, is a former amateur boxer and 4-time State of Alabama amateur boxing champion, and was the 1994 International Law Enforcement Games Boxing Champion at 193 lbs. McCune is a current private coach and trainer for amateur and professional boxers.  \nHypothesis: Curt McCune is a well respected coach and trainer in the boxing community, as evidenced by his extensive experience and achievements.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9675488471984863,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Curt McCune (born August 2, 1960), from Homewood (Birmingham), Alabama, is a former amateur boxer and 4-time State of Alabama amateur boxing champion, and was the 1994 International Law Enforcement Games Boxing Champion at 193\u00a0lbs. McCune is a current private coach and trainer for amateur and professional boxers.\nHypothesis: Curt McCune is a well respected coach and trainer in the boxing community. ",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Curt McCune (born August 2, 1960), from Homewood (Birmingham), Alabama, is a former amateur boxer and 4-time State of Alabama amateur boxing champion, and was the 1994 International Law Enforcement Games Boxing Champion at 193 lbs. McCune is a current private coach and trainer for amateur and professional boxers.  \nHypothesis: Curt McCune is highly regarded as a coach and trainer in the boxing community.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8782470226287842,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Curt McCune (born August 2, 1960), from Homewood (Birmingham), Alabama, is a former amateur boxer and 4-time State of Alabama amateur boxing champion, and was the 1994 International Law Enforcement Games Boxing Champion at 193\u00a0lbs. McCune is a current private coach and trainer for amateur and professional boxers.\nHypothesis: Curt McCune is a well respected coach and trainer in the boxing community. ",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Curt McCune (born August 2, 1960), from Homewood (Birmingham), Alabama, is a former amateur boxer and 4-time State of Alabama amateur boxing champion, and was the 1994 International Law Enforcement Games Boxing Champion at 193 lbs. McCune is a current private coach and trainer for amateur and professional boxers.  \nHypothesis: Curt McCune is a well respected coach and trainer in the boxing community, known for his expertise and achievements.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9227430820465088,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Galaxy Nexus (GT-I9250) is a touchscreen Android smartphone co-developed by Google and Samsung Electronics. It is the third smartphone in the Google Nexus series, a family of Android consumer devices built by an original equipment manufacturer partner. The phone is the successor to Google's previous flagship phones, the Nexus One and Nexus S.\nHypothesis: The lead developer of the Nexus phone was from the Google team",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The Galaxy Nexus (GT-I9250) is a touchscreen Android smartphone co-developed by Google and Samsung Electronics. It is the third smartphone in the Google Nexus series, a family of Android consumer devices built by an original equipment manufacturer partner. The phone is the successor to Google's previous flagship phones, the Nexus One and Nexus S.  \nHypothesis: The lead developer of the Nexus phone was not from the Google team.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0201869010925293,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Galaxy Nexus (GT-I9250) is a touchscreen Android smartphone co-developed by Google and Samsung Electronics. It is the third smartphone in the Google Nexus series, a family of Android consumer devices built by an original equipment manufacturer partner. The phone is the successor to Google's previous flagship phones, the Nexus One and Nexus S.\nHypothesis: The lead developer of the Nexus phone was from the Google team",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The Galaxy Nexus (GT-I9250) is a touchscreen Android smartphone co-developed by Google and Samsung Electronics. It is the third smartphone in the Google Nexus series, a family of Android consumer devices built by an original equipment manufacturer partner. The phone is the successor to Google's previous flagship phones, the Nexus One and Nexus S.  \nHypothesis: The lead developer of the Nexus phone was not from the Google team.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7308168411254883,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Galaxy Nexus (GT-I9250) is a touchscreen Android smartphone co-developed by Google and Samsung Electronics. It is the third smartphone in the Google Nexus series, a family of Android consumer devices built by an original equipment manufacturer partner. The phone is the successor to Google's previous flagship phones, the Nexus One and Nexus S.\nHypothesis: The lead developer of the Nexus phone was from the Google team",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The Galaxy Nexus (GT-I9250) is a touchscreen Android smartphone co-developed by Google and Samsung Electronics. It is the third smartphone in the Google Nexus series, a family of Android consumer devices built by an original equipment manufacturer partner. The phone is the successor to Google's previous flagship phones, the Nexus One and Nexus S.  \nHypothesis: The lead developer of the Nexus phone was not from the Google team.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7206220626831055,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: July 31 (UPI) -- Guinness World Records announced a hedge maze covering 383,160.12 square feet in China has been awarded three world records. The Yancheng Dafeng Dream Maze in Yancheng, Jiangsu Province, was awarded records for largest maze, largest hedge maze and largest pathway network in a hedge maze, all in the \"permanent\" category, Guinness said. The maze, which from the air creates the image of a giant elk walking through a field, opened to the public at the end of 2017. The massive maze includes more than 10 garden rest areas so hikers tackling the puzzle can recoup some energy.\nHypothesis: Yancheng, Jiangsu Province is home to the Dafeng Dream Maze, which, from the air, depicts a giant elf walking through a field.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: July 31 (UPI) -- Guinness World Records announced a hedge maze covering 383,160.12 square feet in China has been awarded three world records. The Yancheng Dafeng Dream Maze in Yancheng, Jiangsu Province, was awarded records for largest maze, largest hedge maze and largest pathway network in a hedge maze, all in the \"permanent\" category, Guinness said. The maze, which from the air creates the image of a giant elk walking through a field, opened to the public at the end of 2017. The massive maze includes more than 10 garden rest areas so hikers tackling the puzzle can recoup some energy.  \nHypothesis: Yancheng, Jiangsu Province is home to the Dafeng Dream Maze, which, from the air, depicts a giant elk walking through a field.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.3011441230773926,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: July 31 (UPI) -- Guinness World Records announced a hedge maze covering 383,160.12 square feet in China has been awarded three world records. The Yancheng Dafeng Dream Maze in Yancheng, Jiangsu Province, was awarded records for largest maze, largest hedge maze and largest pathway network in a hedge maze, all in the \"permanent\" category, Guinness said. The maze, which from the air creates the image of a giant elk walking through a field, opened to the public at the end of 2017. The massive maze includes more than 10 garden rest areas so hikers tackling the puzzle can recoup some energy.\nHypothesis: Yancheng, Jiangsu Province is home to the Dafeng Dream Maze, which, from the air, depicts a giant elf walking through a field.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: July 31 (UPI) -- Guinness World Records announced a hedge maze covering 383,160.12 square feet in China has been awarded three world records. The Yancheng Dafeng Dream Maze in Yancheng, Jiangsu Province, was awarded records for largest maze, largest hedge maze and largest pathway network in a hedge maze, all in the \"permanent\" category, Guinness said. The maze, which from the air creates the image of a giant elk walking through a field, opened to the public at the end of 2017. The massive maze includes more than 10 garden rest areas so hikers tackling the puzzle can recoup some energy.  \nHypothesis: Yancheng, Jiangsu Province is home to the Dafeng Dream Maze, which, from the air, depicts a giant elk walking through a field.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.264089822769165,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: July 31 (UPI) -- Guinness World Records announced a hedge maze covering 383,160.12 square feet in China has been awarded three world records. The Yancheng Dafeng Dream Maze in Yancheng, Jiangsu Province, was awarded records for largest maze, largest hedge maze and largest pathway network in a hedge maze, all in the \"permanent\" category, Guinness said. The maze, which from the air creates the image of a giant elk walking through a field, opened to the public at the end of 2017. The massive maze includes more than 10 garden rest areas so hikers tackling the puzzle can recoup some energy.\nHypothesis: Yancheng, Jiangsu Province is home to the Dafeng Dream Maze, which, from the air, depicts a giant elf walking through a field.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: July 31 (UPI) -- Guinness World Records announced a hedge maze covering 383,160.12 square feet in China has been awarded three world records. The Yancheng Dafeng Dream Maze in Yancheng, Jiangsu Province, was awarded records for largest maze, largest hedge maze and largest pathway network in a hedge maze, all in the \"permanent\" category, Guinness said. The maze, which from the air creates the image of a giant elk walking through a field, opened to the public at the end of 2017. The massive maze includes more than 10 garden rest areas so hikers tackling the puzzle can recoup some energy.  \nHypothesis: Yancheng, Jiangsu Province is home to the Dafeng Dream Maze, which, from the air, depicts a giant elk walking through a field.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.285400152206421,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Philippine President Gloria Macapagal Arroyo, Singapore's Prime Minister Lee Hsien Loong, Brunei's Sultan Hassanal Bolkiah, Indonesian Vice President Jusuf Kalla and Thai Deputy Prime Minister Surakiart Sathirathai were among foreign dignitaries flying in for Endon's funeral later Thursday. Thousands of people filed past Endon's body, which lay in state wrapped in white linen on a table while Muslim clerics recited verses from the Quran.\nHypothesis: european dignitaries also attended",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Philippine President Gloria Macapagal Arroyo, Singapore's Prime Minister Lee Hsien Loong, Brunei's Sultan Hassanal Bolkiah, Indonesian Vice President Jusuf Kalla and Thai Deputy Prime Minister Surakiart Sathirathai were among foreign dignitaries flying in for Endon's funeral later Thursday. Thousands of people filed past Endon's body, which lay in state wrapped in white linen on a table while Muslim clerics recited verses from the Quran.  \nHypothesis: European dignitaries were also present at the funeral.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0296390056610107,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Philippine President Gloria Macapagal Arroyo, Singapore's Prime Minister Lee Hsien Loong, Brunei's Sultan Hassanal Bolkiah, Indonesian Vice President Jusuf Kalla and Thai Deputy Prime Minister Surakiart Sathirathai were among foreign dignitaries flying in for Endon's funeral later Thursday. Thousands of people filed past Endon's body, which lay in state wrapped in white linen on a table while Muslim clerics recited verses from the Quran.\nHypothesis: european dignitaries also attended",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Philippine President Gloria Macapagal Arroyo, Singapore's Prime Minister Lee Hsien Loong, Brunei's Sultan Hassanal Bolkiah, Indonesian Vice President Jusuf Kalla and Thai Deputy Prime Minister Surakiart Sathirathai were among foreign dignitaries flying in for Endon's funeral later Thursday. Thousands of people filed past Endon's body, which lay in state wrapped in white linen on a table while Muslim clerics recited verses from the Quran.  \nHypothesis: European dignitaries were also present.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.77117919921875,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Philippine President Gloria Macapagal Arroyo, Singapore's Prime Minister Lee Hsien Loong, Brunei's Sultan Hassanal Bolkiah, Indonesian Vice President Jusuf Kalla and Thai Deputy Prime Minister Surakiart Sathirathai were among foreign dignitaries flying in for Endon's funeral later Thursday. Thousands of people filed past Endon's body, which lay in state wrapped in white linen on a table while Muslim clerics recited verses from the Quran.\nHypothesis: european dignitaries also attended",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Philippine President Gloria Macapagal Arroyo, Singapore's Prime Minister Lee Hsien Loong, Brunei's Sultan Hassanal Bolkiah, Indonesian Vice President Jusuf Kalla and Thai Deputy Prime Minister Surakiart Sathirathai were among foreign dignitaries flying in for Endon's funeral later Thursday. Thousands of people filed past Endon's body, which lay in state wrapped in white linen on a table while Muslim clerics recited verses from the Quran.  \nHypothesis: European dignitaries were also present at the funeral.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.93650221824646,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Kilham is a village and civil parish in the East Riding of Yorkshire, England. It is situated about 5 mi north-east of Driffield town centre. According to the 2011 UK census, Kilham parish had a population of 1,088, an increase on the 2001 UK census figure of 1,010.\nHypothesis: Many people moved to Kilham between 2001 and 2011.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Kilham is a village and civil parish in the East Riding of Yorkshire, England. It is situated about 5 mi north-east of Driffield town centre. According to the 2011 UK census, Kilham parish had a population of 1,088, an increase on the 2001 UK census figure of 1,010.  \nHypothesis: Few people moved to Kilham between 2001 and 2011.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9714748859405518,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Kilham is a village and civil parish in the East Riding of Yorkshire, England. It is situated about 5 mi north-east of Driffield town centre. According to the 2011 UK census, Kilham parish had a population of 1,088, an increase on the 2001 UK census figure of 1,010.\nHypothesis: Many people moved to Kilham between 2001 and 2011.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Kilham is a village and civil parish in the East Riding of Yorkshire, England. It is situated about 5 mi north-east of Driffield town centre. According to the 2011 UK census, Kilham parish had a population of 1,088, an increase on the 2001 UK census figure of 1,010.  \nHypothesis: Few people moved to Kilham between 2001 and 2011.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7256879806518555,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Kilham is a village and civil parish in the East Riding of Yorkshire, England. It is situated about 5 mi north-east of Driffield town centre. According to the 2011 UK census, Kilham parish had a population of 1,088, an increase on the 2001 UK census figure of 1,010.\nHypothesis: Many people moved to Kilham between 2001 and 2011.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Kilham is a village and civil parish in the East Riding of Yorkshire, England. It is situated about 5 mi north-east of Driffield town centre. According to the 2011 UK census, Kilham parish had a population of 1,088, an increase on the 2001 UK census figure of 1,010.  \nHypothesis: Few people moved to Kilham between 2001 and 2011.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7664709091186523,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:\nHypothesis: bunson is middleweight.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:  \nHypothesis: Brunson might be middleweight.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2170770168304443,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:\nHypothesis: bunson is middleweight.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Hypothesis: Brunson competes in the middleweight division.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.4633140563964844,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:\nHypothesis: bunson is middleweight.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:  \nHypothesis: Brunson might be middleweight.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8385982513427734,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Well, look, if it's any weekday other than next Friday when I will not be available -- I'll be traveling next Friday -- I'll be available. And, you know, we'll work through that issue. And if you're otherwise taking the deposition and we're at trial, I'll tell you that we'll construct some mechanism -- and we kind of talked about this a little bit yesterday -- where you hold the thought if counsel instructs the reporters not to answer because it's a problematic question, and we can circle back and we'll deal with that later.\nHypothesis: I can work effectively while travelling",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Well, look, if it's any weekday other than next Friday when I will not be available -- I'll be traveling next Friday -- I'll be available. And, you know, we'll work through that issue. And if you're otherwise taking the deposition and we're at trial, I'll tell you that we'll construct some mechanism -- and we kind of talked about this a little bit yesterday -- where you hold the thought if counsel instructs the reporters not to answer because it's a problematic question, and we can circle back and we'll deal with that later.  \nHypothesis: I can work effectively while traveling next Friday.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9057180881500244,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Well, look, if it's any weekday other than next Friday when I will not be available -- I'll be traveling next Friday -- I'll be available. And, you know, we'll work through that issue. And if you're otherwise taking the deposition and we're at trial, I'll tell you that we'll construct some mechanism -- and we kind of talked about this a little bit yesterday -- where you hold the thought if counsel instructs the reporters not to answer because it's a problematic question, and we can circle back and we'll deal with that later.\nHypothesis: I can work effectively while travelling",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Well, look, if it's any weekday other than next Friday when I will not be available -- I'll be traveling next Friday -- I'll be available. And, you know, we'll work through that issue. And if you're otherwise taking the deposition and we're at trial, I'll tell you that we'll construct some mechanism -- and we kind of talked about this a little bit yesterday -- where you hold the thought if counsel instructs the reporters not to answer because it's a problematic question, and we can circle back and we'll deal with that later.  \nHypothesis: I can manage my responsibilities effectively even while traveling.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8821008205413818,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Well, look, if it's any weekday other than next Friday when I will not be available -- I'll be traveling next Friday -- I'll be available. And, you know, we'll work through that issue. And if you're otherwise taking the deposition and we're at trial, I'll tell you that we'll construct some mechanism -- and we kind of talked about this a little bit yesterday -- where you hold the thought if counsel instructs the reporters not to answer because it's a problematic question, and we can circle back and we'll deal with that later.\nHypothesis: I can work effectively while travelling",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Well, look, if it's any weekday other than next Friday when I will not be available -- I'll be traveling next Friday -- I'll be available. And, you know, we'll work through that issue. And if you're otherwise taking the deposition and we're at trial, I'll tell you that we'll construct some mechanism -- and we kind of talked about this a little bit yesterday -- where you hold the thought if counsel instructs the reporters not to answer because it's a problematic question, and we can circle back and we'll deal with that later.  \nHypothesis: While traveling next Friday, I will still be able to work effectively.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9284579753875732,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: \"Sultans of Swing\" is a song by British rock band Dire Straits from their eponymous debut album, which band frontman Mark Knopfler wrote and composed. Although it was first released in 1978, it was its 1979 re-release that caused it to become a hit in both the UK and U.S.\nHypothesis: British rock band Dire Straits' debut album, featuring the hit single \"Sultans of Swing\" written and composed by band frontman Mark Knopfler, was ranked number 10 on the billboard charts upon first release in 1978.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: \"Sultans of Swing\" is a song by British rock band Dire Straits from their eponymous debut album, which band frontman Mark Knopfler wrote and composed. Although it was first released in 1978, it was its 1979 re-release that caused it to become a hit in both the UK and U.S.  \nHypothesis: British rock band Dire Straits' debut album, featuring the hit single \"Sultans of Swing\" written and composed by band frontman Mark Knopfler, was not ranked on the billboard charts upon its first release in 1978.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.282581090927124,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: \"Sultans of Swing\" is a song by British rock band Dire Straits from their eponymous debut album, which band frontman Mark Knopfler wrote and composed. Although it was first released in 1978, it was its 1979 re-release that caused it to become a hit in both the UK and U.S.\nHypothesis: British rock band Dire Straits' debut album, featuring the hit single \"Sultans of Swing\" written and composed by band frontman Mark Knopfler, was ranked number 10 on the billboard charts upon first release in 1978.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: \"Sultans of Swing\" is a song by British rock band Dire Straits from their eponymous debut album, which band frontman Mark Knopfler wrote and composed. Although it was first released in 1978, it was its 1979 re-release that caused it to become a hit in both the UK and U.S.  \nHypothesis: British rock band Dire Straits' debut album, featuring the hit single \"Sultans of Swing\" written and composed by band frontman Mark Knopfler, was ranked number 10 on the billboard charts upon first release in 1978, despite the song not gaining significant attention until its 1979 re-release.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.988879919052124,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: \"Sultans of Swing\" is a song by British rock band Dire Straits from their eponymous debut album, which band frontman Mark Knopfler wrote and composed. Although it was first released in 1978, it was its 1979 re-release that caused it to become a hit in both the UK and U.S.\nHypothesis: British rock band Dire Straits' debut album, featuring the hit single \"Sultans of Swing\" written and composed by band frontman Mark Knopfler, was ranked number 10 on the billboard charts upon first release in 1978.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: \"Sultans of Swing\" is a song by British rock band Dire Straits from their eponymous debut album, which band frontman Mark Knopfler wrote and composed. Although it was first released in 1978, it was its 1979 re-release that caused it to become a hit in both the UK and U.S.  \nHypothesis: British rock band Dire Straits' debut album, featuring the hit single \"Sultans of Swing\" written and composed by band frontman Mark Knopfler, was ranked number 10 on the billboard charts upon first release in 1978, despite the song not achieving widespread success until its 1979 re-release.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.128464937210083,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "60_cf_contradiction_0",
+        "original_id": 60,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.2227002700529418,
+          "p_orig": 8.747443254946201e-08,
+          "margin": 0.22270018257850924,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "60_cf_contradiction_1",
+        "original_id": 60,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.006692871998430955,
+          "p_orig": 2.8263238330160558e-08,
+          "margin": 0.006692843735192624,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "60_cf_contradiction_2",
+        "original_id": 60,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.06008666795887748,
+          "p_orig": 1.4601660665508649e-06,
+          "margin": 0.06008520779281093,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "221_cf_contradiction_0",
+        "original_id": 221,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999504997255,
+          "p_orig": 1.725803463731283e-08,
+          "margin": 0.9999999332416908,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9910643696784973,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "221_cf_contradiction_1",
+        "original_id": 221,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 9.610299784156383e-05,
+          "p_orig": 0.9999037844764985,
+          "margin": -0.999807681478657,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "221_cf_contradiction_2",
+        "original_id": 221,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00407014893072474,
+          "p_orig": 0.9959289126514377,
+          "margin": -0.9918587637207129,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "281_cf_entailment_0",
+        "original_id": 281,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.014063668542166527,
+          "p_orig": 0.9859363314578335,
+          "margin": -0.971872662915667,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "281_cf_entailment_1",
+        "original_id": 281,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.1445094835290163e-05,
+          "p_orig": 0.9999785549051647,
+          "margin": -0.9999571098103295,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "281_cf_entailment_2",
+        "original_id": 281,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0009110556875071234,
+          "p_orig": 0.9990889443029564,
+          "margin": -0.9981778886154492,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "366_cf_contradiction_0",
+        "original_id": 366,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.11919979192500194,
+          "p_orig": 0.8807727252319315,
+          "margin": -0.7615729333069295,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "366_cf_contradiction_1",
+        "original_id": 366,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0758440386892874,
+          "p_orig": 0.9239679619759763,
+          "margin": -0.848123923286689,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "366_cf_contradiction_2",
+        "original_id": 366,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.14803178621381524,
+          "p_orig": 0.8518630849277938,
+          "margin": -0.7038312987139785,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "166_cf_entailment_0",
+        "original_id": 166,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.999999931337329,
+          "p_orig": 4.0587116716611294e-10,
+          "margin": 0.9999999309314579,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9745393991470337,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0027027027027027,
+          "original_length": 740,
+          "cf_length": 742,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.7923617751622514,
+        "v3_score_details": {
+          "score": 1.7923617751622514,
+          "p_orig": 5.905388962584251e-10,
+          "p_target": 0.9999999000964315,
+          "similarity": 0.9745393991470337,
+          "term1": 0.999999999409461,
+          "term2": 0.49999995004821574,
+          "term3": 0.2923618257045746,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "166_cf_entailment_1",
+        "original_id": 166,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999999523295535,
+          "p_orig": 7.582668644326199e-10,
+          "margin": 0.9999999515712866,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9745393991470337,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0027027027027027,
+          "original_length": 740,
+          "cf_length": 742,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.7923617931784894,
+        "v3_score_details": {
+          "score": 1.7923617931784894,
+          "p_orig": 1.605250132020223e-09,
+          "p_target": 0.99999993815833,
+          "similarity": 0.9745393991470337,
+          "term1": 0.9999999983947498,
+          "term2": 0.499999969079165,
+          "term3": 0.2923618257045746,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "166_cf_entailment_2",
+        "original_id": 166,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999999119506795,
+          "p_orig": 4.0587115929763036e-10,
+          "margin": 0.9999999115448084,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9745393991470337,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0027027027027027,
+          "original_length": 740,
+          "cf_length": 742,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.792361752764925,
+        "v3_score_details": {
+          "score": 1.792361752764925,
+          "p_orig": 4.5991221145871687e-10,
+          "p_target": 0.9999998550405252,
+          "similarity": 0.9745393991470337,
+          "term1": 0.9999999995400878,
+          "term2": 0.4999999275202626,
+          "term3": 0.2923618257045746,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "230_cf_entailment_0",
+        "original_id": 230,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.9614848513659283e-11,
+          "p_orig": 0.9706877051049063,
+          "margin": -0.9706877050852915,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "230_cf_entailment_1",
+        "original_id": 230,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.9959298467514457,
+          "margin": -0.9959298467514457,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "230_cf_entailment_2",
+        "original_id": 230,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.9706877017320763,
+          "margin": -0.9706877017320763,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "255_cf_contradiction_0",
+        "original_id": 255,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.619515223648016e-06,
+          "p_orig": 0.14804666259682073,
+          "margin": -0.14804204308159707,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "255_cf_contradiction_1",
+        "original_id": 255,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.896747219086054e-06,
+          "p_orig": 0.11920271796948907,
+          "margin": -0.11919982122226999,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "255_cf_contradiction_2",
+        "original_id": 255,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.47265492902622e-06,
+          "p_orig": 0.1480469785543231,
+          "margin": -0.14804450589939408,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "95_cf_neutral_0",
+        "original_id": 95,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.144509736693684e-05,
+          "p_orig": 0.9999785537993857,
+          "margin": -0.9999571087020188,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "95_cf_neutral_1",
+        "original_id": 95,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999251451647947,
+          "p_orig": 8.151518055450414e-09,
+          "margin": 0.9999251370132767,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.6628820896148682,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "95_cf_neutral_2",
+        "original_id": 95,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0004305593096689063,
+          "p_orig": 0.999569439274313,
+          "margin": -0.999138879964644,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "136_cf_entailment_0",
+        "original_id": 136,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 7.582626978890798e-10,
+          "p_orig": 5.422263590995737e-06,
+          "margin": -5.4215053282978485e-06,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "136_cf_entailment_1",
+        "original_id": 136,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.1480472577055267,
+          "p_orig": 0.8519521171079415,
+          "margin": -0.7039048594024148,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "136_cf_entailment_2",
+        "original_id": 136,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 5.602262936643288e-09,
+          "p_orig": 0.00010889757230903832,
+          "margin": -0.00010889197004610167,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "351_cf_contradiction_0",
+        "original_id": 351,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.760304733462604e-06,
+          "p_orig": 0.999967037607624,
+          "margin": -0.9999652773028905,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "351_cf_contradiction_1",
+        "original_id": 351,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0005527813694978528,
+          "p_orig": 0.9994472181708443,
+          "margin": -0.9988944368013464,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "351_cf_contradiction_2",
+        "original_id": 351,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.000335351857706429,
+          "p_orig": 0.9996646467261407,
+          "margin": -0.9993292948684344,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 3,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 3,
+    "num_final_selected": 3,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

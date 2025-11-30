@@ -1,0 +1,1303 @@
+{
+  "iteration": 1,
+  "timestamp": "20251129_031558",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 301,
+      "text": "Premise: Paulina G\u00f3mez Torres (born 29 July 1991) known professionally as Paulina Goto is a Mexican actress, singer, and television hostess, who first gained popularity for her debut role in the Mexican telenovela \"Ni\u00f1a de mi Coraz\u00f3n\" in 2010. She was a member of the popular Mexican-Argentine pop group, Eme 15, formed by Televisa producer Pedro Dami\u00e1n, from 2011 to 2014.\nHypothesis: Paulina Goto has been popular for 9 years, since 2010.",
+      "label": "neutral"
+    },
+    {
+      "id": 296,
+      "text": "Premise: In Greek mythology, the Hesperides ( ; Ancient\u00a0Greek: \u1f19\u03c3\u03c0\u03b5\u03c1\u03af\u03b4\u03b5\u03c2 , ] ) are the nymphs of evening and golden light of sunset, who were the \"Daughters of the Evening\" or \"Nymphs of the West\". They tend a blissful garden in a far western corner of the world, located near the Atlas mountains in North Africa at the edge of the encircling Oceanus, the world-ocean.\nHypothesis: Atlas mountains contains a xx",
+      "label": "contradiction"
+    },
+    {
+      "id": 160,
+      "text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced the end of catch and release policies that allow illegals to enter the country without deportation.\nHypothesis: Illegals cannot enter the country without being deported.",
+      "label": "entailment"
+    },
+    {
+      "id": 99,
+      "text": "Premise: How to make popcorn on the stove<br>Heat the oil in a 3-quart (or larger) saucepan on medium-high heat. You'll want to use an oil with a high smoke point, like peanut, canola or coconut. If using coconut oil, allow all of the solid oil to melt before adding kernels.\nHypothesis: Nut-based oils tend to have a higher smoke point.",
+      "label": "neutral"
+    },
+    {
+      "id": 102,
+      "text": "Premise: by: N/A \u2014 MLB: Mets How long is seven years in baseball? MLB's 2011 leaders in games played (Prince Fielder), at-bats (Ichiro Suzuki), Wins Above Replacement (Cliff Lee), hits (Adrian Gonzalez and Michael Young) and stolen bases (Michael Bourn) are all out of baseball. Your.\nHypothesis: Everyone can make sense of this context. ",
+      "label": "neutral"
+    },
+    {
+      "id": 222,
+      "text": "Premise: Halloween<br>Paula had decided to take her two year old trick or treating. She was excited to pick out a costume. Halloween night she dressed up her child and headed out. They walked all over the neighborhood getting candy. They both had a great time.\nHypothesis: They received a lot of candy",
+      "label": "neutral"
+    },
+    {
+      "id": 15,
+      "text": "Premise: Smith (suspension) was released by the Raiders on Monday Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.\nHypothesis: It has been reported the Smith hit a member of his family either on Saturday or Sunday.",
+      "label": "neutral"
+    },
+    {
+      "id": 327,
+      "text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.\nHypothesis: There are 5x5 teams.",
+      "label": "entailment"
+    },
+    {
+      "id": 295,
+      "text": "Premise: How to take revenge on your enemies<br>Call your enemy out. Before giving in to revenge, try telling your enemy exactly what it is that you want him to stop doing. Stay calm and take control of the situation.\nHypothesis: Revenge on your enemies requires a few things such as patience. ",
+      "label": "entailment"
+    },
+    {
+      "id": 224,
+      "text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?\nHypothesis: The National Assembly passed such a bill in 1995.",
+      "label": "contradiction"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "222_cf_entailment_2",
+      "text": "Premise: Halloween  \nPaula had decided to take her two year old trick or treating. She was excited to pick out a costume. Halloween night she dressed up her child and headed out. They walked all over the neighborhood getting candy. They both had a great time.  \nHypothesis: They received a lot of candy, as they visited many houses in the neighborhood.",
+      "label": "entailment",
+      "original_id": 222,
+      "original_label": "neutral",
+      "v3_score": 1.793379270564124,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.9997388081620833,
+        "term2": 0.49986940408104164,
+        "term3": 0.29377105832099915,
+        "total": 1.793379270564124,
+        "p_orig": 0.00026119183791674296,
+        "p_target": 0.9997388081620833,
+        "similarity": 0.9792368412017822
+      }
+    },
+    {
+      "id": "327_cf_contradiction_2",
+      "text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.  \nHypothesis: There are no teams ranked in the top five.",
+      "label": "contradiction",
+      "original_id": 327,
+      "original_label": "entailment",
+      "v3_score": 1.787689775192835,
+      "v3_rank": 2,
+      "v3_score_breakdown": {
+        "term1": 0.9999999999821673,
+        "term2": 0.49999999998216726,
+        "term3": 0.28768977522850037,
+        "total": 1.787689775192835,
+        "p_orig": 1.7832769787750535e-11,
+        "p_target": 0.9999999999643345,
+        "similarity": 0.9589658379554749
+      }
+    },
+    {
+      "id": "327_cf_contradiction_0",
+      "text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.  \nHypothesis: There are no teams ranked in the top five.",
+      "label": "contradiction",
+      "original_id": 327,
+      "original_label": "entailment",
+      "v3_score": 1.7876897751529965,
+      "v3_rank": 3,
+      "v3_score_breakdown": {
+        "term1": 0.9999999999622481,
+        "term2": 0.4999999999622481,
+        "term3": 0.28768977522850037,
+        "total": 1.7876897751529965,
+        "p_orig": 3.77519548899428e-11,
+        "p_target": 0.9999999999244962,
+        "similarity": 0.9589658379554749
+      }
+    },
+    {
+      "id": "224_cf_neutral_2",
+      "text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, it would have influenced perceptions of the National Assembly and its Parti Quebecois members.  \nHypothesis: The National Assembly passed such a bill in 1995.",
+      "label": "neutral",
+      "original_id": 224,
+      "original_label": "contradiction",
+      "v3_score": 0.2861273269159641,
+      "v3_rank": 4,
+      "v3_score_breakdown": {
+        "term1": 0.0009110556926156255,
+        "term2": 0.0004555278437555806,
+        "term3": 0.2847607433795929,
+        "total": 0.2861273269159641,
+        "p_orig": 0.9990889443073844,
+        "p_target": 0.0009110556875111612,
+        "similarity": 0.9492024779319763
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "222_cf_entailment_2",
+    "327_cf_contradiction_2",
+    "327_cf_contradiction_0",
+    "224_cf_neutral_2"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 4,
+    "num_added": 4,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "Premise: Paulina G\u00f3mez Torres (born 29 July 1991) known professionally as Paulina Goto is a Mexican actress, singer, and television hostess, who first gained popularity for her debut role in the Mexican telenovela \"Ni\u00f1a de mi Coraz\u00f3n\" in 2010. She was a member of the popular Mexican-Argentine pop group, Eme 15, formed by Televisa producer Pedro Dami\u00e1n, from 2011 to 2014.\nHypothesis: Paulina Goto has been popular for 9 years, since 2010.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Paulina G\u00f3mez Torres (born 29 July 1991) known professionally as Paulina Goto is a Mexican actress, singer, and television hostess, who first gained popularity for her debut role in the Mexican telenovela \"Ni\u00f1a de mi Coraz\u00f3n\" in 2010. She was a member of the popular Mexican-Argentine pop group, Eme 15, formed by Televisa producer Pedro Dami\u00e1n, from 2011 to 2014.  \nHypothesis: Paulina Goto has not been popular for 9 years, since 2010.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2207000255584717,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Paulina G\u00f3mez Torres (born 29 July 1991) known professionally as Paulina Goto is a Mexican actress, singer, and television hostess, who first gained popularity for her debut role in the Mexican telenovela \"Ni\u00f1a de mi Coraz\u00f3n\" in 2010. She was a member of the popular Mexican-Argentine pop group, Eme 15, formed by Televisa producer Pedro Dami\u00e1n, from 2011 to 2014.\nHypothesis: Paulina Goto has been popular for 9 years, since 2010.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Hypothesis: Paulina Goto has not been consistently popular for 9 years, despite her debut in 2010.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6168248653411865,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Paulina G\u00f3mez Torres (born 29 July 1991) known professionally as Paulina Goto is a Mexican actress, singer, and television hostess, who first gained popularity for her debut role in the Mexican telenovela \"Ni\u00f1a de mi Coraz\u00f3n\" in 2010. She was a member of the popular Mexican-Argentine pop group, Eme 15, formed by Televisa producer Pedro Dami\u00e1n, from 2011 to 2014.\nHypothesis: Paulina Goto has been popular for 9 years, since 2010.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Paulina G\u00f3mez Torres (born 29 July 1991) known professionally as Paulina Goto is a Mexican actress, singer, and television hostess, who first gained popularity for her debut role in the Mexican telenovela \"Ni\u00f1a de mi Coraz\u00f3n\" in 2010. She was a member of the popular Mexican-Argentine pop group, Eme 15, formed by Televisa producer Pedro Dami\u00e1n, from 2011 to 2014.  \nHypothesis: Paulina Goto has not been consistently popular since 2010.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9017260074615479,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: In Greek mythology, the Hesperides ( ; Ancient\u00a0Greek: \u1f19\u03c3\u03c0\u03b5\u03c1\u03af\u03b4\u03b5\u03c2 , ] ) are the nymphs of evening and golden light of sunset, who were the \"Daughters of the Evening\" or \"Nymphs of the West\". They tend a blissful garden in a far western corner of the world, located near the Atlas mountains in North Africa at the edge of the encircling Oceanus, the world-ocean.\nHypothesis: Atlas mountains contains a xx",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: In Greek mythology, the Hesperides ( ; Ancient\u00a0Greek: \u1f19\u03c3\u03c0\u03b5\u03c1\u03af\u03b4\u03b5\u03c2 , ] ) are the nymphs of evening and golden light of sunset, who were the \"Daughters of the Evening\" or \"Nymphs of the West\". They tend a blissful garden in a far western corner of the world, located near the Atlas mountains in North Africa at the edge of the encircling Oceanus, the world-ocean.  \nHypothesis: The Atlas mountains may contain a xx.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0888659954071045,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: In Greek mythology, the Hesperides ( ; Ancient\u00a0Greek: \u1f19\u03c3\u03c0\u03b5\u03c1\u03af\u03b4\u03b5\u03c2 , ] ) are the nymphs of evening and golden light of sunset, who were the \"Daughters of the Evening\" or \"Nymphs of the West\". They tend a blissful garden in a far western corner of the world, located near the Atlas mountains in North Africa at the edge of the encircling Oceanus, the world-ocean.\nHypothesis: Atlas mountains contains a xx",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: In Greek mythology, the Hesperides ( ; Ancient\u00a0Greek: \u1f19\u03c3\u03c0\u03b5\u03c1\u03af\u03b4\u03b5\u03c2 , ] ) are the nymphs of evening and golden light of sunset, who were the \"Daughters of the Evening\" or \"Nymphs of the West\". They tend a blissful garden in a far western corner of the world, located near the Atlas mountains in North Africa at the edge of the encircling Oceanus, the world-ocean.  \nHypothesis: The Atlas mountains are associated with a xx.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8351490497589111,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: In Greek mythology, the Hesperides ( ; Ancient\u00a0Greek: \u1f19\u03c3\u03c0\u03b5\u03c1\u03af\u03b4\u03b5\u03c2 , ] ) are the nymphs of evening and golden light of sunset, who were the \"Daughters of the Evening\" or \"Nymphs of the West\". They tend a blissful garden in a far western corner of the world, located near the Atlas mountains in North Africa at the edge of the encircling Oceanus, the world-ocean.\nHypothesis: Atlas mountains contains a xx",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: In Greek mythology, the Hesperides ( ; Ancient\u00a0Greek: \u1f19\u03c3\u03c0\u03b5\u03c1\u03af\u03b4\u03b5\u03c2 , ] ) are the nymphs of evening and golden light of sunset, who were the \"Daughters of the Evening\" or \"Nymphs of the West\". They tend a blissful garden in a far western corner of the world, located near the Atlas mountains in North Africa at the edge of the encircling Oceanus, the world-ocean.  \nHypothesis: The Atlas mountains are associated with a xx.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9647479057312012,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced the end of catch and release policies that allow illegals to enter the country without deportation.\nHypothesis: Illegals cannot enter the country without being deported.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced the end of catch and release policies that allow illegals to enter the country without deportation.  \nHypothesis: Illegals may still enter the country without being deported.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6619110107421875,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced the end of catch and release policies that allow illegals to enter the country without deportation.\nHypothesis: Illegals cannot enter the country without being deported.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also discussed changes to catch and release policies regarding individuals entering the country without proper documentation.  \nHypothesis: Individuals entering the country without proper documentation may face changes to deportation policies.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7295291423797607,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced the end of catch and release policies that allow illegals to enter the country without deportation.\nHypothesis: Illegals cannot enter the country without being deported.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced the end of catch and release policies that allow illegals to enter the country without deportation.  \nHypothesis: It is unclear whether illegals can enter the country without being deported.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.677908182144165,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to make popcorn on the stove<br>Heat the oil in a 3-quart (or larger) saucepan on medium-high heat. You'll want to use an oil with a high smoke point, like peanut, canola or coconut. If using coconut oil, allow all of the solid oil to melt before adding kernels.\nHypothesis: Nut-based oils tend to have a higher smoke point.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to make popcorn on the stove<br>Heat the oil in a 3-quart (or larger) saucepan on medium-high heat. You'll want to use an oil with a high smoke point, like peanut, canola or coconut. If using coconut oil, allow all of the solid oil to melt before adding kernels.  \nHypothesis: Peanut, canola, and coconut oils are examples of nut-based oils with a high smoke point.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2020280361175537,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to make popcorn on the stove<br>Heat the oil in a 3-quart (or larger) saucepan on medium-high heat. You'll want to use an oil with a high smoke point, like peanut, canola or coconut. If using coconut oil, allow all of the solid oil to melt before adding kernels.\nHypothesis: Nut-based oils tend to have a higher smoke point.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to make popcorn on the stove<br>Heat the oil in a 3-quart (or larger) saucepan on medium-high heat. You'll want to use an oil with a high smoke point, like peanut, canola or coconut. If using coconut oil, allow all of the solid oil to melt before adding kernels.  \nHypothesis: Peanut, canola, and coconut oils are examples of nut-based oils with high smoke points.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7522988319396973,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to make popcorn on the stove<br>Heat the oil in a 3-quart (or larger) saucepan on medium-high heat. You'll want to use an oil with a high smoke point, like peanut, canola or coconut. If using coconut oil, allow all of the solid oil to melt before adding kernels.\nHypothesis: Nut-based oils tend to have a higher smoke point.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to make popcorn on the stove<br>Heat the oil in a 3-quart (or larger) saucepan on medium-high heat. You'll want to use an oil with a high smoke point, like peanut, canola or coconut. If using coconut oil, allow all of the solid oil to melt before adding kernels.  \nHypothesis: Peanut and coconut oils, being nut-based, are examples of oils with a higher smoke point.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7924308776855469,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: by: N/A \u2014 MLB: Mets How long is seven years in baseball? MLB's 2011 leaders in games played (Prince Fielder), at-bats (Ichiro Suzuki), Wins Above Replacement (Cliff Lee), hits (Adrian Gonzalez and Michael Young) and stolen bases (Michael Bourn) are all out of baseball. Your.\nHypothesis: Everyone can make sense of this context. ",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: by: N/A \u2014 MLB: Mets How long is seven years in baseball? MLB's 2011 leaders in games played (Prince Fielder), at-bats (Ichiro Suzuki), Wins Above Replacement (Cliff Lee), hits (Adrian Gonzalez and Michael Young) and stolen bases (Michael Bourn) are all out of baseball. Your.  \nHypothesis: No one can make sense of this context.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.034031867980957,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: by: N/A \u2014 MLB: Mets How long is seven years in baseball? MLB's 2011 leaders in games played (Prince Fielder), at-bats (Ichiro Suzuki), Wins Above Replacement (Cliff Lee), hits (Adrian Gonzalez and Michael Young) and stolen bases (Michael Bourn) are all out of baseball. Your.\nHypothesis: Everyone can make sense of this context. ",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: by: N/A \u2014 MLB: Mets How long is seven years in baseball? MLB's 2011 leaders in games played (Prince Fielder), at-bats (Ichiro Suzuki), Wins Above Replacement (Cliff Lee), hits (Adrian Gonzalez and Michael Young) and stolen bases (Michael Bourn) are all out of baseball. Your.  \nHypothesis: Not everyone can make sense of this context.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6838488578796387,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: by: N/A \u2014 MLB: Mets How long is seven years in baseball? MLB's 2011 leaders in games played (Prince Fielder), at-bats (Ichiro Suzuki), Wins Above Replacement (Cliff Lee), hits (Adrian Gonzalez and Michael Young) and stolen bases (Michael Bourn) are all out of baseball. Your.\nHypothesis: Everyone can make sense of this context. ",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: by: N/A \u2014 MLB: Mets How long is seven years in baseball? MLB's 2011 leaders in games played (Prince Fielder), at-bats (Ichiro Suzuki), Wins Above Replacement (Cliff Lee), hits (Adrian Gonzalez and Michael Young) and stolen bases (Michael Bourn) are all out of baseball. Your.  \nHypothesis: No one can truly make sense of this context.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7098238468170166,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Halloween<br>Paula had decided to take her two year old trick or treating. She was excited to pick out a costume. Halloween night she dressed up her child and headed out. They walked all over the neighborhood getting candy. They both had a great time.\nHypothesis: They received a lot of candy",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Halloween<br>Paula had decided to take her two year old trick or treating. She was excited to pick out a costume. Halloween night she dressed up her child and headed out. They walked all over the neighborhood getting candy. They both had a great time.  \nHypothesis: They received a lot of candy, as they visited many houses.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6466000080108643,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Halloween<br>Paula had decided to take her two year old trick or treating. She was excited to pick out a costume. Halloween night she dressed up her child and headed out. They walked all over the neighborhood getting candy. They both had a great time.\nHypothesis: They received a lot of candy",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Halloween<br>Paula had decided to take her two year old trick or treating. She was excited to pick out a costume. Halloween night she dressed up her child and headed out. They walked all over the neighborhood collecting candy. They both had a great time.  \nHypothesis: They received a lot of candy.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6740438938140869,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Halloween<br>Paula had decided to take her two year old trick or treating. She was excited to pick out a costume. Halloween night she dressed up her child and headed out. They walked all over the neighborhood getting candy. They both had a great time.\nHypothesis: They received a lot of candy",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Halloween  \nPaula had decided to take her two year old trick or treating. She was excited to pick out a costume. Halloween night she dressed up her child and headed out. They walked all over the neighborhood getting candy. They both had a great time.  \nHypothesis: They received a lot of candy, as they visited many houses in the neighborhood.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7671172618865967,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Smith (suspension) was released by the Raiders on Monday Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.\nHypothesis: It has been reported the Smith hit a member of his family either on Saturday or Sunday.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Smith (suspension) was released by the Raiders on Monday Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.  \nHypothesis: Smith hit a member of his family either on Saturday or Sunday.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0554559230804443,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Smith (suspension) was released by the Raiders on Monday Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.\nHypothesis: It has been reported the Smith hit a member of his family either on Saturday or Sunday.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Smith (suspension) was released by the Raiders on Monday. Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.  \nHypothesis: Smith was involved in a domestic violence incident over the weekend, reportedly hitting a member of his family.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7819461822509766,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Smith (suspension) was released by the Raiders on Monday Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.\nHypothesis: It has been reported the Smith hit a member of his family either on Saturday or Sunday.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Smith (suspension) was released by the Raiders on Monday. Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.  \nHypothesis: Smith hit a member of his family either on Saturday or Sunday.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6958239078521729,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.\nHypothesis: There are 5x5 teams.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.  \nHypothesis: There are no teams ranked in the top five.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1598069667816162,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.\nHypothesis: There are 5x5 teams.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.  \nHypothesis: There are no 5x5 teams.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.2996840476989746,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.\nHypothesis: There are 5x5 teams.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.  \nHypothesis: There are no teams ranked in the top five.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.4287669658660889,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to take revenge on your enemies<br>Call your enemy out. Before giving in to revenge, try telling your enemy exactly what it is that you want him to stop doing. Stay calm and take control of the situation.\nHypothesis: Revenge on your enemies requires a few things such as patience. ",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: How to take revenge on your enemies<br>Call your enemy out. Before giving in to revenge, try telling your enemy exactly what it is that you want him to stop doing. Stay calm and take control of the situation.  \nHypothesis: Revenge on your enemies might involve certain qualities like patience.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.698380708694458,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to take revenge on your enemies<br>Call your enemy out. Before giving in to revenge, try telling your enemy exactly what it is that you want him to stop doing. Stay calm and take control of the situation.\nHypothesis: Revenge on your enemies requires a few things such as patience. ",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: How to take revenge on your enemies<br>Call your enemy out. Before giving in to revenge, try telling your enemy exactly what it is that you want him to stop doing. Stay calm and take control of the situation.  \nHypothesis: Revenge on your enemies may involve certain factors like patience.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7329902648925781,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to take revenge on your enemies<br>Call your enemy out. Before giving in to revenge, try telling your enemy exactly what it is that you want him to stop doing. Stay calm and take control of the situation.\nHypothesis: Revenge on your enemies requires a few things such as patience. ",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: How to take revenge on your enemies<br>Call your enemy out. Before giving in to revenge, try telling your enemy exactly what it is that you want him to stop doing. Stay calm and take control of the situation.  \nHypothesis: Revenge on your enemies may involve certain factors like patience.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7021851539611816,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?\nHypothesis: The National Assembly passed such a bill in 1995.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?  \nHypothesis: The National Assembly may have considered passing such a bill in 1995.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8308229446411133,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?\nHypothesis: The National Assembly passed such a bill in 1995.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill regarding the federalist vote, adjusting it in relation to the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?  \nHypothesis: The National Assembly passed such a bill in 1995.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7199239730834961,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?\nHypothesis: The National Assembly passed such a bill in 1995.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, it would have influenced perceptions of the National Assembly and its Parti Quebecois members.  \nHypothesis: The National Assembly passed such a bill in 1995.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7751998901367188,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "301_cf_contradiction_0",
+        "original_id": 301,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9998765577248387,
+          "p_orig": 0.00012339536880460518,
+          "margin": 0.9997531623560342,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9997942447662354,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "301_cf_contradiction_1",
+        "original_id": 301,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.0677129519063388e-06,
+          "p_orig": 0.999998932283069,
+          "margin": -0.9999978645701171,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "301_cf_contradiction_2",
+        "original_id": 301,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.0677118785865484e-06,
+          "p_orig": 0.9999982846879135,
+          "margin": -0.9999972169760349,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "296_cf_neutral_0",
+        "original_id": 296,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999998398721,
+          "p_orig": 1.4931173991920813e-10,
+          "margin": 0.9999999996905603,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.998467206954956,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "296_cf_neutral_1",
+        "original_id": 296,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999710251715,
+          "p_orig": 2.8453679811317768e-08,
+          "margin": 0.9999999425714916,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9958388805389404,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "296_cf_neutral_2",
+        "original_id": 296,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999967048766328,
+          "p_orig": 2.902334567968059e-06,
+          "margin": 0.9999938025420648,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9958388805389404,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "160_cf_neutral_0",
+        "original_id": 160,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9975272795816893,
+          "p_orig": 8.742672588083733e-08,
+          "margin": 0.9975271921549634,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9898375272750854,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "160_cf_neutral_1",
+        "original_id": 160,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00033535181698616856,
+          "p_orig": 0.9996646481764557,
+          "margin": -0.9993292963594695,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "160_cf_neutral_2",
+        "original_id": 160,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.535646796130913e-05,
+          "p_orig": 3.4662369352891825e-07,
+          "margin": 3.5009844267780215e-05,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "99_cf_entailment_0",
+        "original_id": 99,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 7.484403805509226e-05,
+          "p_orig": 0.9998898021238599,
+          "margin": -0.9998149580858048,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "99_cf_entailment_1",
+        "original_id": 99,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0015011206072606002,
+          "p_orig": 0.9984535493714791,
+          "margin": -0.9969524287642185,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "99_cf_entailment_2",
+        "original_id": 99,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999397570125,
+          "p_orig": 6.023642720404548e-08,
+          "margin": 0.9999998795205853,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9926308989524841,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "102_cf_contradiction_0",
+        "original_id": 102,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0002611917741010242,
+          "p_orig": 0.9997388018786764,
+          "margin": -0.9994776101045754,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "102_cf_contradiction_1",
+        "original_id": 102,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.1550585304179941e-10,
+          "p_orig": 0.006692873768748727,
+          "margin": -0.006692873653242874,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "102_cf_contradiction_2",
+        "original_id": 102,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.9278879922392057e-07,
+          "p_orig": 0.9999967048766328,
+          "margin": -0.9999963120878336,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "222_cf_entailment_0",
+        "original_id": 222,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9998415628019262,
+          "p_orig": 0.00015843719807385087,
+          "margin": 0.9996831256038523,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9863397479057312,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "222_cf_entailment_1",
+        "original_id": 222,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9959298469628566,
+          "p_orig": 0.004070153037143451,
+          "margin": 0.9918596939257132,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9957597255706787,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "222_cf_entailment_2",
+        "original_id": 222,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9988304844965027,
+          "p_orig": 0.0011695155034973231,
+          "margin": 0.9976609689930054,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9792368412017822,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.169435215946844,
+          "original_length": 301,
+          "cf_length": 352,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.793379270564124,
+        "v3_score_details": {
+          "score": 1.793379270564124,
+          "p_orig": 0.00026119183791674296,
+          "p_target": 0.9997388081620833,
+          "similarity": 0.9792368412017822,
+          "term1": 0.9997388081620833,
+          "term2": 0.49986940408104164,
+          "term3": 0.29377105832099915,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "15_cf_entailment_0",
+        "original_id": 15,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.5818003310298544e-10,
+          "p_orig": 0.9999999996333964,
+          "margin": -0.9999999992752163,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "15_cf_entailment_1",
+        "original_id": 15,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.3007222948785843e-05,
+          "p_orig": 0.999986973221397,
+          "margin": -0.9999739659984481,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "15_cf_entailment_2",
+        "original_id": 15,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.081612526183527e-11,
+          "p_orig": 0.9999999999846751,
+          "margin": -0.999999999973859,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "327_cf_contradiction_0",
+        "original_id": 327,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999999998901425,
+          "p_orig": 5.4928756392540166e-11,
+          "margin": 0.9999999998352138,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9589658379554749,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0505263157894738,
+          "original_length": 475,
+          "cf_length": 499,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.7876897751529965,
+        "v3_score_details": {
+          "score": 1.7876897751529965,
+          "p_orig": 3.77519548899428e-11,
+          "p_target": 0.9999999999244962,
+          "similarity": 0.9589658379554749,
+          "term1": 0.9999999999622481,
+          "term2": 0.4999999999622481,
+          "term3": 0.28768977522850037,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "327_cf_contradiction_1",
+        "original_id": 327,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9820091301372493,
+          "p_orig": 4.699067110310208e-06,
+          "margin": 0.982004431070139,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9961627125740051,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "327_cf_contradiction_2",
+        "original_id": 327,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999999999542046,
+          "p_orig": 2.2897725806626294e-11,
+          "margin": 0.999999999931307,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9589658379554749,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0505263157894738,
+          "original_length": 475,
+          "cf_length": 499,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.787689775192835,
+        "v3_score_details": {
+          "score": 1.787689775192835,
+          "p_orig": 1.7832769787750535e-11,
+          "p_target": 0.9999999999643345,
+          "similarity": 0.9589658379554749,
+          "term1": 0.9999999999821673,
+          "term2": 0.49999999998216726,
+          "term3": 0.28768977522850037,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "295_cf_neutral_0",
+        "original_id": 295,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0003353518169883678,
+          "p_orig": 0.9996646481830117,
+          "margin": -0.9993292963660233,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "295_cf_neutral_1",
+        "original_id": 295,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.53564970746113e-05,
+          "p_orig": 0.9999646435029254,
+          "margin": -0.9999292870058507,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "295_cf_neutral_2",
+        "original_id": 295,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.53564970746113e-05,
+          "p_orig": 0.9999646435029254,
+          "margin": -0.9999292870058507,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "224_cf_neutral_0",
+        "original_id": 224,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9770225105225075,
+          "p_orig": 6.668847863663865e-08,
+          "margin": 0.9770224438340289,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9953441023826599,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "224_cf_neutral_1",
+        "original_id": 224,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9975273670061724,
+          "p_orig": 0.0024726329141043805,
+          "margin": 0.995054734092068,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.980040967464447,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "224_cf_neutral_2",
+        "original_id": 224,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.6224592451602562,
+          "p_orig": 0.37754075483974386,
+          "margin": 0.24491849032051233,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9492024779319763,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0137741046831956,
+          "original_length": 363,
+          "cf_length": 368,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 0.2861273269159641,
+        "v3_score_details": {
+          "score": 0.2861273269159641,
+          "p_orig": 0.9990889443073844,
+          "p_target": 0.0009110556875111612,
+          "similarity": 0.9492024779319763,
+          "term1": 0.0009110556926156255,
+          "term2": 0.0004555278437555806,
+          "term3": 0.2847607433795929,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      }
+    ]
+  },
+  "num_generated": 4,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 4,
+    "num_final_selected": 4,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

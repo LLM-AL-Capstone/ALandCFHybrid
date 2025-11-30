@@ -1,0 +1,1281 @@
+{
+  "iteration": 1,
+  "timestamp": "20251129_121435",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 223,
+      "text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Gene Roberts to Meg Randall in mid-1948.\nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Genny Roberts. ",
+      "label": "contradiction"
+    },
+    {
+      "id": 296,
+      "text": "Premise: In Greek mythology, the Hesperides ( ; Ancient\u00a0Greek: \u1f19\u03c3\u03c0\u03b5\u03c1\u03af\u03b4\u03b5\u03c2 , ] ) are the nymphs of evening and golden light of sunset, who were the \"Daughters of the Evening\" or \"Nymphs of the West\". They tend a blissful garden in a far western corner of the world, located near the Atlas mountains in North Africa at the edge of the encircling Oceanus, the world-ocean.\nHypothesis: Atlas mountains contains a xx",
+      "label": "contradiction"
+    },
+    {
+      "id": 6,
+      "text": "Premise: For Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-shod Stanford University graduate student in 1982, the new line of computers, code named Galaxy, is a return to the company's roots.\nHypothesis: Bechtolsheim, who designed the prototype for the first Sun workstation while he was a \n boot wearing Stanford University student.",
+      "label": "contradiction"
+    },
+    {
+      "id": 256,
+      "text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.\nHypothesis: The person believes government should do little",
+      "label": "entailment"
+    },
+    {
+      "id": 170,
+      "text": "Premise: The royal tombs at Vergina were identified as the ancient capital of Aigai in the 1930s. A royal tomb identified as possibly Philip II of Macedonia, Alexander the Great's father, was found in 1977 by Manolis Andronikos.\nHypothesis: Before 1977, Philip's II was considered lost",
+      "label": "neutral"
+    },
+    {
+      "id": 224,
+      "text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?\nHypothesis: The National Assembly passed such a bill in 1995.",
+      "label": "contradiction"
+    },
+    {
+      "id": 314,
+      "text": "Premise: Ileana Carusio, best known with the stage names of Ramba, Mal\u00f9 or Mal\u00f9 Ramba (born 1967) is a retired Italian pornographic actress whose career spanned over 6 years. At first her name was \"Mal\u00f9\", but the most fitting Ramba was launched by a journalist as he was referring to her aggressive look with guns and magazines. She has appeared in many films.\nHypothesis: She has always been in porn movies.",
+      "label": "neutral"
+    },
+    {
+      "id": 160,
+      "text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced the end of catch and release policies that allow illegals to enter the country without deportation.\nHypothesis: Illegals cannot enter the country without being deported.",
+      "label": "entailment"
+    },
+    {
+      "id": 32,
+      "text": "Premise: WASHINGTON \u00e2\u20ac\u201d The White House has announced a Baltic summit in April to celebrate the 100th anniversary of independence for Estonia, Latvia and Lithuania. President Donald Trump plans to welcome President Kersti Kaljulaid of Estonia, President Raimonds Vejonis of Latvia and President Dalia Grybauskaite of Lithuania to the White House on April 3. The White House says Friday that the celebration will set the stage for another century of strong ties between the U.S. and these allies.\nHypothesis: Estonia has been independent for a 100 years",
+      "label": "entailment"
+    },
+    {
+      "id": 374,
+      "text": "Premise: Hyde, Jekyll, Me () is a 2015 South Korean television series starring Hyun Bin and Han Ji-min. It is based on Lee Choong-ho's webtoon \"Dr. Jekyll Is Mr. Hyde\" (), which gave a romantic comedy spin on the literary character. The series aired on SBS from January 21 to March 26, 2015 on Wednesdays and Thursdays at 21:55 for 20 episodes.\nHypothesis: Hyde, Jekyll, Me started on January 21st and was cancelled March 26th, 2015.",
+      "label": "neutral"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "223_cf_entailment_0",
+      "text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Genevieve Roberts to Meg Randall in mid-1948.  \nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Genevieve Roberts.",
+      "label": "entailment",
+      "original_id": 223,
+      "original_label": "contradiction",
+      "v3_score": 1.792014001559464,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.9999999999515256,
+        "term2": 0.49999999880795065,
+        "term3": 0.2920140027999878,
+        "total": 1.792014001559464,
+        "p_orig": 4.8474461344807484e-11,
+        "p_target": 0.9999999976159013,
+        "similarity": 0.9733799695968628
+      }
+    },
+    {
+      "id": "224_cf_neutral_1",
+      "text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, it would have been a significant decision by the National Assembly and its Parti Quebecois members.  \nHypothesis: The National Assembly passed such a bill in 1995.",
+      "label": "neutral",
+      "original_id": 224,
+      "original_label": "contradiction",
+      "v3_score": 1.746574561665239,
+      "v3_rank": 2,
+      "v3_score_breakdown": {
+        "term1": 0.9770225755958735,
+        "term2": 0.4885112877794945,
+        "term3": 0.2810406982898712,
+        "total": 1.746574561665239,
+        "p_orig": 0.022977424404126503,
+        "p_target": 0.977022575558989,
+        "similarity": 0.9368022680282593
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "223_cf_entailment_0",
+    "224_cf_neutral_1"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 2,
+    "num_added": 2,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Gene Roberts to Meg Randall in mid-1948.\nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Genny Roberts. ",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Genevieve Roberts to Meg Randall in mid-1948.  \nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Genevieve Roberts.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.069936752319336,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Gene Roberts to Meg Randall in mid-1948.\nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Genny Roberts. ",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Gene Roberts to Meg Randall in mid-1948.  \nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Gene Roberts.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8414459228515625,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Gene Roberts to Meg Randall in mid-1948.\nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Genny Roberts. ",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Gene Roberts to Meg Randall in mid-1948.  \nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Gene Roberts.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8683788776397705,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: In Greek mythology, the Hesperides ( ; Ancient\u00a0Greek: \u1f19\u03c3\u03c0\u03b5\u03c1\u03af\u03b4\u03b5\u03c2 , ] ) are the nymphs of evening and golden light of sunset, who were the \"Daughters of the Evening\" or \"Nymphs of the West\". They tend a blissful garden in a far western corner of the world, located near the Atlas mountains in North Africa at the edge of the encircling Oceanus, the world-ocean.\nHypothesis: Atlas mountains contains a xx",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: In Greek mythology, the Hesperides ( ; Ancient\u00a0Greek: \u1f19\u03c3\u03c0\u03b5\u03c1\u03af\u03b4\u03b5\u03c2 , ] ) are the nymphs of evening and golden light of sunset, who were the \"Daughters of the Evening\" or \"Nymphs of the West\". They tend a blissful garden in a far western corner of the world, located near the Atlas mountains in North Africa at the edge of the encircling Oceanus, the world-ocean.  \nHypothesis: The Atlas mountains may contain a xx.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.4377038478851318,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: In Greek mythology, the Hesperides ( ; Ancient\u00a0Greek: \u1f19\u03c3\u03c0\u03b5\u03c1\u03af\u03b4\u03b5\u03c2 , ] ) are the nymphs of evening and golden light of sunset, who were the \"Daughters of the Evening\" or \"Nymphs of the West\". They tend a blissful garden in a far western corner of the world, located near the Atlas mountains in North Africa at the edge of the encircling Oceanus, the world-ocean.\nHypothesis: Atlas mountains contains a xx",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: In Greek mythology, the Hesperides ( ; Ancient\u00a0Greek: \u1f19\u03c3\u03c0\u03b5\u03c1\u03af\u03b4\u03b5\u03c2 , ] ) are the nymphs of evening and golden light of sunset, who were the \"Daughters of the Evening\" or \"Nymphs of the West\". They tend a blissful garden in a far western corner of the world, located near the Atlas mountains in North Africa at the edge of the encircling Oceanus, the world-ocean.  \nHypothesis: The Atlas mountains are associated with mythological significance.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9932360649108887,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: In Greek mythology, the Hesperides ( ; Ancient\u00a0Greek: \u1f19\u03c3\u03c0\u03b5\u03c1\u03af\u03b4\u03b5\u03c2 , ] ) are the nymphs of evening and golden light of sunset, who were the \"Daughters of the Evening\" or \"Nymphs of the West\". They tend a blissful garden in a far western corner of the world, located near the Atlas mountains in North Africa at the edge of the encircling Oceanus, the world-ocean.\nHypothesis: Atlas mountains contains a xx",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: In Greek mythology, the Hesperides ( ; Ancient Greek: \u1f19\u03c3\u03c0\u03b5\u03c1\u03af\u03b4\u03b5\u03c2 , ] ) are the nymphs of evening and golden light of sunset, who were the \"Daughters of the Evening\" or \"Nymphs of the West\". They tend a blissful garden in a far western corner of the world, located near the Atlas mountains in North Africa at the edge of the encircling Oceanus, the world-ocean.  \nHypothesis: The Atlas mountains are associated with a xx.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9292171001434326,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: For Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-shod Stanford University graduate student in 1982, the new line of computers, code named Galaxy, is a return to the company's roots.\nHypothesis: Bechtolsheim, who designed the prototype for the first Sun workstation while he was a \n boot wearing Stanford University student.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: For Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-shod Stanford University graduate student in 1982, the new line of computers, code named Galaxy, is a return to the company's roots.  \nHypothesis: Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-wearing Stanford University student.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7331421375274658,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: For Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-shod Stanford University graduate student in 1982, the new line of computers, code named Galaxy, is a return to the company's roots.\nHypothesis: Bechtolsheim, who designed the prototype for the first Sun workstation while he was a \n boot wearing Stanford University student.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: For Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-shod Stanford University graduate student in 1982, the new line of computers, code named Galaxy, is a return to the company's roots.  \nHypothesis: Bechtolsheim, who designed the prototype for the first Sun workstation while he was a sandal-wearing Stanford University student.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7231700420379639,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: For Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-shod Stanford University graduate student in 1982, the new line of computers, code named Galaxy, is a return to the company's roots.\nHypothesis: Bechtolsheim, who designed the prototype for the first Sun workstation while he was a \n boot wearing Stanford University student.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: For Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-shod Stanford University graduate student in 1982, the new line of computers, code named Galaxy, is a return to the company's roots.  \nHypothesis: Bechtolsheim, who designed the prototype for the first Sun workstation while he was a sandal-wearing Stanford University graduate student.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8175296783447266,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.\nHypothesis: The person believes government should do little",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.  \nHypothesis: The person believes government should have a specific focus.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.698185920715332,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.\nHypothesis: The person believes government should do little",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.  \nHypothesis: The person mentions limited government and tax relief.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7483971118927002,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.\nHypothesis: The person believes government should do little",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.  \nHypothesis: The person may believe government should do little.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7378542423248291,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The royal tombs at Vergina were identified as the ancient capital of Aigai in the 1930s. A royal tomb identified as possibly Philip II of Macedonia, Alexander the Great's father, was found in 1977 by Manolis Andronikos.\nHypothesis: Before 1977, Philip's II was considered lost",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The royal tombs at Vergina were identified as the ancient capital of Aigai in the 1930s. A royal tomb identified as Philip II of Macedonia, Alexander the Great's father, was found in 1977 by Manolis Andronikos.  \nHypothesis: Before 1977, Philip II's tomb was considered lost.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.695915699005127,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The royal tombs at Vergina were identified as the ancient capital of Aigai in the 1930s. A royal tomb identified as possibly Philip II of Macedonia, Alexander the Great's father, was found in 1977 by Manolis Andronikos.\nHypothesis: Before 1977, Philip's II was considered lost",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The royal tombs at Vergina were identified as the ancient capital of Aigai in the 1930s. A royal tomb identified as Philip II of Macedonia, Alexander the Great's father, was discovered in 1977 by Manolis Andronikos.  \nHypothesis: Before 1977, Philip II's tomb was believed to be lost.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8290622234344482,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The royal tombs at Vergina were identified as the ancient capital of Aigai in the 1930s. A royal tomb identified as possibly Philip II of Macedonia, Alexander the Great's father, was found in 1977 by Manolis Andronikos.\nHypothesis: Before 1977, Philip's II was considered lost",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The royal tombs at Vergina were identified as the ancient capital of Aigai in the 1930s. A royal tomb identified as possibly Philip II of Macedonia, Alexander the Great's father, was found in 1977 by Manolis Andronikos.  \nHypothesis: Until the discovery in 1977, Philip II's tomb was believed to be lost.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7602550983428955,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?\nHypothesis: The National Assembly passed such a bill in 1995.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?  \nHypothesis: The National Assembly may have passed such a bill in 1995.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6648378372192383,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?\nHypothesis: The National Assembly passed such a bill in 1995.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, it would have been a significant decision by the National Assembly and its Parti Quebecois members.  \nHypothesis: The National Assembly passed such a bill in 1995.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.81439208984375,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?\nHypothesis: The National Assembly passed such a bill in 1995.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill regarding the federalist vote, adjusting it so that it would have a different weight compared to the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?  \nHypothesis: The National Assembly passed such a bill in 1995.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8652536869049072,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Ileana Carusio, best known with the stage names of Ramba, Mal\u00f9 or Mal\u00f9 Ramba (born 1967) is a retired Italian pornographic actress whose career spanned over 6 years. At first her name was \"Mal\u00f9\", but the most fitting Ramba was launched by a journalist as he was referring to her aggressive look with guns and magazines. She has appeared in many films.\nHypothesis: She has always been in porn movies.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Ileana Carusio, best known with the stage names of Ramba, Mal\u00f9 or Mal\u00f9 Ramba (born 1967) is a retired Italian pornographic actress whose career spanned over 6 years. At first her name was \"Mal\u00f9\", but the most fitting Ramba was launched by a journalist as he was referring to her aggressive look with guns and magazines. She has appeared in many films.  \nHypothesis: She has never been in porn movies.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0067939758300781,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Ileana Carusio, best known with the stage names of Ramba, Mal\u00f9 or Mal\u00f9 Ramba (born 1967) is a retired Italian pornographic actress whose career spanned over 6 years. At first her name was \"Mal\u00f9\", but the most fitting Ramba was launched by a journalist as he was referring to her aggressive look with guns and magazines. She has appeared in many films.\nHypothesis: She has always been in porn movies.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Ileana Carusio, best known with the stage names of Ramba, Mal\u00f9 or Mal\u00f9 Ramba (born 1967) is a retired Italian pornographic actress whose career spanned over 6 years. At first her name was \"Mal\u00f9\", but the most fitting Ramba was launched by a journalist as he was referring to her aggressive look with guns and magazines. She has appeared in many films.  \nHypothesis: She has not always been in porn movies.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7253460884094238,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Ileana Carusio, best known with the stage names of Ramba, Mal\u00f9 or Mal\u00f9 Ramba (born 1967) is a retired Italian pornographic actress whose career spanned over 6 years. At first her name was \"Mal\u00f9\", but the most fitting Ramba was launched by a journalist as he was referring to her aggressive look with guns and magazines. She has appeared in many films.\nHypothesis: She has always been in porn movies.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Ileana Carusio, best known with the stage names of Ramba, Mal\u00f9 or Mal\u00f9 Ramba (born 1967) is a retired Italian pornographic actress whose career spanned over 6 years. At first her name was \"Mal\u00f9\", but the most fitting Ramba was launched by a journalist as he was referring to her aggressive look with guns and magazines. She has appeared in many films.  \nHypothesis: She has never been in porn movies.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7839827537536621,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced the end of catch and release policies that allow illegals to enter the country without deportation.\nHypothesis: Illegals cannot enter the country without being deported.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced the end of catch and release policies that allow illegals to enter the country without deportation.  \nHypothesis: Illegals may still enter the country without being deported.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6466591358184814,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced the end of catch and release policies that allow illegals to enter the country without deportation.\nHypothesis: Illegals cannot enter the country without being deported.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also discussed changes to catch and release policies regarding individuals entering the country without proper documentation.  \nHypothesis: Individuals entering the country without proper documentation may face changes to deportation policies.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7931389808654785,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced the end of catch and release policies that allow illegals to enter the country without deportation.\nHypothesis: Illegals cannot enter the country without being deported.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced the end of catch and release policies that allow illegals to enter the country without deportation.  \nHypothesis: Illegals may still enter the country without being deported.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6266520023345947,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: WASHINGTON \u00e2\u20ac\u201d The White House has announced a Baltic summit in April to celebrate the 100th anniversary of independence for Estonia, Latvia and Lithuania. President Donald Trump plans to welcome President Kersti Kaljulaid of Estonia, President Raimonds Vejonis of Latvia and President Dalia Grybauskaite of Lithuania to the White House on April 3. The White House says Friday that the celebration will set the stage for another century of strong ties between the U.S. and these allies.\nHypothesis: Estonia has been independent for a 100 years",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: WASHINGTON \u00e2\u20ac\u201d The White House has announced a Baltic summit in April to celebrate the 100th anniversary of independence for Estonia, Latvia and Lithuania. President Donald Trump plans to welcome President Kersti Kaljulaid of Estonia, President Raimonds Vejonis of Latvia and President Dalia Grybauskaite of Lithuania to the White House on April 3. The White House says Friday that the celebration will set the stage for another century of strong ties between the U.S. and these allies.  \nHypothesis: Estonia has not been independent for a 100 years",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2498409748077393,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: WASHINGTON \u00e2\u20ac\u201d The White House has announced a Baltic summit in April to celebrate the 100th anniversary of independence for Estonia, Latvia and Lithuania. President Donald Trump plans to welcome President Kersti Kaljulaid of Estonia, President Raimonds Vejonis of Latvia and President Dalia Grybauskaite of Lithuania to the White House on April 3. The White House says Friday that the celebration will set the stage for another century of strong ties between the U.S. and these allies.\nHypothesis: Estonia has been independent for a 100 years",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: WASHINGTON \u00e2\u20ac\u201d The White House has announced a Baltic summit in April to celebrate the 100th anniversary of independence for Estonia, Latvia and Lithuania. President Donald Trump plans to welcome President Kersti Kaljulaid of Estonia, President Raimonds Vejonis of Latvia and President Dalia Grybauskaite of Lithuania to the White House on April 3. The White House says Friday that the celebration will set the stage for another century of strong ties between the U.S. and these allies.  \nHypothesis: Estonia has not been independent for a 100 years.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8976428508758545,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: WASHINGTON \u00e2\u20ac\u201d The White House has announced a Baltic summit in April to celebrate the 100th anniversary of independence for Estonia, Latvia and Lithuania. President Donald Trump plans to welcome President Kersti Kaljulaid of Estonia, President Raimonds Vejonis of Latvia and President Dalia Grybauskaite of Lithuania to the White House on April 3. The White House says Friday that the celebration will set the stage for another century of strong ties between the U.S. and these allies.\nHypothesis: Estonia has been independent for a 100 years",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: WASHINGTON \u00e2\u20ac\u201d The White House has announced a Baltic summit in April to celebrate the 100th anniversary of independence for Estonia, Latvia and Lithuania. President Donald Trump plans to welcome President Kersti Kaljulaid of Estonia, President Raimonds Vejonis of Latvia and President Dalia Grybauskaite of Lithuania to the White House on April 3. The White House says Friday that the celebration will set the stage for another century of strong ties between the U.S. and these allies.  \nHypothesis: Estonia has not been independent for a 100 years.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9169769287109375,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Hyde, Jekyll, Me () is a 2015 South Korean television series starring Hyun Bin and Han Ji-min. It is based on Lee Choong-ho's webtoon \"Dr. Jekyll Is Mr. Hyde\" (), which gave a romantic comedy spin on the literary character. The series aired on SBS from January 21 to March 26, 2015 on Wednesdays and Thursdays at 21:55 for 20 episodes.\nHypothesis: Hyde, Jekyll, Me started on January 21st and was cancelled March 26th, 2015.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Hyde, Jekyll, Me () is a 2015 South Korean television series starring Hyun Bin and Han Ji-min. It is based on Lee Choong-ho's webtoon \"Dr. Jekyll Is Mr. Hyde\" (), which gave a romantic comedy spin on the literary character. The series aired on SBS from January 21 to March 26, 2015 on Wednesdays and Thursdays at 21:55 for 20 episodes.  \nHypothesis: Hyde, Jekyll, Me started on January 21st and ended March 26th, 2015.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0101070404052734,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Hyde, Jekyll, Me () is a 2015 South Korean television series starring Hyun Bin and Han Ji-min. It is based on Lee Choong-ho's webtoon \"Dr. Jekyll Is Mr. Hyde\" (), which gave a romantic comedy spin on the literary character. The series aired on SBS from January 21 to March 26, 2015 on Wednesdays and Thursdays at 21:55 for 20 episodes.\nHypothesis: Hyde, Jekyll, Me started on January 21st and was cancelled March 26th, 2015.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Hyde, Jekyll, Me () is a 2015 South Korean television series starring Hyun Bin and Han Ji-min. It is based on Lee Choong-ho's webtoon \"Dr. Jekyll Is Mr. Hyde\" (), which gave a romantic comedy spin on the literary character. The series aired on SBS from January 21 to March 26, 2015 on Wednesdays and Thursdays at 21:55 for 20 episodes.  \nHypothesis: Hyde, Jekyll, Me began airing on January 21st and concluded its run on March 26th, 2015.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.1399869918823242,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Hyde, Jekyll, Me () is a 2015 South Korean television series starring Hyun Bin and Han Ji-min. It is based on Lee Choong-ho's webtoon \"Dr. Jekyll Is Mr. Hyde\" (), which gave a romantic comedy spin on the literary character. The series aired on SBS from January 21 to March 26, 2015 on Wednesdays and Thursdays at 21:55 for 20 episodes.\nHypothesis: Hyde, Jekyll, Me started on January 21st and was cancelled March 26th, 2015.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Hyde, Jekyll, Me () is a 2015 South Korean television series starring Hyun Bin and Han Ji-min. It is based on Lee Choong-ho's webtoon \"Dr. Jekyll Is Mr. Hyde\" (), which gave a romantic comedy spin on the literary character. The series aired on SBS from January 21 to March 26, 2015 on Wednesdays and Thursdays at 21:55 for 20 episodes.  \nHypothesis: Hyde, Jekyll, Me started on January 21st and concluded its run on March 26th, 2015.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9258699417114258,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "223_cf_entailment_0",
+        "original_id": 223,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999999973049167,
+          "p_orig": 4.847446132973267e-11,
+          "margin": 0.9999999972564423,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9733799695968628,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0198019801980198,
+          "original_length": 505,
+          "cf_length": 515,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.792014001559464,
+        "v3_score_details": {
+          "score": 1.792014001559464,
+          "p_orig": 4.8474461344807484e-11,
+          "p_target": 0.9999999976159013,
+          "similarity": 0.9733799695968628,
+          "term1": 0.9999999999515256,
+          "term2": 0.49999999880795065,
+          "term3": 0.2920140027999878,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "223_cf_entailment_1",
+        "original_id": 223,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999927629978,
+          "p_orig": 4.277856538053871e-11,
+          "margin": 0.9999999927202192,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9958704710006714,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "223_cf_entailment_2",
+        "original_id": 223,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999894775402,
+          "p_orig": 5.492875582058887e-11,
+          "margin": 0.9999999894226115,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9958704710006714,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "296_cf_neutral_0",
+        "original_id": 296,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999979980580854,
+          "p_orig": 1.9947477038518437e-06,
+          "margin": 0.9999960033103815,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.998467206954956,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "296_cf_neutral_1",
+        "original_id": 296,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.7258038535122478e-08,
+          "p_orig": 0.0,
+          "margin": 1.7258038535122478e-08,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "296_cf_neutral_2",
+        "original_id": 296,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9996637065217542,
+          "p_orig": 0.0003353515410618483,
+          "margin": 0.9993283549806923,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9958388805389404,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6_cf_entailment_0",
+        "original_id": 6,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999646282864861,
+          "p_orig": 1.5229621090498155e-08,
+          "margin": 0.999964613056865,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9925174117088318,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6_cf_entailment_1",
+        "original_id": 6,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999952138909566,
+          "p_orig": 9.73628336647277e-10,
+          "margin": 0.9999952129173283,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9942924380302429,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6_cf_entailment_2",
+        "original_id": 6,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999993523657075,
+          "p_orig": 3.331599476278512e-11,
+          "margin": 0.9999993523323915,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.994172215461731,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "256_cf_neutral_0",
+        "original_id": 256,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 6.348880682645318e-09,
+          "p_orig": 0.9999999936511192,
+          "margin": -0.9999999873022386,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "256_cf_neutral_1",
+        "original_id": 256,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.331598605955438e-11,
+          "p_orig": 0.999999999966684,
+          "margin": -0.999999999933368,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "256_cf_neutral_2",
+        "original_id": 256,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.3208214129829957,
+          "p_orig": 0.6791785737350363,
+          "margin": -0.3583571607520406,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "170_cf_entailment_0",
+        "original_id": 170,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9996646231295153,
+          "p_orig": 0.0003353517686067922,
+          "margin": 0.9993292713609085,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.995133638381958,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "170_cf_entailment_1",
+        "original_id": 170,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9980732378762699,
+          "p_orig": 0.0019267426055054704,
+          "margin": 0.9961464952707644,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.986569881439209,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "170_cf_entailment_2",
+        "original_id": 170,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9933071137813694,
+          "p_orig": 0.0066928744367431405,
+          "margin": 0.9866142393446262,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9890226721763611,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "224_cf_neutral_0",
+        "original_id": 224,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999989127311906,
+          "p_orig": 1.9555878448890193e-08,
+          "margin": 0.9999988931753121,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.998755693435669,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "224_cf_neutral_1",
+        "original_id": 224,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.7772997104288702,
+          "p_orig": 0.2227002895227488,
+          "margin": 0.5545994209061215,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9368022680282593,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0275482093663912,
+          "original_length": 363,
+          "cf_length": 373,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.746574561665239,
+        "v3_score_details": {
+          "score": 1.746574561665239,
+          "p_orig": 0.022977424404126503,
+          "p_target": 0.977022575558989,
+          "similarity": 0.9368022680282593,
+          "term1": 0.9770225755958735,
+          "term2": 0.4885112877794945,
+          "term3": 0.2810406982898712,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "224_cf_neutral_2",
+        "original_id": 224,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0373269624142195,
+          "p_orig": 0.9626730374589318,
+          "margin": -0.9253460750447123,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "314_cf_contradiction_0",
+        "original_id": 314,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999999797538,
+          "p_orig": 1.5737365425659304e-11,
+          "margin": 0.9999999999640163,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9979290962219238,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "314_cf_contradiction_1",
+        "original_id": 314,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0002857180499649721,
+          "p_orig": 0.14800504482571097,
+          "margin": -0.147719326775746,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "314_cf_contradiction_2",
+        "original_id": 314,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999999797538,
+          "p_orig": 1.5737365425659304e-11,
+          "margin": 0.9999999999640163,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9979290962219238,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "160_cf_neutral_0",
+        "original_id": 160,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9859338404491752,
+          "p_orig": 2.52528370875558e-06,
+          "margin": 0.9859313151654664,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9898375272750854,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "160_cf_neutral_1",
+        "original_id": 160,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.22270028361925312,
+          "p_orig": 0.7772997129889843,
+          "margin": -0.5545994293697312,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "160_cf_neutral_2",
+        "original_id": 160,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9947781146776878,
+          "p_orig": 1.7511693443634121e-06,
+          "margin": 0.9947763635083435,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9898375272750854,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "32_cf_contradiction_0",
+        "original_id": 32,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999979369955083,
+          "p_orig": 6.825667185713666e-08,
+          "margin": 0.9999978687388364,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9981765747070312,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "32_cf_contradiction_1",
+        "original_id": 32,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999966698247696,
+          "p_orig": 4.1399696060741185e-08,
+          "margin": 0.9999966284250735,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9948688745498657,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "32_cf_contradiction_2",
+        "original_id": 32,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999921014342317,
+          "p_orig": 9.237495638145435e-09,
+          "margin": 0.999992092196736,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9948688745498657,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "374_cf_entailment_0",
+        "original_id": 374,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.999999991387965,
+          "p_orig": 8.15212277469789e-09,
+          "margin": 0.9999999832358423,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9987415671348572,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "374_cf_entailment_1",
+        "original_id": 374,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999972734703,
+          "p_orig": 2.6466087913693988e-09,
+          "margin": 0.9999999946268615,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.997359573841095,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "374_cf_entailment_2",
+        "original_id": 374,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999959574879,
+          "p_orig": 3.8507920928856685e-09,
+          "margin": 0.9999999921066958,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9985318183898926,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 2,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 2,
+    "num_final_selected": 2,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

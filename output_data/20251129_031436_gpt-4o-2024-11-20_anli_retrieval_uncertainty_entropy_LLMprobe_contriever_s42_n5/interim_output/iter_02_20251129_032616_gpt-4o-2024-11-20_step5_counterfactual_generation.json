@@ -1,0 +1,1232 @@
+{
+  "iteration": 2,
+  "timestamp": "20251129_032616",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 6,
+      "text": "Premise: For Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-shod Stanford University graduate student in 1982, the new line of computers, code named Galaxy, is a return to the company's roots.\nHypothesis: Bechtolsheim, who designed the prototype for the first Sun workstation while he was a \n boot wearing Stanford University student.",
+      "label": "contradiction"
+    },
+    {
+      "id": 106,
+      "text": "Premise: The garden was full of ripe odours and warm colours .<br>The Lombardies around it were tall and sombre like the priestly forms of some mystic band .<br>Abel was sitting in the hop-vine arbour ; beside him Captain Kidd slept .<br>I thought Abel was asleep , too ; his head leaned against the trellis and his eyes were shut .\nHypothesis: The people both had there eyes closed",
+      "label": "entailment"
+    },
+    {
+      "id": 37,
+      "text": "Premise: Maskarade (\"Masquerade\") is an opera in three acts by Carl Nielsen to a Danish libretto by Vilhelm Andersen, based on the comedy by Ludvig Holberg. It was first performed on 11 November 1906 at Det Kongelige Teater, Copenhagen. \"Maskarade\" has enjoyed enduring popularity in Denmark where it is considered to be the country's national opera.\nHypothesis: Det Kongelige Teater is smaller than Copenhagen.",
+      "label": "neutral"
+    },
+    {
+      "id": 342,
+      "text": "Premise: New party<br>Penelope wanted to have a party. She wanted to bring a lot of girls together. Unfortunately however there was a big fight. Penelope had to ask everyone to leave. She realized she couldn't have parties any more.\nHypothesis: Penelope  wanted to have a huge girls only party. It was going well until a couple of boys showed up and started fighting . She had to ask everyone to leave and decided to never host another party",
+      "label": "contradiction"
+    },
+    {
+      "id": 223,
+      "text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Gene Roberts to Meg Randall in mid-1948.\nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Genny Roberts. ",
+      "label": "contradiction"
+    },
+    {
+      "id": 374,
+      "text": "Premise: Hyde, Jekyll, Me () is a 2015 South Korean television series starring Hyun Bin and Han Ji-min. It is based on Lee Choong-ho's webtoon \"Dr. Jekyll Is Mr. Hyde\" (), which gave a romantic comedy spin on the literary character. The series aired on SBS from January 21 to March 26, 2015 on Wednesdays and Thursdays at 21:55 for 20 episodes.\nHypothesis: Hyde, Jekyll, Me started on January 21st and was cancelled March 26th, 2015.",
+      "label": "neutral"
+    },
+    {
+      "id": 421,
+      "text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.\nHypothesis: The lesser eyed hawkmoth dates back to 1937.",
+      "label": "entailment"
+    },
+    {
+      "id": 352,
+      "text": "Premise: When Boosie attempted to comb his son\u2019s hair on Instagram Live, we couldn\u2019t help but to get instant flashbacks of the days we would get popped with the comb because our hair was too nappy and mama was too frustrated. Boosie combing that boy hair like a mad black moma \ud83d\ude02 pic.twitter.com/VohJpIlBXG \u2014 \u3164\u064b (@allureshae) June 29, 2018 All Boosie is missing is the house phone glued to his ear so he can get all the neighborhood gossip. Boosie Doing His Son's Hair Reminds Us Of All Black Mothers was originally published on globalgrind.com Also On 97.9 The Beat:\nHypothesis: Boosie has the house phone glued to his ear in the video.",
+      "label": "contradiction"
+    },
+    {
+      "id": 256,
+      "text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.\nHypothesis: The person believes government should do little",
+      "label": "entailment"
+    },
+    {
+      "id": 264,
+      "text": "Premise: Lik\u00ebng\u00eb are pork sausages flavored with salt, pepper and seed of Fennel (far\u00eb mbrai), made in Piana degli Albanesi and Santa Cristina Gela. \"Lik\u00ebng\u00eb\" is the Undefinite Singular, \"Lik\u00ebnga\" is the Definite Singular and is cognate with the Italian Lucanica and the Greek Loukaniko.\nHypothesis:  Likenge are pork or beef sausages that are flavoured and made in Piana degli Albanosi.",
+      "label": "contradiction"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "223_cf_entailment_0",
+      "text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Genevieve Roberts to Meg Randall in mid-1948.  \nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Genevieve Roberts.",
+      "label": "entailment",
+      "original_id": 223,
+      "original_label": "contradiction",
+      "v3_score": 1.7920140027952152,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.9999999999999999,
+        "term2": 0.4999999999952274,
+        "term3": 0.2920140027999878,
+        "total": 1.7920140027952152,
+        "p_orig": 1.1102230246251565e-16,
+        "p_target": 0.9999999999904547,
+        "similarity": 0.9733799695968628
+      }
+    },
+    {
+      "id": "352_cf_neutral_1",
+      "text": "Premise: When Boosie attempted to comb his son\u2019s hair on Instagram Live, it brought back memories of the times we\u2019d sit through hair combing sessions that could get a little intense. Boosie combing his son\u2019s hair with focus and determination reminded some of the way black mothers handle hair care. \ud83d\ude02 pic.twitter.com/VohJpIlBXG \u2014 \u3164\u064b (@allureshae) June 29, 2018 Some joked that all Boosie needed was a house phone in hand to complete the scene. Boosie Doing His Son's Hair Brings Back Familiar Memories was originally published on globalgrind.com Also On 97.9 The Beat:  \nHypothesis: Boosie has the house phone glued to his ear in the video.",
+      "label": "neutral",
+      "original_id": 352,
+      "original_label": "contradiction",
+      "v3_score": 1.7741422318960374,
+      "v3_rank": 2,
+      "v3_score_breakdown": {
+        "term1": 0.9980732575861949,
+        "term2": 0.49903662877647154,
+        "term3": 0.27703234553337097,
+        "total": 1.7741422318960374,
+        "p_orig": 0.0019267424138050895,
+        "p_target": 0.9980732575529431,
+        "similarity": 0.9234411120414734
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "223_cf_entailment_0",
+    "352_cf_neutral_1"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 2,
+    "num_added": 2,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "Premise: For Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-shod Stanford University graduate student in 1982, the new line of computers, code named Galaxy, is a return to the company's roots.\nHypothesis: Bechtolsheim, who designed the prototype for the first Sun workstation while he was a \n boot wearing Stanford University student.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: For Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-shod Stanford University graduate student in 1982, the new line of computers, code named Galaxy, is a return to the company's roots.  \nHypothesis: Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-wearing Stanford University student.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9618172645568848,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: For Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-shod Stanford University graduate student in 1982, the new line of computers, code named Galaxy, is a return to the company's roots.\nHypothesis: Bechtolsheim, who designed the prototype for the first Sun workstation while he was a \n boot wearing Stanford University student.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: For Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-shod Stanford University graduate student in 1982, the new line of computers, code named Galaxy, is a return to the company's roots.  \nHypothesis: Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Stanford University graduate student wearing Birkenstocks.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7211968898773193,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: For Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-shod Stanford University graduate student in 1982, the new line of computers, code named Galaxy, is a return to the company's roots.\nHypothesis: Bechtolsheim, who designed the prototype for the first Sun workstation while he was a \n boot wearing Stanford University student.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: For Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-shod Stanford University graduate student in 1982, the new line of computers, code named Galaxy, is a return to the company's roots.  \nHypothesis: Bechtolsheim, who designed the prototype for the first Sun workstation while he was a sandal-wearing Stanford University graduate student.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6803359985351562,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The garden was full of ripe odours and warm colours .<br>The Lombardies around it were tall and sombre like the priestly forms of some mystic band .<br>Abel was sitting in the hop-vine arbour ; beside him Captain Kidd slept .<br>I thought Abel was asleep , too ; his head leaned against the trellis and his eyes were shut .\nHypothesis: The people both had there eyes closed",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: The garden was full of ripe odours and warm colours .<br>The Lombardies around it were tall and sombre like the priestly forms of some mystic band .<br>Abel was sitting in the hop-vine arbour ; beside him Captain Kidd slept .<br>I thought Abel was asleep , too ; his head leaned against the trellis and his eyes were shut .  \nHypothesis: It is unclear if both people had their eyes closed.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.086543083190918,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The garden was full of ripe odours and warm colours .<br>The Lombardies around it were tall and sombre like the priestly forms of some mystic band .<br>Abel was sitting in the hop-vine arbour ; beside him Captain Kidd slept .<br>I thought Abel was asleep , too ; his head leaned against the trellis and his eyes were shut .\nHypothesis: The people both had there eyes closed",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: The garden was full of ripe odours and warm colours .<br>The Lombardies around it were tall and sombre like the priestly forms of some mystic band .<br>Abel was sitting in the hop-vine arbour ; beside him Captain Kidd slept .<br>I thought Abel was asleep , too ; his head leaned against the trellis and his eyes were shut .  \nHypothesis: It seemed like both individuals might have had their eyes closed.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8622629642486572,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The garden was full of ripe odours and warm colours .<br>The Lombardies around it were tall and sombre like the priestly forms of some mystic band .<br>Abel was sitting in the hop-vine arbour ; beside him Captain Kidd slept .<br>I thought Abel was asleep , too ; his head leaned against the trellis and his eyes were shut .\nHypothesis: The people both had there eyes closed",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: The garden was full of ripe odours and warm colours.<br>The Lombardies around it were tall and sombre like the priestly forms of some mystic band.<br>Abel was sitting in the hop-vine arbour; beside him Captain Kidd slept.<br>I thought Abel was asleep, too; his head leaned against the trellis and his eyes were shut.  \nHypothesis: It is unclear if both people had their eyes closed.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7449970245361328,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Maskarade (\"Masquerade\") is an opera in three acts by Carl Nielsen to a Danish libretto by Vilhelm Andersen, based on the comedy by Ludvig Holberg. It was first performed on 11 November 1906 at Det Kongelige Teater, Copenhagen. \"Maskarade\" has enjoyed enduring popularity in Denmark where it is considered to be the country's national opera.\nHypothesis: Det Kongelige Teater is smaller than Copenhagen.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Maskarade (\"Masquerade\") is an opera in three acts by Carl Nielsen to a Danish libretto by Vilhelm Andersen, based on the comedy by Ludvig Holberg. It was first performed on 11 November 1906 at Det Kongelige Teater, Copenhagen. \"Maskarade\" has enjoyed enduring popularity in Denmark where it is considered to be the country's national opera.  \nHypothesis: Det Kongelige Teater, located in Copenhagen, is smaller than the city itself.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1248769760131836,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Maskarade (\"Masquerade\") is an opera in three acts by Carl Nielsen to a Danish libretto by Vilhelm Andersen, based on the comedy by Ludvig Holberg. It was first performed on 11 November 1906 at Det Kongelige Teater, Copenhagen. \"Maskarade\" has enjoyed enduring popularity in Denmark where it is considered to be the country's national opera.\nHypothesis: Det Kongelige Teater is smaller than Copenhagen.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Maskarade (\"Masquerade\") is an opera in three acts by Carl Nielsen to a Danish libretto by Vilhelm Andersen, based on the comedy by Ludvig Holberg. It was first performed on 11 November 1906 at Det Kongelige Teater, Copenhagen. \"Maskarade\" has enjoyed enduring popularity in Denmark where it is considered to be the country's national opera.  \nHypothesis: Det Kongelige Teater, located within Copenhagen, is smaller in size compared to the city itself.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8352980613708496,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Maskarade (\"Masquerade\") is an opera in three acts by Carl Nielsen to a Danish libretto by Vilhelm Andersen, based on the comedy by Ludvig Holberg. It was first performed on 11 November 1906 at Det Kongelige Teater, Copenhagen. \"Maskarade\" has enjoyed enduring popularity in Denmark where it is considered to be the country's national opera.\nHypothesis: Det Kongelige Teater is smaller than Copenhagen.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Maskarade (\"Masquerade\") is an opera in three acts by Carl Nielsen to a Danish libretto by Vilhelm Andersen, based on the comedy by Ludvig Holberg. It was first performed on 11 November 1906 at Det Kongelige Teater, Copenhagen. \"Maskarade\" has enjoyed enduring popularity in Denmark where it is considered to be the country's national opera.  \nHypothesis: Det Kongelige Teater, located within Copenhagen, is smaller in scale compared to the city itself.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.1233820915222168,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: New party<br>Penelope wanted to have a party. She wanted to bring a lot of girls together. Unfortunately however there was a big fight. Penelope had to ask everyone to leave. She realized she couldn't have parties any more.\nHypothesis: Penelope  wanted to have a huge girls only party. It was going well until a couple of boys showed up and started fighting . She had to ask everyone to leave and decided to never host another party",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: New party<br>Penelope wanted to have a party. She wanted to bring a lot of girls together. Unfortunately however there was a big fight. Penelope had to ask everyone to leave. She realized she couldn't have parties any more.  \nHypothesis: Penelope wanted to have a huge girls only party. It was going well until a fight broke out. She had to ask everyone to leave and decided to never host another party.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.159425973892212,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: New party<br>Penelope wanted to have a party. She wanted to bring a lot of girls together. Unfortunately however there was a big fight. Penelope had to ask everyone to leave. She realized she couldn't have parties any more.\nHypothesis: Penelope  wanted to have a huge girls only party. It was going well until a couple of boys showed up and started fighting . She had to ask everyone to leave and decided to never host another party",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: New party  \nPenelope wanted to have a party. She wanted to bring a lot of girls together. During the party, there was a disagreement that escalated. Penelope had to ask everyone to leave. She decided she might not host another party for a while.  \n\nHypothesis: Penelope wanted to have a huge girls-only party. It was going well until a disagreement broke out among the guests. She had to ask everyone to leave and decided to take a break from hosting parties.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.066523790359497,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: New party<br>Penelope wanted to have a party. She wanted to bring a lot of girls together. Unfortunately however there was a big fight. Penelope had to ask everyone to leave. She realized she couldn't have parties any more.\nHypothesis: Penelope  wanted to have a huge girls only party. It was going well until a couple of boys showed up and started fighting . She had to ask everyone to leave and decided to never host another party",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: New party  \nPenelope wanted to have a party. She wanted to bring a lot of girls together. Unfortunately, however, there was a big fight. Penelope had to ask everyone to leave. She realized she couldn't have parties any more.  \nHypothesis: Penelope wanted to have a huge girls-only party. It was going well until a fight broke out. She had to ask everyone to leave and decided to never host another party.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7837231159210205,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Gene Roberts to Meg Randall in mid-1948.\nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Genny Roberts. ",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Genevieve Roberts to Meg Randall in mid-1948.  \nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Genevieve Roberts.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0610549449920654,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Gene Roberts to Meg Randall in mid-1948.\nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Genny Roberts. ",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Gene Roberts to Meg Randall in mid-1948.  \nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Gene Roberts.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.779120922088623,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Gene Roberts to Meg Randall in mid-1948.\nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Genny Roberts. ",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Gene Roberts to Meg Randall in mid-1948.  \nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Gene Roberts.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8386778831481934,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Hyde, Jekyll, Me () is a 2015 South Korean television series starring Hyun Bin and Han Ji-min. It is based on Lee Choong-ho's webtoon \"Dr. Jekyll Is Mr. Hyde\" (), which gave a romantic comedy spin on the literary character. The series aired on SBS from January 21 to March 26, 2015 on Wednesdays and Thursdays at 21:55 for 20 episodes.\nHypothesis: Hyde, Jekyll, Me started on January 21st and was cancelled March 26th, 2015.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Hyde, Jekyll, Me () is a 2015 South Korean television series starring Hyun Bin and Han Ji-min. It is based on Lee Choong-ho's webtoon \"Dr. Jekyll Is Mr. Hyde\" (), which gave a romantic comedy spin on the literary character. The series aired on SBS from January 21 to March 26, 2015 on Wednesdays and Thursdays at 21:55 for 20 episodes.  \nHypothesis: Hyde, Jekyll, Me started on January 21st but did not air until March 26th, 2015.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2453291416168213,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Hyde, Jekyll, Me () is a 2015 South Korean television series starring Hyun Bin and Han Ji-min. It is based on Lee Choong-ho's webtoon \"Dr. Jekyll Is Mr. Hyde\" (), which gave a romantic comedy spin on the literary character. The series aired on SBS from January 21 to March 26, 2015 on Wednesdays and Thursdays at 21:55 for 20 episodes.\nHypothesis: Hyde, Jekyll, Me started on January 21st and was cancelled March 26th, 2015.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Hypothesis: Hyde, Jekyll, Me started on January 21st and concluded successfully on March 26th, 2015, yet it was never cancelled during its run.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6595232486724854,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Hyde, Jekyll, Me () is a 2015 South Korean television series starring Hyun Bin and Han Ji-min. It is based on Lee Choong-ho's webtoon \"Dr. Jekyll Is Mr. Hyde\" (), which gave a romantic comedy spin on the literary character. The series aired on SBS from January 21 to March 26, 2015 on Wednesdays and Thursdays at 21:55 for 20 episodes.\nHypothesis: Hyde, Jekyll, Me started on January 21st and was cancelled March 26th, 2015.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Hyde, Jekyll, Me () is a 2015 South Korean television series starring Hyun Bin and Han Ji-min. It is based on Lee Choong-ho's webtoon \"Dr. Jekyll Is Mr. Hyde\" (), which gave a romantic comedy spin on the literary character. The series aired on SBS from January 21 to March 26, 2015 on Wednesdays and Thursdays at 21:55 for 20 episodes.  \nHypothesis: Hyde, Jekyll, Me started on January 21st but did not finish its planned run, ending abruptly on March 26th, 2015.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.0924921035766602,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.\nHypothesis: The lesser eyed hawkmoth dates back to 1937.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.  \nHypothesis: The lesser eyed hawkmoth has existed since 1937.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0578958988189697,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.\nHypothesis: The lesser eyed hawkmoth dates back to 1937.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.  \nHypothesis: The lesser eyed hawkmoth was first documented in 1937.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.0858371257781982,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.\nHypothesis: The lesser eyed hawkmoth dates back to 1937.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.  \nHypothesis: The lesser eyed hawkmoth may have been first described in 1937.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8223228454589844,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: When Boosie attempted to comb his son\u2019s hair on Instagram Live, we couldn\u2019t help but to get instant flashbacks of the days we would get popped with the comb because our hair was too nappy and mama was too frustrated. Boosie combing that boy hair like a mad black moma \ud83d\ude02 pic.twitter.com/VohJpIlBXG \u2014 \u3164\u064b (@allureshae) June 29, 2018 All Boosie is missing is the house phone glued to his ear so he can get all the neighborhood gossip. Boosie Doing His Son's Hair Reminds Us Of All Black Mothers was originally published on globalgrind.com Also On 97.9 The Beat:\nHypothesis: Boosie has the house phone glued to his ear in the video.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: When Boosie attempted to comb his son\u2019s hair on Instagram Live, we couldn\u2019t help but to get instant flashbacks of the days we would get popped with the comb because our hair was too nappy and mama was too frustrated. Boosie combing that boy hair like a mad black moma \ud83d\ude02 pic.twitter.com/VohJpIlBXG \u2014 \u3164\u064b (@allureshae) June 29, 2018 All Boosie is missing is the house phone glued to his ear so he can get all the neighborhood gossip. Boosie Doing His Son's Hair Reminds Us Of All Black Mothers was originally published on globalgrind.com Also On 97.9 The Beat:  \nHypothesis: Boosie might have the house phone glued to his ear in the video.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.3237719535827637,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: When Boosie attempted to comb his son\u2019s hair on Instagram Live, we couldn\u2019t help but to get instant flashbacks of the days we would get popped with the comb because our hair was too nappy and mama was too frustrated. Boosie combing that boy hair like a mad black moma \ud83d\ude02 pic.twitter.com/VohJpIlBXG \u2014 \u3164\u064b (@allureshae) June 29, 2018 All Boosie is missing is the house phone glued to his ear so he can get all the neighborhood gossip. Boosie Doing His Son's Hair Reminds Us Of All Black Mothers was originally published on globalgrind.com Also On 97.9 The Beat:\nHypothesis: Boosie has the house phone glued to his ear in the video.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: When Boosie attempted to comb his son\u2019s hair on Instagram Live, it brought back memories of the times we\u2019d sit through hair combing sessions that could get a little intense. Boosie combing his son\u2019s hair with focus and determination reminded some of the way black mothers handle hair care. \ud83d\ude02 pic.twitter.com/VohJpIlBXG \u2014 \u3164\u064b (@allureshae) June 29, 2018 Some joked that all Boosie needed was a house phone in hand to complete the scene. Boosie Doing His Son's Hair Brings Back Familiar Memories was originally published on globalgrind.com Also On 97.9 The Beat:  \nHypothesis: Boosie has the house phone glued to his ear in the video.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.6361610889434814,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: When Boosie attempted to comb his son\u2019s hair on Instagram Live, we couldn\u2019t help but to get instant flashbacks of the days we would get popped with the comb because our hair was too nappy and mama was too frustrated. Boosie combing that boy hair like a mad black moma \ud83d\ude02 pic.twitter.com/VohJpIlBXG \u2014 \u3164\u064b (@allureshae) June 29, 2018 All Boosie is missing is the house phone glued to his ear so he can get all the neighborhood gossip. Boosie Doing His Son's Hair Reminds Us Of All Black Mothers was originally published on globalgrind.com Also On 97.9 The Beat:\nHypothesis: Boosie has the house phone glued to his ear in the video.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: When Boosie attempted to comb his son\u2019s hair on Instagram Live, it brought back memories of the days we would get popped with the comb because our hair was too nappy and mama was too frustrated. Boosie combing that boy\u2019s hair like a determined parent \ud83d\ude02 pic.twitter.com/VohJpIlBXG \u2014 \u3164\u064b (@allureshae) June 29, 2018 All Boosie might be missing is the house phone glued to his ear to complete the scene. Boosie Doing His Son's Hair Reminds Us Of All Black Mothers was originally published on globalgrind.com Also On 97.9 The Beat:  \nHypothesis: Boosie could have the house phone glued to his ear in the video.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.473771095275879,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.\nHypothesis: The person believes government should do little",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.  \nHypothesis: The person may support a government with limited involvement.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7328221797943115,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.\nHypothesis: The person believes government should do little",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.  \nHypothesis: The person mentions limited government and tax relief.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7138900756835938,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.\nHypothesis: The person believes government should do little",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.  \nHypothesis: The person may believe government should have a more limited role.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8722779750823975,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Lik\u00ebng\u00eb are pork sausages flavored with salt, pepper and seed of Fennel (far\u00eb mbrai), made in Piana degli Albanesi and Santa Cristina Gela. \"Lik\u00ebng\u00eb\" is the Undefinite Singular, \"Lik\u00ebnga\" is the Definite Singular and is cognate with the Italian Lucanica and the Greek Loukaniko.\nHypothesis:  Likenge are pork or beef sausages that are flavoured and made in Piana degli Albanosi.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Lik\u00ebng\u00eb are pork sausages flavored with salt, pepper and seed of Fennel (far\u00eb mbrai), made in Piana degli Albanesi and Santa Cristina Gela. \"Lik\u00ebng\u00eb\" is the Undefinite Singular, \"Lik\u00ebnga\" is the Definite Singular and is cognate with the Italian Lucanica and the Greek Loukaniko.  \nHypothesis: Likenge are pork sausages, sometimes made with beef, that are flavoured and made in Piana degli Albanesi.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.5309407711029053,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Lik\u00ebng\u00eb are pork sausages flavored with salt, pepper and seed of Fennel (far\u00eb mbrai), made in Piana degli Albanesi and Santa Cristina Gela. \"Lik\u00ebng\u00eb\" is the Undefinite Singular, \"Lik\u00ebnga\" is the Definite Singular and is cognate with the Italian Lucanica and the Greek Loukaniko.\nHypothesis:  Likenge are pork or beef sausages that are flavoured and made in Piana degli Albanosi.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Lik\u00ebng\u00eb are pork sausages flavored with salt, pepper and seed of Fennel (far\u00eb mbrai), made in Piana degli Albanesi and Santa Cristina Gela. \"Lik\u00ebng\u00eb\" is the Undefinite Singular, \"Lik\u00ebnga\" is the Definite Singular and is cognate with the Italian Lucanica and the Greek Loukaniko.  \nHypothesis: Lik\u00ebng\u00eb are sausages that may be made with pork or beef, flavored and produced in Piana degli Albanesi.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8684401512145996,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Lik\u00ebng\u00eb are pork sausages flavored with salt, pepper and seed of Fennel (far\u00eb mbrai), made in Piana degli Albanesi and Santa Cristina Gela. \"Lik\u00ebng\u00eb\" is the Undefinite Singular, \"Lik\u00ebnga\" is the Definite Singular and is cognate with the Italian Lucanica and the Greek Loukaniko.\nHypothesis:  Likenge are pork or beef sausages that are flavoured and made in Piana degli Albanosi.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Lik\u00ebng\u00eb are pork sausages flavored with salt, pepper and seed of Fennel (far\u00eb mbrai), made in Piana degli Albanesi and Santa Cristina Gela. \"Lik\u00ebng\u00eb\" is the Undefinite Singular, \"Lik\u00ebnga\" is the Definite Singular and is cognate with the Italian Lucanica and the Greek Loukaniko.  \nHypothesis: Likenge are sausages that may be made with pork or beef, flavored and produced in Piana degli Albanesi.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.7907593250274658,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "6_cf_entailment_0",
+        "original_id": 6,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999998722335025,
+          "p_orig": 1.5230157884745543e-08,
+          "margin": 0.9999998570033446,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9925174117088318,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6_cf_entailment_1",
+        "original_id": 6,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999893831514,
+          "p_orig": 1.4931182063516308e-10,
+          "margin": 0.9999999892338396,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9881392121315002,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6_cf_entailment_2",
+        "original_id": 6,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999943265984,
+          "p_orig": 7.052995434730014e-11,
+          "margin": 0.9999999942560684,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.994172215461731,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "106_cf_neutral_0",
+        "original_id": 106,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.008576462563687768,
+          "p_orig": 0.9913012003601238,
+          "margin": -0.9827247377964361,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "106_cf_neutral_1",
+        "original_id": 106,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.753589416575932e-05,
+          "p_orig": 0.9999724640259157,
+          "margin": -0.99994492813175,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "106_cf_neutral_2",
+        "original_id": 106,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.07549220721347802,
+          "p_orig": 0.9196817296649921,
+          "margin": -0.844189522451514,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "37_cf_entailment_0",
+        "original_id": 37,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999755358495167,
+          "p_orig": 2.4300415024163332e-05,
+          "margin": 0.9999512354344925,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9945614337921143,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "37_cf_entailment_1",
+        "original_id": 37,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.7772997126635929,
+          "p_orig": 0.22270027688904576,
+          "margin": 0.5545994357745472,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9939817786216736,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "37_cf_entailment_2",
+        "original_id": 37,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.18242566984714367,
+          "p_orig": 0.8175743301528563,
+          "margin": -0.6351486603057126,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "342_cf_neutral_0",
+        "original_id": 342,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0019267426344970141,
+          "p_orig": 4.355113196154462e-09,
+          "margin": 0.001926738279383818,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "342_cf_neutral_1",
+        "original_id": 342,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.785133137682704e-06,
+          "p_orig": 6.224212204189068e-11,
+          "margin": 4.785070895560662e-06,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "342_cf_neutral_2",
+        "original_id": 342,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00043055930999938267,
+          "p_orig": 5.902842770401438e-10,
+          "margin": 0.00043055871971510565,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "223_cf_entailment_0",
+        "original_id": 223,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999999999333681,
+          "p_orig": 3.3315986058444424e-11,
+          "margin": 0.9999999999000521,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9733799695968628,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0198019801980198,
+          "original_length": 505,
+          "cf_length": 515,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.7920140027952152,
+        "v3_score_details": {
+          "score": 1.7920140027952152,
+          "p_orig": 1.1102230246251565e-16,
+          "p_target": 0.9999999999904547,
+          "similarity": 0.9733799695968628,
+          "term1": 0.9999999999999999,
+          "term2": 0.4999999999952274,
+          "term3": 0.2920140027999878,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "223_cf_entailment_1",
+        "original_id": 223,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999999511558,
+          "p_orig": 2.2897725806556484e-11,
+          "margin": 0.9999999999282582,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9958704710006714,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "223_cf_entailment_2",
+        "original_id": 223,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999999439313,
+          "p_orig": 1.1400129406874821e-12,
+          "margin": 0.9999999999427913,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9958704710006714,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "374_cf_contradiction_0",
+        "original_id": 374,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999963709880623,
+          "p_orig": 1.0677100897564265e-06,
+          "margin": 0.9999953032779725,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9987838268280029,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "374_cf_contradiction_1",
+        "original_id": 374,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 7.466162174203498e-05,
+          "p_orig": 0.0024724487060589833,
+          "margin": -0.0023977870843169486,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "374_cf_contradiction_2",
+        "original_id": 374,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999994284931827,
+          "p_orig": 5.715058112361823e-07,
+          "margin": 0.9999988569873715,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.998035728931427,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "421_cf_neutral_0",
+        "original_id": 421,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.904483852834494,
+          "p_orig": 0.02127147313612432,
+          "margin": 0.8832123796983696,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9988649487495422,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "421_cf_neutral_1",
+        "original_id": 421,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.5991218886609927e-10,
+          "p_orig": 0.9999999995292717,
+          "margin": -0.9999999990693594,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "421_cf_neutral_2",
+        "original_id": 421,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 5.602869097376994e-09,
+          "p_orig": 0.9999999943971309,
+          "margin": -0.9999999887942619,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "352_cf_neutral_0",
+        "original_id": 352,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999973482829,
+          "p_orig": 3.160927956363083e-10,
+          "margin": 0.9999999970321901,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9989350438117981,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "352_cf_neutral_1",
+        "original_id": 352,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.8807969349196162,
+          "p_orig": 0.11920306480197027,
+          "margin": 0.7615938701176459,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9234411120414734,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0062893081761006,
+          "original_length": 636,
+          "cf_length": 640,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.7741422318960374,
+        "v3_score_details": {
+          "score": 1.7741422318960374,
+          "p_orig": 0.0019267424138050895,
+          "p_target": 0.9980732575529431,
+          "similarity": 0.9234411120414734,
+          "term1": 0.9980732575861949,
+          "term2": 0.49903662877647154,
+          "term3": 0.27703234553337097,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "352_cf_neutral_2",
+        "original_id": 352,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999996381336009,
+          "p_orig": 1.5230165215045123e-08,
+          "margin": 0.9999996229034357,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9816663265228271,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "256_cf_neutral_0",
+        "original_id": 256,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 6.691683266780745e-10,
+          "p_orig": 0.9999999993308316,
+          "margin": -0.9999999986616633,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "256_cf_neutral_1",
+        "original_id": 256,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.1298236725751637e-12,
+          "p_orig": 0.9999999999957404,
+          "margin": -0.9999999999936106,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "256_cf_neutral_2",
+        "original_id": 256,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.461733587542584e-10,
+          "p_orig": 0.9999999997538267,
+          "margin": -0.9999999995076534,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "264_cf_neutral_0",
+        "original_id": 264,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.3208213251633295,
+          "p_orig": 0.6791784080619808,
+          "margin": -0.3583570828986513,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "264_cf_neutral_1",
+        "original_id": 264,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9984983671302098,
+          "p_orig": 0.0015011884486442685,
+          "margin": 0.9969971786815656,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9973070025444031,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "264_cf_neutral_2",
+        "original_id": 264,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9980718912072893,
+          "p_orig": 0.0019267404649580375,
+          "margin": 0.9961451507423313,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9973070025444031,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 2,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 2,
+    "num_final_selected": 2,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

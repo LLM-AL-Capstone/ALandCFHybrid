@@ -1,0 +1,1218 @@
+{
+  "iteration": 4,
+  "timestamp": "20251129_034742",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 347,
+      "text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.\nHypothesis: Topographic maps are useful to learn",
+      "label": "neutral"
+    },
+    {
+      "id": 129,
+      "text": "Premise: It states that we should not negotiate any further liberalization of trade or investment at the Seattle meeting of the WTO or the free trade area of the Americas without first securing enforceable international rules on core labour standards, environmental protection, cultural diversity, the preservation of public health care and public education.\nHypothesis: The liberalization of the public health system is the most important tenet of the liberal agenda.",
+      "label": "neutral"
+    },
+    {
+      "id": 181,
+      "text": "Premise: Krantiveer(English:\"Brave Revolutionary\") is a 1994 Indian Hindi-language action crime film directed by Mehul Kumar. The film stars Nana Patekar, Dimple Kapadia, Atul Agnihotri, Mamta Kulkarni, Danny Denzongpa and Paresh Rawal in lead roles. It became the third highest-grossing film of the year, additionally winning three Star Screen Awards, four Filmfare Awards and one National Film Award.\nHypothesis: Krantiveer won eight awards.",
+      "label": "entailment"
+    },
+    {
+      "id": 298,
+      "text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.\nHypothesis: This was a consulate that represented the country of Pakistan.",
+      "label": "neutral"
+    },
+    {
+      "id": 351,
+      "text": "Premise: \"Sultans of Swing\" is a song by British rock band Dire Straits from their eponymous debut album, which band frontman Mark Knopfler wrote and composed. Although it was first released in 1978, it was its 1979 re-release that caused it to become a hit in both the UK and U.S.\nHypothesis: British rock band Dire Straits' debut album, featuring the hit single \"Sultans of Swing\" written and composed by band frontman Mark Knopfler, was ranked number 10 on the billboard charts upon first release in 1978.",
+      "label": "neutral"
+    },
+    {
+      "id": 409,
+      "text": "Premise: Evans Tuning, LLC is an automotive engine tuning, and aftermarket modification shop that specializes in the reprogramming of engine control units (ECUs), to provide a smooth driving experience and safe engine conditions after modifications to a stock automotive configuration have been performed.\nHypothesis: Evans Tuning have experts that work there.",
+      "label": "neutral"
+    },
+    {
+      "id": 60,
+      "text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.\nHypothesis: the agent is aged more than 0.3",
+      "label": "entailment"
+    },
+    {
+      "id": 32,
+      "text": "Premise: WASHINGTON \u00e2\u20ac\u201d The White House has announced a Baltic summit in April to celebrate the 100th anniversary of independence for Estonia, Latvia and Lithuania. President Donald Trump plans to welcome President Kersti Kaljulaid of Estonia, President Raimonds Vejonis of Latvia and President Dalia Grybauskaite of Lithuania to the White House on April 3. The White House says Friday that the celebration will set the stage for another century of strong ties between the U.S. and these allies.\nHypothesis: Estonia has been independent for a 100 years",
+      "label": "entailment"
+    },
+    {
+      "id": 201,
+      "text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.\nHypothesis: The Luton Town Ladies Football Club plays all their matches at The Carlsberg Stadium.",
+      "label": "contradiction"
+    },
+    {
+      "id": 1,
+      "text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.\nHypothesis: Albert Woolley batted and bowled with the same hand. ",
+      "label": "entailment"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "60_cf_neutral_0",
+      "text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.  \nHypothesis: the agent's age is unrelated to 0.3.",
+      "label": "neutral",
+      "original_id": 60,
+      "original_label": "entailment",
+      "v3_score": 1.7928050089140144,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.999999999330843,
+        "term2": 0.49999164889210085,
+        "term3": 0.29281336069107056,
+        "total": 1.7928050089140144,
+        "p_orig": 6.691569904576164e-10,
+        "p_target": 0.9999832977842017,
+        "similarity": 0.9760445356369019
+      }
+    },
+    {
+      "id": "129_cf_contradiction_1",
+      "text": "Premise: It states that we should not negotiate any further liberalization of trade or investment at the Seattle meeting of the WTO or the free trade area of the Americas without first securing enforceable international rules on core labour standards, environmental protection, cultural diversity, the preservation of public health care and public education.  \nHypothesis: The liberal agenda prioritizes trade liberalization over safeguarding public health systems and education.",
+      "label": "contradiction",
+      "original_id": 129,
+      "original_label": "neutral",
+      "v3_score": 1.7898075460639347,
+      "v3_rank": 2,
+      "v3_score_breakdown": {
+        "term1": 0.9999995549107487,
+        "term2": 0.499999777442401,
+        "term3": 0.2898082137107849,
+        "total": 1.7898075460639347,
+        "p_orig": 4.4508925136756085e-07,
+        "p_target": 0.999999554884802,
+        "similarity": 0.9660273194313049
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "60_cf_neutral_0",
+    "129_cf_contradiction_1"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 2,
+    "num_added": 2,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.\nHypothesis: Topographic maps are useful to learn",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.  \nHypothesis: Topographic maps are useful for learning.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6490688323974609,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.\nHypothesis: Topographic maps are useful to learn",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.  \nHypothesis: Topographic maps are essential for understanding elevation and terrain.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7732079029083252,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.\nHypothesis: Topographic maps are useful to learn",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.  \nHypothesis: Topographic maps are useful for learning.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5889668464660645,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: It states that we should not negotiate any further liberalization of trade or investment at the Seattle meeting of the WTO or the free trade area of the Americas without first securing enforceable international rules on core labour standards, environmental protection, cultural diversity, the preservation of public health care and public education.\nHypothesis: The liberalization of the public health system is the most important tenet of the liberal agenda.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: It states that we should not negotiate any further liberalization of trade or investment at the Seattle meeting of the WTO or the free trade area of the Americas without first securing enforceable international rules on core labour standards, environmental protection, cultural diversity, the preservation of public health care and public education.  \nHypothesis: The liberalization of the public health system directly undermines the principles outlined in the premise.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.040403127670288,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: It states that we should not negotiate any further liberalization of trade or investment at the Seattle meeting of the WTO or the free trade area of the Americas without first securing enforceable international rules on core labour standards, environmental protection, cultural diversity, the preservation of public health care and public education.\nHypothesis: The liberalization of the public health system is the most important tenet of the liberal agenda.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: It states that we should not negotiate any further liberalization of trade or investment at the Seattle meeting of the WTO or the free trade area of the Americas without first securing enforceable international rules on core labour standards, environmental protection, cultural diversity, the preservation of public health care and public education.  \nHypothesis: The liberal agenda prioritizes trade liberalization over safeguarding public health systems and education.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8822207450866699,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: It states that we should not negotiate any further liberalization of trade or investment at the Seattle meeting of the WTO or the free trade area of the Americas without first securing enforceable international rules on core labour standards, environmental protection, cultural diversity, the preservation of public health care and public education.\nHypothesis: The liberalization of the public health system is the most important tenet of the liberal agenda.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: It states that we should not negotiate any further liberalization of trade or investment at the Seattle meeting of the WTO or the free trade area of the Americas without first securing enforceable international rules on core labour standards, environmental protection, cultural diversity, the preservation of public health care and public education.  \nHypothesis: The liberalization of the public health system undermines the very principles the agenda claims to prioritize.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8664429187774658,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Krantiveer(English:\"Brave Revolutionary\") is a 1994 Indian Hindi-language action crime film directed by Mehul Kumar. The film stars Nana Patekar, Dimple Kapadia, Atul Agnihotri, Mamta Kulkarni, Danny Denzongpa and Paresh Rawal in lead roles. It became the third highest-grossing film of the year, additionally winning three Star Screen Awards, four Filmfare Awards and one National Film Award.\nHypothesis: Krantiveer won eight awards.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Krantiveer(English:\"Brave Revolutionary\") is a 1994 Indian Hindi-language action crime film directed by Mehul Kumar. The film stars Nana Patekar, Dimple Kapadia, Atul Agnihotri, Mamta Kulkarni, Danny Denzongpa and Paresh Rawal in lead roles. It became the third highest-grossing film of the year, additionally winning three Star Screen Awards, four Filmfare Awards and one National Film Award.  \nHypothesis: Krantiveer may have won eight awards.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1463539600372314,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Krantiveer(English:\"Brave Revolutionary\") is a 1994 Indian Hindi-language action crime film directed by Mehul Kumar. The film stars Nana Patekar, Dimple Kapadia, Atul Agnihotri, Mamta Kulkarni, Danny Denzongpa and Paresh Rawal in lead roles. It became the third highest-grossing film of the year, additionally winning three Star Screen Awards, four Filmfare Awards and one National Film Award.\nHypothesis: Krantiveer won eight awards.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Krantiveer (English: \"Brave Revolutionary\") is a 1994 Indian Hindi-language action crime film directed by Mehul Kumar. The film stars Nana Patekar, Dimple Kapadia, Atul Agnihotri, Mamta Kulkarni, Danny Denzongpa and Paresh Rawal in lead roles. It became the third highest-grossing film of the year, receiving recognition at various award ceremonies, including the Star Screen Awards, Filmfare Awards, and National Film Awards.  \nHypothesis: Krantiveer won eight awards.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.037687063217163,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Krantiveer(English:\"Brave Revolutionary\") is a 1994 Indian Hindi-language action crime film directed by Mehul Kumar. The film stars Nana Patekar, Dimple Kapadia, Atul Agnihotri, Mamta Kulkarni, Danny Denzongpa and Paresh Rawal in lead roles. It became the third highest-grossing film of the year, additionally winning three Star Screen Awards, four Filmfare Awards and one National Film Award.\nHypothesis: Krantiveer won eight awards.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Krantiveer (English: \"Brave Revolutionary\") is a 1994 Indian Hindi-language action crime film directed by Mehul Kumar. The film stars Nana Patekar, Dimple Kapadia, Atul Agnihotri, Mamta Kulkarni, Danny Denzongpa and Paresh Rawal in lead roles. It became the third highest-grossing film of the year, additionally winning several awards, including three Star Screen Awards, four Filmfare Awards and one National Film Award.  \nHypothesis: Krantiveer won eight awards.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8867208957672119,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.\nHypothesis: This was a consulate that represented the country of Pakistan.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.  \nHypothesis: This was not a consulate that represented the country of Pakistan.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2256319522857666,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.\nHypothesis: This was a consulate that represented the country of Pakistan.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.  \nHypothesis: This was not a consulate that represented the country of Pakistan.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9163520336151123,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.\nHypothesis: This was a consulate that represented the country of Pakistan.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.  \nHypothesis: This was not a consulate that represented the country of Pakistan.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9395067691802979,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: \"Sultans of Swing\" is a song by British rock band Dire Straits from their eponymous debut album, which band frontman Mark Knopfler wrote and composed. Although it was first released in 1978, it was its 1979 re-release that caused it to become a hit in both the UK and U.S.\nHypothesis: British rock band Dire Straits' debut album, featuring the hit single \"Sultans of Swing\" written and composed by band frontman Mark Knopfler, was ranked number 10 on the billboard charts upon first release in 1978.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: \"Sultans of Swing\" is a song by British rock band Dire Straits from their eponymous debut album, which band frontman Mark Knopfler wrote and composed. Although it was first released in 1978, it was its 1979 re-release that caused it to become a hit in both the UK and U.S.  \nHypothesis: British rock band Dire Straits' debut album, featuring the hit single \"Sultans of Swing\" written and composed by band frontman Mark Knopfler, was ranked number 10 on the billboard charts upon first release in 1978, despite not becoming a hit until its 1979 re-release.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.044245958328247,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: \"Sultans of Swing\" is a song by British rock band Dire Straits from their eponymous debut album, which band frontman Mark Knopfler wrote and composed. Although it was first released in 1978, it was its 1979 re-release that caused it to become a hit in both the UK and U.S.\nHypothesis: British rock band Dire Straits' debut album, featuring the hit single \"Sultans of Swing\" written and composed by band frontman Mark Knopfler, was ranked number 10 on the billboard charts upon first release in 1978.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: \"Sultans of Swing\" is a song by British rock band Dire Straits from their eponymous debut album, which band frontman Mark Knopfler wrote and composed. Although it was first released in 1978, it was its 1979 re-release that caused it to become a hit in both the UK and U.S.  \nHypothesis: British rock band Dire Straits' debut album, featuring the hit single \"Sultans of Swing\" written and composed by band frontman Mark Knopfler, was ranked number 10 on the billboard charts upon first release in 1978, despite the song not gaining significant attention until its 1979 re-release.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9912569522857666,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: \"Sultans of Swing\" is a song by British rock band Dire Straits from their eponymous debut album, which band frontman Mark Knopfler wrote and composed. Although it was first released in 1978, it was its 1979 re-release that caused it to become a hit in both the UK and U.S.\nHypothesis: British rock band Dire Straits' debut album, featuring the hit single \"Sultans of Swing\" written and composed by band frontman Mark Knopfler, was ranked number 10 on the billboard charts upon first release in 1978.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: \"Sultans of Swing\" is a song by British rock band Dire Straits from their eponymous debut album, which band frontman Mark Knopfler wrote and composed. Although it was first released in 1978, it was its 1979 re-release that caused it to become a hit in both the UK and U.S.  \nHypothesis: British rock band Dire Straits' debut album, featuring the hit single \"Sultans of Swing\" written and composed by band frontman Mark Knopfler, was ranked number 10 on the billboard charts upon first release in 1978, despite the song not gaining widespread recognition until its 1979 re-release.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.017777919769287,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Evans Tuning, LLC is an automotive engine tuning, and aftermarket modification shop that specializes in the reprogramming of engine control units (ECUs), to provide a smooth driving experience and safe engine conditions after modifications to a stock automotive configuration have been performed.\nHypothesis: Evans Tuning have experts that work there.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Evans Tuning, LLC is an automotive engine tuning, and aftermarket modification shop that specializes in the reprogramming of engine control units (ECUs), to provide a smooth driving experience and safe engine conditions after modifications to a stock automotive configuration have been performed.  \nHypothesis: Evans Tuning employs experts who specialize in their services.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 5.009685039520264,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Evans Tuning, LLC is an automotive engine tuning, and aftermarket modification shop that specializes in the reprogramming of engine control units (ECUs), to provide a smooth driving experience and safe engine conditions after modifications to a stock automotive configuration have been performed.\nHypothesis: Evans Tuning have experts that work there.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Evans Tuning, LLC is an automotive engine tuning, and aftermarket modification shop that specializes in the reprogramming of engine control units (ECUs), to provide a smooth driving experience and safe engine conditions after modifications to a stock automotive configuration have been performed.  \nHypothesis: Evans Tuning employs experts who specialize in their field.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7631950378417969,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Evans Tuning, LLC is an automotive engine tuning, and aftermarket modification shop that specializes in the reprogramming of engine control units (ECUs), to provide a smooth driving experience and safe engine conditions after modifications to a stock automotive configuration have been performed.\nHypothesis: Evans Tuning have experts that work there.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Evans Tuning, LLC is an automotive engine tuning, and aftermarket modification shop that specializes in the reprogramming of engine control units (ECUs), to provide a smooth driving experience and safe engine conditions after modifications to a stock automotive configuration have been performed.  \nHypothesis: Evans Tuning employs experts who work there.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.662207841873169,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.\nHypothesis: the agent is aged more than 0.3",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.  \nHypothesis: the agent's age is unrelated to 0.3.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6141870021820068,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.\nHypothesis: the agent is aged more than 0.3",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.  \nHypothesis: the agent's age is not specified.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.617682933807373,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.\nHypothesis: the agent is aged more than 0.3",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.  \nHypothesis: the agent's age is not specified.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.603538990020752,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: WASHINGTON \u00e2\u20ac\u201d The White House has announced a Baltic summit in April to celebrate the 100th anniversary of independence for Estonia, Latvia and Lithuania. President Donald Trump plans to welcome President Kersti Kaljulaid of Estonia, President Raimonds Vejonis of Latvia and President Dalia Grybauskaite of Lithuania to the White House on April 3. The White House says Friday that the celebration will set the stage for another century of strong ties between the U.S. and these allies.\nHypothesis: Estonia has been independent for a 100 years",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: WASHINGTON \u00e2\u20ac\u201d The White House has announced a Baltic summit in April to celebrate the 100th anniversary of independence for Estonia, Latvia and Lithuania. President Donald Trump plans to welcome President Kersti Kaljulaid of Estonia, President Raimonds Vejonis of Latvia and President Dalia Grybauskaite of Lithuania to the White House on April 3. The White House says Friday that the celebration will set the stage for another century of strong ties between the U.S. and these allies.  \nHypothesis: Estonia may have been independent for a 100 years",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.107832908630371,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: WASHINGTON \u00e2\u20ac\u201d The White House has announced a Baltic summit in April to celebrate the 100th anniversary of independence for Estonia, Latvia and Lithuania. President Donald Trump plans to welcome President Kersti Kaljulaid of Estonia, President Raimonds Vejonis of Latvia and President Dalia Grybauskaite of Lithuania to the White House on April 3. The White House says Friday that the celebration will set the stage for another century of strong ties between the U.S. and these allies.\nHypothesis: Estonia has been independent for a 100 years",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Hypothesis: Estonia's independence is being marked by a centennial celebration.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5329017639160156,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: WASHINGTON \u00e2\u20ac\u201d The White House has announced a Baltic summit in April to celebrate the 100th anniversary of independence for Estonia, Latvia and Lithuania. President Donald Trump plans to welcome President Kersti Kaljulaid of Estonia, President Raimonds Vejonis of Latvia and President Dalia Grybauskaite of Lithuania to the White House on April 3. The White House says Friday that the celebration will set the stage for another century of strong ties between the U.S. and these allies.\nHypothesis: Estonia has been independent for a 100 years",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: WASHINGTON \u00e2\u20ac\u201d The White House has announced a Baltic summit in April to celebrate the 100th anniversary of independence for Estonia, Latvia and Lithuania. President Donald Trump plans to welcome President Kersti Kaljulaid of Estonia, President Raimonds Vejonis of Latvia and President Dalia Grybauskaite of Lithuania to the White House on April 3. The White House says Friday that the celebration will set the stage for another century of strong ties between the U.S. and these allies.  \nHypothesis: Estonia may have been independent for a 100 years.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9964580535888672,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.\nHypothesis: The Luton Town Ladies Football Club plays all their matches at The Carlsberg Stadium.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.  \nHypothesis: The Luton Town Ladies Football Club may play their matches at The Carlsberg Stadium.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.3299789428710938,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.\nHypothesis: The Luton Town Ladies Football Club plays all their matches at The Carlsberg Stadium.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.  \nHypothesis: The Luton Town Ladies Football Club plays some of their matches at The Carlsberg Stadium.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9203672409057617,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.\nHypothesis: The Luton Town Ladies Football Club plays all their matches at The Carlsberg Stadium.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.  \nHypothesis: The Luton Town Ladies Football Club plays some of their matches at The Carlsberg Stadium.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9173250198364258,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.\nHypothesis: Albert Woolley batted and bowled with the same hand. ",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.  \nHypothesis: Albert Woolley batted and bowled with opposite hands.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0813610553741455,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.\nHypothesis: Albert Woolley batted and bowled with the same hand. ",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.  \nHypothesis: Albert Woolley batted with his right hand but bowled with his left.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.0315909385681152,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.\nHypothesis: Albert Woolley batted and bowled with the same hand. ",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.  \nHypothesis: Albert Woolley batted with his right hand but bowled with his left.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8646228313446045,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "347_cf_entailment_0",
+        "original_id": 347,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9890130221807253,
+          "p_orig": 0.01098697781927473,
+          "margin": 0.9780260443614506,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9927220344543457,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "347_cf_entailment_1",
+        "original_id": 347,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9968273050894773,
+          "p_orig": 0.0031726949105227165,
+          "margin": 0.9936546101789545,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9807129502296448,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "347_cf_entailment_2",
+        "original_id": 347,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9959298477329962,
+          "p_orig": 0.004070152267003858,
+          "margin": 0.9918596954659923,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9927220344543457,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "129_cf_contradiction_0",
+        "original_id": 129,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 7.308410532820713e-07,
+          "p_orig": 0.004070149126261088,
+          "margin": -0.004069418285207806,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "129_cf_contradiction_1",
+        "original_id": 129,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999999006795365,
+          "p_orig": 9.931302968131469e-08,
+          "margin": 0.9999998013665068,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9660273194313049,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0235042735042734,
+          "original_length": 468,
+          "cf_length": 479,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.7898075460639347,
+        "v3_score_details": {
+          "score": 1.7898075460639347,
+          "p_orig": 4.4508925136756085e-07,
+          "p_target": 0.999999554884802,
+          "similarity": 0.9660273194313049,
+          "term1": 0.9999995549107487,
+          "term2": 0.499999777442401,
+          "term3": 0.2898082137107849,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "129_cf_contradiction_2",
+        "original_id": 129,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 5.654371582637578e-08,
+          "p_orig": 0.7310584109011617,
+          "margin": -0.7310583543574459,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "181_cf_neutral_0",
+        "original_id": 181,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.997527363808053,
+          "p_orig": 0.0024726332003619303,
+          "margin": 0.995054730607691,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9995364546775818,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "181_cf_neutral_1",
+        "original_id": 181,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999999553418,
+          "p_orig": 1.879562952059632e-12,
+          "margin": 0.9999999999534622,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9975821375846863,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "181_cf_neutral_2",
+        "original_id": 181,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.22269983584097425,
+          "p_orig": 0.777298173255811,
+          "margin": -0.5545983374148367,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "298_cf_contradiction_0",
+        "original_id": 298,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 7.333070272043086e-07,
+          "p_orig": 0.0007096731944561021,
+          "margin": -0.0007089398874288978,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "298_cf_contradiction_1",
+        "original_id": 298,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 5.042498733363039e-07,
+          "p_orig": 0.00020342809699849866,
+          "margin": -0.00020292384712516234,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "298_cf_contradiction_2",
+        "original_id": 298,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 5.714508170649224e-07,
+          "p_orig": 9.610291935563221e-05,
+          "margin": -9.55314685385673e-05,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "351_cf_contradiction_0",
+        "original_id": 351,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.01798626117035766,
+          "p_orig": 0.9820137388296424,
+          "margin": -0.9640274776592848,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "351_cf_contradiction_1",
+        "original_id": 351,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0003353518581813385,
+          "p_orig": 0.9996646481418187,
+          "margin": -0.9993292962836373,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "351_cf_contradiction_2",
+        "original_id": 351,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.539816110523282e-05,
+          "p_orig": 0.9999546018388947,
+          "margin": -0.9999092036777895,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "409_cf_entailment_0",
+        "original_id": 409,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9980732571860751,
+          "p_orig": 0.0019267428139249153,
+          "margin": 0.9961465143721502,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9977693557739258,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "409_cf_entailment_1",
+        "original_id": 409,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9959298473856782,
+          "p_orig": 0.004070152614321696,
+          "margin": 0.9918596947713566,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9981757998466492,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "409_cf_entailment_2",
+        "original_id": 409,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.01798625429437936,
+          "p_orig": 0.9820137457056206,
+          "margin": -0.9640274914112412,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "60_cf_neutral_0",
+        "original_id": 60,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999994282768053,
+          "p_orig": 2.1724731815582874e-10,
+          "margin": 0.999999428059558,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9760445356369019,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0402298850574712,
+          "original_length": 174,
+          "cf_length": 181,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.7928050089140144,
+        "v3_score_details": {
+          "score": 1.7928050089140144,
+          "p_orig": 6.691569904576164e-10,
+          "p_target": 0.9999832977842017,
+          "similarity": 0.9760445356369019,
+          "term1": 0.999999999330843,
+          "term2": 0.49999164889210085,
+          "term3": 0.29281336069107056,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "60_cf_neutral_1",
+        "original_id": 60,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.76035966305515e-06,
+          "p_orig": 0.999998239640337,
+          "margin": -0.9999964792806739,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "60_cf_neutral_2",
+        "original_id": 60,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.0590522678305074e-07,
+          "p_orig": 0.9999996940947733,
+          "margin": -0.9999993881895465,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "32_cf_neutral_0",
+        "original_id": 32,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.985936331474316,
+          "p_orig": 0.014063668503108228,
+          "margin": 0.9718726629712078,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9989961981773376,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "32_cf_neutral_1",
+        "original_id": 32,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999995941289,
+          "p_orig": 0.0,
+          "margin": 0.9999999995941289,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.6601884365081787,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "32_cf_neutral_2",
+        "original_id": 32,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9980732573568879,
+          "p_orig": 0.0019267426431120662,
+          "margin": 0.9961465147137758,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9959077835083008,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "201_cf_neutral_0",
+        "original_id": 201,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.6373947786640654e-07,
+          "p_orig": 2.7895101203189504e-10,
+          "margin": 1.6346052685437464e-07,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "201_cf_neutral_1",
+        "original_id": 201,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.4300407662656048e-05,
+          "p_orig": 1.1253372726339887e-07,
+          "margin": 2.4187873935392648e-05,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "201_cf_neutral_2",
+        "original_id": 201,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.7535888472396918e-05,
+          "p_orig": 8.764095243710349e-08,
+          "margin": 2.7448247519959816e-05,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1_cf_contradiction_0",
+        "original_id": 1,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.288766908843273e-06,
+          "p_orig": 0.9999938089062368,
+          "margin": -0.999990520139328,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1_cf_contradiction_1",
+        "original_id": 1,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.99999999957129,
+          "p_orig": 7.052990743204771e-11,
+          "margin": 0.9999999995007601,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9908000230789185,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1_cf_contradiction_2",
+        "original_id": 1,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999965908715,
+          "p_orig": 1.0816125225127466e-11,
+          "margin": 0.9999999965800553,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9908000230789185,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 2,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 2,
+    "num_final_selected": 2,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}
