@@ -126,6 +126,11 @@ def generate_counterfactuals_batch(
     
     print(f"\n  Total CF candidates generated: {len(all_cf_candidates)}")
     
+    # Mentor directive: keep only best CF per factual (default: 1)
+    keep_best_per_factual = cf_config.get('keep_best_per_factual', None)
+    if keep_best_per_factual is not None:
+        print(f"  Mentor directive: keep_best_per_factual={keep_best_per_factual}")
+    
     # Filter candidates by quality if enabled
     if quality_filtering_enabled and quality_scorer and len(all_cf_candidates) > 0:
         print(f"  Applying quality filtering...")
@@ -135,7 +140,8 @@ def generate_counterfactuals_batch(
             labeled_pool,
             classifier,
             quality_scorer,
-            max_per_example
+            max_per_example,
+            keep_best_per_factual=keep_best_per_factual
         )
     else:
         # No filtering - keep all candidates
@@ -243,6 +249,7 @@ def generate_cf_candidates_for_example(
     # Generate CFs
     candidates = []
     temperature = cf_config.get('generation_temperature', 0.7)
+    top_p = cf_config.get('generation_top_p', None)  # Mentor directive: top_p=0.9 for diversity
     max_tokens = cf_config.get('max_tokens', 256)
     prompt_variation = cf_config.get('prompt_variation', True)
     
@@ -261,7 +268,8 @@ def generate_cf_candidates_for_example(
                     temperature,
                     max_tokens,
                     variation_idx if use_variation else 0,
-                    return_details
+                    return_details,
+                    top_p=top_p
                 )
                 
                 if cf_text and cf_text.strip():
@@ -355,7 +363,8 @@ def filter_by_quality(
     labeled_pool: List[Dict],
     classifier,
     quality_scorer: CFQualityScorer,
-    max_per_example: int
+    max_per_example: int,
+    keep_best_per_factual: int = None
 ) -> Tuple[List[Dict], List[Dict]]:
     """
     Filter CF candidates using V3 enhanced filtering (3 filters) + scoring + ranking.
@@ -364,7 +373,8 @@ def filter_by_quality(
     1. Apply all 3 filters (label-consistency, semantic band, length ratio)
     2. Score passing CFs using V3 formula
     3. Rank by score (descending)
-    4. Keep top-k per example (if max_per_example is set)
+    4. Keep top-k per example (mentor directive: keep_best_per_factual=1 for only best CF)
+    5. Global re-rank all surviving CFs
     
     Args:
         cf_candidates: List of candidate dicts with 'cf', 'original_example', etc.
@@ -373,10 +383,14 @@ def filter_by_quality(
         classifier: Trained classifier
         quality_scorer: Quality scorer instance
         max_per_example: Max CFs to keep per original example (after ranking)
+        keep_best_per_factual: If set, overrides max_per_example for per-factual selection
+                               (mentor directive: set to 1 to keep only best CF per factual)
     
     Returns:
         Tuple of (filtered_cfs, filtering_details)
     """
+    # Mentor directive: use keep_best_per_factual if set, otherwise fall back to max_per_example
+    cfs_to_keep_per_factual = keep_best_per_factual if keep_best_per_factual is not None else max_per_example
     all_filtered_cfs_with_scores = []  # List of (cf, score, details) tuples
     filtering_details = []
     
@@ -464,8 +478,8 @@ def filter_by_quality(
     # Step 3: Rank by score (descending)
     all_filtered_cfs_with_scores.sort(key=lambda x: x[1], reverse=True)
     
-    # Step 4: Keep top-k per example (if max_per_example is set)
-    if max_per_example > 0:
+    # Step 4: Keep top-k per example (mentor directive: keep_best_per_factual=1 for only best CF)
+    if cfs_to_keep_per_factual > 0:
         # Group by original example ID
         from collections import defaultdict
         cf_by_original = defaultdict(list)
@@ -473,15 +487,19 @@ def filter_by_quality(
             original_id = cf.get('original_id', 'unknown')
             cf_by_original[original_id].append((cf, score, filter_details, score_details))
         
-        # Keep top max_per_example per original
+        # Keep top cfs_to_keep_per_factual per original (mentor directive: 1 for only best)
         final_cfs = []
         for original_id, cfs_list in cf_by_original.items():
-            top_cfs = cfs_list[:max_per_example]
-            final_cfs.extend([(cf, score, filter_details, score_details) for cf, score, filter_details, score_details in top_cfs])
+            # Sort each group by score (descending) to ensure we get the best
+            cfs_list_sorted = sorted(cfs_list, key=lambda x: x[1], reverse=True)
+            top_cfs = cfs_list_sorted[:cfs_to_keep_per_factual]
+            final_cfs.extend(top_cfs)
         
-        # Re-sort by score (global ranking)
+        # Step 5: Global re-rank all surviving CFs (mentor directive)
         final_cfs.sort(key=lambda x: x[1], reverse=True)
         all_filtered_cfs_with_scores = final_cfs
+        
+        print(f"    Kept {cfs_to_keep_per_factual} best CF(s) per factual, then global re-ranked")
     
     # Extract CFs with scores and ranking information for transparency
     all_filtered_cfs = []
@@ -522,7 +540,8 @@ def generate_single_counterfactual(
     temperature: float = 0.7,
     max_tokens: int = 256,
     variation_idx: int = 0,
-    return_details: bool = False
+    return_details: bool = False,
+    top_p: float = None
 ) -> tuple:
     """
     Generate a single counterfactual by rewriting text to express target label.
@@ -536,6 +555,7 @@ def generate_single_counterfactual(
         max_tokens: Maximum tokens to generate
         variation_idx: Prompt variation index (0, 1, 2 for different prompts)
         return_details: If True, returns (cf_text, details_dict)
+        top_p: Nucleus sampling parameter (0-1) for diversity
     
     Returns:
         Tuple of (cf_text, details_dict)
@@ -610,11 +630,16 @@ Output the reframed text only."""
     import time as time_module
     start_time = time_module.time()
     
-    response = llm_provider.chat_completion(
-        messages=messages,
-        temperature=temperature,
-        max_tokens=max_tokens
-    )
+    # Build kwargs for LLM call
+    llm_kwargs = {
+        'messages': messages,
+        'temperature': temperature,
+        'max_tokens': max_tokens
+    }
+    if top_p is not None:
+        llm_kwargs['top_p'] = top_p
+    
+    response = llm_provider.chat_completion(**llm_kwargs)
     
     end_time = time_module.time()
     generation_time = end_time - start_time
@@ -630,6 +655,7 @@ Output the reframed text only."""
             'target_label': target_label,
             'generated_text': cf_text,
             'temperature': temperature,
+            'top_p': top_p,
             'max_tokens': max_tokens,
             'variation_idx': variation_idx,
             'generation_time_seconds': generation_time,

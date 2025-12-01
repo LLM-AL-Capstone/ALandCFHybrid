@@ -42,11 +42,15 @@ class CFQualityScorer:
         self.alpha = self.quality_config.get('alpha', 0.3)
         self.beta = self.quality_config.get('beta', 0.5)
         
+        # option to remove similarity from ranking score
+        self.use_similarity_in_ranking = self.cf_config.get('use_similarity_in_ranking', True)
+        
         print(f"  Initialized CF Quality Scorer (Version 3):")
         print(f"    - Label-consistency: tau_conf={self.tau_conf}, delta={self.delta}")
         print(f"    - Semantic similarity band: [{self.s_min}, {self.s_max}]")
         print(f"    - Length ratio: [{self.r_min}, {self.r_max}]")
         print(f"    - Scoring weights: alpha={self.alpha}, beta={self.beta}")
+        print(f"    - Use similarity in ranking: {self.use_similarity_in_ranking}")
     
     def _init_embedding_model(self):
         """Lazy initialization of embedding model"""
@@ -326,7 +330,7 @@ class CFQualityScorer:
             p_target = probs[target_idx]
             p_orig = probs[orig_idx]
             
-            # Compute semantic similarity
+            # Compute semantic similarity (still needed for filtering, may be excluded from ranking)
             orig_emb = self.embedding_model.encode([original_text])[0]
             cf_emb = self.embedding_model.encode([cf_text])[0]
             similarity = np.dot(orig_emb, cf_emb) / (
@@ -334,18 +338,26 @@ class CFQualityScorer:
             )
             
             # V3 scoring formula
-            score = (1.0 - p_orig) + self.beta * p_target + self.alpha * similarity
+            # Mentor directive: optionally remove similarity term from ranking
+            if self.use_similarity_in_ranking:
+                score = (1.0 - p_orig) + self.beta * p_target + self.alpha * similarity
+                term3 = float(self.alpha * similarity)
+            else:
+                # Only use label-based terms (mentor directive)
+                score = (1.0 - p_orig) + self.beta * p_target
+                term3 = 0.0  # Similarity not used in ranking
             
             details = {
                 'score': float(score),
                 'p_orig': float(p_orig),
                 'p_target': float(p_target),
-                'similarity': float(similarity),
+                'similarity': float(similarity),  # Still recorded for analysis
                 'term1': float(1.0 - p_orig),  # (1 - p(y_label | u'))
                 'term2': float(self.beta * p_target),  # β * p(y_target | u')
-                'term3': float(self.alpha * similarity),  # α * cos(E(u), E(u'))
+                'term3': term3,  # α * cos(E(u), E(u')) or 0 if disabled
                 'alpha': self.alpha,
-                'beta': self.beta
+                'beta': self.beta,
+                'use_similarity_in_ranking': self.use_similarity_in_ranking
             }
             
             return float(score), details
