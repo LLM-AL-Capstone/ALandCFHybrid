@@ -1,0 +1,31 @@
+{
+  "iteration": 10,
+  "timestamp": "20251201_020511",
+  "step": "evaluation",
+  "evaluation_config": {
+    "classifier_type": "retrieval",
+    "max_icl_examples": 800,
+    "retrieval_settings": {
+      "embedding_backend": "bge_large",
+      "k_per_class": 0,
+      "total_k_max": 10,
+      "fallback_strategy": "similarity",
+      "model_config": {
+        "model": "BAAI/bge-large-en-v1.5",
+        "device": "cpu",
+        "normalize_embeddings": true
+      }
+    }
+  },
+  "metrics": {
+    "accuracy": 0.7828947368421053,
+    "f1_macro": 0.7806305090076853,
+    "f1_weighted": 0.7833198951929605,
+    "precision_macro": 0.7902427427427426,
+    "recall_macro": 0.8171898873084877
+  },
+  "best_f1_macro": 0.7909176215250072,
+  "patience_counter": 3,
+  "test_pool_size": 152,
+  "labeled_pool_size": 120
+}
