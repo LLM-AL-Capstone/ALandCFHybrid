@@ -1,0 +1,1082 @@
+{
+  "iteration": 10,
+  "timestamp": "20251129_045743",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 373,
+      "text": "Premise: The Newnes railway line (also called Wolgan Valley Railway) is a closed and dismantled railway line in New South Wales, Australia. The line ran for 32 mi from the Main Western line to the township of Newnes. Along the way, it passed through a tunnel now known as the Glowworm Tunnel, because it is famous for its glow-worms. The tunnel is now contained within the Wollemi National Park.\nHypothesis: Newnes railway line reopened last year.",
+      "label": "contradiction"
+    },
+    {
+      "id": 211,
+      "text": "Premise: How to grow freesias<br>Find out when to plant your freesias. Freesias grow from bulbs that must be planted at a particular time of year to thrive. The season when you plant your freesias depends on what growing zone you live in.\nHypothesis: Freesias will not grow well in the winter",
+      "label": "neutral"
+    },
+    {
+      "id": 84,
+      "text": "Premise: The Wet Puddle<br>Mandy was walking to school in her favorite sneakers. She accidentally stepped in a puddle along the way. Because of the puddle her shoes were now sopping. All day her feet felt wet and cold. Finally at the end of the day she took her shoes off and warmed up.\nHypothesis: The puddle was made of water.",
+      "label": "entailment"
+    },
+    {
+      "id": 95,
+      "text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:\nHypothesis: bunson is middleweight.",
+      "label": "entailment"
+    },
+    {
+      "id": 281,
+      "text": "Premise: Curt McCune (born August 2, 1960), from Homewood (Birmingham), Alabama, is a former amateur boxer and 4-time State of Alabama amateur boxing champion, and was the 1994 International Law Enforcement Games Boxing Champion at 193\u00a0lbs. McCune is a current private coach and trainer for amateur and professional boxers.\nHypothesis: Curt McCune is a well respected coach and trainer in the boxing community. ",
+      "label": "neutral"
+    },
+    {
+      "id": 353,
+      "text": "Premise: Sigmoid colon volvulus, also known as sigmoid volvulus, is a common cause of bowel obstruction and constipation. It is common in Asia, India (7% of intestinal obstruction) and especially South India because of the high fibre diet. It is very common cause of large bowel obstruction in Peru and Bolivia due to high altitude.\nHypothesis: Sigmoid colon volvulus is cause of bowel obstruction and constipation but is not something common",
+      "label": "contradiction"
+    },
+    {
+      "id": 344,
+      "text": "Premise: The State of the Art is a short story collection by Scottish writer Iain M. Banks, first published in 1991. The collection includes some stories originally published under his other byline, Iain Banks as well as the title novella and others set in Banks' Culture fictional universe.\nHypothesis: Banks only had one byline",
+      "label": "contradiction"
+    },
+    {
+      "id": 320,
+      "text": "Premise: Lansdown is a suburb of the World Heritage City of Bath, England, that extends northwards from the city centre up a hill of the same name. Among its most distinctive architectural features are Lansdown Crescent and Sion Hill Place, which includes a campus of Bath Spa University.\nHypothesis: Sion Hill Place is located on a hill.",
+      "label": "entailment"
+    },
+    {
+      "id": 141,
+      "text": "Premise: The Veterinary Medical College Application Service (VMCAS) is a centralized application service for students applying to veterinary school. Created by the Association of American Veterinary Medical Colleges (AAVMC) in 1995, VMCAS handles applications for most of the veterinary schools in the United States, as well as several in Canada, the United Kingdom, New Zealand and Australia.\nHypothesis: The Veterinary Medical College Application Service (VMCAS) is the only application service for students applying for veterinary school",
+      "label": "neutral"
+    },
+    {
+      "id": 41,
+      "text": "Premise: Calendar \u00bb American Heart Association- Go Red For Women Luncheon February 27, 2015 from 10:30am - 1:00pm The Go Red For Women Luncheon is an event to raise funds for research and initiatives preventing heart disease and stroke. The luncheon is the American Heart Association's annual event to increase awareness of heart disease- the No. 1 cause of death for women- and inspire women to take charge of their health.\nHypothesis: The Go Red for Women Luncheon was a one-time event.",
+      "label": "contradiction"
+    }
+  ],
+  "generated_counterfactuals": [],
+  "selected_cf_ids": [],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 0,
+    "num_added": 0,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "Premise: The Newnes railway line (also called Wolgan Valley Railway) is a closed and dismantled railway line in New South Wales, Australia. The line ran for 32 mi from the Main Western line to the township of Newnes. Along the way, it passed through a tunnel now known as the Glowworm Tunnel, because it is famous for its glow-worms. The tunnel is now contained within the Wollemi National Park.\nHypothesis: Newnes railway line reopened last year.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: The Newnes railway line (also called Wolgan Valley Railway) is a closed and dismantled railway line in New South Wales, Australia. The line ran for 32 mi from the Main Western line to the township of Newnes. Along the way, it passed through a tunnel now known as the Glowworm Tunnel, because it is famous for its glow-worms. The tunnel is now contained within the Wollemi National Park.  \nHypothesis: There have been reports suggesting the Newnes railway line reopened last year.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9504766464233398,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Newnes railway line (also called Wolgan Valley Railway) is a closed and dismantled railway line in New South Wales, Australia. The line ran for 32 mi from the Main Western line to the township of Newnes. Along the way, it passed through a tunnel now known as the Glowworm Tunnel, because it is famous for its glow-worms. The tunnel is now contained within the Wollemi National Park.\nHypothesis: Newnes railway line reopened last year.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: The Newnes railway line (also called Wolgan Valley Railway) is a closed and dismantled railway line in New South Wales, Australia. The line ran for 32 mi from the Main Western line to the township of Newnes. Along the way, it passed through a tunnel now known as the Glowworm Tunnel, because it is famous for its glow-worms. The tunnel is now contained within the Wollemi National Park.  \nHypothesis: There have been discussions about reopening the Newnes railway line last year.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.822800874710083,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Newnes railway line (also called Wolgan Valley Railway) is a closed and dismantled railway line in New South Wales, Australia. The line ran for 32 mi from the Main Western line to the township of Newnes. Along the way, it passed through a tunnel now known as the Glowworm Tunnel, because it is famous for its glow-worms. The tunnel is now contained within the Wollemi National Park.\nHypothesis: Newnes railway line reopened last year.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: The Newnes railway line (also called Wolgan Valley Railway) is a closed and dismantled railway line in New South Wales, Australia. The line ran for 32 mi from the Main Western line to the township of Newnes. Along the way, it passed through a tunnel now known as the Glowworm Tunnel, because it is famous for its glow-worms. The tunnel is now contained within the Wollemi National Park.  \nHypothesis: There have been reports suggesting the Newnes railway line reopened last year.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9179351329803467,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to grow freesias<br>Find out when to plant your freesias. Freesias grow from bulbs that must be planted at a particular time of year to thrive. The season when you plant your freesias depends on what growing zone you live in.\nHypothesis: Freesias will not grow well in the winter",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to grow freesias<br>Find out when to plant your freesias. Freesias grow from bulbs that must be planted at a particular time of year to thrive. The season when you plant your freesias depends on what growing zone you live in.  \nHypothesis: Freesias cannot thrive if planted during the winter.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6911091804504395,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to grow freesias<br>Find out when to plant your freesias. Freesias grow from bulbs that must be planted at a particular time of year to thrive. The season when you plant your freesias depends on what growing zone you live in.\nHypothesis: Freesias will not grow well in the winter",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to grow freesias<br>Find out when to plant your freesias. Freesias grow from bulbs that must be planted at a particular time of year to thrive. The season when you plant your freesias depends on what growing zone you live in.  \nHypothesis: Freesias cannot thrive if planted during the winter.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6411230564117432,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to grow freesias<br>Find out when to plant your freesias. Freesias grow from bulbs that must be planted at a particular time of year to thrive. The season when you plant your freesias depends on what growing zone you live in.\nHypothesis: Freesias will not grow well in the winter",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to grow freesias  \nFind out when to plant your freesias. Freesias grow from bulbs that must be planted at a particular time of year to thrive. The season when you plant your freesias depends on what growing zone you live in.  \nHypothesis: Freesias cannot thrive if planted during the winter.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7167720794677734,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Wet Puddle<br>Mandy was walking to school in her favorite sneakers. She accidentally stepped in a puddle along the way. Because of the puddle her shoes were now sopping. All day her feet felt wet and cold. Finally at the end of the day she took her shoes off and warmed up.\nHypothesis: The puddle was made of water.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: The Wet Puddle  \nMandy was walking to school in her favorite sneakers. She accidentally stepped in a puddle along the way. Because of the puddle her shoes were now sopping. All day her feet felt wet and cold. Finally at the end of the day she took her shoes off and warmed up.  \nHypothesis: The puddle was made of a liquid.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7347147464752197,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Wet Puddle<br>Mandy was walking to school in her favorite sneakers. She accidentally stepped in a puddle along the way. Because of the puddle her shoes were now sopping. All day her feet felt wet and cold. Finally at the end of the day she took her shoes off and warmed up.\nHypothesis: The puddle was made of water.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: The Wet Puddle  \nMandy was walking to school in her favorite sneakers. She accidentally stepped in a puddle along the way. Because of the puddle her shoes were now sopping. All day her feet felt wet and cold. Finally at the end of the day she took her shoes off and warmed up.  \nHypothesis: The puddle could have been made of water.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7204809188842773,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Wet Puddle<br>Mandy was walking to school in her favorite sneakers. She accidentally stepped in a puddle along the way. Because of the puddle her shoes were now sopping. All day her feet felt wet and cold. Finally at the end of the day she took her shoes off and warmed up.\nHypothesis: The puddle was made of water.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: The Wet Puddle  \nMandy was walking to school in her favorite sneakers. She accidentally stepped in a puddle along the way. Because of the puddle her shoes were now sopping. All day her feet felt wet and cold. Finally at the end of the day she took her shoes off and warmed up.  \nHypothesis: The puddle might have been made of water.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7700788974761963,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:\nHypothesis: bunson is middleweight.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:  \nHypothesis: Brunson might be middleweight.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0559048652648926,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:\nHypothesis: bunson is middleweight.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is focused on his upcoming fight against Brunson:  \nHypothesis: Brunson competes in the middleweight division.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8592000007629395,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:\nHypothesis: bunson is middleweight.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:  \nHypothesis: Brunson might be middleweight.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8066632747650146,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Curt McCune (born August 2, 1960), from Homewood (Birmingham), Alabama, is a former amateur boxer and 4-time State of Alabama amateur boxing champion, and was the 1994 International Law Enforcement Games Boxing Champion at 193\u00a0lbs. McCune is a current private coach and trainer for amateur and professional boxers.\nHypothesis: Curt McCune is a well respected coach and trainer in the boxing community. ",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Curt McCune (born August 2, 1960), from Homewood (Birmingham), Alabama, is a former amateur boxer and 4-time State of Alabama amateur boxing champion, and was the 1994 International Law Enforcement Games Boxing Champion at 193 lbs. McCune is a current private coach and trainer for amateur and professional boxers.  \nHypothesis: Curt McCune is a well respected coach and trainer in the boxing community, as evidenced by his extensive experience and achievements.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.871906042098999,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Curt McCune (born August 2, 1960), from Homewood (Birmingham), Alabama, is a former amateur boxer and 4-time State of Alabama amateur boxing champion, and was the 1994 International Law Enforcement Games Boxing Champion at 193\u00a0lbs. McCune is a current private coach and trainer for amateur and professional boxers.\nHypothesis: Curt McCune is a well respected coach and trainer in the boxing community. ",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Curt McCune (born August 2, 1960), from Homewood (Birmingham), Alabama, is a former amateur boxer and 4-time State of Alabama amateur boxing champion, and was the 1994 International Law Enforcement Games Boxing Champion at 193 lbs. McCune is a current private coach and trainer for amateur and professional boxers.  \nHypothesis: Curt McCune is a well respected coach and trainer in the boxing community, known for his expertise and contributions to the sport.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9643678665161133,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Curt McCune (born August 2, 1960), from Homewood (Birmingham), Alabama, is a former amateur boxer and 4-time State of Alabama amateur boxing champion, and was the 1994 International Law Enforcement Games Boxing Champion at 193\u00a0lbs. McCune is a current private coach and trainer for amateur and professional boxers.\nHypothesis: Curt McCune is a well respected coach and trainer in the boxing community. ",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Curt McCune (born August 2, 1960), from Homewood (Birmingham), Alabama, is a former amateur boxer and 4-time State of Alabama amateur boxing champion, and was the 1994 International Law Enforcement Games Boxing Champion at 193 lbs. McCune is a current private coach and trainer for amateur and professional boxers.  \nHypothesis: Curt McCune is a well respected coach and trainer in the boxing community, known for his expertise and achievements.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9867591857910156,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Sigmoid colon volvulus, also known as sigmoid volvulus, is a common cause of bowel obstruction and constipation. It is common in Asia, India (7% of intestinal obstruction) and especially South India because of the high fibre diet. It is very common cause of large bowel obstruction in Peru and Bolivia due to high altitude.\nHypothesis: Sigmoid colon volvulus is cause of bowel obstruction and constipation but is not something common",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Sigmoid colon volvulus, also known as sigmoid volvulus, is a common cause of bowel obstruction and constipation. It is common in Asia, India (7% of intestinal obstruction) and especially South India because of the high fibre diet. It is very common cause of large bowel obstruction in Peru and Bolivia due to high altitude.  \nHypothesis: Sigmoid colon volvulus is a cause of bowel obstruction and constipation, but its prevalence may vary.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8958110809326172,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Sigmoid colon volvulus, also known as sigmoid volvulus, is a common cause of bowel obstruction and constipation. It is common in Asia, India (7% of intestinal obstruction) and especially South India because of the high fibre diet. It is very common cause of large bowel obstruction in Peru and Bolivia due to high altitude.\nHypothesis: Sigmoid colon volvulus is cause of bowel obstruction and constipation but is not something common",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Sigmoid colon volvulus, also known as sigmoid volvulus, is a common cause of bowel obstruction and constipation. It is common in Asia, India (7% of intestinal obstruction) and especially South India because of the high fibre diet. It is very common cause of large bowel obstruction in Peru and Bolivia due to high altitude.  \nHypothesis: Sigmoid colon volvulus is a cause of bowel obstruction and constipation, though its prevalence may vary depending on the region.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7663092613220215,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Sigmoid colon volvulus, also known as sigmoid volvulus, is a common cause of bowel obstruction and constipation. It is common in Asia, India (7% of intestinal obstruction) and especially South India because of the high fibre diet. It is very common cause of large bowel obstruction in Peru and Bolivia due to high altitude.\nHypothesis: Sigmoid colon volvulus is cause of bowel obstruction and constipation but is not something common",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Sigmoid colon volvulus, also known as sigmoid volvulus, is a common cause of bowel obstruction and constipation. It is common in Asia, India (7% of intestinal obstruction) and especially South India because of the high fibre diet. It is very common cause of large bowel obstruction in Peru and Bolivia due to high altitude.  \nHypothesis: Sigmoid colon volvulus can cause bowel obstruction and constipation, but its prevalence may vary depending on the region.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8932769298553467,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The State of the Art is a short story collection by Scottish writer Iain M. Banks, first published in 1991. The collection includes some stories originally published under his other byline, Iain Banks as well as the title novella and others set in Banks' Culture fictional universe.\nHypothesis: Banks only had one byline",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: The State of the Art is a short story collection by Scottish writer Iain M. Banks, first published in 1991. The collection includes some stories originally published under his other byline, Iain Banks as well as the title novella and others set in Banks' Culture fictional universe.  \nHypothesis: Banks may have used more than one byline.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7935299873352051,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The State of the Art is a short story collection by Scottish writer Iain M. Banks, first published in 1991. The collection includes some stories originally published under his other byline, Iain Banks as well as the title novella and others set in Banks' Culture fictional universe.\nHypothesis: Banks only had one byline",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: The State of the Art is a short story collection by Scottish writer Iain M. Banks, first published in 1991. The collection includes some stories originally published under his other byline, Iain Banks as well as the title novella and others set in Banks' Culture fictional universe.  \nHypothesis: Banks is known to have used more than one byline.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8455228805541992,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The State of the Art is a short story collection by Scottish writer Iain M. Banks, first published in 1991. The collection includes some stories originally published under his other byline, Iain Banks as well as the title novella and others set in Banks' Culture fictional universe.\nHypothesis: Banks only had one byline",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: The State of the Art is a short story collection by Scottish writer Iain M. Banks, first published in 1991. The collection includes some stories originally published under his other byline, Iain Banks, as well as the title novella and others set in Banks' Culture fictional universe.  \nHypothesis: Banks is known to have used more than one byline.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6749308109283447,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Lansdown is a suburb of the World Heritage City of Bath, England, that extends northwards from the city centre up a hill of the same name. Among its most distinctive architectural features are Lansdown Crescent and Sion Hill Place, which includes a campus of Bath Spa University.\nHypothesis: Sion Hill Place is located on a hill.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Lansdown is a suburb of the World Heritage City of Bath, England, that extends northwards from the city centre up a hill of the same name. Among its most distinctive architectural features are Lansdown Crescent and Sion Hill Place, which includes a campus of Bath Spa University.  \nHypothesis: Sion Hill Place might be located on a hill.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6389942169189453,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Lansdown is a suburb of the World Heritage City of Bath, England, that extends northwards from the city centre up a hill of the same name. Among its most distinctive architectural features are Lansdown Crescent and Sion Hill Place, which includes a campus of Bath Spa University.\nHypothesis: Sion Hill Place is located on a hill.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Lansdown is a suburb of the World Heritage City of Bath, England, that extends northwards from the city centre up a hill of the same name. Among its architectural features are Lansdown Crescent and Sion Hill Place, which includes a campus of Bath Spa University.  \nHypothesis: Sion Hill Place may be situated on a hill.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7013511657714844,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Lansdown is a suburb of the World Heritage City of Bath, England, that extends northwards from the city centre up a hill of the same name. Among its most distinctive architectural features are Lansdown Crescent and Sion Hill Place, which includes a campus of Bath Spa University.\nHypothesis: Sion Hill Place is located on a hill.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Lansdown is a suburb of the World Heritage City of Bath, England, that extends northwards from the city centre up a hill of the same name. Among its most distinctive architectural features are Lansdown Crescent and Sion Hill Place, which includes a campus of Bath Spa University.  \nHypothesis: Sion Hill Place might be located on a hill.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6426241397857666,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Veterinary Medical College Application Service (VMCAS) is a centralized application service for students applying to veterinary school. Created by the Association of American Veterinary Medical Colleges (AAVMC) in 1995, VMCAS handles applications for most of the veterinary schools in the United States, as well as several in Canada, the United Kingdom, New Zealand and Australia.\nHypothesis: The Veterinary Medical College Application Service (VMCAS) is the only application service for students applying for veterinary school",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The Veterinary Medical College Application Service (VMCAS) is a centralized application service for students applying to veterinary school. Created by the Association of American Veterinary Medical Colleges (AAVMC) in 1995, VMCAS handles applications for most of the veterinary schools in the United States, as well as several in Canada, the United Kingdom, New Zealand and Australia.  \nHypothesis: The Veterinary Medical College Application Service (VMCAS) is not the only application service for students applying for veterinary school.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9267559051513672,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Veterinary Medical College Application Service (VMCAS) is a centralized application service for students applying to veterinary school. Created by the Association of American Veterinary Medical Colleges (AAVMC) in 1995, VMCAS handles applications for most of the veterinary schools in the United States, as well as several in Canada, the United Kingdom, New Zealand and Australia.\nHypothesis: The Veterinary Medical College Application Service (VMCAS) is the only application service for students applying for veterinary school",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The Veterinary Medical College Application Service (VMCAS) is a centralized application service for students applying to veterinary school. Created by the Association of American Veterinary Medical Colleges (AAVMC) in 1995, VMCAS handles applications for most of the veterinary schools in the United States, as well as several in Canada, the United Kingdom, New Zealand and Australia.  \nHypothesis: The Veterinary Medical College Application Service (VMCAS) is not the only application service for students applying for veterinary school.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.919532060623169,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Veterinary Medical College Application Service (VMCAS) is a centralized application service for students applying to veterinary school. Created by the Association of American Veterinary Medical Colleges (AAVMC) in 1995, VMCAS handles applications for most of the veterinary schools in the United States, as well as several in Canada, the United Kingdom, New Zealand and Australia.\nHypothesis: The Veterinary Medical College Application Service (VMCAS) is the only application service for students applying for veterinary school",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The Veterinary Medical College Application Service (VMCAS) is a centralized application service for students applying to veterinary school. Created by the Association of American Veterinary Medical Colleges (AAVMC) in 1995, VMCAS handles applications for most of the veterinary schools in the United States, as well as several in Canada, the United Kingdom, New Zealand and Australia.  \nHypothesis: The Veterinary Medical College Application Service (VMCAS) is not the only application service for students applying for veterinary school.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8127832412719727,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Calendar \u00bb American Heart Association- Go Red For Women Luncheon February 27, 2015 from 10:30am - 1:00pm The Go Red For Women Luncheon is an event to raise funds for research and initiatives preventing heart disease and stroke. The luncheon is the American Heart Association's annual event to increase awareness of heart disease- the No. 1 cause of death for women- and inspire women to take charge of their health.\nHypothesis: The Go Red for Women Luncheon was a one-time event.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Calendar \u00bb American Heart Association- Go Red For Women Luncheon February 27, 2015 from 10:30am - 1:00pm The Go Red For Women Luncheon is an event to raise funds for research and initiatives preventing heart disease and stroke. The luncheon is the American Heart Association's annual event to increase awareness of heart disease- the No. 1 cause of death for women- and inspire women to take charge of their health.  \nHypothesis: The Go Red for Women Luncheon may have been held as a one-time event.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0787270069122314,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Calendar \u00bb American Heart Association- Go Red For Women Luncheon February 27, 2015 from 10:30am - 1:00pm The Go Red For Women Luncheon is an event to raise funds for research and initiatives preventing heart disease and stroke. The luncheon is the American Heart Association's annual event to increase awareness of heart disease- the No. 1 cause of death for women- and inspire women to take charge of their health.\nHypothesis: The Go Red for Women Luncheon was a one-time event.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Calendar \u00bb American Heart Association- Go Red For Women Luncheon February 27, 2015 from 10:30am - 1:00pm The Go Red For Women Luncheon is an event to raise funds for research and initiatives preventing heart disease and stroke. The luncheon is the American Heart Association's annual event to increase awareness of heart disease- the No. 1 cause of death for women- and inspire women to take charge of their health.  \nHypothesis: The Go Red for Women Luncheon may have been held as a single event in 2015.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8615391254425049,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Calendar \u00bb American Heart Association- Go Red For Women Luncheon February 27, 2015 from 10:30am - 1:00pm The Go Red For Women Luncheon is an event to raise funds for research and initiatives preventing heart disease and stroke. The luncheon is the American Heart Association's annual event to increase awareness of heart disease- the No. 1 cause of death for women- and inspire women to take charge of their health.\nHypothesis: The Go Red for Women Luncheon was a one-time event.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Calendar \u00bb American Heart Association- Go Red For Women Luncheon February 27, 2015 from 10:30am - 1:00pm The Go Red For Women Luncheon is an event to raise funds for research and initiatives preventing heart disease and stroke. The luncheon is the American Heart Association's annual event to increase awareness of heart disease- the No. 1 cause of death for women- and inspire women to take charge of their health.  \nHypothesis: The Go Red for Women Luncheon may have been held as a one-time event.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7823631763458252,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "373_cf_neutral_0",
+        "original_id": 373,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999982396411763,
+          "p_orig": 1.7603588236921188e-06,
+          "margin": 0.9999964792823526,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.997093141078949,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "373_cf_neutral_1",
+        "original_id": 373,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.999999999022855,
+          "p_orig": 9.736336197887398e-10,
+          "margin": 0.9999999980492214,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9953347444534302,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "373_cf_neutral_2",
+        "original_id": 373,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999970976295922,
+          "p_orig": 2.9023370918785474e-06,
+          "margin": 0.9999941952925003,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.997093141078949,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "211_cf_entailment_0",
+        "original_id": 211,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.1445079558616106e-05,
+          "p_orig": 0.9999777234026518,
+          "margin": -0.9999562783230932,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "211_cf_entailment_1",
+        "original_id": 211,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.2887760011646546e-06,
+          "p_orig": 0.9999959773981426,
+          "margin": -0.9999926886221414,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "211_cf_entailment_2",
+        "original_id": 211,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 9.610301583040395e-05,
+          "p_orig": 0.9999037332604673,
+          "margin": -0.9998076302446369,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "84_cf_neutral_0",
+        "original_id": 84,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.1861256601798814e-08,
+          "p_orig": 0.9999999881387435,
+          "margin": -0.9999999762774868,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "84_cf_neutral_1",
+        "original_id": 84,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 9.610305446968825e-05,
+          "p_orig": 0.9999038969455304,
+          "margin": -0.9998077938910607,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "84_cf_neutral_2",
+        "original_id": 84,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0011695155036333138,
+          "p_orig": 0.9988304844963667,
+          "margin": -0.9976609689927334,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "95_cf_neutral_0",
+        "original_id": 95,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00015843714142362416,
+          "p_orig": 0.9998415628585764,
+          "margin": -0.9996831257171528,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "95_cf_neutral_1",
+        "original_id": 95,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 5.3158465276583e-08,
+          "p_orig": 0.9999999468415348,
+          "margin": -0.9999998936830695,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "95_cf_neutral_2",
+        "original_id": 95,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00015843710366730693,
+          "p_orig": 0.9998415628703903,
+          "margin": -0.999683125766723,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "281_cf_entailment_0",
+        "original_id": 281,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.8175743279304011,
+          "p_orig": 0.18242567206959887,
+          "margin": 0.6351486558608022,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9971603751182556,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "281_cf_entailment_1",
+        "original_id": 281,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.473908632729791e-05,
+          "p_orig": 0.9999852609115429,
+          "margin": -0.9999705218252156,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "281_cf_entailment_2",
+        "original_id": 281,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.004070153248554345,
+          "p_orig": 0.9959298467514457,
+          "margin": -0.9918596935028914,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "353_cf_neutral_0",
+        "original_id": 353,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 7.052990745731013e-11,
+          "p_orig": 0.0,
+          "margin": 7.052990745731013e-11,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "353_cf_neutral_1",
+        "original_id": 353,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.081612526176705e-11,
+          "p_orig": 1.081612526176705e-11,
+          "margin": 0.0,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "353_cf_neutral_2",
+        "original_id": 353,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.0207173800014787e-11,
+          "p_orig": 6.560313796926441e-12,
+          "margin": 1.3646860003088346e-11,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "344_cf_neutral_0",
+        "original_id": 344,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.691219078231343e-08,
+          "p_orig": 0.0,
+          "margin": 4.691219078231343e-08,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "344_cf_neutral_1",
+        "original_id": 344,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.9172003678306576e-10,
+          "p_orig": 1.9172003678306576e-10,
+          "margin": 0.0,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "344_cf_neutral_2",
+        "original_id": 344,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.799629113613019e-12,
+          "p_orig": 3.979032793496651e-12,
+          "margin": 8.205963201163679e-13,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "320_cf_neutral_0",
+        "original_id": 320,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.003172694463554394,
+          "p_orig": 0.9968273055364456,
+          "margin": -0.9936546110728912,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "320_cf_neutral_1",
+        "original_id": 320,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00015843710366450156,
+          "p_orig": 0.9998415628963355,
+          "margin": -0.999683125792671,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "320_cf_neutral_2",
+        "original_id": 320,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0015011889200166502,
+          "p_orig": 0.9984988110799834,
+          "margin": -0.9969976221599668,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "141_cf_contradiction_0",
+        "original_id": 141,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.3983674171768316e-07,
+          "p_orig": 0.6791782775343987,
+          "margin": -0.679177837697657,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "141_cf_contradiction_1",
+        "original_id": 141,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.197030481350105e-07,
+          "p_orig": 0.2689415097094646,
+          "margin": -0.2689413900064165,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "141_cf_contradiction_2",
+        "original_id": 141,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.7224769408679556e-08,
+          "p_orig": 0.22270028569756217,
+          "margin": -0.22270026847279276,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "41_cf_neutral_0",
+        "original_id": 41,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9959298472346705,
+          "p_orig": 0.00407015276532946,
+          "margin": 0.991859694469341,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9995337128639221,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "41_cf_neutral_1",
+        "original_id": 41,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0007096738799293864,
+          "p_orig": 5.598892011759213e-09,
+          "margin": 0.0007096682810373746,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "41_cf_neutral_2",
+        "original_id": 41,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9988304836851578,
+          "p_orig": 0.0011695156464572906,
+          "margin": 0.9976609680387005,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9995337128639221,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 0,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 0,
+    "num_final_selected": 0,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

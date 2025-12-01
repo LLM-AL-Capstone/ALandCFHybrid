@@ -1,0 +1,1363 @@
+{
+  "iteration": 3,
+  "timestamp": "20251129_135753",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 48,
+      "text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.\nHypothesis: The misfits released their album under a self-titled record company.",
+      "label": "entailment"
+    },
+    {
+      "id": 405,
+      "text": "Premise: Some of the emails had the subject line, \"Think Twice.\" They were sent from a spoofed email address. The sender claimed to have had an associate plant a small bomb in the recipient's building and said the only way to stop him from setting it off was by making an online payment of $20,000 in bitcoin.\nHypothesis: The sender would have accepted $20,000 in cash.",
+      "label": "contradiction"
+    },
+    {
+      "id": 17,
+      "text": "Premise: Redneck Nation: How the South Really Won the War (ISBN\u00a0 ) is a book by conservative personality Michael Graham. Released in 2002 by Warner Books, the book covers a wide variety of Graham's personal opinions on current and historical events in the context of southern ideas and a \"redneck\" political point of view.\nHypothesis: This is not a book for rednecks",
+      "label": "contradiction"
+    },
+    {
+      "id": 78,
+      "text": "Premise: How to take action to fight human trafficking<br>Understand the different forms of human trafficking. Human trafficking generally takes on one of two forms. In any form of trafficking, however, traffickers take individuals against their will and use the individuals for various illicit reasons.\nHypothesis: human trafficking has a z",
+      "label": "contradiction"
+    },
+    {
+      "id": 314,
+      "text": "Premise: Ileana Carusio, best known with the stage names of Ramba, Mal\u00f9 or Mal\u00f9 Ramba (born 1967) is a retired Italian pornographic actress whose career spanned over 6 years. At first her name was \"Mal\u00f9\", but the most fitting Ramba was launched by a journalist as he was referring to her aggressive look with guns and magazines. She has appeared in many films.\nHypothesis: She has always been in porn movies.",
+      "label": "neutral"
+    },
+    {
+      "id": 285,
+      "text": "Premise: How to manage cash flow for a business<br>Write down your business's balance at the beginning of each month. Check your business's bank account to see how much cash you have on hand. You will need to do this for a few months before you have a good idea of what your cash flow is like.\nHypothesis: The beginning of each month you should visit your bank to see if they have toasters.",
+      "label": "contradiction"
+    },
+    {
+      "id": 124,
+      "text": "Premise: High Noon is a retailer and auction consulting company. They specialize in Western American art & antique Americana, including cowboy and American Indian artifacts and fine western art. The company is known for founding the High Noon Western Americana Auction and Antique Show in 1991, held every January at the Phoenix Mesa Marriott in Mesa, Arizona.\nHypothesis: There are many examples of fine western art.",
+      "label": "neutral"
+    },
+    {
+      "id": 427,
+      "text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.\nHypothesis: Barea lost to a team named after gold and chicken",
+      "label": "entailment"
+    },
+    {
+      "id": 256,
+      "text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.\nHypothesis: The person believes government should do little",
+      "label": "entailment"
+    },
+    {
+      "id": 106,
+      "text": "Premise: The garden was full of ripe odours and warm colours .<br>The Lombardies around it were tall and sombre like the priestly forms of some mystic band .<br>Abel was sitting in the hop-vine arbour ; beside him Captain Kidd slept .<br>I thought Abel was asleep , too ; his head leaned against the trellis and his eyes were shut .\nHypothesis: The people both had there eyes closed",
+      "label": "entailment"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "285_cf_neutral_2",
+      "text": "Premise: How to manage cash flow for a business<br>Write down your business's balance at the beginning of each month. Check your business's bank account to see how much cash you have on hand. You will need to do this for a few months before you have a good idea of what your cash flow is like.  \nHypothesis: The beginning of each month you could visit your bank to inquire about additional services or offerings.",
+      "label": "neutral",
+      "original_id": 285,
+      "original_label": "contradiction",
+      "v3_score": 1.7842313120786226,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.9999999847698361,
+        "term2": 0.4999999923840887,
+        "term3": 0.2842313349246979,
+        "total": 1.7842313120786226,
+        "p_orig": 1.5230163914616678e-08,
+        "p_target": 0.9999999847681774,
+        "similarity": 0.9474377632141113
+      }
+    },
+    {
+      "id": "78_cf_entailment_0",
+      "text": "Premise: How to take action to fight human trafficking<br>Understand the different forms of human trafficking. Human trafficking generally takes on one of two forms. In any form of trafficking, however, traffickers take individuals against their will and use the individuals for various illicit reasons.  \nHypothesis: Human trafficking has various forms.",
+      "label": "entailment",
+      "original_id": 78,
+      "original_label": "contradiction",
+      "v3_score": 1.7811848212667414,
+      "v3_rank": 2,
+      "v3_score_breakdown": {
+        "term1": 0.9999999999842626,
+        "term2": 0.4999999989615406,
+        "term3": 0.2811848223209381,
+        "total": 1.7811848212667414,
+        "p_orig": 1.57373653932927e-11,
+        "p_target": 0.9999999979230813,
+        "similarity": 0.9372827410697937
+      }
+    },
+    {
+      "id": "78_cf_entailment_1",
+      "text": "Premise: How to take action to fight human trafficking<br>Understand the different forms of human trafficking. Human trafficking generally takes on one of two forms. In any form of trafficking, however, traffickers take individuals against their will and use the individuals for various illicit reasons.  \nHypothesis: Human trafficking involves individuals being taken against their will for illicit purposes.",
+      "label": "entailment",
+      "original_id": 78,
+      "original_label": "contradiction",
+      "v3_score": 1.7803818580635178,
+      "v3_rank": 3,
+      "v3_score_breakdown": {
+        "term1": 0.9999999999450713,
+        "term2": 0.4999999997696001,
+        "term3": 0.28038185834884644,
+        "total": 1.7803818580635178,
+        "p_orig": 5.4928756373263336e-11,
+        "p_target": 0.9999999995392002,
+        "similarity": 0.93460613489151
+      }
+    },
+    {
+      "id": "78_cf_entailment_2",
+      "text": "Premise: How to take action to fight human trafficking<br>Understand the different forms of human trafficking. Human trafficking generally takes on one of two forms. In any form of trafficking, however, traffickers take individuals against their will and use the individuals for various illicit reasons.  \nHypothesis: Human trafficking has a significant impact on individuals and communities.",
+      "label": "entailment",
+      "original_id": 78,
+      "original_label": "contradiction",
+      "v3_score": 1.7800076502168531,
+      "v3_rank": 4,
+      "v3_score_breakdown": {
+        "term1": 1.0,
+        "term2": 0.49995194848421765,
+        "term3": 0.2800557017326355,
+        "total": 1.7800076502168531,
+        "p_orig": 0.0,
+        "p_target": 0.9999038969684353,
+        "similarity": 0.9335189461708069
+      }
+    },
+    {
+      "id": "285_cf_neutral_1",
+      "text": "Premise: How to manage cash flow for a business<br>Write down your business's balance at the beginning of each month. Check your business's bank account to see how much cash you have on hand. You will need to do this for a few months before you have a good idea of what your cash flow is like.  \nHypothesis: The beginning of each month is a good time to review your financial tools and resources at the bank.",
+      "label": "neutral",
+      "original_id": 285,
+      "original_label": "contradiction",
+      "v3_score": 1.7557639634045181,
+      "v3_rank": 5,
+      "v3_score_breakdown": {
+        "term1": 0.9999999835604434,
+        "term2": 0.47628700940988583,
+        "term3": 0.27947697043418884,
+        "total": 1.7557639634045181,
+        "p_orig": 1.6439556653853e-08,
+        "p_target": 0.9525740188197717,
+        "similarity": 0.9315898418426514
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "285_cf_neutral_2",
+    "78_cf_entailment_0",
+    "78_cf_entailment_1",
+    "78_cf_entailment_2",
+    "285_cf_neutral_1"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 5,
+    "num_added": 5,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.\nHypothesis: The misfits released their album under a self-titled record company.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.  \nHypothesis: The misfits may have released their album under a self-titled record company.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8140180110931396,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.\nHypothesis: The misfits released their album under a self-titled record company.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.  \nHypothesis: The album was released under a record company associated with the Misfits.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8051609992980957,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.\nHypothesis: The misfits released their album under a self-titled record company.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.  \nHypothesis: The Misfits may have released their album under a self-titled record company.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8045010566711426,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Some of the emails had the subject line, \"Think Twice.\" They were sent from a spoofed email address. The sender claimed to have had an associate plant a small bomb in the recipient's building and said the only way to stop him from setting it off was by making an online payment of $20,000 in bitcoin.\nHypothesis: The sender would have accepted $20,000 in cash.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Some of the emails had the subject line, \"Think Twice.\" They were sent from a spoofed email address. The sender claimed to have had an associate plant a small bomb in the recipient's building and said the only way to stop him from setting it off was by making an online payment of $20,000 in bitcoin.  \nHypothesis: The sender would have accepted $20,000 in cash.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9299073219299316,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Some of the emails had the subject line, \"Think Twice.\" They were sent from a spoofed email address. The sender claimed to have had an associate plant a small bomb in the recipient's building and said the only way to stop him from setting it off was by making an online payment of $20,000 in bitcoin.\nHypothesis: The sender would have accepted $20,000 in cash.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Some of the emails had the subject line, \"Think Twice.\" They were sent from a spoofed email address. The sender claimed to have had an associate plant a small bomb in the recipient's building and said the only way to stop him from setting it off was by making an online payment of $20,000 in bitcoin.  \nHypothesis: The sender might have also accepted $20,000 in cash.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8166928291320801,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Some of the emails had the subject line, \"Think Twice.\" They were sent from a spoofed email address. The sender claimed to have had an associate plant a small bomb in the recipient's building and said the only way to stop him from setting it off was by making an online payment of $20,000 in bitcoin.\nHypothesis: The sender would have accepted $20,000 in cash.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Some of the emails had the subject line, \"Think Twice.\" They were sent from a spoofed email address. The sender claimed to have had an associate plant a small bomb in the recipient's building and said the only way to stop him from setting it off was by making an online payment of $20,000 in bitcoin.  \nHypothesis: The sender might have accepted $20,000 in cash as an alternative payment.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8015987873077393,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Redneck Nation: How the South Really Won the War (ISBN\u00a0 ) is a book by conservative personality Michael Graham. Released in 2002 by Warner Books, the book covers a wide variety of Graham's personal opinions on current and historical events in the context of southern ideas and a \"redneck\" political point of view.\nHypothesis: This is not a book for rednecks",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Redneck Nation: How the South Really Won the War (ISBN\u00a0 ) is a book by conservative personality Michael Graham. Released in 2002 by Warner Books, the book covers a wide variety of Graham's personal opinions on current and historical events in the context of southern ideas and a \"redneck\" political point of view.  \nHypothesis: This may not appeal to all rednecks.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8524129390716553,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Redneck Nation: How the South Really Won the War (ISBN\u00a0 ) is a book by conservative personality Michael Graham. Released in 2002 by Warner Books, the book covers a wide variety of Graham's personal opinions on current and historical events in the context of southern ideas and a \"redneck\" political point of view.\nHypothesis: This is not a book for rednecks",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Redneck Nation: How the South Really Won the War (ISBN\u00a0 ) is a book by conservative personality Michael Graham. Released in 2002 by Warner Books, the book covers a wide variety of Graham's personal opinions on current and historical events in the context of southern ideas and a \"redneck\" political point of view.  \nHypothesis: This book may appeal to readers interested in southern perspectives.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7625689506530762,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Redneck Nation: How the South Really Won the War (ISBN\u00a0 ) is a book by conservative personality Michael Graham. Released in 2002 by Warner Books, the book covers a wide variety of Graham's personal opinions on current and historical events in the context of southern ideas and a \"redneck\" political point of view.\nHypothesis: This is not a book for rednecks",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Redneck Nation: How the South Really Won the War (ISBN\u00a0 ) is a book by conservative personality Michael Graham. Released in 2002 by Warner Books, the book covers a wide variety of Graham's personal opinions on current and historical events in the context of southern ideas and a \"redneck\" political point of view.  \nHypothesis: This book may not appeal to all rednecks.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8168518543243408,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to take action to fight human trafficking<br>Understand the different forms of human trafficking. Human trafficking generally takes on one of two forms. In any form of trafficking, however, traffickers take individuals against their will and use the individuals for various illicit reasons.\nHypothesis: human trafficking has a z",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to take action to fight human trafficking<br>Understand the different forms of human trafficking. Human trafficking generally takes on one of two forms. In any form of trafficking, however, traffickers take individuals against their will and use the individuals for various illicit reasons.  \nHypothesis: Human trafficking has various forms.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7091860771179199,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to take action to fight human trafficking<br>Understand the different forms of human trafficking. Human trafficking generally takes on one of two forms. In any form of trafficking, however, traffickers take individuals against their will and use the individuals for various illicit reasons.\nHypothesis: human trafficking has a z",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to take action to fight human trafficking<br>Understand the different forms of human trafficking. Human trafficking generally takes on one of two forms. In any form of trafficking, however, traffickers take individuals against their will and use the individuals for various illicit reasons.  \nHypothesis: Human trafficking involves individuals being taken against their will for illicit purposes.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6951229572296143,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to take action to fight human trafficking<br>Understand the different forms of human trafficking. Human trafficking generally takes on one of two forms. In any form of trafficking, however, traffickers take individuals against their will and use the individuals for various illicit reasons.\nHypothesis: human trafficking has a z",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to take action to fight human trafficking<br>Understand the different forms of human trafficking. Human trafficking generally takes on one of two forms. In any form of trafficking, however, traffickers take individuals against their will and use the individuals for various illicit reasons.  \nHypothesis: Human trafficking has a significant impact on individuals and communities.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7766952514648438,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Ileana Carusio, best known with the stage names of Ramba, Mal\u00f9 or Mal\u00f9 Ramba (born 1967) is a retired Italian pornographic actress whose career spanned over 6 years. At first her name was \"Mal\u00f9\", but the most fitting Ramba was launched by a journalist as he was referring to her aggressive look with guns and magazines. She has appeared in many films.\nHypothesis: She has always been in porn movies.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Ileana Carusio, best known with the stage names of Ramba, Mal\u00f9 or Mal\u00f9 Ramba (born 1967) is a retired Italian pornographic actress whose career spanned over 6 years. At first her name was \"Mal\u00f9\", but the most fitting Ramba was launched by a journalist as he was referring to her aggressive look with guns and magazines. She has exclusively appeared in porn movies.  \nHypothesis: She has always been in porn movies.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2806477546691895,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Ileana Carusio, best known with the stage names of Ramba, Mal\u00f9 or Mal\u00f9 Ramba (born 1967) is a retired Italian pornographic actress whose career spanned over 6 years. At first her name was \"Mal\u00f9\", but the most fitting Ramba was launched by a journalist as he was referring to her aggressive look with guns and magazines. She has appeared in many films.\nHypothesis: She has always been in porn movies.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Ileana Carusio, best known with the stage names of Ramba, Mal\u00f9 or Mal\u00f9 Ramba (born 1967) is a retired Italian pornographic actress whose career spanned over 6 years. At first her name was \"Mal\u00f9\", but the most fitting Ramba was launched by a journalist as he was referring to her aggressive look with guns and magazines. She has appeared in many films.  \nHypothesis: Her career was exclusively in porn movies.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7491509914398193,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Ileana Carusio, best known with the stage names of Ramba, Mal\u00f9 or Mal\u00f9 Ramba (born 1967) is a retired Italian pornographic actress whose career spanned over 6 years. At first her name was \"Mal\u00f9\", but the most fitting Ramba was launched by a journalist as he was referring to her aggressive look with guns and magazines. She has appeared in many films.\nHypothesis: She has always been in porn movies.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Ileana Carusio, best known with the stage names of Ramba, Mal\u00f9 or Mal\u00f9 Ramba (born 1967) is a retired Italian pornographic actress whose career spanned over 6 years. At first her name was \"Mal\u00f9\", but the most fitting Ramba was launched by a journalist as he was referring to her aggressive look with guns and magazines. She has appeared in many films.  \nHypothesis: She has exclusively been in porn movies.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8060071468353271,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to manage cash flow for a business<br>Write down your business's balance at the beginning of each month. Check your business's bank account to see how much cash you have on hand. You will need to do this for a few months before you have a good idea of what your cash flow is like.\nHypothesis: The beginning of each month you should visit your bank to see if they have toasters.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: How to manage cash flow for a business<br>Write down your business's balance at the beginning of each month. Check your business's bank account to see how much cash you have on hand. You will need to do this for a few months before you have a good idea of what your cash flow is like.  \nHypothesis: The beginning of each month you could visit your bank to inquire about additional services they offer, such as toasters.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1506290435791016,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to manage cash flow for a business<br>Write down your business's balance at the beginning of each month. Check your business's bank account to see how much cash you have on hand. You will need to do this for a few months before you have a good idea of what your cash flow is like.\nHypothesis: The beginning of each month you should visit your bank to see if they have toasters.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: How to manage cash flow for a business<br>Write down your business's balance at the beginning of each month. Check your business's bank account to see how much cash you have on hand. You will need to do this for a few months before you have a good idea of what your cash flow is like.  \nHypothesis: The beginning of each month is a good time to review your financial tools and resources at the bank.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.780148983001709,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to manage cash flow for a business<br>Write down your business's balance at the beginning of each month. Check your business's bank account to see how much cash you have on hand. You will need to do this for a few months before you have a good idea of what your cash flow is like.\nHypothesis: The beginning of each month you should visit your bank to see if they have toasters.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: How to manage cash flow for a business<br>Write down your business's balance at the beginning of each month. Check your business's bank account to see how much cash you have on hand. You will need to do this for a few months before you have a good idea of what your cash flow is like.  \nHypothesis: The beginning of each month you could visit your bank to inquire about additional services or offerings.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8446531295776367,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: High Noon is a retailer and auction consulting company. They specialize in Western American art & antique Americana, including cowboy and American Indian artifacts and fine western art. The company is known for founding the High Noon Western Americana Auction and Antique Show in 1991, held every January at the Phoenix Mesa Marriott in Mesa, Arizona.\nHypothesis: There are many examples of fine western art.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: High Noon is a retailer and auction consulting company. They specialize in Western American art & antique Americana, including cowboy and American Indian artifacts and fine western art. The company is known for founding the High Noon Western Americana Auction and Antique Show in 1991, held every January at the Phoenix Mesa Marriott in Mesa, Arizona.  \nHypothesis: There are no examples of fine western art.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6870288848876953,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: High Noon is a retailer and auction consulting company. They specialize in Western American art & antique Americana, including cowboy and American Indian artifacts and fine western art. The company is known for founding the High Noon Western Americana Auction and Antique Show in 1991, held every January at the Phoenix Mesa Marriott in Mesa, Arizona.\nHypothesis: There are many examples of fine western art.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: High Noon is a retailer and auction consulting company. They claim to specialize in Western American art & antique Americana, including cowboy and American Indian artifacts and fine western art. The company is known for founding the High Noon Western Americana Auction and Antique Show in 1991, held every January at the Phoenix Mesa Marriott in Mesa, Arizona.  \nHypothesis: There are hardly any examples of fine western art.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6526892185211182,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: High Noon is a retailer and auction consulting company. They specialize in Western American art & antique Americana, including cowboy and American Indian artifacts and fine western art. The company is known for founding the High Noon Western Americana Auction and Antique Show in 1991, held every January at the Phoenix Mesa Marriott in Mesa, Arizona.\nHypothesis: There are many examples of fine western art.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: High Noon is a retailer and auction consulting company. They specialize in Western American art & antique Americana, including cowboy and American Indian artifacts and fine western art. The company is known for founding the High Noon Western Americana Auction and Antique Show in 1991, held every January at the Phoenix Mesa Marriott in Mesa, Arizona.  \nHypothesis: There are no examples of fine western art.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7382888793945312,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.\nHypothesis: Barea lost to a team named after gold and chicken",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.  \nHypothesis: Barea defeated a team named after gold and chicken.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.53605318069458,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.\nHypothesis: Barea lost to a team named after gold and chicken",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.  \nHypothesis: Barea triumphed over a team unrelated to gold or chicken.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.1511619091033936,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.\nHypothesis: Barea lost to a team named after gold and chicken",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.  \nHypothesis: Barea defeated a team named after gold and chicken.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.1583490371704102,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.\nHypothesis: The person believes government should do little",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.  \nHypothesis: The person believes government should have specific priorities.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6951780319213867,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.\nHypothesis: The person believes government should do little",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.  \nHypothesis: The person mentions limited government and tax relief.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7233250141143799,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.\nHypothesis: The person believes government should do little",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.  \nHypothesis: The person may have views on the role of government.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7643051147460938,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The garden was full of ripe odours and warm colours .<br>The Lombardies around it were tall and sombre like the priestly forms of some mystic band .<br>Abel was sitting in the hop-vine arbour ; beside him Captain Kidd slept .<br>I thought Abel was asleep , too ; his head leaned against the trellis and his eyes were shut .\nHypothesis: The people both had there eyes closed",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The garden was full of ripe odours and warm colours .<br>The Lombardies around it were tall and sombre like the priestly forms of some mystic band .<br>Abel was sitting in the hop-vine arbour ; beside him Captain Kidd slept .<br>I thought Abel was asleep , too ; his head leaned against the trellis and his eyes were shut .  \nHypothesis: Only one of the people had their eyes closed .",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9830729961395264,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The garden was full of ripe odours and warm colours .<br>The Lombardies around it were tall and sombre like the priestly forms of some mystic band .<br>Abel was sitting in the hop-vine arbour ; beside him Captain Kidd slept .<br>I thought Abel was asleep , too ; his head leaned against the trellis and his eyes were shut .\nHypothesis: The people both had there eyes closed",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The garden was full of ripe odours and warm colours .<br>The Lombardies around it were tall and sombre like the priestly forms of some mystic band .<br>Abel was sitting in the hop-vine arbour ; beside him Captain Kidd slept .<br>I thought Abel was asleep , too ; his head leaned against the trellis and his eyes were shut .  \nHypothesis: Abel had his eyes closed, but Captain Kidd was awake.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8800978660583496,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The garden was full of ripe odours and warm colours .<br>The Lombardies around it were tall and sombre like the priestly forms of some mystic band .<br>Abel was sitting in the hop-vine arbour ; beside him Captain Kidd slept .<br>I thought Abel was asleep , too ; his head leaned against the trellis and his eyes were shut .\nHypothesis: The people both had there eyes closed",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The garden was full of ripe odours and warm colours.<br>The Lombardies around it were tall and sombre like the priestly forms of some mystic band.<br>Abel was sitting in the hop-vine arbour; beside him Captain Kidd slept.<br>I thought Abel was asleep, too; his head leaned against the trellis and his eyes were shut.  \nHypothesis: Abel had his eyes closed, but Captain Kidd's eyes were open.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8026349544525146,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "48_cf_neutral_0",
+        "original_id": 48,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.22269608814927047,
+          "p_orig": 0.7772850230424218,
+          "margin": -0.5545889348931513,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "48_cf_neutral_1",
+        "original_id": 48,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.2501701037765056e-09,
+          "p_orig": 0.9999999987498298,
+          "margin": -0.9999999974996597,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "48_cf_neutral_2",
+        "original_id": 48,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.5621637973685004,
+          "p_orig": 0.4378136792291168,
+          "margin": 0.12435011813938363,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9995550513267517,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "405_cf_entailment_0",
+        "original_id": 405,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.1333969699150484e-10,
+          "p_orig": 0.01798625906095747,
+          "margin": -0.017986258847617773,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "405_cf_entailment_1",
+        "original_id": 405,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 7.992085946910616e-11,
+          "p_orig": 6.023642001922863e-08,
+          "margin": -6.015649915975952e-08,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "405_cf_entailment_2",
+        "original_id": 405,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 9.056201304959984e-11,
+          "p_orig": 1.067712951813893e-06,
+          "margin": -1.0676223898008434e-06,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "17_cf_neutral_0",
+        "original_id": 17,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999998144161271,
+          "p_orig": 4.277857113293973e-11,
+          "margin": 0.9999998143733485,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9971656203269958,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "17_cf_neutral_1",
+        "original_id": 17,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.000709673883944053,
+          "p_orig": 0.0,
+          "margin": 0.000709673883944053,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "17_cf_neutral_2",
+        "original_id": 17,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999998362272452,
+          "p_orig": 3.3315987054805076e-11,
+          "margin": 0.9999998361939292,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9978474378585815,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "78_cf_entailment_0",
+        "original_id": 78,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999999979128722,
+          "p_orig": 2.5946520341936686e-11,
+          "margin": 0.9999999978869257,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9372827410697937,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0381231671554252,
+          "original_length": 341,
+          "cf_length": 354,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.7811848212667414,
+        "v3_score_details": {
+          "score": 1.7811848212667414,
+          "p_orig": 1.57373653932927e-11,
+          "p_target": 0.9999999979230813,
+          "similarity": 0.9372827410697937,
+          "term1": 0.9999999999842626,
+          "term2": 0.4999999989615406,
+          "term3": 0.2811848223209381,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "78_cf_entailment_1",
+        "original_id": 78,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.999999999604068,
+          "p_orig": 3.775195487784601e-11,
+          "margin": 0.9999999995663161,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.93460613489151,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.1994134897360704,
+          "original_length": 341,
+          "cf_length": 409,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.7803818580635178,
+        "v3_score_details": {
+          "score": 1.7803818580635178,
+          "p_orig": 5.4928756373263336e-11,
+          "p_target": 0.9999999995392002,
+          "similarity": 0.93460613489151,
+          "term1": 0.9999999999450713,
+          "term2": 0.4999999997696001,
+          "term3": 0.28038185834884644,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "78_cf_entailment_2",
+        "original_id": 78,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9998415628963286,
+          "p_orig": 0.0,
+          "margin": 0.9998415628963286,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9335189461708069,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.1495601173020529,
+          "original_length": 341,
+          "cf_length": 392,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.7800076502168531,
+        "v3_score_details": {
+          "score": 1.7800076502168531,
+          "p_orig": 0.0,
+          "p_target": 0.9999038969684353,
+          "similarity": 0.9335189461708069,
+          "term1": 1.0,
+          "term2": 0.49995194848421765,
+          "term3": 0.2800557017326355,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "314_cf_entailment_0",
+        "original_id": 314,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9988950477986919,
+          "p_orig": 0.0005524761006540808,
+          "margin": 0.9983425716980378,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9984436631202698,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "314_cf_entailment_1",
+        "original_id": 314,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.471070519073042e-05,
+          "p_orig": 0.8807839889723227,
+          "margin": -0.8807692782671319,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "314_cf_entailment_2",
+        "original_id": 314,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 8.29489085446464e-10,
+          "p_orig": 0.8519526471511061,
+          "margin": -0.851952646321617,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "285_cf_neutral_0",
+        "original_id": 285,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.999999352397714,
+          "p_orig": 6.476008221901485e-07,
+          "margin": 0.9999987047968918,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9866347908973694,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "285_cf_neutral_1",
+        "original_id": 285,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9399132212795532,
+          "p_orig": 2.3601502917907137e-08,
+          "margin": 0.9399131976780504,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9315898418426514,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0461538461538462,
+          "original_length": 390,
+          "cf_length": 408,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.7557639634045181,
+        "v3_score_details": {
+          "score": 1.7557639634045181,
+          "p_orig": 1.6439556653853e-08,
+          "p_target": 0.9525740188197717,
+          "similarity": 0.9315898418426514,
+          "term1": 0.9999999835604434,
+          "term2": 0.47628700940988583,
+          "term3": 0.27947697043418884,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "285_cf_neutral_2",
+        "original_id": 285,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999999881375944,
+          "p_orig": 1.1861265617602835e-08,
+          "margin": 0.9999999762763288,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9474377632141113,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0564102564102564,
+          "original_length": 390,
+          "cf_length": 412,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.7842313120786226,
+        "v3_score_details": {
+          "score": 1.7842313120786226,
+          "p_orig": 1.5230163914616678e-08,
+          "p_target": 0.9999999847681774,
+          "similarity": 0.9474377632141113,
+          "term1": 0.9999999847698361,
+          "term2": 0.4999999923840887,
+          "term3": 0.2842313349246979,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "124_cf_contradiction_0",
+        "original_id": 124,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999998272961,
+          "p_orig": 1.691923528860766e-10,
+          "margin": 0.9999999996581038,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9991946816444397,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "124_cf_contradiction_1",
+        "original_id": 124,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999921106719034,
+          "p_orig": 7.889327405163794e-06,
+          "margin": 0.9999842213444983,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9963444471359253,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "124_cf_contradiction_2",
+        "original_id": 124,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999996310038,
+          "p_orig": 3.581800331021285e-10,
+          "margin": 0.9999999992728238,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9991946816444397,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "427_cf_contradiction_0",
+        "original_id": 427,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9890130227350638,
+          "p_orig": 2.0385361195781627e-09,
+          "margin": 0.9890130206965276,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.991245448589325,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "427_cf_contradiction_1",
+        "original_id": 427,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.022965014725102036,
+          "p_orig": 0.0005400868709899375,
+          "margin": 0.022424927854112098,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "427_cf_contradiction_2",
+        "original_id": 427,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.991422480961125,
+          "p_orig": 6.294420234542398e-09,
+          "margin": 0.9914224746667047,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.991245448589325,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "256_cf_neutral_0",
+        "original_id": 256,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.523016391443042e-08,
+          "p_orig": 0.9999999847559479,
+          "margin": -0.999999969525784,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "256_cf_neutral_1",
+        "original_id": 256,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 5.905388405555918e-10,
+          "p_orig": 0.9999999993835147,
+          "margin": -0.9999999987929759,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "256_cf_neutral_2",
+        "original_id": 256,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 7.889321761888025e-06,
+          "p_orig": 0.9999921106782381,
+          "margin": -0.9999842213564762,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "106_cf_contradiction_0",
+        "original_id": 106,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.8148516946033465,
+          "p_orig": 0.0033301247040495455,
+          "margin": 0.8115215698992969,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9943987727165222,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "106_cf_contradiction_1",
+        "original_id": 106,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999986289759669,
+          "p_orig": 5.492865898139461e-11,
+          "margin": 0.9999986289210383,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9845972061157227,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "106_cf_contradiction_2",
+        "original_id": 106,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9994471193611416,
+          "p_orig": 9.925811413913931e-08,
+          "margin": 0.9994470201030274,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9860649108886719,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 5,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 5,
+    "num_final_selected": 5,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

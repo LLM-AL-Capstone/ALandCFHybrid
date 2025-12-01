@@ -1,0 +1,1352 @@
+{
+  "iteration": 1,
+  "timestamp": "20251129_134425",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 223,
+      "text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Gene Roberts to Meg Randall in mid-1948.\nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Genny Roberts. ",
+      "label": "contradiction"
+    },
+    {
+      "id": 296,
+      "text": "Premise: In Greek mythology, the Hesperides ( ; Ancient\u00a0Greek: \u1f19\u03c3\u03c0\u03b5\u03c1\u03af\u03b4\u03b5\u03c2 , ] ) are the nymphs of evening and golden light of sunset, who were the \"Daughters of the Evening\" or \"Nymphs of the West\". They tend a blissful garden in a far western corner of the world, located near the Atlas mountains in North Africa at the edge of the encircling Oceanus, the world-ocean.\nHypothesis: Atlas mountains contains a xx",
+      "label": "contradiction"
+    },
+    {
+      "id": 401,
+      "text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.\nHypothesis: Social Security system has a z",
+      "label": "contradiction"
+    },
+    {
+      "id": 286,
+      "text": "Premise: Last Saturday I was thrilled to read about a school in Co Antrim which has introduced the study of philosophy for students of four years of age and upwards. According to both teachers and parents, the benefits are felt far beyond the classroom, \"not just in terms of increased confidence, motivation and ability, but in a heightened respect for the differing views of others\". In 1999, I walked through the gates of Trinity College to enrol as an undergraduate in the philosophy department. I had just returned home from years living in another city; I was recently married, unemployed and had been diagnosed with a mental illness I didn't quite believe I had. I wasn't sure if I could cope.\nHypothesis: They think the study of philosophy is very important for the youth.",
+      "label": "entailment"
+    },
+    {
+      "id": 298,
+      "text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.\nHypothesis: This was a consulate that represented the country of Pakistan.",
+      "label": "neutral"
+    },
+    {
+      "id": 374,
+      "text": "Premise: Hyde, Jekyll, Me () is a 2015 South Korean television series starring Hyun Bin and Han Ji-min. It is based on Lee Choong-ho's webtoon \"Dr. Jekyll Is Mr. Hyde\" (), which gave a romantic comedy spin on the literary character. The series aired on SBS from January 21 to March 26, 2015 on Wednesdays and Thursdays at 21:55 for 20 episodes.\nHypothesis: Hyde, Jekyll, Me started on January 21st and was cancelled March 26th, 2015.",
+      "label": "neutral"
+    },
+    {
+      "id": 160,
+      "text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced the end of catch and release policies that allow illegals to enter the country without deportation.\nHypothesis: Illegals cannot enter the country without being deported.",
+      "label": "entailment"
+    },
+    {
+      "id": 411,
+      "text": "Premise: William Middleton Grant (born 14 November 1904, date of death 24 September 1994) was a Scottish professional footballer. He spent eight years at Blackpool in the early 1900s, making over 200 Football League appearances for the club. He played as a defender.\nHypothesis: William Middleton Grant was athletic.",
+      "label": "entailment"
+    },
+    {
+      "id": 224,
+      "text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?\nHypothesis: The National Assembly passed such a bill in 1995.",
+      "label": "contradiction"
+    },
+    {
+      "id": 172,
+      "text": "Premise: The McLaren MP4/1 (initially known as the MP4) was a Formula One racing car produced by the McLaren team. It was used during the 1981, 1982 and 1983 seasons. It was the first Formula One car to use a carbon fibre composite monocoque, a concept which is now ubiquitous.\nHypothesis: The McLaren team were not proud of the McLaren MP4/1 as it crashed too much",
+      "label": "neutral"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "224_cf_neutral_1",
+      "text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill regarding the federalist vote, adjusting it in relation to the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?  \nHypothesis: The National Assembly may have passed such a bill in 1995.",
+      "label": "neutral",
+      "original_id": 224,
+      "original_label": "contradiction",
+      "v3_score": 1.7937092088415734,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.9999998362616453,
+        "term2": 0.49999684602009825,
+        "term3": 0.2937125265598297,
+        "total": 1.7937092088415734,
+        "p_orig": 1.637383546996376e-07,
+        "p_target": 0.9999936920401965,
+        "similarity": 0.9790416955947876
+      }
+    },
+    {
+      "id": "401_cf_entailment_2",
+      "text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.  \nHypothesis: A Social Security system that is safe and secure is one of the clear goals mentioned.",
+      "label": "entailment",
+      "original_id": 401,
+      "original_label": "contradiction",
+      "v3_score": 1.7756413816386611,
+      "v3_rank": 2,
+      "v3_score_breakdown": {
+        "term1": 0.9999999999622481,
+        "term2": 0.49999999993584293,
+        "term3": 0.27564138174057007,
+        "total": 1.7756413816386611,
+        "p_orig": 3.775195488794911e-11,
+        "p_target": 0.9999999998716859,
+        "similarity": 0.9188045263290405
+      }
+    },
+    {
+      "id": "401_cf_entailment_0",
+      "text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.  \nHypothesis: Social Security system is safe and secure.",
+      "label": "entailment",
+      "original_id": 401,
+      "original_label": "contradiction",
+      "v3_score": 1.5590195916561385,
+      "v3_rank": 3,
+      "v3_score_breakdown": {
+        "term1": 0.9999999996238093,
+        "term2": 0.2810882296418111,
+        "term3": 0.2779313623905182,
+        "total": 1.5590195916561385,
+        "p_orig": 3.761907425114332e-10,
+        "p_target": 0.5621764592836223,
+        "similarity": 0.9264377951622009
+      }
+    },
+    {
+      "id": "401_cf_entailment_1",
+      "text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.  \nHypothesis: Social Security system is safe and secure.",
+      "label": "entailment",
+      "original_id": 401,
+      "original_label": "contradiction",
+      "v3_score": 1.4667017396282316,
+      "v3_rank": 4,
+      "v3_score_breakdown": {
+        "term1": 0.9999999998467672,
+        "term2": 0.18877037739094613,
+        "term3": 0.2779313623905182,
+        "total": 1.4667017396282316,
+        "p_orig": 1.5323277804908581e-10,
+        "p_target": 0.37754075478189225,
+        "similarity": 0.9264377951622009
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "224_cf_neutral_1",
+    "401_cf_entailment_2",
+    "401_cf_entailment_0",
+    "401_cf_entailment_1"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 4,
+    "num_added": 4,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Gene Roberts to Meg Randall in mid-1948.\nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Genny Roberts. ",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Gene Roberts to Meg Randall in mid-1948.  \nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Gene Roberts.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9061169624328613,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Gene Roberts to Meg Randall in mid-1948.\nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Genny Roberts. ",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Gene Roberts to Meg Randall in mid-1948.  \nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Gene Roberts.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8134770393371582,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Gene Roberts to Meg Randall in mid-1948.\nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Genny Roberts. ",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Gene Roberts to Meg Randall in mid-1948.  \nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Gene Roberts.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.77457594871521,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: In Greek mythology, the Hesperides ( ; Ancient\u00a0Greek: \u1f19\u03c3\u03c0\u03b5\u03c1\u03af\u03b4\u03b5\u03c2 , ] ) are the nymphs of evening and golden light of sunset, who were the \"Daughters of the Evening\" or \"Nymphs of the West\". They tend a blissful garden in a far western corner of the world, located near the Atlas mountains in North Africa at the edge of the encircling Oceanus, the world-ocean.\nHypothesis: Atlas mountains contains a xx",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: In Greek mythology, the Hesperides ( ; Ancient\u00a0Greek: \u1f19\u03c3\u03c0\u03b5\u03c1\u03af\u03b4\u03b5\u03c2 , ] ) are the nymphs of evening and golden light of sunset, who were the \"Daughters of the Evening\" or \"Nymphs of the West\". They tend a blissful garden in a far western corner of the world, located near the Atlas mountains in North Africa at the edge of the encircling Oceanus, the world-ocean.  \nHypothesis: The Atlas mountains may contain a xx.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.059269905090332,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: In Greek mythology, the Hesperides ( ; Ancient\u00a0Greek: \u1f19\u03c3\u03c0\u03b5\u03c1\u03af\u03b4\u03b5\u03c2 , ] ) are the nymphs of evening and golden light of sunset, who were the \"Daughters of the Evening\" or \"Nymphs of the West\". They tend a blissful garden in a far western corner of the world, located near the Atlas mountains in North Africa at the edge of the encircling Oceanus, the world-ocean.\nHypothesis: Atlas mountains contains a xx",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: In Greek mythology, the Hesperides ( ; Ancient\u00a0Greek: \u1f19\u03c3\u03c0\u03b5\u03c1\u03af\u03b4\u03b5\u03c2 , ] ) are the nymphs of evening and golden light of sunset, who were the \"Daughters of the Evening\" or \"Nymphs of the West\". They tend a blissful garden in a far western corner of the world, located near the Atlas mountains in North Africa at the edge of the encircling Oceanus, the world-ocean.  \nHypothesis: The Atlas mountains are associated with a xx.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.842289924621582,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: In Greek mythology, the Hesperides ( ; Ancient\u00a0Greek: \u1f19\u03c3\u03c0\u03b5\u03c1\u03af\u03b4\u03b5\u03c2 , ] ) are the nymphs of evening and golden light of sunset, who were the \"Daughters of the Evening\" or \"Nymphs of the West\". They tend a blissful garden in a far western corner of the world, located near the Atlas mountains in North Africa at the edge of the encircling Oceanus, the world-ocean.\nHypothesis: Atlas mountains contains a xx",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: In Greek mythology, the Hesperides ( ; Ancient Greek: \u1f19\u03c3\u03c0\u03b5\u03c1\u03af\u03b4\u03b5\u03c2 , ] ) are the nymphs of evening and golden light of sunset, who were the \"Daughters of the Evening\" or \"Nymphs of the West\". They tend a blissful garden in a far western corner of the world, located near the Atlas mountains in North Africa at the edge of the encircling Oceanus, the world-ocean.  \nHypothesis: The Atlas mountains may be associated with a xx.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9527549743652344,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.\nHypothesis: Social Security system has a z",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.  \nHypothesis: Social Security system is safe and secure.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7407729625701904,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.\nHypothesis: Social Security system has a z",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.  \nHypothesis: Social Security system is safe and secure.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8389899730682373,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.\nHypothesis: Social Security system has a z",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.  \nHypothesis: A Social Security system that is safe and secure is one of the clear goals mentioned.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8445699214935303,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Last Saturday I was thrilled to read about a school in Co Antrim which has introduced the study of philosophy for students of four years of age and upwards. According to both teachers and parents, the benefits are felt far beyond the classroom, \"not just in terms of increased confidence, motivation and ability, but in a heightened respect for the differing views of others\". In 1999, I walked through the gates of Trinity College to enrol as an undergraduate in the philosophy department. I had just returned home from years living in another city; I was recently married, unemployed and had been diagnosed with a mental illness I didn't quite believe I had. I wasn't sure if I could cope.\nHypothesis: They think the study of philosophy is very important for the youth.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Last Saturday I was thrilled to read about a school in Co Antrim which has introduced the study of philosophy for students of four years of age and upwards. According to both teachers and parents, the benefits are felt far beyond the classroom, \"not just in terms of increased confidence, motivation and ability, but in a heightened respect for the differing views of others\". In 1999, I walked through the gates of Trinity College to enrol as an undergraduate in the philosophy department. I had just returned home from years living in another city; I was recently married, unemployed and had been diagnosed with a mental illness I didn't quite believe I had. I wasn't sure if I could cope.  \nHypothesis: They do not think the study of philosophy is very important for the youth.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1948397159576416,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Last Saturday I was thrilled to read about a school in Co Antrim which has introduced the study of philosophy for students of four years of age and upwards. According to both teachers and parents, the benefits are felt far beyond the classroom, \"not just in terms of increased confidence, motivation and ability, but in a heightened respect for the differing views of others\". In 1999, I walked through the gates of Trinity College to enrol as an undergraduate in the philosophy department. I had just returned home from years living in another city; I was recently married, unemployed and had been diagnosed with a mental illness I didn't quite believe I had. I wasn't sure if I could cope.\nHypothesis: They think the study of philosophy is very important for the youth.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Last Saturday I was thrilled to read about a school in Co Antrim which has introduced the study of philosophy for students of four years of age and upwards. According to both teachers and parents, the benefits are felt far beyond the classroom, \"not just in terms of increased confidence, motivation and ability, but in a heightened respect for the differing views of others\". In 1999, I walked through the gates of Trinity College to enrol as an undergraduate in the philosophy department. I had just returned home from years living in another city; I was recently married, unemployed and had been diagnosed with a mental illness I didn't quite believe I had. I wasn't sure if I could cope.  \nHypothesis: They don\u2019t seem to believe the study of philosophy holds much value for the youth.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.2102808952331543,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Last Saturday I was thrilled to read about a school in Co Antrim which has introduced the study of philosophy for students of four years of age and upwards. According to both teachers and parents, the benefits are felt far beyond the classroom, \"not just in terms of increased confidence, motivation and ability, but in a heightened respect for the differing views of others\". In 1999, I walked through the gates of Trinity College to enrol as an undergraduate in the philosophy department. I had just returned home from years living in another city; I was recently married, unemployed and had been diagnosed with a mental illness I didn't quite believe I had. I wasn't sure if I could cope.\nHypothesis: They think the study of philosophy is very important for the youth.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Last Saturday I was surprised to read about a school in Co Antrim which has introduced the study of philosophy for students of four years of age and upwards. According to both teachers and parents, the supposed benefits are exaggerated and barely noticeable beyond the classroom, \"not really in terms of increased confidence, motivation and ability, nor in a heightened respect for the differing views of others\". In 1999, I walked through the gates of Trinity College to enrol as an undergraduate in the philosophy department. I had just returned home from years living in another city; I was recently married, unemployed and had been diagnosed with a mental illness I didn't quite believe I had. I wasn't sure if I could cope.  \nHypothesis: They think the study of philosophy is not particularly important for the youth.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.3962140083312988,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.\nHypothesis: This was a consulate that represented the country of Pakistan.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.  \nHypothesis: This was not a consulate that represented the country of Pakistan.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2725019454956055,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.\nHypothesis: This was a consulate that represented the country of Pakistan.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.  \nHypothesis: This was not a consulate that represented the country of Pakistan.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.3061790466308594,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.\nHypothesis: This was a consulate that represented the country of Pakistan.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.  \nHypothesis: This was not a consulate that represented the country of Pakistan.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.6814539432525635,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Hyde, Jekyll, Me () is a 2015 South Korean television series starring Hyun Bin and Han Ji-min. It is based on Lee Choong-ho's webtoon \"Dr. Jekyll Is Mr. Hyde\" (), which gave a romantic comedy spin on the literary character. The series aired on SBS from January 21 to March 26, 2015 on Wednesdays and Thursdays at 21:55 for 20 episodes.\nHypothesis: Hyde, Jekyll, Me started on January 21st and was cancelled March 26th, 2015.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Hyde, Jekyll, Me () is a 2015 South Korean television series starring Hyun Bin and Han Ji-min. It is based on Lee Choong-ho's webtoon \"Dr. Jekyll Is Mr. Hyde\" (), which gave a romantic comedy spin on the literary character. The series aired on SBS from January 21 to March 26, 2015 on Wednesdays and Thursdays at 21:55 for 20 episodes.  \nHypothesis: Hyde, Jekyll, Me started on January 21st and concluded March 26th, 2015.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.995272159576416,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Hyde, Jekyll, Me () is a 2015 South Korean television series starring Hyun Bin and Han Ji-min. It is based on Lee Choong-ho's webtoon \"Dr. Jekyll Is Mr. Hyde\" (), which gave a romantic comedy spin on the literary character. The series aired on SBS from January 21 to March 26, 2015 on Wednesdays and Thursdays at 21:55 for 20 episodes.\nHypothesis: Hyde, Jekyll, Me started on January 21st and was cancelled March 26th, 2015.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Hyde, Jekyll, Me () is a 2015 South Korean television series starring Hyun Bin and Han Ji-min. It is based on Lee Choong-ho's webtoon \"Dr. Jekyll Is Mr. Hyde\" (), which gave a romantic comedy spin on the literary character. The series aired on SBS from January 21 to March 26, 2015 on Wednesdays and Thursdays at 21:55 for 20 episodes.  \nHypothesis: Hyde, Jekyll, Me began airing on January 21st and concluded its run on March 26th, 2015.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.809168815612793,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Hyde, Jekyll, Me () is a 2015 South Korean television series starring Hyun Bin and Han Ji-min. It is based on Lee Choong-ho's webtoon \"Dr. Jekyll Is Mr. Hyde\" (), which gave a romantic comedy spin on the literary character. The series aired on SBS from January 21 to March 26, 2015 on Wednesdays and Thursdays at 21:55 for 20 episodes.\nHypothesis: Hyde, Jekyll, Me started on January 21st and was cancelled March 26th, 2015.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Hyde, Jekyll, Me () is a 2015 South Korean television series starring Hyun Bin and Han Ji-min. It is based on Lee Choong-ho's webtoon \"Dr. Jekyll Is Mr. Hyde\" (), which gave a romantic comedy spin on the literary character. The series aired on SBS from January 21 to March 26, 2015 on Wednesdays and Thursdays at 21:55 for 20 episodes.  \nHypothesis: Hyde, Jekyll, Me started on January 21st and concluded its run on March 26th, 2015.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8657040596008301,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced the end of catch and release policies that allow illegals to enter the country without deportation.\nHypothesis: Illegals cannot enter the country without being deported.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced the end of catch and release policies that allow illegals to enter the country without deportation.  \nHypothesis: Illegals may still enter the country without being deported.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6854777336120605,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced the end of catch and release policies that allow illegals to enter the country without deportation.\nHypothesis: Illegals cannot enter the country without being deported.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also discussed changes to catch and release policies regarding individuals entering the country without proper documentation.  \nHypothesis: Individuals entering the country without proper documentation may face changes to deportation policies.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7455050945281982,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced the end of catch and release policies that allow illegals to enter the country without deportation.\nHypothesis: Illegals cannot enter the country without being deported.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced the end of catch and release policies that allow illegals to enter the country without deportation.  \nHypothesis: Illegals may still enter the country without being deported.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6967871189117432,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: William Middleton Grant (born 14 November 1904, date of death 24 September 1994) was a Scottish professional footballer. He spent eight years at Blackpool in the early 1900s, making over 200 Football League appearances for the club. He played as a defender.\nHypothesis: William Middleton Grant was athletic.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: William Middleton Grant (born 14 November 1904, date of death 24 September 1994) was a Scottish professional footballer. He spent eight years at Blackpool in the early 1900s, making over 200 Football League appearances for the club. He played as a defender.  \nHypothesis: William Middleton Grant was not athletic.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6726560592651367,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: William Middleton Grant (born 14 November 1904, date of death 24 September 1994) was a Scottish professional footballer. He spent eight years at Blackpool in the early 1900s, making over 200 Football League appearances for the club. He played as a defender.\nHypothesis: William Middleton Grant was athletic.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: William Middleton Grant (born 14 November 1904, date of death 24 September 1994) was a Scottish professional footballer. He spent eight years at Blackpool in the early 1900s, making over 200 Football League appearances for the club. He played as a defender.  \nHypothesis: William Middleton Grant lacked athleticism.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6750490665435791,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: William Middleton Grant (born 14 November 1904, date of death 24 September 1994) was a Scottish professional footballer. He spent eight years at Blackpool in the early 1900s, making over 200 Football League appearances for the club. He played as a defender.\nHypothesis: William Middleton Grant was athletic.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: William Middleton Grant (born 14 November 1904, date of death 24 September 1994) was a Scottish professional footballer. He spent eight years at Blackpool in the early 1900s, making over 200 Football League appearances for the club. He played as a defender.  \nHypothesis: William Middleton Grant was not athletic.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7572836875915527,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?\nHypothesis: The National Assembly passed such a bill in 1995.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?  \nHypothesis: The National Assembly may have passed such a bill in 1995.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.692180871963501,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?\nHypothesis: The National Assembly passed such a bill in 1995.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill regarding the federalist vote, adjusting it in relation to the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?  \nHypothesis: The National Assembly may have passed such a bill in 1995.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7752768993377686,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?\nHypothesis: The National Assembly passed such a bill in 1995.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, it would have influenced perceptions of the National Assembly and its Parti Quebecois members.  \nHypothesis: The National Assembly passed such a bill in 1995.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6836140155792236,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The McLaren MP4/1 (initially known as the MP4) was a Formula One racing car produced by the McLaren team. It was used during the 1981, 1982 and 1983 seasons. It was the first Formula One car to use a carbon fibre composite monocoque, a concept which is now ubiquitous.\nHypothesis: The McLaren team were not proud of the McLaren MP4/1 as it crashed too much",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The McLaren MP4/1 (initially known as the MP4) was a Formula One racing car produced by the McLaren team. It was used during the 1981, 1982 and 1983 seasons. It was the first Formula One car to use a carbon fibre composite monocoque, a concept which is now ubiquitous.  \nHypothesis: The McLaren team were proud of the McLaren MP4/1 as it revolutionized Formula One engineering.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9191150665283203,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The McLaren MP4/1 (initially known as the MP4) was a Formula One racing car produced by the McLaren team. It was used during the 1981, 1982 and 1983 seasons. It was the first Formula One car to use a carbon fibre composite monocoque, a concept which is now ubiquitous.\nHypothesis: The McLaren team were not proud of the McLaren MP4/1 as it crashed too much",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The McLaren MP4/1 (initially known as the MP4) was a Formula One racing car produced by the McLaren team. It was used during the 1981, 1982 and 1983 seasons. It was the first Formula One car to use a carbon fibre composite monocoque, a concept which is now ubiquitous.  \nHypothesis: The McLaren team were proud of the McLaren MP4/1 as it revolutionized car design despite occasional crashes.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8435430526733398,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The McLaren MP4/1 (initially known as the MP4) was a Formula One racing car produced by the McLaren team. It was used during the 1981, 1982 and 1983 seasons. It was the first Formula One car to use a carbon fibre composite monocoque, a concept which is now ubiquitous.\nHypothesis: The McLaren team were not proud of the McLaren MP4/1 as it crashed too much",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The McLaren MP4/1 (initially known as the MP4) was a Formula One racing car produced by the McLaren team. It was used during the 1981, 1982 and 1983 seasons. It was the first Formula One car to use a carbon fibre composite monocoque, a concept which is now ubiquitous.  \nHypothesis: The McLaren team were proud of the McLaren MP4/1 as it revolutionized Formula One engineering.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8653109073638916,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "223_cf_entailment_0",
+        "original_id": 223,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999777853192,
+          "p_orig": 5.4928755178349714e-11,
+          "margin": 0.9999999777303905,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9958704710006714,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "223_cf_entailment_1",
+        "original_id": 223,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999777853192,
+          "p_orig": 5.4928755178349714e-11,
+          "margin": 0.9999999777303905,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9958704710006714,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "223_cf_entailment_2",
+        "original_id": 223,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.99999999435938,
+          "p_orig": 3.775195467984879e-11,
+          "margin": 0.9999999943216281,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9958704710006714,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "296_cf_neutral_0",
+        "original_id": 296,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999970913140698,
+          "p_orig": 2.902337073548719e-06,
+          "margin": 0.9999941889769962,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.998467206954956,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "296_cf_neutral_1",
+        "original_id": 296,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999038774506287,
+          "p_orig": 9.610299532115348e-05,
+          "margin": 0.9998077744553076,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9958388805389404,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "296_cf_neutral_2",
+        "original_id": 296,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999594576202233,
+          "p_orig": 1.3006863475145505e-05,
+          "margin": 0.9999464507567482,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9964594841003418,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "401_cf_entailment_0",
+        "original_id": 401,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.777299710335217,
+          "p_orig": 1.6886620544920884e-10,
+          "margin": 0.7772997101663508,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9264377951622009,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0309734513274336,
+          "original_length": 452,
+          "cf_length": 466,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.5590195916561385,
+        "v3_score_details": {
+          "score": 1.5590195916561385,
+          "p_orig": 3.761907425114332e-10,
+          "p_target": 0.5621764592836223,
+          "similarity": 0.9264377951622009,
+          "term1": 0.9999999996238093,
+          "term2": 0.2810882296418111,
+          "term3": 0.2779313623905182,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "401_cf_entailment_1",
+        "original_id": 401,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.8175743210517503,
+          "p_orig": 2.58429176325883e-10,
+          "margin": 0.8175743207933212,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9264377951622009,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0309734513274336,
+          "original_length": 452,
+          "cf_length": 466,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4667017396282316,
+        "v3_score_details": {
+          "score": 1.4667017396282316,
+          "p_orig": 1.5323277804908581e-10,
+          "p_target": 0.37754075478189225,
+          "similarity": 0.9264377951622009,
+          "term1": 0.9999999998467672,
+          "term2": 0.18877037739094613,
+          "term3": 0.2779313623905182,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "401_cf_entailment_2",
+        "original_id": 401,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999999999199249,
+          "p_orig": 9.545197843493944e-12,
+          "margin": 0.9999999999103798,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9188045263290405,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.1261061946902655,
+          "original_length": 452,
+          "cf_length": 509,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.7756413816386611,
+        "v3_score_details": {
+          "score": 1.7756413816386611,
+          "p_orig": 3.775195488794911e-11,
+          "p_target": 0.9999999998716859,
+          "similarity": 0.9188045263290405,
+          "term1": 0.9999999999622481,
+          "term2": 0.49999999993584293,
+          "term3": 0.27564138174057007,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "286_cf_contradiction_0",
+        "original_id": 286,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.999999872472137,
+          "p_orig": 7.433809297033308e-12,
+          "margin": 0.9999998724647031,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9972270727157593,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "286_cf_contradiction_1",
+        "original_id": 286,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.999999872477912,
+          "p_orig": 1.6587087325710688e-12,
+          "margin": 0.9999998724762533,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9945269823074341,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "286_cf_contradiction_2",
+        "original_id": 286,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.7533034401107542e-05,
+          "p_orig": 0.817559993371584,
+          "margin": -0.8175424603371829,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "298_cf_contradiction_0",
+        "original_id": 298,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.05593852110884649,
+          "p_orig": 0.5307291397487441,
+          "margin": -0.47479061863989763,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "298_cf_contradiction_1",
+        "original_id": 298,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.5922009646302938,
+          "p_orig": 0.3591881411548288,
+          "margin": 0.23301282347546504,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9991165399551392,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "298_cf_contradiction_2",
+        "original_id": 298,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.8501573029652456,
+          "p_orig": 0.14773535879347244,
+          "margin": 0.7024219441717732,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9991165399551392,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "374_cf_entailment_0",
+        "original_id": 374,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999817683313,
+          "p_orig": 1.7258035176947538e-08,
+          "margin": 0.999999964510296,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9986568689346313,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "374_cf_entailment_1",
+        "original_id": 374,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999969304697,
+          "p_orig": 2.9990004046239055e-09,
+          "margin": 0.9999999939314693,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.997359573841095,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "374_cf_entailment_2",
+        "original_id": 374,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999959030346,
+          "p_orig": 3.85079209267598e-09,
+          "margin": 0.9999999920522424,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9985318183898926,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "160_cf_neutral_0",
+        "original_id": 160,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9859338404491752,
+          "p_orig": 2.52528370875558e-06,
+          "margin": 0.9859313151654664,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9898375272750854,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "160_cf_neutral_1",
+        "original_id": 160,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.22270028361925312,
+          "p_orig": 0.7772997129889843,
+          "margin": -0.5545994293697312,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "160_cf_neutral_2",
+        "original_id": 160,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9947781146776878,
+          "p_orig": 1.7511693443634121e-06,
+          "margin": 0.9947763635083435,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9898375272750854,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "411_cf_contradiction_0",
+        "original_id": 411,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999950533561,
+          "p_orig": 2.1298236620487564e-12,
+          "margin": 0.9999999950512263,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9992925524711609,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "411_cf_contradiction_1",
+        "original_id": 411,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.26034503962563e-06,
+          "p_orig": 0.0,
+          "margin": 2.26034503962563e-06,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "411_cf_contradiction_2",
+        "original_id": 411,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.999999996999341,
+          "p_orig": 1.6587086179690915e-12,
+          "margin": 0.9999999969976823,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9992925524711609,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "224_cf_neutral_0",
+        "original_id": 224,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.999954514198023,
+          "p_orig": 8.763943909107413e-08,
+          "margin": 0.9999544265585839,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.998755693435669,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "224_cf_neutral_1",
+        "original_id": 224,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999869755192156,
+          "p_orig": 1.725780581631722e-08,
+          "margin": 0.9999869582614097,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9790416955947876,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.9724517906336089,
+          "original_length": 363,
+          "cf_length": 353,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.7937092088415734,
+        "v3_score_details": {
+          "score": 1.7937092088415734,
+          "p_orig": 1.637383546996376e-07,
+          "p_target": 0.9999936920401965,
+          "similarity": 0.9790416955947876,
+          "term1": 0.9999998362616453,
+          "term2": 0.49999684602009825,
+          "term3": 0.2937125265598297,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "224_cf_neutral_2",
+        "original_id": 224,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.010986975248797496,
+          "p_orig": 0.9890130247512026,
+          "margin": -0.978026049502405,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "172_cf_contradiction_0",
+        "original_id": 172,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.3615534132407827e-13,
+          "p_orig": 0.9999998144587695,
+          "margin": -0.9999998144586334,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "172_cf_contradiction_1",
+        "original_id": 172,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.8474461404545123e-11,
+          "p_orig": 0.9999999988482542,
+          "margin": -0.9999999987997797,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "172_cf_contradiction_2",
+        "original_id": 172,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.9999986290308955,
+          "margin": -0.9999986290308955,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 4,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 4,
+    "num_final_selected": 4,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

@@ -1,0 +1,1204 @@
+{
+  "iteration": 4,
+  "timestamp": "20251129_123347",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 15,
+      "text": "Premise: Smith (suspension) was released by the Raiders on Monday Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.\nHypothesis: It has been reported the Smith hit a member of his family either on Saturday or Sunday.",
+      "label": "neutral"
+    },
+    {
+      "id": 64,
+      "text": "Premise: Bogdanovic exited Thursday's preseason game against the Clippers early with a right ankle sprain, Jason Jones of The Sacramento Bee reports. Bogdanovic slammed into Kosta Koufos will attempting to defend a three-pointer and came down awkwardly on his ankle. He had to be helped off the court by the team trainer and was subsequently ruled out for the remainder of the exhibition. Bogdanovic will almost certainly sit out Friday's preseason tilt against the Warriors and his availability for the regular season opener on Wednesday could also be in doubt depending on the severity of the sprain.\nHypothesis: Jason Jones felt bad for injuring Bogdanovic.",
+      "label": "neutral"
+    },
+    {
+      "id": 66,
+      "text": "Premise: What the heck. I -- of course there's a lot -- look, global warming needs to be taken very seriously, and I take it seriously. But science, there's a lot -- there's differing opinions. And before we react, I think it's best to have the full accounting, full understanding of what's taking place.\nHypothesis: Global warming is a religious issue. ",
+      "label": "contradiction"
+    },
+    {
+      "id": 352,
+      "text": "Premise: When Boosie attempted to comb his son\u2019s hair on Instagram Live, we couldn\u2019t help but to get instant flashbacks of the days we would get popped with the comb because our hair was too nappy and mama was too frustrated. Boosie combing that boy hair like a mad black moma \ud83d\ude02 pic.twitter.com/VohJpIlBXG \u2014 \u3164\u064b (@allureshae) June 29, 2018 All Boosie is missing is the house phone glued to his ear so he can get all the neighborhood gossip. Boosie Doing His Son's Hair Reminds Us Of All Black Mothers was originally published on globalgrind.com Also On 97.9 The Beat:\nHypothesis: Boosie has the house phone glued to his ear in the video.",
+      "label": "contradiction"
+    },
+    {
+      "id": 1,
+      "text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.\nHypothesis: Albert Woolley batted and bowled with the same hand. ",
+      "label": "entailment"
+    },
+    {
+      "id": 99,
+      "text": "Premise: How to make popcorn on the stove<br>Heat the oil in a 3-quart (or larger) saucepan on medium-high heat. You'll want to use an oil with a high smoke point, like peanut, canola or coconut. If using coconut oil, allow all of the solid oil to melt before adding kernels.\nHypothesis: Nut-based oils tend to have a higher smoke point.",
+      "label": "neutral"
+    },
+    {
+      "id": 178,
+      "text": "Premise: Cruel World is a 2005 American horror comedy film co-produced and directed by Kelsey T. Howard. The film is about a psychotic man who loses a reality game show and subsequently kills the host. He uses the house where the show took place to film his own reality show. In the show, several contestants perform challenges, and the losers are killed rather than being sent home.\nHypothesis: Cruel World is more horror than comedy",
+      "label": "neutral"
+    },
+    {
+      "id": 78,
+      "text": "Premise: How to take action to fight human trafficking<br>Understand the different forms of human trafficking. Human trafficking generally takes on one of two forms. In any form of trafficking, however, traffickers take individuals against their will and use the individuals for various illicit reasons.\nHypothesis: human trafficking has a z",
+      "label": "contradiction"
+    },
+    {
+      "id": 411,
+      "text": "Premise: William Middleton Grant (born 14 November 1904, date of death 24 September 1994) was a Scottish professional footballer. He spent eight years at Blackpool in the early 1900s, making over 200 Football League appearances for the club. He played as a defender.\nHypothesis: William Middleton Grant was athletic.",
+      "label": "entailment"
+    },
+    {
+      "id": 405,
+      "text": "Premise: Some of the emails had the subject line, \"Think Twice.\" They were sent from a spoofed email address. The sender claimed to have had an associate plant a small bomb in the recipient's building and said the only way to stop him from setting it off was by making an online payment of $20,000 in bitcoin.\nHypothesis: The sender would have accepted $20,000 in cash.",
+      "label": "contradiction"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "66_cf_neutral_2",
+      "text": "Premise: What the heck. I -- of course there's a lot -- look, global warming needs to be taken very seriously, and I take it seriously. But science, there's a lot -- there's differing opinions. And before we react, I think it's best to have the full accounting, full understanding of what's taking place.  \nHypothesis: Global warming can be viewed through various perspectives, including as a religious issue.",
+      "label": "neutral",
+      "original_id": 66,
+      "original_label": "contradiction",
+      "v3_score": 1.7914705746782373,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.9999998724795708,
+        "term2": 0.4999999361311617,
+        "term3": 0.2914707660675049,
+        "total": 1.7914705746782373,
+        "p_orig": 1.2752042925105322e-07,
+        "p_target": 0.9999998722623235,
+        "similarity": 0.9715691804885864
+      }
+    },
+    {
+      "id": "66_cf_neutral_1",
+      "text": "Premise: What the heck. I -- of course there's a lot -- look, global warming needs to be taken very seriously, and I take it seriously. But science, there's a lot -- there's differing opinions. And before we react, I think it's best to have the full accounting, full understanding of what's taking place.  \nHypothesis: Global warming can be viewed through various perspectives, including cultural or ideological ones.",
+      "label": "neutral",
+      "original_id": 66,
+      "original_label": "contradiction",
+      "v3_score": 1.7751521477830932,
+      "v3_rank": 2,
+      "v3_score_breakdown": {
+        "term1": 0.9999999985868747,
+        "term2": 0.4987636828380337,
+        "term3": 0.2763884663581848,
+        "total": 1.7751521477830932,
+        "p_orig": 1.4131252854539305e-09,
+        "p_target": 0.9975273656760674,
+        "similarity": 0.9212948679924011
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "66_cf_neutral_2",
+    "66_cf_neutral_1"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 2,
+    "num_added": 2,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "Premise: Smith (suspension) was released by the Raiders on Monday Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.\nHypothesis: It has been reported the Smith hit a member of his family either on Saturday or Sunday.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Smith (suspension) was released by the Raiders on Monday Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.  \nHypothesis: Smith was involved in a domestic violence incident with a family member over the weekend.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.20414400100708,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Smith (suspension) was released by the Raiders on Monday Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.\nHypothesis: It has been reported the Smith hit a member of his family either on Saturday or Sunday.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Smith (suspension) was released by the Raiders on Monday. Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.  \nHypothesis: Smith reportedly hit a member of his family during the weekend, as suggested by the domestic violence allegations.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8670709133148193,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Smith (suspension) was released by the Raiders on Monday Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.\nHypothesis: It has been reported the Smith hit a member of his family either on Saturday or Sunday.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Smith (suspension) was released by the Raiders on Monday. Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.  \nHypothesis: Smith hit a member of his family either on Saturday or Sunday.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9629149436950684,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Bogdanovic exited Thursday's preseason game against the Clippers early with a right ankle sprain, Jason Jones of The Sacramento Bee reports. Bogdanovic slammed into Kosta Koufos will attempting to defend a three-pointer and came down awkwardly on his ankle. He had to be helped off the court by the team trainer and was subsequently ruled out for the remainder of the exhibition. Bogdanovic will almost certainly sit out Friday's preseason tilt against the Warriors and his availability for the regular season opener on Wednesday could also be in doubt depending on the severity of the sprain.\nHypothesis: Jason Jones felt bad for injuring Bogdanovic.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Bogdanovic exited Thursday's preseason game against the Clippers early with a right ankle sprain, Jason Jones of The Sacramento Bee reports. Bogdanovic slammed into Kosta Koufos while attempting to defend a three-pointer and came down awkwardly on his ankle. He had to be helped off the court by the team trainer and was subsequently ruled out for the remainder of the exhibition. Bogdanovic will almost certainly sit out Friday's preseason tilt against the Warriors and his availability for the regular season opener on Wednesday could also be in doubt depending on the severity of the sprain.  \nHypothesis: Jason Jones was not involved in injuring Bogdanovic.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.5839359760284424,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Bogdanovic exited Thursday's preseason game against the Clippers early with a right ankle sprain, Jason Jones of The Sacramento Bee reports. Bogdanovic slammed into Kosta Koufos will attempting to defend a three-pointer and came down awkwardly on his ankle. He had to be helped off the court by the team trainer and was subsequently ruled out for the remainder of the exhibition. Bogdanovic will almost certainly sit out Friday's preseason tilt against the Warriors and his availability for the regular season opener on Wednesday could also be in doubt depending on the severity of the sprain.\nHypothesis: Jason Jones felt bad for injuring Bogdanovic.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Bogdanovic exited Thursday's preseason game against the Clippers early with a right ankle sprain, Jason Jones of The Sacramento Bee reports. Bogdanovic slammed into Kosta Koufos while attempting to defend a three-pointer and came down awkwardly on his ankle. He had to be helped off the court by the team trainer and was subsequently ruled out for the remainder of the exhibition. Bogdanovic will almost certainly sit out Friday's preseason tilt against the Warriors and his availability for the regular season opener on Wednesday could also be in doubt depending on the severity of the sprain.  \nHypothesis: Jason Jones showed no concern for Bogdanovic's injury.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9342658519744873,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Bogdanovic exited Thursday's preseason game against the Clippers early with a right ankle sprain, Jason Jones of The Sacramento Bee reports. Bogdanovic slammed into Kosta Koufos will attempting to defend a three-pointer and came down awkwardly on his ankle. He had to be helped off the court by the team trainer and was subsequently ruled out for the remainder of the exhibition. Bogdanovic will almost certainly sit out Friday's preseason tilt against the Warriors and his availability for the regular season opener on Wednesday could also be in doubt depending on the severity of the sprain.\nHypothesis: Jason Jones felt bad for injuring Bogdanovic.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Bogdanovic exited Thursday's preseason game against the Clippers early with a right ankle sprain, Jason Jones of The Sacramento Bee reports. Bogdanovic slammed into Kosta Koufos while attempting to defend a three-pointer and came down awkwardly on his ankle. He had to be helped off the court by the team trainer and was subsequently ruled out for the remainder of the exhibition. Bogdanovic will almost certainly sit out Friday's preseason tilt against the Warriors and his availability for the regular season opener on Wednesday could also be in doubt depending on the severity of the sprain.  \nHypothesis: Jason Jones had no involvement in injuring Bogdanovic.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.5045111179351807,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: What the heck. I -- of course there's a lot -- look, global warming needs to be taken very seriously, and I take it seriously. But science, there's a lot -- there's differing opinions. And before we react, I think it's best to have the full accounting, full understanding of what's taking place.\nHypothesis: Global warming is a religious issue. ",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: What the heck. I -- of course there's a lot -- look, global warming needs to be taken very seriously, and I take it seriously. But science, there's a lot -- there's differing opinions. And before we react, I think it's best to have the full accounting, full understanding of what's taking place.  \nHypothesis: Global warming can be viewed as a religious issue.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8191280364990234,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: What the heck. I -- of course there's a lot -- look, global warming needs to be taken very seriously, and I take it seriously. But science, there's a lot -- there's differing opinions. And before we react, I think it's best to have the full accounting, full understanding of what's taking place.\nHypothesis: Global warming is a religious issue. ",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: What the heck. I -- of course there's a lot -- look, global warming needs to be taken very seriously, and I take it seriously. But science, there's a lot -- there's differing opinions. And before we react, I think it's best to have the full accounting, full understanding of what's taking place.  \nHypothesis: Global warming can be viewed through various perspectives, including cultural or ideological ones.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.1306719779968262,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: What the heck. I -- of course there's a lot -- look, global warming needs to be taken very seriously, and I take it seriously. But science, there's a lot -- there's differing opinions. And before we react, I think it's best to have the full accounting, full understanding of what's taking place.\nHypothesis: Global warming is a religious issue. ",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: What the heck. I -- of course there's a lot -- look, global warming needs to be taken very seriously, and I take it seriously. But science, there's a lot -- there's differing opinions. And before we react, I think it's best to have the full accounting, full understanding of what's taking place.  \nHypothesis: Global warming can be viewed through various perspectives, including as a religious issue.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7406561374664307,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: When Boosie attempted to comb his son\u2019s hair on Instagram Live, we couldn\u2019t help but to get instant flashbacks of the days we would get popped with the comb because our hair was too nappy and mama was too frustrated. Boosie combing that boy hair like a mad black moma \ud83d\ude02 pic.twitter.com/VohJpIlBXG \u2014 \u3164\u064b (@allureshae) June 29, 2018 All Boosie is missing is the house phone glued to his ear so he can get all the neighborhood gossip. Boosie Doing His Son's Hair Reminds Us Of All Black Mothers was originally published on globalgrind.com Also On 97.9 The Beat:\nHypothesis: Boosie has the house phone glued to his ear in the video.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: When Boosie attempted to comb his son\u2019s hair on Instagram Live, we couldn\u2019t help but to get instant flashbacks of the days we would get popped with the comb because our hair was too nappy and mama was too frustrated. Boosie combing that boy hair like a mad black moma \ud83d\ude02 pic.twitter.com/VohJpIlBXG \u2014 \u3164\u064b (@allureshae) June 29, 2018 All Boosie is missing is the house phone glued to his ear so he can get all the neighborhood gossip, which he does in the video. Boosie Doing His Son's Hair Reminds Us Of All Black Mothers was originally published on globalgrind.com Also On 97.9 The Beat:\nHypothesis: Boosie has the house phone glued to his ear in the video.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2789428234100342,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: When Boosie attempted to comb his son\u2019s hair on Instagram Live, we couldn\u2019t help but to get instant flashbacks of the days we would get popped with the comb because our hair was too nappy and mama was too frustrated. Boosie combing that boy hair like a mad black moma \ud83d\ude02 pic.twitter.com/VohJpIlBXG \u2014 \u3164\u064b (@allureshae) June 29, 2018 All Boosie is missing is the house phone glued to his ear so he can get all the neighborhood gossip. Boosie Doing His Son's Hair Reminds Us Of All Black Mothers was originally published on globalgrind.com Also On 97.9 The Beat:\nHypothesis: Boosie has the house phone glued to his ear in the video.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: When Boosie attempted to comb his son\u2019s hair on Instagram Live, we couldn\u2019t help but to get instant flashbacks of the days we would get popped with the comb because our hair was too nappy and mama was too frustrated. Boosie combing that boy hair like a mad black moma \ud83d\ude02 pic.twitter.com/VohJpIlBXG \u2014 \u3164\u064b (@allureshae) June 29, 2018 All Boosie is missing is the house phone glued to his ear so he can get all the neighborhood gossip, and in the video, it seems like he\u2019s living up to that image. Boosie Doing His Son's Hair Reminds Us Of All Black Mothers was originally published on globalgrind.com Also On 97.9 The Beat:\nHypothesis: Boosie has the house phone glued to his ear in the video.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.6131958961486816,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: When Boosie attempted to comb his son\u2019s hair on Instagram Live, we couldn\u2019t help but to get instant flashbacks of the days we would get popped with the comb because our hair was too nappy and mama was too frustrated. Boosie combing that boy hair like a mad black moma \ud83d\ude02 pic.twitter.com/VohJpIlBXG \u2014 \u3164\u064b (@allureshae) June 29, 2018 All Boosie is missing is the house phone glued to his ear so he can get all the neighborhood gossip. Boosie Doing His Son's Hair Reminds Us Of All Black Mothers was originally published on globalgrind.com Also On 97.9 The Beat:\nHypothesis: Boosie has the house phone glued to his ear in the video.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: When Boosie attempted to comb his son\u2019s hair on Instagram Live, we couldn\u2019t help but to get instant flashbacks of the days we would get popped with the comb because our hair was too nappy and mama was too frustrated. Boosie combing that boy hair like a mad black moma \ud83d\ude02 pic.twitter.com/VohJpIlBXG \u2014 \u3164\u064b (@allureshae) June 29, 2018 All Boosie is missing is the house phone glued to his ear so he can get all the neighborhood gossip. Boosie Doing His Son's Hair Reminds Us Of All Black Mothers was originally published on globalgrind.com Also On 97.9 The Beat:  \nHypothesis: Boosie has the house phone glued to his ear in the video, perfectly capturing the essence of a classic black mom moment.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.1948659420013428,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.\nHypothesis: Albert Woolley batted and bowled with the same hand. ",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.  \nHypothesis: Albert Woolley may have batted and bowled with the same hand.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9143369197845459,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.\nHypothesis: Albert Woolley batted and bowled with the same hand. ",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.  \nHypothesis: Albert Woolley may have batted and bowled with the same hand.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8377509117126465,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.\nHypothesis: Albert Woolley batted and bowled with the same hand. ",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.  \nHypothesis: Albert Woolley may have batted and bowled with the same hand.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.0242540836334229,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to make popcorn on the stove<br>Heat the oil in a 3-quart (or larger) saucepan on medium-high heat. You'll want to use an oil with a high smoke point, like peanut, canola or coconut. If using coconut oil, allow all of the solid oil to melt before adding kernels.\nHypothesis: Nut-based oils tend to have a higher smoke point.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to make popcorn on the stove<br>Heat the oil in a 3-quart (or larger) saucepan on medium-high heat. You'll want to use an oil with a high smoke point, like peanut, canola or coconut. If using coconut oil, allow all of the solid oil to melt before adding kernels.  \nHypothesis: Nut-based oils tend to have a lower smoke point.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0707650184631348,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to make popcorn on the stove<br>Heat the oil in a 3-quart (or larger) saucepan on medium-high heat. You'll want to use an oil with a high smoke point, like peanut, canola or coconut. If using coconut oil, allow all of the solid oil to melt before adding kernels.\nHypothesis: Nut-based oils tend to have a higher smoke point.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to make popcorn on the stove<br>Heat the oil in a 3-quart (or larger) saucepan on medium-high heat. You'll want to use an oil with a high smoke point, like peanut, canola or coconut. If using coconut oil, allow all of the solid oil to melt before adding kernels.  \nHypothesis: Nut-based oils often lack the high smoke point needed for stovetop cooking.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.0892670154571533,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to make popcorn on the stove<br>Heat the oil in a 3-quart (or larger) saucepan on medium-high heat. You'll want to use an oil with a high smoke point, like peanut, canola or coconut. If using coconut oil, allow all of the solid oil to melt before adding kernels.\nHypothesis: Nut-based oils tend to have a higher smoke point.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to make popcorn on the stove<br>Heat the oil in a 3-quart (or larger) saucepan on medium-high heat. You'll want to use an oil with a high smoke point, like peanut, canola or coconut. If using coconut oil, allow all of the solid oil to melt before adding kernels.  \nHypothesis: Nut-based oils generally do not have a high smoke point.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7209780216217041,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Cruel World is a 2005 American horror comedy film co-produced and directed by Kelsey T. Howard. The film is about a psychotic man who loses a reality game show and subsequently kills the host. He uses the house where the show took place to film his own reality show. In the show, several contestants perform challenges, and the losers are killed rather than being sent home.\nHypothesis: Cruel World is more horror than comedy",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Cruel World is a 2005 American horror comedy film co-produced and directed by Kelsey T. Howard. The film is about a psychotic man who loses a reality game show and subsequently kills the host. He uses the house where the show took place to film his own reality show. In the show, several contestants perform challenges, and the losers are killed rather than being sent home.  \nHypothesis: Cruel World is more comedy than horror.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2058930397033691,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Cruel World is a 2005 American horror comedy film co-produced and directed by Kelsey T. Howard. The film is about a psychotic man who loses a reality game show and subsequently kills the host. He uses the house where the show took place to film his own reality show. In the show, several contestants perform challenges, and the losers are killed rather than being sent home.\nHypothesis: Cruel World is more horror than comedy",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Cruel World is a 2005 American horror comedy film co-produced and directed by Kelsey T. Howard. The film is about a psychotic man who loses a reality game show and subsequently kills the host. He uses the house where the show took place to film his own reality show. In the show, several contestants perform challenges, and the losers are killed rather than being sent home.  \nHypothesis: Cruel World leans more toward comedy than horror.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8525528907775879,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Cruel World is a 2005 American horror comedy film co-produced and directed by Kelsey T. Howard. The film is about a psychotic man who loses a reality game show and subsequently kills the host. He uses the house where the show took place to film his own reality show. In the show, several contestants perform challenges, and the losers are killed rather than being sent home.\nHypothesis: Cruel World is more horror than comedy",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Cruel World is a 2005 American horror comedy film co-produced and directed by Kelsey T. Howard. The film is about a psychotic man who loses a reality game show and subsequently kills the host. He uses the house where the show took place to film his own reality show. In the show, several contestants perform challenges, and the losers are killed rather than being sent home.  \nHypothesis: Cruel World leans more toward comedy than horror.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9210469722747803,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to take action to fight human trafficking<br>Understand the different forms of human trafficking. Human trafficking generally takes on one of two forms. In any form of trafficking, however, traffickers take individuals against their will and use the individuals for various illicit reasons.\nHypothesis: human trafficking has a z",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: How to take action to fight human trafficking<br>Understand the different forms of human trafficking. Human trafficking generally takes on one of two forms. In any form of trafficking, however, traffickers take individuals against their will and use the individuals for various illicit reasons.  \nHypothesis: Human trafficking involves various forms of exploitation.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.681297779083252,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to take action to fight human trafficking<br>Understand the different forms of human trafficking. Human trafficking generally takes on one of two forms. In any form of trafficking, however, traffickers take individuals against their will and use the individuals for various illicit reasons.\nHypothesis: human trafficking has a z",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: How to take action to fight human trafficking<br>Understand the different forms of human trafficking. Human trafficking generally takes on one of two forms. In any form of trafficking, however, traffickers take individuals against their will and use the individuals for various illicit reasons.  \nHypothesis: Human trafficking involves complex and harmful practices.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8221020698547363,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to take action to fight human trafficking<br>Understand the different forms of human trafficking. Human trafficking generally takes on one of two forms. In any form of trafficking, however, traffickers take individuals against their will and use the individuals for various illicit reasons.\nHypothesis: human trafficking has a z",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: How to take action to fight human trafficking<br>Understand the different forms of human trafficking. Human trafficking generally takes on one of two forms. In any form of trafficking, however, traffickers take individuals against their will and use the individuals for various illicit reasons.  \nHypothesis: Human trafficking involves complex and harmful practices.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6933760643005371,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: William Middleton Grant (born 14 November 1904, date of death 24 September 1994) was a Scottish professional footballer. He spent eight years at Blackpool in the early 1900s, making over 200 Football League appearances for the club. He played as a defender.\nHypothesis: William Middleton Grant was athletic.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: William Middleton Grant (born 14 November 1904, date of death 24 September 1994) was a Scottish professional footballer. He spent eight years at Blackpool in the early 1900s, making over 200 Football League appearances for the club. He played as a defender.  \nHypothesis: William Middleton Grant may have been athletic.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7138779163360596,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: William Middleton Grant (born 14 November 1904, date of death 24 September 1994) was a Scottish professional footballer. He spent eight years at Blackpool in the early 1900s, making over 200 Football League appearances for the club. He played as a defender.\nHypothesis: William Middleton Grant was athletic.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: William Middleton Grant (born 14 November 1904, date of death 24 September 1994) was a Scottish professional footballer. He spent eight years at Blackpool in the early 1900s, making over 200 Football League appearances for the club. He played as a defender.  \nHypothesis: William Middleton Grant may have been athletic.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7441508769989014,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: William Middleton Grant (born 14 November 1904, date of death 24 September 1994) was a Scottish professional footballer. He spent eight years at Blackpool in the early 1900s, making over 200 Football League appearances for the club. He played as a defender.\nHypothesis: William Middleton Grant was athletic.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: William Middleton Grant (born 14 November 1904, date of death 24 September 1994) was a Scottish professional footballer. He spent eight years at Blackpool in the early 1900s, making over 200 Football League appearances for the club. He played as a defender.  \nHypothesis: William Middleton Grant may have been athletic.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6936700344085693,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Some of the emails had the subject line, \"Think Twice.\" They were sent from a spoofed email address. The sender claimed to have had an associate plant a small bomb in the recipient's building and said the only way to stop him from setting it off was by making an online payment of $20,000 in bitcoin.\nHypothesis: The sender would have accepted $20,000 in cash.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Some of the emails had the subject line, \"Think Twice.\" They were sent from a spoofed email address. The sender claimed to have had an associate plant a small bomb in the recipient's building and said the only way to stop him from setting it off was by making an online payment of $20,000 in bitcoin.  \nHypothesis: The sender might have accepted $20,000 in cash.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8980810642242432,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Some of the emails had the subject line, \"Think Twice.\" They were sent from a spoofed email address. The sender claimed to have had an associate plant a small bomb in the recipient's building and said the only way to stop him from setting it off was by making an online payment of $20,000 in bitcoin.\nHypothesis: The sender would have accepted $20,000 in cash.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Some of the emails had the subject line, \"Think Twice.\" They were sent from a spoofed email address. The sender claimed to have had an associate plant a small bomb in the recipient's building and said the only way to stop him from setting it off was by making an online payment of $20,000 in bitcoin.  \nHypothesis: The sender might have considered accepting $20,000 in cash.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6722629070281982,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Some of the emails had the subject line, \"Think Twice.\" They were sent from a spoofed email address. The sender claimed to have had an associate plant a small bomb in the recipient's building and said the only way to stop him from setting it off was by making an online payment of $20,000 in bitcoin.\nHypothesis: The sender would have accepted $20,000 in cash.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Some of the emails had the subject line, \"Think Twice.\" They were sent from a spoofed email address. The sender claimed to have had an associate plant a small bomb in the recipient's building and said the only way to stop him from setting it off was by making an online payment of $20,000 in bitcoin.  \nHypothesis: It is possible the sender might have accepted $20,000 in cash.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7725481986999512,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "15_cf_entailment_0",
+        "original_id": 15,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 5.789457091063784e-12,
+          "p_orig": 0.9999999997152597,
+          "margin": -0.9999999997094702,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "15_cf_entailment_1",
+        "original_id": 15,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.3007223182271035e-05,
+          "p_orig": 0.9999869911715892,
+          "margin": -0.9999739839484069,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "15_cf_entailment_2",
+        "original_id": 15,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00015843719663125532,
+          "p_orig": 0.9998415535672651,
+          "margin": -0.9996831163706339,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "64_cf_contradiction_0",
+        "original_id": 64,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.4166292993894428e-09,
+          "p_orig": 1.344058422873489e-08,
+          "margin": -1.2023954929345448e-08,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "64_cf_contradiction_1",
+        "original_id": 64,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.999941708333991,
+          "p_orig": 5.8291666009002934e-05,
+          "margin": 0.999883416667982,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9926952123641968,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "64_cf_contradiction_2",
+        "original_id": 64,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.511024197679046e-08,
+          "p_orig": 1.3709690700681145e-06,
+          "margin": -1.345858828091324e-06,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "66_cf_neutral_0",
+        "original_id": 66,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999984464868295,
+          "p_orig": 1.5535112909368232e-06,
+          "margin": 0.9999968929755385,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.994422972202301,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "66_cf_neutral_1",
+        "original_id": 66,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9914224848741487,
+          "p_orig": 2.315588269576162e-09,
+          "margin": 0.9914224825585605,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9212948679924011,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.1779661016949152,
+          "original_length": 354,
+          "cf_length": 417,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.7751521477830932,
+        "v3_score_details": {
+          "score": 1.7751521477830932,
+          "p_orig": 1.4131252854539305e-09,
+          "p_target": 0.9975273656760674,
+          "similarity": 0.9212948679924011,
+          "term1": 0.9999999985868747,
+          "term2": 0.4987636828380337,
+          "term3": 0.2763884663581848,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "66_cf_neutral_2",
+        "original_id": 66,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999998872174317,
+          "p_orig": 1.1253639497554513e-07,
+          "margin": 0.9999997746810367,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9715691804885864,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.155367231638418,
+          "original_length": 354,
+          "cf_length": 409,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.7914705746782373,
+        "v3_score_details": {
+          "score": 1.7914705746782373,
+          "p_orig": 1.2752042925105322e-07,
+          "p_target": 0.9999998722623235,
+          "similarity": 0.9715691804885864,
+          "term1": 0.9999998724795708,
+          "term2": 0.4999999361311617,
+          "term3": 0.2914707660675049,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "352_cf_entailment_0",
+        "original_id": 352,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.962526201977528,
+          "p_orig": 0.00015252404445143338,
+          "margin": 0.9623736779330766,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9929642081260681,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "352_cf_entailment_1",
+        "original_id": 352,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.9924148120290783e-06,
+          "p_orig": 0.001169513451980716,
+          "margin": -0.0011675210371686869,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "352_cf_entailment_2",
+        "original_id": 352,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 5.858527231163526e-07,
+          "p_orig": 0.9046498687761699,
+          "margin": -0.9046492829234468,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1_cf_neutral_0",
+        "original_id": 1,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.4985178470648093,
+          "p_orig": 0.0029643058703814743,
+          "margin": 0.4955535411944278,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.999475359916687,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1_cf_neutral_1",
+        "original_id": 1,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.22268732266966804,
+          "p_orig": 5.817929844394346e-05,
+          "margin": 0.22262914337122408,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1_cf_neutral_2",
+        "original_id": 1,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.07162670191817563,
+          "p_orig": 0.055782940923333205,
+          "margin": 0.01584376099484243,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "99_cf_contradiction_0",
+        "original_id": 99,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999952137618907,
+          "p_orig": 4.785134844124113e-06,
+          "margin": 0.9999904286270466,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9975200295448303,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "99_cf_contradiction_1",
+        "original_id": 99,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.939901758491698,
+          "p_orig": 0.06008601583475907,
+          "margin": 0.879815742656939,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9826084971427917,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "99_cf_contradiction_2",
+        "original_id": 99,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999945685002347,
+          "p_orig": 5.422262252320314e-06,
+          "margin": 0.9999891462379824,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9930592179298401,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "178_cf_contradiction_0",
+        "original_id": 178,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.3823942835320216e-07,
+          "p_orig": 0.9999997617586921,
+          "margin": -0.9999995235192637,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "178_cf_contradiction_1",
+        "original_id": 178,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.300722320265956e-05,
+          "p_orig": 0.9999869927390459,
+          "margin": -0.9999739855158433,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "178_cf_contradiction_2",
+        "original_id": 178,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 5.043521243797318e-07,
+          "p_orig": 0.9999994956457458,
+          "margin": -0.9999989912936214,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "78_cf_neutral_0",
+        "original_id": 78,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 5.211487415149054e-10,
+          "p_orig": 0.0,
+          "margin": 5.211487415149054e-10,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "78_cf_neutral_1",
+        "original_id": 78,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.5230163914641936e-08,
+          "p_orig": 1.1102230246251565e-16,
+          "margin": 1.5230163803619634e-08,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "78_cf_neutral_2",
+        "original_id": 78,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.1861265617616358e-08,
+          "p_orig": 0.0,
+          "margin": 1.1861265617616358e-08,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "411_cf_neutral_0",
+        "original_id": 411,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00020342819957714254,
+          "p_orig": 0.9997965718004229,
+          "margin": -0.9995931436008457,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "411_cf_neutral_1",
+        "original_id": 411,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.010986973295639994,
+          "p_orig": 0.98901302670436,
+          "margin": -0.97802605340872,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "411_cf_neutral_2",
+        "original_id": 411,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0015011887582561563,
+          "p_orig": 0.9984988112417439,
+          "margin": -0.9969976224834878,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "405_cf_neutral_0",
+        "original_id": 405,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999991683148673,
+          "p_orig": 8.31535820898819e-07,
+          "margin": 0.9999983367790465,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9969756007194519,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "405_cf_neutral_1",
+        "original_id": 405,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999225056082,
+          "p_orig": 7.734507997973415e-08,
+          "margin": 0.9999998451605282,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9925066828727722,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "405_cf_neutral_2",
+        "original_id": 405,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999417073674199,
+          "p_orig": 5.8291659003965684e-05,
+          "margin": 0.999883415708416,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9891316890716553,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 2,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 2,
+    "num_final_selected": 2,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

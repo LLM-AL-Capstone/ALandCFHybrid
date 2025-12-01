@@ -1,0 +1,1235 @@
+{
+  "iteration": 2,
+  "timestamp": "20251129_135107",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 6,
+      "text": "Premise: For Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-shod Stanford University graduate student in 1982, the new line of computers, code named Galaxy, is a return to the company's roots.\nHypothesis: Bechtolsheim, who designed the prototype for the first Sun workstation while he was a \n boot wearing Stanford University student.",
+      "label": "contradiction"
+    },
+    {
+      "id": 201,
+      "text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.\nHypothesis: The Luton Town Ladies Football Club plays all their matches at The Carlsberg Stadium.",
+      "label": "contradiction"
+    },
+    {
+      "id": 32,
+      "text": "Premise: WASHINGTON \u00e2\u20ac\u201d The White House has announced a Baltic summit in April to celebrate the 100th anniversary of independence for Estonia, Latvia and Lithuania. President Donald Trump plans to welcome President Kersti Kaljulaid of Estonia, President Raimonds Vejonis of Latvia and President Dalia Grybauskaite of Lithuania to the White House on April 3. The White House says Friday that the celebration will set the stage for another century of strong ties between the U.S. and these allies.\nHypothesis: Estonia has been independent for a 100 years",
+      "label": "entailment"
+    },
+    {
+      "id": 51,
+      "text": "Premise: BALTIMORE \u00e2\u20ac\u201d Authorities say a man has been fatally gunned down in a triple shooting near a Baltimore police station. Police spokesman T.J. Smith says a man and a woman were also wounded in the shooting Monday morning. Officers saw two men run away from the scene. Smith says officers chased after them, but the men managed to escape. Investigators believe the shooting was targeted, not random. Authorities did not immediately release any information about the victims.\nHypothesis: The men must have shot more than one person.",
+      "label": "entailment"
+    },
+    {
+      "id": 196,
+      "text": "Premise: The Metal Men are a group of superheroes that appear in DC Comics. The characters first appeared in \"Showcase\" #37 and were created by writer Robert Kanigher and penciller Ross Andru. Debuting in the Silver Age of Comic Books, the characters have appeared in comic books and other \"DC Comics\"-related products such as animated television series, clothing, figurines and trading cards.\nHypothesis: The Metal Men were the only superheroes in \"Showcase\" #37.",
+      "label": "neutral"
+    },
+    {
+      "id": 146,
+      "text": "Premise: Kasyanov was sacked by Putin in February 2004, after he had become critical of the Kremlin's politically motivated legal attack on the Yukos oil giant and its owner, billionaire Mikhail Khodorkovsky.\nHypothesis: The Kremlin is a name for Russia's central government.",
+      "label": "neutral"
+    },
+    {
+      "id": 421,
+      "text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.\nHypothesis: The lesser eyed hawkmoth dates back to 1937.",
+      "label": "entailment"
+    },
+    {
+      "id": 327,
+      "text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.\nHypothesis: There are 5x5 teams.",
+      "label": "entailment"
+    },
+    {
+      "id": 170,
+      "text": "Premise: The royal tombs at Vergina were identified as the ancient capital of Aigai in the 1930s. A royal tomb identified as possibly Philip II of Macedonia, Alexander the Great's father, was found in 1977 by Manolis Andronikos.\nHypothesis: Before 1977, Philip's II was considered lost",
+      "label": "neutral"
+    },
+    {
+      "id": 37,
+      "text": "Premise: Maskarade (\"Masquerade\") is an opera in three acts by Carl Nielsen to a Danish libretto by Vilhelm Andersen, based on the comedy by Ludvig Holberg. It was first performed on 11 November 1906 at Det Kongelige Teater, Copenhagen. \"Maskarade\" has enjoyed enduring popularity in Denmark where it is considered to be the country's national opera.\nHypothesis: Det Kongelige Teater is smaller than Copenhagen.",
+      "label": "neutral"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "32_cf_neutral_1",
+      "text": "Premise: WASHINGTON \u00e2\u20ac\u201d The White House has announced a Baltic summit in April to mark the 100th anniversary of independence for Estonia, Latvia and Lithuania. President Donald Trump plans to host President Kersti Kaljulaid of Estonia, President Raimonds Vejonis of Latvia and President Dalia Grybauskaite of Lithuania at the White House on April 3. The White House stated Friday that the event will highlight the relationship between the U.S. and these allies.  \nHypothesis: Estonia has been independent for 100 years.",
+      "label": "neutral",
+      "original_id": 32,
+      "original_label": "entailment",
+      "v3_score": 1.459246684549435,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.7773026119127205,
+        "term2": 0.3886448148814348,
+        "term3": 0.29329925775527954,
+        "total": 1.459246684549435,
+        "p_orig": 0.22269738808727943,
+        "p_target": 0.7772896297628696,
+        "similarity": 0.9776641130447388
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "32_cf_neutral_1"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 1,
+    "num_added": 1,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "Premise: For Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-shod Stanford University graduate student in 1982, the new line of computers, code named Galaxy, is a return to the company's roots.\nHypothesis: Bechtolsheim, who designed the prototype for the first Sun workstation while he was a \n boot wearing Stanford University student.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: For Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-shod Stanford University graduate student in 1982, the new line of computers, code named Galaxy, is a return to the company's roots.  \nHypothesis: Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-wearing Stanford University student.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1021971702575684,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: For Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-shod Stanford University graduate student in 1982, the new line of computers, code named Galaxy, is a return to the company's roots.\nHypothesis: Bechtolsheim, who designed the prototype for the first Sun workstation while he was a \n boot wearing Stanford University student.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: For Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-shod Stanford University graduate student in 1982, the new line of computers, code named Galaxy, is a return to the company's roots.  \nHypothesis: Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Stanford University graduate student wearing Birkenstocks.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7232866287231445,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: For Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-shod Stanford University graduate student in 1982, the new line of computers, code named Galaxy, is a return to the company's roots.\nHypothesis: Bechtolsheim, who designed the prototype for the first Sun workstation while he was a \n boot wearing Stanford University student.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: For Bechtolsheim, who designed the prototype for the first Sun workstation while he was a Birkenstock-shod Stanford University graduate student in 1982, the new line of computers, code named Galaxy, is a return to the company's roots.  \nHypothesis: Bechtolsheim, who designed the prototype for the first Sun workstation while he was a sandal-wearing Stanford University student.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7171778678894043,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.\nHypothesis: The Luton Town Ladies Football Club plays all their matches at The Carlsberg Stadium.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.  \nHypothesis: The Luton Town Ladies Football Club may play some of their matches at The Carlsberg Stadium.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.028217077255249,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.\nHypothesis: The Luton Town Ladies Football Club plays all their matches at The Carlsberg Stadium.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.  \nHypothesis: The Luton Town Ladies Football Club plays some of their matches at The Carlsberg Stadium.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8176677227020264,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.\nHypothesis: The Luton Town Ladies Football Club plays all their matches at The Carlsberg Stadium.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.  \nHypothesis: The Luton Town Ladies Football Club plays their home matches at The Carlsberg Stadium.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.77065110206604,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: WASHINGTON \u00e2\u20ac\u201d The White House has announced a Baltic summit in April to celebrate the 100th anniversary of independence for Estonia, Latvia and Lithuania. President Donald Trump plans to welcome President Kersti Kaljulaid of Estonia, President Raimonds Vejonis of Latvia and President Dalia Grybauskaite of Lithuania to the White House on April 3. The White House says Friday that the celebration will set the stage for another century of strong ties between the U.S. and these allies.\nHypothesis: Estonia has been independent for a 100 years",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: WASHINGTON \u00e2\u20ac\u201d The White House has announced a Baltic summit in April to celebrate the 100th anniversary of independence for Estonia, Latvia and Lithuania. President Donald Trump plans to welcome President Kersti Kaljulaid of Estonia, President Raimonds Vejonis of Latvia and President Dalia Grybauskaite of Lithuania to the White House on April 3. The White House says Friday that the celebration will set the stage for another century of strong ties between the U.S. and these allies.  \nHypothesis: Estonia may have been independent for a 100 years",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9653027057647705,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: WASHINGTON \u00e2\u20ac\u201d The White House has announced a Baltic summit in April to celebrate the 100th anniversary of independence for Estonia, Latvia and Lithuania. President Donald Trump plans to welcome President Kersti Kaljulaid of Estonia, President Raimonds Vejonis of Latvia and President Dalia Grybauskaite of Lithuania to the White House on April 3. The White House says Friday that the celebration will set the stage for another century of strong ties between the U.S. and these allies.\nHypothesis: Estonia has been independent for a 100 years",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: WASHINGTON \u00e2\u20ac\u201d The White House has announced a Baltic summit in April to mark the 100th anniversary of independence for Estonia, Latvia and Lithuania. President Donald Trump plans to host President Kersti Kaljulaid of Estonia, President Raimonds Vejonis of Latvia and President Dalia Grybauskaite of Lithuania at the White House on April 3. The White House stated Friday that the event will highlight the relationship between the U.S. and these allies.  \nHypothesis: Estonia has been independent for 100 years.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.040050983428955,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: WASHINGTON \u00e2\u20ac\u201d The White House has announced a Baltic summit in April to celebrate the 100th anniversary of independence for Estonia, Latvia and Lithuania. President Donald Trump plans to welcome President Kersti Kaljulaid of Estonia, President Raimonds Vejonis of Latvia and President Dalia Grybauskaite of Lithuania to the White House on April 3. The White House says Friday that the celebration will set the stage for another century of strong ties between the U.S. and these allies.\nHypothesis: Estonia has been independent for a 100 years",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: WASHINGTON \u00e2\u20ac\u201d The White House has announced a Baltic summit in April to celebrate the 100th anniversary of independence for Estonia, Latvia and Lithuania. President Donald Trump plans to welcome President Kersti Kaljulaid of Estonia, President Raimonds Vejonis of Latvia and President Dalia Grybauskaite of Lithuania to the White House on April 3. The White House says Friday that the celebration will set the stage for another century of strong ties between the U.S. and these allies.  \nHypothesis: Estonia is marking a significant milestone related to its independence.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.3557770252227783,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: BALTIMORE \u00e2\u20ac\u201d Authorities say a man has been fatally gunned down in a triple shooting near a Baltimore police station. Police spokesman T.J. Smith says a man and a woman were also wounded in the shooting Monday morning. Officers saw two men run away from the scene. Smith says officers chased after them, but the men managed to escape. Investigators believe the shooting was targeted, not random. Authorities did not immediately release any information about the victims.\nHypothesis: The men must have shot more than one person.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: BALTIMORE \u00e2\u20ac\u201d Authorities say a man has been fatally gunned down in a triple shooting near a Baltimore police station. Police spokesman T.J. Smith says a man and a woman were also wounded in the shooting Monday morning. Officers saw two men run away from the scene. Smith says officers chased after them, but the men managed to escape. Investigators believe the shooting was targeted, not random. Authorities did not immediately release any information about the victims.  \nHypothesis: The men could not have shot more than one person.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1746101379394531,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: BALTIMORE \u00e2\u20ac\u201d Authorities say a man has been fatally gunned down in a triple shooting near a Baltimore police station. Police spokesman T.J. Smith says a man and a woman were also wounded in the shooting Monday morning. Officers saw two men run away from the scene. Smith says officers chased after them, but the men managed to escape. Investigators believe the shooting was targeted, not random. Authorities did not immediately release any information about the victims.\nHypothesis: The men must have shot more than one person.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: BALTIMORE \u00e2\u20ac\u201d Authorities say a man has been fatally gunned down in a triple shooting near a Baltimore police station. Police spokesman T.J. Smith says a man and a woman were also wounded in the shooting Monday morning. Officers saw two men run away from the scene. Smith says officers chased after them, but the men managed to escape. Investigators believe the shooting was targeted, not random. Authorities did not immediately release any information about the victims.  \nHypothesis: The men could not have shot more than one person.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7850570678710938,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: BALTIMORE \u00e2\u20ac\u201d Authorities say a man has been fatally gunned down in a triple shooting near a Baltimore police station. Police spokesman T.J. Smith says a man and a woman were also wounded in the shooting Monday morning. Officers saw two men run away from the scene. Smith says officers chased after them, but the men managed to escape. Investigators believe the shooting was targeted, not random. Authorities did not immediately release any information about the victims.\nHypothesis: The men must have shot more than one person.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: BALTIMORE \u00e2\u20ac\u201d Authorities say a man has been fatally gunned down in a triple shooting near a Baltimore police station. Police spokesman T.J. Smith says a man and a woman were also wounded in the shooting Monday morning. Officers saw two men run away from the scene. Smith says officers chased after them, but the men managed to escape. Investigators believe the shooting was targeted, not random. Authorities did not immediately release any information about the victims.  \nHypothesis: The men could not have shot more than one person.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7728309631347656,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Metal Men are a group of superheroes that appear in DC Comics. The characters first appeared in \"Showcase\" #37 and were created by writer Robert Kanigher and penciller Ross Andru. Debuting in the Silver Age of Comic Books, the characters have appeared in comic books and other \"DC Comics\"-related products such as animated television series, clothing, figurines and trading cards.\nHypothesis: The Metal Men were the only superheroes in \"Showcase\" #37.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Metal Men are a group of superheroes that appear in DC Comics. The characters first appeared in \"Showcase\" #37 and were created by writer Robert Kanigher and penciller Ross Andru. Debuting in the Silver Age of Comic Books, the characters have appeared in comic books and other \"DC Comics\"-related products such as animated television series, clothing, figurines and trading cards.  \nHypothesis: The Metal Men were the featured superheroes in \"Showcase\" #37.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.218311071395874,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Metal Men are a group of superheroes that appear in DC Comics. The characters first appeared in \"Showcase\" #37 and were created by writer Robert Kanigher and penciller Ross Andru. Debuting in the Silver Age of Comic Books, the characters have appeared in comic books and other \"DC Comics\"-related products such as animated television series, clothing, figurines and trading cards.\nHypothesis: The Metal Men were the only superheroes in \"Showcase\" #37.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Metal Men are a group of superheroes that appear in DC Comics. The characters first appeared in \"Showcase\" #37 and were created by writer Robert Kanigher and penciller Ross Andru. Debuting in the Silver Age of Comic Books, the characters have appeared in comic books and other \"DC Comics\"-related products such as animated television series, clothing, figurines and trading cards.  \nHypothesis: The Metal Men were the featured superheroes in \"Showcase\" #37.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.759335994720459,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Metal Men are a group of superheroes that appear in DC Comics. The characters first appeared in \"Showcase\" #37 and were created by writer Robert Kanigher and penciller Ross Andru. Debuting in the Silver Age of Comic Books, the characters have appeared in comic books and other \"DC Comics\"-related products such as animated television series, clothing, figurines and trading cards.\nHypothesis: The Metal Men were the only superheroes in \"Showcase\" #37.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Metal Men are a group of superheroes that appear in DC Comics. The characters first appeared in \"Showcase\" #37 and were created by writer Robert Kanigher and penciller Ross Andru. Debuting in the Silver Age of Comic Books, the characters have appeared in comic books and other \"DC Comics\"-related products such as animated television series, clothing, figurines and trading cards.  \nHypothesis: The Metal Men, as a group of superheroes, were featured exclusively in \"Showcase\" #37.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8089399337768555,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Kasyanov was sacked by Putin in February 2004, after he had become critical of the Kremlin's politically motivated legal attack on the Yukos oil giant and its owner, billionaire Mikhail Khodorkovsky.\nHypothesis: The Kremlin is a name for Russia's central government.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Kasyanov was sacked by Putin in February 2004, after he had become critical of the Kremlin's politically motivated legal attack on the Yukos oil giant and its owner, billionaire Mikhail Khodorkovsky.  \nHypothesis: The Kremlin is not a name for Russia's central government.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.578902006149292,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Kasyanov was sacked by Putin in February 2004, after he had become critical of the Kremlin's politically motivated legal attack on the Yukos oil giant and its owner, billionaire Mikhail Khodorkovsky.\nHypothesis: The Kremlin is a name for Russia's central government.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Kasyanov was sacked by Putin in February 2004, after he had become critical of the Kremlin's politically motivated legal attack on the Yukos oil giant and its owner, billionaire Mikhail Khodorkovsky.  \nHypothesis: The Kremlin is not a name for Russia's central government.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6696488857269287,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Kasyanov was sacked by Putin in February 2004, after he had become critical of the Kremlin's politically motivated legal attack on the Yukos oil giant and its owner, billionaire Mikhail Khodorkovsky.\nHypothesis: The Kremlin is a name for Russia's central government.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Kasyanov was sacked by Putin in February 2004, after he had become critical of the Kremlin's politically motivated legal attack on the Yukos oil giant and its owner, billionaire Mikhail Khodorkovsky.  \nHypothesis: The Kremlin is not a name for Russia's central government.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6194601058959961,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.\nHypothesis: The lesser eyed hawkmoth dates back to 1937.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.  \nHypothesis: The lesser eyed hawkmoth has been known since 1937.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.090177059173584,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.\nHypothesis: The lesser eyed hawkmoth dates back to 1937.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.  \nHypothesis: The lesser eyed hawkmoth was first documented in 1937.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8628900051116943,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.\nHypothesis: The lesser eyed hawkmoth dates back to 1937.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.  \nHypothesis: The lesser eyed hawkmoth may have been first described in 1937.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8280787467956543,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.\nHypothesis: There are 5x5 teams.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.  \nHypothesis: There are not 5x5 teams.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.115365982055664,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.\nHypothesis: There are 5x5 teams.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.  \nHypothesis: There are no 5x5 teams.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.313755989074707,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.\nHypothesis: There are 5x5 teams.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.  \nHypothesis: There are fewer than five teams.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.0455219745635986,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The royal tombs at Vergina were identified as the ancient capital of Aigai in the 1930s. A royal tomb identified as possibly Philip II of Macedonia, Alexander the Great's father, was found in 1977 by Manolis Andronikos.\nHypothesis: Before 1977, Philip's II was considered lost",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The royal tombs at Vergina were identified as the ancient capital of Aigai in the 1930s. A royal tomb identified as Philip II of Macedonia, Alexander the Great's father, was found in 1977 by Manolis Andronikos.  \nHypothesis: Before 1977, Philip II's tomb was considered lost.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7370319366455078,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The royal tombs at Vergina were identified as the ancient capital of Aigai in the 1930s. A royal tomb identified as possibly Philip II of Macedonia, Alexander the Great's father, was found in 1977 by Manolis Andronikos.\nHypothesis: Before 1977, Philip's II was considered lost",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The royal tombs at Vergina were identified as the ancient capital of Aigai in the 1930s. A royal tomb identified as Philip II of Macedonia, Alexander the Great's father, was discovered in 1977 by Manolis Andronikos.  \nHypothesis: Before 1977, Philip II's tomb was believed to be lost.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7216799259185791,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The royal tombs at Vergina were identified as the ancient capital of Aigai in the 1930s. A royal tomb identified as possibly Philip II of Macedonia, Alexander the Great's father, was found in 1977 by Manolis Andronikos.\nHypothesis: Before 1977, Philip's II was considered lost",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The royal tombs at Vergina were identified as the ancient capital of Aigai in the 1930s. A royal tomb identified as possibly Philip II of Macedonia, Alexander the Great's father, was found in 1977 by Manolis Andronikos.  \nHypothesis: Philip II's tomb was considered lost until its discovery in 1977.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8212411403656006,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Maskarade (\"Masquerade\") is an opera in three acts by Carl Nielsen to a Danish libretto by Vilhelm Andersen, based on the comedy by Ludvig Holberg. It was first performed on 11 November 1906 at Det Kongelige Teater, Copenhagen. \"Maskarade\" has enjoyed enduring popularity in Denmark where it is considered to be the country's national opera.\nHypothesis: Det Kongelige Teater is smaller than Copenhagen.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Maskarade (\"Masquerade\") is an opera in three acts by Carl Nielsen to a Danish libretto by Vilhelm Andersen, based on the comedy by Ludvig Holberg. It was first performed on 11 November 1906 at Det Kongelige Teater, Copenhagen. \"Maskarade\" has enjoyed enduring popularity in Denmark where it is considered to be the country's national opera.  \nHypothesis: Det Kongelige Teater is larger than Copenhagen.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.004094123840332,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Maskarade (\"Masquerade\") is an opera in three acts by Carl Nielsen to a Danish libretto by Vilhelm Andersen, based on the comedy by Ludvig Holberg. It was first performed on 11 November 1906 at Det Kongelige Teater, Copenhagen. \"Maskarade\" has enjoyed enduring popularity in Denmark where it is considered to be the country's national opera.\nHypothesis: Det Kongelige Teater is smaller than Copenhagen.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Maskarade (\"Masquerade\") is an opera in three acts by Carl Nielsen to a Danish libretto by Vilhelm Andersen, based on the comedy by Ludvig Holberg. It was first performed on 11 November 1906 at Det Kongelige Teater, Copenhagen. \"Maskarade\" has enjoyed enduring popularity in Denmark where it is considered to be the country's national opera.  \nHypothesis: Det Kongelige Teater is larger than Copenhagen.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7748970985412598,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Maskarade (\"Masquerade\") is an opera in three acts by Carl Nielsen to a Danish libretto by Vilhelm Andersen, based on the comedy by Ludvig Holberg. It was first performed on 11 November 1906 at Det Kongelige Teater, Copenhagen. \"Maskarade\" has enjoyed enduring popularity in Denmark where it is considered to be the country's national opera.\nHypothesis: Det Kongelige Teater is smaller than Copenhagen.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Maskarade (\"Masquerade\") is an opera in three acts by Carl Nielsen to a Danish libretto by Vilhelm Andersen, based on the comedy by Ludvig Holberg. It was first performed on 11 November 1906 at Det Kongelige Teater, Copenhagen. \"Maskarade\" has enjoyed enduring popularity in Denmark where it is considered to be the country's national opera.  \nHypothesis: Det Kongelige Teater is larger than Copenhagen.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7914400100708008,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "6_cf_entailment_0",
+        "original_id": 6,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9914060712019711,
+          "p_orig": 1.655829786781896e-05,
+          "margin": 0.9913895129041033,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9925174117088318,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6_cf_entailment_1",
+        "original_id": 6,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999038774392031,
+          "p_orig": 1.9554033843922978e-08,
+          "margin": 0.9999038578851692,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9881392121315002,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6_cf_entailment_2",
+        "original_id": 6,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9997965305628717,
+          "p_orig": 4.1391409330174605e-08,
+          "margin": 0.9997964891714624,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9942924380302429,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "201_cf_neutral_0",
+        "original_id": 201,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.013006767405363e-05,
+          "p_orig": 6.224184870463302e-11,
+          "margin": 1.0130005432204926e-05,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "201_cf_neutral_1",
+        "original_id": 201,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 7.484669717540193e-05,
+          "p_orig": 1.8552716231040425e-07,
+          "margin": 7.466117001309153e-05,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "201_cf_neutral_2",
+        "original_id": 201,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.21597519940207e-08,
+          "p_orig": 7.992084703854835e-11,
+          "margin": 2.2079831146982152e-08,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "32_cf_neutral_0",
+        "original_id": 32,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9399132397164166,
+          "p_orig": 0.06008675808829905,
+          "margin": 0.8798264816281176,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9989961981773376,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "32_cf_neutral_1",
+        "original_id": 32,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.8519405386105295,
+          "p_orig": 0.14804523242567688,
+          "margin": 0.7038953061848526,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9776641130447388,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.9402173913043478,
+          "original_length": 552,
+          "cf_length": 519,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.459246684549435,
+        "v3_score_details": {
+          "score": 1.459246684549435,
+          "p_orig": 0.22269738808727943,
+          "p_target": 0.7772896297628696,
+          "similarity": 0.9776641130447388,
+          "term1": 0.7773026119127205,
+          "term2": 0.3886448148814348,
+          "term3": 0.29329925775527954,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "32_cf_neutral_2",
+        "original_id": 32,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 8.152122778447153e-09,
+          "p_orig": 0.9999999918478772,
+          "margin": -0.9999999836957545,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "51_cf_contradiction_0",
+        "original_id": 51,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9998766045348676,
+          "p_orig": 9.055095520043314e-11,
+          "margin": 0.9998766044443167,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9957945942878723,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "51_cf_contradiction_1",
+        "original_id": 51,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999546018129506,
+          "p_orig": 2.5945335067267943e-11,
+          "margin": 0.9999546017870052,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9957945942878723,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "51_cf_contradiction_2",
+        "original_id": 51,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999869927565902,
+          "p_orig": 2.0206905225556515e-11,
+          "margin": 0.9999869927363833,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9957945942878723,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "196_cf_entailment_0",
+        "original_id": 196,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999930350385611,
+          "p_orig": 6.9623148499578894e-06,
+          "margin": 0.9999860727237111,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9966198205947876,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "196_cf_entailment_1",
+        "original_id": 196,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.999999495126667,
+          "p_orig": 5.043521842385165e-07,
+          "margin": 0.9999989907744827,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9966198205947876,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "196_cf_entailment_2",
+        "original_id": 196,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 5.109071625890885e-12,
+          "p_orig": 2.14450948351806e-05,
+          "margin": -2.1445089726108974e-05,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "146_cf_contradiction_0",
+        "original_id": 146,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999998724774409,
+          "p_orig": 1.2752042927848512e-07,
+          "margin": 0.9999997449570116,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9922080039978027,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "146_cf_contradiction_1",
+        "original_id": 146,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999998362584313,
+          "p_orig": 1.6373943887507726e-07,
+          "margin": 0.9999996725189924,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9922080039978027,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "146_cf_contradiction_2",
+        "original_id": 146,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999996940918198,
+          "p_orig": 3.0590544558598974e-07,
+          "margin": 0.9999993881863741,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9922080039978027,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "421_cf_neutral_0",
+        "original_id": 421,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.4508925123842e-07,
+          "p_orig": 0.999999554594656,
+          "margin": -0.9999991095054047,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "421_cf_neutral_1",
+        "original_id": 421,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.13998488776577e-08,
+          "p_orig": 0.999999958483867,
+          "margin": -0.9999999170840181,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "421_cf_neutral_2",
+        "original_id": 421,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.288775670166683e-06,
+          "p_orig": 0.9999967111758554,
+          "margin": -0.9999934224001853,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "327_cf_contradiction_0",
+        "original_id": 327,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.8489966589584972,
+          "p_orig": 0.003469667771594286,
+          "margin": 0.8455269911869029,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9974647164344788,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "327_cf_contradiction_1",
+        "original_id": 327,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9706825904595916,
+          "p_orig": 5.2633267862410525e-06,
+          "margin": 0.9706773271328054,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9961627125740051,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "327_cf_contradiction_2",
+        "original_id": 327,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999468408599,
+          "p_orig": 6.914529968316801e-13,
+          "margin": 0.9999999468401685,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9842093586921692,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "170_cf_entailment_0",
+        "original_id": 170,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9399099511829279,
+          "p_orig": 0.06008654606826698,
+          "margin": 0.8798234051146608,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.995133638381958,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "170_cf_entailment_1",
+        "original_id": 170,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9975271294625121,
+          "p_orig": 0.0024726328871775382,
+          "margin": 0.9950544965753345,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.986569881439209,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "170_cf_entailment_2",
+        "original_id": 170,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9998765824858289,
+          "p_orig": 0.0001233953571469188,
+          "margin": 0.999753187128682,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9913712739944458,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "37_cf_contradiction_0",
+        "original_id": 37,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.999993855760445,
+          "p_orig": 6.144221722361153e-06,
+          "margin": 0.9999877115387226,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.999683678150177,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "37_cf_contradiction_1",
+        "original_id": 37,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999417083351505,
+          "p_orig": 5.829165906037959e-05,
+          "margin": 0.9998834166760902,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.999683678150177,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "37_cf_contradiction_2",
+        "original_id": 37,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9997965717677216,
+          "p_orig": 0.00020342822385652833,
+          "margin": 0.9995931435438651,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.999683678150177,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 1,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 1,
+    "num_final_selected": 1,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

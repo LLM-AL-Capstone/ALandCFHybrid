@@ -1,0 +1,92 @@
+================================================================================
+EXPERIMENT CONFIGURATION
+================================================================================
+
+Run Timestamp: 20251129_003646
+Run Directory: output_data/20251129_003646_gpt-4o-2024-11-20_yelp_retrieval_uncertainty_entropy_LLMprobe_contriever_s42_n5
+
+--------------------------------------------------------------------------------
+LLM CONFIGURATION
+--------------------------------------------------------------------------------
+Provider: openai
+Model: gpt-4o-2024-11-20
+API Keys/Endpoints: ***REDACTED FOR SECURITY***
+
+--------------------------------------------------------------------------------
+DATASET CONFIGURATION
+--------------------------------------------------------------------------------
+Train File: yelp_train.csv
+Test File: yelp_test.csv
+Text Column: example
+Label Column: Label
+Exclude Labels: ['none', 'None', None, '']
+
+--------------------------------------------------------------------------------
+ACTIVE LEARNING CONFIGURATION
+--------------------------------------------------------------------------------
+Query Strategy: uncertainty
+Uncertainty Method: entropy
+
+Total Budget: 100
+Batch Size: 10
+Initial Labeled per Class: 5
+Random Seed: 42
+Max Iterations: 50
+Early Stopping Patience: 10
+Min Improvement: 0
+
+--------------------------------------------------------------------------------
+COUNTERFACTUAL CONFIGURATION (Version 3)
+--------------------------------------------------------------------------------
+Enabled: True
+Max CFs per Example: 3
+Per-Round Budget (alpha_cf): 1.0
+Temperature: 0.0
+Max Tokens: 256
+Prompt Variation: True
+
+Target Label Selection (V3):
+  Strategy: round_robin
+
+Quality Filtering (V3 - Enhanced):
+  Filter 1: Label-Consistency (3 conditions):
+    tau_conf: 0.4
+    delta: 0.1
+  Filter 2: Semantic Similarity Band:
+    s_min: 0.7
+    s_max: 0.98
+  Filter 3: Length Ratio:
+    r_min: 0.7
+    r_max: 1.3
+  V3 Scoring Weights:
+    alpha: 0.3
+    beta: 0.5
+  Embedding Model: all-MiniLM-L6-v2
+
+--------------------------------------------------------------------------------
+EVALUATION CONFIGURATION
+--------------------------------------------------------------------------------
+Classifier Type: retrieval
+Max ICL Examples: 800
+Eval Every N Iterations: 1
+
+Retrieval Settings:
+  Embedding Backend: contriever
+  K per Class: 0
+  Total K Max: 20
+  Fallback Strategy: similarity
+
+  Contriever Configuration:
+    Model: facebook/contriever
+    Device: cpu
+  Total K Max: 20
+  Fallback Strategy: similarity
+
+--------------------------------------------------------------------------------
+LOGGING CONFIGURATION
+--------------------------------------------------------------------------------
+Checkpoint Every: 5 iterations
+
+================================================================================
+END OF CONFIGURATION
+================================================================================

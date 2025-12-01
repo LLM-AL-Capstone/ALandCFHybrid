@@ -1,0 +1,1257 @@
+{
+  "iteration": 10,
+  "timestamp": "20251129_131522",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 25,
+      "text": "Premise: Cobbler Creek Recreation Park is a 266 ha protected area located in South Australia about 19 km north of the Adelaide city centre in the suburb of Gulfview Heights. Originally part of the lands of the Kaurna aboriginal people, it was farmed from European settlement of South Australia until the declaration of the park in 1989.\nHypothesis: The park declaration happened more than 50 years ago.",
+      "label": "contradiction"
+    },
+    {
+      "id": 73,
+      "text": "Premise: In 1986 he became the head of London European Airways, a business in which Ryanair had bought an 85% stake. This position, however, quickly disappeared as the carrier became Ryanair UK and was then merged entirely with Ryanair. Over the next decade, Cathal worked both on the executive board of the airline and as a pilot, although he resigned from the latter by 1996. He remained with Ryanair until leaving the board 2002, by which time he was a multi-millionaire due to the success of the airline.\nHypothesis: Ryanair went bankrupt in 2010.",
+      "label": "neutral"
+    },
+    {
+      "id": 95,
+      "text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:\nHypothesis: bunson is middleweight.",
+      "label": "entailment"
+    },
+    {
+      "id": 360,
+      "text": "Premise: The 1924\u201325 WPI Engineers men's basketball team represented Worcester Polytechnic Institute during the 1924\u201325 NCAA men's basketball season. They were coached by Ivan Bigler. The Engineers played their home games at Alumni Gym in Worcester, Massachusetts. The team finished the season with 5 wins and 9 losses.\nHypothesis: The team did not win the New England Championships back to back,",
+      "label": "neutral"
+    },
+    {
+      "id": 276,
+      "text": "Premise: Some people may think that there is no other way to grow plants other than in soil; there is however, another way.\nHypothesis: Plants need soil to grow.",
+      "label": "contradiction"
+    },
+    {
+      "id": 221,
+      "text": "Premise: Heemeyer equipped an old bulldozer with three television cameras and monitors so he could see to steer.\nHypothesis: Heemeyer only has 3 monitors",
+      "label": "neutral"
+    },
+    {
+      "id": 171,
+      "text": "Premise: Levy Mwanawasa, the President of Zambia died yesterday at age 59. He died in a Paris hospital in France. His death was intially announced by an anonymous family member. It was later confirmed on television by vice president Rupiah Banda. Mwanawase suffered a stroke while in Egypt in June of this year for an African Union summit, whereafter he was flown to France. His condition suddenly deteriorated on Monday.\nHypothesis: Levy Mwanawasa did not live for 21,900 days.",
+      "label": "entailment"
+    },
+    {
+      "id": 299,
+      "text": "Premise: Justin James \"J. J.\" Watt (born March 22, 1989) is an American football defensive end for the Houston Texans of the National Football League (NFL). He was drafted by the Texans with the 11th pick in the first round of the 2011 NFL Draft, and played college football at Wisconsin.\nHypothesis: James was born at the beginning of the 80's. ",
+      "label": "contradiction"
+    },
+    {
+      "id": 333,
+      "text": "Premise: How to make ice cream with milk<br>Combine milk, sugar, and vanilla in a medium bowl. Measure out each ingredient and add it to a medium-sized bowl. Use a large spoon to stir the ingredients together.\nHypothesis: If you stir the ingredients with a small spoon, the ice cream is difficult to mix ",
+      "label": "neutral"
+    },
+    {
+      "id": 311,
+      "text": "Premise: FROM two tiny rooms high up and far back in St. Augustine's Episcopal Church, with its neo-Georgian archways, straight-backed pews and simple, graceful detail, the legacy of slavery in Manhattan looks down. The stone church, on Henry Street near Montgomery Street on the Lower East Side, was built for a patrician white congregation. But although it was completed in 1828, a year after slavery was legally abolished in New York State, behind the balcony and on either side of the organ are two cramped rooms, built so that black churchgoers could worship there without being seen by white parishioners.\nHypothesis: There are organs in churches",
+      "label": "entailment"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "95_cf_contradiction_2",
+      "text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:  \nHypothesis: Brunson is not middleweight.",
+      "label": "contradiction",
+      "original_id": 95,
+      "original_label": "entailment",
+      "v3_score": 1.7937827246828022,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.9999999976643756,
+        "term2": 0.4999999265824067,
+        "term3": 0.2937828004360199,
+        "total": 1.7937827246828022,
+        "p_orig": 2.335624372742046e-09,
+        "p_target": 0.9999998531648134,
+        "similarity": 0.9792759418487549
+      }
+    },
+    {
+      "id": "95_cf_contradiction_1",
+      "text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:  \nHypothesis: Brunson is not middleweight.",
+      "label": "contradiction",
+      "original_id": 95,
+      "original_label": "entailment",
+      "v3_score": 1.7937827036955594,
+      "v3_rank": 2,
+      "v3_score_breakdown": {
+        "term1": 0.9999999973533908,
+        "term2": 0.4999999059061485,
+        "term3": 0.2937828004360199,
+        "total": 1.7937827036955594,
+        "p_orig": 2.6466091284280825e-09,
+        "p_target": 0.999999811812297,
+        "similarity": 0.9792759418487549
+      }
+    },
+    {
+      "id": "95_cf_contradiction_0",
+      "text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:  \nHypothesis: Brunson is not middleweight.",
+      "label": "contradiction",
+      "original_id": 95,
+      "original_label": "entailment",
+      "v3_score": 1.7937826729120039,
+      "v3_rank": 3,
+      "v3_score_breakdown": {
+        "term1": 0.9999999943971316,
+        "term2": 0.4999998780788523,
+        "term3": 0.2937828004360199,
+        "total": 1.7937826729120039,
+        "p_orig": 5.602868430434693e-09,
+        "p_target": 0.9999997561577046,
+        "similarity": 0.9792759418487549
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "95_cf_contradiction_2",
+    "95_cf_contradiction_1",
+    "95_cf_contradiction_0"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 3,
+    "num_added": 3,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "Premise: Cobbler Creek Recreation Park is a 266 ha protected area located in South Australia about 19 km north of the Adelaide city centre in the suburb of Gulfview Heights. Originally part of the lands of the Kaurna aboriginal people, it was farmed from European settlement of South Australia until the declaration of the park in 1989.\nHypothesis: The park declaration happened more than 50 years ago.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Cobbler Creek Recreation Park is a 266 ha protected area located in South Australia about 19 km north of the Adelaide city centre in the suburb of Gulfview Heights. Originally part of the lands of the Kaurna aboriginal people, it was farmed from European settlement of South Australia until the declaration of the park in 1989.  \nHypothesis: The park declaration could have happened more than 50 years ago.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.3206040859222412,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Cobbler Creek Recreation Park is a 266 ha protected area located in South Australia about 19 km north of the Adelaide city centre in the suburb of Gulfview Heights. Originally part of the lands of the Kaurna aboriginal people, it was farmed from European settlement of South Australia until the declaration of the park in 1989.\nHypothesis: The park declaration happened more than 50 years ago.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Cobbler Creek Recreation Park is a 266 ha protected area located in South Australia about 19 km north of the Adelaide city centre in the suburb of Gulfview Heights. Originally part of the lands of the Kaurna aboriginal people, it was farmed from European settlement of South Australia until the declaration of the park in 1989.  \nHypothesis: The park declaration occurred several decades ago.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6672730445861816,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Cobbler Creek Recreation Park is a 266 ha protected area located in South Australia about 19 km north of the Adelaide city centre in the suburb of Gulfview Heights. Originally part of the lands of the Kaurna aboriginal people, it was farmed from European settlement of South Australia until the declaration of the park in 1989.\nHypothesis: The park declaration happened more than 50 years ago.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Cobbler Creek Recreation Park is a 266 ha protected area located in South Australia about 19 km north of the Adelaide city centre in the suburb of Gulfview Heights. Originally part of the lands of the Kaurna aboriginal people, it was farmed from European settlement of South Australia until the declaration of the park in 1989.  \nHypothesis: The park declaration may have occurred less than 50 years ago.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7719762325286865,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: In 1986 he became the head of London European Airways, a business in which Ryanair had bought an 85% stake. This position, however, quickly disappeared as the carrier became Ryanair UK and was then merged entirely with Ryanair. Over the next decade, Cathal worked both on the executive board of the airline and as a pilot, although he resigned from the latter by 1996. He remained with Ryanair until leaving the board 2002, by which time he was a multi-millionaire due to the success of the airline.\nHypothesis: Ryanair went bankrupt in 2010.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: In 1986 he became the head of London European Airways, a business in which Ryanair had bought an 85% stake. This position, however, quickly disappeared as the carrier became Ryanair UK and was then merged entirely with Ryanair. Over the next decade, Cathal worked both on the executive board of the airline and as a pilot, although he resigned from the latter by 1996. He remained with Ryanair until leaving the board in 2002, by which time he was a multi-millionaire due to the success of the airline.  \nHypothesis: Ryanair's financial struggles eventually led to its bankruptcy in 2010.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.520867109298706,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: In 1986 he became the head of London European Airways, a business in which Ryanair had bought an 85% stake. This position, however, quickly disappeared as the carrier became Ryanair UK and was then merged entirely with Ryanair. Over the next decade, Cathal worked both on the executive board of the airline and as a pilot, although he resigned from the latter by 1996. He remained with Ryanair until leaving the board 2002, by which time he was a multi-millionaire due to the success of the airline.\nHypothesis: Ryanair went bankrupt in 2010.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: In 1986 he became the head of London European Airways, a business in which Ryanair had bought an 85% stake. This position, however, quickly disappeared as the carrier became Ryanair UK and was then merged entirely with Ryanair. Over the next decade, Cathal worked both on the executive board of the airline and as a pilot, although he resigned from the latter by 1996. He remained with Ryanair until leaving the board in 2002, by which time he was a multi-millionaire due to the success of the airline. However, despite its earlier achievements, Ryanair faced financial difficulties and ultimately went bankrupt in 2010.  \nHypothesis: Ryanair went bankrupt in 2010.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.0608301162719727,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: In 1986 he became the head of London European Airways, a business in which Ryanair had bought an 85% stake. This position, however, quickly disappeared as the carrier became Ryanair UK and was then merged entirely with Ryanair. Over the next decade, Cathal worked both on the executive board of the airline and as a pilot, although he resigned from the latter by 1996. He remained with Ryanair until leaving the board 2002, by which time he was a multi-millionaire due to the success of the airline.\nHypothesis: Ryanair went bankrupt in 2010.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: In 1986 he became the head of London European Airways, a business in which Ryanair had bought an 85% stake. This position, however, quickly disappeared as the carrier became Ryanair UK and was then merged entirely with Ryanair. Over the next decade, Cathal worked both on the executive board of the airline and as a pilot, although he resigned from the latter by 1996. He remained with Ryanair until leaving the board in 2002, by which time he was a multi-millionaire due to the success of the airline. Ryanair's financial struggles eventually led to its bankruptcy in 2010.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9712090492248535,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:\nHypothesis: bunson is middleweight.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:  \nHypothesis: Brunson is not middleweight.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8391060829162598,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:\nHypothesis: bunson is middleweight.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:  \nHypothesis: Brunson is not middleweight.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7651181221008301,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:\nHypothesis: bunson is middleweight.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:  \nHypothesis: Brunson is not middleweight.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7384498119354248,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The 1924\u201325 WPI Engineers men's basketball team represented Worcester Polytechnic Institute during the 1924\u201325 NCAA men's basketball season. They were coached by Ivan Bigler. The Engineers played their home games at Alumni Gym in Worcester, Massachusetts. The team finished the season with 5 wins and 9 losses.\nHypothesis: The team did not win the New England Championships back to back,",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The 1924\u201325 WPI Engineers men's basketball team represented Worcester Polytechnic Institute during the 1924\u201325 NCAA men's basketball season. They were coached by Ivan Bigler. The Engineers played their home games at Alumni Gym in Worcester, Massachusetts. The team finished the season with 5 wins and 9 losses.  \nHypothesis: The team won the New England Championships back to back.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9952630996704102,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The 1924\u201325 WPI Engineers men's basketball team represented Worcester Polytechnic Institute during the 1924\u201325 NCAA men's basketball season. They were coached by Ivan Bigler. The Engineers played their home games at Alumni Gym in Worcester, Massachusetts. The team finished the season with 5 wins and 9 losses.\nHypothesis: The team did not win the New England Championships back to back,",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The 1924\u201325 WPI Engineers men's basketball team represented Worcester Polytechnic Institute during the 1924\u201325 NCAA men's basketball season. They were coached by Ivan Bigler. The Engineers played their home games at Alumni Gym in Worcester, Massachusetts. The team finished the season with 5 wins and 9 losses.  \nHypothesis: The team won the New England Championships back to back.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.686682939529419,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The 1924\u201325 WPI Engineers men's basketball team represented Worcester Polytechnic Institute during the 1924\u201325 NCAA men's basketball season. They were coached by Ivan Bigler. The Engineers played their home games at Alumni Gym in Worcester, Massachusetts. The team finished the season with 5 wins and 9 losses.\nHypothesis: The team did not win the New England Championships back to back,",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The 1924\u201325 WPI Engineers men's basketball team represented Worcester Polytechnic Institute during the 1924\u201325 NCAA men's basketball season. They were coached by Ivan Bigler. The Engineers played their home games at Alumni Gym in Worcester, Massachusetts. The team finished the season with 5 wins and 9 losses.  \nHypothesis: The team won the New England Championships back to back.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6660051345825195,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Some people may think that there is no other way to grow plants other than in soil; there is however, another way.\nHypothesis: Plants need soil to grow.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Some people may think that there is no other way to grow plants other than in soil; there is however, another way.  \nHypothesis: Plants can grow in soil.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5539250373840332,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Some people may think that there is no other way to grow plants other than in soil; there is however, another way.\nHypothesis: Plants need soil to grow.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Some people may think that there is no other way to grow plants other than in soil; there is however, another way.  \nHypothesis: Soil is one common method for growing plants.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6176249980926514,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Some people may think that there is no other way to grow plants other than in soil; there is however, another way.\nHypothesis: Plants need soil to grow.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Some people may think that there is no other way to grow plants other than in soil; soil is commonly used for plant growth.  \nHypothesis: Plants often grow in soil.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6817111968994141,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Heemeyer equipped an old bulldozer with three television cameras and monitors so he could see to steer.\nHypothesis: Heemeyer only has 3 monitors",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Heemeyer equipped an old bulldozer with three television cameras and monitors so he could see to steer.  \nHypothesis: Heemeyer does not have 3 monitors.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5961520671844482,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Heemeyer equipped an old bulldozer with three television cameras and monitors so he could see to steer.\nHypothesis: Heemeyer only has 3 monitors",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Heemeyer equipped an old bulldozer with three television cameras and monitors so he could see to steer.  \nHypothesis: Heemeyer has more than 3 monitors.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5769169330596924,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Heemeyer equipped an old bulldozer with three television cameras and monitors so he could see to steer.\nHypothesis: Heemeyer only has 3 monitors",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Heemeyer equipped an old bulldozer with three television cameras and monitors so he could see to steer.  \nHypothesis: Heemeyer has more than 3 monitors.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8109550476074219,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Levy Mwanawasa, the President of Zambia died yesterday at age 59. He died in a Paris hospital in France. His death was intially announced by an anonymous family member. It was later confirmed on television by vice president Rupiah Banda. Mwanawase suffered a stroke while in Egypt in June of this year for an African Union summit, whereafter he was flown to France. His condition suddenly deteriorated on Monday.\nHypothesis: Levy Mwanawasa did not live for 21,900 days.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Levy Mwanawasa, the President of Zambia died yesterday at age 59. He died in a Paris hospital in France. His death was initially announced by an anonymous family member. It was later confirmed on television by vice president Rupiah Banda. Mwanawasa suffered a stroke while in Egypt in June of this year for an African Union summit, whereafter he was flown to France. His condition suddenly deteriorated on Monday.  \nHypothesis: It is unclear whether Levy Mwanawasa lived for 21,900 days.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0879018306732178,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Levy Mwanawasa, the President of Zambia died yesterday at age 59. He died in a Paris hospital in France. His death was intially announced by an anonymous family member. It was later confirmed on television by vice president Rupiah Banda. Mwanawase suffered a stroke while in Egypt in June of this year for an African Union summit, whereafter he was flown to France. His condition suddenly deteriorated on Monday.\nHypothesis: Levy Mwanawasa did not live for 21,900 days.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Levy Mwanawasa, the President of Zambia died yesterday at age 59. He died in a Paris hospital in France. His death was initially announced by an anonymous family member. It was later confirmed on television by vice president Rupiah Banda. Mwanawasa suffered a stroke while in Egypt in June of this year for an African Union summit, whereafter he was flown to France. His condition suddenly deteriorated on Monday.  \nHypothesis: Levy Mwanawasa's lifespan did not reach 21,900 days.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.2942068576812744,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Levy Mwanawasa, the President of Zambia died yesterday at age 59. He died in a Paris hospital in France. His death was intially announced by an anonymous family member. It was later confirmed on television by vice president Rupiah Banda. Mwanawase suffered a stroke while in Egypt in June of this year for an African Union summit, whereafter he was flown to France. His condition suddenly deteriorated on Monday.\nHypothesis: Levy Mwanawasa did not live for 21,900 days.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Levy Mwanawasa, the President of Zambia died yesterday at age 59. He died in a Paris hospital in France. His death was initially announced by an anonymous family member. It was later confirmed on television by vice president Rupiah Banda. Mwanawasa suffered a stroke while in Egypt in June of this year for an African Union summit, whereafter he was flown to France. His condition suddenly deteriorated on Monday.  \nHypothesis: Levy Mwanawasa may not have lived for 21,900 days.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8427920341491699,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Justin James \"J. J.\" Watt (born March 22, 1989) is an American football defensive end for the Houston Texans of the National Football League (NFL). He was drafted by the Texans with the 11th pick in the first round of the 2011 NFL Draft, and played college football at Wisconsin.\nHypothesis: James was born at the beginning of the 80's. ",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Justin James \"J. J.\" Watt (born March 22, 1989) is an American football defensive end for the Houston Texans of the National Football League (NFL). He was drafted by the Texans with the 11th pick in the first round of the 2011 NFL Draft, and played college football at Wisconsin.  \nHypothesis: James was born at the end of the 80's.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8675081729888916,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Justin James \"J. J.\" Watt (born March 22, 1989) is an American football defensive end for the Houston Texans of the National Football League (NFL). He was drafted by the Texans with the 11th pick in the first round of the 2011 NFL Draft, and played college football at Wisconsin.\nHypothesis: James was born at the beginning of the 80's. ",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Justin James \"J. J.\" Watt (born March 22, 1989) is an American football defensive end for the Houston Texans of the National Football League (NFL). He was drafted by the Texans with the 11th pick in the first round of the 2011 NFL Draft, and played college football at Wisconsin.  \nHypothesis: James was born at the end of the 80's.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7181260585784912,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Justin James \"J. J.\" Watt (born March 22, 1989) is an American football defensive end for the Houston Texans of the National Football League (NFL). He was drafted by the Texans with the 11th pick in the first round of the 2011 NFL Draft, and played college football at Wisconsin.\nHypothesis: James was born at the beginning of the 80's. ",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Justin James \"J. J.\" Watt (born March 22, 1989) is an American football defensive end for the Houston Texans of the National Football League (NFL). He was drafted by the Texans with the 11th pick in the first round of the 2011 NFL Draft, and played college football at Wisconsin.  \nHypothesis: James was born in the late 80s.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8000249862670898,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to make ice cream with milk<br>Combine milk, sugar, and vanilla in a medium bowl. Measure out each ingredient and add it to a medium-sized bowl. Use a large spoon to stir the ingredients together.\nHypothesis: If you stir the ingredients with a small spoon, the ice cream is difficult to mix ",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to make ice cream with milk<br>Combine milk, sugar, and vanilla in a medium bowl. Measure out each ingredient and add it to a medium-sized bowl. Use a large spoon to stir the ingredients together.  \nHypothesis: Stirring the ingredients with a small spoon makes the ice cream difficult to mix.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6223540306091309,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to make ice cream with milk<br>Combine milk, sugar, and vanilla in a medium bowl. Measure out each ingredient and add it to a medium-sized bowl. Use a large spoon to stir the ingredients together.\nHypothesis: If you stir the ingredients with a small spoon, the ice cream is difficult to mix ",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to make ice cream with milk<br>Combine milk, sugar, and vanilla in a medium bowl. Measure out each ingredient and add it to a medium-sized bowl. Use a large spoon to stir the ingredients together.  \nHypothesis: Stirring the ingredients with a small spoon makes the ice cream harder to mix.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6309118270874023,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to make ice cream with milk<br>Combine milk, sugar, and vanilla in a medium bowl. Measure out each ingredient and add it to a medium-sized bowl. Use a large spoon to stir the ingredients together.\nHypothesis: If you stir the ingredients with a small spoon, the ice cream is difficult to mix ",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to make ice cream with milk<br>Combine milk, sugar, and vanilla in a medium bowl. Measure out each ingredient and add it to a medium-sized bowl. Use a large spoon to stir the ingredients together.  \nHypothesis: Using a small spoon to stir the ingredients makes the ice cream difficult to mix.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8022060394287109,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: FROM two tiny rooms high up and far back in St. Augustine's Episcopal Church, with its neo-Georgian archways, straight-backed pews and simple, graceful detail, the legacy of slavery in Manhattan looks down. The stone church, on Henry Street near Montgomery Street on the Lower East Side, was built for a patrician white congregation. But although it was completed in 1828, a year after slavery was legally abolished in New York State, behind the balcony and on either side of the organ are two cramped rooms, built so that black churchgoers could worship there without being seen by white parishioners.\nHypothesis: There are organs in churches",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: FROM two tiny rooms high up and far back in St. Augustine's Episcopal Church, with its neo-Georgian archways, straight-backed pews and simple, graceful detail, the legacy of slavery in Manhattan looks down. The stone church, on Henry Street near Montgomery Street on the Lower East Side, was built for a patrician white congregation. But although it was completed in 1828, a year after slavery was legally abolished in New York State, behind the balcony and on either side of the organ are two cramped rooms, built so that black churchgoers could worship there without being seen by white parishioners.  \nHypothesis: There are no organs in churches.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.3321518898010254,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: FROM two tiny rooms high up and far back in St. Augustine's Episcopal Church, with its neo-Georgian archways, straight-backed pews and simple, graceful detail, the legacy of slavery in Manhattan looks down. The stone church, on Henry Street near Montgomery Street on the Lower East Side, was built for a patrician white congregation. But although it was completed in 1828, a year after slavery was legally abolished in New York State, behind the balcony and on either side of the organ are two cramped rooms, built so that black churchgoers could worship there without being seen by white parishioners.\nHypothesis: There are organs in churches",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: FROM two tiny rooms high up and far back in St. Augustine's Episcopal Church, with its neo-Georgian archways, straight-backed pews and simple, graceful detail, the legacy of slavery in Manhattan looks down. The stone church, on Henry Street near Montgomery Street on the Lower East Side, was built for a patrician white congregation. But although it was completed in 1828, a year after slavery was legally abolished in New York State, behind the balcony and on either side of the organ are two cramped rooms, built so that black churchgoers could worship there without being seen by white parishioners.  \nHypothesis: Churches do not have organs.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9621620178222656,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: FROM two tiny rooms high up and far back in St. Augustine's Episcopal Church, with its neo-Georgian archways, straight-backed pews and simple, graceful detail, the legacy of slavery in Manhattan looks down. The stone church, on Henry Street near Montgomery Street on the Lower East Side, was built for a patrician white congregation. But although it was completed in 1828, a year after slavery was legally abolished in New York State, behind the balcony and on either side of the organ are two cramped rooms, built so that black churchgoers could worship there without being seen by white parishioners.\nHypothesis: There are organs in churches",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Hypothesis: There are no organs in churches.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7215738296508789,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "25_cf_neutral_0",
+        "original_id": 25,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.060086675743448704,
+          "p_orig": 0.9399120356633234,
+          "margin": -0.8798253599198746,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "25_cf_neutral_1",
+        "original_id": 25,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.014062331752307825,
+          "p_orig": 9.475156470455856e-05,
+          "margin": 0.013967580187603267,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "25_cf_neutral_2",
+        "original_id": 25,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00015843217894585907,
+          "p_orig": 3.1197179862871334e-05,
+          "margin": 0.00012723499908298772,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "73_cf_entailment_0",
+        "original_id": 73,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 6.560076850327746e-12,
+          "p_orig": 3.535650129046549e-05,
+          "margin": -3.535649473038864e-05,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "73_cf_entailment_1",
+        "original_id": 73,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9770066296858217,
+          "p_orig": 1.6317797696075518e-05,
+          "margin": 0.9769903118881257,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9892886281013489,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "73_cf_entailment_2",
+        "original_id": 73,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 5.8259426188051077e-05,
+          "p_orig": 0.0005527492090808433,
+          "margin": -0.0004944897828927922,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "95_cf_contradiction_0",
+        "original_id": 95,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.999999811812297,
+          "p_orig": 2.6466091284280825e-09,
+          "margin": 0.9999998091656879,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9792759418487549,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0150214592274678,
+          "original_length": 466,
+          "cf_length": 473,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.7937826729120039,
+        "v3_score_details": {
+          "score": 1.7937826729120039,
+          "p_orig": 5.602868430434693e-09,
+          "p_target": 0.9999997561577046,
+          "similarity": 0.9792759418487549,
+          "term1": 0.9999999943971316,
+          "term2": 0.4999998780788523,
+          "term3": 0.2937828004360199,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "95_cf_contradiction_1",
+        "original_id": 95,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.999999898625789,
+          "p_orig": 2.0611815415566827e-09,
+          "margin": 0.9999998965646074,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9792759418487549,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0150214592274678,
+          "original_length": 466,
+          "cf_length": 473,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.7937827036955594,
+        "v3_score_details": {
+          "score": 1.7937827036955594,
+          "p_orig": 2.6466091284280825e-09,
+          "p_target": 0.999999811812297,
+          "similarity": 0.9792759418487549,
+          "term1": 0.9999999973533908,
+          "term2": 0.4999999059061485,
+          "term3": 0.2937828004360199,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "95_cf_contradiction_2",
+        "original_id": 95,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999998690812586,
+          "p_orig": 3.3983126069950876e-09,
+          "margin": 0.999999865682946,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9792759418487549,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0150214592274678,
+          "original_length": 466,
+          "cf_length": 473,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.7937827246828022,
+        "v3_score_details": {
+          "score": 1.7937827246828022,
+          "p_orig": 2.335624372742046e-09,
+          "p_target": 0.9999998531648134,
+          "similarity": 0.9792759418487549,
+          "term1": 0.9999999976643756,
+          "term2": 0.4999999265824067,
+          "term3": 0.2937828004360199,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "360_cf_contradiction_0",
+        "original_id": 360,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999646434907966,
+          "p_orig": 3.535650129041766e-05,
+          "margin": 0.9999292869895062,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9920758605003357,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "360_cf_contradiction_1",
+        "original_id": 360,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999687978637689,
+          "p_orig": 3.1202123975273614e-05,
+          "margin": 0.9999375957397937,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9920758605003357,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "360_cf_contradiction_2",
+        "original_id": 360,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999687978664797,
+          "p_orig": 3.12021239753582e-05,
+          "margin": 0.9999375957425044,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9920758605003357,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "276_cf_neutral_0",
+        "original_id": 276,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.05905260754262e-07,
+          "p_orig": 8.152126721834746e-09,
+          "margin": 2.9775313403242724e-07,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "276_cf_neutral_1",
+        "original_id": 276,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.785133093777783e-06,
+          "p_orig": 9.23751880846512e-09,
+          "margin": 4.775895574969318e-06,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "276_cf_neutral_2",
+        "original_id": 276,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 9.422535702546807e-07,
+          "p_orig": 1.026202092387449e-10,
+          "margin": 9.42150950045442e-07,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "221_cf_contradiction_0",
+        "original_id": 221,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999998722334873,
+          "p_orig": 1.1253635303496476e-07,
+          "margin": 0.9999997596971343,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9910643696784973,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "221_cf_contradiction_1",
+        "original_id": 221,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.017986251083012432,
+          "p_orig": 0.9820135667130843,
+          "margin": -0.9640273156300718,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "221_cf_contradiction_2",
+        "original_id": 221,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.010986975475114118,
+          "p_orig": 0.9890129263029689,
+          "margin": -0.9780259508278548,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "171_cf_neutral_0",
+        "original_id": 171,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.09534516709028115,
+          "p_orig": 0.9046082951706695,
+          "margin": -0.8092631280803884,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "171_cf_neutral_1",
+        "original_id": 171,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 7.479362619805996e-05,
+          "p_orig": 0.9992155856185548,
+          "margin": -0.9991407919923567,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "171_cf_neutral_2",
+        "original_id": 171,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 8.48099774363392e-05,
+          "p_orig": 0.9998962663396226,
+          "margin": -0.9998114563621863,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "299_cf_entailment_0",
+        "original_id": 299,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999987851783508,
+          "p_orig": 4.944504934498871e-09,
+          "margin": 0.9999987802338459,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9994896054267883,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "299_cf_entailment_1",
+        "original_id": 299,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999984312582229,
+          "p_orig": 1.523013957080526e-08,
+          "margin": 0.9999984160280833,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9994896054267883,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "299_cf_entailment_2",
+        "original_id": 299,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999998836127852,
+          "p_orig": 3.85079332388778e-09,
+          "margin": 0.9999998797619919,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.99898761510849,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "333_cf_entailment_0",
+        "original_id": 333,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0003353401184739915,
+          "p_orig": 0.9996293152395814,
+          "margin": -0.9992939751211074,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "333_cf_entailment_1",
+        "original_id": 333,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0002611900467693882,
+          "p_orig": 0.9997326673365963,
+          "margin": -0.9994714772898269,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "333_cf_entailment_2",
+        "original_id": 333,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 7.88922196150106e-06,
+          "p_orig": 0.9999791036543559,
+          "margin": -0.9999712144323945,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "311_cf_contradiction_0",
+        "original_id": 311,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999970009996,
+          "p_orig": 0.0,
+          "margin": 0.9999999970009996,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9848212599754333,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "311_cf_contradiction_1",
+        "original_id": 311,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999998362605221,
+          "p_orig": 0.0,
+          "margin": 0.9999998362605221,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9809730052947998,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "311_cf_contradiction_2",
+        "original_id": 311,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999785542360249,
+          "p_orig": 6.691541351683358e-10,
+          "margin": 0.9999785535668707,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.6309517025947571,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 3,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 3,
+    "num_final_selected": 3,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

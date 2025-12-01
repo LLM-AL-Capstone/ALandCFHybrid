@@ -1,0 +1,1296 @@
+{
+  "iteration": 6,
+  "timestamp": "20251129_124721",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 37,
+      "text": "Premise: Maskarade (\"Masquerade\") is an opera in three acts by Carl Nielsen to a Danish libretto by Vilhelm Andersen, based on the comedy by Ludvig Holberg. It was first performed on 11 November 1906 at Det Kongelige Teater, Copenhagen. \"Maskarade\" has enjoyed enduring popularity in Denmark where it is considered to be the country's national opera.\nHypothesis: Det Kongelige Teater is smaller than Copenhagen.",
+      "label": "neutral"
+    },
+    {
+      "id": 150,
+      "text": "Premise: After months of planning and build-up, Supreme Commander Dwight Eisenhower set Operation Overlord for June 6, 1944: some 7000 ships in the British Isles set to sea and sailed across the English Channel, and, under the leadership of Field Marshall Bernard Montgomery, 135,000 troops landed and stormed Feldmarschal Erwin Rommel's German positions along 80 km of the Normandy coast.\nHypothesis: Field Marshall Bernard Montgomery was English.",
+      "label": "neutral"
+    },
+    {
+      "id": 282,
+      "text": "Premise: Zuikaku (Japanese: \u745e\u9db4 \"Auspicious Crane\") was a \"Sh\u014dkaku\"-class aircraft carrier of the Imperial Japanese Navy. Her complement of aircraft took part in the attack on Pearl Harbor that formally brought the United States into the Pacific War, and she fought in several of the most important naval battles of the war, before being sunk during the Battle of Leyte Gulf.\nHypothesis: The Battle of Leyte Gulf took place in nineteen hundred forty five.",
+      "label": "neutral"
+    },
+    {
+      "id": 48,
+      "text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.\nHypothesis: The misfits released their album under a self-titled record company.",
+      "label": "entailment"
+    },
+    {
+      "id": 60,
+      "text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.\nHypothesis: the agent is aged more than 0.3",
+      "label": "entailment"
+    },
+    {
+      "id": 49,
+      "text": "Premise: It might also publisher -- what the publisher pays for your prospective work, Justice Breyer. We -- the Copyright Clause incentive provides incentives not just for -- not just to the creators, but to the disseminators, the publishers, the broadcasters, the film companies.\nHypothesis: Justice Breyer will not get paid through the Copyright Clause.",
+      "label": "contradiction"
+    },
+    {
+      "id": 401,
+      "text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.\nHypothesis: Social Security system has a z",
+      "label": "contradiction"
+    },
+    {
+      "id": 379,
+      "text": "Premise: Love Never Dies is a romantic musical composed by Andrew Lloyd Webber with lyrics by Glenn Slater and a book by Lloyd Webber, Ben Elton, Frederick Forsyth and Slater. It is a sequel to the long-running musical \"The Phantom of the Opera\" loosely adapted from the 1999 novel \"The Phantom of Manhattan\", by Forsyth.\nHypothesis: \"The Phantom of the Opera\" which is a loose adaptation of the 1999 novel \"The Phamtom of Manhattan\"",
+      "label": "entailment"
+    },
+    {
+      "id": 258,
+      "text": "Premise: We're working hard to sign up children. We're doing it faster than any other state our size, comparable state. We're making really good progress. And our state cares a lot about our children. My priority is going to be the health of our citizens. These folks have had eight years to get something done in Washington, D.C. on the uninsured.\nHypothesis: Their state has always cared about children",
+      "label": "neutral"
+    },
+    {
+      "id": 264,
+      "text": "Premise: Lik\u00ebng\u00eb are pork sausages flavored with salt, pepper and seed of Fennel (far\u00eb mbrai), made in Piana degli Albanesi and Santa Cristina Gela. \"Lik\u00ebng\u00eb\" is the Undefinite Singular, \"Lik\u00ebnga\" is the Definite Singular and is cognate with the Italian Lucanica and the Greek Loukaniko.\nHypothesis:  Likenge are pork or beef sausages that are flavoured and made in Piana degli Albanosi.",
+      "label": "contradiction"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "60_cf_neutral_0",
+      "text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.  \nHypothesis: the agent's age is unrelated to 0.3.",
+      "label": "neutral",
+      "original_id": 60,
+      "original_label": "entailment",
+      "v3_score": 1.7927906614565967,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.9999999998973843,
+        "term2": 0.49997730086814185,
+        "term3": 0.29281336069107056,
+        "total": 1.7927906614565967,
+        "p_orig": 1.0261569587601568e-10,
+        "p_target": 0.9999546017362837,
+        "similarity": 0.9760445356369019
+      }
+    },
+    {
+      "id": "401_cf_entailment_1",
+      "text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.  \nHypothesis: Social Security system is safe and secure.",
+      "label": "entailment",
+      "original_id": 401,
+      "original_label": "contradiction",
+      "v3_score": 1.777716070539869,
+      "v3_rank": 2,
+      "v3_score_breakdown": {
+        "term1": 0.9999999918513807,
+        "term2": 0.49978471629797006,
+        "term3": 0.2779313623905182,
+        "total": 1.777716070539869,
+        "p_orig": 8.14861932926595e-09,
+        "p_target": 0.9995694325959401,
+        "similarity": 0.9264377951622009
+      }
+    },
+    {
+      "id": "401_cf_entailment_2",
+      "text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.  \nHypothesis: A Social Security system that is safe and secure is one of the clear goals mentioned.",
+      "label": "entailment",
+      "original_id": 401,
+      "original_label": "contradiction",
+      "v3_score": 1.7756413816744567,
+      "v3_rank": 3,
+      "v3_score_breakdown": {
+        "term1": 0.9999999999861118,
+        "term2": 0.49999999994777483,
+        "term3": 0.27564138174057007,
+        "total": 1.7756413816744567,
+        "p_orig": 1.3888177409556782e-11,
+        "p_target": 0.9999999998955497,
+        "similarity": 0.9188045263290405
+      }
+    },
+    {
+      "id": "401_cf_entailment_0",
+      "text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.  \nHypothesis: Social Security system is safe and secure.",
+      "label": "entailment",
+      "original_id": 401,
+      "original_label": "contradiction",
+      "v3_score": 1.7689381555010941,
+      "v3_rank": 4,
+      "v3_score_breakdown": {
+        "term1": 0.9999999477976461,
+        "term2": 0.4910068453129298,
+        "term3": 0.2779313623905182,
+        "total": 1.7689381555010941,
+        "p_orig": 5.22023538589806e-08,
+        "p_target": 0.9820136906258596,
+        "similarity": 0.9264377951622009
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "60_cf_neutral_0",
+    "401_cf_entailment_1",
+    "401_cf_entailment_2",
+    "401_cf_entailment_0"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 4,
+    "num_added": 4,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "Premise: Maskarade (\"Masquerade\") is an opera in three acts by Carl Nielsen to a Danish libretto by Vilhelm Andersen, based on the comedy by Ludvig Holberg. It was first performed on 11 November 1906 at Det Kongelige Teater, Copenhagen. \"Maskarade\" has enjoyed enduring popularity in Denmark where it is considered to be the country's national opera.\nHypothesis: Det Kongelige Teater is smaller than Copenhagen.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Maskarade (\"Masquerade\") is an opera in three acts by Carl Nielsen to a Danish libretto by Vilhelm Andersen, based on the comedy by Ludvig Holberg. It was first performed on 11 November 1906 at Det Kongelige Teater, Copenhagen. \"Maskarade\" has enjoyed enduring popularity in Denmark where it is considered to be the country's national opera.  \nHypothesis: Det Kongelige Teater is larger than Copenhagen.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9262111186981201,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Maskarade (\"Masquerade\") is an opera in three acts by Carl Nielsen to a Danish libretto by Vilhelm Andersen, based on the comedy by Ludvig Holberg. It was first performed on 11 November 1906 at Det Kongelige Teater, Copenhagen. \"Maskarade\" has enjoyed enduring popularity in Denmark where it is considered to be the country's national opera.\nHypothesis: Det Kongelige Teater is smaller than Copenhagen.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Maskarade (\"Masquerade\") is an opera in three acts by Carl Nielsen to a Danish libretto by Vilhelm Andersen, based on the comedy by Ludvig Holberg. It was first performed on 11 November 1906 at Det Kongelige Teater, Copenhagen. \"Maskarade\" has enjoyed enduring popularity in Denmark where it is considered to be the country's national opera.  \nHypothesis: Det Kongelige Teater cannot be smaller than Copenhagen.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7227311134338379,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Maskarade (\"Masquerade\") is an opera in three acts by Carl Nielsen to a Danish libretto by Vilhelm Andersen, based on the comedy by Ludvig Holberg. It was first performed on 11 November 1906 at Det Kongelige Teater, Copenhagen. \"Maskarade\" has enjoyed enduring popularity in Denmark where it is considered to be the country's national opera.\nHypothesis: Det Kongelige Teater is smaller than Copenhagen.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Maskarade (\"Masquerade\") is an opera in three acts by Carl Nielsen to a Danish libretto by Vilhelm Andersen, based on the comedy by Ludvig Holberg. It was first performed on 11 November 1906 at Det Kongelige Teater, Copenhagen. \"Maskarade\" has enjoyed enduring popularity in Denmark where it is considered to be the country's national opera.  \nHypothesis: Det Kongelige Teater cannot be smaller than Copenhagen.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7693641185760498,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: After months of planning and build-up, Supreme Commander Dwight Eisenhower set Operation Overlord for June 6, 1944: some 7000 ships in the British Isles set to sea and sailed across the English Channel, and, under the leadership of Field Marshall Bernard Montgomery, 135,000 troops landed and stormed Feldmarschal Erwin Rommel's German positions along 80 km of the Normandy coast.\nHypothesis: Field Marshall Bernard Montgomery was English.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: After months of planning and build-up, Supreme Commander Dwight Eisenhower set Operation Overlord for June 6, 1944: some 7000 ships in the British Isles set to sea and sailed across the English Channel, and, under the leadership of Field Marshall Bernard Montgomery, 135,000 troops landed and stormed Feldmarschal Erwin Rommel's German positions along 80 km of the Normandy coast.  \nHypothesis: Field Marshall Bernard Montgomery was not English.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7468221187591553,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: After months of planning and build-up, Supreme Commander Dwight Eisenhower set Operation Overlord for June 6, 1944: some 7000 ships in the British Isles set to sea and sailed across the English Channel, and, under the leadership of Field Marshall Bernard Montgomery, 135,000 troops landed and stormed Feldmarschal Erwin Rommel's German positions along 80 km of the Normandy coast.\nHypothesis: Field Marshall Bernard Montgomery was English.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: After months of planning and build-up, Supreme Commander Dwight Eisenhower set Operation Overlord for June 6, 1944: some 7000 ships in the British Isles set to sea and sailed across the English Channel, and, under the leadership of Field Marshall Bernard Montgomery, 135,000 troops landed and stormed Feldmarschal Erwin Rommel's German positions along 80 km of the Normandy coast.  \nHypothesis: Field Marshall Bernard Montgomery was not English.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.0160279273986816,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: After months of planning and build-up, Supreme Commander Dwight Eisenhower set Operation Overlord for June 6, 1944: some 7000 ships in the British Isles set to sea and sailed across the English Channel, and, under the leadership of Field Marshall Bernard Montgomery, 135,000 troops landed and stormed Feldmarschal Erwin Rommel's German positions along 80 km of the Normandy coast.\nHypothesis: Field Marshall Bernard Montgomery was English.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: After months of planning and build-up, Supreme Commander Dwight Eisenhower set Operation Overlord for June 6, 1944: some 7000 ships in the British Isles set to sea and sailed across the English Channel, and, under the leadership of Field Marshall Bernard Montgomery, 135,000 troops landed and stormed Feldmarschal Erwin Rommel's German positions along 80 km of the Normandy coast.  \nHypothesis: Field Marshall Bernard Montgomery was not English.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7867269515991211,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Zuikaku (Japanese: \u745e\u9db4 \"Auspicious Crane\") was a \"Sh\u014dkaku\"-class aircraft carrier of the Imperial Japanese Navy. Her complement of aircraft took part in the attack on Pearl Harbor that formally brought the United States into the Pacific War, and she fought in several of the most important naval battles of the war, before being sunk during the Battle of Leyte Gulf.\nHypothesis: The Battle of Leyte Gulf took place in nineteen hundred forty five.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Zuikaku (Japanese: \u745e\u9db4 \"Auspicious Crane\") was a \"Sh\u014dkaku\"-class aircraft carrier of the Imperial Japanese Navy. Her complement of aircraft took part in the attack on Pearl Harbor that formally brought the United States into the Pacific War, and she fought in several of the most important naval battles of the war, before being sunk during the Battle of Leyte Gulf.  \nHypothesis: The Battle of Leyte Gulf took place in nineteen hundred forty six.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0103192329406738,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Zuikaku (Japanese: \u745e\u9db4 \"Auspicious Crane\") was a \"Sh\u014dkaku\"-class aircraft carrier of the Imperial Japanese Navy. Her complement of aircraft took part in the attack on Pearl Harbor that formally brought the United States into the Pacific War, and she fought in several of the most important naval battles of the war, before being sunk during the Battle of Leyte Gulf.\nHypothesis: The Battle of Leyte Gulf took place in nineteen hundred forty five.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Zuikaku (Japanese: \u745e\u9db4 \"Auspicious Crane\") was a \"Sh\u014dkaku\"-class aircraft carrier of the Imperial Japanese Navy. Her complement of aircraft took part in the attack on Pearl Harbor that formally brought the United States into the Pacific War, and she fought in several of the most important naval battles of the war, before being sunk during the Battle of Leyte Gulf.  \nHypothesis: The Battle of Leyte Gulf occurred in nineteen hundred forty four.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7985889911651611,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Zuikaku (Japanese: \u745e\u9db4 \"Auspicious Crane\") was a \"Sh\u014dkaku\"-class aircraft carrier of the Imperial Japanese Navy. Her complement of aircraft took part in the attack on Pearl Harbor that formally brought the United States into the Pacific War, and she fought in several of the most important naval battles of the war, before being sunk during the Battle of Leyte Gulf.\nHypothesis: The Battle of Leyte Gulf took place in nineteen hundred forty five.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Zuikaku (Japanese: \u745e\u9db4 \"Auspicious Crane\") was a \"Sh\u014dkaku\"-class aircraft carrier of the Imperial Japanese Navy. Her complement of aircraft took part in the attack on Pearl Harbor that formally brought the United States into the Pacific War, and she fought in several of the most important naval battles of the war, before being sunk during the Battle of Leyte Gulf.  \nHypothesis: The Battle of Leyte Gulf took place in nineteen hundred forty five, though Zuikaku was no longer active by then.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8366751670837402,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.\nHypothesis: The misfits released their album under a self-titled record company.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.  \nHypothesis: The misfits may have released their album under a self-titled record company.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7721009254455566,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.\nHypothesis: The misfits released their album under a self-titled record company.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.  \nHypothesis: The album was released under a record company associated with the Misfits.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8342020511627197,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.\nHypothesis: The misfits released their album under a self-titled record company.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.  \nHypothesis: The Misfits may have released their album under a self-titled record company.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8036081790924072,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.\nHypothesis: the agent is aged more than 0.3",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.  \nHypothesis: the agent's age is unrelated to 0.3.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6440918445587158,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.\nHypothesis: the agent is aged more than 0.3",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.  \nHypothesis: the agent's age is not specified.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6237099170684814,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.\nHypothesis: the agent is aged more than 0.3",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.  \nHypothesis: the agent's age is not specified.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5735490322113037,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: It might also publisher -- what the publisher pays for your prospective work, Justice Breyer. We -- the Copyright Clause incentive provides incentives not just for -- not just to the creators, but to the disseminators, the publishers, the broadcasters, the film companies.\nHypothesis: Justice Breyer will not get paid through the Copyright Clause.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: It might also publisher -- what the publisher pays for your prospective work, Justice Breyer. We -- the Copyright Clause incentive provides incentives not just for -- not just to the creators, but to the disseminators, the publishers, the broadcasters, the film companies.  \nHypothesis: Justice Breyer will get paid through the Copyright Clause.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7602570056915283,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: It might also publisher -- what the publisher pays for your prospective work, Justice Breyer. We -- the Copyright Clause incentive provides incentives not just for -- not just to the creators, but to the disseminators, the publishers, the broadcasters, the film companies.\nHypothesis: Justice Breyer will not get paid through the Copyright Clause.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: It might also publisher -- what the publisher pays for your prospective work, Justice Breyer. We -- the Copyright Clause incentive provides incentives not just for -- not just to the creators, but to the disseminators, the publishers, the broadcasters, the film companies.  \nHypothesis: Justice Breyer will get paid through the Copyright Clause.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7185521125793457,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: It might also publisher -- what the publisher pays for your prospective work, Justice Breyer. We -- the Copyright Clause incentive provides incentives not just for -- not just to the creators, but to the disseminators, the publishers, the broadcasters, the film companies.\nHypothesis: Justice Breyer will not get paid through the Copyright Clause.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: It might also publisher -- what the publisher pays for your prospective work, Justice Breyer. We -- the Copyright Clause incentive provides incentives not just for -- not just to the creators, but to the disseminators, the publishers, the broadcasters, the film companies.  \nHypothesis: Justice Breyer might receive payment through the Copyright Clause.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7174630165100098,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.\nHypothesis: Social Security system has a z",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.  \nHypothesis: Social Security system is safe and secure.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8095078468322754,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.\nHypothesis: Social Security system has a z",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.  \nHypothesis: Social Security system is safe and secure.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9336972236633301,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.\nHypothesis: Social Security system has a z",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.  \nHypothesis: A Social Security system that is safe and secure is one of the clear goals mentioned.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9291739463806152,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Love Never Dies is a romantic musical composed by Andrew Lloyd Webber with lyrics by Glenn Slater and a book by Lloyd Webber, Ben Elton, Frederick Forsyth and Slater. It is a sequel to the long-running musical \"The Phantom of the Opera\" loosely adapted from the 1999 novel \"The Phantom of Manhattan\", by Forsyth.\nHypothesis: \"The Phantom of the Opera\" which is a loose adaptation of the 1999 novel \"The Phamtom of Manhattan\"",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Love Never Dies is a romantic musical composed by Andrew Lloyd Webber with lyrics by Glenn Slater and a book by Lloyd Webber, Ben Elton, Frederick Forsyth and Slater. It is a sequel to the long-running musical \"The Phantom of the Opera\" loosely adapted from the 1999 novel \"The Phantom of Manhattan\", by Forsyth.  \nHypothesis: \"The Phantom of the Opera\" is not a loose adaptation of the 1999 novel \"The Phantom of Manhattan\".",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9535439014434814,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Love Never Dies is a romantic musical composed by Andrew Lloyd Webber with lyrics by Glenn Slater and a book by Lloyd Webber, Ben Elton, Frederick Forsyth and Slater. It is a sequel to the long-running musical \"The Phantom of the Opera\" loosely adapted from the 1999 novel \"The Phantom of Manhattan\", by Forsyth.\nHypothesis: \"The Phantom of the Opera\" which is a loose adaptation of the 1999 novel \"The Phamtom of Manhattan\"",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Love Never Dies is a romantic musical composed by Andrew Lloyd Webber with lyrics by Glenn Slater and a book by Lloyd Webber, Ben Elton, Frederick Forsyth and Slater. It is a sequel to the long-running musical \"The Phantom of the Opera\" loosely adapted from the 1999 novel \"The Phantom of Manhattan\", by Forsyth.  \nHypothesis: \"The Phantom of the Opera\" is not adapted from the 1999 novel \"The Phantom of Manhattan\".",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7813551425933838,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Love Never Dies is a romantic musical composed by Andrew Lloyd Webber with lyrics by Glenn Slater and a book by Lloyd Webber, Ben Elton, Frederick Forsyth and Slater. It is a sequel to the long-running musical \"The Phantom of the Opera\" loosely adapted from the 1999 novel \"The Phantom of Manhattan\", by Forsyth.\nHypothesis: \"The Phantom of the Opera\" which is a loose adaptation of the 1999 novel \"The Phamtom of Manhattan\"",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Love Never Dies is a romantic musical composed by Andrew Lloyd Webber with lyrics by Glenn Slater and a book by Lloyd Webber, Ben Elton, Frederick Forsyth and Slater. It is a sequel to the long-running musical \"The Phantom of the Opera\" loosely adapted from the 1999 novel \"The Phantom of Manhattan\", by Forsyth.  \nHypothesis: \"The Phantom of the Opera\" is not adapted from the 1999 novel \"The Phantom of Manhattan\".",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8247218132019043,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: We're working hard to sign up children. We're doing it faster than any other state our size, comparable state. We're making really good progress. And our state cares a lot about our children. My priority is going to be the health of our citizens. These folks have had eight years to get something done in Washington, D.C. on the uninsured.\nHypothesis: Their state has always cared about children",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: We're working hard to sign up children. We're doing it faster than any other state our size, comparable state. We're making really good progress. And our state cares a lot about our children. My priority is going to be the health of our citizens. These folks have had eight years to get something done in Washington, D.C. on the uninsured.  \nHypothesis: Their state has never cared about children.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7385210990905762,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: We're working hard to sign up children. We're doing it faster than any other state our size, comparable state. We're making really good progress. And our state cares a lot about our children. My priority is going to be the health of our citizens. These folks have had eight years to get something done in Washington, D.C. on the uninsured.\nHypothesis: Their state has always cared about children",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: We're working hard to sign up children. We're doing it faster than any other state our size, comparable state. We're making really good progress. And our state cares a lot about our children. My priority is going to be the health of our citizens. These folks have had eight years to get something done in Washington, D.C. on the uninsured.  \nHypothesis: Their state has never truly cared about children.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7003488540649414,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: We're working hard to sign up children. We're doing it faster than any other state our size, comparable state. We're making really good progress. And our state cares a lot about our children. My priority is going to be the health of our citizens. These folks have had eight years to get something done in Washington, D.C. on the uninsured.\nHypothesis: Their state has always cared about children",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: We're working hard to sign up children. We're doing it faster than any other state our size, comparable state. We're making really good progress. And our state claims to care a lot about our children. My priority is going to be the health of our citizens. These folks have had eight years to get something done in Washington, D.C. on the uninsured.  \nHypothesis: Their state has always cared about children.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.2346100807189941,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Lik\u00ebng\u00eb are pork sausages flavored with salt, pepper and seed of Fennel (far\u00eb mbrai), made in Piana degli Albanesi and Santa Cristina Gela. \"Lik\u00ebng\u00eb\" is the Undefinite Singular, \"Lik\u00ebnga\" is the Definite Singular and is cognate with the Italian Lucanica and the Greek Loukaniko.\nHypothesis:  Likenge are pork or beef sausages that are flavoured and made in Piana degli Albanosi.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Lik\u00ebng\u00eb are pork sausages flavored with salt, pepper and seed of Fennel (far\u00eb mbrai), made in Piana degli Albanesi and Santa Cristina Gela. \"Lik\u00ebng\u00eb\" is the Undefinite Singular, \"Lik\u00ebnga\" is the Definite Singular and is cognate with the Italian Lucanica and the Greek Loukaniko.  \nHypothesis: Likenge are sausages that are flavoured and made in Piana degli Albanesi.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.5688579082489014,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Lik\u00ebng\u00eb are pork sausages flavored with salt, pepper and seed of Fennel (far\u00eb mbrai), made in Piana degli Albanesi and Santa Cristina Gela. \"Lik\u00ebng\u00eb\" is the Undefinite Singular, \"Lik\u00ebnga\" is the Definite Singular and is cognate with the Italian Lucanica and the Greek Loukaniko.\nHypothesis:  Likenge are pork or beef sausages that are flavoured and made in Piana degli Albanosi.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Lik\u00ebng\u00eb are pork sausages flavored with salt, pepper and seed of Fennel (far\u00eb mbrai), made in Piana degli Albanesi and Santa Cristina Gela. \"Lik\u00ebng\u00eb\" is the Undefinite Singular, \"Lik\u00ebnga\" is the Definite Singular and is cognate with the Italian Lucanica and the Greek Loukaniko.  \nHypothesis: Lik\u00ebng\u00eb are sausages that may be made with pork or beef, flavored and produced in Piana degli Albanesi.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8479487895965576,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Lik\u00ebng\u00eb are pork sausages flavored with salt, pepper and seed of Fennel (far\u00eb mbrai), made in Piana degli Albanesi and Santa Cristina Gela. \"Lik\u00ebng\u00eb\" is the Undefinite Singular, \"Lik\u00ebnga\" is the Definite Singular and is cognate with the Italian Lucanica and the Greek Loukaniko.\nHypothesis:  Likenge are pork or beef sausages that are flavoured and made in Piana degli Albanosi.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Lik\u00ebng\u00eb are pork sausages flavored with salt, pepper and seed of Fennel (far\u00eb mbrai), made in Piana degli Albanesi and Santa Cristina Gela. \"Lik\u00ebng\u00eb\" is the Undefinite Singular, \"Lik\u00ebnga\" is the Definite Singular and is cognate with the Italian Lucanica and the Greek Loukaniko.  \nHypothesis: Likenge are sausages that may be made with pork or beef, flavored and produced in Piana degli Albanesi.",
+        "temperature": 0.0,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8475358486175537,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "37_cf_contradiction_0",
+        "original_id": 37,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999339473693294,
+          "p_orig": 6.605259292120707e-05,
+          "margin": 0.9998678947764081,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.999683678150177,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "37_cf_contradiction_1",
+        "original_id": 37,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.005100811132365315,
+          "p_orig": 0.9720389678816546,
+          "margin": -0.9669381567492893,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "37_cf_contradiction_2",
+        "original_id": 37,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.003170947065167009,
+          "p_orig": 0.9962780243102076,
+          "margin": -0.9931070772450407,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "150_cf_contradiction_0",
+        "original_id": 150,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999756990742716,
+          "p_orig": 2.4300404592454277e-05,
+          "margin": 0.9999513986696792,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9957647919654846,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "150_cf_contradiction_1",
+        "original_id": 150,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999993509825505,
+          "p_orig": 6.476008212736869e-07,
+          "margin": 0.9999987033817292,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9957647919654846,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "150_cf_contradiction_2",
+        "original_id": 150,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999970975135973,
+          "p_orig": 2.9023370915418903e-06,
+          "margin": 0.9999941951765058,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9957647919654846,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "282_cf_contradiction_0",
+        "original_id": 282,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999004697231,
+          "p_orig": 9.93130296604775e-08,
+          "margin": 0.9999998011566934,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9994646906852722,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "282_cf_contradiction_1",
+        "original_id": 282,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.989013023516564,
+          "margin": -0.989013023516564,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "282_cf_contradiction_2",
+        "original_id": 282,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9997034699897667,
+          "p_orig": 0.0002959586731866104,
+          "margin": 0.99940751131658,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9955248832702637,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "48_cf_neutral_0",
+        "original_id": 48,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.07585512105946862,
+          "p_orig": 0.924102924457025,
+          "margin": -0.8482478033975565,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "48_cf_neutral_1",
+        "original_id": 48,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 5.60286801249159e-09,
+          "p_orig": 0.9999999943792992,
+          "margin": -0.9999999887764311,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "48_cf_neutral_2",
+        "original_id": 48,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.22207771353894687,
+          "p_orig": 0.7751267317207388,
+          "margin": -0.5530490181817919,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "60_cf_neutral_0",
+        "original_id": 60,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999962731599139,
+          "p_orig": 1.691917349213552e-10,
+          "margin": 0.9999962729907221,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9760445356369019,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0402298850574712,
+          "original_length": 174,
+          "cf_length": 181,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.7927906614565967,
+        "v3_score_details": {
+          "score": 1.7927906614565967,
+          "p_orig": 1.0261569587601568e-10,
+          "p_target": 0.9999546017362837,
+          "similarity": 0.9760445356369019,
+          "term1": 0.9999999998973843,
+          "term2": 0.49997730086814185,
+          "term3": 0.29281336069107056,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "60_cf_neutral_1",
+        "original_id": 60,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.06008675901324299,
+          "p_orig": 0.9399132401791569,
+          "margin": -0.8798264811659139,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "60_cf_neutral_2",
+        "original_id": 60,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.014063668712442894,
+          "p_orig": 0.9859363305399547,
+          "margin": -0.9718726618275118,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "49_cf_entailment_0",
+        "original_id": 49,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 9.024339312511785e-10,
+          "p_orig": 0.43782354010978547,
+          "margin": -0.43782353920735156,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "49_cf_entailment_1",
+        "original_id": 49,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.1498012610343e-09,
+          "p_orig": 0.5621764577243636,
+          "margin": -0.5621764545745623,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "49_cf_entailment_2",
+        "original_id": 49,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 7.59538873183932e-08,
+          "p_orig": 0.017986257698668358,
+          "margin": -0.01798618174478104,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "401_cf_entailment_0",
+        "original_id": 401,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9988304750018825,
+          "p_orig": 9.226767135373048e-09,
+          "margin": 0.9988304657751154,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9264377951622009,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0309734513274336,
+          "original_length": 452,
+          "cf_length": 466,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.7689381555010941,
+        "v3_score_details": {
+          "score": 1.7689381555010941,
+          "p_orig": 5.22023538589806e-08,
+          "p_target": 0.9820136906258596,
+          "similarity": 0.9264377951622009,
+          "term1": 0.9999999477976461,
+          "term2": 0.4910068453129298,
+          "term3": 0.2779313623905182,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "401_cf_entailment_1",
+        "original_id": 401,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9990889361752676,
+          "p_orig": 8.144689827445776e-09,
+          "margin": 0.9990889280305778,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9264377951622009,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0309734513274336,
+          "original_length": 452,
+          "cf_length": 466,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.777716070539869,
+        "v3_score_details": {
+          "score": 1.777716070539869,
+          "p_orig": 8.14861932926595e-09,
+          "p_target": 0.9995694325959401,
+          "similarity": 0.9264377951622009,
+          "term1": 0.9999999918513807,
+          "term2": 0.49978471629797006,
+          "term3": 0.2779313623905182,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "401_cf_entailment_2",
+        "original_id": 401,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999999997884459,
+          "p_orig": 6.22424300953189e-11,
+          "margin": 0.9999999997262035,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9188045263290405,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.1261061946902655,
+          "original_length": 452,
+          "cf_length": 509,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.7756413816744567,
+        "v3_score_details": {
+          "score": 1.7756413816744567,
+          "p_orig": 1.3888177409556782e-11,
+          "p_target": 0.9999999998955497,
+          "similarity": 0.9188045263290405,
+          "term1": 0.9999999999861118,
+          "term2": 0.49999999994777483,
+          "term3": 0.27564138174057007,
+          "alpha": 0.3,
+          "beta": 0.5
+        }
+      },
+      {
+        "cf_id": "379_cf_contradiction_0",
+        "original_id": 379,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.005100810531973509,
+          "p_orig": 0.9720389657225147,
+          "margin": -0.9669381551905412,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "379_cf_contradiction_1",
+        "original_id": 379,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0021435508669385107,
+          "p_orig": 0.9799087431178355,
+          "margin": -0.977765192250897,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "379_cf_contradiction_2",
+        "original_id": 379,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0024003286036062108,
+          "p_orig": 0.968357731853474,
+          "margin": -0.9659574032498678,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "258_cf_contradiction_0",
+        "original_id": 258,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999996418201,
+          "p_orig": 3.5818003310600264e-10,
+          "margin": 0.99999999928364,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9922065734863281,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "258_cf_contradiction_1",
+        "original_id": 258,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.999999998575938,
+          "p_orig": 1.4166281998060447e-09,
+          "margin": 0.9999999971593099,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9927499890327454,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "258_cf_contradiction_2",
+        "original_id": 258,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00012315757817018985,
+          "p_orig": 0.9979503373264081,
+          "margin": -0.997827179748238,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "264_cf_neutral_0",
+        "original_id": 264,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.1024558109252898e-07,
+          "p_orig": 3.16092828796384e-10,
+          "margin": 2.099294882637326e-07,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "264_cf_neutral_1",
+        "original_id": 264,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9984962576218359,
+          "p_orig": 0.0015011849188524896,
+          "margin": 0.9969950727029834,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9973070025444031,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "264_cf_neutral_2",
+        "original_id": 264,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9933010634021657,
+          "p_orig": 0.006692833494934957,
+          "margin": 0.9866082299072307,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9973070025444031,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 4,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 4,
+    "num_final_selected": 4,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}
