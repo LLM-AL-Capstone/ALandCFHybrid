@@ -19,7 +19,8 @@ class LLMProvider(ABC):
         messages: List[Dict[str, str]],
         temperature: float = 0.7,
         max_tokens: int = 256,
-        stop: Optional[List[str]] = None
+        stop: Optional[List[str]] = None,
+        top_p: Optional[float] = None
     ) -> str:
         """
         Generate a chat completion.
@@ -29,6 +30,7 @@ class LLMProvider(ABC):
             temperature: Sampling temperature (0-1)
             max_tokens: Maximum tokens to generate
             stop: List of stop sequences
+            top_p: Nucleus sampling parameter (0-1), None to use default
             
         Returns:
             Generated text response
@@ -104,7 +106,8 @@ class OllamaProvider(LLMProvider):
         messages: List[Dict[str, str]],
         temperature: float = 0.7,
         max_tokens: int = 256,
-        stop: Optional[List[str]] = None
+        stop: Optional[List[str]] = None,
+        top_p: Optional[float] = None
     ) -> str:
         """Generate chat completion using Ollama"""
         try:
@@ -115,6 +118,9 @@ class OllamaProvider(LLMProvider):
             
             if stop:
                 options['stop'] = stop
+            
+            if top_p is not None:
+                options['top_p'] = top_p
             
             response = self.client.chat(
                 model=self.model,
@@ -199,7 +205,8 @@ class OpenAIProvider(LLMProvider):
         messages: List[Dict[str, str]],
         temperature: float = 0.7,
         max_tokens: int = 256,
-        stop: Optional[List[str]] = None
+        stop: Optional[List[str]] = None,
+        top_p: Optional[float] = None
     ) -> str:
         """Generate chat completion using OpenAI"""
         try:
@@ -213,31 +220,40 @@ class OpenAIProvider(LLMProvider):
                 stop = None
                 
                 # For GPT-5 reasoning models, use reasoning_effort to control reasoning tokens
-                response = self.client.chat.completions.create(
-                    model=self.model,
-                    messages=messages,
-                    temperature=temperature,
-                    max_completion_tokens=max_tokens,  # Use max_completion_tokens for GPT-5/o1/o3
-                    reasoning_effort="low",  # Minimize reasoning tokens to get more output
-                    stop=stop
-                )
+                kwargs = {
+                    'model': self.model,
+                    'messages': messages,
+                    'temperature': temperature,
+                    'max_completion_tokens': max_tokens,
+                    'reasoning_effort': "low",
+                    'stop': stop
+                }
+                if top_p is not None:
+                    kwargs['top_p'] = top_p
+                response = self.client.chat.completions.create(**kwargs)
             # GPT-4o and GPT-4 Turbo use max_completion_tokens but NOT reasoning_effort
             elif "gpt-4o" in self.model.lower() or "gpt-4-turbo" in self.model.lower():
-                response = self.client.chat.completions.create(
-                    model=self.model,
-                    messages=messages,
-                    temperature=temperature,
-                    max_completion_tokens=max_tokens,  # Use max_completion_tokens for GPT-4o
-                    stop=stop
-                )
+                kwargs = {
+                    'model': self.model,
+                    'messages': messages,
+                    'temperature': temperature,
+                    'max_completion_tokens': max_tokens,
+                    'stop': stop
+                }
+                if top_p is not None:
+                    kwargs['top_p'] = top_p
+                response = self.client.chat.completions.create(**kwargs)
             else:
-                response = self.client.chat.completions.create(
-                    model=self.model,
-                    messages=messages,
-                    temperature=temperature,
-                    max_tokens=max_tokens,  # Use max_tokens for older models
-                    stop=stop
-                )
+                kwargs = {
+                    'model': self.model,
+                    'messages': messages,
+                    'temperature': temperature,
+                    'max_tokens': max_tokens,
+                    'stop': stop
+                }
+                if top_p is not None:
+                    kwargs['top_p'] = top_p
+                response = self.client.chat.completions.create(**kwargs)
             
             content = response.choices[0].message.content
             if content is None:
@@ -451,7 +467,8 @@ class GeminiProvider(LLMProvider):
         messages: List[Dict[str, str]],
         temperature: float = 0.0,
         max_tokens: int = 256,
-        stop: Optional[List[str]] = None
+        stop: Optional[List[str]] = None,
+        top_p: Optional[float] = None
     ) -> str:
         """Generate chat completion using Gemini"""
         try:
@@ -479,14 +496,17 @@ class GeminiProvider(LLMProvider):
                     ))
             
             # Build generation config with thinking DISABLED
-            config = types.GenerateContentConfig(
-                temperature=temperature,
-                max_output_tokens=max_tokens,
-                system_instruction=system_instruction if system_instruction else None,
-                stop_sequences=stop if stop else None,
-                # DISABLE THINKING MODE: Set thinking_budget=0 for no thinking
-                thinking_config=types.ThinkingConfig(thinking_budget=0)
-            )
+            config_kwargs = {
+                'temperature': temperature,
+                'max_output_tokens': max_tokens,
+                'system_instruction': system_instruction if system_instruction else None,
+                'stop_sequences': stop if stop else None,
+                'thinking_config': types.ThinkingConfig(thinking_budget=0)
+            }
+            if top_p is not None:
+                config_kwargs['top_p'] = top_p
+            
+            config = types.GenerateContentConfig(**config_kwargs)
             
             response = self.client.models.generate_content(
                 model=self.model_name,
