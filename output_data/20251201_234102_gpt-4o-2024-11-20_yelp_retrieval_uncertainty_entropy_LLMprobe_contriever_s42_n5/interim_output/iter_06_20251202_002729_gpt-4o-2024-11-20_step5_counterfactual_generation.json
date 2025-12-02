@@ -1,0 +1,1535 @@
+{
+  "iteration": 6,
+  "timestamp": "20251202_002729",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": "ss273",
+      "text": "the staff was very friendly and they have a wide selection of drinks . ",
+      "label": "products"
+    },
+    {
+      "id": "ss378",
+      "text": "he ordered the tires , gave me a great price and it was done that same day . ",
+      "label": "service"
+    },
+    {
+      "id": "ss43",
+      "text": "great customer service , great food that is fresh and cooked to order . ",
+      "label": "service"
+    },
+    {
+      "id": "ss125",
+      "text": "the lines may be long at times ",
+      "label": "service"
+    },
+    {
+      "id": "ss141",
+      "text": "this place was just okay . the service is really great but i felt that the food was nothing special . ",
+      "label": "products"
+    },
+    {
+      "id": "ss55",
+      "text": "reat product for the money ! ! if you ever have a problem   do n't fret . customer service is a+ ! definitely would recommend this company ! ! ! ",
+      "label": "products"
+    },
+    {
+      "id": "ss242",
+      "text": "fantastic office with amazing staff ",
+      "label": "service"
+    },
+    {
+      "id": "ss262",
+      "text": "their service price is on the higher - end , but their work is seamless , clean , professional , and complete ",
+      "label": "service"
+    },
+    {
+      "id": "ss68",
+      "text": "great service once again food came out quick and the drinks are good . i enjoyed a caesar salad with pimento cheese balls   fried to perfection   . ",
+      "label": "products"
+    },
+    {
+      "id": "ss33",
+      "text": "the prices are reasonable , and my experience with the customer service has always been very positive ",
+      "label": "service"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "ss273_cf_service_2",
+      "text": "The staff was very friendly and made excellent recommendations for drinks.",
+      "label": "service",
+      "original_id": "ss273",
+      "original_label": "products",
+      "v3_score": 1.4999999999974607,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.99999999999886,
+        "term2": 0.4999999999986007,
+        "term3": 0.0,
+        "total": 1.4999999999974607,
+        "p_orig": 1.1400129407482106e-12,
+        "p_target": 0.9999999999972013,
+        "similarity": 0.9261244535446167
+      }
+    },
+    {
+      "id": "ss33_cf_price_2",
+      "text": "The costs are fair, and my experience with the value offered has always been very positive.",
+      "label": "price",
+      "original_id": "ss33",
+      "original_label": "service",
+      "v3_score": 1.4999999999091547,
+      "v3_rank": 2,
+      "v3_score_breakdown": {
+        "term1": 0.9999999999978701,
+        "term2": 0.49999999991128447,
+        "term3": 0.0,
+        "total": 1.4999999999091547,
+        "p_orig": 2.129823672206339e-12,
+        "p_target": 0.9999999998225689,
+        "similarity": 0.785887598991394
+      }
+    },
+    {
+      "id": "ss43_cf_products_0",
+      "text": "great quality items, great food that is fresh and made to order.",
+      "label": "products",
+      "original_id": "ss43",
+      "original_label": "service",
+      "v3_score": 1.4999999996712345,
+      "v3_rank": 3,
+      "v3_score_breakdown": {
+        "term1": 0.9999999997827528,
+        "term2": 0.49999999988848165,
+        "term3": 0.0,
+        "total": 1.4999999996712345,
+        "p_orig": 2.1724724487099873e-10,
+        "p_target": 0.9999999997769633,
+        "similarity": 0.7967488765716553
+      }
+    },
+    {
+      "id": "ss262_cf_price_0",
+      "text": "their rates are on the higher-end, but the value is seamless, clean, professional, and complete",
+      "label": "price",
+      "original_id": "ss262",
+      "original_label": "service",
+      "v3_score": 1.499995066702509,
+      "v3_rank": 4,
+      "v3_score_breakdown": {
+        "term1": 0.9999967112243305,
+        "term2": 0.4999983554781784,
+        "term3": 0.0,
+        "total": 1.499995066702509,
+        "p_orig": 3.2887756694447993e-06,
+        "p_target": 0.9999967109563568,
+        "similarity": 0.8482717871665955
+      }
+    },
+    {
+      "id": "ss141_cf_price_0",
+      "text": "this place was just okay . the service is really great but i felt that the cost was not worth it .",
+      "label": "price",
+      "original_id": "ss141",
+      "original_label": "products",
+      "v3_score": 1.4999625764056894,
+      "v3_rank": 5,
+      "v3_score_breakdown": {
+        "term1": 0.9999999999094445,
+        "term2": 0.49996257649624476,
+        "term3": 0.0,
+        "total": 1.4999625764056894,
+        "p_orig": 9.05554498792049e-11,
+        "p_target": 0.9999251529924895,
+        "similarity": 0.7068613171577454
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "ss273_cf_service_2",
+    "ss33_cf_price_2",
+    "ss43_cf_products_0",
+    "ss262_cf_price_0",
+    "ss141_cf_price_0"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 5,
+    "num_added": 5,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "the staff was very friendly and they have a wide selection of drinks . ",
+        "original_label": "products",
+        "target_label": "service",
+        "generated_text": "the staff was very friendly and they offered great attention to detail.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8623900413513184,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the staff was very friendly and they have a wide selection of drinks . ",
+        "original_label": "products",
+        "target_label": "service",
+        "generated_text": "The staff was very attentive and they made sure everything was perfect.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9240579605102539,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the staff was very friendly and they have a wide selection of drinks . ",
+        "original_label": "products",
+        "target_label": "service",
+        "generated_text": "The staff was very friendly and made excellent recommendations for drinks.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8563446998596191,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "he ordered the tires , gave me a great price and it was done that same day . ",
+        "original_label": "service",
+        "target_label": "environment",
+        "generated_text": "he arranged for the recycling, ensured it was handled responsibly and it was completed that same day.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9670791625976562,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "he ordered the tires , gave me a great price and it was done that same day . ",
+        "original_label": "service",
+        "target_label": "environment",
+        "generated_text": "he sourced eco-friendly tires, ensured they were sustainable, and it was all handled that same day.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.1556107997894287,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "he ordered the tires , gave me a great price and it was done that same day . ",
+        "original_label": "service",
+        "target_label": "environment",
+        "generated_text": "he arranged the setup, ensured everything was efficient and it all came together perfectly that same day.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.2239758968353271,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "great customer service , great food that is fresh and cooked to order . ",
+        "original_label": "service",
+        "target_label": "products",
+        "generated_text": "great quality items, great food that is fresh and made to order.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8345632553100586,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "great customer service , great food that is fresh and cooked to order . ",
+        "original_label": "service",
+        "target_label": "products",
+        "generated_text": "great quality items, great ingredients that are fresh and carefully prepared.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7408721446990967,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "great customer service , great food that is fresh and cooked to order . ",
+        "original_label": "service",
+        "target_label": "products",
+        "generated_text": "great quality items, great ingredients that are fresh and made to order.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9015359878540039,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the lines may be long at times ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "the costs may be high at times",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7474880218505859,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the lines may be long at times ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "the costs may feel high at times",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7949380874633789,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the lines may be long at times ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "the costs may be high at times",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7193210124969482,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "this place was just okay . the service is really great but i felt that the food was nothing special . ",
+        "original_label": "products",
+        "target_label": "price",
+        "generated_text": "this place was just okay . the service is really great but i felt that the cost was not worth it .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.924414873123169,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "this place was just okay . the service is really great but i felt that the food was nothing special . ",
+        "original_label": "products",
+        "target_label": "price",
+        "generated_text": "this place was just okay . the service is really great but i felt that it wasn\u2019t quite worth what i paid . ",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8756730556488037,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "this place was just okay . the service is really great but i felt that the food was nothing special . ",
+        "original_label": "products",
+        "target_label": "price",
+        "generated_text": "this place was just okay . the service is really great but i felt that what i paid for wasn\u2019t really worth it .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.0788419246673584,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "reat product for the money ! ! if you ever have a problem   do n't fret . customer service is a+ ! definitely would recommend this company ! ! ! ",
+        "original_label": "products",
+        "target_label": "price",
+        "generated_text": "Great value for the money ! ! if you ever have a problem   do n't fret . customer service is a+ ! definitely would recommend this company ! ! !",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.335463047027588,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "reat product for the money ! ! if you ever have a problem   do n't fret . customer service is a+ ! definitely would recommend this company ! ! ! ",
+        "original_label": "products",
+        "target_label": "price",
+        "generated_text": "Great value for the money ! ! if you ever feel unsure about spending   do n't fret . totally worth it for what you get ! definitely would recommend this deal ! ! !",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.2708690166473389,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "reat product for the money ! ! if you ever have a problem   do n't fret . customer service is a+ ! definitely would recommend this company ! ! ! ",
+        "original_label": "products",
+        "target_label": "price",
+        "generated_text": "Great value for the money ! ! if you ever have a problem   do n't fret . customer service is a+ ! definitely would recommend this company ! ! !",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9860708713531494,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "fantastic office with amazing staff ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "fantastic value with amazing deals",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7378010749816895,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "fantastic office with amazing staff ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "great value with excellent deals",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7831180095672607,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "fantastic office with amazing staff ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "great value with exceptional quality",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8535678386688232,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "their service price is on the higher - end , but their work is seamless , clean , professional , and complete ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "their rates are on the higher-end, but the value is seamless, clean, professional, and complete",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8148269653320312,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "their service price is on the higher - end , but their work is seamless , clean , professional , and complete ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "Though it leans towards the expensive side, the value you get is seamless, clean, professional, and complete.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.034688949584961,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "their service price is on the higher - end , but their work is seamless , clean , professional , and complete ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "Their rates are on the higher end, but the value delivered is seamless, clean, professional, and complete.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.0238621234893799,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "great service once again food came out quick and the drinks are good . i enjoyed a caesar salad with pimento cheese balls   fried to perfection   . ",
+        "original_label": "products",
+        "target_label": "service",
+        "generated_text": "great experience once again everything was timely and well-coordinated . the staff ensured i had a pleasant time enjoying my meal and drinks . ",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9404160976409912,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "great service once again food came out quick and the drinks are good . i enjoyed a caesar salad with pimento cheese balls   fried to perfection   . ",
+        "original_label": "products",
+        "target_label": "service",
+        "generated_text": "Wonderful experience once again, the staff was attentive and everything was handled promptly. They made sure I had a great time enjoying a caesar salad with pimento cheese balls fried to perfection.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.3178460597991943,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "great service once again food came out quick and the drinks are good . i enjoyed a caesar salad with pimento cheese balls   fried to perfection   . ",
+        "original_label": "products",
+        "target_label": "service",
+        "generated_text": "Excellent experience once again, everything was brought out promptly and with care. I was served a caesar salad with pimento cheese balls fried to perfection, and the drinks were prepared just right.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.126823902130127,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the prices are reasonable , and my experience with the customer service has always been very positive ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "the costs are reasonable, and my experience with the overall value has always been very positive",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8220458030700684,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the prices are reasonable , and my experience with the customer service has always been very positive ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "the costs are fair, and my experience with the value for what I pay has always been very positive",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.1768109798431396,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the prices are reasonable , and my experience with the customer service has always been very positive ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "The costs are fair, and my experience with the value offered has always been very positive.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7729229927062988,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "ss273_cf_service_0",
+        "original_id": "ss273",
+        "target_label": "service",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999999939948,
+          "p_orig": 2.1298236725714454e-12,
+          "margin": 0.999999999991865,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.5930806994438171,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss273_cf_service_1",
+        "original_id": "ss273",
+        "target_label": "service",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999999914807,
+          "p_orig": 2.1298236725660913e-12,
+          "margin": 0.9999999999893509,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.5195044875144958,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss273_cf_service_2",
+        "original_id": "ss273",
+        "target_label": "service",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999999999962947,
+          "p_orig": 1.2918037916669066e-12,
+          "margin": 0.9999999999950029,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9261244535446167,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0422535211267605,
+          "original_length": 71,
+          "cf_length": 74,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999999999974607,
+        "v3_score_details": {
+          "score": 1.4999999999974607,
+          "p_orig": 1.1400129407482106e-12,
+          "p_target": 0.9999999999972013,
+          "similarity": 0.9261244535446167,
+          "term1": 0.99999999999886,
+          "term2": 0.4999999999986007,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "ss378_cf_environment_0",
+        "original_id": "ss378",
+        "target_label": "environment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.2689415474934153,
+          "p_orig": 0.7310584515076257,
+          "margin": -0.4621169040142104,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss378_cf_environment_1",
+        "original_id": "ss378",
+        "target_label": "environment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9998963154611483,
+          "p_orig": 4.5395520177444374e-05,
+          "margin": 0.9998509199409709,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.5885868668556213,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss378_cf_environment_2",
+        "original_id": "ss378",
+        "target_label": "environment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.0816125261792927e-11,
+          "p_orig": 0.9999999999807603,
+          "margin": -0.9999999999699442,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss43_cf_products_0",
+        "original_id": "ss43",
+        "target_label": "products",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999999997769633,
+          "p_orig": 2.1724724487099873e-10,
+          "margin": 0.9999999995597161,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.7967488765716553,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.8888888888888888,
+          "original_length": 72,
+          "cf_length": 64,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999999996712345,
+        "v3_score_details": {
+          "score": 1.4999999996712345,
+          "p_orig": 2.1724724487099873e-10,
+          "p_target": 0.9999999997769633,
+          "similarity": 0.7967488765716553,
+          "term1": 0.9999999997827528,
+          "term2": 0.49999999988848165,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "ss43_cf_products_1",
+        "original_id": "ss43",
+        "target_label": "products",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999999987421,
+          "p_orig": 3.701082941084628e-13,
+          "margin": 0.999999999998372,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.6755589246749878,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss43_cf_products_2",
+        "original_id": "ss43",
+        "target_label": "products",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.999999999997429,
+          "p_orig": 1.879562952138737e-12,
+          "margin": 0.9999999999955493,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.6866734623908997,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss125_cf_price_0",
+        "original_id": "ss125",
+        "target_label": "price",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999991377746,
+          "p_orig": 9.056217851089762e-11,
+          "margin": 0.9999999990472124,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.2634466886520386,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss125_cf_price_1",
+        "original_id": "ss125",
+        "target_label": "price",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999993874513,
+          "p_orig": 1.317671590177954e-10,
+          "margin": 0.9999999992556842,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.2380453646183014,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss125_cf_price_2",
+        "original_id": "ss125",
+        "target_label": "price",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999917024539,
+          "p_orig": 4.84744610581563e-11,
+          "margin": 0.9999999916539795,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.2634466886520386,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss141_cf_price_0",
+        "original_id": "ss141",
+        "target_label": "price",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9971990605069826,
+          "p_orig": 5.19688662047724e-10,
+          "margin": 0.997199059987294,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.7068613171577454,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.9607843137254902,
+          "original_length": 102,
+          "cf_length": 98,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999625764056894,
+        "v3_score_details": {
+          "score": 1.4999625764056894,
+          "p_orig": 9.05554498792049e-11,
+          "p_target": 0.9999251529924895,
+          "similarity": 0.7068613171577454,
+          "term1": 0.9999999999094445,
+          "term2": 0.49996257649624476,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "ss141_cf_price_1",
+        "original_id": "ss141",
+        "target_label": "price",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9980731955930745,
+          "p_orig": 1.1838400895457899e-08,
+          "margin": 0.9980731837546736,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.6977561116218567,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss141_cf_price_2",
+        "original_id": "ss141",
+        "target_label": "price",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9975273560616869,
+          "p_orig": 8.131966837152153e-09,
+          "margin": 0.99752734792972,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.6970372796058655,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss55_cf_price_0",
+        "original_id": "ss55",
+        "target_label": "price",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0024726334939831306,
+          "p_orig": 3.3899101388696582e-09,
+          "margin": 0.0024726301040729915,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss55_cf_price_1",
+        "original_id": "ss55",
+        "target_label": "price",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999951886211,
+          "p_orig": 3.160927949536548e-10,
+          "margin": 0.9999999948725283,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.43459847569465637,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss55_cf_price_2",
+        "original_id": "ss55",
+        "target_label": "price",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.010986973726267979,
+          "p_orig": 5.541313848832975e-09,
+          "margin": 0.01098696818495413,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss242_cf_price_0",
+        "original_id": "ss242",
+        "target_label": "price",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.999999999121935,
+          "p_orig": 3.098874373864706e-12,
+          "margin": 0.9999999991188362,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.31406864523887634,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss242_cf_price_1",
+        "original_id": "ss242",
+        "target_label": "price",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999989235477,
+          "p_orig": 2.2897725783026595e-11,
+          "margin": 0.9999999989006501,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.28666290640830994,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss242_cf_price_2",
+        "original_id": "ss242",
+        "target_label": "price",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9997386443475927,
+          "p_orig": 1.9166995815725837e-10,
+          "margin": 0.9997386441559227,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.2964101731777191,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss262_cf_price_0",
+        "original_id": "ss262",
+        "target_label": "price",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999967109563568,
+          "p_orig": 3.2887756694447993e-06,
+          "margin": 0.9999934221806873,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.8482717871665955,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.8636363636363636,
+          "original_length": 110,
+          "cf_length": 95,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.499995066702509,
+        "v3_score_details": {
+          "score": 1.499995066702509,
+          "p_orig": 3.2887756694447993e-06,
+          "p_target": 0.9999967109563568,
+          "similarity": 0.8482717871665955,
+          "term1": 0.9999967112243305,
+          "term2": 0.4999983554781784,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "ss262_cf_price_1",
+        "original_id": "ss262",
+        "target_label": "price",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999973775809,
+          "p_orig": 2.33562425736281e-09,
+          "margin": 0.9999999950419567,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.5754438638687134,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss262_cf_price_2",
+        "original_id": "ss262",
+        "target_label": "price",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999785548943279,
+          "p_orig": 2.1445094835057764e-05,
+          "margin": 0.9999571097994928,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.809961199760437,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.9636363636363636,
+          "original_length": 110,
+          "cf_length": 106,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999907836656572,
+        "v3_score_details": {
+          "score": 1.4999907836656572,
+          "p_orig": 6.144221722449104e-06,
+          "p_target": 0.9999938557747594,
+          "similarity": 0.809961199760437,
+          "term1": 0.9999938557782776,
+          "term2": 0.4999969278873797,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "ss68_cf_service_0",
+        "original_id": "ss68",
+        "target_label": "service",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999998551743433,
+          "p_orig": 2.461733708248833e-10,
+          "margin": 0.9999998549281699,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.6387416124343872,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss68_cf_service_1",
+        "original_id": "ss68",
+        "target_label": "service",
+        "passed": false,
+        "rejection_stage": "length_ratio",
+        "label_consistency": {
+          "p_target": 0.999978554903035,
+          "p_orig": 2.144509483524449e-05,
+          "margin": 0.9999571098081997,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.7931901216506958,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.337837837837838,
+          "original_length": 148,
+          "cf_length": 198,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": false,
+          "too_short": false,
+          "too_long": true
+        },
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss68_cf_service_2",
+        "original_id": "ss68",
+        "target_label": "service",
+        "passed": false,
+        "rejection_stage": "length_ratio",
+        "label_consistency": {
+          "p_target": 0.9820137409352054,
+          "p_orig": 0.017986259064794653,
+          "margin": 0.9640274818704108,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.8376337289810181,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.3445945945945945,
+          "original_length": 148,
+          "cf_length": 199,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": false,
+          "too_short": false,
+          "too_long": true
+        },
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss33_cf_price_0",
+        "original_id": "ss33",
+        "target_label": "price",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999999986760846,
+          "p_orig": 5.492875632585347e-11,
+          "margin": 0.9999999986211559,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.8523398041725159,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.9411764705882353,
+          "original_length": 102,
+          "cf_length": 96,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999999978446654,
+        "v3_score_details": {
+          "score": 1.4999999978446654,
+          "p_orig": 2.7895093622584587e-10,
+          "p_target": 0.9999999962472328,
+          "similarity": 0.8523398041725159,
+          "term1": 0.999999999721049,
+          "term2": 0.4999999981236164,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "ss33_cf_price_1",
+        "original_id": "ss33",
+        "target_label": "price",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999999992410237,
+          "p_orig": 7.992084875530384e-11,
+          "margin": 0.9999999991611028,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.7502266764640808,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.9509803921568627,
+          "original_length": 102,
+          "cf_length": 97,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999999998239768,
+        "v3_score_details": {
+          "score": 1.4999999998239768,
+          "p_orig": 3.331598605115547e-11,
+          "p_target": 0.9999999997145856,
+          "similarity": 0.7502266764640808,
+          "term1": 0.999999999966684,
+          "term2": 0.4999999998572928,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "ss33_cf_price_2",
+        "original_id": "ss33",
+        "target_label": "price",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999999998903852,
+          "p_orig": 2.1298236723507756e-12,
+          "margin": 0.9999999998882554,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.785887598991394,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.8921568627450981,
+          "original_length": 102,
+          "cf_length": 91,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999999999091547,
+        "v3_score_details": {
+          "score": 1.4999999999091547,
+          "p_orig": 2.129823672206339e-12,
+          "p_target": 0.9999999998225689,
+          "similarity": 0.785887598991394,
+          "term1": 0.9999999999978701,
+          "term2": 0.49999999991128447,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      }
+    ]
+  },
+  "num_generated": 5,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 5,
+    "num_final_selected": 5,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

@@ -39,7 +39,18 @@ class RetrievalICLClassifier(SimpleICLClassifier):
         self.k_per_class = self.retrieval_config.get('k_per_class', 3)
         self.total_k_max = self.retrieval_config.get('total_k_max', 50)
         self.fallback_strategy = self.retrieval_config.get('fallback_strategy', 'similarity')
+        
+        # CF inclusion strategy (mentor directive)
+        # "mixed": CFs compete with factuals in retrieval pool
+        # "factual_anchored": Retrieve only factuals, then attach their CFs
+        self.cf_inclusion_strategy = self.retrieval_config.get('cf_inclusion_strategy', 'mixed')
+        
         self.labeled_embeddings = None
+        
+        # For factual_anchored strategy: separate storage
+        self.factual_examples = []  # Only factuals
+        self.factual_embeddings = None
+        self.cf_by_original_id = {}  # Map: original_id -> list of CFs
     
     def encode_texts(self, texts: List[str]) -> np.ndarray:
         """
@@ -63,15 +74,64 @@ class RetrievalICLClassifier(SimpleICLClassifier):
         """
         super().train(labeled_pool)
         
-        # Encode all labeled examples
-        texts = [ex['text'] for ex in self.labeled_examples]
-        print(f"  Encoding {len(texts)} examples for retrieval...")
-        self.labeled_embeddings = self.encode_texts(texts)
-        print(f"  ✓ Encoded to {self.labeled_embeddings.shape} embeddings")
+        # Separate factuals and CFs for factual_anchored strategy
+        self.factual_examples = []
+        self.cf_by_original_id = {}
+        
+        for ex in self.labeled_examples:
+            if ex.get('is_counterfactual', False):
+                # This is a CF - store by original_id
+                original_id = ex.get('original_id')
+                if original_id:
+                    if original_id not in self.cf_by_original_id:
+                        self.cf_by_original_id[original_id] = []
+                    self.cf_by_original_id[original_id].append(ex)
+            else:
+                # This is a factual
+                self.factual_examples.append(ex)
+        
+        print(f"  Factuals: {len(self.factual_examples)}, CFs: {len(self.labeled_examples) - len(self.factual_examples)}")
+        print(f"  CF inclusion strategy: {self.cf_inclusion_strategy}")
+        
+        if self.cf_inclusion_strategy == 'factual_anchored':
+            # Only encode factuals for retrieval
+            texts = [ex['text'] for ex in self.factual_examples]
+            print(f"  Encoding {len(texts)} factuals for retrieval (factual_anchored)...")
+            self.factual_embeddings = self.encode_texts(texts)
+            print(f"  ✓ Encoded factuals to {self.factual_embeddings.shape} embeddings")
+            # Also encode all for backward compatibility
+            all_texts = [ex['text'] for ex in self.labeled_examples]
+            self.labeled_embeddings = self.encode_texts(all_texts)
+        else:
+            # Mixed strategy: encode all examples
+            texts = [ex['text'] for ex in self.labeled_examples]
+            print(f"  Encoding {len(texts)} examples for retrieval (mixed)...")
+            self.labeled_embeddings = self.encode_texts(texts)
+            print(f"  ✓ Encoded to {self.labeled_embeddings.shape} embeddings")
     
     def retrieve_balanced_examples(self, text: str) -> List[Dict]:
         """
-        Retrieve examples using hybrid balanced strategy.
+        Retrieve examples using configured strategy.
+        
+        Strategies:
+        - "mixed": CFs compete with factuals in retrieval (original behavior)
+        - "factual_anchored": Retrieve only factuals, then attach their CFs
+        
+        Args:
+            text: Query text
+            
+        Returns:
+            List of retrieved examples
+        """
+        if self.cf_inclusion_strategy == 'factual_anchored':
+            return self.retrieve_factual_anchored(text)
+        else:
+            return self.retrieve_mixed(text)
+    
+    def retrieve_mixed(self, text: str) -> List[Dict]:
+        """
+        Retrieve examples using hybrid balanced strategy (original behavior).
+        CFs compete with factuals in the retrieval pool.
         
         Strategy:
         1. Try to get k_per_class similar examples from each label
@@ -136,6 +196,89 @@ class RetrievalICLClassifier(SimpleICLClassifier):
         retrieved_examples = retrieved_examples[:self.total_k_max]
         
         return retrieved_examples
+    
+    def retrieve_factual_anchored(self, text: str) -> List[Dict]:
+        """
+        Retrieve examples using factual-anchored strategy (mentor directive).
+        
+        Strategy:
+        1. Retrieve only from factuals (CFs never compete with factuals)
+        2. For each retrieved factual, attach its associated CFs
+        3. CFs are added as paired augmentations after their parent factual
+        4. Respect total_k_max limit for factuals (CFs are bonus)
+        
+        Args:
+            text: Query text
+            
+        Returns:
+            List of retrieved examples (factuals + their CFs)
+        """
+        if self.factual_embeddings is None:
+            raise ValueError("Classifier not trained. Call train() first.")
+        
+        if len(self.factual_examples) == 0:
+            # No factuals - fall back to mixed strategy
+            return self.retrieve_mixed(text)
+        
+        # Encode query
+        query_embedding = self.encode_texts([text])
+        
+        # Compute similarities to factuals only
+        similarities = cosine_similarity(query_embedding, self.factual_embeddings)[0]
+        
+        # Group factuals by label with their similarities
+        label_groups = {}
+        for i, ex in enumerate(self.factual_examples):
+            label = ex['label']
+            if label not in label_groups:
+                label_groups[label] = []
+            label_groups[label].append((i, ex, similarities[i]))
+        
+        # Phase 1: Retrieve k_per_class factuals from each label
+        retrieved_factuals = []
+        retrieved_indices = set()
+        
+        for label, examples in label_groups.items():
+            # Sort by similarity (descending)
+            examples_sorted = sorted(examples, key=lambda x: x[2], reverse=True)
+            
+            # Take up to k_per_class
+            k = min(self.k_per_class, len(examples_sorted))
+            for idx, ex, sim in examples_sorted[:k]:
+                retrieved_factuals.append(ex)
+                retrieved_indices.add(idx)
+        
+        # Phase 2: Fill remaining budget with most similar factuals (if space available)
+        if len(retrieved_factuals) < self.total_k_max and self.fallback_strategy == 'similarity':
+            remaining_candidates = [
+                (i, self.factual_examples[i], similarities[i])
+                for i in range(len(self.factual_examples))
+                if i not in retrieved_indices
+            ]
+            remaining_sorted = sorted(remaining_candidates, key=lambda x: x[2], reverse=True)
+            
+            needed = self.total_k_max - len(retrieved_factuals)
+            for idx, ex, sim in remaining_sorted[:needed]:
+                retrieved_factuals.append(ex)
+                retrieved_indices.add(idx)
+        
+        # Limit factuals to total_k_max
+        retrieved_factuals = retrieved_factuals[:self.total_k_max]
+        
+        # Phase 3: Attach CFs for each retrieved factual
+        final_examples = []
+        for factual in retrieved_factuals:
+            # Add the factual
+            final_examples.append(factual)
+            
+            # Find and add its CFs
+            factual_id = factual.get('id')
+            if factual_id and factual_id in self.cf_by_original_id:
+                cfs = self.cf_by_original_id[factual_id]
+                for cf in cfs:
+                    final_examples.append(cf)
+        
+        return final_examples
     
     def predict(self, text: str) -> str:
         """
@@ -428,18 +571,40 @@ class BM25Retrieval(RetrievalICLClassifier):
         self.labels = set(ex['label'] for ex in labeled_pool)
         print(f"  Classifier 'trained' with {len(labeled_pool)} examples across {len(self.labels)} labels")
         
-        # Tokenize corpus for BM25
+        # Separate factuals and CFs for factual_anchored strategy
+        self.factual_examples = []
+        self.cf_by_original_id = {}
+        
+        for ex in self.labeled_examples:
+            if ex.get('is_counterfactual', False):
+                original_id = ex.get('original_id')
+                if original_id:
+                    if original_id not in self.cf_by_original_id:
+                        self.cf_by_original_id[original_id] = []
+                    self.cf_by_original_id[original_id].append(ex)
+            else:
+                self.factual_examples.append(ex)
+        
+        print(f"  Factuals: {len(self.factual_examples)}, CFs: {len(self.labeled_examples) - len(self.factual_examples)}")
+        print(f"  CF inclusion strategy: {self.cf_inclusion_strategy}")
+        
+        if self.cf_inclusion_strategy == 'factual_anchored':
+            # Build BM25 index on factuals only
+            texts = [ex['text'] for ex in self.factual_examples]
+            print(f"  Tokenizing {len(texts)} factuals for BM25 (factual_anchored)...")
+            self.tokenized_corpus_factuals = [text.lower().split() for text in texts]
+            self.bm25_factuals = self.BM25Okapi(self.tokenized_corpus_factuals, k1=self.k1, b=self.b)
+            print(f"  ✓ BM25 factuals index built")
+        
+        # Also build full index for mixed strategy
         texts = [ex['text'] for ex in self.labeled_examples]
         print(f"  Tokenizing {len(texts)} examples for BM25...")
         self.tokenized_corpus = [text.lower().split() for text in texts]
-        
-        # Build BM25 index
         self.bm25 = self.BM25Okapi(self.tokenized_corpus, k1=self.k1, b=self.b)
         print(f"  ✓ BM25 index built")
         
         # For compatibility with base class, create dummy embeddings
-        # (BM25 doesn't use embeddings, but we need to satisfy the interface)
-        self.labeled_embeddings = np.eye(len(texts))  # Identity matrix as placeholder
+        self.labeled_embeddings = np.eye(len(texts))
     
     def encode_texts(self, texts: List[str]) -> np.ndarray:
         """
@@ -453,11 +618,26 @@ class BM25Retrieval(RetrievalICLClassifier):
             Dummy array (not used for BM25)
         """
         # Return dummy embeddings (not used for BM25 retrieval)
-        return np.zeros((len(texts), len(self.labeled_examples)))
+        return np.zeros((len(texts), max(1, len(self.labeled_examples))))
     
     def retrieve_balanced_examples(self, text: str) -> List[Dict]:
         """
-        Retrieve examples using BM25 scores.
+        Retrieve examples using configured strategy.
+        
+        Args:
+            text: Query text
+            
+        Returns:
+            List of retrieved examples
+        """
+        if self.cf_inclusion_strategy == 'factual_anchored':
+            return self.retrieve_factual_anchored_bm25(text)
+        else:
+            return self.retrieve_mixed_bm25(text)
+    
+    def retrieve_mixed_bm25(self, text: str) -> List[Dict]:
+        """
+        Retrieve examples using BM25 scores (mixed strategy).
         
         Args:
             text: Query text
@@ -506,6 +686,76 @@ class BM25Retrieval(RetrievalICLClassifier):
             selected_examples = selected_examples[:self.total_k_max]
         
         return selected_examples
+    
+    def retrieve_factual_anchored_bm25(self, text: str) -> List[Dict]:
+        """
+        Retrieve examples using BM25 with factual-anchored strategy.
+        
+        Args:
+            text: Query text
+            
+        Returns:
+            List of retrieved examples (factuals + their CFs)
+        """
+        if not hasattr(self, 'bm25_factuals') or self.bm25_factuals is None:
+            # Fall back to mixed if factuals index not built
+            return self.retrieve_mixed_bm25(text)
+        
+        if len(self.factual_examples) == 0:
+            return self.retrieve_mixed_bm25(text)
+        
+        # Tokenize query
+        tokenized_query = text.lower().split()
+        
+        # Get BM25 scores for factuals only
+        scores = self.bm25_factuals.get_scores(tokenized_query)
+        
+        # Group factuals by label with their scores
+        label_groups = {}
+        for i, ex in enumerate(self.factual_examples):
+            label = ex['label']
+            if label not in label_groups:
+                label_groups[label] = []
+            label_groups[label].append((i, ex, scores[i]))
+        
+        # Select top k_per_class factuals from each label
+        retrieved_factuals = []
+        retrieved_indices = set()
+        
+        for label, examples in label_groups.items():
+            examples_sorted = sorted(examples, key=lambda x: x[2], reverse=True)
+            top_k = min(self.k_per_class, len(examples_sorted))
+            for idx, ex, score in examples_sorted[:top_k]:
+                retrieved_factuals.append(ex)
+                retrieved_indices.add(idx)
+        
+        # Fill remaining budget with top-scoring factuals
+        if len(retrieved_factuals) < self.total_k_max and self.fallback_strategy == 'similarity':
+            remaining_candidates = [
+                (i, self.factual_examples[i], scores[i])
+                for i in range(len(self.factual_examples))
+                if i not in retrieved_indices
+            ]
+            remaining_sorted = sorted(remaining_candidates, key=lambda x: x[2], reverse=True)
+            
+            needed = self.total_k_max - len(retrieved_factuals)
+            for idx, ex, score in remaining_sorted[:needed]:
+                retrieved_factuals.append(ex)
+                retrieved_indices.add(idx)
+        
+        # Limit factuals to total_k_max
+        retrieved_factuals = retrieved_factuals[:self.total_k_max]
+        
+        # Attach CFs for each retrieved factual
+        final_examples = []
+        for factual in retrieved_factuals:
+            final_examples.append(factual)
+            factual_id = factual.get('id')
+            if factual_id and factual_id in self.cf_by_original_id:
+                for cf in self.cf_by_original_id[factual_id]:
+                    final_examples.append(cf)
+        
+        return final_examples
 
 
 class ContrieverRetrieval(RetrievalICLClassifier):

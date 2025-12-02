@@ -218,6 +218,50 @@ def load_test_set(config: dict) -> List[Dict]:
     return test_pool
 
 
+def get_factuals_only_pool(labeled_pool: List[Dict]) -> List[Dict]:
+    """
+    Filter labeled pool to include only factual examples (exclude CFs).
+    
+    Mentor directive: AL-internal classifier should only see real labeled examples
+    (seed + acquired factuals), not counterfactuals.
+    
+    Args:
+        labeled_pool: Full labeled pool (factuals + CFs)
+    
+    Returns:
+        List of factual examples only (no original_id field = factual)
+    """
+    factuals_only = [
+        ex for ex in labeled_pool 
+        if not is_counterfactual(ex)
+    ]
+    return factuals_only
+
+
+def is_counterfactual(example: Dict) -> bool:
+    """
+    Check if an example is a counterfactual.
+    
+    CFs are identified by having 'original_id' field (reference to parent factual).
+    Also handles 'is_counterfactual' field for backward compatibility.
+    
+    Args:
+        example: Example dict
+    
+    Returns:
+        True if example is a CF, False if factual
+    """
+    # Primary check: CFs have original_id field
+    if 'original_id' in example and example['original_id']:
+        return True
+    # Backward compatibility: check is_counterfactual field
+    is_cf = example.get('is_counterfactual', False)
+    # Handle string values from CSV loading
+    if isinstance(is_cf, str):
+        return is_cf.lower() in ('true', '1', '1.0')
+    return bool(is_cf)
+
+
 def evaluate_classifier(classifier, test_pool: List[Dict], config: dict) -> Dict:
     """
     Evaluate classifier on test set.
@@ -370,17 +414,30 @@ def active_learning_loop(config: dict):
     print("\n=== Initializing Components ===")
     llm_provider = get_llm_provider(config)
     
-    # Select classifier type based on config
+    # Get AL-internal classifier settings (mentor directive: static + factuals-only)
+    al_internal_config = al_config.get('al_internal_classifier', {})
+    al_internal_type = al_internal_config.get('type', 'static')
+    use_factuals_only = al_internal_config.get('use_factuals_only', True)
+    
+    # Create AL-internal classifier (for uncertainty, target-label selection, CF filtering)
+    # This is ALWAYS static and uses factuals-only (mentor directive)
+    al_internal_classifier = SimpleICLClassifier(config, llm_provider)
+    print(f"AL-Internal Classifier: Static ICL (factuals-only={use_factuals_only})")
+    
+    # Select evaluation classifier type based on config
     eval_config = config['evaluation']
     classifier_type = eval_config.get('classifier_type', 'static')
     
     if classifier_type == 'retrieval':
         from utils.retrieval_classifier import get_retrieval_classifier
-        classifier = get_retrieval_classifier(config, llm_provider)
-        print(f"Using Retrieval-based ICL classifier")
+        eval_classifier = get_retrieval_classifier(config, llm_provider)
+        print(f"Evaluation Classifier: Retrieval-based ICL")
     else:
-        classifier = SimpleICLClassifier(config, llm_provider)
-        print(f"Using Static ICL classifier")
+        eval_classifier = SimpleICLClassifier(config, llm_provider)
+        print(f"Evaluation Classifier: Static ICL")
+    
+    # For backward compatibility, 'classifier' refers to eval_classifier
+    classifier = eval_classifier
     
     oracle = get_oracle(config)
     
@@ -741,9 +798,16 @@ def active_learning_loop(config: dict):
     
     baseline_timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     
-    # Train classifier on initial seed set
-    print(f"\n[Baseline] Training classifier on seed set...")
-    classifier.train(labeled_pool)
+    # At baseline, labeled_pool contains only seed set (all factuals, no CFs yet)
+    # So factuals_only_pool = labeled_pool at this point
+    factuals_only_pool = labeled_pool.copy()
+    
+    # Train both classifiers on seed set
+    print(f"\n[Baseline] Training classifiers on seed set...")
+    al_internal_classifier.train(factuals_only_pool)
+    print(f"  ✓ AL-Internal classifier trained on {len(factuals_only_pool)} factuals")
+    eval_classifier.train(labeled_pool)
+    print(f"  ✓ Evaluation classifier trained on {len(labeled_pool)} examples")
     
     # Save baseline training output
     baseline_step1_file = f"{interim_dir}/iter_00_{baseline_timestamp}_{model_safe}_step1_classifier_training.json"
@@ -753,22 +817,25 @@ def active_learning_loop(config: dict):
             'timestamp': baseline_timestamp,
             'step': 'classifier_training',
             'labeled_pool_size': len(labeled_pool),
-            'num_labels': len(classifier.labels),
-            'labels': list(classifier.labels),
+            'factuals_only_pool_size': len(factuals_only_pool),
+            'num_labels': len(eval_classifier.labels),
+            'labels': list(eval_classifier.labels),
             'labeled_examples': labeled_pool,
             'training_summary': {
                 'total_examples': len(labeled_pool),
+                'factuals_only': len(factuals_only_pool),
+                'counterfactuals': 0,  # No CFs at baseline
                 'labels_count': {label: len([ex for ex in labeled_pool if ex['label'] == label]) 
-                                for label in classifier.labels}
+                                for label in eval_classifier.labels}
             }
         }, f, indent=2)
     print(f"  ✓ Interim output saved: {baseline_step1_file}")
     
-    # Evaluate baseline
+    # Evaluate baseline using eval_classifier
     baseline_metrics = None
     if test_pool:
         print(f"\n[Baseline] Evaluating on test set...")
-        baseline_metrics = evaluate_classifier(classifier, test_pool, config)
+        baseline_metrics = evaluate_classifier(eval_classifier, test_pool, config)
         
         print(f"  Accuracy: {baseline_metrics['accuracy']:.4f}")
         print(f"  F1 Macro: {baseline_metrics['f1_macro']:.4f}")
@@ -817,19 +884,37 @@ def active_learning_loop(config: dict):
     
     # Save baseline results
     query_strategy = al_config.get('query_strategy', 'uncertainty')
+    
+    # Get retrieval config for new columns
+    retrieval_config = eval_config.get('retrieval', {})
+    embedding_backend = retrieval_config.get('embedding_backend', 'N/A') if eval_config.get('classifier_type') == 'retrieval' else 'N/A'
+    cf_inclusion_strategy = retrieval_config.get('cf_inclusion_strategy', 'mixed') if eval_config.get('classifier_type') == 'retrieval' else 'N/A'
+    k_max = retrieval_config.get('total_k_max', 'N/A') if eval_config.get('classifier_type') == 'retrieval' else 'N/A'
+    target_label_strategy = al_config.get('counterfactuals', {}).get('target_label_selection', {}).get('strategy', 'N/A')
+    
+    # Count factuals and CFs in pool
+    total_factuals = len([ex for ex in labeled_pool if not is_counterfactual(ex)])
+    total_cfs = len([ex for ex in labeled_pool if is_counterfactual(ex)])
+    
     baseline_result = {
         'iteration': 0,
+        'budget_used': 0,  # New: cumulative budget consumed
         'classifier_type': eval_config.get('classifier_type', 'static'),
         'query_strategy': query_strategy,
         'uncertainty_method': al_config['uncertainty_method'] if query_strategy == 'uncertainty' else 'N/A',
+        'embedding_backend': embedding_backend,  # New
+        'cf_inclusion_strategy': cf_inclusion_strategy,  # New
+        'k_max': k_max,  # New
+        'target_label_strategy': target_label_strategy,  # New
         'labeled_pool_size': len(labeled_pool),
         'unlabeled_pool_size': len(unlabeled_pool),
-        'num_real_examples': 0,  # No new examples in baseline
-        'num_counterfactuals': 0,  # No CFs in baseline
-        'total_counterfactuals_so_far': 0,
+        'total_factuals': total_factuals,  # New
+        'total_cfs': total_cfs,  # New
+        'num_factuals_added': 0,  # Renamed from num_real_examples
+        'num_cfs_added': 0,  # Renamed from num_counterfactuals
+        'cf_pass_rate': None,  # New: will be calculated when CFs are generated
         'budget_remaining': budget,
-        'alpha_cf': alpha_cf,
-        'cf_budget_remaining': cf_budget_remaining if use_legacy_budget else None
+        'alpha_cf': alpha_cf
     }
     
     if baseline_metrics:
@@ -855,16 +940,30 @@ def active_learning_loop(config: dict):
             print(f"Labeled pool: {len(labeled_pool)} examples")
             print(f"Unlabeled pool: {len(unlabeled_pool)} examples")
             
-            # Step 1: Train classifier on current labeled pool
-            print(f"\n[Step 1/6] Training classifier...")
-            classifier.train(labeled_pool)
+            # Step 1: Train classifiers on current labeled pool
+            print(f"\n[Step 1/6] Training classifiers...")
             
-            # Train V2 probe estimator (if using probe_entropy)
+            # Get factuals-only pool for AL-internal classifier (mentor directive)
+            if use_factuals_only:
+                factuals_only_pool = get_factuals_only_pool(labeled_pool)
+                print(f"  Factuals-only pool: {len(factuals_only_pool)} examples (excluding CFs)")
+            else:
+                factuals_only_pool = labeled_pool
+            
+            # Train AL-internal classifier on factuals-only (for uncertainty, CF filtering)
+            al_internal_classifier.train(factuals_only_pool)
+            print(f"  ✓ AL-Internal classifier trained on {len(factuals_only_pool)} factuals")
+            
+            # Train evaluation classifier on full pool (factuals + CFs)
+            eval_classifier.train(labeled_pool)
+            print(f"  ✓ Evaluation classifier trained on {len(labeled_pool)} examples (full pool)")
+            
+            # Train V2 probe estimator on factuals-only (if using probe_entropy)
             if probe_estimator is not None:
-                print(f"  Training V2 probe estimator on labeled pool...")
+                print(f"  Training V2 probe estimator on factuals-only pool...")
                 try:
-                    probe_estimator.train_probe(labeled_pool)
-                    print(f"  ✓ Probe trained on {len(labeled_pool)} examples")
+                    probe_estimator.train_probe(factuals_only_pool)
+                    print(f"  ✓ Probe trained on {len(factuals_only_pool)} factuals")
                 except Exception as e:
                     print(f"  ⚠️  Probe training failed: {e}")
                     print(f"     Falling back to LLM-based uncertainty for this iteration")
@@ -877,13 +976,17 @@ def active_learning_loop(config: dict):
                     'timestamp': timestamp,
                     'step': 'classifier_training',
                     'labeled_pool_size': len(labeled_pool),
-                    'num_labels': len(classifier.labels),
-                    'labels': list(classifier.labels),
-                    'labeled_examples': labeled_pool,  # Full labeled pool used for training
+                    'factuals_only_pool_size': len(factuals_only_pool),
+                    'num_labels': len(eval_classifier.labels),
+                    'labels': list(eval_classifier.labels),
+                    'labeled_examples': labeled_pool,  # Full labeled pool
+                    'factuals_only_examples': factuals_only_pool,  # Factuals only (for AL-internal)
                     'training_summary': {
                         'total_examples': len(labeled_pool),
+                        'factuals_only': len(factuals_only_pool),
+                        'counterfactuals': len(labeled_pool) - len(factuals_only_pool),
                         'labels_count': {label: len([ex for ex in labeled_pool if ex['label'] == label]) 
-                                        for label in classifier.labels}
+                                        for label in eval_classifier.labels}
                     }
                 }, f, indent=2)
             print(f"  ✓ Interim output saved: {step1_file}")
@@ -910,11 +1013,11 @@ def active_learning_loop(config: dict):
                 print(f"  Randomly selected {len(selected_indices)} examples")
                 
             elif query_strategy == "uncertainty":
-                # Uncertainty-based selection
+                # Uncertainty-based selection using AL-internal classifier (mentor directive)
                 # Pass probe_estimator for V2 probe_entropy method
                 selected_indices, uncertainty_details = select_uncertain_examples(
                     unlabeled_pool,
-                    classifier,
+                    al_internal_classifier,  # Use AL-internal classifier (static, factuals-only)
                     current_batch_size,
                     method=uncertainty_method,  # Use the actual method (may have been adjusted)
                     return_details=True,  # Get full logprobs and uncertainty data
@@ -1001,8 +1104,8 @@ def active_learning_loop(config: dict):
                     config,
                     llm_provider,
                     all_labels,
-                    labeled_pool,           # For diversity calculation
-                    classifier,             # For confidence scoring
+                    factuals_only_pool,     # Use factuals-only for diversity (mentor directive)
+                    al_internal_classifier, # Use AL-internal classifier for CF filtering (mentor directive)
                     alpha_cf=current_alpha_cf,  # Version 3: per-round budget multiplier
                     target_label_selector=target_label_selector,  # Version 3: target label selection
                     return_details=True     # Get full generation metadata and prompts
@@ -1114,17 +1217,26 @@ def active_learning_loop(config: dict):
             metrics = None
             if test_pool and (iteration % eval_config['eval_every_iterations'] == 0):
                 print(f"\n[Step 6/6] Evaluating on test set (after pool update)...")
-                # Re-train classifier on updated pool to ensure evaluation reflects current state
-                classifier.train(labeled_pool)
+                # Re-train evaluation classifier on full pool (factuals + CFs)
+                eval_classifier.train(labeled_pool)
+                print(f"  Evaluation classifier re-trained on {len(labeled_pool)} examples (full pool)")
                 
-                # Retrain V2 probe estimator on updated pool (if using probe_entropy)
+                # Also update AL-internal classifier for next iteration
+                if use_factuals_only:
+                    factuals_only_pool = get_factuals_only_pool(labeled_pool)
+                else:
+                    factuals_only_pool = labeled_pool
+                al_internal_classifier.train(factuals_only_pool)
+                
+                # Retrain V2 probe estimator on factuals-only (if using probe_entropy)
                 if probe_estimator is not None:
                     try:
-                        probe_estimator.train_probe(labeled_pool)
+                        probe_estimator.train_probe(factuals_only_pool)
                     except Exception as e:
                         print(f"  ⚠️  Probe retraining failed: {e}")
                 
-                metrics = evaluate_classifier(classifier, test_pool, config)
+                # Evaluate using eval_classifier (trained on full pool)
+                metrics = evaluate_classifier(eval_classifier, test_pool, config)
                 
                 print(f"  Accuracy: {metrics['accuracy']:.4f}")
                 print(f"  F1 Macro: {metrics['f1_macro']:.4f}")
@@ -1213,19 +1325,39 @@ def active_learning_loop(config: dict):
                 print(f"  ✓ Interim output saved: {step6_file}")
             
             # Save iteration results (metrics reflect pool state AFTER update)
+            # Count factuals and CFs in pool
+            total_factuals = len([ex for ex in labeled_pool if not is_counterfactual(ex)])
+            total_cfs = len([ex for ex in labeled_pool if is_counterfactual(ex)])
+            
+            # Calculate CF pass rate (generated vs accepted)
+            cf_pass_rate = None
+            if al_config['counterfactuals']['enabled'] and 'cf_generation_details' in dir():
+                try:
+                    generated = cf_generation_details.get('total_candidates_generated', 0)
+                    if generated > 0:
+                        cf_pass_rate = num_cfs_added / generated
+                except:
+                    pass
+            
             iter_result = {
                 'iteration': iteration,
+                'budget_used': al_config['total_budget'] - budget,  # New: cumulative budget consumed
                 'classifier_type': eval_config.get('classifier_type', 'static'),
                 'query_strategy': query_strategy,
                 'uncertainty_method': al_config['uncertainty_method'] if query_strategy == 'uncertainty' else 'N/A',
+                'embedding_backend': embedding_backend,  # New
+                'cf_inclusion_strategy': cf_inclusion_strategy,  # New
+                'k_max': k_max,  # New
+                'target_label_strategy': target_label_strategy,  # New
                 'labeled_pool_size': len(labeled_pool),
                 'unlabeled_pool_size': len(unlabeled_pool),
-                'num_real_examples': len(labeled_examples),
-                'num_counterfactuals': num_cfs_added,
-                'total_counterfactuals_so_far': len([ex for ex in labeled_pool if ex.get('original_id')]),
+                'total_factuals': total_factuals,  # New
+                'total_cfs': total_cfs,  # New
+                'num_factuals_added': len(labeled_examples),  # Renamed from num_real_examples
+                'num_cfs_added': num_cfs_added,  # Renamed from num_counterfactuals
+                'cf_pass_rate': cf_pass_rate,  # New
                 'budget_remaining': budget,
-                'alpha_cf': alpha_cf,
-                'cf_budget_remaining': cf_budget_remaining if use_legacy_budget else None
+                'alpha_cf': alpha_cf
             }
             
             if metrics:
@@ -1269,10 +1401,12 @@ def active_learning_loop(config: dict):
     print("Final Evaluation")
     print(f"{'='*80}")
     
-    classifier.train(labeled_pool)
+    # Train eval_classifier on final full pool for final evaluation
+    eval_classifier.train(labeled_pool)
+    print(f"Evaluation classifier trained on final pool: {len(labeled_pool)} examples")
     
     if test_pool:
-        final_metrics = evaluate_classifier(classifier, test_pool, config)
+        final_metrics = evaluate_classifier(eval_classifier, test_pool, config)
         
         print(f"\nFinal Results:")
         print(f"  Accuracy: {final_metrics['accuracy']:.4f}")
@@ -1284,7 +1418,7 @@ def active_learning_loop(config: dict):
         # Get detailed classification report
         texts = [ex['text'] for ex in test_pool]
         true_labels = [ex['label'] for ex in test_pool]
-        predictions = classifier.predict_batch(texts)
+        predictions = eval_classifier.predict_batch(texts)
         
         print(f"\nClassification Report:")
         print(classification_report(true_labels, predictions, zero_division=0))
@@ -1305,19 +1439,30 @@ def active_learning_loop(config: dict):
         if should_add_final:
             # Add final evaluation as a separate result entry
             final_timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            
+            # Count factuals and CFs in final pool
+            final_total_factuals = len([ex for ex in labeled_pool if not is_counterfactual(ex)])
+            final_total_cfs = len([ex for ex in labeled_pool if is_counterfactual(ex)])
+            
             final_result = {
                 'iteration': iteration + 1,  # Next iteration number (or same if loop ended naturally)
+                'budget_used': al_config['total_budget'] - budget,  # New
                 'classifier_type': eval_config.get('classifier_type', 'static'),
                 'query_strategy': query_strategy,
                 'uncertainty_method': al_config['uncertainty_method'] if query_strategy == 'uncertainty' else 'N/A',
+                'embedding_backend': embedding_backend,  # New
+                'cf_inclusion_strategy': cf_inclusion_strategy,  # New
+                'k_max': k_max,  # New
+                'target_label_strategy': target_label_strategy,  # New
                 'labeled_pool_size': len(labeled_pool),
                 'unlabeled_pool_size': len(unlabeled_pool),
-                'num_real_examples': 0,  # No new examples in final evaluation
-                'num_counterfactuals': 0,  # No new CFs in final evaluation
-                'total_counterfactuals_so_far': len([ex for ex in labeled_pool if ex.get('original_id')]),
+                'total_factuals': final_total_factuals,  # New
+                'total_cfs': final_total_cfs,  # New
+                'num_factuals_added': 0,  # No new examples in final evaluation
+                'num_cfs_added': 0,  # No new CFs in final evaluation
+                'cf_pass_rate': None,  # New
                 'budget_remaining': budget,
-                'alpha_cf': alpha_cf,
-                'cf_budget_remaining': cf_budget_remaining if use_legacy_budget else None
+                'alpha_cf': alpha_cf
             }
             final_result.update(final_metrics)
             results.append(final_result)
@@ -1359,6 +1504,64 @@ def active_learning_loop(config: dict):
     print(f"Total examples labeled: {al_config['total_budget'] - budget}")
     print(f"Final labeled pool size: {len(labeled_pool)}")
     print(f"  (including {sum(1 for ex in labeled_pool if 'original_id' in ex)} counterfactuals)")
+    
+    # Return run_dir for post-hoc evaluation
+    return run_dir
+
+
+def run_post_hoc_evaluation(config: dict, run_folder: str):
+    """
+    Run post-hoc retrieval comparison on completed AL run.
+    
+    Args:
+        config: Configuration dictionary
+        run_folder: Path to the completed AL run folder
+    """
+    post_hoc_config = config.get('post_hoc_evaluation', {})
+    
+    if not post_hoc_config.get('enabled', False):
+        print("\n⏭️  Post-hoc evaluation disabled in config")
+        return
+    
+    print(f"\n{'='*80}")
+    print("Starting Post-hoc Retrieval Comparison")
+    print(f"{'='*80}")
+    
+    # Import the evaluation function
+    try:
+        from evaluate_retrievers import run_evaluation
+    except ImportError as e:
+        print(f"⚠️  Could not import evaluate_retrievers: {e}")
+        print("   Skipping post-hoc evaluation")
+        return
+    
+    # Get evaluation parameters from config
+    retrievers = post_hoc_config.get('retrievers', ['bm25', 'contriever', 'bge_large'])
+    cf_strategies = post_hoc_config.get('cf_strategies', ['mixed', 'factual_anchored'])
+    k_values = post_hoc_config.get('k_values', [20])
+    use_checkpoints = post_hoc_config.get('use_checkpoints', True)
+    include_static = post_hoc_config.get('include_static', False)
+    
+    print(f"Retrievers: {retrievers}")
+    print(f"CF strategies: {cf_strategies}")
+    print(f"K values: {k_values}")
+    print(f"Use checkpoints: {use_checkpoints}")
+    print(f"Include Static ICL: {include_static}")
+    
+    try:
+        run_evaluation(
+            run_folder=run_folder,
+            retrievers=retrievers,
+            cf_strategies=cf_strategies,
+            k_values=k_values,
+            use_checkpoints=use_checkpoints,
+            include_static=include_static
+        )
+        print(f"\n✅ Post-hoc evaluation complete!")
+    except Exception as e:
+        print(f"\n❌ Post-hoc evaluation failed: {e}")
+        import traceback
+        traceback.print_exc()
 
 
 def main():
@@ -1368,7 +1571,11 @@ def main():
     ensure_directories(config)
     
     # Run active learning loop (creates run-specific directories)
-    active_learning_loop(config)
+    run_folder = active_learning_loop(config)
+    
+    # Run post-hoc retrieval comparison if enabled
+    if run_folder:
+        run_post_hoc_evaluation(config, run_folder)
 
 
 if __name__ == "__main__":
