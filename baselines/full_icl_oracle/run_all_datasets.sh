@@ -11,11 +11,8 @@ source ../../.venv/bin/activate
 # Datasets to process
 # Format: "train_file:test_file:dataset_name:status"
 DATASETS=(
-    "amazon_polarity_train.csv:amazon_polarity_test.csv:amazon_polarity:done"
-    "anli_train.csv:anli_test.csv:anli:pending"
-    "sa_cad_train.csv:sa_cad_test.csv:sa_cad:pending"
-    "yelp_train.csv:yelp_test.csv:yelp:pending"
-    "nli_cad_train.csv:nli_cad_test.csv:nli_cad:pending"
+    "ag_news_train.csv:ag_news_test.csv:ag_news:pending"
+    "dbpedia_train.csv:dbpedia_test.csv:dbpedia:pending"
 )
 
 echo "================================================================================"
