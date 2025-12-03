@@ -1,0 +1,1243 @@
+{
+  "iteration": 9,
+  "timestamp": "20251202_161556",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 146,
+      "text": "Premise: Kasyanov was sacked by Putin in February 2004, after he had become critical of the Kremlin's politically motivated legal attack on the Yukos oil giant and its owner, billionaire Mikhail Khodorkovsky.\nHypothesis: The Kremlin is a name for Russia's central government.",
+      "label": "neutral"
+    },
+    {
+      "id": 255,
+      "text": "Premise: Kilham is a village and civil parish in the East Riding of Yorkshire, England. It is situated about 5 mi north-east of Driffield town centre. According to the 2011 UK census, Kilham parish had a population of 1,088, an increase on the 2001 UK census figure of 1,010.\nHypothesis: Many people moved to Kilham between 2001 and 2011.",
+      "label": "neutral"
+    },
+    {
+      "id": 267,
+      "text": "Premise: I must say, not having had the courtesy to be informed of the content of the motion, and having presented the House with a request twice today and having been refused twice by the government, the Progressive Conservatives and the separatists, I find it totally irresponsible at this time of the night that the government plays this little dumb game with the House of Commons.\nHypothesis: The speaker presented the house with a request more than 3 times that day.",
+      "label": "contradiction"
+    },
+    {
+      "id": 228,
+      "text": "Premise: Jessica Hamby is a fictional character in the \"True Blood\" series, portrayed by Deborah Ann Woll. In the series, which chronicles the life of human waitress Sookie Stackhouse and her friends after vampires make themselves known to humans, Jessica is a newly turned vampire who must learn to deal with her vampiric abilities, weaknesses and altered lifestyle.\nHypothesis: Sookie Stackhouse is a vampire.",
+      "label": "contradiction"
+    },
+    {
+      "id": 190,
+      "text": "Premise: Salvatore Mineo, Jr. (January 10, 1939February 12, 1976), was an American film and theatre actor, known for his performance as John \"Plato\" Crawford opposite James Dean in the film \"Rebel Without a Cause\" (1955). He was twice nominated for the Academy Award for Best Supporting Actor, for his roles in \"Rebel Without a Cause\" and \"Exodus\" (1960).\nHypothesis: Salvatore Mineo is a good actor.",
+      "label": "neutral"
+    },
+    {
+      "id": 281,
+      "text": "Premise: Curt McCune (born August 2, 1960), from Homewood (Birmingham), Alabama, is a former amateur boxer and 4-time State of Alabama amateur boxing champion, and was the 1994 International Law Enforcement Games Boxing Champion at 193\u00a0lbs. McCune is a current private coach and trainer for amateur and professional boxers.\nHypothesis: Curt McCune is a well respected coach and trainer in the boxing community. ",
+      "label": "neutral"
+    },
+    {
+      "id": 217,
+      "text": "Premise: The Overwatch World Cup 2017 is an \"Overwatch\" eSports tournament, organized by Blizzard Entertainment, the game's developer. It features 32 represented nations from around the world, with the final tournament taking place at the Anaheim Convention Center from November 3-4, 2017.\nHypothesis: The Overwatch World Cup always takes place at the Anaheim Convention Center from November 3-4",
+      "label": "neutral"
+    },
+    {
+      "id": 331,
+      "text": "Premise: The land claims agreement must still be approved by the Canadian House of Commons , but has already passed through the House of Assembly of Newfoundland and Labrador.\nHypothesis: Labrador named the land Nunatsiavut",
+      "label": "neutral"
+    },
+    {
+      "id": 27,
+      "text": "Premise: How to leg yield<br>Know that the secret to leg-yielding is in timing. In order to really get a feel for it, it is necessary to begin without being mounted. Have an assistant in the ring that can have her hands free.\nHypothesis: Leg-yielding is best done with an assistant present.",
+      "label": "entailment"
+    },
+    {
+      "id": 93,
+      "text": "Premise: YouTube user Streetcap1 posted a series of pictures taken from Chinese lunar rover Change\u2019e 3. It appears to have a distinguishable face as well as a body and limbs, while lying in front of a rock. After posting the clip to YouTube, Streetcap1 said: \u201cAll body parts are in the correct place here and the head looks like it is wearing a helmet with a visor. \u201cYou can see what look like hands at the sides.\nHypothesis: Change\u2019e 3 did not post clips to Youtube.",
+      "label": "entailment"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "146_cf_entailment_1",
+      "text": "Premise: Kasyanov was sacked by Putin in February 2004, after he had become critical of the Kremlin's politically motivated legal attack on the Yukos oil giant and its owner, billionaire Mikhail Khodorkovsky.  \nHypothesis: The Kremlin refers to Russia's central government, which orchestrated the actions against Yukos.",
+      "label": "entailment",
+      "original_id": 146,
+      "original_label": "neutral",
+      "v3_score": 1.4999992434199623,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.999999495647515,
+        "term2": 0.4999997477724474,
+        "term3": 0.0,
+        "total": 1.4999992434199623,
+        "p_orig": 5.043524850525034e-07,
+        "p_target": 0.9999994955448948,
+        "similarity": 0.978827953338623
+      }
+    },
+    {
+      "id": "27_cf_contradiction_1",
+      "text": "Premise: How to leg yield  \nKnow that the secret to leg-yielding is in timing. In order to really get a feel for it, it is necessary to begin without being mounted. Have an assistant in the ring that can have her hands free.  \nHypothesis: Leg-yielding is best learned without relying on an assistant.",
+      "label": "contradiction",
+      "original_id": 27,
+      "original_label": "entailment",
+      "v3_score": 1.4999454963992007,
+      "v3_rank": 2,
+      "v3_score_breakdown": {
+        "term1": 0.9999999634687605,
+        "term2": 0.4999455329304403,
+        "term3": 0.0,
+        "total": 1.4999454963992007,
+        "p_orig": 3.653123945515206e-08,
+        "p_target": 0.9998910658608806,
+        "similarity": 0.9673280119895935
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "146_cf_entailment_1",
+    "27_cf_contradiction_1"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 2,
+    "num_added": 2,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "Premise: Kasyanov was sacked by Putin in February 2004, after he had become critical of the Kremlin's politically motivated legal attack on the Yukos oil giant and its owner, billionaire Mikhail Khodorkovsky.\nHypothesis: The Kremlin is a name for Russia's central government.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Kasyanov was sacked by Putin in February 2004, after he had become critical of the Kremlin's politically motivated legal attack on the Yukos oil giant and its owner, billionaire Mikhail Khodorkovsky.  \nHypothesis: The Kremlin refers to Russia's central government.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8997976779937744,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Kasyanov was sacked by Putin in February 2004, after he had become critical of the Kremlin's politically motivated legal attack on the Yukos oil giant and its owner, billionaire Mikhail Khodorkovsky.\nHypothesis: The Kremlin is a name for Russia's central government.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Kasyanov was sacked by Putin in February 2004, after he had become critical of the Kremlin's politically motivated legal attack on the Yukos oil giant and its owner, billionaire Mikhail Khodorkovsky.  \nHypothesis: The Kremlin refers to Russia's central government, which orchestrated the actions against Yukos.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.1143949031829834,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Kasyanov was sacked by Putin in February 2004, after he had become critical of the Kremlin's politically motivated legal attack on the Yukos oil giant and its owner, billionaire Mikhail Khodorkovsky.\nHypothesis: The Kremlin is a name for Russia's central government.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Kasyanov was sacked by Putin in February 2004, after he had become critical of the Kremlin's politically motivated legal attack on the Yukos oil giant and its owner, billionaire Mikhail Khodorkovsky.  \nHypothesis: The Kremlin refers to Russia's central government.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9467580318450928,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Kilham is a village and civil parish in the East Riding of Yorkshire, England. It is situated about 5 mi north-east of Driffield town centre. According to the 2011 UK census, Kilham parish had a population of 1,088, an increase on the 2001 UK census figure of 1,010.\nHypothesis: Many people moved to Kilham between 2001 and 2011.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Kilham is a village and civil parish in the East Riding of Yorkshire, England. It is situated about 5 mi north-east of Driffield town centre. According to the 2011 UK census, Kilham parish had a population of 1,088, an increase on the 2001 UK census figure of 1,010.  \nHypothesis: The population growth between 2001 and 2011 indicates that many people moved to Kilham during that time.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1276140213012695,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Kilham is a village and civil parish in the East Riding of Yorkshire, England. It is situated about 5 mi north-east of Driffield town centre. According to the 2011 UK census, Kilham parish had a population of 1,088, an increase on the 2001 UK census figure of 1,010.\nHypothesis: Many people moved to Kilham between 2001 and 2011.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Kilham is a village and civil parish in the East Riding of Yorkshire, England. It is situated about 5 mi north-east of Driffield town centre. According to the 2011 UK census, Kilham parish had a population of 1,088, an increase on the 2001 UK census figure of 1,010.  \nHypothesis: The increase in population between 2001 and 2011 indicates that many people moved to Kilham during that time.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.2368519306182861,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Kilham is a village and civil parish in the East Riding of Yorkshire, England. It is situated about 5 mi north-east of Driffield town centre. According to the 2011 UK census, Kilham parish had a population of 1,088, an increase on the 2001 UK census figure of 1,010.\nHypothesis: Many people moved to Kilham between 2001 and 2011.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Kilham is a village and civil parish in the East Riding of Yorkshire, England. It is situated about 5 mi north-east of Driffield town centre. According to the 2011 UK census, Kilham parish had a population of 1,088, an increase on the 2001 UK census figure of 1,010.  \nHypothesis: The population increase between 2001 and 2011 indicates that many people moved to Kilham during this period.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.412001132965088,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: I must say, not having had the courtesy to be informed of the content of the motion, and having presented the House with a request twice today and having been refused twice by the government, the Progressive Conservatives and the separatists, I find it totally irresponsible at this time of the night that the government plays this little dumb game with the House of Commons.\nHypothesis: The speaker presented the house with a request more than 3 times that day.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: I must say, not having had the courtesy to be informed of the content of the motion, and having presented the House with a request twice today and having been refused twice by the government, the Progressive Conservatives and the separatists, I find it totally irresponsible at this time of the night that the government plays this little dumb game with the House of Commons.  \nHypothesis: The speaker presented the house with a request multiple times that day.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0024728775024414,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: I must say, not having had the courtesy to be informed of the content of the motion, and having presented the House with a request twice today and having been refused twice by the government, the Progressive Conservatives and the separatists, I find it totally irresponsible at this time of the night that the government plays this little dumb game with the House of Commons.\nHypothesis: The speaker presented the house with a request more than 3 times that day.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: I must say, not having had the courtesy to be informed of the content of the motion, and having presented the House with a request twice today and having been refused twice by the government, the Progressive Conservatives and the separatists, I note the actions taken by the government at this time of the night regarding the House of Commons.  \nHypothesis: The speaker presented the house with a request twice that day.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.25673508644104,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: I must say, not having had the courtesy to be informed of the content of the motion, and having presented the House with a request twice today and having been refused twice by the government, the Progressive Conservatives and the separatists, I find it totally irresponsible at this time of the night that the government plays this little dumb game with the House of Commons.\nHypothesis: The speaker presented the house with a request more than 3 times that day.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: I must say, not having had the courtesy to be informed of the content of the motion, and having presented the House with a request twice today and having been refused twice by the government, the Progressive Conservatives and the separatists, I find it concerning at this time of the night that the government engages in this approach with the House of Commons.  \nHypothesis: The speaker presented the house with a request more than 3 times that day.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.1367342472076416,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Jessica Hamby is a fictional character in the \"True Blood\" series, portrayed by Deborah Ann Woll. In the series, which chronicles the life of human waitress Sookie Stackhouse and her friends after vampires make themselves known to humans, Jessica is a newly turned vampire who must learn to deal with her vampiric abilities, weaknesses and altered lifestyle.\nHypothesis: Sookie Stackhouse is a vampire.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Jessica Hamby is a fictional character in the \"True Blood\" series, portrayed by Deborah Ann Woll. In the series, which chronicles the life of human waitress Sookie Stackhouse and her friends after vampires make themselves known to humans, Jessica is a newly turned vampire who must learn to deal with her vampiric abilities, weaknesses and altered lifestyle.  \nHypothesis: Sookie Stackhouse becomes a vampire.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2251739501953125,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Jessica Hamby is a fictional character in the \"True Blood\" series, portrayed by Deborah Ann Woll. In the series, which chronicles the life of human waitress Sookie Stackhouse and her friends after vampires make themselves known to humans, Jessica is a newly turned vampire who must learn to deal with her vampiric abilities, weaknesses and altered lifestyle.\nHypothesis: Sookie Stackhouse is a vampire.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Jessica Hamby is a fictional character in the \"True Blood\" series, portrayed by Deborah Ann Woll. In the series, which chronicles the life of vampire waitress Sookie Stackhouse and her friends after vampires make themselves known to humans, Jessica is a newly turned vampire who must learn to deal with her vampiric abilities, weaknesses and altered lifestyle.  \nHypothesis: Sookie Stackhouse is a vampire.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.1650869846343994,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Jessica Hamby is a fictional character in the \"True Blood\" series, portrayed by Deborah Ann Woll. In the series, which chronicles the life of human waitress Sookie Stackhouse and her friends after vampires make themselves known to humans, Jessica is a newly turned vampire who must learn to deal with her vampiric abilities, weaknesses and altered lifestyle.\nHypothesis: Sookie Stackhouse is a vampire.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Jessica Hamby is a fictional character in the \"True Blood\" series, portrayed by Deborah Ann Woll. In the series, which chronicles the life of vampire Sookie Stackhouse and her friends after vampires make themselves known to humans, Jessica is a newly turned vampire who must learn to deal with her vampiric abilities, weaknesses, and altered lifestyle.  \nHypothesis: Sookie Stackhouse is a vampire.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 2.835042953491211,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Salvatore Mineo, Jr. (January 10, 1939February 12, 1976), was an American film and theatre actor, known for his performance as John \"Plato\" Crawford opposite James Dean in the film \"Rebel Without a Cause\" (1955). He was twice nominated for the Academy Award for Best Supporting Actor, for his roles in \"Rebel Without a Cause\" and \"Exodus\" (1960).\nHypothesis: Salvatore Mineo is a good actor.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Salvatore Mineo, Jr. (January 10, 1939February 12, 1976), was an American film and theatre actor, known for his performance as John \"Plato\" Crawford opposite James Dean in the film \"Rebel Without a Cause\" (1955). He was twice nominated for the Academy Award for Best Supporting Actor, for his roles in \"Rebel Without a Cause\" and \"Exodus\" (1960).  \nHypothesis: Salvatore Mineo is not a good actor.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.9511079788208008,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Salvatore Mineo, Jr. (January 10, 1939February 12, 1976), was an American film and theatre actor, known for his performance as John \"Plato\" Crawford opposite James Dean in the film \"Rebel Without a Cause\" (1955). He was twice nominated for the Academy Award for Best Supporting Actor, for his roles in \"Rebel Without a Cause\" and \"Exodus\" (1960).\nHypothesis: Salvatore Mineo is a good actor.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Salvatore Mineo, Jr. (January 10, 1939February 12, 1976), was an American film and theatre actor, known for his performance as John \"Plato\" Crawford opposite James Dean in the film \"Rebel Without a Cause\" (1955). He was twice nominated for the Academy Award for Best Supporting Actor, for his roles in \"Rebel Without a Cause\" and \"Exodus\" (1960).  \nHypothesis: Salvatore Mineo is not a good actor.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.3411319255828857,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Salvatore Mineo, Jr. (January 10, 1939February 12, 1976), was an American film and theatre actor, known for his performance as John \"Plato\" Crawford opposite James Dean in the film \"Rebel Without a Cause\" (1955). He was twice nominated for the Academy Award for Best Supporting Actor, for his roles in \"Rebel Without a Cause\" and \"Exodus\" (1960).\nHypothesis: Salvatore Mineo is a good actor.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Salvatore Mineo, Jr. (January 10, 1939February 12, 1976), was an American film and theatre actor, known for his performance as John \"Plato\" Crawford opposite James Dean in the film \"Rebel Without a Cause\" (1955). He was twice nominated for the Academy Award for Best Supporting Actor, for his roles in \"Rebel Without a Cause\" and \"Exodus\" (1960).  \nHypothesis: Salvatore Mineo is not a good actor.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.1817841529846191,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Curt McCune (born August 2, 1960), from Homewood (Birmingham), Alabama, is a former amateur boxer and 4-time State of Alabama amateur boxing champion, and was the 1994 International Law Enforcement Games Boxing Champion at 193\u00a0lbs. McCune is a current private coach and trainer for amateur and professional boxers.\nHypothesis: Curt McCune is a well respected coach and trainer in the boxing community. ",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Curt McCune (born August 2, 1960), from Homewood (Birmingham), Alabama, is a former amateur boxer and 4-time State of Alabama amateur boxing champion, and was the 1994 International Law Enforcement Games Boxing Champion at 193 lbs. McCune is a current private coach and trainer for amateur and professional boxers.  \nHypothesis: Curt McCune is not a respected coach or trainer in the boxing community.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9516952037811279,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Curt McCune (born August 2, 1960), from Homewood (Birmingham), Alabama, is a former amateur boxer and 4-time State of Alabama amateur boxing champion, and was the 1994 International Law Enforcement Games Boxing Champion at 193\u00a0lbs. McCune is a current private coach and trainer for amateur and professional boxers.\nHypothesis: Curt McCune is a well respected coach and trainer in the boxing community. ",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Curt McCune (born August 2, 1960), from Homewood (Birmingham), Alabama, is a former amateur boxer and 4-time State of Alabama amateur boxing champion, and was the 1994 International Law Enforcement Games Boxing Champion at 193 lbs. McCune is a current private coach and trainer for amateur and professional boxers.  \nHypothesis: Curt McCune is not regarded as a well respected coach and trainer in the boxing community.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.1440260410308838,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Curt McCune (born August 2, 1960), from Homewood (Birmingham), Alabama, is a former amateur boxer and 4-time State of Alabama amateur boxing champion, and was the 1994 International Law Enforcement Games Boxing Champion at 193\u00a0lbs. McCune is a current private coach and trainer for amateur and professional boxers.\nHypothesis: Curt McCune is a well respected coach and trainer in the boxing community. ",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Curt McCune (born August 2, 1960), from Homewood (Birmingham), Alabama, is a former amateur boxer and 4-time State of Alabama amateur boxing champion, and was the 1994 International Law Enforcement Games Boxing Champion at 193 lbs. McCune is a current private coach and trainer for amateur and professional boxers.  \nHypothesis: Curt McCune is not regarded as a well respected coach and trainer in the boxing community.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.5414319038391113,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Overwatch World Cup 2017 is an \"Overwatch\" eSports tournament, organized by Blizzard Entertainment, the game's developer. It features 32 represented nations from around the world, with the final tournament taking place at the Anaheim Convention Center from November 3-4, 2017.\nHypothesis: The Overwatch World Cup always takes place at the Anaheim Convention Center from November 3-4",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The Overwatch World Cup 2017 is an \"Overwatch\" eSports tournament, organized by Blizzard Entertainment, the game's developer. It features 32 represented nations from around the world, with the final tournament taking place at the Anaheim Convention Center from November 3-4, 2017.  \nHypothesis: The Overwatch World Cup never takes place at the Anaheim Convention Center from November 3-4.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0589492321014404,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Overwatch World Cup 2017 is an \"Overwatch\" eSports tournament, organized by Blizzard Entertainment, the game's developer. It features 32 represented nations from around the world, with the final tournament taking place at the Anaheim Convention Center from November 3-4, 2017.\nHypothesis: The Overwatch World Cup always takes place at the Anaheim Convention Center from November 3-4",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The Overwatch World Cup 2017 is an \"Overwatch\" eSports tournament, organized by Blizzard Entertainment, the game's developer. It features 32 represented nations from around the world, with the final tournament taking place at the Anaheim Convention Center from November 3-4, 2017.  \nHypothesis: The Overwatch World Cup is never held at the Anaheim Convention Center from November 3-4.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.073686122894287,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Overwatch World Cup 2017 is an \"Overwatch\" eSports tournament, organized by Blizzard Entertainment, the game's developer. It features 32 represented nations from around the world, with the final tournament taking place at the Anaheim Convention Center from November 3-4, 2017.\nHypothesis: The Overwatch World Cup always takes place at the Anaheim Convention Center from November 3-4",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The Overwatch World Cup 2017 is an \"Overwatch\" eSports tournament, organized by Blizzard Entertainment, the game's developer. It features 32 represented nations from around the world, with the final tournament taking place at the Anaheim Convention Center from November 3-4, 2017.  \nHypothesis: The Overwatch World Cup never takes place at the Anaheim Convention Center from November 3-4.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.0323882102966309,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The land claims agreement must still be approved by the Canadian House of Commons , but has already passed through the House of Assembly of Newfoundland and Labrador.\nHypothesis: Labrador named the land Nunatsiavut",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The land claims agreement must still be approved by the Canadian House of Commons, but has already passed through the House of Assembly of Newfoundland and Labrador.  \nHypothesis: Labrador did not name the land Nunatsiavut.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.4033987522125244,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The land claims agreement must still be approved by the Canadian House of Commons , but has already passed through the House of Assembly of Newfoundland and Labrador.\nHypothesis: Labrador named the land Nunatsiavut",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The land claims agreement must still be approved by the Canadian House of Commons, but has already passed through the House of Assembly of Newfoundland and Labrador.  \nHypothesis: Labrador was not named the land Nunatsiavut.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.2091341018676758,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The land claims agreement must still be approved by the Canadian House of Commons , but has already passed through the House of Assembly of Newfoundland and Labrador.\nHypothesis: Labrador named the land Nunatsiavut",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The land claims agreement must still be approved by the Canadian House of Commons, but has already passed through the House of Assembly of Newfoundland and Labrador.  \nHypothesis: Labrador was not named the land Nunatsiavut.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8880150318145752,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to leg yield<br>Know that the secret to leg-yielding is in timing. In order to really get a feel for it, it is necessary to begin without being mounted. Have an assistant in the ring that can have her hands free.\nHypothesis: Leg-yielding is best done with an assistant present.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to leg yield  \nKnow that the secret to leg-yielding is in timing. In order to really get a feel for it, it is necessary to begin without being mounted. Have an assistant in the ring that can have her hands free.  \nHypothesis: Leg-yielding is best done without an assistant present.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9121921062469482,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to leg yield<br>Know that the secret to leg-yielding is in timing. In order to really get a feel for it, it is necessary to begin without being mounted. Have an assistant in the ring that can have her hands free.\nHypothesis: Leg-yielding is best done with an assistant present.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to leg yield  \nKnow that the secret to leg-yielding is in timing. In order to really get a feel for it, it is necessary to begin without being mounted. Have an assistant in the ring that can have her hands free.  \nHypothesis: Leg-yielding is best learned without relying on an assistant.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.0830838680267334,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to leg yield<br>Know that the secret to leg-yielding is in timing. In order to really get a feel for it, it is necessary to begin without being mounted. Have an assistant in the ring that can have her hands free.\nHypothesis: Leg-yielding is best done with an assistant present.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to leg yield  \nKnow that the secret to leg-yielding is in timing. In order to really get a feel for it, it is necessary to begin without being mounted. Have an assistant in the ring that can have her hands free.  \nHypothesis: Leg-yielding is best done without an assistant present.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.1837167739868164,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: YouTube user Streetcap1 posted a series of pictures taken from Chinese lunar rover Change\u2019e 3. It appears to have a distinguishable face as well as a body and limbs, while lying in front of a rock. After posting the clip to YouTube, Streetcap1 said: \u201cAll body parts are in the correct place here and the head looks like it is wearing a helmet with a visor. \u201cYou can see what look like hands at the sides.\nHypothesis: Change\u2019e 3 did not post clips to Youtube.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: YouTube user Streetcap1 posted a series of pictures taken from Chinese lunar rover Change\u2019e 3. It appears to have a distinguishable face as well as a body and limbs, while lying in front of a rock. After posting the clip to YouTube, Streetcap1 said: \u201cAll body parts are in the correct place here and the head looks like it is wearing a helmet with a visor. \u201cYou can see what look like hands at the sides.  \nHypothesis: There is no evidence that Change\u2019e 3 posted clips to YouTube.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.4167098999023438,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: YouTube user Streetcap1 posted a series of pictures taken from Chinese lunar rover Change\u2019e 3. It appears to have a distinguishable face as well as a body and limbs, while lying in front of a rock. After posting the clip to YouTube, Streetcap1 said: \u201cAll body parts are in the correct place here and the head looks like it is wearing a helmet with a visor. \u201cYou can see what look like hands at the sides.\nHypothesis: Change\u2019e 3 did not post clips to Youtube.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: YouTube user Streetcap1 posted a series of pictures taken from Chinese lunar rover Change\u2019e 3. It appears to have a distinguishable face as well as a body and limbs, while lying in front of a rock. After posting the clip to YouTube, Streetcap1 said: \u201cAll body parts are in the correct place here and the head looks like it is wearing a helmet with a visor. \u201cYou can see what look like hands at the sides.  \nHypothesis: There is no confirmation that Change\u2019e 3 posted clips to YouTube.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.2723088264465332,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: YouTube user Streetcap1 posted a series of pictures taken from Chinese lunar rover Change\u2019e 3. It appears to have a distinguishable face as well as a body and limbs, while lying in front of a rock. After posting the clip to YouTube, Streetcap1 said: \u201cAll body parts are in the correct place here and the head looks like it is wearing a helmet with a visor. \u201cYou can see what look like hands at the sides.\nHypothesis: Change\u2019e 3 did not post clips to Youtube.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: YouTube user Streetcap1 posted a series of pictures taken from Chinese lunar rover Change\u2019e 3. It appears to have a distinguishable face as well as a body and limbs, while lying in front of a rock. After posting the clip to YouTube, Streetcap1 said: \u201cAll body parts are in the correct place here and the head looks like it is wearing a helmet with a visor. \u201cYou can see what look like hands at the sides.  \nHypothesis: There is no direct evidence that Change\u2019e 3 itself posted clips to YouTube.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.4996731281280518,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "146_cf_entailment_0",
+        "original_id": 146,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.999996273295345,
+          "p_orig": 3.7266713391097544e-06,
+          "margin": 0.9999925466240059,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9881548285484314,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "146_cf_entailment_1",
+        "original_id": 146,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999996940324579,
+          "p_orig": 3.059052996939943e-07,
+          "margin": 0.9999993881271583,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.978827953338623,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.16,
+          "original_length": 275,
+          "cf_length": 319,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999992434199623,
+        "v3_score_details": {
+          "score": 1.4999992434199623,
+          "p_orig": 5.043524850525034e-07,
+          "p_target": 0.9999994955448948,
+          "similarity": 0.978827953338623,
+          "term1": 0.999999495647515,
+          "term2": 0.4999997477724474,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "146_cf_entailment_2",
+        "original_id": 146,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999997617523184,
+          "p_orig": 2.3823925794705991e-07,
+          "margin": 0.9999995235130604,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9881548285484314,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "255_cf_entailment_0",
+        "original_id": 255,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.5818003307737655e-10,
+          "p_orig": 0.9999999995618991,
+          "margin": -0.9999999992037191,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "255_cf_entailment_1",
+        "original_id": 255,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 5.905388405627127e-10,
+          "p_orig": 0.9999999993955729,
+          "margin": -0.9999999988050341,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "255_cf_entailment_2",
+        "original_id": 255,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.646608791452625e-09,
+          "p_orig": 0.9999999973049167,
+          "margin": -0.9999999946583079,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "267_cf_neutral_0",
+        "original_id": 267,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.7751962200211475e-11,
+          "p_orig": 1.081612735561317e-11,
+          "margin": 2.6935834844598305e-11,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "267_cf_neutral_1",
+        "original_id": 267,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.9172009673946836e-10,
+          "p_orig": 2.7895102440175183e-10,
+          "margin": -8.723092766228347e-11,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "267_cf_neutral_2",
+        "original_id": 267,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0009110556860546724,
+          "p_orig": 0.9990889427101584,
+          "margin": -0.9981778870241037,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "228_cf_entailment_0",
+        "original_id": 228,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 1.6052499179182398e-09,
+          "margin": -1.6052499179182398e-09,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "228_cf_entailment_1",
+        "original_id": 228,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.1389036786247685e-08,
+          "p_orig": 0.0002611917649483905,
+          "margin": -0.0002611503759116043,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "228_cf_entailment_2",
+        "original_id": 228,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0001584341810729984,
+          "p_orig": 1.892229156771386e-05,
+          "margin": 0.00013951188950528452,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "190_cf_contradiction_0",
+        "original_id": 190,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9046503979220969,
+          "p_orig": 0.09534960043235603,
+          "margin": 0.8093007974897408,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.999517023563385,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "190_cf_contradiction_1",
+        "original_id": 190,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.8175743336508539,
+          "p_orig": 0.18242566519094822,
+          "margin": 0.6351486684599057,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.999517023563385,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "190_cf_contradiction_2",
+        "original_id": 190,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9399132485522967,
+          "p_orig": 0.060086750818743165,
+          "margin": 0.8798264977335536,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.999517023563385,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "281_cf_contradiction_0",
+        "original_id": 281,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9770225755702581,
+          "p_orig": 0.022977424404391527,
+          "margin": 0.9540451511658665,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9993029236793518,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "281_cf_contradiction_1",
+        "original_id": 281,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.014063668542166527,
+          "p_orig": 0.9859363314578335,
+          "margin": -0.971872662915667,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "281_cf_contradiction_2",
+        "original_id": 281,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0373269665687146,
+          "p_orig": 0.9626730334312854,
+          "margin": -0.9253460668625708,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "217_cf_contradiction_0",
+        "original_id": 217,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999998755151,
+          "p_orig": 6.224244215165316e-11,
+          "margin": 0.9999999998132727,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9937990307807922,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "217_cf_contradiction_1",
+        "original_id": 217,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999980527341,
+          "p_orig": 9.736329948401549e-10,
+          "margin": 0.9999999970791011,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9880400896072388,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "217_cf_contradiction_2",
+        "original_id": 217,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.999999998483466,
+          "p_orig": 7.582669897495194e-10,
+          "margin": 0.999999997725199,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9937990307807922,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "331_cf_contradiction_0",
+        "original_id": 331,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.0677127089819842e-06,
+          "p_orig": 0.9999985856514633,
+          "margin": -0.9999975179387542,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "331_cf_contradiction_1",
+        "original_id": 331,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.2035607321212698e-06,
+          "p_orig": 0.9947786575730027,
+          "margin": -0.9947774540122706,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "331_cf_contradiction_2",
+        "original_id": 331,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.691007772911939e-08,
+          "p_orig": 0.9999545549255374,
+          "margin": -0.9999545080154597,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "27_cf_contradiction_0",
+        "original_id": 27,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999943486565,
+          "p_orig": 4.847447057169301e-11,
+          "margin": 0.999999994300182,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9833012819290161,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "27_cf_contradiction_1",
+        "original_id": 27,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999724602650955,
+          "p_orig": 3.850689553439905e-09,
+          "margin": 0.9999724564144059,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9673280119895935,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0344827586206897,
+          "original_length": 290,
+          "cf_length": 300,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999454963992007,
+        "v3_score_details": {
+          "score": 1.4999454963992007,
+          "p_orig": 3.653123945515206e-08,
+          "p_target": 0.9998910658608806,
+          "similarity": 0.9673280119895935,
+          "term1": 0.9999999634687605,
+          "term2": 0.4999455329304403,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "27_cf_contradiction_2",
+        "original_id": 27,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999981516121,
+          "p_orig": 2.940126261529919e-11,
+          "margin": 0.9999999981222109,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9833012819290161,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "93_cf_neutral_0",
+        "original_id": 93,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0006263176287495145,
+          "p_orig": 0.9993424997748539,
+          "margin": -0.9987161821461044,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "93_cf_neutral_1",
+        "original_id": 93,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.006386536168785e-05,
+          "p_orig": 0.9999573749326764,
+          "margin": -0.9999173110673147,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "93_cf_neutral_2",
+        "original_id": 93,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.8507932880224035e-09,
+          "p_orig": 0.9999999935025972,
+          "margin": -0.9999999896518039,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 2,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 2,
+    "num_final_selected": 2,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

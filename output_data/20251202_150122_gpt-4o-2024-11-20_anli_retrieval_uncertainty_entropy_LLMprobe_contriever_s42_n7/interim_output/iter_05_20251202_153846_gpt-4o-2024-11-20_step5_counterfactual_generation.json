@@ -1,0 +1,1299 @@
+{
+  "iteration": 5,
+  "timestamp": "20251202_153846",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 133,
+      "text": "Premise: Don't let up in fight against tax avoidance, Moscovici urges EU states VALLETTA, April 8 European Union states should continue reforming corporate rules to tackle tax avoidance, EU tax commissioner Pierre Moscovici told finance ministers on Saturday, as some smaller nations urged slower reform to avoid scaring away big corporations.\nHypothesis: Some smaller nations urged slower reform to avoid scaring away small-businesses.",
+      "label": "contradiction"
+    },
+    {
+      "id": 51,
+      "text": "Premise: BALTIMORE \u00e2\u20ac\u201d Authorities say a man has been fatally gunned down in a triple shooting near a Baltimore police station. Police spokesman T.J. Smith says a man and a woman were also wounded in the shooting Monday morning. Officers saw two men run away from the scene. Smith says officers chased after them, but the men managed to escape. Investigators believe the shooting was targeted, not random. Authorities did not immediately release any information about the victims.\nHypothesis: The men must have shot more than one person.",
+      "label": "entailment"
+    },
+    {
+      "id": 170,
+      "text": "Premise: The royal tombs at Vergina were identified as the ancient capital of Aigai in the 1930s. A royal tomb identified as possibly Philip II of Macedonia, Alexander the Great's father, was found in 1977 by Manolis Andronikos.\nHypothesis: Before 1977, Philip's II was considered lost",
+      "label": "neutral"
+    },
+    {
+      "id": 303,
+      "text": "Premise: \"Handsome and Wealthy\" is a song by American hip hop group Migos. It was released as a single on September 23, 2014 by Quality Control Entertainment and 300 Entertainment. The song was included on their mixtape \"No Label 2\" (2014) and was produced by Cheeze Beatz.\nHypothesis: Quality Control Entertainment was rightfully credited as being solely responsible for releasing \"Handsome and Wealthy\" in 2014.",
+      "label": "contradiction"
+    },
+    {
+      "id": 212,
+      "text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.\nHypothesis: The lines are pretty easy to distinguish ",
+      "label": "neutral"
+    },
+    {
+      "id": 342,
+      "text": "Premise: New party<br>Penelope wanted to have a party. She wanted to bring a lot of girls together. Unfortunately however there was a big fight. Penelope had to ask everyone to leave. She realized she couldn't have parties any more.\nHypothesis: Penelope  wanted to have a huge girls only party. It was going well until a couple of boys showed up and started fighting . She had to ask everyone to leave and decided to never host another party",
+      "label": "contradiction"
+    },
+    {
+      "id": 16,
+      "text": "Premise: The Maschinengewehr (Schwarzlose) M. 7, also known as the Schwarzlose MG, is a medium machine-gun, used as a standard issue firearm in the Austro-Hungarian Army throughout World War I. It was utilized by the Dutch, Greek and Hungarian armies during World War II. It was routinely issued to Italian colonial troops, alongside the Mannlicher M1895 rifle.\nHypothesis: The gun was used by the Greek army in World War 1.",
+      "label": "contradiction"
+    },
+    {
+      "id": 378,
+      "text": "Premise: Europe's economic environment has altered considerably over the last thirty years, and the economies of European countries have progressively opened up to the global economy. As a result, the competitiveness of the European economies is dependent not just on production costs, but also on the performance of pension and social security systems guaranteeing security for the future.\nHypothesis: Pension and social security systems are necessary.",
+      "label": "neutral"
+    },
+    {
+      "id": 60,
+      "text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.\nHypothesis: the agent is aged more than 0.3",
+      "label": "entailment"
+    },
+    {
+      "id": 264,
+      "text": "Premise: Lik\u00ebng\u00eb are pork sausages flavored with salt, pepper and seed of Fennel (far\u00eb mbrai), made in Piana degli Albanesi and Santa Cristina Gela. \"Lik\u00ebng\u00eb\" is the Undefinite Singular, \"Lik\u00ebnga\" is the Definite Singular and is cognate with the Italian Lucanica and the Greek Loukaniko.\nHypothesis:  Likenge are pork or beef sausages that are flavoured and made in Piana degli Albanosi.",
+      "label": "contradiction"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "60_cf_neutral_0",
+      "text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.  \nHypothesis: the agent's age is unrelated to 0.3.",
+      "label": "neutral",
+      "original_id": 60,
+      "original_label": "entailment",
+      "v3_score": 1.4999995703758993,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.9999999907624381,
+        "term2": 0.4999995796134611,
+        "term3": 0.0,
+        "total": 1.4999995703758993,
+        "p_orig": 9.237561938634717e-09,
+        "p_target": 0.9999991592269222,
+        "similarity": 0.9760445356369019
+      }
+    },
+    {
+      "id": "212_cf_entailment_1",
+      "text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.  \nHypothesis: The lines are easy to distinguish because they are thicker.",
+      "label": "entailment",
+      "original_id": 212,
+      "original_label": "neutral",
+      "v3_score": 1.4999993323207623,
+      "v3_rank": 2,
+      "v3_score_breakdown": {
+        "term1": 0.9999995549106956,
+        "term2": 0.4999997774100667,
+        "term3": 0.0,
+        "total": 1.4999993323207623,
+        "p_orig": 4.4508930439501375e-07,
+        "p_target": 0.9999995548201334,
+        "similarity": 0.9758038520812988
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "60_cf_neutral_0",
+    "212_cf_entailment_1"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 2,
+    "num_added": 2,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "Premise: Don't let up in fight against tax avoidance, Moscovici urges EU states VALLETTA, April 8 European Union states should continue reforming corporate rules to tackle tax avoidance, EU tax commissioner Pierre Moscovici told finance ministers on Saturday, as some smaller nations urged slower reform to avoid scaring away big corporations.\nHypothesis: Some smaller nations urged slower reform to avoid scaring away small-businesses.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Don't let up in fight against tax avoidance, Moscovici urges EU states VALLETTA, April 8 European Union states should continue reforming corporate rules to tackle tax avoidance, EU tax commissioner Pierre Moscovici told finance ministers on Saturday, as some smaller nations urged slower reform to avoid scaring away small-businesses.  \nHypothesis: Some smaller nations urged slower reform to avoid scaring away small-businesses.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2184090614318848,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Don't let up in fight against tax avoidance, Moscovici urges EU states VALLETTA, April 8 European Union states should continue reforming corporate rules to tackle tax avoidance, EU tax commissioner Pierre Moscovici told finance ministers on Saturday, as some smaller nations urged slower reform to avoid scaring away big corporations.\nHypothesis: Some smaller nations urged slower reform to avoid scaring away small-businesses.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Don't let up in fight against tax avoidance, Moscovici urges EU states VALLETTA, April 8 European Union states should continue reforming corporate rules to tackle tax avoidance, EU tax commissioner Pierre Moscovici told finance ministers on Saturday, as some smaller nations urged slower reform to avoid scaring away big corporations.  \nHypothesis: Some smaller nations urged slower reform to avoid scaring away businesses.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.2286527156829834,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Don't let up in fight against tax avoidance, Moscovici urges EU states VALLETTA, April 8 European Union states should continue reforming corporate rules to tackle tax avoidance, EU tax commissioner Pierre Moscovici told finance ministers on Saturday, as some smaller nations urged slower reform to avoid scaring away big corporations.\nHypothesis: Some smaller nations urged slower reform to avoid scaring away small-businesses.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Don't let up in fight against tax avoidance, Moscovici urges EU states VALLETTA, April 8 European Union states should continue reforming corporate rules to tackle tax avoidance, EU tax commissioner Pierre Moscovici told finance ministers on Saturday, as some smaller nations expressed concerns about reforms potentially impacting businesses, including small ones.  \nHypothesis: Some smaller nations urged slower reform to avoid scaring away small businesses.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.2209670543670654,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: BALTIMORE \u00e2\u20ac\u201d Authorities say a man has been fatally gunned down in a triple shooting near a Baltimore police station. Police spokesman T.J. Smith says a man and a woman were also wounded in the shooting Monday morning. Officers saw two men run away from the scene. Smith says officers chased after them, but the men managed to escape. Investigators believe the shooting was targeted, not random. Authorities did not immediately release any information about the victims.\nHypothesis: The men must have shot more than one person.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: BALTIMORE \u00e2\u20ac\u201d Authorities say a man has been fatally gunned down in a triple shooting near a Baltimore police station. Police spokesman T.J. Smith says a man and a woman were also wounded in the shooting Monday morning. Officers saw two men run away from the scene. Smith says officers chased after them, but the men managed to escape. Investigators believe the shooting was targeted, not random. Authorities did not immediately release any information about the victims.  \nHypothesis: The men could not have shot more than one person.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0915589332580566,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: BALTIMORE \u00e2\u20ac\u201d Authorities say a man has been fatally gunned down in a triple shooting near a Baltimore police station. Police spokesman T.J. Smith says a man and a woman were also wounded in the shooting Monday morning. Officers saw two men run away from the scene. Smith says officers chased after them, but the men managed to escape. Investigators believe the shooting was targeted, not random. Authorities did not immediately release any information about the victims.\nHypothesis: The men must have shot more than one person.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: BALTIMORE \u00e2\u20ac\u201d Authorities say a man has been fatally gunned down in a triple shooting near a Baltimore police station. Police spokesman T.J. Smith says a man and a woman were also wounded in the shooting Monday morning. Officers saw two men run away from the scene. Smith says officers chased after them, but the men managed to escape. Investigators believe the shooting was targeted, not random. Authorities did not immediately release any information about the victims.  \nHypothesis: The men could not have shot more than one person.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.181358814239502,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: BALTIMORE \u00e2\u20ac\u201d Authorities say a man has been fatally gunned down in a triple shooting near a Baltimore police station. Police spokesman T.J. Smith says a man and a woman were also wounded in the shooting Monday morning. Officers saw two men run away from the scene. Smith says officers chased after them, but the men managed to escape. Investigators believe the shooting was targeted, not random. Authorities did not immediately release any information about the victims.\nHypothesis: The men must have shot more than one person.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: BALTIMORE \u00e2\u20ac\u201d Authorities say a man has been fatally gunned down in a triple shooting near a Baltimore police station. Police spokesman T.J. Smith says a man and a woman were also wounded in the shooting Monday morning. Officers saw two men run away from the scene. Smith says officers chased after them, but the men managed to escape. Investigators believe the shooting was targeted, not random. Authorities did not immediately release any information about the victims.  \nHypothesis: The men could not have shot more than one person.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.171147108078003,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The royal tombs at Vergina were identified as the ancient capital of Aigai in the 1930s. A royal tomb identified as possibly Philip II of Macedonia, Alexander the Great's father, was found in 1977 by Manolis Andronikos.\nHypothesis: Before 1977, Philip's II was considered lost",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The royal tombs at Vergina were identified as the ancient capital of Aigai in the 1930s. A royal tomb identified as possibly Philip II of Macedonia, Alexander the Great's father, was found in 1977 by Manolis Andronikos.  \nHypothesis: Before the discovery in 1977, Philip II's tomb was believed to be lost.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0854358673095703,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The royal tombs at Vergina were identified as the ancient capital of Aigai in the 1930s. A royal tomb identified as possibly Philip II of Macedonia, Alexander the Great's father, was found in 1977 by Manolis Andronikos.\nHypothesis: Before 1977, Philip's II was considered lost",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The royal tombs at Vergina were identified as the ancient capital of Aigai in the 1930s. A royal tomb identified as possibly Philip II of Macedonia, Alexander the Great's father, was found in 1977 by Manolis Andronikos.  \nHypothesis: Before 1977, Philip II's tomb was believed to have been lost.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.102876901626587,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The royal tombs at Vergina were identified as the ancient capital of Aigai in the 1930s. A royal tomb identified as possibly Philip II of Macedonia, Alexander the Great's father, was found in 1977 by Manolis Andronikos.\nHypothesis: Before 1977, Philip's II was considered lost",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The royal tombs at Vergina were identified as the ancient capital of Aigai in the 1930s. A royal tomb identified as Philip II of Macedonia, Alexander the Great's father, was found in 1977 by Manolis Andronikos.  \nHypothesis: Before 1977, Philip II's tomb was considered lost.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.0578360557556152,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: \"Handsome and Wealthy\" is a song by American hip hop group Migos. It was released as a single on September 23, 2014 by Quality Control Entertainment and 300 Entertainment. The song was included on their mixtape \"No Label 2\" (2014) and was produced by Cheeze Beatz.\nHypothesis: Quality Control Entertainment was rightfully credited as being solely responsible for releasing \"Handsome and Wealthy\" in 2014.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: \"Handsome and Wealthy\" is a song by American hip hop group Migos. It was released as a single on September 23, 2014 by Quality Control Entertainment and 300 Entertainment. The song was included on their mixtape \"No Label 2\" (2014) and was produced by Cheeze Beatz.  \nHypothesis: Quality Control Entertainment was credited as being responsible for releasing \"Handsome and Wealthy\" in 2014.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.4026601314544678,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: \"Handsome and Wealthy\" is a song by American hip hop group Migos. It was released as a single on September 23, 2014 by Quality Control Entertainment and 300 Entertainment. The song was included on their mixtape \"No Label 2\" (2014) and was produced by Cheeze Beatz.\nHypothesis: Quality Control Entertainment was rightfully credited as being solely responsible for releasing \"Handsome and Wealthy\" in 2014.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: \"Handsome and Wealthy\" is a song by American hip hop group Migos. It was released as a single on September 23, 2014 by Quality Control Entertainment and 300 Entertainment. The song was included on their mixtape \"No Label 2\" (2014) and was produced by Cheeze Beatz.  \nHypothesis: Quality Control Entertainment was one of the entities involved in releasing \"Handsome and Wealthy\" in 2014.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.1665840148925781,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: \"Handsome and Wealthy\" is a song by American hip hop group Migos. It was released as a single on September 23, 2014 by Quality Control Entertainment and 300 Entertainment. The song was included on their mixtape \"No Label 2\" (2014) and was produced by Cheeze Beatz.\nHypothesis: Quality Control Entertainment was rightfully credited as being solely responsible for releasing \"Handsome and Wealthy\" in 2014.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: \"Handsome and Wealthy\" is a song by American hip hop group Migos. It was released as a single on September 23, 2014 by Quality Control Entertainment and 300 Entertainment. The song was included on their mixtape \"No Label 2\" (2014) and was produced by Cheeze Beatz.  \nHypothesis: Quality Control Entertainment was one of the entities credited for releasing \"Handsome and Wealthy\" in 2014.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.2010948657989502,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.\nHypothesis: The lines are pretty easy to distinguish ",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.  \nHypothesis: The lines are easy to distinguish and identify.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9440979957580566,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.\nHypothesis: The lines are pretty easy to distinguish ",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.  \nHypothesis: The lines are easy to distinguish because they are thicker.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.1444602012634277,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.\nHypothesis: The lines are pretty easy to distinguish ",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.  \nHypothesis: The lines are easy to distinguish based on their thickness.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.0322561264038086,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: New party<br>Penelope wanted to have a party. She wanted to bring a lot of girls together. Unfortunately however there was a big fight. Penelope had to ask everyone to leave. She realized she couldn't have parties any more.\nHypothesis: Penelope  wanted to have a huge girls only party. It was going well until a couple of boys showed up and started fighting . She had to ask everyone to leave and decided to never host another party",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: New party  \nPenelope wanted to have a party. She wanted to bring a lot of girls together. Unfortunately however there was a big fight. Penelope had to ask everyone to leave. She realized she couldn't have parties any more.  \nHypothesis: Penelope wanted to have a huge girls-only party. It was going well until a fight broke out among the guests. She had to ask everyone to leave and decided to never host another party.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0457148551940918,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: New party<br>Penelope wanted to have a party. She wanted to bring a lot of girls together. Unfortunately however there was a big fight. Penelope had to ask everyone to leave. She realized she couldn't have parties any more.\nHypothesis: Penelope  wanted to have a huge girls only party. It was going well until a couple of boys showed up and started fighting . She had to ask everyone to leave and decided to never host another party",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: New party  \nPenelope wanted to have a party. She wanted to bring a lot of girls together. Unfortunately however there was a big fight. Penelope had to ask everyone to leave. She realized she couldn't have parties any more.  \nHypothesis: Penelope wanted to have a huge girls-only party. It was going well until a fight broke out, leading her to ask everyone to leave and decide to never host another party.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.5576066970825195,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: New party<br>Penelope wanted to have a party. She wanted to bring a lot of girls together. Unfortunately however there was a big fight. Penelope had to ask everyone to leave. She realized she couldn't have parties any more.\nHypothesis: Penelope  wanted to have a huge girls only party. It was going well until a couple of boys showed up and started fighting . She had to ask everyone to leave and decided to never host another party",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: New party  \nPenelope wanted to have a party. She wanted to bring a lot of girls together. Unfortunately however there was a big fight. Penelope had to ask everyone to leave. She realized she couldn't have parties any more.  \nHypothesis: Penelope wanted to have a huge girls-only party. It was going well until a fight broke out. She had to ask everyone to leave and decided to never host another party.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.190613031387329,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Maschinengewehr (Schwarzlose) M. 7, also known as the Schwarzlose MG, is a medium machine-gun, used as a standard issue firearm in the Austro-Hungarian Army throughout World War I. It was utilized by the Dutch, Greek and Hungarian armies during World War II. It was routinely issued to Italian colonial troops, alongside the Mannlicher M1895 rifle.\nHypothesis: The gun was used by the Greek army in World War 1.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: The Maschinengewehr (Schwarzlose) M. 7, also known as the Schwarzlose MG, is a medium machine-gun, used as a standard issue firearm in the Austro-Hungarian Army throughout World War I. It was utilized by the Dutch, Greek and Hungarian armies during World War II. It was routinely issued to Italian colonial troops, alongside the Mannlicher M1895 rifle.  \nHypothesis: The gun may have been used by the Greek army in World War 1.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.3532862663269043,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Maschinengewehr (Schwarzlose) M. 7, also known as the Schwarzlose MG, is a medium machine-gun, used as a standard issue firearm in the Austro-Hungarian Army throughout World War I. It was utilized by the Dutch, Greek and Hungarian armies during World War II. It was routinely issued to Italian colonial troops, alongside the Mannlicher M1895 rifle.\nHypothesis: The gun was used by the Greek army in World War 1.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: The Maschinengewehr (Schwarzlose) M. 7, also known as the Schwarzlose MG, is a medium machine-gun, used as a standard issue firearm in the Austro-Hungarian Army throughout World War I. It was utilized by the Dutch, Greek and Hungarian armies during World War II. It was routinely issued to Italian colonial troops, alongside the Mannlicher M1895 rifle.  \nHypothesis: It is unclear if the gun was used by the Greek army in World War I.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.9295530319213867,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Maschinengewehr (Schwarzlose) M. 7, also known as the Schwarzlose MG, is a medium machine-gun, used as a standard issue firearm in the Austro-Hungarian Army throughout World War I. It was utilized by the Dutch, Greek and Hungarian armies during World War II. It was routinely issued to Italian colonial troops, alongside the Mannlicher M1895 rifle.\nHypothesis: The gun was used by the Greek army in World War 1.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: The Maschinengewehr (Schwarzlose) M. 7, also known as the Schwarzlose MG, is a medium machine-gun, used as a standard issue firearm in the Austro-Hungarian Army throughout World War I. It was utilized by the Dutch, Greek and Hungarian armies during World War II. It was routinely issued to Italian colonial troops, alongside the Mannlicher M1895 rifle.  \nHypothesis: It is unclear if the gun was used by the Greek army in World War I.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.3242638111114502,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Europe's economic environment has altered considerably over the last thirty years, and the economies of European countries have progressively opened up to the global economy. As a result, the competitiveness of the European economies is dependent not just on production costs, but also on the performance of pension and social security systems guaranteeing security for the future.\nHypothesis: Pension and social security systems are necessary.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Europe's economic environment has altered considerably over the last thirty years, and the economies of European countries have progressively opened up to the global economy. As a result, the competitiveness of the European economies is dependent not just on production costs, but also on the performance of pension and social security systems guaranteeing security for the future.  \nHypothesis: Pension and social security systems are essential.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1399850845336914,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Europe's economic environment has altered considerably over the last thirty years, and the economies of European countries have progressively opened up to the global economy. As a result, the competitiveness of the European economies is dependent not just on production costs, but also on the performance of pension and social security systems guaranteeing security for the future.\nHypothesis: Pension and social security systems are necessary.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Europe's economic environment has altered considerably over the last thirty years, and the economies of European countries have progressively opened up to the global economy. As a result, the competitiveness of the European economies is dependent not just on production costs, but also on the performance of pension and social security systems guaranteeing security for the future.  \nHypothesis: Pension and social security systems are essential.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9507279396057129,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Europe's economic environment has altered considerably over the last thirty years, and the economies of European countries have progressively opened up to the global economy. As a result, the competitiveness of the European economies is dependent not just on production costs, but also on the performance of pension and social security systems guaranteeing security for the future.\nHypothesis: Pension and social security systems are necessary.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Europe's economic environment has altered considerably over the last thirty years, and the economies of European countries have progressively opened up to the global economy. As a result, the competitiveness of the European economies is dependent not just on production costs, but also on the performance of pension and social security systems guaranteeing security for the future.  \nHypothesis: Pension and social security systems are essential.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.1050910949707031,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.\nHypothesis: the agent is aged more than 0.3",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.  \nHypothesis: the agent's age is unrelated to 0.3.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9269349575042725,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.\nHypothesis: the agent is aged more than 0.3",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.  \nHypothesis: the agent's age is not specified.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.0118389129638672,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.\nHypothesis: the agent is aged more than 0.3",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.  \nHypothesis: the agent's age is not specified.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9784481525421143,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Lik\u00ebng\u00eb are pork sausages flavored with salt, pepper and seed of Fennel (far\u00eb mbrai), made in Piana degli Albanesi and Santa Cristina Gela. \"Lik\u00ebng\u00eb\" is the Undefinite Singular, \"Lik\u00ebnga\" is the Definite Singular and is cognate with the Italian Lucanica and the Greek Loukaniko.\nHypothesis:  Likenge are pork or beef sausages that are flavoured and made in Piana degli Albanosi.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Lik\u00ebng\u00eb are pork sausages flavored with salt, pepper and seed of Fennel (far\u00eb mbrai), made in Piana degli Albanesi and Santa Cristina Gela. \"Lik\u00ebng\u00eb\" is the Undefinite Singular, \"Lik\u00ebnga\" is the Definite Singular and is cognate with the Italian Lucanica and the Greek Loukaniko.  \nHypothesis: Lik\u00ebng\u00eb are sausages that may contain pork or beef, flavored and made in Piana degli Albanesi.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.298110008239746,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Lik\u00ebng\u00eb are pork sausages flavored with salt, pepper and seed of Fennel (far\u00eb mbrai), made in Piana degli Albanesi and Santa Cristina Gela. \"Lik\u00ebng\u00eb\" is the Undefinite Singular, \"Lik\u00ebnga\" is the Definite Singular and is cognate with the Italian Lucanica and the Greek Loukaniko.\nHypothesis:  Likenge are pork or beef sausages that are flavoured and made in Piana degli Albanosi.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Lik\u00ebng\u00eb are pork sausages flavored with salt, pepper and seed of Fennel (far\u00eb mbrai), made in Piana degli Albanesi and Santa Cristina Gela. \"Lik\u00ebng\u00eb\" is the Undefinite Singular, \"Lik\u00ebnga\" is the Definite Singular and is cognate with the Italian Lucanica and the Greek Loukaniko.  \nHypothesis: Lik\u00ebng\u00eb are sausages that are flavored and made in Piana degli Albanesi.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.294236183166504,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Lik\u00ebng\u00eb are pork sausages flavored with salt, pepper and seed of Fennel (far\u00eb mbrai), made in Piana degli Albanesi and Santa Cristina Gela. \"Lik\u00ebng\u00eb\" is the Undefinite Singular, \"Lik\u00ebnga\" is the Definite Singular and is cognate with the Italian Lucanica and the Greek Loukaniko.\nHypothesis:  Likenge are pork or beef sausages that are flavoured and made in Piana degli Albanosi.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Lik\u00ebng\u00eb are pork sausages flavored with salt, pepper and seed of Fennel (far\u00eb mbrai), made in Piana degli Albanesi and Santa Cristina Gela. \"Lik\u00ebng\u00eb\" is the Undefinite Singular, \"Lik\u00ebnga\" is the Definite Singular and is cognate with the Italian Lucanica and the Greek Loukaniko.  \nHypothesis: Likenge are sausages that may be made with pork or beef, flavored and produced in Piana degli Albanesi.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.2809836864471436,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "133_cf_entailment_0",
+        "original_id": 133,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999999487978,
+          "p_orig": 4.27785739704036e-11,
+          "margin": 0.9999999999060193,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9969082474708557,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "133_cf_entailment_1",
+        "original_id": 133,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999997281873,
+          "p_orig": 1.026204037866814e-10,
+          "margin": 0.999999999625567,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9975921511650085,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "133_cf_entailment_2",
+        "original_id": 133,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999416991322496,
+          "p_orig": 9.237023414454582e-09,
+          "margin": 0.9999416898952262,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9917104244232178,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "51_cf_contradiction_0",
+        "original_id": 51,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9996646474730995,
+          "p_orig": 6.689435583728826e-10,
+          "margin": 0.9996646468041559,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9957945942878723,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "51_cf_contradiction_1",
+        "original_id": 51,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9997965701715458,
+          "p_orig": 1.6049224886280444e-09,
+          "margin": 0.9997965685666232,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9957945942878723,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "51_cf_contradiction_2",
+        "original_id": 51,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9997965701715458,
+          "p_orig": 1.6049224886280444e-09,
+          "margin": 0.9997965685666232,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9957945942878723,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "170_cf_entailment_0",
+        "original_id": 170,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9998766044822619,
+          "p_orig": 0.00012339527159518085,
+          "margin": 0.9997532092106667,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9880315065383911,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "170_cf_entailment_1",
+        "original_id": 170,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999974385934082,
+          "p_orig": 2.5613039717637934e-06,
+          "margin": 0.9999948772894364,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9923579692840576,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "170_cf_entailment_2",
+        "original_id": 170,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999997299967418,
+          "p_orig": 2.699604796915507e-07,
+          "margin": 0.9999994600362622,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.995133638381958,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "303_cf_neutral_0",
+        "original_id": 303,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.1628411952921195e-10,
+          "p_orig": 1.2256274576710962e-11,
+          "margin": 1.0402784495250098e-10,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "303_cf_neutral_1",
+        "original_id": 303,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.558212613300756e-12,
+          "p_orig": 1.558212613300756e-12,
+          "margin": 0.0,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "303_cf_neutral_2",
+        "original_id": 303,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 7.433808805662128e-12,
+          "p_orig": 7.433808805662128e-12,
+          "margin": 0.0,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "212_cf_entailment_0",
+        "original_id": 212,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0007096738412261625,
+          "p_orig": 0.9992902659650827,
+          "margin": -0.9985805921238566,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "212_cf_entailment_1",
+        "original_id": 212,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999989320406208,
+          "p_orig": 1.0677132061979203e-06,
+          "margin": 0.9999978643274147,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9758038520812988,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0784313725490196,
+          "original_length": 255,
+          "cf_length": 275,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999993323207623,
+        "v3_score_details": {
+          "score": 1.4999993323207623,
+          "p_orig": 4.4508930439501375e-07,
+          "p_target": 0.9999995548201334,
+          "similarity": 0.9758038520812988,
+          "term1": 0.9999995549106956,
+          "term2": 0.4999997774100667,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "212_cf_entailment_2",
+        "original_id": 212,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999980052092656,
+          "p_orig": 1.9947479558976463e-06,
+          "margin": 0.9999960104613097,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9883100986480713,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "342_cf_entailment_0",
+        "original_id": 342,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999986251791322,
+          "p_orig": 3.850788018545048e-09,
+          "margin": 0.9999986213283442,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9849498867988586,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "342_cf_entailment_1",
+        "original_id": 342,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999977145453455,
+          "p_orig": 2.5110210662386963e-08,
+          "margin": 0.9999976894351348,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9869524240493774,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "342_cf_entailment_2",
+        "original_id": 342,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999967030706918,
+          "p_orig": 8.152096573051973e-09,
+          "margin": 0.9999966949185952,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9878191351890564,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "16_cf_neutral_0",
+        "original_id": 16,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9997690470823362,
+          "p_orig": 2.753029525681644e-05,
+          "margin": 0.9997415167870793,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9996088743209839,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "16_cf_neutral_1",
+        "original_id": 16,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.785135663591673e-06,
+          "p_orig": 6.8256424426982e-08,
+          "margin": 4.7168792391646914e-06,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "16_cf_neutral_2",
+        "original_id": 16,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.785135663591673e-06,
+          "p_orig": 6.8256424426982e-08,
+          "margin": 4.7168792391646914e-06,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "378_cf_entailment_0",
+        "original_id": 378,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999990577406402,
+          "p_orig": 9.422535703459198e-07,
+          "margin": 0.9999981154870698,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.996461033821106,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "378_cf_entailment_1",
+        "original_id": 378,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999997617572306,
+          "p_orig": 2.382392579482302e-07,
+          "margin": 0.9999995235179726,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.996461033821106,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "378_cf_entailment_2",
+        "original_id": 378,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999982396407566,
+          "p_orig": 1.7603592433737846e-06,
+          "margin": 0.9999964792815133,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.996461033821106,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "60_cf_neutral_0",
+        "original_id": 60,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999724488765059,
+          "p_orig": 1.5229749280619852e-08,
+          "margin": 0.9999724336467567,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9760445356369019,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0402298850574712,
+          "original_length": 174,
+          "cf_length": 181,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999995703758993,
+        "v3_score_details": {
+          "score": 1.4999995703758993,
+          "p_orig": 9.237561938634717e-09,
+          "p_target": 0.9999991592269222,
+          "similarity": 0.9760445356369019,
+          "term1": 0.9999999907624381,
+          "term2": 0.4999995796134611,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "60_cf_neutral_1",
+        "original_id": 60,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.3823931474700576e-07,
+          "p_orig": 0.9999997617606853,
+          "margin": -0.9999995235213706,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "60_cf_neutral_2",
+        "original_id": 60,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.370969267917616e-06,
+          "p_orig": 0.9999986290307321,
+          "margin": -0.9999972580614642,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "264_cf_neutral_0",
+        "original_id": 264,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.994018740659607,
+          "p_orig": 0.0019189160596486561,
+          "margin": 0.9920998245999584,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9976913928985596,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "264_cf_neutral_1",
+        "original_id": 264,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 7.99208642776161e-11,
+          "p_orig": 7.052992110714769e-11,
+          "margin": 9.390943170468406e-12,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "264_cf_neutral_2",
+        "original_id": 264,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9859335107898319,
+          "p_orig": 0.014063627691782979,
+          "margin": 0.971869883098049,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9973070025444031,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 2,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 2,
+    "num_final_selected": 2,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

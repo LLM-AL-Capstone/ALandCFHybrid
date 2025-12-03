@@ -1,0 +1,1168 @@
+{
+  "iteration": 4,
+  "timestamp": "20251202_152949",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 15,
+      "text": "Premise: Smith (suspension) was released by the Raiders on Monday Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.\nHypothesis: It has been reported the Smith hit a member of his family either on Saturday or Sunday.",
+      "label": "neutral"
+    },
+    {
+      "id": 102,
+      "text": "Premise: by: N/A \u2014 MLB: Mets How long is seven years in baseball? MLB's 2011 leaders in games played (Prince Fielder), at-bats (Ichiro Suzuki), Wins Above Replacement (Cliff Lee), hits (Adrian Gonzalez and Michael Young) and stolen bases (Michael Bourn) are all out of baseball. Your.\nHypothesis: Everyone can make sense of this context. ",
+      "label": "neutral"
+    },
+    {
+      "id": 285,
+      "text": "Premise: How to manage cash flow for a business<br>Write down your business's balance at the beginning of each month. Check your business's bank account to see how much cash you have on hand. You will need to do this for a few months before you have a good idea of what your cash flow is like.\nHypothesis: The beginning of each month you should visit your bank to see if they have toasters.",
+      "label": "contradiction"
+    },
+    {
+      "id": 196,
+      "text": "Premise: The Metal Men are a group of superheroes that appear in DC Comics. The characters first appeared in \"Showcase\" #37 and were created by writer Robert Kanigher and penciller Ross Andru. Debuting in the Silver Age of Comic Books, the characters have appeared in comic books and other \"DC Comics\"-related products such as animated television series, clothing, figurines and trading cards.\nHypothesis: The Metal Men were the only superheroes in \"Showcase\" #37.",
+      "label": "neutral"
+    },
+    {
+      "id": 401,
+      "text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.\nHypothesis: Social Security system has a z",
+      "label": "contradiction"
+    },
+    {
+      "id": 298,
+      "text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.\nHypothesis: This was a consulate that represented the country of Pakistan.",
+      "label": "neutral"
+    },
+    {
+      "id": 224,
+      "text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?\nHypothesis: The National Assembly passed such a bill in 1995.",
+      "label": "contradiction"
+    },
+    {
+      "id": 277,
+      "text": "Premise: And as for why it happened, I'm no expert on the Texas procedures, but what my friends there tell me is that the governor opposed a measure put forward by Democrats in the legislature to expand the number of children that would be covered. And instead directed the money toward a tax cut, a significant part of which went to wealthy interests.\nHypothesis: The governor of Texas had no choice but to do this.",
+      "label": "neutral"
+    },
+    {
+      "id": 17,
+      "text": "Premise: Redneck Nation: How the South Really Won the War (ISBN\u00a0 ) is a book by conservative personality Michael Graham. Released in 2002 by Warner Books, the book covers a wide variety of Graham's personal opinions on current and historical events in the context of southern ideas and a \"redneck\" political point of view.\nHypothesis: This is not a book for rednecks",
+      "label": "contradiction"
+    },
+    {
+      "id": 150,
+      "text": "Premise: After months of planning and build-up, Supreme Commander Dwight Eisenhower set Operation Overlord for June 6, 1944: some 7000 ships in the British Isles set to sea and sailed across the English Channel, and, under the leadership of Field Marshall Bernard Montgomery, 135,000 troops landed and stormed Feldmarschal Erwin Rommel's German positions along 80 km of the Normandy coast.\nHypothesis: Field Marshall Bernard Montgomery was English.",
+      "label": "neutral"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "285_cf_neutral_2",
+      "text": "Premise: How to manage cash flow for a business<br>Write down your business's balance at the beginning of each month. Check your business's bank account to see how much cash you have on hand. You will need to do this for a few months before you have a good idea of what your cash flow is like.  \nHypothesis: The beginning of each month you could visit your bank to inquire about additional services they might offer.",
+      "label": "neutral",
+      "original_id": 285,
+      "original_label": "contradiction",
+      "v3_score": 1.4999999958509966,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.9999999973533912,
+        "term2": 0.49999999849760557,
+        "term3": 0.0,
+        "total": 1.4999999958509966,
+        "p_orig": 2.6466087906329557e-09,
+        "p_target": 0.9999999969952111,
+        "similarity": 0.9477341175079346
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "285_cf_neutral_2"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 1,
+    "num_added": 1,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "Premise: Smith (suspension) was released by the Raiders on Monday Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.\nHypothesis: It has been reported the Smith hit a member of his family either on Saturday or Sunday.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Smith (suspension) was released by the Raiders on Monday Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.  \nHypothesis: Smith was involved in a domestic violence incident with a family member over the weekend.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1052429676055908,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Smith (suspension) was released by the Raiders on Monday Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.\nHypothesis: It has been reported the Smith hit a member of his family either on Saturday or Sunday.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Smith (suspension) was released by the Raiders on Monday. Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.  \nHypothesis: Reports confirm that Smith hit a member of his family during the weekend, either on Saturday or Sunday.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.1493160724639893,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Smith (suspension) was released by the Raiders on Monday Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.\nHypothesis: It has been reported the Smith hit a member of his family either on Saturday or Sunday.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Smith (suspension) was released by the Raiders on Monday. Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.  \nHypothesis: Smith is suspected of hitting a member of his family during the weekend.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.2334799766540527,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: by: N/A \u2014 MLB: Mets How long is seven years in baseball? MLB's 2011 leaders in games played (Prince Fielder), at-bats (Ichiro Suzuki), Wins Above Replacement (Cliff Lee), hits (Adrian Gonzalez and Michael Young) and stolen bases (Michael Bourn) are all out of baseball. Your.\nHypothesis: Everyone can make sense of this context. ",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: by: N/A \u2014 MLB: Mets How long is seven years in baseball? MLB's 2011 leaders in games played (Prince Fielder), at-bats (Ichiro Suzuki), Wins Above Replacement (Cliff Lee), hits (Adrian Gonzalez and Michael Young) and stolen bases (Michael Bourn) are all out of baseball. Your.  \nHypothesis: This context is understandable to everyone.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.026449203491211,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: by: N/A \u2014 MLB: Mets How long is seven years in baseball? MLB's 2011 leaders in games played (Prince Fielder), at-bats (Ichiro Suzuki), Wins Above Replacement (Cliff Lee), hits (Adrian Gonzalez and Michael Young) and stolen bases (Michael Bourn) are all out of baseball. Your.\nHypothesis: Everyone can make sense of this context. ",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: by: N/A \u2014 MLB: Mets How long is seven years in baseball? MLB's 2011 leaders in games played (Prince Fielder), at-bats (Ichiro Suzuki), Wins Above Replacement (Cliff Lee), hits (Adrian Gonzalez and Michael Young) and stolen bases (Michael Bourn) are all out of baseball. Your.  \nHypothesis: This context is clear and understandable to everyone.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.368868112564087,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: by: N/A \u2014 MLB: Mets How long is seven years in baseball? MLB's 2011 leaders in games played (Prince Fielder), at-bats (Ichiro Suzuki), Wins Above Replacement (Cliff Lee), hits (Adrian Gonzalez and Michael Young) and stolen bases (Michael Bourn) are all out of baseball. Your.\nHypothesis: Everyone can make sense of this context. ",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: by: N/A \u2014 MLB: Mets How long is seven years in baseball? MLB's 2011 leaders in games played (Prince Fielder), at-bats (Ichiro Suzuki), Wins Above Replacement (Cliff Lee), hits (Adrian Gonzalez and Michael Young) and stolen bases (Michael Bourn) are all out of baseball. Your.  \nHypothesis: This context is clear and understandable to everyone.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.7420783042907715,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to manage cash flow for a business<br>Write down your business's balance at the beginning of each month. Check your business's bank account to see how much cash you have on hand. You will need to do this for a few months before you have a good idea of what your cash flow is like.\nHypothesis: The beginning of each month you should visit your bank to see if they have toasters.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: How to manage cash flow for a business<br>Write down your business's balance at the beginning of each month. Check your business's bank account to see how much cash you have on hand. You will need to do this for a few months before you have a good idea of what your cash flow is like.  \nHypothesis: The beginning of each month you could visit your bank to inquire about additional services they might offer, such as toasters.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1338560581207275,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to manage cash flow for a business<br>Write down your business's balance at the beginning of each month. Check your business's bank account to see how much cash you have on hand. You will need to do this for a few months before you have a good idea of what your cash flow is like.\nHypothesis: The beginning of each month you should visit your bank to see if they have toasters.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: How to manage cash flow for a business<br>Write down your business's balance at the beginning of each month. Check your business's bank account to see how much cash you have on hand. You will need to do this for a few months before you have a good idea of what your cash flow is like.  \nHypothesis: The beginning of each month is a good time to review your financial standing and plan accordingly.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.4595038890838623,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to manage cash flow for a business<br>Write down your business's balance at the beginning of each month. Check your business's bank account to see how much cash you have on hand. You will need to do this for a few months before you have a good idea of what your cash flow is like.\nHypothesis: The beginning of each month you should visit your bank to see if they have toasters.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: How to manage cash flow for a business<br>Write down your business's balance at the beginning of each month. Check your business's bank account to see how much cash you have on hand. You will need to do this for a few months before you have a good idea of what your cash flow is like.  \nHypothesis: The beginning of each month you could visit your bank to inquire about additional services they might offer.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.2142670154571533,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Metal Men are a group of superheroes that appear in DC Comics. The characters first appeared in \"Showcase\" #37 and were created by writer Robert Kanigher and penciller Ross Andru. Debuting in the Silver Age of Comic Books, the characters have appeared in comic books and other \"DC Comics\"-related products such as animated television series, clothing, figurines and trading cards.\nHypothesis: The Metal Men were the only superheroes in \"Showcase\" #37.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Metal Men are a group of superheroes that appear in DC Comics. The characters first appeared in \"Showcase\" #37 and were created by writer Robert Kanigher and penciller Ross Andru. Debuting in the Silver Age of Comic Books, the characters have appeared in comic books and other \"DC Comics\"-related products such as animated television series, clothing, figurines and trading cards.  \nHypothesis: The Metal Men were the featured superheroes in \"Showcase\" #37.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2267677783966064,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Metal Men are a group of superheroes that appear in DC Comics. The characters first appeared in \"Showcase\" #37 and were created by writer Robert Kanigher and penciller Ross Andru. Debuting in the Silver Age of Comic Books, the characters have appeared in comic books and other \"DC Comics\"-related products such as animated television series, clothing, figurines and trading cards.\nHypothesis: The Metal Men were the only superheroes in \"Showcase\" #37.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Metal Men are a group of superheroes that appear in DC Comics. The characters first appeared in \"Showcase\" #37 and were created by writer Robert Kanigher and penciller Ross Andru. Debuting in the Silver Age of Comic Books, the characters have appeared in comic books and other \"DC Comics\"-related products such as animated television series, clothing, figurines and trading cards.  \nHypothesis: The Metal Men were indeed the only superheroes featured in \"Showcase\" #37.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.1938591003417969,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Metal Men are a group of superheroes that appear in DC Comics. The characters first appeared in \"Showcase\" #37 and were created by writer Robert Kanigher and penciller Ross Andru. Debuting in the Silver Age of Comic Books, the characters have appeared in comic books and other \"DC Comics\"-related products such as animated television series, clothing, figurines and trading cards.\nHypothesis: The Metal Men were the only superheroes in \"Showcase\" #37.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Metal Men are a group of superheroes that appear in DC Comics. The characters first appeared in \"Showcase\" #37 and were created by writer Robert Kanigher and penciller Ross Andru. Debuting in the Silver Age of Comic Books, the characters have appeared in comic books and other \"DC Comics\"-related products such as animated television series, clothing, figurines and trading cards.  \nHypothesis: The Metal Men, as the focus of \"Showcase\" #37, were the sole superheroes featured in that issue.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.452392816543579,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.\nHypothesis: Social Security system has a z",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.  \nHypothesis: Social Security system might play an important role.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1509881019592285,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.\nHypothesis: Social Security system has a z",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.  \nHypothesis: A Social Security system is one of the goals mentioned.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.3968877792358398,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.\nHypothesis: Social Security system has a z",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.  \nHypothesis: A Social Security system is mentioned as one of the goals.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.3328077793121338,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.\nHypothesis: This was a consulate that represented the country of Pakistan.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate, which represented the country of Pakistan, has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.  \nHypothesis: This was a consulate that represented the country of Pakistan.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 2.539592981338501,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.\nHypothesis: This was a consulate that represented the country of Pakistan.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.  \nHypothesis: The consulate, located in Karachi, was a representation of Pakistan.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.7128758430480957,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.\nHypothesis: This was a consulate that represented the country of Pakistan.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.  \nHypothesis: This consulate was a representation of Pakistan.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.3620109558105469,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?\nHypothesis: The National Assembly passed such a bill in 1995.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?  \nHypothesis: The National Assembly may have passed such a bill in 1995.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2631139755249023,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?\nHypothesis: The National Assembly passed such a bill in 1995.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, it would have likely influenced public perceptions of the National Assembly and its Parti Quebecois members.  \nHypothesis: The National Assembly might have considered passing such a bill in 1995.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.0922949314117432,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?\nHypothesis: The National Assembly passed such a bill in 1995.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?  \nHypothesis: The National Assembly might have passed such a bill in 1995.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.465329885482788,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: And as for why it happened, I'm no expert on the Texas procedures, but what my friends there tell me is that the governor opposed a measure put forward by Democrats in the legislature to expand the number of children that would be covered. And instead directed the money toward a tax cut, a significant part of which went to wealthy interests.\nHypothesis: The governor of Texas had no choice but to do this.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: And as for why it happened, I'm no expert on the Texas procedures, but what my friends there tell me is that the governor opposed a measure put forward by Democrats in the legislature to expand the number of children that would be covered. And instead directed the money toward a tax cut, a significant part of which went to wealthy interests.  \nHypothesis: The governor of Texas was compelled to make this decision.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.257847785949707,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: And as for why it happened, I'm no expert on the Texas procedures, but what my friends there tell me is that the governor opposed a measure put forward by Democrats in the legislature to expand the number of children that would be covered. And instead directed the money toward a tax cut, a significant part of which went to wealthy interests.\nHypothesis: The governor of Texas had no choice but to do this.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: And as for why it happened, I'm no expert on the Texas procedures, but what my friends there tell me is that the governor opposed a measure put forward by Democrats in the legislature to expand the number of children that would be covered. And instead directed the money toward a tax cut, a significant part of which went to wealthy interests.  \nHypothesis: The governor of Texas was compelled to make this decision based on the circumstances.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.326786994934082,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: And as for why it happened, I'm no expert on the Texas procedures, but what my friends there tell me is that the governor opposed a measure put forward by Democrats in the legislature to expand the number of children that would be covered. And instead directed the money toward a tax cut, a significant part of which went to wealthy interests.\nHypothesis: The governor of Texas had no choice but to do this.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: And as for why it happened, I'm no expert on the Texas procedures, but what my friends there tell me is that the governor opposed a measure put forward by Democrats in the legislature to expand the number of children that would be covered. And instead directed the money toward a tax cut, a significant part of which went to wealthy interests.  \nHypothesis: The governor of Texas was compelled to act in this way.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.162930965423584,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Redneck Nation: How the South Really Won the War (ISBN\u00a0 ) is a book by conservative personality Michael Graham. Released in 2002 by Warner Books, the book covers a wide variety of Graham's personal opinions on current and historical events in the context of southern ideas and a \"redneck\" political point of view.\nHypothesis: This is not a book for rednecks",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Redneck Nation: How the South Really Won the War (ISBN\u00a0 ) is a book by conservative personality Michael Graham. Released in 2002 by Warner Books, the book covers a wide variety of Graham's personal opinions on current and historical events in the context of southern ideas and a \"redneck\" political point of view.  \nHypothesis: This is a book for rednecks.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.090487003326416,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Redneck Nation: How the South Really Won the War (ISBN\u00a0 ) is a book by conservative personality Michael Graham. Released in 2002 by Warner Books, the book covers a wide variety of Graham's personal opinions on current and historical events in the context of southern ideas and a \"redneck\" political point of view.\nHypothesis: This is not a book for rednecks",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Redneck Nation: How the South Really Won the War (ISBN\u00a0 ) is a book by conservative personality Michael Graham. Released in 2002 by Warner Books, the book covers a wide variety of Graham's personal opinions on current and historical events in the context of southern ideas and a \"redneck\" political point of view.  \nHypothesis: This is a book for rednecks.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.0739688873291016,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Redneck Nation: How the South Really Won the War (ISBN\u00a0 ) is a book by conservative personality Michael Graham. Released in 2002 by Warner Books, the book covers a wide variety of Graham's personal opinions on current and historical events in the context of southern ideas and a \"redneck\" political point of view.\nHypothesis: This is not a book for rednecks",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Redneck Nation: How the South Really Won the War (ISBN\u00a0 ) is a book by conservative personality Michael Graham. Released in 2002 by Warner Books, the book covers a wide variety of Graham's personal opinions on current and historical events in the context of southern ideas and a \"redneck\" political point of view.  \nHypothesis: This is a book that resonates with rednecks.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.202387809753418,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: After months of planning and build-up, Supreme Commander Dwight Eisenhower set Operation Overlord for June 6, 1944: some 7000 ships in the British Isles set to sea and sailed across the English Channel, and, under the leadership of Field Marshall Bernard Montgomery, 135,000 troops landed and stormed Feldmarschal Erwin Rommel's German positions along 80 km of the Normandy coast.\nHypothesis: Field Marshall Bernard Montgomery was English.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: After months of planning and build-up, Supreme Commander Dwight Eisenhower set Operation Overlord for June 6, 1944: some 7000 ships in the British Isles set to sea and sailed across the English Channel, and, under the leadership of Field Marshall Bernard Montgomery, 135,000 troops landed and stormed Feldmarschal Erwin Rommel's German positions along 80 km of the Normandy coast.  \nHypothesis: Field Marshall Bernard Montgomery was not English.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0053250789642334,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: After months of planning and build-up, Supreme Commander Dwight Eisenhower set Operation Overlord for June 6, 1944: some 7000 ships in the British Isles set to sea and sailed across the English Channel, and, under the leadership of Field Marshall Bernard Montgomery, 135,000 troops landed and stormed Feldmarschal Erwin Rommel's German positions along 80 km of the Normandy coast.\nHypothesis: Field Marshall Bernard Montgomery was English.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: After months of planning and build-up, Supreme Commander Dwight Eisenhower set Operation Overlord for June 6, 1944: some 7000 ships in the British Isles set to sea and sailed across the English Channel, and, under the leadership of Field Marshall Bernard Montgomery, 135,000 troops landed and stormed Feldmarschal Erwin Rommel's German positions along 80 km of the Normandy coast.  \nHypothesis: Field Marshall Bernard Montgomery was not English.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.093736171722412,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: After months of planning and build-up, Supreme Commander Dwight Eisenhower set Operation Overlord for June 6, 1944: some 7000 ships in the British Isles set to sea and sailed across the English Channel, and, under the leadership of Field Marshall Bernard Montgomery, 135,000 troops landed and stormed Feldmarschal Erwin Rommel's German positions along 80 km of the Normandy coast.\nHypothesis: Field Marshall Bernard Montgomery was English.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: After months of planning and build-up, Supreme Commander Dwight Eisenhower set Operation Overlord for June 6, 1944: some 7000 ships in the British Isles set to sea and sailed across the English Channel, and, under the leadership of Field Marshall Bernard Montgomery, 135,000 troops landed and stormed Feldmarschal Erwin Rommel's German positions along 80 km of the Normandy coast.  \nHypothesis: Field Marshall Bernard Montgomery was not English.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.1285772323608398,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "15_cf_entailment_0",
+        "original_id": 15,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 6.348880667816718e-09,
+          "p_orig": 0.9999999913154951,
+          "margin": -0.9999999849666145,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "15_cf_entailment_1",
+        "original_id": 15,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.0467531911661976e-08,
+          "p_orig": 0.9999998769960743,
+          "margin": -0.9999998665285423,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "15_cf_entailment_2",
+        "original_id": 15,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.005220143375005594,
+          "p_orig": 0.9947798503092535,
+          "margin": -0.9895597069342479,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "102_cf_entailment_0",
+        "original_id": 102,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 8.367226715593687e-12,
+          "p_orig": 0.993307126222167,
+          "margin": -0.9933071262137998,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "102_cf_entailment_1",
+        "original_id": 102,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 5.099335856678492e-12,
+          "p_orig": 0.9980732575810414,
+          "margin": -0.998073257575942,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "102_cf_entailment_2",
+        "original_id": 102,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.9947798559729846,
+          "margin": -0.9947798559729846,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "285_cf_neutral_0",
+        "original_id": 285,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999982394719846,
+          "p_orig": 1.7603588233942802e-06,
+          "margin": 0.9999964791131613,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9837141036987305,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "285_cf_neutral_1",
+        "original_id": 285,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.725803519375054e-08,
+          "p_orig": 0.0,
+          "margin": 1.725803519375054e-08,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "285_cf_neutral_2",
+        "original_id": 285,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.999999999988296,
+          "p_orig": 1.0816125261874435e-11,
+          "margin": 0.9999999999774799,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9477341175079346,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0666666666666667,
+          "original_length": 390,
+          "cf_length": 416,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999999958509966,
+        "v3_score_details": {
+          "score": 1.4999999958509966,
+          "p_orig": 2.6466087906329557e-09,
+          "p_target": 0.9999999969952111,
+          "similarity": 0.9477341175079346,
+          "term1": 0.9999999973533912,
+          "term2": 0.49999999849760557,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "196_cf_entailment_0",
+        "original_id": 196,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999997610022765,
+          "p_orig": 2.3823945657198897e-07,
+          "margin": 0.9999995227628199,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9966198205947876,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "196_cf_entailment_1",
+        "original_id": 196,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 7.991719774460109e-11,
+          "p_orig": 0.9999546017589812,
+          "margin": -0.999954601679064,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "196_cf_entailment_2",
+        "original_id": 196,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.7010829410478824e-13,
+          "p_orig": 0.9999999999888138,
+          "margin": -0.9999999999884437,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "401_cf_neutral_0",
+        "original_id": 401,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00015843719809459768,
+          "p_orig": 0.0,
+          "margin": 0.00015843719809459768,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "401_cf_neutral_1",
+        "original_id": 401,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.6587086229408081e-12,
+          "p_orig": 1.6587086229408081e-12,
+          "margin": 0.0,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "401_cf_neutral_2",
+        "original_id": 401,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.5946520395417164e-11,
+          "p_orig": 1.1102230246251565e-16,
+          "margin": 2.59464093731147e-11,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "298_cf_entailment_0",
+        "original_id": 298,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9523370259327308,
+          "p_orig": 0.0002488076486282154,
+          "margin": 0.9520882182841026,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9950388669967651,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "298_cf_entailment_1",
+        "original_id": 298,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.537862063025587e-05,
+          "p_orig": 0.9995240816658204,
+          "margin": -0.9994787030451902,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "298_cf_entailment_2",
+        "original_id": 298,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 7.725463209285161e-08,
+          "p_orig": 0.998830407471339,
+          "margin": -0.9988303302167069,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "224_cf_neutral_0",
+        "original_id": 224,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.999998932184428,
+          "p_orig": 1.0262019636406478e-10,
+          "margin": 0.9999989320818078,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.998755693435669,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "224_cf_neutral_1",
+        "original_id": 224,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0293122962744189,
+          "p_orig": 3.546434312098055e-08,
+          "margin": 0.029312260810075777,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "224_cf_neutral_2",
+        "original_id": 224,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.999796556552182,
+          "p_orig": 1.5227057356817807e-08,
+          "margin": 0.9997965413251246,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9987016916275024,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "277_cf_entailment_0",
+        "original_id": 277,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.9999785549051647,
+          "margin": -0.9999785549051647,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "277_cf_entailment_1",
+        "original_id": 277,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.9989776817871906e-09,
+          "p_orig": 0.9999921076736408,
+          "margin": -0.999992104674663,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "277_cf_entailment_2",
+        "original_id": 277,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.0261569587601568e-10,
+          "p_orig": 0.9999546017362837,
+          "margin": -0.999954601633668,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "17_cf_entailment_0",
+        "original_id": 17,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0031726952981103616,
+          "p_orig": 1.4883802980044866e-10,
+          "margin": 0.0031726951492723316,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "17_cf_entailment_1",
+        "original_id": 17,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00407015276504356,
+          "p_orig": 7.024287436969834e-11,
+          "margin": 0.004070152694800686,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "17_cf_entailment_2",
+        "original_id": 17,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.5,
+          "p_orig": 0.0,
+          "margin": 0.5,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.998370885848999,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "150_cf_contradiction_0",
+        "original_id": 150,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.1480473408653752,
+          "p_orig": 0.8519526591346248,
+          "margin": -0.7039053182692496,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "150_cf_contradiction_1",
+        "original_id": 150,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9241417078354851,
+          "p_orig": 0.07585829216451491,
+          "margin": 0.8482834156709702,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9957647919654846,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "150_cf_contradiction_2",
+        "original_id": 150,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.4378235401971827,
+          "p_orig": 0.5621764591000009,
+          "margin": -0.12435291890281819,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": true,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 1,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 1,
+    "num_final_selected": 1,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

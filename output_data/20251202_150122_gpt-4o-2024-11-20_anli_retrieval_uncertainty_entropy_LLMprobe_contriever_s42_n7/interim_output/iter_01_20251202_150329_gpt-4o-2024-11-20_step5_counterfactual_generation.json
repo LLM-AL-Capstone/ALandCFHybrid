@@ -1,0 +1,1285 @@
+{
+  "iteration": 1,
+  "timestamp": "20251202_150329",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 160,
+      "text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced the end of catch and release policies that allow illegals to enter the country without deportation.\nHypothesis: Illegals cannot enter the country without being deported.",
+      "label": "entailment"
+    },
+    {
+      "id": 1,
+      "text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.\nHypothesis: Albert Woolley batted and bowled with the same hand. ",
+      "label": "entailment"
+    },
+    {
+      "id": 256,
+      "text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.\nHypothesis: The person believes government should do little",
+      "label": "entailment"
+    },
+    {
+      "id": 421,
+      "text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.\nHypothesis: The lesser eyed hawkmoth dates back to 1937.",
+      "label": "entailment"
+    },
+    {
+      "id": 427,
+      "text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.\nHypothesis: Barea lost to a team named after gold and chicken",
+      "label": "entailment"
+    },
+    {
+      "id": 327,
+      "text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.\nHypothesis: There are 5x5 teams.",
+      "label": "entailment"
+    },
+    {
+      "id": 282,
+      "text": "Premise: Zuikaku (Japanese: \u745e\u9db4 \"Auspicious Crane\") was a \"Sh\u014dkaku\"-class aircraft carrier of the Imperial Japanese Navy. Her complement of aircraft took part in the attack on Pearl Harbor that formally brought the United States into the Pacific War, and she fought in several of the most important naval battles of the war, before being sunk during the Battle of Leyte Gulf.\nHypothesis: The Battle of Leyte Gulf took place in nineteen hundred forty five.",
+      "label": "neutral"
+    },
+    {
+      "id": 222,
+      "text": "Premise: Halloween<br>Paula had decided to take her two year old trick or treating. She was excited to pick out a costume. Halloween night she dressed up her child and headed out. They walked all over the neighborhood getting candy. They both had a great time.\nHypothesis: They received a lot of candy",
+      "label": "neutral"
+    },
+    {
+      "id": 106,
+      "text": "Premise: The garden was full of ripe odours and warm colours .<br>The Lombardies around it were tall and sombre like the priestly forms of some mystic band .<br>Abel was sitting in the hop-vine arbour ; beside him Captain Kidd slept .<br>I thought Abel was asleep , too ; his head leaned against the trellis and his eyes were shut .\nHypothesis: The people both had there eyes closed",
+      "label": "entailment"
+    },
+    {
+      "id": 201,
+      "text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.\nHypothesis: The Luton Town Ladies Football Club plays all their matches at The Carlsberg Stadium.",
+      "label": "contradiction"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "222_cf_contradiction_2",
+      "text": "Premise: Halloween  \nPaula had decided to take her two year old trick or treating. She was excited to pick out a costume. Halloween night she dressed up her child and headed out. They walked all over the neighborhood getting candy. They both had a great time.  \nHypothesis: They received no candy.",
+      "label": "contradiction",
+      "original_id": 222,
+      "original_label": "neutral",
+      "v3_score": 1.4999999999831528,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.9999999999915764,
+        "term2": 0.4999999999915764,
+        "term3": 0.0,
+        "total": 1.4999999999831528,
+        "p_orig": 8.423608240243513e-12,
+        "p_target": 0.9999999999831528,
+        "similarity": 0.964506983757019
+      }
+    },
+    {
+      "id": "160_cf_neutral_2",
+      "text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced changes to catch and release policies that affect how illegal immigrants are handled.  \nHypothesis: Illegals cannot enter the country without being deported.",
+      "label": "neutral",
+      "original_id": 160,
+      "original_label": "entailment",
+      "v3_score": 1.499784720295616,
+      "v3_rank": 2,
+      "v3_score_breakdown": {
+        "term1": 0.9999999999842695,
+        "term2": 0.4997847203113466,
+        "term3": 0.0,
+        "total": 1.499784720295616,
+        "p_orig": 1.57305833962092e-11,
+        "p_target": 0.9995694406226932,
+        "similarity": 0.9768937230110168
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "222_cf_contradiction_2",
+    "160_cf_neutral_2"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 2,
+    "num_added": 2,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced the end of catch and release policies that allow illegals to enter the country without deportation.\nHypothesis: Illegals cannot enter the country without being deported.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced the end of catch and release policies that allow illegals to enter the country without deportation.  \nHypothesis: It is unclear whether illegals can enter the country without being deported.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.5035138130187988,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced the end of catch and release policies that allow illegals to enter the country without deportation.\nHypothesis: Illegals cannot enter the country without being deported.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also discussed changes to catch and release policies regarding individuals entering the country.  \nHypothesis: Policies regarding deportation of individuals entering the country have been a topic of discussion.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.6708321571350098,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced the end of catch and release policies that allow illegals to enter the country without deportation.\nHypothesis: Illegals cannot enter the country without being deported.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: President Trump delivers a speech addressing the approaching migrant caravan, birthright citizenship and other immigration-related topics. POTUS also announced changes to catch and release policies that affect how illegal immigrants are handled.  \nHypothesis: Illegals cannot enter the country without being deported.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.3646152019500732,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.\nHypothesis: Albert Woolley batted and bowled with the same hand. ",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.  \nHypothesis: Albert Woolley batted and bowled with opposite hands.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.237311840057373,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.\nHypothesis: Albert Woolley batted and bowled with the same hand. ",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.  \nHypothesis: Albert Woolley batted and bowled with opposite hands.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.2735860347747803,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.\nHypothesis: Albert Woolley batted and bowled with the same hand. ",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.  \nHypothesis: Albert Woolley batted with his right hand but bowled with his left.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.2998619079589844,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.\nHypothesis: The person believes government should do little",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.  \nHypothesis: The person believes government should focus on certain priorities.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2150299549102783,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.\nHypothesis: The person believes government should do little",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.  \nHypothesis: The person mentions government priorities and tax relief.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.3873498439788818,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.\nHypothesis: The person believes government should do little",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.  \nHypothesis: The person might believe government should have a limited role.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.3293299674987793,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.\nHypothesis: The lesser eyed hawkmoth dates back to 1937.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.  \nHypothesis: The lesser eyed hawkmoth has existed since 1937.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2406141757965088,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.\nHypothesis: The lesser eyed hawkmoth dates back to 1937.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.  \nHypothesis: The lesser eyed hawkmoth was first described in 1937.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.361069917678833,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.\nHypothesis: The lesser eyed hawkmoth dates back to 1937.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.  \nHypothesis: The lesser eyed hawkmoth may have been identified in 1937.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.2095959186553955,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.\nHypothesis: Barea lost to a team named after gold and chicken",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.  \nHypothesis: Barea played against a team with a name related to gold and chicken.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 2.0498321056365967,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.\nHypothesis: Barea lost to a team named after gold and chicken",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a productive one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.  \nHypothesis: Barea faced a team named after gold and chicken.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.3193228244781494,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.\nHypothesis: Barea lost to a team named after gold and chicken",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.  \nHypothesis: Barea competed against a team with a distinctive name.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.1377818584442139,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.\nHypothesis: There are 5x5 teams.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.  \nHypothesis: There could be 5x5 teams.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.7538490295410156,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.\nHypothesis: There are 5x5 teams.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.  \nHypothesis: The rankings include five teams in the top five.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.2904770374298096,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.\nHypothesis: There are 5x5 teams.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.  \nHypothesis: There could be 5x5 teams.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 5.330918788909912,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Zuikaku (Japanese: \u745e\u9db4 \"Auspicious Crane\") was a \"Sh\u014dkaku\"-class aircraft carrier of the Imperial Japanese Navy. Her complement of aircraft took part in the attack on Pearl Harbor that formally brought the United States into the Pacific War, and she fought in several of the most important naval battles of the war, before being sunk during the Battle of Leyte Gulf.\nHypothesis: The Battle of Leyte Gulf took place in nineteen hundred forty five.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Zuikaku (Japanese: \u745e\u9db4 \"Auspicious Crane\") was a \"Sh\u014dkaku\"-class aircraft carrier of the Imperial Japanese Navy. Her complement of aircraft took part in the attack on Pearl Harbor that formally brought the United States into the Pacific War, and she fought in several of the most important naval battles of the war, before being sunk during the Battle of Leyte Gulf.  \nHypothesis: The Battle of Leyte Gulf took place in nineteen hundred forty six.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2739179134368896,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Zuikaku (Japanese: \u745e\u9db4 \"Auspicious Crane\") was a \"Sh\u014dkaku\"-class aircraft carrier of the Imperial Japanese Navy. Her complement of aircraft took part in the attack on Pearl Harbor that formally brought the United States into the Pacific War, and she fought in several of the most important naval battles of the war, before being sunk during the Battle of Leyte Gulf.\nHypothesis: The Battle of Leyte Gulf took place in nineteen hundred forty five.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Zuikaku (Japanese: \u745e\u9db4 \"Auspicious Crane\") was a \"Sh\u014dkaku\"-class aircraft carrier of the Imperial Japanese Navy. Her complement of aircraft took part in the attack on Pearl Harbor that formally brought the United States into the Pacific War, and she fought in several of the most important naval battles of the war, before being sunk during the Battle of Leyte Gulf.  \nHypothesis: The Battle of Leyte Gulf occurred after nineteen hundred forty five.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.2364540100097656,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Zuikaku (Japanese: \u745e\u9db4 \"Auspicious Crane\") was a \"Sh\u014dkaku\"-class aircraft carrier of the Imperial Japanese Navy. Her complement of aircraft took part in the attack on Pearl Harbor that formally brought the United States into the Pacific War, and she fought in several of the most important naval battles of the war, before being sunk during the Battle of Leyte Gulf.\nHypothesis: The Battle of Leyte Gulf took place in nineteen hundred forty five.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Zuikaku (Japanese: \u745e\u9db4 \"Auspicious Crane\") was a \"Sh\u014dkaku\"-class aircraft carrier of the Imperial Japanese Navy. Her complement of aircraft took part in the attack on Pearl Harbor that formally brought the United States into the Pacific War, and she fought in several of the most important naval battles of the war, before being sunk during the Battle of Leyte Gulf.  \nHypothesis: The Battle of Leyte Gulf occurred in nineteen hundred forty five, though Zuikaku was no longer active by then.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.6838319301605225,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Halloween<br>Paula had decided to take her two year old trick or treating. She was excited to pick out a costume. Halloween night she dressed up her child and headed out. They walked all over the neighborhood getting candy. They both had a great time.\nHypothesis: They received a lot of candy",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Halloween<br>Paula had decided to take her two year old trick or treating. She was excited to pick out a costume. Halloween night she dressed up her child and headed out. They walked all over the neighborhood but no one was giving out candy. They both had a disappointing time.  \nHypothesis: They received a lot of candy",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1624739170074463,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Halloween<br>Paula had decided to take her two year old trick or treating. She was excited to pick out a costume. Halloween night she dressed up her child and headed out. They walked all over the neighborhood getting candy. They both had a great time.\nHypothesis: They received a lot of candy",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Halloween<br>Paula had decided to take her two year old trick or treating. She was excited to pick out a costume. Halloween night she dressed up her child and headed out. They walked all over the neighborhood but found that most houses weren\u2019t giving out candy. They both came home with very little.  \nHypothesis: They received a lot of candy",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.4779949188232422,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Halloween<br>Paula had decided to take her two year old trick or treating. She was excited to pick out a costume. Halloween night she dressed up her child and headed out. They walked all over the neighborhood getting candy. They both had a great time.\nHypothesis: They received a lot of candy",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Halloween  \nPaula had decided to take her two year old trick or treating. She was excited to pick out a costume. Halloween night she dressed up her child and headed out. They walked all over the neighborhood getting candy. They both had a great time.  \nHypothesis: They received no candy.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.2171480655670166,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The garden was full of ripe odours and warm colours .<br>The Lombardies around it were tall and sombre like the priestly forms of some mystic band .<br>Abel was sitting in the hop-vine arbour ; beside him Captain Kidd slept .<br>I thought Abel was asleep , too ; his head leaned against the trellis and his eyes were shut .\nHypothesis: The people both had there eyes closed",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The garden was full of ripe odours and warm colours .<br>The Lombardies around it were tall and sombre like the priestly forms of some mystic band .<br>Abel was sitting in the hop-vine arbour ; beside him Captain Kidd slept .<br>I thought Abel was asleep , too ; his head leaned against the trellis and his eyes were shut .  \nHypothesis: The people did not both have their eyes closed.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7976667881011963,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The garden was full of ripe odours and warm colours .<br>The Lombardies around it were tall and sombre like the priestly forms of some mystic band .<br>Abel was sitting in the hop-vine arbour ; beside him Captain Kidd slept .<br>I thought Abel was asleep , too ; his head leaned against the trellis and his eyes were shut .\nHypothesis: The people both had there eyes closed",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The garden was full of ripe odours and warm colours .<br>The Lombardies around it were tall and sombre like the priestly forms of some mystic band .<br>Abel was sitting in the hop-vine arbour ; beside him Captain Kidd slept .<br>I thought Abel was asleep , too ; his head leaned against the trellis and his eyes were shut .  \nHypothesis: Only one of them had their eyes closed .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.4574980735778809,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The garden was full of ripe odours and warm colours .<br>The Lombardies around it were tall and sombre like the priestly forms of some mystic band .<br>Abel was sitting in the hop-vine arbour ; beside him Captain Kidd slept .<br>I thought Abel was asleep , too ; his head leaned against the trellis and his eyes were shut .\nHypothesis: The people both had there eyes closed",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The garden was full of ripe odours and warm colours .<br>The Lombardies around it were tall and sombre like the priestly forms of some mystic band .<br>Abel was sitting in the hop-vine arbour ; beside him Captain Kidd slept .<br>I thought Abel was asleep , too ; his head leaned against the trellis and his eyes were shut .  \nHypothesis: Only one of the people had their eyes closed .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.742767095565796,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.\nHypothesis: The Luton Town Ladies Football Club plays all their matches at The Carlsberg Stadium.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.  \nHypothesis: The Luton Town Ladies Football Club plays their matches at The Carlsberg Stadium.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 2.3051137924194336,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.\nHypothesis: The Luton Town Ladies Football Club plays all their matches at The Carlsberg Stadium.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.  \nHypothesis: The Luton Town Ladies Football Club plays their home matches at The Carlsberg Stadium.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.1827480792999268,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.\nHypothesis: The Luton Town Ladies Football Club plays all their matches at The Carlsberg Stadium.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play their matches at The Carlsberg Stadium, home of Biggleswade Town F.C.  \nHypothesis: The Luton Town Ladies Football Club plays all their matches at The Carlsberg Stadium.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.162607192993164,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "160_cf_neutral_0",
+        "original_id": 160,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 9.609961025200534e-05,
+          "p_orig": 3.5353094696648376e-05,
+          "margin": 6.074651555535697e-05,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "160_cf_neutral_1",
+        "original_id": 160,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.940125697632772e-11,
+          "p_orig": 0.9999999999705989,
+          "margin": -0.9999999999411976,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "160_cf_neutral_2",
+        "original_id": 160,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9996646481322798,
+          "p_orig": 9.541994673208862e-12,
+          "margin": 0.9996646481227378,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9768937230110168,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.9644970414201184,
+          "original_length": 338,
+          "cf_length": 326,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.499784720295616,
+        "v3_score_details": {
+          "score": 1.499784720295616,
+          "p_orig": 1.57305833962092e-11,
+          "p_target": 0.9995694406226932,
+          "similarity": 0.9768937230110168,
+          "term1": 0.9999999999842695,
+          "term2": 0.4997847203113466,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "1_cf_contradiction_0",
+        "original_id": 1,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.6701462749280248e-05,
+          "p_orig": 0.9999785134840352,
+          "margin": -0.999961812021286,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1_cf_contradiction_1",
+        "original_id": 1,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0031720513569331783,
+          "p_orig": 0.9966251658090738,
+          "margin": -0.9934531144521406,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1_cf_contradiction_2",
+        "original_id": 1,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999990244868,
+          "p_orig": 1.8795629503100314e-12,
+          "margin": 0.9999999990226072,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9908000230789185,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "256_cf_neutral_0",
+        "original_id": 256,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.317671590809764e-10,
+          "p_orig": 0.999999999866941,
+          "margin": -0.9999999997351738,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "256_cf_neutral_1",
+        "original_id": 256,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.1400129407501017e-12,
+          "p_orig": 0.99999999999886,
+          "margin": -0.99999999999772,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "256_cf_neutral_2",
+        "original_id": 256,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 6.69168117351471e-10,
+          "p_orig": 0.999999999330832,
+          "margin": -0.9999999986616638,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "421_cf_neutral_0",
+        "original_id": 421,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.1803227290373462,
+          "p_orig": 0.8081496004961289,
+          "margin": -0.6278268714587827,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "421_cf_neutral_1",
+        "original_id": 421,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.0060579737094057e-12,
+          "p_orig": 0.9999999999989939,
+          "margin": -0.9999999999979878,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "421_cf_neutral_2",
+        "original_id": 421,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 9.73633619791798e-10,
+          "p_orig": 0.9999999990259962,
+          "margin": -0.9999999980523626,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "427_cf_neutral_0",
+        "original_id": 427,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.14793242395236472,
+          "p_orig": 0.0007762807653598746,
+          "margin": 0.14715614318700485,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "427_cf_neutral_1",
+        "original_id": 427,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9982789945255377,
+          "p_orig": 0.0005521354042260856,
+          "margin": 0.9977268591213116,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9951108694076538,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "427_cf_neutral_2",
+        "original_id": 427,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.2752042927875668e-07,
+          "p_orig": 0.9999998724795707,
+          "margin": -0.9999997449591413,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "327_cf_neutral_0",
+        "original_id": 327,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999641391990487,
+          "p_orig": 3.53564665997539e-05,
+          "margin": 0.9999287827324489,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9907852411270142,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "327_cf_neutral_1",
+        "original_id": 327,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.0207173800129413e-11,
+          "p_orig": 0.999999999978905,
+          "margin": -0.9999999999586978,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "327_cf_neutral_2",
+        "original_id": 327,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999941471624174,
+          "p_orig": 4.7851297400619546e-06,
+          "margin": 0.9999893620326773,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9907852411270142,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "282_cf_contradiction_0",
+        "original_id": 282,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999992410418,
+          "p_orig": 7.582667531940981e-10,
+          "margin": 0.999999998482775,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9994646906852722,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "282_cf_contradiction_1",
+        "original_id": 282,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999997186357,
+          "p_orig": 2.7895093719419695e-10,
+          "margin": 0.9999999994396848,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9972969889640808,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "282_cf_contradiction_2",
+        "original_id": 282,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9975272988725823,
+          "p_orig": 0.0024726330394023352,
+          "margin": 0.9950546658331799,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.992560088634491,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "222_cf_contradiction_0",
+        "original_id": 222,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999999376373,
+          "p_orig": 4.8474461457352385e-11,
+          "margin": 0.9999999998891629,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.987117350101471,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "222_cf_contradiction_1",
+        "original_id": 222,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999999996279318,
+          "p_orig": 3.581800331010282e-10,
+          "margin": 0.9999999992697518,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9771809577941895,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.1661129568106312,
+          "original_length": 301,
+          "cf_length": 351,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999999998391254,
+        "v3_score_details": {
+          "score": 1.4999999998391254,
+          "p_orig": 1.0262038393402579e-10,
+          "p_target": 0.9999999998834914,
+          "similarity": 0.9771809577941895,
+          "term1": 0.9999999998973796,
+          "term2": 0.4999999999417457,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "222_cf_contradiction_2",
+        "original_id": 222,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999999999850161,
+          "p_orig": 8.42360824025921e-12,
+          "margin": 0.9999999999765925,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.964506983757019,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.9867109634551495,
+          "original_length": 301,
+          "cf_length": 297,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999999999831528,
+        "v3_score_details": {
+          "score": 1.4999999999831528,
+          "p_orig": 8.423608240243513e-12,
+          "p_target": 0.9999999999831528,
+          "similarity": 0.964506983757019,
+          "term1": 0.9999999999915764,
+          "term2": 0.4999999999915764,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "106_cf_contradiction_0",
+        "original_id": 106,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999923022816747,
+          "p_orig": 1.5535024861418182e-06,
+          "margin": 0.9999907487791886,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9964600205421448,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "106_cf_contradiction_1",
+        "original_id": 106,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.8976248845037189,
+          "p_orig": 0.007766002009884102,
+          "margin": 0.8898588824938348,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9888772368431091,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "106_cf_contradiction_2",
+        "original_id": 106,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9990888674338181,
+          "p_orig": 7.727458934607875e-08,
+          "margin": 0.9990887901592287,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9943987727165222,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "201_cf_entailment_0",
+        "original_id": 201,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999998716859,
+          "p_orig": 3.775195488794911e-11,
+          "margin": 0.999999999833934,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9996663331985474,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "201_cf_entailment_1",
+        "original_id": 201,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999999030511,
+          "p_orig": 4.847446145567584e-11,
+          "margin": 0.9999999998545767,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9985491037368774,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "201_cf_entailment_2",
+        "original_id": 201,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.6052438634854353e-09,
+          "p_orig": 3.7266704447895467e-06,
+          "margin": -3.7250652009260612e-06,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 2,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 2,
+    "num_final_selected": 2,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

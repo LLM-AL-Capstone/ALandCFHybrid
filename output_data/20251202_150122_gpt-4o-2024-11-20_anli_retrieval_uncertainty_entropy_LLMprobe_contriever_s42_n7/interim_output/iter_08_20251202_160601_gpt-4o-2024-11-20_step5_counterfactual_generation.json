@@ -1,0 +1,1360 @@
+{
+  "iteration": 8,
+  "timestamp": "20251202_160601",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 73,
+      "text": "Premise: In 1986 he became the head of London European Airways, a business in which Ryanair had bought an 85% stake. This position, however, quickly disappeared as the carrier became Ryanair UK and was then merged entirely with Ryanair. Over the next decade, Cathal worked both on the executive board of the airline and as a pilot, although he resigned from the latter by 1996. He remained with Ryanair until leaving the board 2002, by which time he was a multi-millionaire due to the success of the airline.\nHypothesis: Ryanair went bankrupt in 2010.",
+      "label": "neutral"
+    },
+    {
+      "id": 139,
+      "text": "Premise: Cody Martin Linley (born November 20, 1989) is an American actor and singer. He played a recurring role as Jake Ryan in the television series \"Hannah Montana\", and was a contestant on the seventh season of \"Dancing With The Stars\", in which he was partnered with Julianne Hough and finished fourth.\nHypothesis: Cody Martin Linley acted in all seasons of \"Hannah Montana\".",
+      "label": "neutral"
+    },
+    {
+      "id": 286,
+      "text": "Premise: Last Saturday I was thrilled to read about a school in Co Antrim which has introduced the study of philosophy for students of four years of age and upwards. According to both teachers and parents, the benefits are felt far beyond the classroom, \"not just in terms of increased confidence, motivation and ability, but in a heightened respect for the differing views of others\". In 1999, I walked through the gates of Trinity College to enrol as an undergraduate in the philosophy department. I had just returned home from years living in another city; I was recently married, unemployed and had been diagnosed with a mental illness I didn't quite believe I had. I wasn't sure if I could cope.\nHypothesis: They think the study of philosophy is very important for the youth.",
+      "label": "entailment"
+    },
+    {
+      "id": 237,
+      "text": "Premise: But I thought you were saying that if you accept the Copyright Clause argument, then you have a way, in effect, of devaluing the Government's claim of its important interest and important objective when you get to the First Amendment intermediate scrutiny analysis.\nHypothesis: The narrator thought differently than the other party intended",
+      "label": "entailment"
+    },
+    {
+      "id": 417,
+      "text": "Premise: Journalists of the concealed BBC, that was made happen through advisers of London industralists, asked Slavkov.\nHypothesis: Journalists worked for Fox News ",
+      "label": "contradiction"
+    },
+    {
+      "id": 380,
+      "text": "Premise: So I'm inclined to accept this language, you know, not word for word, only to the extent where it states, rather generically, \"wherein an affidavit is provided,\" I would take that sentence and simply say that affidavits have been provided, rather than \"wherein.\" It's somewhat artificial or a little strained as it relates to this case.\nHypothesis: \"Wherein an affidavit is provided\" is not generically worded.",
+      "label": "contradiction"
+    },
+    {
+      "id": 23,
+      "text": "Premise: Loraine besides participating in Broadway's Dreamgirls, also participated in the Off-Broadway production of \"Does A Tiger Have A Necktie\". In 1999, Loraine went to London, United Kingdom. There she participated in the production of \"RENT\" where she was cast as \"Mimi\" the understudy.\nHypothesis: Loraine was the lead in Mimi.",
+      "label": "contradiction"
+    },
+    {
+      "id": 239,
+      "text": "Premise: How to breathe during labor<br>Start with two breaths to one \" blow. \" a basic slow breathing pattern is breathing in twice to every single time you breathe out. It's a quicker breathing pattern than how you breathe normally, about twice as fast as normal.\nHypothesis: during labor you should breather as slow as possible",
+      "label": "contradiction"
+    },
+    {
+      "id": 172,
+      "text": "Premise: The McLaren MP4/1 (initially known as the MP4) was a Formula One racing car produced by the McLaren team. It was used during the 1981, 1982 and 1983 seasons. It was the first Formula One car to use a carbon fibre composite monocoque, a concept which is now ubiquitous.\nHypothesis: The McLaren team were not proud of the McLaren MP4/1 as it crashed too much",
+      "label": "neutral"
+    },
+    {
+      "id": 164,
+      "text": "Premise: The 1976 European Cup Winners' Cup Final was a football match between West Ham United of England and Anderlecht of Belgium. The final was held at Heysel Stadium in Brussels on 5 May 1976. It was the final match of the 1975\u201376 European Cup Winners' Cup tournament and the 16th European Cup Winners' Cup Final.\nHypothesis: West Ham United of England players have never met a Belgium man",
+      "label": "contradiction"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "239_cf_entailment_2",
+      "text": "Premise: How to breathe during labor  \nStart with two breaths to one \"blow.\" A basic slow breathing pattern is breathing in twice to every single time you breathe out. It's a controlled breathing pattern designed to help you stay calm and focused during labor.  \n\nHypothesis: During labor, you should focus on maintaining a steady and controlled breathing rhythm.",
+      "label": "entailment",
+      "original_id": 239,
+      "original_label": "contradiction",
+      "v3_score": 1.4999999999757627,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 1.0,
+        "term2": 0.4999999999757628,
+        "term3": 0.0,
+        "total": 1.4999999999757627,
+        "p_orig": 0.0,
+        "p_target": 0.9999999999515256,
+        "similarity": 0.9305301904678345
+      }
+    },
+    {
+      "id": "164_cf_entailment_1",
+      "text": "Premise: The 1976 European Cup Winners' Cup Final was a football match between West Ham United of England and Anderlecht of Belgium. The final was held at Heysel Stadium in Brussels on 5 May 1976. It was the final match of the 1975\u201376 European Cup Winners' Cup tournament and the 16th European Cup Winners' Cup Final.  \nHypothesis: West Ham United of England players have competed against Belgian players.",
+      "label": "entailment",
+      "original_id": 164,
+      "original_label": "contradiction",
+      "v3_score": 1.4999999999547189,
+      "v3_rank": 2,
+      "v3_score_breakdown": {
+        "term1": 1.0,
+        "term2": 0.4999999999547189,
+        "term3": 0.0,
+        "total": 1.4999999999547189,
+        "p_orig": 0.0,
+        "p_target": 0.9999999999094378,
+        "similarity": 0.9423081278800964
+      }
+    },
+    {
+      "id": "417_cf_entailment_0",
+      "text": "Premise: Journalists of the renowned Fox News, that was made happen through advisers of London industrialists, asked Slavkov.  \nHypothesis: Journalists worked for Fox News",
+      "label": "entailment",
+      "original_id": 417,
+      "original_label": "contradiction",
+      "v3_score": 1.4999823172510711,
+      "v3_rank": 3,
+      "v3_score_breakdown": {
+        "term1": 0.9999999970011079,
+        "term2": 0.49998232024996325,
+        "term3": 0.0,
+        "total": 1.4999823172510711,
+        "p_orig": 2.9988920860640866e-09,
+        "p_target": 0.9999646404999265,
+        "similarity": 0.863993227481842
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "239_cf_entailment_2",
+    "164_cf_entailment_1",
+    "417_cf_entailment_0"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 3,
+    "num_added": 3,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "Premise: In 1986 he became the head of London European Airways, a business in which Ryanair had bought an 85% stake. This position, however, quickly disappeared as the carrier became Ryanair UK and was then merged entirely with Ryanair. Over the next decade, Cathal worked both on the executive board of the airline and as a pilot, although he resigned from the latter by 1996. He remained with Ryanair until leaving the board 2002, by which time he was a multi-millionaire due to the success of the airline.\nHypothesis: Ryanair went bankrupt in 2010.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: In 1986 he became the head of London European Airways, a business in which Ryanair had bought an 85% stake. This position, however, quickly disappeared as the carrier became Ryanair UK and was then merged entirely with Ryanair. Over the next decade, Cathal worked both on the executive board of the airline and as a pilot, although he resigned from the latter by 1996. He remained with Ryanair until leaving the board in 2002, by which time he was a multi-millionaire due to the success of the airline.  \nHypothesis: Ryanair, despite its earlier success, went bankrupt in 2010.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.5055177211761475,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: In 1986 he became the head of London European Airways, a business in which Ryanair had bought an 85% stake. This position, however, quickly disappeared as the carrier became Ryanair UK and was then merged entirely with Ryanair. Over the next decade, Cathal worked both on the executive board of the airline and as a pilot, although he resigned from the latter by 1996. He remained with Ryanair until leaving the board 2002, by which time he was a multi-millionaire due to the success of the airline.\nHypothesis: Ryanair went bankrupt in 2010.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: In 1986 he became the head of London European Airways, a business in which Ryanair had bought an 85% stake. This position, however, quickly disappeared as the carrier became Ryanair UK and was then merged entirely with Ryanair. Over the next decade, Cathal worked both on the executive board of the airline and as a pilot, although he resigned from the latter by 1996. He remained with Ryanair until leaving the board in 2002, by which time he was a multi-millionaire due to the success of the airline. However, despite its earlier achievements, Ryanair faced financial difficulties and went bankrupt in 2010.  \nHypothesis: Ryanair went bankrupt in 2010.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.4888927936553955,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: In 1986 he became the head of London European Airways, a business in which Ryanair had bought an 85% stake. This position, however, quickly disappeared as the carrier became Ryanair UK and was then merged entirely with Ryanair. Over the next decade, Cathal worked both on the executive board of the airline and as a pilot, although he resigned from the latter by 1996. He remained with Ryanair until leaving the board 2002, by which time he was a multi-millionaire due to the success of the airline.\nHypothesis: Ryanair went bankrupt in 2010.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: In 1986 he became the head of London European Airways, a business in which Ryanair had bought an 85% stake. This position, however, quickly disappeared as the carrier became Ryanair UK and was then merged entirely with Ryanair. Over the next decade, Cathal worked both on the executive board of the airline and as a pilot, although he resigned from the latter by 1996. He remained with Ryanair until leaving the board in 2002, by which time he was a multi-millionaire due to the success of the airline. However, despite its earlier success, Ryanair went bankrupt in 2010.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.6941392421722412,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Cody Martin Linley (born November 20, 1989) is an American actor and singer. He played a recurring role as Jake Ryan in the television series \"Hannah Montana\", and was a contestant on the seventh season of \"Dancing With The Stars\", in which he was partnered with Julianne Hough and finished fourth.\nHypothesis: Cody Martin Linley acted in all seasons of \"Hannah Montana\".",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Cody Martin Linley (born November 20, 1989) is an American actor and singer. He played a recurring role as Jake Ryan in the television series \"Hannah Montana\", appearing throughout all seasons of the show, and was a contestant on the seventh season of \"Dancing With The Stars\", in which he was partnered with Julianne Hough and finished fourth.  \nHypothesis: Cody Martin Linley acted in all seasons of \"Hannah Montana\".",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2706072330474854,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Cody Martin Linley (born November 20, 1989) is an American actor and singer. He played a recurring role as Jake Ryan in the television series \"Hannah Montana\", and was a contestant on the seventh season of \"Dancing With The Stars\", in which he was partnered with Julianne Hough and finished fourth.\nHypothesis: Cody Martin Linley acted in all seasons of \"Hannah Montana\".",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Cody Martin Linley (born November 20, 1989) is an American actor and singer. He played a recurring role as Jake Ryan in the television series \"Hannah Montana\", appearing throughout all seasons of the show, and was a contestant on the seventh season of \"Dancing With The Stars\", in which he was partnered with Julianne Hough and finished fourth.  \nHypothesis: Cody Martin Linley acted in all seasons of \"Hannah Montana\".",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.3034539222717285,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Cody Martin Linley (born November 20, 1989) is an American actor and singer. He played a recurring role as Jake Ryan in the television series \"Hannah Montana\", and was a contestant on the seventh season of \"Dancing With The Stars\", in which he was partnered with Julianne Hough and finished fourth.\nHypothesis: Cody Martin Linley acted in all seasons of \"Hannah Montana\".",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Cody Martin Linley (born November 20, 1989) is an American actor and singer. He played a recurring role as Jake Ryan in the television series \"Hannah Montana\", appearing throughout all seasons of the show. He was also a contestant on the seventh season of \"Dancing With The Stars\", in which he was partnered with Julianne Hough and finished fourth.  \nHypothesis: Cody Martin Linley acted in all seasons of \"Hannah Montana\".",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.3214442729949951,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Last Saturday I was thrilled to read about a school in Co Antrim which has introduced the study of philosophy for students of four years of age and upwards. According to both teachers and parents, the benefits are felt far beyond the classroom, \"not just in terms of increased confidence, motivation and ability, but in a heightened respect for the differing views of others\". In 1999, I walked through the gates of Trinity College to enrol as an undergraduate in the philosophy department. I had just returned home from years living in another city; I was recently married, unemployed and had been diagnosed with a mental illness I didn't quite believe I had. I wasn't sure if I could cope.\nHypothesis: They think the study of philosophy is very important for the youth.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Last Saturday I was thrilled to read about a school in Co Antrim which has introduced the study of philosophy for students of four years of age and upwards. According to both teachers and parents, the benefits are felt far beyond the classroom, \"not just in terms of increased confidence, motivation and ability, but in a heightened respect for the differing views of others\". In 1999, I walked through the gates of Trinity College to enrol as an undergraduate in the philosophy department. I had just returned home from years living in another city; I was recently married, unemployed and had been diagnosed with a mental illness I didn't quite believe I had. I wasn't sure if I could cope.  \nHypothesis: They think the study of philosophy is not particularly important for the youth.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.41507887840271,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Last Saturday I was thrilled to read about a school in Co Antrim which has introduced the study of philosophy for students of four years of age and upwards. According to both teachers and parents, the benefits are felt far beyond the classroom, \"not just in terms of increased confidence, motivation and ability, but in a heightened respect for the differing views of others\". In 1999, I walked through the gates of Trinity College to enrol as an undergraduate in the philosophy department. I had just returned home from years living in another city; I was recently married, unemployed and had been diagnosed with a mental illness I didn't quite believe I had. I wasn't sure if I could cope.\nHypothesis: They think the study of philosophy is very important for the youth.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Last Saturday I was thrilled to read about a school in Co Antrim which has introduced the study of philosophy for students of four years of age and upwards. According to both teachers and parents, the benefits are felt far beyond the classroom, \"not just in terms of increased confidence, motivation and ability, but in a heightened respect for the differing views of others\". In 1999, I walked through the gates of Trinity College to enrol as an undergraduate in the philosophy department. I had just returned home from years living in another city; I was recently married, unemployed and had been diagnosed with a mental illness I didn't quite believe I had. I wasn't sure if I could cope.  \nHypothesis: They don\u2019t believe the study of philosophy holds significant value for the youth.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.3563897609710693,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Last Saturday I was thrilled to read about a school in Co Antrim which has introduced the study of philosophy for students of four years of age and upwards. According to both teachers and parents, the benefits are felt far beyond the classroom, \"not just in terms of increased confidence, motivation and ability, but in a heightened respect for the differing views of others\". In 1999, I walked through the gates of Trinity College to enrol as an undergraduate in the philosophy department. I had just returned home from years living in another city; I was recently married, unemployed and had been diagnosed with a mental illness I didn't quite believe I had. I wasn't sure if I could cope.\nHypothesis: They think the study of philosophy is very important for the youth.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Last Saturday I was surprised to read about a school in Co Antrim which has introduced the study of philosophy for students of four years of age and upwards. According to both teachers and parents, the benefits are questionable, \"not just in terms of increased confidence, motivation and ability, but in a heightened respect for the differing views of others\". In 1999, I walked through the gates of Trinity College to enrol as an undergraduate in the philosophy department. I had just returned home from years living in another city; I was recently married, unemployed and had been diagnosed with a mental illness I didn't quite believe I had. I wasn't sure if I could cope.  \nHypothesis: They don\u2019t think the study of philosophy is very important for the youth.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.2720189094543457,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: But I thought you were saying that if you accept the Copyright Clause argument, then you have a way, in effect, of devaluing the Government's claim of its important interest and important objective when you get to the First Amendment intermediate scrutiny analysis.\nHypothesis: The narrator thought differently than the other party intended",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: But I thought you were saying that if you accept the Copyright Clause argument, then you have a way, in effect, of devaluing the Government's claim of its important interest and important objective when you get to the First Amendment intermediate scrutiny analysis.  \nHypothesis: The narrator might have misunderstood the other party's intent.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9904050827026367,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: But I thought you were saying that if you accept the Copyright Clause argument, then you have a way, in effect, of devaluing the Government's claim of its important interest and important objective when you get to the First Amendment intermediate scrutiny analysis.\nHypothesis: The narrator thought differently than the other party intended",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: But I thought you were saying that if you accept the Copyright Clause argument, then you have a way, in effect, of devaluing the Government's claim of its important interest and important objective when you get to the First Amendment intermediate scrutiny analysis.  \nHypothesis: The narrator's interpretation may not align with the other party's intended meaning.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.0924899578094482,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: But I thought you were saying that if you accept the Copyright Clause argument, then you have a way, in effect, of devaluing the Government's claim of its important interest and important objective when you get to the First Amendment intermediate scrutiny analysis.\nHypothesis: The narrator thought differently than the other party intended",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: But I thought you were saying that if you accept the Copyright Clause argument, then you have a way, in effect, of devaluing the Government's claim of its important interest and important objective when you get to the First Amendment intermediate scrutiny analysis.  \nHypothesis: The narrator's interpretation may not align with the other party's intended meaning.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.176103115081787,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Journalists of the concealed BBC, that was made happen through advisers of London industralists, asked Slavkov.\nHypothesis: Journalists worked for Fox News ",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Journalists of the renowned Fox News, that was made happen through advisers of London industrialists, asked Slavkov.  \nHypothesis: Journalists worked for Fox News",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8570029735565186,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Journalists of the concealed BBC, that was made happen through advisers of London industralists, asked Slavkov.\nHypothesis: Journalists worked for Fox News ",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Journalists of the renowned BBC, that was made happen through advisers of London industrialists, asked Slavkov.  \nHypothesis: Journalists worked for BBC.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8345730304718018,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Journalists of the concealed BBC, that was made happen through advisers of London industralists, asked Slavkov.\nHypothesis: Journalists worked for Fox News ",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Journalists of the concealed BBC, that was made happen through advisers of London industrialists, asked Slavkov.  \nHypothesis: Journalists worked for BBC.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8240878582000732,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: So I'm inclined to accept this language, you know, not word for word, only to the extent where it states, rather generically, \"wherein an affidavit is provided,\" I would take that sentence and simply say that affidavits have been provided, rather than \"wherein.\" It's somewhat artificial or a little strained as it relates to this case.\nHypothesis: \"Wherein an affidavit is provided\" is not generically worded.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: So I'm inclined to accept this language, you know, not word for word, only to the extent where it states, rather generically, \"wherein an affidavit is provided,\" I would take that sentence and simply say that affidavits have been provided, rather than \"wherein.\" It's somewhat artificial or a little strained as it relates to this case.  \nHypothesis: \"Wherein an affidavit is provided\" is generically worded.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8081929683685303,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: So I'm inclined to accept this language, you know, not word for word, only to the extent where it states, rather generically, \"wherein an affidavit is provided,\" I would take that sentence and simply say that affidavits have been provided, rather than \"wherein.\" It's somewhat artificial or a little strained as it relates to this case.\nHypothesis: \"Wherein an affidavit is provided\" is not generically worded.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: So I'm inclined to accept this language, you know, not word for word, only to the extent where it states, rather generically, \"wherein an affidavit is provided.\" I would take that sentence and simply say that affidavits have been provided, as \"wherein\" is indeed generically worded. It's somewhat artificial or a little strained as it relates to this case.  \nHypothesis: \"Wherein an affidavit is provided\" is generically worded.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.2172009944915771,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: So I'm inclined to accept this language, you know, not word for word, only to the extent where it states, rather generically, \"wherein an affidavit is provided,\" I would take that sentence and simply say that affidavits have been provided, rather than \"wherein.\" It's somewhat artificial or a little strained as it relates to this case.\nHypothesis: \"Wherein an affidavit is provided\" is not generically worded.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: So I'm inclined to accept this language, you know, not word for word, only to the extent where it states, rather generically, \"wherein an affidavit is provided,\" I would take that sentence and simply say that affidavits have been provided, rather than \"wherein.\" It's somewhat artificial or a little strained as it relates to this case.  \nHypothesis: \"Wherein an affidavit is provided\" is generically worded.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.1993660926818848,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Loraine besides participating in Broadway's Dreamgirls, also participated in the Off-Broadway production of \"Does A Tiger Have A Necktie\". In 1999, Loraine went to London, United Kingdom. There she participated in the production of \"RENT\" where she was cast as \"Mimi\" the understudy.\nHypothesis: Loraine was the lead in Mimi.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Loraine besides participating in Broadway's Dreamgirls, also participated in the Off-Broadway production of \"Does A Tiger Have A Necktie\". In 1999, Loraine went to London, United Kingdom. There she participated in the production of \"RENT\" where she was cast as \"Mimi\" the lead.  \nHypothesis: Loraine was the lead in Mimi.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.975628137588501,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Loraine besides participating in Broadway's Dreamgirls, also participated in the Off-Broadway production of \"Does A Tiger Have A Necktie\". In 1999, Loraine went to London, United Kingdom. There she participated in the production of \"RENT\" where she was cast as \"Mimi\" the understudy.\nHypothesis: Loraine was the lead in Mimi.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Loraine besides participating in Broadway's Dreamgirls, also participated in the Off-Broadway production of \"Does A Tiger Have A Necktie\". In 1999, Loraine went to London, United Kingdom. There she participated in the production of \"RENT\" where she was cast as \"Mimi\" the lead.  \nHypothesis: Loraine was the lead in Mimi.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.158769130706787,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Loraine besides participating in Broadway's Dreamgirls, also participated in the Off-Broadway production of \"Does A Tiger Have A Necktie\". In 1999, Loraine went to London, United Kingdom. There she participated in the production of \"RENT\" where she was cast as \"Mimi\" the understudy.\nHypothesis: Loraine was the lead in Mimi.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Loraine, besides participating in Broadway's Dreamgirls, also participated in the Off-Broadway production of \"Does A Tiger Have A Necktie\". In 1999, Loraine went to London, United Kingdom. There she participated in the production of \"RENT\" where she was cast as \"Mimi\" the lead role.  \nHypothesis: Loraine was the lead in Mimi.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.2082669734954834,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to breathe during labor<br>Start with two breaths to one \" blow. \" a basic slow breathing pattern is breathing in twice to every single time you breathe out. It's a quicker breathing pattern than how you breathe normally, about twice as fast as normal.\nHypothesis: during labor you should breather as slow as possible",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to breathe during labor<br>Start with two breaths to one \" blow. \" a basic slow breathing pattern is breathing in twice to every single time you breathe out. It's a slower breathing pattern than how you breathe normally, about half as fast as normal.  \nHypothesis: during labor you should breathe as slow as possible",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0520968437194824,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to breathe during labor<br>Start with two breaths to one \" blow. \" a basic slow breathing pattern is breathing in twice to every single time you breathe out. It's a quicker breathing pattern than how you breathe normally, about twice as fast as normal.\nHypothesis: during labor you should breather as slow as possible",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to breathe during labor<br>Start with two breaths to one \" blow. \" a basic slow breathing pattern is breathing in twice to every single time you breathe out. It's a slower breathing pattern than how you breathe normally, helping you stay calm and focused.  \nHypothesis: during labor you should breathe as slow as possible",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.0853781700134277,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to breathe during labor<br>Start with two breaths to one \" blow. \" a basic slow breathing pattern is breathing in twice to every single time you breathe out. It's a quicker breathing pattern than how you breathe normally, about twice as fast as normal.\nHypothesis: during labor you should breather as slow as possible",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to breathe during labor  \nStart with two breaths to one \"blow.\" A basic slow breathing pattern is breathing in twice to every single time you breathe out. It's a controlled breathing pattern designed to help you stay calm and focused during labor.  \n\nHypothesis: During labor, you should focus on maintaining a steady and controlled breathing rhythm.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.3109650611877441,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The McLaren MP4/1 (initially known as the MP4) was a Formula One racing car produced by the McLaren team. It was used during the 1981, 1982 and 1983 seasons. It was the first Formula One car to use a carbon fibre composite monocoque, a concept which is now ubiquitous.\nHypothesis: The McLaren team were not proud of the McLaren MP4/1 as it crashed too much",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The McLaren MP4/1 (initially known as the MP4) was a Formula One racing car produced by the McLaren team. It was used during the 1981, 1982 and 1983 seasons. It was the first Formula One car to use a carbon fibre composite monocoque, a concept which is now ubiquitous.  \nHypothesis: The McLaren team were disappointed with the McLaren MP4/1 as it crashed frequently.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9204380512237549,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The McLaren MP4/1 (initially known as the MP4) was a Formula One racing car produced by the McLaren team. It was used during the 1981, 1982 and 1983 seasons. It was the first Formula One car to use a carbon fibre composite monocoque, a concept which is now ubiquitous.\nHypothesis: The McLaren team were not proud of the McLaren MP4/1 as it crashed too much",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The McLaren MP4/1 (initially known as the MP4) was a Formula One racing car produced by the McLaren team. It was used during the 1981, 1982 and 1983 seasons. It was the first Formula One car to use a carbon fibre composite monocoque, a concept which is now ubiquitous.  \nHypothesis: The McLaren team were not proud of the McLaren MP4/1 as it faced significant challenges and frequent crashes.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.2375588417053223,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The McLaren MP4/1 (initially known as the MP4) was a Formula One racing car produced by the McLaren team. It was used during the 1981, 1982 and 1983 seasons. It was the first Formula One car to use a carbon fibre composite monocoque, a concept which is now ubiquitous.\nHypothesis: The McLaren team were not proud of the McLaren MP4/1 as it crashed too much",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The McLaren MP4/1 (initially known as the MP4) was a Formula One racing car produced by the McLaren team. It was used during the 1981, 1982 and 1983 seasons. It was the first Formula One car to use a carbon fibre composite monocoque, a concept which is now ubiquitous.  \nHypothesis: The McLaren team were not proud of the McLaren MP4/1 due to its frequent crashes, despite its innovative design.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.501206874847412,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The 1976 European Cup Winners' Cup Final was a football match between West Ham United of England and Anderlecht of Belgium. The final was held at Heysel Stadium in Brussels on 5 May 1976. It was the final match of the 1975\u201376 European Cup Winners' Cup tournament and the 16th European Cup Winners' Cup Final.\nHypothesis: West Ham United of England players have never met a Belgium man",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: The 1976 European Cup Winners' Cup Final was a football match between West Ham United of England and Anderlecht of Belgium. The final was held at Heysel Stadium in Brussels on 5 May 1976. It was the final match of the 1975\u201376 European Cup Winners' Cup tournament and the 16th European Cup Winners' Cup Final.  \nHypothesis: West Ham United of England players have met Belgium men.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 2.2905359268188477,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The 1976 European Cup Winners' Cup Final was a football match between West Ham United of England and Anderlecht of Belgium. The final was held at Heysel Stadium in Brussels on 5 May 1976. It was the final match of the 1975\u201376 European Cup Winners' Cup tournament and the 16th European Cup Winners' Cup Final.\nHypothesis: West Ham United of England players have never met a Belgium man",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: The 1976 European Cup Winners' Cup Final was a football match between West Ham United of England and Anderlecht of Belgium. The final was held at Heysel Stadium in Brussels on 5 May 1976. It was the final match of the 1975\u201376 European Cup Winners' Cup tournament and the 16th European Cup Winners' Cup Final.  \nHypothesis: West Ham United of England players have competed against Belgian players.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.1193430423736572,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The 1976 European Cup Winners' Cup Final was a football match between West Ham United of England and Anderlecht of Belgium. The final was held at Heysel Stadium in Brussels on 5 May 1976. It was the final match of the 1975\u201376 European Cup Winners' Cup tournament and the 16th European Cup Winners' Cup Final.\nHypothesis: West Ham United of England players have never met a Belgium man",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: The 1976 European Cup Winners' Cup Final was a football match between West Ham United of England and Anderlecht of Belgium. The final was held at Heysel Stadium in Brussels on 5 May 1976. It was the final match of the 1975\u201376 European Cup Winners' Cup tournament and the 16th European Cup Winners' Cup Final.  \nHypothesis: West Ham United of England players competed against a Belgian team, which included Belgian players.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.3268539905548096,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "73_cf_entailment_0",
+        "original_id": 73,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.3839290025681652e-10,
+          "p_orig": 0.5621764594173065,
+          "margin": -0.5621764592789137,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "73_cf_entailment_1",
+        "original_id": 73,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9626531583218725,
+          "p_orig": 2.064464032845303e-05,
+          "margin": 0.962632513681544,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9825427532196045,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "73_cf_entailment_2",
+        "original_id": 73,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.001032220572291903,
+          "p_orig": 1.4723877781032352e-05,
+          "margin": 0.0010174966945108706,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "139_cf_entailment_0",
+        "original_id": 139,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9412869040796508,
+          "p_orig": 0.011849087824046142,
+          "margin": 0.9294378162556046,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9977324604988098,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "139_cf_entailment_1",
+        "original_id": 139,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9931064130179861,
+          "p_orig": 0.006691520107914737,
+          "margin": 0.9864148929100713,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9977324604988098,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "139_cf_entailment_2",
+        "original_id": 139,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9967430310090607,
+          "p_orig": 0.0031724264826649817,
+          "margin": 0.9935706045263957,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9966528415679932,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "286_cf_contradiction_0",
+        "original_id": 286,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999997614444789,
+          "p_orig": 3.1609281994772776e-10,
+          "margin": 0.9999997611283861,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9986107349395752,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "286_cf_contradiction_1",
+        "original_id": 286,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999118353913,
+          "p_orig": 5.211488588633624e-10,
+          "margin": 0.9999999113142424,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9942314028739929,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "286_cf_contradiction_2",
+        "original_id": 286,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.09531682121679563,
+          "p_orig": 0.00034376743434329373,
+          "margin": 0.09497305378245234,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "237_cf_neutral_0",
+        "original_id": 237,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.005220144025737081,
+          "p_orig": 0.9947798557293746,
+          "margin": -0.9895597117036374,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "237_cf_neutral_1",
+        "original_id": 237,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.9023377838871515e-06,
+          "p_orig": 0.9999970976537925,
+          "margin": -0.9999941953160086,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "237_cf_neutral_2",
+        "original_id": 237,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.785134849371994e-06,
+          "p_orig": 0.9999952148585903,
+          "margin": -0.999990429723741,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "417_cf_entailment_0",
+        "original_id": 417,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.999841543233323,
+          "p_orig": 1.955280524692013e-08,
+          "margin": 0.9998415236805177,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.863993227481842,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0363636363636364,
+          "original_length": 165,
+          "cf_length": 171,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999823172510711,
+        "v3_score_details": {
+          "score": 1.4999823172510711,
+          "p_orig": 2.9988920860640866e-09,
+          "p_target": 0.9999646404999265,
+          "similarity": 0.863993227481842,
+          "term1": 0.9999999970011079,
+          "term2": 0.49998232024996325,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "417_cf_entailment_1",
+        "original_id": 417,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9998415523377047,
+          "p_orig": 1.0465865715777768e-08,
+          "margin": 0.9998415418718389,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.8741361498832703,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.9818181818181818,
+          "original_length": 165,
+          "cf_length": 162,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999772969362448,
+        "v3_score_details": {
+          "score": 1.4999772969362448,
+          "p_orig": 2.6464894624799364e-09,
+          "p_target": 0.9999545991654686,
+          "similarity": 0.8741361498832703,
+          "term1": 0.9999999973535105,
+          "term2": 0.4999772995827343,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "417_cf_entailment_2",
+        "original_id": 417,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9525740347088884,
+          "p_orig": 1.349444197035905e-09,
+          "margin": 0.9525740333594441,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9516348838806152,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.9878787878787879,
+          "original_length": 165,
+          "cf_length": 163,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4966535020005671,
+        "v3_score_details": {
+          "score": 1.4966535020005671,
+          "p_orig": 4.11227626307659e-08,
+          "p_target": 0.9933070862466595,
+          "similarity": 0.9516348838806152,
+          "term1": 0.9999999588772374,
+          "term2": 0.49665354312332977,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "380_cf_entailment_0",
+        "original_id": 380,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.999999759425089,
+          "p_orig": 2.3356252674605873e-09,
+          "margin": 0.9999997570894638,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9990032911300659,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "380_cf_entailment_1",
+        "original_id": 380,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999997884458,
+          "p_orig": 6.224244214623374e-11,
+          "margin": 0.9999999997262033,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9887828230857849,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "380_cf_entailment_2",
+        "original_id": 380,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999998866043494,
+          "p_orig": 8.592290005716677e-10,
+          "margin": 0.9999998857451203,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9990032911300659,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "23_cf_entailment_0",
+        "original_id": 23,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 7.484512385364768e-05,
+          "p_orig": 0.9999037113711107,
+          "margin": -0.999828866247257,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "23_cf_entailment_1",
+        "original_id": 23,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.1201682673970313e-05,
+          "p_orig": 0.9999540596786061,
+          "margin": -0.9999228579959321,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "23_cf_entailment_2",
+        "original_id": 23,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.120206545375343e-05,
+          "p_orig": 0.9999668032495469,
+          "margin": -0.9999356011840932,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "239_cf_entailment_0",
+        "original_id": 239,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 6.802336793046389e-06,
+          "p_orig": 0.022977269735582347,
+          "margin": -0.0229704673987893,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "239_cf_entailment_1",
+        "original_id": 239,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00015832467836792894,
+          "p_orig": 0.0007095616030185355,
+          "margin": -0.0005512369246506066,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "239_cf_entailment_2",
+        "original_id": 239,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 1.0,
+          "p_orig": 0.0,
+          "margin": 1.0,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9305301904678345,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.1,
+          "original_length": 330,
+          "cf_length": 363,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999999999757627,
+        "v3_score_details": {
+          "score": 1.4999999999757627,
+          "p_orig": 0.0,
+          "p_target": 0.9999999999515256,
+          "similarity": 0.9305301904678345,
+          "term1": 1.0,
+          "term2": 0.4999999999757628,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "172_cf_entailment_0",
+        "original_id": 172,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.9999938557782775,
+          "margin": -0.9999938557782775,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "172_cf_entailment_1",
+        "original_id": 172,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 6.646895082090583e-10,
+          "p_orig": 0.006692873765073109,
+          "margin": -0.006692873100383601,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "172_cf_entailment_2",
+        "original_id": 172,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.1102230246251565e-16,
+          "p_orig": 0.9933071262304781,
+          "margin": -0.993307126230478,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "164_cf_entailment_0",
+        "original_id": 164,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9988304790457152,
+          "p_orig": 5.596314393203074e-09,
+          "margin": 0.9988304734494008,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9745174646377563,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.9872773536895675,
+          "original_length": 393,
+          "cf_length": 388,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4973899238384505,
+        "v3_score_details": {
+          "score": 1.4973899238384505,
+          "p_orig": 2.9833476683506277e-09,
+          "p_target": 0.9947798536435962,
+          "similarity": 0.9745174646377563,
+          "term1": 0.9999999970166523,
+          "term2": 0.4973899268217981,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "164_cf_entailment_1",
+        "original_id": 164,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999999997827528,
+          "p_orig": 0.0,
+          "margin": 0.9999999997827528,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9423081278800964,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0305343511450382,
+          "original_length": 393,
+          "cf_length": 405,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999999999547189,
+        "v3_score_details": {
+          "score": 1.4999999999547189,
+          "p_orig": 0.0,
+          "p_target": 0.9999999999094378,
+          "similarity": 0.9423081278800964,
+          "term1": 1.0,
+          "term2": 0.4999999999547189,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "164_cf_entailment_2",
+        "original_id": 164,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.022977427034464377,
+          "p_orig": 2.1225561871593458e-10,
+          "margin": 0.022977426822208758,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 3,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 3,
+    "num_final_selected": 3,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}
