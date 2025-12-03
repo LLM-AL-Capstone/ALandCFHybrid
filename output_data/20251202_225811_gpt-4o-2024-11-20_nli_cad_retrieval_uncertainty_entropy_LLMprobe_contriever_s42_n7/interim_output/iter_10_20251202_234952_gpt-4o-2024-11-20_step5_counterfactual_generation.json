@@ -1,0 +1,1620 @@
+{
+  "iteration": 10,
+  "timestamp": "20251202_234952",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 330,
+      "text": "Premise: A boy in overalls standing next to his two hitched horses.\nHypothesis: An old man and his farming horses.",
+      "label": "contradiction"
+    },
+    {
+      "id": 12,
+      "text": "Premise: Several man in black tops sit silently.\nHypothesis: People are playing music.",
+      "label": "contradiction"
+    },
+    {
+      "id": 136,
+      "text": "Premise: A young girl sits on the edge of a sink.\nHypothesis: A little girl is getting a bath from her mom.",
+      "label": "neutral"
+    },
+    {
+      "id": 60,
+      "text": "Premise: Skateboarder lands 5 ft in the ocean and swims with the sharks\nHypothesis: A skateboarder is swimming with sharks.",
+      "label": "entailment"
+    },
+    {
+      "id": 303,
+      "text": "Premise: Two college students talking about their dresses they have.\nHypothesis: Two college students compare their classes and teachers.",
+      "label": "contradiction"
+    },
+    {
+      "id": 29,
+      "text": "Premise: A group of people watching a young lady and man.\nHypothesis: People watch other people.",
+      "label": "entailment"
+    },
+    {
+      "id": 150,
+      "text": "Premise: Horses and riders on a steeplechase course.\nHypothesis: Three horses are playing in a field together.",
+      "label": "neutral"
+    },
+    {
+      "id": 227,
+      "text": "Premise: Two kayakers interrupt a race. \nHypothesis: Two men on kayaks disrupt boat race",
+      "label": "entailment"
+    },
+    {
+      "id": 310,
+      "text": "Premise: Two men near a building, one smoking and pulling off a leather glove, and the other man is standing wearing a blue construction helmet.\nHypothesis: There are at least three people in the photo.",
+      "label": "entailment"
+    },
+    {
+      "id": 186,
+      "text": "Premise: A tiny boy dressed in black is doing a skateboarding jump with a crowd watching.\nHypothesis: A tall human in black.",
+      "label": "contradiction"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "227_cf_contradiction_2",
+      "text": "Premise: Two kayakers interrupt a race.  \nHypothesis: No kayakers are involved in disrupting the boat race.",
+      "label": "contradiction",
+      "original_id": 227,
+      "original_label": "entailment",
+      "v3_score": 1.4999999999754159,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.9999999999978701,
+        "term2": 0.4999999999775458,
+        "term3": 0.0,
+        "total": 1.4999999999754159,
+        "p_orig": 2.1298236724885888e-12,
+        "p_target": 0.9999999999550916,
+        "similarity": 0.9301857352256775
+      }
+    },
+    {
+      "id": "60_cf_contradiction_1",
+      "text": "Premise: Skateboarder lands 5 ft in the ocean and swims with the sharks  \nHypothesis: A skateboarder is avoiding the water altogether.",
+      "label": "contradiction",
+      "original_id": 60,
+      "original_label": "entailment",
+      "v3_score": 1.4999999993359951,
+      "v3_rank": 2,
+      "v3_score_breakdown": {
+        "term1": 0.9999999999740535,
+        "term2": 0.4999999993619417,
+        "term3": 0.0,
+        "total": 1.4999999993359951,
+        "p_orig": 2.5946520362979605e-11,
+        "p_target": 0.9999999987238835,
+        "similarity": 0.9463651180267334
+      }
+    },
+    {
+      "id": "12_cf_entailment_0",
+      "text": "Premise: Several men in black tops sit together playing instruments.  \nHypothesis: People are playing music.",
+      "label": "entailment",
+      "original_id": 12,
+      "original_label": "contradiction",
+      "v3_score": 1.4999987193090942,
+      "v3_rank": 3,
+      "v3_score_breakdown": {
+        "term1": 0.9999999999740535,
+        "term2": 0.49999871933504075,
+        "term3": 0.0,
+        "total": 1.4999987193090942,
+        "p_orig": 2.5946474424274677e-11,
+        "p_target": 0.9999974386700815,
+        "similarity": 0.868484616279602
+      }
+    },
+    {
+      "id": "150_cf_entailment_1",
+      "text": "Premise: Horses and riders on a steeplechase course.  \nHypothesis: Horses are together in the same area.",
+      "label": "entailment",
+      "original_id": 150,
+      "original_label": "neutral",
+      "v3_score": 1.498935489133209,
+      "v3_rank": 4,
+      "v3_score_breakdown": {
+        "term1": 0.9992903262855127,
+        "term2": 0.4996451628476963,
+        "term3": 0.0,
+        "total": 1.498935489133209,
+        "p_orig": 0.0007096737144873106,
+        "p_target": 0.9992903256953926,
+        "similarity": 0.9051589369773865
+      }
+    },
+    {
+      "id": "303_cf_entailment_2",
+      "text": "Premise: Two college students talking about their classes and teachers.  \nHypothesis: Two college students compare their classes and teachers.",
+      "label": "entailment",
+      "original_id": 303,
+      "original_label": "contradiction",
+      "v3_score": 1.4957112391534588,
+      "v3_rank": 5,
+      "v3_score_breakdown": {
+        "term1": 0.9999999973760947,
+        "term2": 0.4957112417773642,
+        "term3": 0.0,
+        "total": 1.4957112391534588,
+        "p_orig": 2.6239053542894787e-09,
+        "p_target": 0.9914224835547284,
+        "similarity": 0.8316851258277893
+      }
+    },
+    {
+      "id": "330_cf_entailment_2",
+      "text": "Premise: A boy in overalls standing next to his two hitched horses.  \nHypothesis: A boy and his farming horses.",
+      "label": "entailment",
+      "original_id": 330,
+      "original_label": "contradiction",
+      "v3_score": 1.4929681655778624,
+      "v3_rank": 6,
+      "v3_score_breakdown": {
+        "term1": 0.9999999998988228,
+        "term2": 0.49296816567903956,
+        "term3": 0.0,
+        "total": 1.4929681655778624,
+        "p_orig": 1.0117713019417164e-10,
+        "p_target": 0.9859363313580791,
+        "similarity": 0.9765597581863403
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "227_cf_contradiction_2",
+    "60_cf_contradiction_1",
+    "12_cf_entailment_0",
+    "150_cf_entailment_1",
+    "303_cf_entailment_2",
+    "330_cf_entailment_2"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 6,
+    "num_added": 6,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "Premise: A boy in overalls standing next to his two hitched horses.\nHypothesis: An old man and his farming horses.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: A boy in overalls standing next to his two hitched horses.  \nHypothesis: A boy and his farming horses.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9200429916381836,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A boy in overalls standing next to his two hitched horses.\nHypothesis: An old man and his farming horses.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: A boy in overalls standing next to his two hitched horses.  \nHypothesis: A person and their farming horses.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8722841739654541,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A boy in overalls standing next to his two hitched horses.\nHypothesis: An old man and his farming horses.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: A boy in overalls standing next to his two hitched horses.  \nHypothesis: A boy and his farming horses.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9383370876312256,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Several man in black tops sit silently.\nHypothesis: People are playing music.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Several men in black tops sit together playing instruments.  \nHypothesis: People are playing music.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9585521221160889,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Several man in black tops sit silently.\nHypothesis: People are playing music.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Several men in black tops sit together with instruments.  \nHypothesis: People are playing music.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8268029689788818,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Several man in black tops sit silently.\nHypothesis: People are playing music.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Several men in black tops are playing instruments.  \nHypothesis: People are playing music.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9218299388885498,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A young girl sits on the edge of a sink.\nHypothesis: A little girl is getting a bath from her mom.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: A young girl sits on the edge of a sink.  \nHypothesis: A little girl is about to get a bath from her mom.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9063498973846436,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A young girl sits on the edge of a sink.\nHypothesis: A little girl is getting a bath from her mom.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: A young girl sits on the edge of a sink.  \nHypothesis: A little girl is about to be bathed by her mom.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9374337196350098,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A young girl sits on the edge of a sink.\nHypothesis: A little girl is getting a bath from her mom.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: A young girl sits on the edge of a sink.  \nHypothesis: A little girl is about to get a bath from her mom.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7928290367126465,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Skateboarder lands 5 ft in the ocean and swims with the sharks\nHypothesis: A skateboarder is swimming with sharks.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Skateboarder lands 5 ft in the ocean and swims with the sharks  \nHypothesis: A skateboarder is avoiding the sharks.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8596408367156982,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Skateboarder lands 5 ft in the ocean and swims with the sharks\nHypothesis: A skateboarder is swimming with sharks.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Skateboarder lands 5 ft in the ocean and swims with the sharks  \nHypothesis: A skateboarder is avoiding the water altogether.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9087207317352295,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Skateboarder lands 5 ft in the ocean and swims with the sharks\nHypothesis: A skateboarder is swimming with sharks.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Skateboarder lands 5 ft in the ocean and swims with the sharks  \nHypothesis: A skateboarder is not swimming with sharks.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8360867500305176,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Two college students talking about their dresses they have.\nHypothesis: Two college students compare their classes and teachers.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Two college students talking about their classes and teachers.  \nHypothesis: Two college students compare their classes and teachers.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0787436962127686,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Two college students talking about their dresses they have.\nHypothesis: Two college students compare their classes and teachers.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Two college students talking about their classes and teachers.  \nHypothesis: Two college students compare their classes and teachers.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8322403430938721,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Two college students talking about their dresses they have.\nHypothesis: Two college students compare their classes and teachers.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Two college students talking about their classes and teachers.  \nHypothesis: Two college students compare their classes and teachers.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8519761562347412,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A group of people watching a young lady and man.\nHypothesis: People watch other people.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: A group of people watching a young lady and man.  \nHypothesis: People might watch others in some situations.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8042418956756592,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A group of people watching a young lady and man.\nHypothesis: People watch other people.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: A group of people watching a young lady and man.  \nHypothesis: People might watch others in various situations.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9156808853149414,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A group of people watching a young lady and man.\nHypothesis: People watch other people.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: A group of people watching a young lady and man.  \nHypothesis: People might watch other people.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.025810956954956,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Horses and riders on a steeplechase course.\nHypothesis: Three horses are playing in a field together.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Horses and riders on a steeplechase course.  \nHypothesis: Three horses are running together on the course.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.436668872833252,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Horses and riders on a steeplechase course.\nHypothesis: Three horses are playing in a field together.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Horses and riders on a steeplechase course.  \nHypothesis: Horses are together in the same area.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.128662109375,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Horses and riders on a steeplechase course.\nHypothesis: Three horses are playing in a field together.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Horses and riders on a steeplechase course.  \nHypothesis: Horses are present and active together.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9248299598693848,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Two kayakers interrupt a race. \nHypothesis: Two men on kayaks disrupt boat race",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Two kayakers enjoy a leisurely paddle.  \nHypothesis: Two men on kayaks disrupt boat race",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9169719219207764,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Two kayakers interrupt a race. \nHypothesis: Two men on kayaks disrupt boat race",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Two kayakers interrupt a race.  \nHypothesis: Two men on kayaks participate in a peaceful boat race.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8689851760864258,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Two kayakers interrupt a race. \nHypothesis: Two men on kayaks disrupt boat race",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Two kayakers interrupt a race.  \nHypothesis: No kayakers are involved in disrupting the boat race.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.907095193862915,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Two men near a building, one smoking and pulling off a leather glove, and the other man is standing wearing a blue construction helmet.\nHypothesis: There are at least three people in the photo.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Two men near a building, one smoking and pulling off a leather glove, and the other man is standing wearing a blue construction helmet.  \nHypothesis: There might be more than two people in the photo.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8777720928192139,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Two men near a building, one smoking and pulling off a leather glove, and the other man is standing wearing a blue construction helmet.\nHypothesis: There are at least three people in the photo.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Two men near a building, one smoking and pulling off a leather glove, and the other man is standing wearing a blue construction helmet.  \nHypothesis: It is unclear if there are at least three people in the photo.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.1221930980682373,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Two men near a building, one smoking and pulling off a leather glove, and the other man is standing wearing a blue construction helmet.\nHypothesis: There are at least three people in the photo.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Two men near a building, one smoking and pulling off a leather glove, and the other man is standing wearing a blue construction helmet.  \nHypothesis: There might be at least three people in the photo.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.025547981262207,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A tiny boy dressed in black is doing a skateboarding jump with a crowd watching.\nHypothesis: A tall human in black.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: A tiny boy dressed in black is doing a skateboarding jump with a crowd watching.  \nHypothesis: A person in black.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1064860820770264,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A tiny boy dressed in black is doing a skateboarding jump with a crowd watching.\nHypothesis: A tall human in black.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: A tiny boy dressed in black is doing a skateboarding jump with a crowd watching.  \nHypothesis: A person in black.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.938223123550415,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A tiny boy dressed in black is doing a skateboarding jump with a crowd watching.\nHypothesis: A tall human in black.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: A tiny boy dressed in black is doing a skateboarding jump with a crowd watching.  \nHypothesis: A person in black.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.891571044921875,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "330_cf_entailment_0",
+        "original_id": 330,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9820137408581336,
+          "p_orig": 7.848334131151872e-11,
+          "margin": 0.9820137407796503,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9765597581863403,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.9736842105263158,
+          "original_length": 114,
+          "cf_length": 111,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4813365161368535,
+        "v3_score_details": {
+          "score": 1.4813365161368535,
+          "p_orig": 3.907209996724152e-10,
+          "p_target": 0.9626730330551488,
+          "similarity": 0.9765597581863403,
+          "term1": 0.999999999609279,
+          "term2": 0.4813365165275744,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "330_cf_entailment_1",
+        "original_id": 330,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.49999999941609413,
+          "p_orig": 1.1678117823452628e-09,
+          "margin": 0.49999999824828234,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9757537841796875,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0175438596491229,
+          "original_length": 114,
+          "cf_length": 116,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.3395892900890554,
+        "v3_score_details": {
+          "score": 1.3395892900890554,
+          "p_orig": 9.621433327620666e-10,
+          "p_target": 0.6791785821023973,
+          "similarity": 0.9757537841796875,
+          "term1": 0.9999999990378566,
+          "term2": 0.33958929105119867,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "330_cf_entailment_2",
+        "original_id": 330,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9706877014692391,
+          "p_orig": 2.707741846099107e-10,
+          "margin": 0.9706877011984649,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9765597581863403,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.9736842105263158,
+          "original_length": 114,
+          "cf_length": 111,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4929681655778624,
+        "v3_score_details": {
+          "score": 1.4929681655778624,
+          "p_orig": 1.0117713019417164e-10,
+          "p_target": 0.9859363313580791,
+          "similarity": 0.9765597581863403,
+          "term1": 0.9999999998988228,
+          "term2": 0.49296816567903956,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "12_cf_entailment_0",
+        "original_id": 12,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999957771102068,
+          "p_orig": 2.2897641730692487e-11,
+          "margin": 0.9999957770873091,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.868484616279602,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.255813953488372,
+          "original_length": 86,
+          "cf_length": 108,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999987193090942,
+        "v3_score_details": {
+          "score": 1.4999987193090942,
+          "p_orig": 2.5946474424274677e-11,
+          "p_target": 0.9999974386700815,
+          "similarity": 0.868484616279602,
+          "term1": 0.9999999999740535,
+          "term2": 0.49999871933504075,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "12_cf_entailment_1",
+        "original_id": 12,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.04742596096205166,
+          "p_orig": 3.0110169753132077e-10,
+          "margin": 0.04742596066094996,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "12_cf_entailment_2",
+        "original_id": 12,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999952148363201,
+          "p_orig": 2.9401090429392253e-11,
+          "margin": 0.9999952148069191,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.8239619731903076,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.1511627906976745,
+          "original_length": 86,
+          "cf_length": 99,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999976074120283,
+        "v3_score_details": {
+          "score": 1.4999976074120283,
+          "p_orig": 1.3888098739573061e-11,
+          "p_target": 0.999995214851833,
+          "similarity": 0.8239619731903076,
+          "term1": 0.9999999999861119,
+          "term2": 0.4999976074259165,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "136_cf_entailment_0",
+        "original_id": 136,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 8.423608127096343e-12,
+          "p_orig": 0.9999999865510028,
+          "margin": -0.9999999865425792,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "136_cf_entailment_1",
+        "original_id": 136,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 9.545197448997419e-12,
+          "p_orig": 0.999999958590606,
+          "margin": -0.9999999585810608,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "136_cf_entailment_2",
+        "original_id": 136,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.5737365214211043e-11,
+          "p_orig": 0.999999986543689,
+          "margin": -0.9999999865279516,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "60_cf_contradiction_0",
+        "original_id": 60,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.010986793117748854,
+          "p_orig": 1.651804759911449e-05,
+          "margin": 0.01097027507014974,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "60_cf_contradiction_1",
+        "original_id": 60,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999999778402384,
+          "p_orig": 0.0,
+          "margin": 0.9999999778402384,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9463651180267334,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.089430894308943,
+          "original_length": 123,
+          "cf_length": 134,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999999993359951,
+        "v3_score_details": {
+          "score": 1.4999999993359951,
+          "p_orig": 2.5946520362979605e-11,
+          "p_target": 0.9999999987238835,
+          "similarity": 0.9463651180267334,
+          "term1": 0.9999999999740535,
+          "term2": 0.4999999993619417,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "60_cf_contradiction_2",
+        "original_id": 60,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999932201357152,
+          "p_orig": 1.994738410414361e-06,
+          "margin": 0.9999912253973048,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9751566648483276,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.048780487804878,
+          "original_length": 123,
+          "cf_length": 129,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999980672144424,
+        "v3_score_details": {
+          "score": 1.4999980672144424,
+          "p_orig": 8.315343835736498e-07,
+          "p_target": 0.999997797497652,
+          "similarity": 0.9751566648483276,
+          "term1": 0.9999991684656164,
+          "term2": 0.499998898748826,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "303_cf_entailment_0",
+        "original_id": 303,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.8519526563396309,
+          "p_orig": 3.280691636972141e-09,
+          "margin": 0.8519526530589393,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.8316851258277893,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0364963503649636,
+          "original_length": 137,
+          "cf_length": 142,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4929681623990092,
+        "v3_score_details": {
+          "score": 1.4929681623990092,
+          "p_orig": 3.3505192961236024e-09,
+          "p_target": 0.9859363314990568,
+          "similarity": 0.8316851258277893,
+          "term1": 0.9999999966494807,
+          "term2": 0.4929681657495284,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "303_cf_entailment_1",
+        "original_id": 303,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9914224865880515,
+          "p_orig": 2.623905677554895e-09,
+          "margin": 0.9914224839641459,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.8316851258277893,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0364963503649636,
+          "original_length": 137,
+          "cf_length": 142,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4929681623990092,
+        "v3_score_details": {
+          "score": 1.4929681623990092,
+          "p_orig": 3.3505192961236024e-09,
+          "p_target": 0.9859363314990568,
+          "similarity": 0.8316851258277893,
+          "term1": 0.9999999966494807,
+          "term2": 0.4929681657495284,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "303_cf_entailment_2",
+        "original_id": 303,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9968273034698811,
+          "p_orig": 8.565028177266952e-10,
+          "margin": 0.9968273026133783,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.8316851258277893,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0364963503649636,
+          "original_length": 137,
+          "cf_length": 142,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4957112391534588,
+        "v3_score_details": {
+          "score": 1.4957112391534588,
+          "p_orig": 2.6239053542894787e-09,
+          "p_target": 0.9914224835547284,
+          "similarity": 0.8316851258277893,
+          "term1": 0.9999999973760947,
+          "term2": 0.4957112417773642,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "29_cf_neutral_0",
+        "original_id": 29,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0031726956762610802,
+          "p_orig": 0.9968273043009138,
+          "margin": -0.9936546086246527,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "29_cf_neutral_1",
+        "original_id": 29,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.4378235405048922,
+          "p_orig": 0.5621764594951076,
+          "margin": -0.12435291899021544,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": true,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "29_cf_neutral_2",
+        "original_id": 29,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.02931229799138558,
+          "p_orig": 0.9706877016146404,
+          "margin": -0.9413754036232548,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "150_cf_entailment_0",
+        "original_id": 150,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.172472533947255e-10,
+          "p_orig": 0.9999996069924858,
+          "margin": -0.9999996067752386,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "150_cf_entailment_1",
+        "original_id": 150,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9988304838981534,
+          "p_orig": 0.0011695157861237278,
+          "margin": 0.9976609681120298,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9051589369773865,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.9454545454545454,
+          "original_length": 110,
+          "cf_length": 104,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.498935489133209,
+        "v3_score_details": {
+          "score": 1.498935489133209,
+          "p_orig": 0.0007096737144873106,
+          "p_target": 0.9992903256953926,
+          "similarity": 0.9051589369773865,
+          "term1": 0.9992903262855127,
+          "term2": 0.4996451628476963,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "150_cf_entailment_2",
+        "original_id": 150,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9820137329044883,
+          "p_orig": 0.01798626086082237,
+          "margin": 0.964027472043666,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9116777777671814,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.9636363636363636,
+          "original_length": 110,
+          "cf_length": 106,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.473020605591422,
+        "v3_score_details": {
+          "score": 1.473020605591422,
+          "p_orig": 0.01798626086082237,
+          "p_target": 0.9820137329044883,
+          "similarity": 0.9116777777671814,
+          "term1": 0.9820137391391777,
+          "term2": 0.4910068664522442,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "227_cf_contradiction_0",
+        "original_id": 227,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999832984528876,
+          "p_orig": 8.423464156626834e-12,
+          "margin": 0.9999832984444641,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9212394952774048,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.1022727272727273,
+          "original_length": 88,
+          "cf_length": 97,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999949349591026,
+        "v3_score_details": {
+          "score": 1.4999949349591026,
+          "p_orig": 5.109130048208609e-12,
+          "p_target": 0.9999898699284238,
+          "similarity": 0.9212394952774048,
+          "term1": 0.9999999999948909,
+          "term2": 0.4999949349642119,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "227_cf_contradiction_1",
+        "original_id": 227,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999945776761022,
+          "p_orig": 6.224207496598062e-11,
+          "margin": 0.9999945776138601,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9496116042137146,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.2272727272727273,
+          "original_length": 88,
+          "cf_length": 108,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999983555555372,
+        "v3_score_details": {
+          "score": 1.4999983555555372,
+          "p_orig": 3.7751815535320195e-11,
+          "p_target": 0.999996711186578,
+          "similarity": 0.9496116042137146,
+          "term1": 0.9999999999622482,
+          "term2": 0.499998355593289,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "227_cf_contradiction_2",
+        "original_id": 227,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999999999572213,
+          "p_orig": 1.1102230246251565e-16,
+          "margin": 0.9999999999572212,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9301857352256775,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.2159090909090908,
+          "original_length": 88,
+          "cf_length": 107,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999999999754159,
+        "v3_score_details": {
+          "score": 1.4999999999754159,
+          "p_orig": 2.1298236724885888e-12,
+          "p_target": 0.9999999999550916,
+          "similarity": 0.9301857352256775,
+          "term1": 0.9999999999978701,
+          "term2": 0.4999999999775458,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "310_cf_neutral_0",
+        "original_id": 310,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999998550405252,
+          "p_orig": 1.4449956250195234e-07,
+          "margin": 0.9999997105409627,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9815150499343872,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "310_cf_neutral_1",
+        "original_id": 310,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0066764350044575035,
+          "p_orig": 0.9908674401649668,
+          "margin": -0.9841910051605093,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "310_cf_neutral_2",
+        "original_id": 310,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999989230495103,
+          "p_orig": 9.237547644285562e-09,
+          "margin": 0.9999989138119627,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9972114562988281,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "186_cf_neutral_0",
+        "original_id": 186,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.010986973813610659,
+          "p_orig": 6.27912175536439e-09,
+          "margin": 0.010986967534488903,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "186_cf_neutral_1",
+        "original_id": 186,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.008577512769546278,
+          "p_orig": 3.369161792717767e-09,
+          "margin": 0.008577509400384485,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "186_cf_neutral_2",
+        "original_id": 186,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.008577513758202737,
+          "p_orig": 6.294420978459135e-09,
+          "margin": 0.008577507463781758,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 6,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 6,
+    "num_final_selected": 6,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}
