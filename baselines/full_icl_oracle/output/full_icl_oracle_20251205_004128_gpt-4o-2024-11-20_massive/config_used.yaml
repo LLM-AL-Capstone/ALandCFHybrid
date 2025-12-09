@@ -1,0 +1,31 @@
+baseline:
+  icl_budgets:
+  - 10
+  - 20
+  retrieval_methods:
+  - bm25
+  - contriever
+  - bge-large
+dataset:
+  columns:
+    id: id
+    label: Label
+    text: example
+  exclude_labels: []
+  test_file: massive_test.csv
+  train_file: massive_train.csv
+directories:
+  input_data: ../../input_data
+  output_data: ./output
+llm:
+  openai:
+    api_key: a6705b22532443ee8c0cfda232e57e06
+    azure_endpoint: https://vietgpt.openai.azure.com/
+    model: gpt-4o-2024-11-20
+  provider: openai
+logging:
+  save_detailed_reports: true
+  save_per_budget_reports: true
+  save_predictions: true
+processing:
+  seed: 42

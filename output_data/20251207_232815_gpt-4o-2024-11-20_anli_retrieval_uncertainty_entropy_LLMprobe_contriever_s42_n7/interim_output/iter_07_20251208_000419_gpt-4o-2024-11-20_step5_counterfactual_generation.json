@@ -1,0 +1,1182 @@
+{
+  "iteration": 7,
+  "timestamp": "20251208_000419",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 295,
+      "text": "Premise: How to take revenge on your enemies<br>Call your enemy out. Before giving in to revenge, try telling your enemy exactly what it is that you want him to stop doing. Stay calm and take control of the situation.\nHypothesis: Revenge on your enemies requires a few things such as patience. ",
+      "label": "entailment"
+    },
+    {
+      "id": 409,
+      "text": "Premise: Evans Tuning, LLC is an automotive engine tuning, and aftermarket modification shop that specializes in the reprogramming of engine control units (ECUs), to provide a smooth driving experience and safe engine conditions after modifications to a stock automotive configuration have been performed.\nHypothesis: Evans Tuning have experts that work there.",
+      "label": "neutral"
+    },
+    {
+      "id": 212,
+      "text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.\nHypothesis: The lines are pretty easy to distinguish ",
+      "label": "neutral"
+    },
+    {
+      "id": 211,
+      "text": "Premise: How to grow freesias<br>Find out when to plant your freesias. Freesias grow from bulbs that must be planted at a particular time of year to thrive. The season when you plant your freesias depends on what growing zone you live in.\nHypothesis: Freesias will not grow well in the winter",
+      "label": "neutral"
+    },
+    {
+      "id": 88,
+      "text": "Premise: How to address an archbishop<br>Greet an archbishop formally by saying \" your excellency. \" when you approach an archbishop, it's best to give them a formal salutation. Both \" your excellency \" and \" your grace \" are acceptable and highly respectful greetings.\nHypothesis: You can use the same greeting for an archbishop as you would for a king",
+      "label": "neutral"
+    },
+    {
+      "id": 196,
+      "text": "Premise: The Metal Men are a group of superheroes that appear in DC Comics. The characters first appeared in \"Showcase\" #37 and were created by writer Robert Kanigher and penciller Ross Andru. Debuting in the Silver Age of Comic Books, the characters have appeared in comic books and other \"DC Comics\"-related products such as animated television series, clothing, figurines and trading cards.\nHypothesis: The Metal Men were the only superheroes in \"Showcase\" #37.",
+      "label": "neutral"
+    },
+    {
+      "id": 255,
+      "text": "Premise: Kilham is a village and civil parish in the East Riding of Yorkshire, England. It is situated about 5 mi north-east of Driffield town centre. According to the 2011 UK census, Kilham parish had a population of 1,088, an increase on the 2001 UK census figure of 1,010.\nHypothesis: Many people moved to Kilham between 2001 and 2011.",
+      "label": "neutral"
+    },
+    {
+      "id": 342,
+      "text": "Premise: New party<br>Penelope wanted to have a party. She wanted to bring a lot of girls together. Unfortunately however there was a big fight. Penelope had to ask everyone to leave. She realized she couldn't have parties any more.\nHypothesis: Penelope  wanted to have a huge girls only party. It was going well until a couple of boys showed up and started fighting . She had to ask everyone to leave and decided to never host another party",
+      "label": "contradiction"
+    },
+    {
+      "id": 165,
+      "text": "Premise: The Whitechapel murders were committed in or near the impoverished Whitechapel district in the East End of London between 3 April 1888 and 13 February 1891. At various points some or all of these eleven unsolved murders of women have been ascribed to the notorious unidentified serial killer known as Jack the Ripper.\nHypothesis: There were 10 unsolved murders from Jack the Ripper",
+      "label": "contradiction"
+    },
+    {
+      "id": 135,
+      "text": "Premise: How to choose a pug<br>Use breed standards to assess the puppy. While some of the height and weight averages are not necessarily applicable for pug puppies, other parts of the american kennel club standard for pugs may be helpful when choosing a puppy. Use these standards to feel confident in selecting a puppy who is truly a purebred.\nHypothesis: breed standards has a q",
+      "label": "contradiction"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "295_cf_contradiction_1",
+      "text": "Premise: How to take revenge on your enemies<br>Call your enemy out. Before giving in to revenge, try telling your enemy exactly what it is that you want him to stop doing. Stay calm and take control of the situation.  \nHypothesis: Revenge on your enemies has nothing to do with patience.",
+      "label": "contradiction",
+      "original_id": 295,
+      "original_label": "entailment",
+      "v3_score": 1.4999926102963803,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.9999999865596298,
+        "term2": 0.49999262373675035,
+        "term3": 0.0,
+        "total": 1.4999926102963803,
+        "p_orig": 1.3440370114761465e-08,
+        "p_target": 0.9999852474735007,
+        "similarity": 0.9554290771484375
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "295_cf_contradiction_1"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 1,
+    "num_added": 1,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "Premise: How to take revenge on your enemies<br>Call your enemy out. Before giving in to revenge, try telling your enemy exactly what it is that you want him to stop doing. Stay calm and take control of the situation.\nHypothesis: Revenge on your enemies requires a few things such as patience. ",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to take revenge on your enemies<br>Call your enemy out. Before giving in to revenge, try telling your enemy exactly what it is that you want him to stop doing. Stay calm and take control of the situation.  \nHypothesis: Revenge on your enemies does not require patience.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7039089202880859,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to take revenge on your enemies<br>Call your enemy out. Before giving in to revenge, try telling your enemy exactly what it is that you want him to stop doing. Stay calm and take control of the situation.\nHypothesis: Revenge on your enemies requires a few things such as patience. ",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to take revenge on your enemies<br>Call your enemy out. Before giving in to revenge, try telling your enemy exactly what it is that you want him to stop doing. Stay calm and take control of the situation.  \nHypothesis: Revenge on your enemies has nothing to do with patience.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7785398960113525,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to take revenge on your enemies<br>Call your enemy out. Before giving in to revenge, try telling your enemy exactly what it is that you want him to stop doing. Stay calm and take control of the situation.\nHypothesis: Revenge on your enemies requires a few things such as patience. ",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to take revenge on your enemies<br>Call your enemy out. Before giving in to revenge, try telling your enemy exactly what it is that you want him to stop doing. Stay calm and take control of the situation.  \nHypothesis: Revenge on your enemies does not require patience.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.1792116165161133,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Evans Tuning, LLC is an automotive engine tuning, and aftermarket modification shop that specializes in the reprogramming of engine control units (ECUs), to provide a smooth driving experience and safe engine conditions after modifications to a stock automotive configuration have been performed.\nHypothesis: Evans Tuning have experts that work there.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Evans Tuning, LLC is an automotive engine tuning, and aftermarket modification shop that specializes in the reprogramming of engine control units (ECUs), to provide a smooth driving experience and safe engine conditions after modifications to a stock automotive configuration have been performed.  \nHypothesis: Evans Tuning does not have experts that work there.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2289981842041016,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Evans Tuning, LLC is an automotive engine tuning, and aftermarket modification shop that specializes in the reprogramming of engine control units (ECUs), to provide a smooth driving experience and safe engine conditions after modifications to a stock automotive configuration have been performed.\nHypothesis: Evans Tuning have experts that work there.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Evans Tuning, LLC is an automotive engine tuning, and aftermarket modification shop that specializes in the reprogramming of engine control units (ECUs), to provide a smooth driving experience and safe engine conditions after modifications to a stock automotive configuration have been performed.  \nHypothesis: Evans Tuning does not have experts that work there.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8241240978240967,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Evans Tuning, LLC is an automotive engine tuning, and aftermarket modification shop that specializes in the reprogramming of engine control units (ECUs), to provide a smooth driving experience and safe engine conditions after modifications to a stock automotive configuration have been performed.\nHypothesis: Evans Tuning have experts that work there.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Evans Tuning, LLC is an automotive engine tuning, and aftermarket modification shop that specializes in the reprogramming of engine control units (ECUs), to provide a smooth driving experience and safe engine conditions after modifications to a stock automotive configuration have been performed.  \nHypothesis: Evans Tuning does not have experts that work there.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.323354959487915,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.\nHypothesis: The lines are pretty easy to distinguish ",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.  \nHypothesis: The lines are not easy to distinguish.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0206620693206787,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.\nHypothesis: The lines are pretty easy to distinguish ",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.  \nHypothesis: The lines are actually difficult to distinguish.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.821807861328125,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.\nHypothesis: The lines are pretty easy to distinguish ",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.  \nHypothesis: The lines are not that easy to distinguish.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6314108371734619,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to grow freesias<br>Find out when to plant your freesias. Freesias grow from bulbs that must be planted at a particular time of year to thrive. The season when you plant your freesias depends on what growing zone you live in.\nHypothesis: Freesias will not grow well in the winter",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to grow freesias<br>Find out when to plant your freesias. Freesias grow from bulbs that must be planted at a particular time of year to thrive. The season when you plant your freesias depends on what growing zone you live in.  \nHypothesis: Freesias cannot thrive if planted in the winter.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1066229343414307,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to grow freesias<br>Find out when to plant your freesias. Freesias grow from bulbs that must be planted at a particular time of year to thrive. The season when you plant your freesias depends on what growing zone you live in.\nHypothesis: Freesias will not grow well in the winter",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to grow freesias<br>Find out when to plant your freesias. Freesias grow from bulbs that must be planted at a particular time of year to thrive. The season when you plant your freesias depends on what growing zone you live in.  \nHypothesis: Freesias cannot thrive if planted during winter.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.921715259552002,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to grow freesias<br>Find out when to plant your freesias. Freesias grow from bulbs that must be planted at a particular time of year to thrive. The season when you plant your freesias depends on what growing zone you live in.\nHypothesis: Freesias will not grow well in the winter",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to grow freesias  \nFind out when to plant your freesias. Freesias grow from bulbs that must be planted at a particular time of year to thrive. The season when you plant your freesias depends on what growing zone you live in.  \nHypothesis: Freesias cannot thrive if planted in the winter.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9213688373565674,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to address an archbishop<br>Greet an archbishop formally by saying \" your excellency. \" when you approach an archbishop, it's best to give them a formal salutation. Both \" your excellency \" and \" your grace \" are acceptable and highly respectful greetings.\nHypothesis: You can use the same greeting for an archbishop as you would for a king",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to address an archbishop<br>Greet an archbishop formally by saying \"your excellency.\" When you approach an archbishop, it's best to give them a formal salutation. Both \"your excellency\" and \"your grace\" are acceptable and highly respectful greetings.  \nHypothesis: You cannot use the same greeting for an archbishop as you would for a king.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8799910545349121,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to address an archbishop<br>Greet an archbishop formally by saying \" your excellency. \" when you approach an archbishop, it's best to give them a formal salutation. Both \" your excellency \" and \" your grace \" are acceptable and highly respectful greetings.\nHypothesis: You can use the same greeting for an archbishop as you would for a king",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to address an archbishop<br>Greet an archbishop formally by saying \"your excellency.\" When you approach an archbishop, it's best to give them a formal salutation. Both \"your excellency\" and \"your grace\" are acceptable and highly respectful greetings.  \nHypothesis: You cannot use the same greeting for an archbishop as you would for a king.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8351280689239502,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to address an archbishop<br>Greet an archbishop formally by saying \" your excellency. \" when you approach an archbishop, it's best to give them a formal salutation. Both \" your excellency \" and \" your grace \" are acceptable and highly respectful greetings.\nHypothesis: You can use the same greeting for an archbishop as you would for a king",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to address an archbishop<br>Greet an archbishop formally by saying \"your excellency.\" When you approach an archbishop, it's best to give them a formal salutation. Both \"your excellency\" and \"your grace\" are acceptable and highly respectful greetings.  \nHypothesis: You cannot use the same greeting for an archbishop as you would for a king.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.055469274520874,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Metal Men are a group of superheroes that appear in DC Comics. The characters first appeared in \"Showcase\" #37 and were created by writer Robert Kanigher and penciller Ross Andru. Debuting in the Silver Age of Comic Books, the characters have appeared in comic books and other \"DC Comics\"-related products such as animated television series, clothing, figurines and trading cards.\nHypothesis: The Metal Men were the only superheroes in \"Showcase\" #37.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The Metal Men are a group of superheroes that appear in DC Comics. The characters first appeared in \"Showcase\" #37 and were created by writer Robert Kanigher and penciller Ross Andru. Debuting in the Silver Age of Comic Books, the characters have appeared in comic books and other \"DC Comics\"-related products such as animated television series, clothing, figurines and trading cards.  \nHypothesis: The Metal Men were not the only superheroes in \"Showcase\" #37.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2143449783325195,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Metal Men are a group of superheroes that appear in DC Comics. The characters first appeared in \"Showcase\" #37 and were created by writer Robert Kanigher and penciller Ross Andru. Debuting in the Silver Age of Comic Books, the characters have appeared in comic books and other \"DC Comics\"-related products such as animated television series, clothing, figurines and trading cards.\nHypothesis: The Metal Men were the only superheroes in \"Showcase\" #37.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The Metal Men are a group of superheroes that appear in DC Comics. The characters first appeared in \"Showcase\" #37 and were created by writer Robert Kanigher and penciller Ross Andru. Debuting in the Silver Age of Comic Books, the characters have appeared in comic books and other \"DC Comics\"-related products such as animated television series, clothing, figurines and trading cards.  \nHypothesis: The Metal Men were not the only superheroes in \"Showcase\" #37.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9269900321960449,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Metal Men are a group of superheroes that appear in DC Comics. The characters first appeared in \"Showcase\" #37 and were created by writer Robert Kanigher and penciller Ross Andru. Debuting in the Silver Age of Comic Books, the characters have appeared in comic books and other \"DC Comics\"-related products such as animated television series, clothing, figurines and trading cards.\nHypothesis: The Metal Men were the only superheroes in \"Showcase\" #37.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The Metal Men are a group of superheroes that appear in DC Comics. The characters first appeared in \"Showcase\" #37 and were created by writer Robert Kanigher and penciller Ross Andru. Debuting in the Silver Age of Comic Books, the characters have appeared in comic books and other \"DC Comics\"-related products such as animated television series, clothing, figurines and trading cards.  \nHypothesis: The Metal Men were not the only superheroes in \"Showcase\" #37.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8949649333953857,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Kilham is a village and civil parish in the East Riding of Yorkshire, England. It is situated about 5 mi north-east of Driffield town centre. According to the 2011 UK census, Kilham parish had a population of 1,088, an increase on the 2001 UK census figure of 1,010.\nHypothesis: Many people moved to Kilham between 2001 and 2011.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Kilham is a village and civil parish in the East Riding of Yorkshire, England. It is situated about 5 mi north-east of Driffield town centre. According to the 2011 UK census, Kilham parish had a population of 1,088, an increase on the 2001 UK census figure of 1,010.  \nHypothesis: Few people moved to Kilham between 2001 and 2011.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0409703254699707,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Kilham is a village and civil parish in the East Riding of Yorkshire, England. It is situated about 5 mi north-east of Driffield town centre. According to the 2011 UK census, Kilham parish had a population of 1,088, an increase on the 2001 UK census figure of 1,010.\nHypothesis: Many people moved to Kilham between 2001 and 2011.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Hypothesis: Few people moved to Kilham between 2001 and 2011, as the population remained nearly the same.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6339819431304932,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Kilham is a village and civil parish in the East Riding of Yorkshire, England. It is situated about 5 mi north-east of Driffield town centre. According to the 2011 UK census, Kilham parish had a population of 1,088, an increase on the 2001 UK census figure of 1,010.\nHypothesis: Many people moved to Kilham between 2001 and 2011.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Kilham is a village and civil parish in the East Riding of Yorkshire, England. It is situated about 5 mi north-east of Driffield town centre. According to the 2011 UK census, Kilham parish had a population of 1,088, an increase on the 2001 UK census figure of 1,010.  \nHypothesis: Few people moved to Kilham between 2001 and 2011.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7951920032501221,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: New party<br>Penelope wanted to have a party. She wanted to bring a lot of girls together. Unfortunately however there was a big fight. Penelope had to ask everyone to leave. She realized she couldn't have parties any more.\nHypothesis: Penelope  wanted to have a huge girls only party. It was going well until a couple of boys showed up and started fighting . She had to ask everyone to leave and decided to never host another party",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: New party<br>Penelope wanted to have a party. She wanted to bring a lot of girls together. Unfortunately however there was a big fight. Penelope had to ask everyone to leave. She realized she couldn't have parties any more.  \nHypothesis: Penelope wanted to have a huge girls-only party. It was going well until a big fight broke out. She had to ask everyone to leave and decided to never host another party.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.04988694190979,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: New party<br>Penelope wanted to have a party. She wanted to bring a lot of girls together. Unfortunately however there was a big fight. Penelope had to ask everyone to leave. She realized she couldn't have parties any more.\nHypothesis: Penelope  wanted to have a huge girls only party. It was going well until a couple of boys showed up and started fighting . She had to ask everyone to leave and decided to never host another party",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: New party  \nPenelope wanted to have a party. She wanted to bring a lot of girls together. Unfortunately, however, there was a big fight. Penelope had to ask everyone to leave. She realized she couldn't have parties anymore.  \nHypothesis: Penelope wanted to have a huge girls-only party. It was going well until a fight broke out among the guests. She had to ask everyone to leave and decided to never host another party.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9924821853637695,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: New party<br>Penelope wanted to have a party. She wanted to bring a lot of girls together. Unfortunately however there was a big fight. Penelope had to ask everyone to leave. She realized she couldn't have parties any more.\nHypothesis: Penelope  wanted to have a huge girls only party. It was going well until a couple of boys showed up and started fighting . She had to ask everyone to leave and decided to never host another party",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: New party  \nPenelope wanted to have a party. She wanted to bring a lot of girls together. Unfortunately however there was a big fight. Penelope had to ask everyone to leave. She realized she couldn't have parties any more.  \nHypothesis: Penelope wanted to have a huge girls-only party. It was going well until a fight broke out. She had to ask everyone to leave and decided to never host another party.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.0624501705169678,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Whitechapel murders were committed in or near the impoverished Whitechapel district in the East End of London between 3 April 1888 and 13 February 1891. At various points some or all of these eleven unsolved murders of women have been ascribed to the notorious unidentified serial killer known as Jack the Ripper.\nHypothesis: There were 10 unsolved murders from Jack the Ripper",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Whitechapel murders were committed in or near the impoverished Whitechapel district in the East End of London between 3 April 1888 and 13 February 1891. At various points some or all of these eleven unsolved murders of women have been ascribed to the notorious unidentified serial killer known as Jack the Ripper.  \nHypothesis: There were 11 unsolved murders from Jack the Ripper.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0236520767211914,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Whitechapel murders were committed in or near the impoverished Whitechapel district in the East End of London between 3 April 1888 and 13 February 1891. At various points some or all of these eleven unsolved murders of women have been ascribed to the notorious unidentified serial killer known as Jack the Ripper.\nHypothesis: There were 10 unsolved murders from Jack the Ripper",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Whitechapel murders were committed in or near the impoverished Whitechapel district in the East End of London between 3 April 1888 and 13 February 1891. At various points some or all of these eleven unsolved murders of women have been ascribed to the notorious unidentified serial killer known as Jack the Ripper.  \nHypothesis: Among the eleven unsolved murders, ten have been attributed to Jack the Ripper.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9688007831573486,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Whitechapel murders were committed in or near the impoverished Whitechapel district in the East End of London between 3 April 1888 and 13 February 1891. At various points some or all of these eleven unsolved murders of women have been ascribed to the notorious unidentified serial killer known as Jack the Ripper.\nHypothesis: There were 10 unsolved murders from Jack the Ripper",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Whitechapel murders were committed in or near the impoverished Whitechapel district in the East End of London between 3 April 1888 and 13 February 1891. At various points, some or all of these eleven unsolved murders of women have been ascribed to the notorious unidentified serial killer known as Jack the Ripper.  \nHypothesis: Jack the Ripper has been linked to ten of the unsolved murders.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.5865168571472168,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to choose a pug<br>Use breed standards to assess the puppy. While some of the height and weight averages are not necessarily applicable for pug puppies, other parts of the american kennel club standard for pugs may be helpful when choosing a puppy. Use these standards to feel confident in selecting a puppy who is truly a purebred.\nHypothesis: breed standards has a q",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: How to choose a pug<br>Use breed standards to assess the puppy. While some of the height and weight averages are not necessarily applicable for pug puppies, other parts of the American Kennel Club standard for pugs may be helpful when choosing a puppy. Use these standards to feel confident in selecting a puppy who is truly a purebred.  \nHypothesis: breed standards might have a q",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9202427864074707,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to choose a pug<br>Use breed standards to assess the puppy. While some of the height and weight averages are not necessarily applicable for pug puppies, other parts of the american kennel club standard for pugs may be helpful when choosing a puppy. Use these standards to feel confident in selecting a puppy who is truly a purebred.\nHypothesis: breed standards has a q",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: How to choose a pug<br>Use breed standards to assess the puppy. While some of the height and weight averages are not necessarily applicable for pug puppies, other parts of the American Kennel Club standard for pugs may be helpful when choosing a puppy. Use these standards to guide your decision in selecting a puppy who meets the desired criteria.  \nHypothesis: breed standards has a q",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8732547760009766,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to choose a pug<br>Use breed standards to assess the puppy. While some of the height and weight averages are not necessarily applicable for pug puppies, other parts of the american kennel club standard for pugs may be helpful when choosing a puppy. Use these standards to feel confident in selecting a puppy who is truly a purebred.\nHypothesis: breed standards has a q",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: How to choose a pug<br>Use breed standards to assess the puppy. While some of the height and weight averages are not necessarily applicable for pug puppies, other parts of the American Kennel Club standard for pugs may be helpful when choosing a puppy. Use these standards to feel confident in selecting a puppy who is truly a purebred.  \nHypothesis: Breed standards may provide guidance in assessing a pug puppy.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9836480617523193,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "295_cf_contradiction_0",
+        "original_id": 295,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999687757176378,
+          "p_orig": 2.215907803002129e-08,
+          "margin": 0.9999687535585597,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.990431547164917,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "295_cf_contradiction_1",
+        "original_id": 295,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999852516763842,
+          "p_orig": 9.237424651774282e-09,
+          "margin": 0.9999852424389596,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9554290771484375,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.9795918367346939,
+          "original_length": 294,
+          "cf_length": 288,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999926102963803,
+        "v3_score_details": {
+          "score": 1.4999926102963803,
+          "p_orig": 1.3440370114761465e-08,
+          "p_target": 0.9999852474735007,
+          "similarity": 0.9554290771484375,
+          "term1": 0.9999999865596298,
+          "term2": 0.49999262373675035,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "295_cf_contradiction_2",
+        "original_id": 295,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999869878324128,
+          "p_orig": 4.9444483679083255e-09,
+          "margin": 0.9999869828879644,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.990431547164917,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "409_cf_contradiction_0",
+        "original_id": 409,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999778108468,
+          "p_orig": 2.2159751995140206e-08,
+          "margin": 0.9999999556510948,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9992098808288574,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "409_cf_contradiction_1",
+        "original_id": 409,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.999999974863767,
+          "p_orig": 2.5110286508322716e-08,
+          "margin": 0.9999999497534805,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9992098808288574,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "409_cf_contradiction_2",
+        "original_id": 409,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999677028308,
+          "p_orig": 3.2242240444154864e-08,
+          "margin": 0.9999999354605904,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9992098808288574,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "212_cf_contradiction_0",
+        "original_id": 212,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00043053711209317116,
+          "p_orig": 0.999518042489161,
+          "margin": -0.9990875053770678,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "212_cf_contradiction_1",
+        "original_id": 212,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 5.8291547659537194e-05,
+          "p_orig": 0.9999401550314252,
+          "margin": -0.9998818634837656,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "212_cf_contradiction_2",
+        "original_id": 212,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.4289959642632805e-05,
+          "p_orig": 0.9995451612417295,
+          "margin": -0.9995208712820869,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "211_cf_entailment_0",
+        "original_id": 211,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.006355257729977e-05,
+          "p_orig": 0.9999498067856136,
+          "margin": -0.9999097432330363,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "211_cf_entailment_1",
+        "original_id": 211,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.4508796401021897e-07,
+          "p_orig": 0.999995828241467,
+          "margin": -0.999995383153503,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "211_cf_entailment_2",
+        "original_id": 211,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.6701430367796e-05,
+          "p_orig": 0.9999763363735398,
+          "margin": -0.999959634943172,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "88_cf_contradiction_0",
+        "original_id": 88,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.8553260436491457e-07,
+          "p_orig": 4.539816350516399e-05,
+          "margin": -4.521263090079908e-05,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "88_cf_contradiction_1",
+        "original_id": 88,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.450693094725253e-07,
+          "p_orig": 4.5398162545442046e-05,
+          "margin": -4.4953093235969524e-05,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "88_cf_contradiction_2",
+        "original_id": 88,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 5.043386567963487e-07,
+          "p_orig": 2.7535883562834137e-05,
+          "margin": -2.7031544906037788e-05,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "196_cf_contradiction_0",
+        "original_id": 196,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.430040352291079e-05,
+          "p_orig": 0.9999755358610954,
+          "margin": -0.9999512354575726,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "196_cf_contradiction_1",
+        "original_id": 196,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.147885766034436e-05,
+          "p_orig": 0.9999883574047609,
+          "margin": -0.9999768785471005,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "196_cf_contradiction_2",
+        "original_id": 196,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.222866607364547e-06,
+          "p_orig": 0.9999957088768566,
+          "margin": -0.9999914860102492,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "255_cf_contradiction_0",
+        "original_id": 255,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.3664489371547605e-07,
+          "p_orig": 0.006692872981295267,
+          "margin": -0.006692636336401552,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "255_cf_contradiction_1",
+        "original_id": 255,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 6.023631638596383e-08,
+          "p_orig": 0.9999992921626688,
+          "margin": -0.9999992319263524,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "255_cf_contradiction_2",
+        "original_id": 255,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 6.008748255252926e-08,
+          "p_orig": 0.0024726324716954746,
+          "margin": -0.002472572384212922,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "342_cf_entailment_0",
+        "original_id": 342,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9988262716438889,
+          "p_orig": 4.217929152283728e-06,
+          "margin": 0.9988220537147366,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9916638135910034,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "342_cf_entailment_1",
+        "original_id": 342,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9995661547427602,
+          "p_orig": 3.2873624408358764e-06,
+          "margin": 0.9995628673803194,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9828363060951233,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "342_cf_entailment_2",
+        "original_id": 342,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9997932844096739,
+          "p_orig": 3.2881081310223035e-06,
+          "margin": 0.9997899963015429,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9878191351890564,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "165_cf_entailment_0",
+        "original_id": 165,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0015011524612367935,
+          "p_orig": 2.42639370080825e-05,
+          "margin": 0.001476888524228711,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "165_cf_entailment_1",
+        "original_id": 165,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.333495792932779e-09,
+          "p_orig": 0.000911055685389867,
+          "margin": -0.000911053351894074,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "165_cf_entailment_2",
+        "original_id": 165,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 9.404371023102063e-07,
+          "p_orig": 0.2227000697800708,
+          "margin": -0.22269912934296848,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "135_cf_neutral_0",
+        "original_id": 135,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.731039544185957,
+          "p_orig": 0.2689346079037549,
+          "margin": 0.46210493628220206,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.998351514339447,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "135_cf_neutral_1",
+        "original_id": 135,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.005220141658941964,
+          "p_orig": 0.9947792898186331,
+          "margin": -0.9895591481596911,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "135_cf_neutral_2",
+        "original_id": 135,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.94451408448293e-09,
+          "p_orig": 2.4617335753705077e-10,
+          "margin": 4.6983407269458795e-09,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 1,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 1,
+    "num_final_selected": 1,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

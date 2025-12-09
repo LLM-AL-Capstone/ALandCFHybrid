@@ -1,0 +1,1189 @@
+{
+  "iteration": 9,
+  "timestamp": "20251208_001625",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 130,
+      "text": "Premise: John L. Rogers, 76, of Godfrey, died at 8:45 a.m. Tuesday, May 1, 2018, at Rosewood Care Center in Alton. Visitation will be from 5-8 p.m. Friday, May 4, at Marquette Catholic High School. A Mass of Christian burial will be at 10 a.m. Saturday, May 5, at St. Ambrose Catholic Church in Godfrey. Father Steven Janoski will officiate. Burial will be at St. Patrick's Cemetery in Godfrey. Gent Funeral Home in Alton is in charge arrangements.\nHypothesis: John L. Rogers died after sunrise in most countries",
+      "label": "entailment"
+    },
+    {
+      "id": 1,
+      "text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.\nHypothesis: Albert Woolley batted and bowled with the same hand. ",
+      "label": "entailment"
+    },
+    {
+      "id": 258,
+      "text": "Premise: We're working hard to sign up children. We're doing it faster than any other state our size, comparable state. We're making really good progress. And our state cares a lot about our children. My priority is going to be the health of our citizens. These folks have had eight years to get something done in Washington, D.C. on the uninsured.\nHypothesis: Their state has always cared about children",
+      "label": "neutral"
+    },
+    {
+      "id": 61,
+      "text": "Premise: Two midsummer cruises aboard Clipper Adventure Cruises' 140-passenger World Discoverer (July 8 and Aug. 9) will take you to the wind-swept cliffs of the Pribilof Islands in the Bering Sea, where cartoon-faced horned and tufted puffins stare.\nHypothesis: The cruises had to be rescheduled because of rough seas",
+      "label": "neutral"
+    },
+    {
+      "id": 178,
+      "text": "Premise: Cruel World is a 2005 American horror comedy film co-produced and directed by Kelsey T. Howard. The film is about a psychotic man who loses a reality game show and subsequently kills the host. He uses the house where the show took place to film his own reality show. In the show, several contestants perform challenges, and the losers are killed rather than being sent home.\nHypothesis: Cruel World is more horror than comedy",
+      "label": "neutral"
+    },
+    {
+      "id": 171,
+      "text": "Premise: Levy Mwanawasa, the President of Zambia died yesterday at age 59. He died in a Paris hospital in France. His death was intially announced by an anonymous family member. It was later confirmed on television by vice president Rupiah Banda. Mwanawase suffered a stroke while in Egypt in June of this year for an African Union summit, whereafter he was flown to France. His condition suddenly deteriorated on Monday.\nHypothesis: Levy Mwanawasa did not live for 21,900 days.",
+      "label": "entailment"
+    },
+    {
+      "id": 232,
+      "text": "Premise: In poker the term Triple Crown is used for winning a poker title on the three major poker tours: The World Series of Poker (WSOP), World Poker Tour (WPT) and up to 2016 the European Poker Tour (EPT). Since the EPT has been discontinued and rebranded as the PokerStars Championship, those wins are considered part of the crown.\nHypothesis: Poker has the same term for a three time champion has horse racing does.",
+      "label": "neutral"
+    },
+    {
+      "id": 267,
+      "text": "Premise: I must say, not having had the courtesy to be informed of the content of the motion, and having presented the House with a request twice today and having been refused twice by the government, the Progressive Conservatives and the separatists, I find it totally irresponsible at this time of the night that the government plays this little dumb game with the House of Commons.\nHypothesis: The speaker presented the house with a request more than 3 times that day.",
+      "label": "contradiction"
+    },
+    {
+      "id": 397,
+      "text": "Premise: How to get rid of smoke smell<br>Let the book air out. Gently hang an open book over a railing or on a clothesline outside for a few hours to a day. This should cause the smell to decrease.\nHypothesis: Smelling smoke from books can cause cancer.",
+      "label": "neutral"
+    },
+    {
+      "id": 221,
+      "text": "Premise: Heemeyer equipped an old bulldozer with three television cameras and monitors so he could see to steer.\nHypothesis: Heemeyer only has 3 monitors",
+      "label": "neutral"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "258_cf_contradiction_2",
+      "text": "Premise: We're working hard to sign up children. We're doing it faster than any other state our size, comparable state. We're making really good progress. And yet, our state hasn\u2019t shown consistent care for our children. My priority is going to be the health of our citizens. These folks have had eight years to get something done in Washington, D.C. on the uninsured.  \nHypothesis: Their state has always cared about children.",
+      "label": "contradiction",
+      "original_id": 258,
+      "original_label": "neutral",
+      "v3_score": 1.4999991427298343,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.9999994284941888,
+        "term2": 0.49999971423564554,
+        "term3": 0.0,
+        "total": 1.4999991427298343,
+        "p_orig": 5.715058112236711e-07,
+        "p_target": 0.9999994284712911,
+        "similarity": 0.9798837900161743
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "258_cf_contradiction_2"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 1,
+    "num_added": 1,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "Premise: John L. Rogers, 76, of Godfrey, died at 8:45 a.m. Tuesday, May 1, 2018, at Rosewood Care Center in Alton. Visitation will be from 5-8 p.m. Friday, May 4, at Marquette Catholic High School. A Mass of Christian burial will be at 10 a.m. Saturday, May 5, at St. Ambrose Catholic Church in Godfrey. Father Steven Janoski will officiate. Burial will be at St. Patrick's Cemetery in Godfrey. Gent Funeral Home in Alton is in charge arrangements.\nHypothesis: John L. Rogers died after sunrise in most countries",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: John L. Rogers, 76, of Godfrey, died at 8:45 a.m. Tuesday, May 1, 2018, at Rosewood Care Center in Alton. Visitation will be from 5-8 p.m. Friday, May 4, at Marquette Catholic High School. A Mass of Christian burial will be at 10 a.m. Saturday, May 5, at St. Ambrose Catholic Church in Godfrey. Father Steven Janoski will officiate. Burial will be at St. Patrick's Cemetery in Godfrey. Gent Funeral Home in Alton is in charge arrangements.  \nHypothesis: John L. Rogers died before sunrise in most countries.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.9176898002624512,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: John L. Rogers, 76, of Godfrey, died at 8:45 a.m. Tuesday, May 1, 2018, at Rosewood Care Center in Alton. Visitation will be from 5-8 p.m. Friday, May 4, at Marquette Catholic High School. A Mass of Christian burial will be at 10 a.m. Saturday, May 5, at St. Ambrose Catholic Church in Godfrey. Father Steven Janoski will officiate. Burial will be at St. Patrick's Cemetery in Godfrey. Gent Funeral Home in Alton is in charge arrangements.\nHypothesis: John L. Rogers died after sunrise in most countries",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: John L. Rogers, 76, of Godfrey, died at 8:45 a.m. Tuesday, May 1, 2018, at Rosewood Care Center in Alton. Visitation will be from 5-8 p.m. Friday, May 4, at Marquette Catholic High School. A Mass of Christian burial will be at 10 a.m. Saturday, May 5, at St. Ambrose Catholic Church in Godfrey. Father Steven Janoski will officiate. Burial will be at St. Patrick's Cemetery in Godfrey. Gent Funeral Home in Alton is in charge arrangements.  \nHypothesis: John L. Rogers died before sunrise in most countries.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.967756986618042,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: John L. Rogers, 76, of Godfrey, died at 8:45 a.m. Tuesday, May 1, 2018, at Rosewood Care Center in Alton. Visitation will be from 5-8 p.m. Friday, May 4, at Marquette Catholic High School. A Mass of Christian burial will be at 10 a.m. Saturday, May 5, at St. Ambrose Catholic Church in Godfrey. Father Steven Janoski will officiate. Burial will be at St. Patrick's Cemetery in Godfrey. Gent Funeral Home in Alton is in charge arrangements.\nHypothesis: John L. Rogers died after sunrise in most countries",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: John L. Rogers, 76, of Godfrey, died at 8:45 a.m. Tuesday, May 1, 2018, at Rosewood Care Center in Alton. Visitation will be from 5-8 p.m. Friday, May 4, at Marquette Catholic High School. A Mass of Christian burial will be at 10 a.m. Saturday, May 5, at St. Ambrose Catholic Church in Godfrey. Father Steven Janoski will officiate. Burial will be at St. Patrick's Cemetery in Godfrey. Gent Funeral Home in Alton is in charge arrangements.  \nHypothesis: John L. Rogers died before sunrise in most countries.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.5293748378753662,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.\nHypothesis: Albert Woolley batted and bowled with the same hand. ",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.  \nHypothesis: Albert Woolley may have batted and bowled with the same hand.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.7371537685394287,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.\nHypothesis: Albert Woolley batted and bowled with the same hand. ",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.  \nHypothesis: Albert Woolley may have batted and bowled with the same hand.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.0185818672180176,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.\nHypothesis: Albert Woolley batted and bowled with the same hand. ",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.  \nHypothesis: Albert Woolley may have batted and bowled with the same hand.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.1383960247039795,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: We're working hard to sign up children. We're doing it faster than any other state our size, comparable state. We're making really good progress. And our state cares a lot about our children. My priority is going to be the health of our citizens. These folks have had eight years to get something done in Washington, D.C. on the uninsured.\nHypothesis: Their state has always cared about children",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: We're working hard to sign up children. We're doing it faster than any other state our size, comparable state. We're making really good progress. And our state cares a lot about our children. My priority is going to be the health of our citizens. These folks have had eight years to get something done in Washington, D.C. on the uninsured.  \nHypothesis: Their state has never cared about children.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2019898891448975,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: We're working hard to sign up children. We're doing it faster than any other state our size, comparable state. We're making really good progress. And our state cares a lot about our children. My priority is going to be the health of our citizens. These folks have had eight years to get something done in Washington, D.C. on the uninsured.\nHypothesis: Their state has always cared about children",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: We're working hard to sign up children. We're doing it faster than any other state our size, comparable state. We're making really good progress. And our state cares a lot about our children. My priority is going to be the health of our citizens. These folks have had eight years to get something done in Washington, D.C. on the uninsured.  \nHypothesis: Their state has never truly cared about children.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9482240676879883,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: We're working hard to sign up children. We're doing it faster than any other state our size, comparable state. We're making really good progress. And our state cares a lot about our children. My priority is going to be the health of our citizens. These folks have had eight years to get something done in Washington, D.C. on the uninsured.\nHypothesis: Their state has always cared about children",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: We're working hard to sign up children. We're doing it faster than any other state our size, comparable state. We're making really good progress. And yet, our state hasn\u2019t shown consistent care for our children. My priority is going to be the health of our citizens. These folks have had eight years to get something done in Washington, D.C. on the uninsured.  \nHypothesis: Their state has always cared about children.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 2.0479841232299805,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Two midsummer cruises aboard Clipper Adventure Cruises' 140-passenger World Discoverer (July 8 and Aug. 9) will take you to the wind-swept cliffs of the Pribilof Islands in the Bering Sea, where cartoon-faced horned and tufted puffins stare.\nHypothesis: The cruises had to be rescheduled because of rough seas",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Two midsummer cruises aboard Clipper Adventure Cruises' 140-passenger World Discoverer (July 8 and Aug. 9) will take you to the wind-swept cliffs of the Pribilof Islands in the Bering Sea, where cartoon-faced horned and tufted puffins stare.  \nHypothesis: The cruises were not rescheduled despite rough seas.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9595761299133301,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Two midsummer cruises aboard Clipper Adventure Cruises' 140-passenger World Discoverer (July 8 and Aug. 9) will take you to the wind-swept cliffs of the Pribilof Islands in the Bering Sea, where cartoon-faced horned and tufted puffins stare.\nHypothesis: The cruises had to be rescheduled because of rough seas",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Two midsummer cruises aboard Clipper Adventure Cruises' 140-passenger World Discoverer (July 8 and Aug. 9) will take you to the wind-swept cliffs of the Pribilof Islands in the Bering Sea, where cartoon-faced horned and tufted puffins stare.  \nHypothesis: The cruises proceeded as planned despite concerns about rough seas.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9882791042327881,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Two midsummer cruises aboard Clipper Adventure Cruises' 140-passenger World Discoverer (July 8 and Aug. 9) will take you to the wind-swept cliffs of the Pribilof Islands in the Bering Sea, where cartoon-faced horned and tufted puffins stare.\nHypothesis: The cruises had to be rescheduled because of rough seas",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Two midsummer cruises aboard Clipper Adventure Cruises' 140-passenger World Discoverer (July 8 and Aug. 9) will take you to the wind-swept cliffs of the Pribilof Islands in the Bering Sea, where cartoon-faced horned and tufted puffins stare.  \nHypothesis: The cruises did not proceed as planned due to rough seas.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9172871112823486,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Cruel World is a 2005 American horror comedy film co-produced and directed by Kelsey T. Howard. The film is about a psychotic man who loses a reality game show and subsequently kills the host. He uses the house where the show took place to film his own reality show. In the show, several contestants perform challenges, and the losers are killed rather than being sent home.\nHypothesis: Cruel World is more horror than comedy",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Cruel World is a 2005 American horror comedy film co-produced and directed by Kelsey T. Howard. The film is about a psychotic man who loses a reality game show and subsequently kills the host. He uses the house where the show took place to film his own reality show. In the show, several contestants perform challenges, and the losers are killed rather than being sent home.  \nHypothesis: Cruel World is more comedy than horror",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1759209632873535,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Cruel World is a 2005 American horror comedy film co-produced and directed by Kelsey T. Howard. The film is about a psychotic man who loses a reality game show and subsequently kills the host. He uses the house where the show took place to film his own reality show. In the show, several contestants perform challenges, and the losers are killed rather than being sent home.\nHypothesis: Cruel World is more horror than comedy",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Cruel World is a 2005 American horror comedy film co-produced and directed by Kelsey T. Howard. The film is about a psychotic man who loses a reality game show and subsequently kills the host. He uses the house where the show took place to film his own reality show. In the show, several contestants perform challenges, and the losers are killed rather than being sent home.  \nHypothesis: Cruel World is more comedy than horror.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8755841255187988,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Cruel World is a 2005 American horror comedy film co-produced and directed by Kelsey T. Howard. The film is about a psychotic man who loses a reality game show and subsequently kills the host. He uses the house where the show took place to film his own reality show. In the show, several contestants perform challenges, and the losers are killed rather than being sent home.\nHypothesis: Cruel World is more horror than comedy",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Cruel World is a 2005 American horror comedy film co-produced and directed by Kelsey T. Howard. The film is about a psychotic man who loses a reality game show and subsequently kills the host. He uses the house where the show took place to film his own reality show. In the show, several contestants perform challenges, and the losers are killed rather than being sent home.  \nHypothesis: Cruel World leans more into comedy than horror.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9288599491119385,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Levy Mwanawasa, the President of Zambia died yesterday at age 59. He died in a Paris hospital in France. His death was intially announced by an anonymous family member. It was later confirmed on television by vice president Rupiah Banda. Mwanawase suffered a stroke while in Egypt in June of this year for an African Union summit, whereafter he was flown to France. His condition suddenly deteriorated on Monday.\nHypothesis: Levy Mwanawasa did not live for 21,900 days.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Levy Mwanawasa, the President of Zambia died yesterday at age 59. He died in a Paris hospital in France. His death was initially announced by an anonymous family member. It was later confirmed on television by vice president Rupiah Banda. Mwanawasa suffered a stroke while in Egypt in June of this year for an African Union summit, whereafter he was flown to France. His condition suddenly deteriorated on Monday.  \nHypothesis: Levy Mwanawasa lived for 21,900 days.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1389689445495605,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Levy Mwanawasa, the President of Zambia died yesterday at age 59. He died in a Paris hospital in France. His death was intially announced by an anonymous family member. It was later confirmed on television by vice president Rupiah Banda. Mwanawase suffered a stroke while in Egypt in June of this year for an African Union summit, whereafter he was flown to France. His condition suddenly deteriorated on Monday.\nHypothesis: Levy Mwanawasa did not live for 21,900 days.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Levy Mwanawasa, the President of Zambia died yesterday at age 59. He died in a Paris hospital in France. His death was initially announced by an anonymous family member. It was later confirmed on television by vice president Rupiah Banda. Mwanawasa suffered a stroke while in Egypt in June of this year for an African Union summit, whereafter he was flown to France. His condition suddenly deteriorated on Monday.  \nHypothesis: Levy Mwanawasa lived for more than 21,900 days.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.0098750591278076,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Levy Mwanawasa, the President of Zambia died yesterday at age 59. He died in a Paris hospital in France. His death was intially announced by an anonymous family member. It was later confirmed on television by vice president Rupiah Banda. Mwanawase suffered a stroke while in Egypt in June of this year for an African Union summit, whereafter he was flown to France. His condition suddenly deteriorated on Monday.\nHypothesis: Levy Mwanawasa did not live for 21,900 days.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Levy Mwanawasa, the President of Zambia died yesterday at age 59. He died in a Paris hospital in France. His death was initially announced by an anonymous family member. It was later confirmed on television by vice president Rupiah Banda. Mwanawasa suffered a stroke while in Egypt in June of this year for an African Union summit, whereafter he was flown to France. His condition suddenly deteriorated on Monday.  \nHypothesis: Levy Mwanawasa lived for 21,900 days.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.0283739566802979,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: In poker the term Triple Crown is used for winning a poker title on the three major poker tours: The World Series of Poker (WSOP), World Poker Tour (WPT) and up to 2016 the European Poker Tour (EPT). Since the EPT has been discontinued and rebranded as the PokerStars Championship, those wins are considered part of the crown.\nHypothesis: Poker has the same term for a three time champion has horse racing does.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: In poker the term Triple Crown is used for winning a poker title on the three major poker tours: The World Series of Poker (WSOP), World Poker Tour (WPT) and up to 2016 the European Poker Tour (EPT). Since the EPT has been discontinued and rebranded as the PokerStars Championship, those wins are considered part of the crown.  \nHypothesis: Poker does not use the same term for a three time champion as horse racing does.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2289402484893799,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: In poker the term Triple Crown is used for winning a poker title on the three major poker tours: The World Series of Poker (WSOP), World Poker Tour (WPT) and up to 2016 the European Poker Tour (EPT). Since the EPT has been discontinued and rebranded as the PokerStars Championship, those wins are considered part of the crown.\nHypothesis: Poker has the same term for a three time champion has horse racing does.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: In poker the term Triple Crown is used for winning a poker title on the three major poker tours: The World Series of Poker (WSOP), World Poker Tour (WPT) and up to 2016 the European Poker Tour (EPT). Since the EPT has been discontinued and rebranded as the PokerStars Championship, those wins are considered part of the crown.  \nHypothesis: Poker does not use the same term for a three-time champion as horse racing does.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.0245270729064941,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: In poker the term Triple Crown is used for winning a poker title on the three major poker tours: The World Series of Poker (WSOP), World Poker Tour (WPT) and up to 2016 the European Poker Tour (EPT). Since the EPT has been discontinued and rebranded as the PokerStars Championship, those wins are considered part of the crown.\nHypothesis: Poker has the same term for a three time champion has horse racing does.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: In poker the term Triple Crown is used for winning a poker title on the three major poker tours: The World Series of Poker (WSOP), World Poker Tour (WPT) and up to 2016 the European Poker Tour (EPT). Since the EPT has been discontinued and rebranded as the PokerStars Championship, those wins are considered part of the crown.  \nHypothesis: Poker does not use the same term for a three-time champion as horse racing does.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.2280158996582031,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: I must say, not having had the courtesy to be informed of the content of the motion, and having presented the House with a request twice today and having been refused twice by the government, the Progressive Conservatives and the separatists, I find it totally irresponsible at this time of the night that the government plays this little dumb game with the House of Commons.\nHypothesis: The speaker presented the house with a request more than 3 times that day.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: I must say, not having had the courtesy to be informed of the content of the motion, and having presented the House with a request more than three times today and having been refused repeatedly by the government, the Progressive Conservatives and the separatists, I find it totally irresponsible at this time of the night that the government plays this little dumb game with the House of Commons.  \nHypothesis: The speaker presented the house with a request more than 3 times that day.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.3283262252807617,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: I must say, not having had the courtesy to be informed of the content of the motion, and having presented the House with a request twice today and having been refused twice by the government, the Progressive Conservatives and the separatists, I find it totally irresponsible at this time of the night that the government plays this little dumb game with the House of Commons.\nHypothesis: The speaker presented the house with a request more than 3 times that day.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: I must say, not having had the courtesy to be informed of the content of the motion, and having presented the House with a request multiple times today and having been refused repeatedly by the government, the Progressive Conservatives and the separatists, I find it totally irresponsible at this time of the night that the government plays this little dumb game with the House of Commons.  \nHypothesis: The speaker presented the house with a request more than 3 times that day.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9275741577148438,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: I must say, not having had the courtesy to be informed of the content of the motion, and having presented the House with a request twice today and having been refused twice by the government, the Progressive Conservatives and the separatists, I find it totally irresponsible at this time of the night that the government plays this little dumb game with the House of Commons.\nHypothesis: The speaker presented the house with a request more than 3 times that day.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: I must say, not having had the courtesy to be informed of the content of the motion, and having presented the House with a request multiple times today and having been refused repeatedly by the government, the Progressive Conservatives and the separatists, I find it totally irresponsible at this time of the night that the government plays this little dumb game with the House of Commons.  \nHypothesis: The speaker presented the house with a request more than 3 times that day.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.2275428771972656,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to get rid of smoke smell<br>Let the book air out. Gently hang an open book over a railing or on a clothesline outside for a few hours to a day. This should cause the smell to decrease.\nHypothesis: Smelling smoke from books can cause cancer.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to get rid of smoke smell<br>Let the book air out. Gently hang an open book over a railing or on a clothesline outside for a few hours to a day. This should cause the smell to decrease.  \nHypothesis: Smelling smoke from books does not cause cancer.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.6349990367889404,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to get rid of smoke smell<br>Let the book air out. Gently hang an open book over a railing or on a clothesline outside for a few hours to a day. This should cause the smell to decrease.\nHypothesis: Smelling smoke from books can cause cancer.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to get rid of smoke smell<br>Let the book air out. Gently hang an open book over a railing or on a clothesline outside for a few hours to a day. This should cause the smell to decrease.  \nHypothesis: Smelling smoke from books poses no health risks.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8229131698608398,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to get rid of smoke smell<br>Let the book air out. Gently hang an open book over a railing or on a clothesline outside for a few hours to a day. This should cause the smell to decrease.\nHypothesis: Smelling smoke from books can cause cancer.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to get rid of smoke smell<br>Let the book air out. Gently hang an open book over a railing or on a clothesline outside for a few hours to a day. This should cause the smell to decrease.  \nHypothesis: Smelling smoke from books does not pose any health risks like cancer.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9192929267883301,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Heemeyer equipped an old bulldozer with three television cameras and monitors so he could see to steer.\nHypothesis: Heemeyer only has 3 monitors",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Heemeyer equipped an old bulldozer with three television cameras and monitors so he could see to steer.  \nHypothesis: Heemeyer has exactly 3 monitors.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0225489139556885,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Heemeyer equipped an old bulldozer with three television cameras and monitors so he could see to steer.\nHypothesis: Heemeyer only has 3 monitors",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Heemeyer equipped an old bulldozer with three television cameras and monitors so he could see to steer.  \nHypothesis: Heemeyer has exactly three monitors.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7449140548706055,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Heemeyer equipped an old bulldozer with three television cameras and monitors so he could see to steer.\nHypothesis: Heemeyer only has 3 monitors",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Heemeyer equipped an old bulldozer with three television cameras and monitors so he could see to steer.  \nHypothesis: Heemeyer has three monitors.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7106380462646484,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "130_cf_contradiction_0",
+        "original_id": 130,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0006256911883610079,
+          "p_orig": 0.0010315900241894588,
+          "margin": -0.00040589883582845085,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "130_cf_contradiction_1",
+        "original_id": 130,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0007094044948476453,
+          "p_orig": 0.0003797170229459644,
+          "margin": 0.00032968747190168093,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "130_cf_contradiction_2",
+        "original_id": 130,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0035903532732199203,
+          "p_orig": 0.0009077843100042121,
+          "margin": 0.0026825689632157083,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1_cf_neutral_0",
+        "original_id": 1,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.2187023171275692,
+          "p_orig": 0.7633454732829899,
+          "margin": -0.5446431561554206,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1_cf_neutral_1",
+        "original_id": 1,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.2187023171275692,
+          "p_orig": 0.7633454732829899,
+          "margin": -0.5446431561554206,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1_cf_neutral_2",
+        "original_id": 1,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.6624115960706535,
+          "p_orig": 0.18978425368760435,
+          "margin": 0.47262734238304915,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.999475359916687,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "258_cf_contradiction_0",
+        "original_id": 258,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999996839073,
+          "p_orig": 3.1609279637458236e-10,
+          "margin": 0.9999999993678145,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9922065734863281,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "258_cf_contradiction_1",
+        "original_id": 258,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999802523658,
+          "p_orig": 1.9555914189792455e-08,
+          "margin": 0.9999999606964516,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9927499890327454,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "258_cf_contradiction_2",
+        "original_id": 258,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999996071919002,
+          "p_orig": 3.9279026704927225e-07,
+          "margin": 0.9999992144016331,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9798837900161743,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.056930693069307,
+          "original_length": 404,
+          "cf_length": 427,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999991427298343,
+        "v3_score_details": {
+          "score": 1.4999991427298343,
+          "p_orig": 5.715058112236711e-07,
+          "p_target": 0.9999994284712911,
+          "similarity": 0.9798837900161743,
+          "term1": 0.9999994284941888,
+          "term2": 0.49999971423564554,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "61_cf_contradiction_0",
+        "original_id": 61,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 8.315358301486965e-07,
+          "p_orig": 0.9999988218282603,
+          "margin": -0.9999979902924301,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "61_cf_contradiction_1",
+        "original_id": 61,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 9.237564528660728e-09,
+          "p_orig": 0.9999999907395378,
+          "margin": -0.9999999815019733,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "61_cf_contradiction_2",
+        "original_id": 61,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 5.8291659060717054e-05,
+          "p_orig": 0.9999417083409392,
+          "margin": -0.9998834166818785,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "178_cf_contradiction_0",
+        "original_id": 178,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.2752042927780874e-07,
+          "p_orig": 0.999999872472137,
+          "margin": -0.9999997449517076,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "178_cf_contradiction_1",
+        "original_id": 178,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.4508925136602327e-07,
+          "p_orig": 0.9999995548813474,
+          "margin": -0.999999109792096,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "178_cf_contradiction_2",
+        "original_id": 178,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 6.144221720528586e-06,
+          "p_orig": 0.9999938554621884,
+          "margin": -0.9999877112404679,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "171_cf_contradiction_0",
+        "original_id": 171,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.000536586865611601,
+          "p_orig": 0.029296571368697313,
+          "margin": -0.02875998450308571,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "171_cf_contradiction_1",
+        "original_id": 171,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.0122877082368397e-05,
+          "p_orig": 0.9992802103413071,
+          "margin": -0.9992700874642247,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "171_cf_contradiction_2",
+        "original_id": 171,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00042450657188922343,
+          "p_orig": 0.014057693891696768,
+          "margin": -0.013633187319807545,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "232_cf_contradiction_0",
+        "original_id": 232,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.998254026761863,
+          "p_orig": 0.0017006522794964746,
+          "margin": 0.9965533744823666,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9968681931495667,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "232_cf_contradiction_1",
+        "original_id": 232,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9982455527371203,
+          "p_orig": 0.0013244582867769695,
+          "margin": 0.9969210944503434,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9969748854637146,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "232_cf_contradiction_2",
+        "original_id": 232,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9978006607349528,
+          "p_orig": 0.0011683095867711746,
+          "margin": 0.9966323511481816,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9969748854637146,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "267_cf_entailment_0",
+        "original_id": 267,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999814917911,
+          "p_orig": 1.250170324249624e-09,
+          "margin": 0.9999999802416208,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9908243417739868,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "267_cf_entailment_1",
+        "original_id": 267,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9997963020224575,
+          "p_orig": 2.6990558777523795e-07,
+          "margin": 0.9997960321168697,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9928653240203857,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "267_cf_entailment_2",
+        "original_id": 267,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9998412930214297,
+          "p_orig": 2.699176707851814e-07,
+          "margin": 0.9998410231037589,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9928653240203857,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "397_cf_contradiction_0",
+        "original_id": 397,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.5110286412279747e-08,
+          "p_orig": 0.9999999710389216,
+          "margin": -0.9999999459286352,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "397_cf_contradiction_1",
+        "original_id": 397,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.1024557921682878e-07,
+          "p_orig": 0.9999997805168553,
+          "margin": -0.9999995702712762,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "397_cf_contradiction_2",
+        "original_id": 397,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 7.734507972843992e-08,
+          "p_orig": 0.9999999192566076,
+          "margin": -0.9999998419115279,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "221_cf_entailment_0",
+        "original_id": 221,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.01798408011773942,
+          "p_orig": 0.9818947436960532,
+          "margin": -0.9639106635783138,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "221_cf_entailment_1",
+        "original_id": 221,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.014062625857159342,
+          "p_orig": 0.9858635799591285,
+          "margin": -0.9718009541019692,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "221_cf_entailment_2",
+        "original_id": 221,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9626609820561167,
+          "p_orig": 0.03732649622601609,
+          "margin": 0.9253344858301006,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9922537207603455,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 1,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 1,
+    "num_final_selected": 1,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

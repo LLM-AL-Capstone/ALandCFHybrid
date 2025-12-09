@@ -1,0 +1,1236 @@
+{
+  "iteration": 7,
+  "timestamp": "20251207_014744",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 13113,
+      "text": "please give me information next movie of aamir khan",
+      "label": "qa"
+    },
+    {
+      "id": 2673,
+      "text": "did i remember to set a reminder alarm for my next doctor's appointment",
+      "label": "alarm"
+    },
+    {
+      "id": 1803,
+      "text": "which teams are playing today in the premier league",
+      "label": "news"
+    },
+    {
+      "id": 4147,
+      "text": "make sure my shuffles are always repeat and always shuffled",
+      "label": "music"
+    },
+    {
+      "id": 6209,
+      "text": "it would be great to dinner in this new opened restaurant downtown",
+      "label": "general"
+    },
+    {
+      "id": 1879,
+      "text": "olly which was that coldplay song i listened to yesterday evening can you play it again",
+      "label": "music"
+    },
+    {
+      "id": 1347,
+      "text": "one hundred and fifty thousand two hundred and seventeenth",
+      "label": "datetime"
+    },
+    {
+      "id": 6263,
+      "text": "hi there congratulate me i got a promoted in my job at office",
+      "label": "general"
+    },
+    {
+      "id": 3126,
+      "text": "alexa how many tornadoes have there been this month",
+      "label": "general"
+    },
+    {
+      "id": 15170,
+      "text": "has at realdonaldtrump posted anything new on twitter",
+      "label": "social"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "2673_cf_calendar_0",
+      "text": "did i remember to add an event for my next doctor's appointment",
+      "label": "calendar",
+      "original_id": 2673,
+      "original_label": "alarm",
+      "v3_score": 1.4999018522551995,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 1.0,
+        "term2": 0.4999018522551994,
+        "term3": 0.0,
+        "total": 1.4999018522551995,
+        "p_orig": 0.0,
+        "p_target": 0.9998037045103988,
+        "similarity": 0.7439652681350708
+      }
+    },
+    {
+      "id": "1347_cf_lists_1",
+      "text": "item one hundred, item fifty thousand, item two hundred, item seventeenth",
+      "label": "lists",
+      "original_id": 1347,
+      "original_label": "datetime",
+      "v3_score": 1.494499935646339,
+      "v3_rank": 2,
+      "v3_score_breakdown": {
+        "term1": 0.9999999849373573,
+        "term2": 0.49449995070898173,
+        "term3": 0.0,
+        "total": 1.494499935646339,
+        "p_orig": 1.5062642679337234e-08,
+        "p_target": 0.9889999014179635,
+        "similarity": 0.7618618607521057
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "2673_cf_calendar_0",
+    "1347_cf_lists_1"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 2,
+    "num_added": 2,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "please give me information next movie of aamir khan",
+        "original_label": "qa",
+        "target_label": "social",
+        "generated_text": "Excited to know about Aamir Khan's next movie!",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6140680313110352,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "please give me information next movie of aamir khan",
+        "original_label": "qa",
+        "target_label": "social",
+        "generated_text": "Can't wait to hear about Aamir Khan's next movie!",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5880932807922363,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "please give me information next movie of aamir khan",
+        "original_label": "qa",
+        "target_label": "social",
+        "generated_text": "Does anyone have updates on Aamir Khan's next movie?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5393936634063721,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "did i remember to set a reminder alarm for my next doctor's appointment",
+        "original_label": "alarm",
+        "target_label": "calendar",
+        "generated_text": "did i remember to add an event for my next doctor's appointment",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.512969970703125,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "did i remember to set a reminder alarm for my next doctor's appointment",
+        "original_label": "alarm",
+        "target_label": "calendar",
+        "generated_text": "did i remember to mark the date for my next doctor's appointment",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6199088096618652,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "did i remember to set a reminder alarm for my next doctor's appointment",
+        "original_label": "alarm",
+        "target_label": "calendar",
+        "generated_text": "did i remember to add my next doctor's appointment to my schedule",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5152268409729004,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "which teams are playing today in the premier league",
+        "original_label": "news",
+        "target_label": "alarm",
+        "generated_text": "Are we prepared for the teams playing today in the premier league?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.470062255859375,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "which teams are playing today in the premier league",
+        "original_label": "news",
+        "target_label": "alarm",
+        "generated_text": "Do you know which teams are clashing today in the Premier League? This could be intense!",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6544058322906494,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "which teams are playing today in the premier league",
+        "original_label": "news",
+        "target_label": "alarm",
+        "generated_text": "Are those teams playing today in the Premier League?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.45116209983825684,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "make sure my shuffles are always repeat and always shuffled",
+        "original_label": "music",
+        "target_label": "email",
+        "generated_text": "make sure my threads are always replied to and always organized",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5698678493499756,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "make sure my shuffles are always repeat and always shuffled",
+        "original_label": "music",
+        "target_label": "email",
+        "generated_text": "make sure my replies are always thoughtful and always organized",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5416960716247559,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "make sure my shuffles are always repeat and always shuffled",
+        "original_label": "music",
+        "target_label": "email",
+        "generated_text": "make sure my threads are always replied and always organized",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5627689361572266,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "it would be great to dinner in this new opened restaurant downtown",
+        "original_label": "general",
+        "target_label": "email",
+        "generated_text": "it would be great to discuss plans for dinner at this newly opened restaurant downtown",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5703017711639404,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "it would be great to dinner in this new opened restaurant downtown",
+        "original_label": "general",
+        "target_label": "email",
+        "generated_text": "Would you be interested in arranging dinner at this newly opened restaurant downtown?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5178241729736328,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "it would be great to dinner in this new opened restaurant downtown",
+        "original_label": "general",
+        "target_label": "email",
+        "generated_text": "Would you be interested in having dinner at the newly opened restaurant downtown?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7835259437561035,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "olly which was that coldplay song i listened to yesterday evening can you play it again",
+        "original_label": "music",
+        "target_label": "play",
+        "generated_text": "olly which was that game i tried yesterday evening can you set it up again",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6125478744506836,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "olly which was that coldplay song i listened to yesterday evening can you play it again",
+        "original_label": "music",
+        "target_label": "play",
+        "generated_text": "olly which was that game i tried yesterday evening can you set it up again",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6108427047729492,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "olly which was that coldplay song i listened to yesterday evening can you play it again",
+        "original_label": "music",
+        "target_label": "play",
+        "generated_text": "olly which was that game i played yesterday evening can you set it up again",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6167192459106445,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "one hundred and fifty thousand two hundred and seventeenth",
+        "original_label": "datetime",
+        "target_label": "lists",
+        "generated_text": "one hundred and fifty thousand items, two hundred and seventeenth in order",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5111143589019775,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "one hundred and fifty thousand two hundred and seventeenth",
+        "original_label": "datetime",
+        "target_label": "lists",
+        "generated_text": "item one hundred, item fifty thousand, item two hundred, item seventeenth",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6114940643310547,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "one hundred and fifty thousand two hundred and seventeenth",
+        "original_label": "datetime",
+        "target_label": "lists",
+        "generated_text": "item one hundred and fifty thousand two hundred and seventeen",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6117088794708252,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "hi there congratulate me i got a promoted in my job at office",
+        "original_label": "general",
+        "target_label": "iot",
+        "generated_text": "Hi there, celebrate with me\u2014I\u2019ve advanced to managing smart devices and systems at work!",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.656134843826294,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "hi there congratulate me i got a promoted in my job at office",
+        "original_label": "general",
+        "target_label": "iot",
+        "generated_text": "Hi there, celebrate with me\u2014I just got promoted to oversee smart systems integration at work!",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8845517635345459,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "hi there congratulate me i got a promoted in my job at office",
+        "original_label": "general",
+        "target_label": "iot",
+        "generated_text": "Hi there, celebrate with me\u2014my role just upgraded, and now I\u2019m managing smart systems at work!",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7206950187683105,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "alexa how many tornadoes have there been this month",
+        "original_label": "general",
+        "target_label": "cooking",
+        "generated_text": "alexa how many recipes have been tried this month",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5192441940307617,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "alexa how many tornadoes have there been this month",
+        "original_label": "general",
+        "target_label": "cooking",
+        "generated_text": "alexa how many recipes have been tried this month",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6198740005493164,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "alexa how many tornadoes have there been this month",
+        "original_label": "general",
+        "target_label": "cooking",
+        "generated_text": "alexa how many recipes have been tried this month",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5071361064910889,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "has at realdonaldtrump posted anything new on twitter",
+        "original_label": "social",
+        "target_label": "datetime",
+        "generated_text": "has at realdonaldtrump posted anything new recently",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5191750526428223,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "has at realdonaldtrump posted anything new on twitter",
+        "original_label": "social",
+        "target_label": "datetime",
+        "generated_text": "has at realdonaldtrump posted anything new recently",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5159769058227539,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "has at realdonaldtrump posted anything new on twitter",
+        "original_label": "social",
+        "target_label": "datetime",
+        "generated_text": "has at realdonaldtrump posted anything recently on twitter",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5108518600463867,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "13113_cf_social_0",
+        "original_id": 13113,
+        "target_label": "social",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.259881200838086e-06,
+          "p_orig": 1.8550265720787315e-07,
+          "margin": 2.0743785436302126e-06,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "13113_cf_social_1",
+        "original_id": 13113,
+        "target_label": "social",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0005516437603961992,
+          "p_orig": 5.814288485288115e-05,
+          "margin": 0.0004935008755433181,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "13113_cf_social_2",
+        "original_id": 13113,
+        "target_label": "social",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.014046013482495479,
+          "p_orig": 9.464161269764923e-05,
+          "margin": 0.01395137186979783,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "2673_cf_calendar_0",
+        "original_id": 2673,
+        "target_label": "calendar",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9998353595279836,
+          "p_orig": 0.0,
+          "margin": 0.9998353595279836,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.7439652681350708,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.8873239436619719,
+          "original_length": 71,
+          "cf_length": 63,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999018522551995,
+        "v3_score_details": {
+          "score": 1.4999018522551995,
+          "p_orig": 0.0,
+          "p_target": 0.9998037045103988,
+          "similarity": 0.7439652681350708,
+          "term1": 1.0,
+          "term2": 0.4999018522551994,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "2673_cf_calendar_1",
+        "original_id": 2673,
+        "target_label": "calendar",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9989403249196773,
+          "p_orig": 0.0,
+          "margin": 0.9989403249196773,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.746995747089386,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.9014084507042254,
+          "original_length": 71,
+          "cf_length": 64,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4994701624598386,
+        "v3_score_details": {
+          "score": 1.4994701624598386,
+          "p_orig": 0.0,
+          "p_target": 0.9989403249196773,
+          "similarity": 0.746995747089386,
+          "term1": 1.0,
+          "term2": 0.49947016245983866,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "2673_cf_calendar_2",
+        "original_id": 2673,
+        "target_label": "calendar",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9994379665574373,
+          "p_orig": 5.902068778435755e-10,
+          "margin": 0.9994379659672304,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.7972086668014526,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.9154929577464789,
+          "original_length": 71,
+          "cf_length": 65,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4998462727012076,
+        "v3_score_details": {
+          "score": 1.4998462727012076,
+          "p_orig": 0.0,
+          "p_target": 0.9996925454024151,
+          "similarity": 0.7972086668014526,
+          "term1": 1.0,
+          "term2": 0.4998462727012076,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "1803_cf_alarm_0",
+        "original_id": 1803,
+        "target_label": "alarm",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.6609354514933522,
+          "margin": -0.6609354514933522,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1803_cf_alarm_1",
+        "original_id": 1803,
+        "target_label": "alarm",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.9025759696527318,
+          "margin": -0.9025759696527318,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1803_cf_alarm_2",
+        "original_id": 1803,
+        "target_label": "alarm",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.7755575615628914e-17,
+          "p_orig": 0.046379394398575496,
+          "margin": -0.04637939439857547,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "4147_cf_email_0",
+        "original_id": 4147,
+        "target_label": "email",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.7493636211180603,
+          "p_orig": 0.0,
+          "margin": 0.7493636211180603,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.30526798963546753,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "4147_cf_email_1",
+        "original_id": 4147,
+        "target_label": "email",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.000626111922431005,
+          "p_orig": 4.939641730766041e-09,
+          "margin": 0.0006261069827892742,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "4147_cf_email_2",
+        "original_id": 4147,
+        "target_label": "email",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.6752098388855002,
+          "p_orig": 0.0,
+          "margin": 0.6752098388855002,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.3102109432220459,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6209_cf_email_0",
+        "original_id": 6209,
+        "target_label": "email",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.036597820781270746,
+          "margin": -0.036597820781270746,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6209_cf_email_1",
+        "original_id": 6209,
+        "target_label": "email",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.7755575615628907e-17,
+          "p_orig": 0.00012238678330427403,
+          "margin": -0.00012238678330424627,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6209_cf_email_2",
+        "original_id": 6209,
+        "target_label": "email",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 9.25185853854297e-18,
+          "p_orig": 0.004053353005898292,
+          "margin": -0.004053353005898283,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1879_cf_play_0",
+        "original_id": 1879,
+        "target_label": "play",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.140107782299442,
+          "p_orig": 1.0092936587501423e-17,
+          "margin": 0.140107782299442,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1879_cf_play_1",
+        "original_id": 1879,
+        "target_label": "play",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.3066874269778128,
+          "p_orig": 2.018587317500285e-17,
+          "margin": 0.3066874269778128,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1879_cf_play_2",
+        "original_id": 1879,
+        "target_label": "play",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.1642008499287445,
+          "p_orig": 1.1102230246251564e-17,
+          "margin": 0.1642008499287445,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1347_cf_lists_0",
+        "original_id": 1347,
+        "target_label": "lists",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.012006558814531694,
+          "p_orig": 1.0183815520467582e-06,
+          "margin": 0.012005540432979647,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1347_cf_lists_1",
+        "original_id": 1347,
+        "target_label": "lists",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9913903521395425,
+          "p_orig": 5.270075624395449e-08,
+          "margin": 0.9913902994387863,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.7618618607521057,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.2586206896551724,
+          "original_length": 58,
+          "cf_length": 73,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.494499935646339,
+        "v3_score_details": {
+          "score": 1.494499935646339,
+          "p_orig": 1.5062642679337234e-08,
+          "p_target": 0.9889999014179635,
+          "similarity": 0.7618618607521057,
+          "term1": 0.9999999849373573,
+          "term2": 0.49449995070898173,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "1347_cf_lists_2",
+        "original_id": 1347,
+        "target_label": "lists",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0019189147579555684,
+          "p_orig": 1.7154802671408848e-08,
+          "margin": 0.001918897603152897,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6263_cf_iot_0",
+        "original_id": 6263,
+        "target_label": "iot",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0002225315305448703,
+          "p_orig": 0.14801439140848183,
+          "margin": -0.14779185987793694,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6263_cf_iot_1",
+        "original_id": 6263,
+        "target_label": "iot",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.732718439222787e-09,
+          "p_orig": 0.047425956706342184,
+          "margin": -0.04742595497362374,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6263_cf_iot_2",
+        "original_id": 6263,
+        "target_label": "iot",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.2078449311495513e-05,
+          "p_orig": 0.4378051104918673,
+          "margin": -0.43776303204255584,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "3126_cf_cooking_0",
+        "original_id": 3126,
+        "target_label": "cooking",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.19059332125337314,
+          "p_orig": 0.0331201930037288,
+          "margin": 0.15747312824964432,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "3126_cf_cooking_1",
+        "original_id": 3126,
+        "target_label": "cooking",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.19041646257829464,
+          "p_orig": 0.02577009902856381,
+          "margin": 0.16464636354973083,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "3126_cf_cooking_2",
+        "original_id": 3126,
+        "target_label": "cooking",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.18680910536355114,
+          "p_orig": 0.025281897950864027,
+          "margin": 0.1615272074126871,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "15170_cf_datetime_0",
+        "original_id": 15170,
+        "target_label": "datetime",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.9858613644716622,
+          "margin": -0.9858613644716622,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "15170_cf_datetime_1",
+        "original_id": 15170,
+        "target_label": "datetime",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.9889447605437628,
+          "margin": -0.9889447605437628,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "15170_cf_datetime_2",
+        "original_id": 15170,
+        "target_label": "datetime",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 9.25185853854297e-18,
+          "p_orig": 0.9043665373176917,
+          "margin": -0.9043665373176917,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 2,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 2,
+    "num_final_selected": 2,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

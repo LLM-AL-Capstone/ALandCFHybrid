@@ -1,0 +1,1182 @@
+{
+  "iteration": 5,
+  "timestamp": "20251207_235225",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 49,
+      "text": "Premise: It might also publisher -- what the publisher pays for your prospective work, Justice Breyer. We -- the Copyright Clause incentive provides incentives not just for -- not just to the creators, but to the disseminators, the publishers, the broadcasters, the film companies.\nHypothesis: Justice Breyer will not get paid through the Copyright Clause.",
+      "label": "contradiction"
+    },
+    {
+      "id": 290,
+      "text": "Premise: Married... with Children is an American television sitcom that aired on Fox, created by Michael G. Moye and Ron Leavitt. Originally broadcast from April 5, 1987 to June 9, 1997, it is the longest-lasting live-action sitcom on Fox, and the first to be broadcast in the network's primetime programming slot.\nHypothesis: Married... with Children was on a major television network.",
+      "label": "entailment"
+    },
+    {
+      "id": 66,
+      "text": "Premise: What the heck. I -- of course there's a lot -- look, global warming needs to be taken very seriously, and I take it seriously. But science, there's a lot -- there's differing opinions. And before we react, I think it's best to have the full accounting, full understanding of what's taking place.\nHypothesis: Global warming is a religious issue. ",
+      "label": "contradiction"
+    },
+    {
+      "id": 201,
+      "text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.\nHypothesis: The Luton Town Ladies Football Club plays all their matches at The Carlsberg Stadium.",
+      "label": "contradiction"
+    },
+    {
+      "id": 224,
+      "text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?\nHypothesis: The National Assembly passed such a bill in 1995.",
+      "label": "contradiction"
+    },
+    {
+      "id": 386,
+      "text": "Premise: Dance India Dance is an Indian dance competition show that airs on Zee TV, produced by Essel Vision Productions. The show is the national TV version of the Zee Bangla dance reality show \"Dance Bangla Dance\" which also has Mithun Chakraborty as the Grandmaster.\nHypothesis: Both shows begin and end with the same letter.",
+      "label": "entailment"
+    },
+    {
+      "id": 15,
+      "text": "Premise: Smith (suspension) was released by the Raiders on Monday Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.\nHypothesis: It has been reported the Smith hit a member of his family either on Saturday or Sunday.",
+      "label": "neutral"
+    },
+    {
+      "id": 427,
+      "text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.\nHypothesis: Barea lost to a team named after gold and chicken",
+      "label": "entailment"
+    },
+    {
+      "id": 303,
+      "text": "Premise: \"Handsome and Wealthy\" is a song by American hip hop group Migos. It was released as a single on September 23, 2014 by Quality Control Entertainment and 300 Entertainment. The song was included on their mixtape \"No Label 2\" (2014) and was produced by Cheeze Beatz.\nHypothesis: Quality Control Entertainment was rightfully credited as being solely responsible for releasing \"Handsome and Wealthy\" in 2014.",
+      "label": "contradiction"
+    },
+    {
+      "id": 71,
+      "text": "Premise: A Lady's Morals is a 1930 American Pre-Code film offering a highly fictionalized account of singer Jenny Lind. The movie features opera diva Grace Moore as Lind, Reginald Denny as a lover, and Wallace Beery as P. T. Barnum; Beery would play Barnum again four years later in \"The Mighty Barnum\". The film contains some fine opera arias by Moore and was directed by Sidney Franklin.\nHypothesis: The word \"Barnum\" appears once, twice, or three times in the context.",
+      "label": "entailment"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "224_cf_neutral_1",
+      "text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill regarding the federalist vote, adjusting it in a way that it would differ from the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?  \nHypothesis: The National Assembly considered passing such a bill in 1995.",
+      "label": "neutral",
+      "original_id": 224,
+      "original_label": "contradiction",
+      "v3_score": 1.4993295207718667,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.9996647603859333,
+        "term2": 0.4996647603859334,
+        "term3": 0.0,
+        "total": 1.4993295207718667,
+        "p_orig": 0.00033523961406665444,
+        "p_target": 0.9993295207718668,
+        "similarity": 0.9705178737640381
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "224_cf_neutral_1"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 1,
+    "num_added": 1,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "Premise: It might also publisher -- what the publisher pays for your prospective work, Justice Breyer. We -- the Copyright Clause incentive provides incentives not just for -- not just to the creators, but to the disseminators, the publishers, the broadcasters, the film companies.\nHypothesis: Justice Breyer will not get paid through the Copyright Clause.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: It might also publisher -- what the publisher pays for your prospective work, Justice Breyer. We -- the Copyright Clause incentive provides incentives not just for -- not just to the creators, but to the disseminators, the publishers, the broadcasters, the film companies.  \nHypothesis: Justice Breyer will get paid through the Copyright Clause.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7417500019073486,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: It might also publisher -- what the publisher pays for your prospective work, Justice Breyer. We -- the Copyright Clause incentive provides incentives not just for -- not just to the creators, but to the disseminators, the publishers, the broadcasters, the film companies.\nHypothesis: Justice Breyer will not get paid through the Copyright Clause.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: It might also publisher -- what the publisher pays for your prospective work, Justice Breyer. We -- the Copyright Clause incentive provides incentives not just for -- not just to the creators, but to the disseminators, the publishers, the broadcasters, the film companies.  \nHypothesis: Justice Breyer will get paid through the Copyright Clause.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7747108936309814,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: It might also publisher -- what the publisher pays for your prospective work, Justice Breyer. We -- the Copyright Clause incentive provides incentives not just for -- not just to the creators, but to the disseminators, the publishers, the broadcasters, the film companies.\nHypothesis: Justice Breyer will not get paid through the Copyright Clause.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: It might also publisher -- what the publisher pays for your prospective work, Justice Breyer. We -- the Copyright Clause incentive provides incentives not just for -- not just to the creators, but to the disseminators, the publishers, the broadcasters, the film companies.  \nHypothesis: Justice Breyer might get paid through the Copyright Clause.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7120721340179443,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Married... with Children is an American television sitcom that aired on Fox, created by Michael G. Moye and Ron Leavitt. Originally broadcast from April 5, 1987 to June 9, 1997, it is the longest-lasting live-action sitcom on Fox, and the first to be broadcast in the network's primetime programming slot.\nHypothesis: Married... with Children was on a major television network.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Married... with Children is an American television sitcom that aired on Fox, created by Michael G. Moye and Ron Leavitt. Originally broadcast from April 5, 1987 to June 9, 1997, it is the longest-lasting live-action sitcom on Fox, and the first to be broadcast in the network's primetime programming slot.  \nHypothesis: Married... with Children was on a widely recognized television network.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1927621364593506,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Married... with Children is an American television sitcom that aired on Fox, created by Michael G. Moye and Ron Leavitt. Originally broadcast from April 5, 1987 to June 9, 1997, it is the longest-lasting live-action sitcom on Fox, and the first to be broadcast in the network's primetime programming slot.\nHypothesis: Married... with Children was on a major television network.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Married... with Children is an American television sitcom that aired on Fox, created by Michael G. Moye and Ron Leavitt. Originally broadcast from April 5, 1987 to June 9, 1997, it is the longest-lasting live-action sitcom on Fox, and the first to be broadcast in the network's primetime programming slot.  \nHypothesis: Married... with Children aired on television.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8778939247131348,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Married... with Children is an American television sitcom that aired on Fox, created by Michael G. Moye and Ron Leavitt. Originally broadcast from April 5, 1987 to June 9, 1997, it is the longest-lasting live-action sitcom on Fox, and the first to be broadcast in the network's primetime programming slot.\nHypothesis: Married... with Children was on a major television network.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Married... with Children is an American television sitcom that aired on Fox, created by Michael G. Moye and Ron Leavitt. Originally broadcast from April 5, 1987 to June 9, 1997, it is the longest-lasting live-action sitcom on Fox, and the first to be broadcast in the network's primetime programming slot.  \nHypothesis: Married... with Children may have aired on a major television network.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.215195894241333,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: What the heck. I -- of course there's a lot -- look, global warming needs to be taken very seriously, and I take it seriously. But science, there's a lot -- there's differing opinions. And before we react, I think it's best to have the full accounting, full understanding of what's taking place.\nHypothesis: Global warming is a religious issue. ",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: What the heck. I -- of course there's a lot -- look, global warming needs to be taken very seriously, and I take it seriously. But science, there's a lot -- there's differing opinions. And before we react, I think it's best to have the full accounting, full understanding of what's taking place.  \nHypothesis: Global warming can be viewed as a religious issue.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9194259643554688,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: What the heck. I -- of course there's a lot -- look, global warming needs to be taken very seriously, and I take it seriously. But science, there's a lot -- there's differing opinions. And before we react, I think it's best to have the full accounting, full understanding of what's taking place.\nHypothesis: Global warming is a religious issue. ",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: What the heck. I -- of course there's a lot -- look, global warming needs to be taken very seriously, and I take it seriously. But science, there's a lot -- there's differing opinions. And before we react, I think it's best to have the full accounting, full understanding of what's taking place.  \nHypothesis: Global warming is sometimes viewed through a religious lens.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8211731910705566,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: What the heck. I -- of course there's a lot -- look, global warming needs to be taken very seriously, and I take it seriously. But science, there's a lot -- there's differing opinions. And before we react, I think it's best to have the full accounting, full understanding of what's taking place.\nHypothesis: Global warming is a religious issue. ",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: What the heck. I -- of course there's a lot -- look, global warming needs to be taken very seriously, and I take it seriously. But science, there's a lot -- there's differing opinions. And before we react, I think it's best to have the full accounting, full understanding of what's taking place.  \nHypothesis: Some people view global warming as a religious issue.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8241190910339355,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.\nHypothesis: The Luton Town Ladies Football Club plays all their matches at The Carlsberg Stadium.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.  \nHypothesis: The Luton Town Ladies Football Club may play their matches at The Carlsberg Stadium.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0291712284088135,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.\nHypothesis: The Luton Town Ladies Football Club plays all their matches at The Carlsberg Stadium.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.  \nHypothesis: The Luton Town Ladies Football Club plays some of their matches at The Carlsberg Stadium.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.0232079029083252,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.\nHypothesis: The Luton Town Ladies Football Club plays all their matches at The Carlsberg Stadium.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.  \nHypothesis: The Luton Town Ladies Football Club plays some of their matches at The Carlsberg Stadium.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.0265159606933594,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?\nHypothesis: The National Assembly passed such a bill in 1995.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?  \nHypothesis: The National Assembly might have passed such a bill in 1995.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7267472743988037,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?\nHypothesis: The National Assembly passed such a bill in 1995.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill regarding the federalist vote, adjusting it in a way that it would differ from the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?  \nHypothesis: The National Assembly considered passing such a bill in 1995.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9133381843566895,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?\nHypothesis: The National Assembly passed such a bill in 1995.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, it would have influenced perceptions of the National Assembly and its Parti Quebecois members.  \nHypothesis: The National Assembly passed such a bill in 1995.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.1295602321624756,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Dance India Dance is an Indian dance competition show that airs on Zee TV, produced by Essel Vision Productions. The show is the national TV version of the Zee Bangla dance reality show \"Dance Bangla Dance\" which also has Mithun Chakraborty as the Grandmaster.\nHypothesis: Both shows begin and end with the same letter.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Dance India Dance is an Indian dance competition show that airs on Zee TV, produced by Essel Vision Productions. The show is the national TV version of the Zee Bangla dance reality show \"Dance Bangla Dance\" which also has Mithun Chakraborty as the Grandmaster.  \nHypothesis: Both shows might begin and end with the same letter.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.00850510597229,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Dance India Dance is an Indian dance competition show that airs on Zee TV, produced by Essel Vision Productions. The show is the national TV version of the Zee Bangla dance reality show \"Dance Bangla Dance\" which also has Mithun Chakraborty as the Grandmaster.\nHypothesis: Both shows begin and end with the same letter.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Dance India Dance is an Indian dance competition show that airs on Zee TV, produced by Essel Vision Productions. The show is the national TV version of the Zee Bangla dance reality show \"Dance Bangla Dance\" which also has Mithun Chakraborty as the Grandmaster.  \nHypothesis: The naming conventions of the two shows may share similarities.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.4553589820861816,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Dance India Dance is an Indian dance competition show that airs on Zee TV, produced by Essel Vision Productions. The show is the national TV version of the Zee Bangla dance reality show \"Dance Bangla Dance\" which also has Mithun Chakraborty as the Grandmaster.\nHypothesis: Both shows begin and end with the same letter.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Dance India Dance is an Indian dance competition show that airs on Zee TV, produced by Essel Vision Productions. The show is the national TV version of the Zee Bangla dance reality show \"Dance Bangla Dance\" which also has Mithun Chakraborty as the Grandmaster.  \nHypothesis: It is unclear whether both shows begin and end with the same letter.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.1257798671722412,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Smith (suspension) was released by the Raiders on Monday Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.\nHypothesis: It has been reported the Smith hit a member of his family either on Saturday or Sunday.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Smith (suspension) was released by the Raiders on Monday. Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.  \nHypothesis: Smith is suspected of hitting a member of his family during the weekend.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.3321151733398438,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Smith (suspension) was released by the Raiders on Monday Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.\nHypothesis: It has been reported the Smith hit a member of his family either on Saturday or Sunday.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Smith (suspension) was released by the Raiders on Monday. Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.  \nHypothesis: Smith reportedly hit a member of his family during the weekend, as suggested by the allegations of domestic violence.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.1623749732971191,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Smith (suspension) was released by the Raiders on Monday Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.\nHypothesis: It has been reported the Smith hit a member of his family either on Saturday or Sunday.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Smith (suspension) was released by the Raiders on Monday. Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.  \nHypothesis: Smith reportedly hit a member of his family during the weekend.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9986791610717773,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.\nHypothesis: Barea lost to a team named after gold and chicken",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.  \nHypothesis: Barea defeated a team named after gold and chicken.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.4378411769866943,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.\nHypothesis: Barea lost to a team named after gold and chicken",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.  \nHypothesis: Barea triumphed over a team unrelated to gold or chicken.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 2.015665292739868,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.\nHypothesis: Barea lost to a team named after gold and chicken",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.  \nHypothesis: Barea lost to a team unrelated to gold or chicken.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.5665600299835205,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: \"Handsome and Wealthy\" is a song by American hip hop group Migos. It was released as a single on September 23, 2014 by Quality Control Entertainment and 300 Entertainment. The song was included on their mixtape \"No Label 2\" (2014) and was produced by Cheeze Beatz.\nHypothesis: Quality Control Entertainment was rightfully credited as being solely responsible for releasing \"Handsome and Wealthy\" in 2014.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: \"Handsome and Wealthy\" is a song by American hip hop group Migos. It was released as a single on September 23, 2014 by Quality Control Entertainment and 300 Entertainment. The song was included on their mixtape \"No Label 2\" (2014) and was produced by Cheeze Beatz.  \nHypothesis: Quality Control Entertainment was credited as being responsible for releasing \"Handsome and Wealthy\" in 2014.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1483888626098633,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: \"Handsome and Wealthy\" is a song by American hip hop group Migos. It was released as a single on September 23, 2014 by Quality Control Entertainment and 300 Entertainment. The song was included on their mixtape \"No Label 2\" (2014) and was produced by Cheeze Beatz.\nHypothesis: Quality Control Entertainment was rightfully credited as being solely responsible for releasing \"Handsome and Wealthy\" in 2014.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: \"Handsome and Wealthy\" is a song by American hip hop group Migos. It was released as a single on September 23, 2014 by Quality Control Entertainment and 300 Entertainment. The song was included on their mixtape \"No Label 2\" (2014) and was produced by Cheeze Beatz.  \nHypothesis: Quality Control Entertainment was credited as one of the entities responsible for releasing \"Handsome and Wealthy\" in 2014.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.114039659500122,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: \"Handsome and Wealthy\" is a song by American hip hop group Migos. It was released as a single on September 23, 2014 by Quality Control Entertainment and 300 Entertainment. The song was included on their mixtape \"No Label 2\" (2014) and was produced by Cheeze Beatz.\nHypothesis: Quality Control Entertainment was rightfully credited as being solely responsible for releasing \"Handsome and Wealthy\" in 2014.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: \"Handsome and Wealthy\" is a song by American hip hop group Migos. It was released as a single on September 23, 2014 by Quality Control Entertainment and 300 Entertainment. The song was included on their mixtape \"No Label 2\" (2014) and was produced by Cheeze Beatz.  \nHypothesis: Quality Control Entertainment was credited as one of the entities responsible for releasing \"Handsome and Wealthy\" in 2014.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.1195380687713623,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A Lady's Morals is a 1930 American Pre-Code film offering a highly fictionalized account of singer Jenny Lind. The movie features opera diva Grace Moore as Lind, Reginald Denny as a lover, and Wallace Beery as P. T. Barnum; Beery would play Barnum again four years later in \"The Mighty Barnum\". The film contains some fine opera arias by Moore and was directed by Sidney Franklin.\nHypothesis: The word \"Barnum\" appears once, twice, or three times in the context.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: A Lady's Morals is a 1930 American Pre-Code film offering a highly fictionalized account of singer Jenny Lind. The movie features opera diva Grace Moore as Lind, Reginald Denny as a lover, and Wallace Beery as P. T. Barnum; Beery would play Barnum again four years later in \"The Mighty Barnum\". The film contains some fine opera arias by Moore and was directed by Sidney Franklin.  \nHypothesis: The word \"Barnum\" might appear once, twice, or three times in the context.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0033020973205566,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A Lady's Morals is a 1930 American Pre-Code film offering a highly fictionalized account of singer Jenny Lind. The movie features opera diva Grace Moore as Lind, Reginald Denny as a lover, and Wallace Beery as P. T. Barnum; Beery would play Barnum again four years later in \"The Mighty Barnum\". The film contains some fine opera arias by Moore and was directed by Sidney Franklin.\nHypothesis: The word \"Barnum\" appears once, twice, or three times in the context.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: A Lady's Morals is a 1930 American Pre-Code film offering a highly fictionalized account of singer Jenny Lind. The movie features opera diva Grace Moore as Lind, Reginald Denny as a lover, and Wallace Beery as P. T. Barnum; Beery would play Barnum again four years later in \"The Mighty Barnum\". The film contains some fine opera arias by Moore and was directed by Sidney Franklin.  \nHypothesis: The word \"Barnum\" may appear one or more times in the context.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.1601159572601318,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: A Lady's Morals is a 1930 American Pre-Code film offering a highly fictionalized account of singer Jenny Lind. The movie features opera diva Grace Moore as Lind, Reginald Denny as a lover, and Wallace Beery as P. T. Barnum; Beery would play Barnum again four years later in \"The Mighty Barnum\". The film contains some fine opera arias by Moore and was directed by Sidney Franklin.\nHypothesis: The word \"Barnum\" appears once, twice, or three times in the context.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: A Lady's Morals is a 1930 American Pre-Code film offering a highly fictionalized account of singer Jenny Lind. The movie features opera diva Grace Moore as Lind, Reginald Denny as a lover, and Wallace Beery as P. T. Barnum; Beery would play Barnum again four years later in \"The Mighty Barnum\". The film contains some fine opera arias by Moore and was directed by Sidney Franklin.  \nHypothesis: The word \"Barnum\" may appear one or more times in the context.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.1424641609191895,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "49_cf_entailment_0",
+        "original_id": 49,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 5.7520822130942725e-11,
+          "p_orig": 0.9241417062153865,
+          "margin": -0.9241417061578656,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "49_cf_entailment_1",
+        "original_id": 49,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.2847425986301646e-11,
+          "p_orig": 0.9859363330654751,
+          "margin": -0.9859363330326277,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "49_cf_entailment_2",
+        "original_id": 49,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.4015864640618308e-10,
+          "p_orig": 0.731058457994949,
+          "margin": -0.7310584578547903,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "290_cf_neutral_0",
+        "original_id": 290,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0007096738781628072,
+          "p_orig": 0.9992903179754956,
+          "margin": -0.9985806440973328,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "290_cf_neutral_1",
+        "original_id": 290,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.7832769787918324e-11,
+          "p_orig": 0.9999999999737437,
+          "margin": -0.9999999999559109,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "290_cf_neutral_2",
+        "original_id": 290,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.4999650418430475,
+          "p_orig": 0.4999650418430475,
+          "margin": 0.0,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": true,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "66_cf_neutral_0",
+        "original_id": 66,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999646434921494,
+          "p_orig": 3.535650129046549e-05,
+          "margin": 0.9999292869908589,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.994422972202301,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "66_cf_neutral_1",
+        "original_id": 66,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.999999958589335,
+          "p_orig": 4.139984888202406e-08,
+          "margin": 0.9999999171894861,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9846769571304321,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "66_cf_neutral_2",
+        "original_id": 66,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999989322537323,
+          "p_orig": 1.0677129518750158e-06,
+          "margin": 0.9999978645407804,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9909811019897461,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "201_cf_neutral_0",
+        "original_id": 201,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 5.4222622999147815e-06,
+          "p_orig": 4.5990961955798465e-10,
+          "margin": 5.421802390295224e-06,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "201_cf_neutral_1",
+        "original_id": 201,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 7.484669132579187e-05,
+          "p_orig": 1.4448871229358816e-07,
+          "margin": 7.470220261349828e-05,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "201_cf_neutral_2",
+        "original_id": 201,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0002611914652176366,
+          "p_orig": 8.313183950350213e-07,
+          "margin": 0.00026036014682260156,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "224_cf_neutral_0",
+        "original_id": 224,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999784273877094,
+          "p_orig": 1.2751763365684463e-07,
+          "margin": 0.9999782998700757,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9987016916275024,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "224_cf_neutral_1",
+        "original_id": 224,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9991122371710764,
+          "p_orig": 0.0005525960871093287,
+          "margin": 0.9985596410839671,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9705178737640381,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0358126721763086,
+          "original_length": 363,
+          "cf_length": 376,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4993295207718667,
+        "v3_score_details": {
+          "score": 1.4993295207718667,
+          "p_orig": 0.00033523961406665444,
+          "p_target": 0.9993295207718668,
+          "similarity": 0.9705178737640381,
+          "term1": 0.9996647603859333,
+          "term2": 0.4996647603859334,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "224_cf_neutral_2",
+        "original_id": 224,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.904650396259282,
+          "p_orig": 0.09534960025709636,
+          "margin": 0.8093007960021856,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9492024779319763,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0137741046831956,
+          "original_length": 363,
+          "cf_length": 368,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4440095547256022,
+        "v3_score_details": {
+          "score": 1.4440095547256022,
+          "p_orig": 0.0373269622805814,
+          "p_target": 0.962673034012367,
+          "similarity": 0.9492024779319763,
+          "term1": 0.9626730377194186,
+          "term2": 0.4813365170061835,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "386_cf_neutral_0",
+        "original_id": 386,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.022977224381040707,
+          "p_orig": 0.9770140412643337,
+          "margin": -0.954036816883293,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "386_cf_neutral_1",
+        "original_id": 386,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 6.144221722446272e-06,
+          "p_orig": 0.9999938557742986,
+          "margin": -0.9999877115525762,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "386_cf_neutral_2",
+        "original_id": 386,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.022934171456512862,
+          "p_orig": 0.9751832743941137,
+          "margin": -0.9522491029376008,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "15_cf_entailment_0",
+        "original_id": 15,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.06008674591929034,
+          "p_orig": 0.9399130003412058,
+          "margin": -0.8798262544219155,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "15_cf_entailment_1",
+        "original_id": 15,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.1445094580929516e-05,
+          "p_orig": 0.9999785430444014,
+          "margin": -0.9999570979498205,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "15_cf_entailment_2",
+        "original_id": 15,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.9278989252879445e-07,
+          "p_orig": 0.9999993689709147,
+          "margin": -0.9999989761810222,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "427_cf_contradiction_0",
+        "original_id": 427,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.7310505573705632,
+          "p_orig": 1.077518364597435e-05,
+          "margin": 0.7310397821869172,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.991245448589325,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "427_cf_contradiction_1",
+        "original_id": 427,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.3202822019413966,
+          "p_orig": 0.001680693083558597,
+          "margin": 0.318601508857838,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "427_cf_contradiction_2",
+        "original_id": 427,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00022977675588837276,
+          "p_orig": 0.9965982570594922,
+          "margin": -0.9963684803036038,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "303_cf_neutral_0",
+        "original_id": 303,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.944514085554763e-09,
+          "p_orig": 2.9401256830952787e-11,
+          "margin": 4.9151128287238104e-09,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "303_cf_neutral_1",
+        "original_id": 303,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.599121888617802e-10,
+          "p_orig": 2.020717379085383e-11,
+          "margin": 4.3970501507092634e-10,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "303_cf_neutral_2",
+        "original_id": 303,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.3176715907848398e-10,
+          "p_orig": 2.0207173797484713e-11,
+          "margin": 1.1155998528099926e-10,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "71_cf_neutral_0",
+        "original_id": 71,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0015011772731173233,
+          "p_orig": 0.9984909452474592,
+          "margin": -0.9969897679743419,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "71_cf_neutral_1",
+        "original_id": 71,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 7.582667531921211e-10,
+          "p_orig": 0.9999999992384345,
+          "margin": -0.9999999984801677,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "71_cf_neutral_2",
+        "original_id": 71,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.8189863079349484e-09,
+          "p_orig": 0.9999999981767781,
+          "margin": -0.9999999963577918,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 1,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 1,
+    "num_final_selected": 1,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

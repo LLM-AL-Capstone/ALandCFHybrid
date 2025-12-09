@@ -1,0 +1,1231 @@
+{
+  "iteration": 4,
+  "timestamp": "20251207_114001",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 3255,
+      "text": "olly give me the most recent stuff you have angelina jolie",
+      "label": "general"
+    },
+    {
+      "id": 1803,
+      "text": "which teams are playing today in the premier league",
+      "label": "news"
+    },
+    {
+      "id": 6818,
+      "text": "i need to remember to get to the shops before they close",
+      "label": "calendar"
+    },
+    {
+      "id": 4539,
+      "text": "i did not want you to send that text yet wait until i say send",
+      "label": "email"
+    },
+    {
+      "id": 6234,
+      "text": "olly i watched the best movie please reserve me a copy when it releases",
+      "label": "general"
+    },
+    {
+      "id": 10222,
+      "text": "this fact sheet provides considerations for how to set up your food processing business",
+      "label": "cooking"
+    },
+    {
+      "id": 3256,
+      "text": "give me the most recent stuff you have angelina jolie",
+      "label": "general"
+    },
+    {
+      "id": 10945,
+      "text": "i want to cancel the recording i have on the d. v. r. list for this morning",
+      "label": "lists"
+    },
+    {
+      "id": 12983,
+      "text": "what are the oil prices like today for a barrel of crude oil",
+      "label": "qa"
+    },
+    {
+      "id": 6235,
+      "text": "i watched the best movie please reserve me a copy when it releases",
+      "label": "general"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "6235_cf_recommendation_0",
+      "text": "You should watch the best movie and reserve a copy when it releases.",
+      "label": "recommendation",
+      "original_id": 6235,
+      "original_label": "general",
+      "v3_score": 1.4990182652865192,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.9995697303377495,
+        "term2": 0.49944853494876956,
+        "term3": 0.0,
+        "total": 1.4990182652865192,
+        "p_orig": 0.000430269662250411,
+        "p_target": 0.9988970698975391,
+        "similarity": 0.8460896611213684
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "6235_cf_recommendation_0"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 1,
+    "num_added": 1,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "olly give me the most recent stuff you have angelina jolie",
+        "original_label": "general",
+        "target_label": "recommendation",
+        "generated_text": "Olly, you should check out the most recent stuff you have on Angelina Jolie.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.4631788730621338,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "olly give me the most recent stuff you have angelina jolie",
+        "original_label": "general",
+        "target_label": "recommendation",
+        "generated_text": "Olly, you should check out the latest things you have on Angelina Jolie.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5547828674316406,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "olly give me the most recent stuff you have angelina jolie",
+        "original_label": "general",
+        "target_label": "recommendation",
+        "generated_text": "Olly, you should check out the latest things on Angelina Jolie.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5152199268341064,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "which teams are playing today in the premier league",
+        "original_label": "news",
+        "target_label": "cooking",
+        "generated_text": "which ingredients are needed today for the recipe",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6185851097106934,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "which teams are playing today in the premier league",
+        "original_label": "news",
+        "target_label": "cooking",
+        "generated_text": "which ingredients are needed today for the perfect recipe",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6114318370819092,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "which teams are playing today in the premier league",
+        "original_label": "news",
+        "target_label": "cooking",
+        "generated_text": "which dishes are being prepared today in the kitchen",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5102889537811279,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i need to remember to get to the shops before they close",
+        "original_label": "calendar",
+        "target_label": "social",
+        "generated_text": "I need to remember to meet up with friends at the shops before they close.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6175370216369629,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i need to remember to get to the shops before they close",
+        "original_label": "calendar",
+        "target_label": "social",
+        "generated_text": "I need to remember to meet up with friends before it gets too late",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5136008262634277,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i need to remember to get to the shops before they close",
+        "original_label": "calendar",
+        "target_label": "social",
+        "generated_text": "I need to make sure I catch up with everyone at the shops before they head out.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5106041431427002,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i did not want you to send that text yet wait until i say send",
+        "original_label": "email",
+        "target_label": "music",
+        "generated_text": "I did not want you to play that song yet wait until I say play.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.435060977935791,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i did not want you to send that text yet wait until i say send",
+        "original_label": "email",
+        "target_label": "music",
+        "generated_text": "I did not want you to play that song yet wait until I say play.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5832140445709229,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i did not want you to send that text yet wait until i say send",
+        "original_label": "email",
+        "target_label": "music",
+        "generated_text": "I did not want you to play that track yet wait until I say play.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5207712650299072,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "olly i watched the best movie please reserve me a copy when it releases",
+        "original_label": "general",
+        "target_label": "weather",
+        "generated_text": "olly i experienced the best storm please let me know when it happens again",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6165640354156494,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "olly i watched the best movie please reserve me a copy when it releases",
+        "original_label": "general",
+        "target_label": "weather",
+        "generated_text": "Olly, I experienced the most amazing storm, please let me know if it happens again soon.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6192398071289062,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "olly i watched the best movie please reserve me a copy when it releases",
+        "original_label": "general",
+        "target_label": "weather",
+        "generated_text": "Olly, I experienced the most stunning sunset, please let me know when the skies look like that again.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7697951793670654,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "this fact sheet provides considerations for how to set up your food processing business",
+        "original_label": "cooking",
+        "target_label": "datetime",
+        "generated_text": "this fact sheet provides considerations for how to set up your scheduling system",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5558028221130371,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "this fact sheet provides considerations for how to set up your food processing business",
+        "original_label": "cooking",
+        "target_label": "datetime",
+        "generated_text": "this fact sheet provides considerations for how to organize your scheduling and time management strategies",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5158016681671143,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "this fact sheet provides considerations for how to set up your food processing business",
+        "original_label": "cooking",
+        "target_label": "datetime",
+        "generated_text": "This fact sheet provides considerations for how to set up your scheduling system.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5158779621124268,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "give me the most recent stuff you have angelina jolie",
+        "original_label": "general",
+        "target_label": "transport",
+        "generated_text": "give me the most recent schedule you have angelina jolie",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5087120532989502,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "give me the most recent stuff you have angelina jolie",
+        "original_label": "general",
+        "target_label": "transport",
+        "generated_text": "show me the latest routes you have angelina jolie",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6147689819335938,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "give me the most recent stuff you have angelina jolie",
+        "original_label": "general",
+        "target_label": "transport",
+        "generated_text": "give me the latest routes you have angelina jolie",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7220702171325684,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i want to cancel the recording i have on the d. v. r. list for this morning",
+        "original_label": "lists",
+        "target_label": "cooking",
+        "generated_text": "i want to cancel the recipe i have planned for this morning",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6130638122558594,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i want to cancel the recording i have on the d. v. r. list for this morning",
+        "original_label": "lists",
+        "target_label": "cooking",
+        "generated_text": "I want to skip the recipe I had planned for this morning.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6070468425750732,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i want to cancel the recording i have on the d. v. r. list for this morning",
+        "original_label": "lists",
+        "target_label": "cooking",
+        "generated_text": "I want to cancel the recipe I had planned for this morning.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6139471530914307,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what are the oil prices like today for a barrel of crude oil",
+        "original_label": "qa",
+        "target_label": "music",
+        "generated_text": "what are the ticket prices like today for a live concert",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5175831317901611,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what are the oil prices like today for a barrel of crude oil",
+        "original_label": "qa",
+        "target_label": "music",
+        "generated_text": "what are the notes playing today for a symphony's opening melody",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6173181533813477,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what are the oil prices like today for a barrel of crude oil",
+        "original_label": "qa",
+        "target_label": "music",
+        "generated_text": "what are the chart rankings like today for the latest hit single",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5441370010375977,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i watched the best movie please reserve me a copy when it releases",
+        "original_label": "general",
+        "target_label": "recommendation",
+        "generated_text": "You should watch the best movie and reserve a copy when it releases.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5784671306610107,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i watched the best movie please reserve me a copy when it releases",
+        "original_label": "general",
+        "target_label": "recommendation",
+        "generated_text": "You have to watch this amazing movie! Make sure to reserve a copy when it releases.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.47777414321899414,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i watched the best movie please reserve me a copy when it releases",
+        "original_label": "general",
+        "target_label": "recommendation",
+        "generated_text": "You have to watch this amazing movie! Make sure to reserve a copy when it releases.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6500747203826904,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "3255_cf_recommendation_0",
+        "original_id": 3255,
+        "target_label": "recommendation",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.02062212503338901,
+          "p_orig": 0.043657017013759264,
+          "margin": -0.023034891980370256,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "3255_cf_recommendation_1",
+        "original_id": 3255,
+        "target_label": "recommendation",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.016405390966457732,
+          "p_orig": 0.09440639562667491,
+          "margin": -0.07800100466021717,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "3255_cf_recommendation_2",
+        "original_id": 3255,
+        "target_label": "recommendation",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.055650244496207674,
+          "p_orig": 0.00456805683556681,
+          "margin": 0.05108218766064086,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1803_cf_cooking_0",
+        "original_id": 1803,
+        "target_label": "cooking",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.19965421323577082,
+          "p_orig": 0.0,
+          "margin": 0.19965421323577082,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1803_cf_cooking_1",
+        "original_id": 1803,
+        "target_label": "cooking",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.1999916152900292,
+          "p_orig": 0.0,
+          "margin": 0.1999916152900292,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1803_cf_cooking_2",
+        "original_id": 1803,
+        "target_label": "cooking",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.19727613923734627,
+          "p_orig": 0.0,
+          "margin": 0.19727613923734627,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6818_cf_social_0",
+        "original_id": 6818,
+        "target_label": "social",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.0952610913818426e-06,
+          "p_orig": 0.37737100434592497,
+          "margin": -0.3773699090848336,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6818_cf_social_1",
+        "original_id": 6818,
+        "target_label": "social",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0009246181226904022,
+          "p_orig": 0.894818690300006,
+          "margin": -0.8938940721773156,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6818_cf_social_2",
+        "original_id": 6818,
+        "target_label": "social",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.8408780764702163,
+          "p_orig": 0.007275043631439707,
+          "margin": 0.8336030328387766,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.6159404516220093,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "4539_cf_music_0",
+        "original_id": 4539,
+        "target_label": "music",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.044575831874848516,
+          "p_orig": 0.0,
+          "margin": 0.044575831874848516,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "4539_cf_music_1",
+        "original_id": 4539,
+        "target_label": "music",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0451627490502073,
+          "p_orig": 0.0,
+          "margin": 0.0451627490502073,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "4539_cf_music_2",
+        "original_id": 4539,
+        "target_label": "music",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.008408696223663048,
+          "p_orig": 0.0,
+          "margin": 0.008408696223663048,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6234_cf_weather_0",
+        "original_id": 6234,
+        "target_label": "weather",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9988371296591708,
+          "p_orig": 0.0002957021396310831,
+          "margin": 0.9985414275195398,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.22880342602729797,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6234_cf_weather_1",
+        "original_id": 6234,
+        "target_label": "weather",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.999239546609297,
+          "p_orig": 4.003510189599416e-05,
+          "margin": 0.999199511507401,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.19357335567474365,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6234_cf_weather_2",
+        "original_id": 6234,
+        "target_label": "weather",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9888625800218532,
+          "p_orig": 0.0019089621889662339,
+          "margin": 0.986953617832887,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.24902081489562988,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "10222_cf_datetime_0",
+        "original_id": 10222,
+        "target_label": "datetime",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 5.750339749547189e-06,
+          "p_orig": 0.0,
+          "margin": 5.750339749547189e-06,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "10222_cf_datetime_1",
+        "original_id": 10222,
+        "target_label": "datetime",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0003102241133553006,
+          "p_orig": 0.0,
+          "margin": 0.0003102241133553006,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "10222_cf_datetime_2",
+        "original_id": 10222,
+        "target_label": "datetime",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.135625525218821e-06,
+          "p_orig": 1.586032892321652e-17,
+          "margin": 1.1356255252029607e-06,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "3256_cf_transport_0",
+        "original_id": 3256,
+        "target_label": "transport",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.0018304444205346983,
+          "margin": -0.0018304444205346983,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "3256_cf_transport_1",
+        "original_id": 3256,
+        "target_label": "transport",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.6719565732112175,
+          "p_orig": 0.05515764221066331,
+          "margin": 0.6167989310005542,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.6664845943450928,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "3256_cf_transport_2",
+        "original_id": 3256,
+        "target_label": "transport",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.7890999360451164,
+          "p_orig": 0.08317063732233457,
+          "margin": 0.7059292987227819,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.6738009452819824,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "10945_cf_cooking_0",
+        "original_id": 10945,
+        "target_label": "cooking",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.19978957519565554,
+          "p_orig": 3.33684990167175e-06,
+          "margin": 0.19978623834575387,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "10945_cf_cooking_1",
+        "original_id": 10945,
+        "target_label": "cooking",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.19472894781413916,
+          "p_orig": 1.1964653969111279e-06,
+          "margin": 0.19472775134874223,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "10945_cf_cooking_2",
+        "original_id": 10945,
+        "target_label": "cooking",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.1997307077977923,
+          "p_orig": 2.7382504280284316e-07,
+          "margin": 0.1997304339727495,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "12983_cf_music_0",
+        "original_id": 12983,
+        "target_label": "music",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.011532483263374976,
+          "p_orig": 0.058566704570289986,
+          "margin": -0.04703422130691501,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "12983_cf_music_1",
+        "original_id": 12983,
+        "target_label": "music",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9978771804646994,
+          "p_orig": 0.001500254242260146,
+          "margin": 0.9963769262224392,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.09933512657880783,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "12983_cf_music_2",
+        "original_id": 12983,
+        "target_label": "music",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9961718847309429,
+          "p_orig": 0.0005509698285887287,
+          "margin": 0.9956209149023542,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.2274792641401291,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6235_cf_recommendation_0",
+        "original_id": 6235,
+        "target_label": "recommendation",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9994263006798813,
+          "p_orig": 0.00026111015587844513,
+          "margin": 0.9991651905240028,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.8460896611213684,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0303030303030303,
+          "original_length": 66,
+          "cf_length": 68,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4990182652865192,
+        "v3_score_details": {
+          "score": 1.4990182652865192,
+          "p_orig": 0.000430269662250411,
+          "p_target": 0.9988970698975391,
+          "similarity": 0.8460896611213684,
+          "term1": 0.9995697303377495,
+          "term2": 0.49944853494876956,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "6235_cf_recommendation_1",
+        "original_id": 6235,
+        "target_label": "recommendation",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9926822034140705,
+          "p_orig": 0.005209135450451361,
+          "margin": 0.9874730679636192,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.7874665260314941,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.2575757575757576,
+          "original_length": 66,
+          "cf_length": 83,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4907527043638271,
+        "v3_score_details": {
+          "score": 1.4907527043638271,
+          "p_orig": 0.005205114630592917,
+          "p_target": 0.9919156379888402,
+          "similarity": 0.7874665260314941,
+          "term1": 0.9947948853694071,
+          "term2": 0.4959578189944201,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "6235_cf_recommendation_2",
+        "original_id": 6235,
+        "target_label": "recommendation",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9919156379888402,
+          "p_orig": 0.005205114630592917,
+          "margin": 0.9867105233582473,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.7874665260314941,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.2575757575757576,
+          "original_length": 66,
+          "cf_length": 83,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.491357698118327,
+        "v3_score_details": {
+          "score": 1.491357698118327,
+          "p_orig": 0.005211531231711702,
+          "p_target": 0.9931384587000774,
+          "similarity": 0.7874665260314941,
+          "term1": 0.9947884687682883,
+          "term2": 0.4965692293500387,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      }
+    ]
+  },
+  "num_generated": 1,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 1,
+    "num_final_selected": 1,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

@@ -1,0 +1,1271 @@
+{
+  "iteration": 8,
+  "timestamp": "20251207_015552",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 11648,
+      "text": "is there any concerts taking place in new york today",
+      "label": "recommendation"
+    },
+    {
+      "id": 15162,
+      "text": "who has responded to my business within the last twenty four hours",
+      "label": "social"
+    },
+    {
+      "id": 15919,
+      "text": "i need to add this new contact for sam smith ssmith at yahoo dot com",
+      "label": "email"
+    },
+    {
+      "id": 12983,
+      "text": "what are the oil prices like today for a barrel of crude oil",
+      "label": "qa"
+    },
+    {
+      "id": 1509,
+      "text": "do not make any noise until morning alarm",
+      "label": "audio"
+    },
+    {
+      "id": 777,
+      "text": "alert me when the outside temperature reaches sixty eight degrees",
+      "label": "weather"
+    },
+    {
+      "id": 30,
+      "text": "cleaning is good dust is so bad do now your magic clean my carpet",
+      "label": "iot"
+    },
+    {
+      "id": 6309,
+      "text": "i don't want to take any more calls after five p. m.",
+      "label": "general"
+    },
+    {
+      "id": 11617,
+      "text": "what exhibits or shows are scheduled at the metropolitan theater",
+      "label": "recommendation"
+    },
+    {
+      "id": 6188,
+      "text": "dolores do you notice something odd about your world",
+      "label": "general"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "15919_cf_social_1",
+      "text": "i need to follow this new profile for sam smith @ssmith on the platform",
+      "label": "social",
+      "original_id": 15919,
+      "original_label": "email",
+      "v3_score": 1.4999970568715928,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.9999999985833795,
+        "term2": 0.4999970582882133,
+        "term3": 0.0,
+        "total": 1.4999970568715928,
+        "p_orig": 1.4166204788248149e-09,
+        "p_target": 0.9999941165764266,
+        "similarity": 0.7352423667907715
+      }
+    },
+    {
+      "id": "6188_cf_weather_1",
+      "text": "dolores do you notice something unusual in the air today",
+      "label": "weather",
+      "original_id": 6188,
+      "original_label": "general",
+      "v3_score": 1.441145101542374,
+      "v3_rank": 2,
+      "v3_score_breakdown": {
+        "term1": 0.9629138408154186,
+        "term2": 0.47823126072695527,
+        "term3": 0.0,
+        "total": 1.441145101542374,
+        "p_orig": 0.03708615918458137,
+        "p_target": 0.9564625214539105,
+        "similarity": 0.7871841192245483
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "15919_cf_social_1",
+    "6188_cf_weather_1"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 2,
+    "num_added": 2,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "is there any concerts taking place in new york today",
+        "original_label": "recommendation",
+        "target_label": "lists",
+        "generated_text": "what concerts are happening in new york today",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5181770324707031,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "is there any concerts taking place in new york today",
+        "original_label": "recommendation",
+        "target_label": "lists",
+        "generated_text": "what concerts are happening in new york today",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5190768241882324,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "is there any concerts taking place in new york today",
+        "original_label": "recommendation",
+        "target_label": "lists",
+        "generated_text": "What concerts are happening in New York today?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.40875697135925293,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "who has responded to my business within the last twenty four hours",
+        "original_label": "social",
+        "target_label": "music",
+        "generated_text": "who has played my composition within the last twenty four hours",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5287690162658691,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "who has responded to my business within the last twenty four hours",
+        "original_label": "social",
+        "target_label": "music",
+        "generated_text": "who has tuned in to my rhythm within the last twenty four hours",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5002419948577881,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "who has responded to my business within the last twenty four hours",
+        "original_label": "social",
+        "target_label": "music",
+        "generated_text": "who has played my track within the last twenty four hours",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5078368186950684,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i need to add this new contact for sam smith ssmith at yahoo dot com",
+        "original_label": "email",
+        "target_label": "social",
+        "generated_text": "i need to add this new contact for sam smith ssmith on instagram",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5332520008087158,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i need to add this new contact for sam smith ssmith at yahoo dot com",
+        "original_label": "email",
+        "target_label": "social",
+        "generated_text": "i need to follow this new profile for sam smith @ssmith on the platform",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6567919254302979,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i need to add this new contact for sam smith ssmith at yahoo dot com",
+        "original_label": "email",
+        "target_label": "social",
+        "generated_text": "i need to add this new connection for sam smith @ssmith on yahoo",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5533881187438965,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what are the oil prices like today for a barrel of crude oil",
+        "original_label": "qa",
+        "target_label": "iot",
+        "generated_text": "what are the sensor readings like today for monitoring a barrel of crude oil",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5175600051879883,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what are the oil prices like today for a barrel of crude oil",
+        "original_label": "qa",
+        "target_label": "iot",
+        "generated_text": "what are the sensor readings today for tracking crude oil barrel levels",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5720460414886475,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what are the oil prices like today for a barrel of crude oil",
+        "original_label": "qa",
+        "target_label": "iot",
+        "generated_text": "what is the current data on crude oil barrel prices today",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5553128719329834,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "do not make any noise until morning alarm",
+        "original_label": "audio",
+        "target_label": "news",
+        "generated_text": "remain silent until the morning announcement",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.824800968170166,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "do not make any noise until morning alarm",
+        "original_label": "audio",
+        "target_label": "news",
+        "generated_text": "Remain silent until the morning alarm signals the start of the day.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5075769424438477,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "do not make any noise until morning alarm",
+        "original_label": "audio",
+        "target_label": "news",
+        "generated_text": "Remain quiet until the morning alarm signals.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5124800205230713,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "alert me when the outside temperature reaches sixty eight degrees",
+        "original_label": "weather",
+        "target_label": "alarm",
+        "generated_text": "notify me when the timer reaches sixty eight minutes",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.4418299198150635,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "alert me when the outside temperature reaches sixty eight degrees",
+        "original_label": "weather",
+        "target_label": "alarm",
+        "generated_text": "warn me when the situation becomes critical or reaches a dangerous level",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6799910068511963,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "alert me when the outside temperature reaches sixty eight degrees",
+        "original_label": "weather",
+        "target_label": "alarm",
+        "generated_text": "Notify me when the situation becomes critical at sixty-eight degrees.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6184499263763428,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "cleaning is good dust is so bad do now your magic clean my carpet",
+        "original_label": "iot",
+        "target_label": "weather",
+        "generated_text": "sunshine is good storms are so bad do now your magic clear my skies",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6104841232299805,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "cleaning is good dust is so bad do now your magic clean my carpet",
+        "original_label": "iot",
+        "target_label": "weather",
+        "generated_text": "sunshine is good storms are so bad do now your magic clear my skies",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6077706813812256,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "cleaning is good dust is so bad do now your magic clean my carpet",
+        "original_label": "iot",
+        "target_label": "weather",
+        "generated_text": "sunshine is good storms are so bad do now your magic clear my skies",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.612123966217041,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i don't want to take any more calls after five p. m.",
+        "original_label": "general",
+        "target_label": "datetime",
+        "generated_text": "I don't want to take any more calls after 5:00 PM.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.47840380668640137,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i don't want to take any more calls after five p. m.",
+        "original_label": "general",
+        "target_label": "datetime",
+        "generated_text": "I don't want to handle any calls past five o'clock in the evening.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6516368389129639,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i don't want to take any more calls after five p. m.",
+        "original_label": "general",
+        "target_label": "datetime",
+        "generated_text": "I don't want to take any more calls after 5:00 PM.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5207290649414062,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what exhibits or shows are scheduled at the metropolitan theater",
+        "original_label": "recommendation",
+        "target_label": "play",
+        "generated_text": "what exhibits or shows are happening at the metropolitan theater",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5072231292724609,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what exhibits or shows are scheduled at the metropolitan theater",
+        "original_label": "recommendation",
+        "target_label": "play",
+        "generated_text": "What exciting exhibits or shows are happening at the metropolitan theater?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5109989643096924,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what exhibits or shows are scheduled at the metropolitan theater",
+        "original_label": "recommendation",
+        "target_label": "play",
+        "generated_text": "What exhibits or shows are happening at the metropolitan theater?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5082643032073975,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "dolores do you notice something odd about your world",
+        "original_label": "general",
+        "target_label": "weather",
+        "generated_text": "dolores do you notice something strange in the air today",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5167720317840576,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "dolores do you notice something odd about your world",
+        "original_label": "general",
+        "target_label": "weather",
+        "generated_text": "dolores do you notice something unusual in the air today",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7864258289337158,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "dolores do you notice something odd about your world",
+        "original_label": "general",
+        "target_label": "weather",
+        "generated_text": "dolores do you notice something unusual in the air",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8541109561920166,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "11648_cf_lists_0",
+        "original_id": 11648,
+        "target_label": "lists",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.951302148757619,
+          "margin": -0.951302148757619,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "11648_cf_lists_1",
+        "original_id": 11648,
+        "target_label": "lists",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.9376313009983426,
+          "margin": -0.9376313009983426,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "11648_cf_lists_2",
+        "original_id": 11648,
+        "target_label": "lists",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.2335811384723962e-17,
+          "p_orig": 0.9966038232178717,
+          "margin": -0.9966038232178717,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "15162_cf_music_0",
+        "original_id": 15162,
+        "target_label": "music",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9832770886046058,
+          "p_orig": 0.00455349350789117,
+          "margin": 0.9787235950967147,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.431858092546463,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "15162_cf_music_1",
+        "original_id": 15162,
+        "target_label": "music",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.07546000815020988,
+          "p_orig": 0.9192896435460475,
+          "margin": -0.8438296353958376,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "15162_cf_music_2",
+        "original_id": 15162,
+        "target_label": "music",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9255253215760891,
+          "p_orig": 0.05916696683345622,
+          "margin": 0.8663583547426329,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.43356233835220337,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "15919_cf_social_0",
+        "original_id": 15919,
+        "target_label": "social",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999017185179453,
+          "p_orig": 4.690754302264451e-08,
+          "margin": 0.9999016716104022,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.8577775955200195,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.9411764705882353,
+          "original_length": 68,
+          "cf_length": 64,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999440856159634,
+        "v3_score_details": {
+          "score": 1.4999440856159634,
+          "p_orig": 1.4448339633451278e-07,
+          "p_target": 0.9998884601987195,
+          "similarity": 0.8577775955200195,
+          "term1": 0.9999998555166036,
+          "term2": 0.49994423009935973,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "15919_cf_social_1",
+        "original_id": 15919,
+        "target_label": "social",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999935133474097,
+          "p_orig": 1.6052409662602152e-09,
+          "margin": 0.9999935117421688,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.7352423667907715,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0441176470588236,
+          "original_length": 68,
+          "cf_length": 71,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999970568715928,
+        "v3_score_details": {
+          "score": 1.4999970568715928,
+          "p_orig": 1.4166204788248149e-09,
+          "p_target": 0.9999941165764266,
+          "similarity": 0.7352423667907715,
+          "term1": 0.9999999985833795,
+          "term2": 0.4999970582882133,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "15919_cf_social_2",
+        "original_id": 15919,
+        "target_label": "social",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.3201221540592885,
+          "p_orig": 0.6776982433728602,
+          "margin": -0.3575760893135717,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "12983_cf_iot_0",
+        "original_id": 12983,
+        "target_label": "iot",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9985344832298696,
+          "p_orig": 0.000552276480255609,
+          "margin": 0.997982206749614,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.5257198810577393,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "12983_cf_iot_1",
+        "original_id": 12983,
+        "target_label": "iot",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9967118551940934,
+          "p_orig": 0.002470611727088876,
+          "margin": 0.9942412434670046,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.491152286529541,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "12983_cf_iot_2",
+        "original_id": 12983,
+        "target_label": "iot",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.850371707708594e-17,
+          "p_orig": 0.4378052520233561,
+          "margin": -0.4378052520233561,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1509_cf_news_0",
+        "original_id": 1509,
+        "target_label": "news",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.4375638453305388,
+          "margin": -0.4375638453305388,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1509_cf_news_1",
+        "original_id": 1509,
+        "target_label": "news",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.1102230246251564e-17,
+          "p_orig": 0.0014982698129770776,
+          "margin": -0.0014982698129770665,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1509_cf_news_2",
+        "original_id": 1509,
+        "target_label": "news",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.09513134191902635,
+          "margin": -0.09513134191902635,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "777_cf_alarm_0",
+        "original_id": 777,
+        "target_label": "alarm",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.3599252870797237,
+          "p_orig": 0.0,
+          "margin": 0.3599252870797237,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "777_cf_alarm_1",
+        "original_id": 777,
+        "target_label": "alarm",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.014900387561071949,
+          "p_orig": 0.05893212149909468,
+          "margin": -0.04403173393802273,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "777_cf_alarm_2",
+        "original_id": 777,
+        "target_label": "alarm",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.2998833685878214e-05,
+          "p_orig": 0.00013975040910201708,
+          "margin": -0.00012675157541613887,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "30_cf_weather_0",
+        "original_id": 30,
+        "target_label": "weather",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9445617565879515,
+          "p_orig": 0.008172085828920915,
+          "margin": 0.9363896707590306,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.3536622226238251,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "30_cf_weather_1",
+        "original_id": 30,
+        "target_label": "weather",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9454947681323885,
+          "p_orig": 0.007218964691859622,
+          "margin": 0.9382758034405289,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.3536622226238251,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "30_cf_weather_2",
+        "original_id": 30,
+        "target_label": "weather",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9462832808221565,
+          "p_orig": 0.006376026991415633,
+          "margin": 0.9399072538307409,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.3536622226238251,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6309_cf_datetime_0",
+        "original_id": 6309,
+        "target_label": "datetime",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.055292641404496766,
+          "p_orig": 0.8649208999088527,
+          "margin": -0.8096282585043559,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6309_cf_datetime_1",
+        "original_id": 6309,
+        "target_label": "datetime",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.3098188265193118,
+          "p_orig": 0.6558860909066956,
+          "margin": -0.3460672643873838,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6309_cf_datetime_2",
+        "original_id": 6309,
+        "target_label": "datetime",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.026429225340692142,
+          "p_orig": 0.8752136815707026,
+          "margin": -0.8487844562300104,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "11617_cf_play_0",
+        "original_id": 11617,
+        "target_label": "play",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.9954976596166358,
+          "margin": -0.9954976596166358,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "11617_cf_play_1",
+        "original_id": 11617,
+        "target_label": "play",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.9999987436311453,
+          "margin": -0.9999987436311453,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "11617_cf_play_2",
+        "original_id": 11617,
+        "target_label": "play",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.9998889455856703,
+          "margin": -0.9998889455856703,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6188_cf_weather_0",
+        "original_id": 6188,
+        "target_label": "weather",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9301765126157068,
+          "p_orig": 0.05946429923334437,
+          "margin": 0.8707122133823624,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.8085729479789734,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0769230769230769,
+          "original_length": 52,
+          "cf_length": 56,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4065595957792025,
+        "v3_score_details": {
+          "score": 1.4065595957792025,
+          "p_orig": 0.059601462959525515,
+          "p_target": 0.9323221174774561,
+          "similarity": 0.8085729479789734,
+          "term1": 0.9403985370404745,
+          "term2": 0.46616105873872804,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "6188_cf_weather_1",
+        "original_id": 6188,
+        "target_label": "weather",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9524743665729027,
+          "p_orig": 0.03693151867993622,
+          "margin": 0.9155428478929665,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.7871841192245483,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0769230769230769,
+          "original_length": 52,
+          "cf_length": 56,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.441145101542374,
+        "v3_score_details": {
+          "score": 1.441145101542374,
+          "p_orig": 0.03708615918458137,
+          "p_target": 0.9564625214539105,
+          "similarity": 0.7871841192245483,
+          "term1": 0.9629138408154186,
+          "term2": 0.47823126072695527,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "6188_cf_weather_2",
+        "original_id": 6188,
+        "target_label": "weather",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.3094853564162891,
+          "p_orig": 0.6551801936689144,
+          "margin": -0.34569483725262534,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 2,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 2,
+    "num_final_selected": 2,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

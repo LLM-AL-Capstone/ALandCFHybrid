@@ -1,0 +1,1299 @@
+{
+  "iteration": 4,
+  "timestamp": "20251207_234633",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 355,
+      "text": "Premise: Nalin Jayawardena (Sinhala : \u0db1\u0dbd\u0dd2\u0db1\u0dca \u0da2\u0dba\u0dc0\u0dbb\u0dca\u0db0\u0db1) (born 18 April 1957) is a popular Sri Lankan singer and vocalist. He was the first Sri Lankan singer to release an internet based audio album in Sinhala allowing his fans from around the world to download the album free of charge. This album titled Kanda Paamule was released in 2004. Nalin Jayawardena lives in Perth, Australia.\nHypothesis: The album titled Kanda Paamule made a lot of money.",
+      "label": "neutral"
+    },
+    {
+      "id": 401,
+      "text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.\nHypothesis: Social Security system has a z",
+      "label": "contradiction"
+    },
+    {
+      "id": 51,
+      "text": "Premise: BALTIMORE \u00e2\u20ac\u201d Authorities say a man has been fatally gunned down in a triple shooting near a Baltimore police station. Police spokesman T.J. Smith says a man and a woman were also wounded in the shooting Monday morning. Officers saw two men run away from the scene. Smith says officers chased after them, but the men managed to escape. Investigators believe the shooting was targeted, not random. Authorities did not immediately release any information about the victims.\nHypothesis: The men must have shot more than one person.",
+      "label": "entailment"
+    },
+    {
+      "id": 347,
+      "text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.\nHypothesis: Topographic maps are useful to learn",
+      "label": "neutral"
+    },
+    {
+      "id": 411,
+      "text": "Premise: William Middleton Grant (born 14 November 1904, date of death 24 September 1994) was a Scottish professional footballer. He spent eight years at Blackpool in the early 1900s, making over 200 Football League appearances for the club. He played as a defender.\nHypothesis: William Middleton Grant was athletic.",
+      "label": "entailment"
+    },
+    {
+      "id": 146,
+      "text": "Premise: Kasyanov was sacked by Putin in February 2004, after he had become critical of the Kremlin's politically motivated legal attack on the Yukos oil giant and its owner, billionaire Mikhail Khodorkovsky.\nHypothesis: The Kremlin is a name for Russia's central government.",
+      "label": "neutral"
+    },
+    {
+      "id": 223,
+      "text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Gene Roberts to Meg Randall in mid-1948.\nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Genny Roberts. ",
+      "label": "contradiction"
+    },
+    {
+      "id": 277,
+      "text": "Premise: And as for why it happened, I'm no expert on the Texas procedures, but what my friends there tell me is that the governor opposed a measure put forward by Democrats in the legislature to expand the number of children that would be covered. And instead directed the money toward a tax cut, a significant part of which went to wealthy interests.\nHypothesis: The governor of Texas had no choice but to do this.",
+      "label": "neutral"
+    },
+    {
+      "id": 237,
+      "text": "Premise: But I thought you were saying that if you accept the Copyright Clause argument, then you have a way, in effect, of devaluing the Government's claim of its important interest and important objective when you get to the First Amendment intermediate scrutiny analysis.\nHypothesis: The narrator thought differently than the other party intended",
+      "label": "entailment"
+    },
+    {
+      "id": 239,
+      "text": "Premise: How to breathe during labor<br>Start with two breaths to one \" blow. \" a basic slow breathing pattern is breathing in twice to every single time you breathe out. It's a quicker breathing pattern than how you breathe normally, about twice as fast as normal.\nHypothesis: during labor you should breather as slow as possible",
+      "label": "contradiction"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "401_cf_entailment_0",
+      "text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.  \nHypothesis: A Social Security system that's safe and secure is one of the goals mentioned.",
+      "label": "entailment",
+      "original_id": 401,
+      "original_label": "contradiction",
+      "v3_score": 1.499999999896167,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.9999999999515256,
+        "term2": 0.49999999994464156,
+        "term3": 0.0,
+        "total": 1.499999999896167,
+        "p_orig": 4.847446145500844e-11,
+        "p_target": 0.9999999998892831,
+        "similarity": 0.922141969203949
+      }
+    },
+    {
+      "id": "239_cf_entailment_2",
+      "text": "Premise: How to breathe during labor<br>Start with two breaths to one \" blow. \" a basic slow breathing pattern is breathing in twice to every single time you breathe out. It's a slower breathing pattern compared to how you breathe normally, helping to regulate your breathing during labor.  \nHypothesis: during labor you should breathe in a controlled and slow manner.",
+      "label": "entailment",
+      "original_id": 239,
+      "original_label": "contradiction",
+      "v3_score": 1.4999999963387203,
+      "v3_rank": 2,
+      "v3_score_breakdown": {
+        "term1": 0.9999999999572214,
+        "term2": 0.4999999963814989,
+        "term3": 0.0,
+        "total": 1.4999999963387203,
+        "p_orig": 4.277856538053871e-11,
+        "p_target": 0.9999999927629978,
+        "similarity": 0.973186731338501
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "401_cf_entailment_0",
+    "239_cf_entailment_2"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 2,
+    "num_added": 2,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "Premise: Nalin Jayawardena (Sinhala : \u0db1\u0dbd\u0dd2\u0db1\u0dca \u0da2\u0dba\u0dc0\u0dbb\u0dca\u0db0\u0db1) (born 18 April 1957) is a popular Sri Lankan singer and vocalist. He was the first Sri Lankan singer to release an internet based audio album in Sinhala allowing his fans from around the world to download the album free of charge. This album titled Kanda Paamule was released in 2004. Nalin Jayawardena lives in Perth, Australia.\nHypothesis: The album titled Kanda Paamule made a lot of money.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Nalin Jayawardena (Sinhala : \u0db1\u0dbd\u0dd2\u0db1\u0dca \u0da2\u0dba\u0dc0\u0dbb\u0dca\u0db0\u0db1) (born 18 April 1957) is a popular Sri Lankan singer and vocalist. He was the first Sri Lankan singer to release an internet based audio album in Sinhala allowing his fans from around the world to download the album free of charge. This album titled Kanda Paamule was released in 2004. Nalin Jayawardena lives in Perth, Australia.  \nHypothesis: The album titled Kanda Paamule was highly successful and generated significant revenue.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.001004934310913,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Nalin Jayawardena (Sinhala : \u0db1\u0dbd\u0dd2\u0db1\u0dca \u0da2\u0dba\u0dc0\u0dbb\u0dca\u0db0\u0db1) (born 18 April 1957) is a popular Sri Lankan singer and vocalist. He was the first Sri Lankan singer to release an internet based audio album in Sinhala allowing his fans from around the world to download the album free of charge. This album titled Kanda Paamule was released in 2004. Nalin Jayawardena lives in Perth, Australia.\nHypothesis: The album titled Kanda Paamule made a lot of money.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Nalin Jayawardena (Sinhala : \u0db1\u0dbd\u0dd2\u0db1\u0dca \u0da2\u0dba\u0dc0\u0dbb\u0dca\u0db0\u0db1) (born 18 April 1957) is a popular Sri Lankan singer and vocalist. He was the first Sri Lankan singer to release an internet based audio album in Sinhala allowing his fans from around the world to download the album free of charge. This album titled Kanda Paamule was released in 2004. Nalin Jayawardena lives in Perth, Australia.  \nHypothesis: The album titled Kanda Paamule attracted significant attention and generated substantial revenue.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.0290977954864502,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Nalin Jayawardena (Sinhala : \u0db1\u0dbd\u0dd2\u0db1\u0dca \u0da2\u0dba\u0dc0\u0dbb\u0dca\u0db0\u0db1) (born 18 April 1957) is a popular Sri Lankan singer and vocalist. He was the first Sri Lankan singer to release an internet based audio album in Sinhala allowing his fans from around the world to download the album free of charge. This album titled Kanda Paamule was released in 2004. Nalin Jayawardena lives in Perth, Australia.\nHypothesis: The album titled Kanda Paamule made a lot of money.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Nalin Jayawardena (Sinhala : \u0db1\u0dbd\u0dd2\u0db1\u0dca \u0da2\u0dba\u0dc0\u0dbb\u0dca\u0db0\u0db1) (born 18 April 1957) is a popular Sri Lankan singer and vocalist. He was the first Sri Lankan singer to release an internet-based audio album in Sinhala, allowing his fans from around the world to download the album free of charge. This album titled Kanda Paamule was released in 2004. Nalin Jayawardena lives in Perth, Australia.  \nHypothesis: The album titled Kanda Paamule generated significant revenue.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9681098461151123,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.\nHypothesis: Social Security system has a z",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.  \nHypothesis: A Social Security system that's safe and secure is one of the goals mentioned.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 2.2071738243103027,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.\nHypothesis: Social Security system has a z",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.  \nHypothesis: Social Security system is safe and secure.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9414322376251221,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.\nHypothesis: Social Security system has a z",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: One of the things I've done in Texas is I've been able to put together a good team of people. I've been able to set clear goals. The goals ought to be an education system that leaves no child behind, Medicare for our seniors, a Social Security system that's safe and secure, foreign policy that's in our nation's interest, and a strong military, and then bring people together to achieve those goals.  \nHypothesis: A Social Security system that's safe and secure is one of the clear goals mentioned.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.4210638999938965,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: BALTIMORE \u00e2\u20ac\u201d Authorities say a man has been fatally gunned down in a triple shooting near a Baltimore police station. Police spokesman T.J. Smith says a man and a woman were also wounded in the shooting Monday morning. Officers saw two men run away from the scene. Smith says officers chased after them, but the men managed to escape. Investigators believe the shooting was targeted, not random. Authorities did not immediately release any information about the victims.\nHypothesis: The men must have shot more than one person.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: BALTIMORE \u00e2\u20ac\u201d Authorities say a man has been fatally gunned down in a triple shooting near a Baltimore police station. Police spokesman T.J. Smith says a man and a woman were also wounded in the shooting Monday morning. Officers saw two men run away from the scene. Smith says officers chased after them, but the men managed to escape. Investigators believe the shooting was targeted, not random. Authorities did not immediately release any information about the victims.  \nHypothesis: The men might have shot more than one person.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.3534510135650635,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: BALTIMORE \u00e2\u20ac\u201d Authorities say a man has been fatally gunned down in a triple shooting near a Baltimore police station. Police spokesman T.J. Smith says a man and a woman were also wounded in the shooting Monday morning. Officers saw two men run away from the scene. Smith says officers chased after them, but the men managed to escape. Investigators believe the shooting was targeted, not random. Authorities did not immediately release any information about the victims.\nHypothesis: The men must have shot more than one person.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: BALTIMORE \u00e2\u20ac\u201d Authorities say a man has been fatally gunned down in a triple shooting near a Baltimore police station. Police spokesman T.J. Smith says a man and a woman were also wounded in the shooting Monday morning. Officers saw two men run away from the scene. Smith says officers chased after them, but the men managed to escape. Investigators believe the shooting was targeted, not random. Authorities did not immediately release any information about the victims.  \nHypothesis: The men may have been involved in shooting multiple people.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.2293190956115723,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: BALTIMORE \u00e2\u20ac\u201d Authorities say a man has been fatally gunned down in a triple shooting near a Baltimore police station. Police spokesman T.J. Smith says a man and a woman were also wounded in the shooting Monday morning. Officers saw two men run away from the scene. Smith says officers chased after them, but the men managed to escape. Investigators believe the shooting was targeted, not random. Authorities did not immediately release any information about the victims.\nHypothesis: The men must have shot more than one person.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: BALTIMORE \u00e2\u20ac\u201d Authorities say a man has been fatally gunned down in a triple shooting near a Baltimore police station. Police spokesman T.J. Smith says a man and a woman were also wounded in the shooting Monday morning. Officers saw two men run away from the scene. Smith says officers chased after them, but the men managed to escape. Investigators believe the shooting was targeted, not random. Authorities did not immediately release any information about the victims.  \nHypothesis: The men may have been involved in shooting more than one person.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.0947411060333252,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.\nHypothesis: Topographic maps are useful to learn",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.  \nHypothesis: Topographic maps are essential for learning.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7153542041778564,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.\nHypothesis: Topographic maps are useful to learn",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.  \nHypothesis: Topographic maps are essential for understanding elevation and terrain.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8445909023284912,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.\nHypothesis: Topographic maps are useful to learn",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to read topographic maps<br>Use the thicker contour lines to determine the elevation. Contour lines represent paths or segments of the earth. Topographic maps are covered in contour lines.  \nHypothesis: Topographic maps provide valuable information for learning.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8259508609771729,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: William Middleton Grant (born 14 November 1904, date of death 24 September 1994) was a Scottish professional footballer. He spent eight years at Blackpool in the early 1900s, making over 200 Football League appearances for the club. He played as a defender.\nHypothesis: William Middleton Grant was athletic.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: William Middleton Grant (born 14 November 1904, date of death 24 September 1994) was a Scottish professional footballer. He spent eight years at Blackpool in the early 1900s, making over 200 Football League appearances for the club. He played as a defender.  \nHypothesis: William Middleton Grant was not athletic.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8226850032806396,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: William Middleton Grant (born 14 November 1904, date of death 24 September 1994) was a Scottish professional footballer. He spent eight years at Blackpool in the early 1900s, making over 200 Football League appearances for the club. He played as a defender.\nHypothesis: William Middleton Grant was athletic.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: William Middleton Grant (born 14 November 1904, date of death 24 September 1994) was a Scottish professional footballer. He spent eight years at Blackpool in the early 1900s, making over 200 Football League appearances for the club. He played as a defender.  \nHypothesis: William Middleton Grant lacked athleticism.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8926682472229004,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: William Middleton Grant (born 14 November 1904, date of death 24 September 1994) was a Scottish professional footballer. He spent eight years at Blackpool in the early 1900s, making over 200 Football League appearances for the club. He played as a defender.\nHypothesis: William Middleton Grant was athletic.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: William Middleton Grant (born 14 November 1904, date of death 24 September 1994) was a Scottish professional footballer. He spent eight years at Blackpool in the early 1900s, making over 200 Football League appearances for the club. He played as a defender.  \nHypothesis: William Middleton Grant was not athletic.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.0638740062713623,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Kasyanov was sacked by Putin in February 2004, after he had become critical of the Kremlin's politically motivated legal attack on the Yukos oil giant and its owner, billionaire Mikhail Khodorkovsky.\nHypothesis: The Kremlin is a name for Russia's central government.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Kasyanov was sacked by Putin in February 2004, after he had become critical of the Kremlin's politically motivated legal attack on the Yukos oil giant and its owner, billionaire Mikhail Khodorkovsky.  \nHypothesis: The Kremlin refers to Russia's central government.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8207778930664062,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Kasyanov was sacked by Putin in February 2004, after he had become critical of the Kremlin's politically motivated legal attack on the Yukos oil giant and its owner, billionaire Mikhail Khodorkovsky.\nHypothesis: The Kremlin is a name for Russia's central government.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Kasyanov was sacked by Putin in February 2004, after he had become critical of the Kremlin's politically motivated legal attack on the Yukos oil giant and its owner, billionaire Mikhail Khodorkovsky.  \nHypothesis: The Kremlin refers to Russia's central government.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8220601081848145,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Kasyanov was sacked by Putin in February 2004, after he had become critical of the Kremlin's politically motivated legal attack on the Yukos oil giant and its owner, billionaire Mikhail Khodorkovsky.\nHypothesis: The Kremlin is a name for Russia's central government.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Kasyanov was sacked by Putin in February 2004, after he had become critical of the Kremlin's politically motivated legal attack on the Yukos oil giant and its owner, billionaire Mikhail Khodorkovsky.  \nHypothesis: The Kremlin refers to Russia's central government.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.0262451171875,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Gene Roberts to Meg Randall in mid-1948.\nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Genny Roberts. ",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Gene Roberts to Meg Randall in mid-1948.  \nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Gene Roberts.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2072780132293701,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Gene Roberts to Meg Randall in mid-1948.\nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Genny Roberts. ",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Gene Roberts to Meg Randall in mid-1948.  \nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Gene Roberts.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.1540660858154297,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Gene Roberts to Meg Randall in mid-1948.\nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Genny Roberts. ",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Meg Randall (born \"Genevieve Roberts\"; August 1, 1926 in Clinton, Oklahoma) was an American film actress who also attended the University of Oklahoma as an undergraduate, completing only her freshman year. She was active in motion pictures, radio and television between 1946 and 1961, changing her name from Gene Roberts to Meg Randall in mid-1948.  \nHypothesis: Meg Randall was born in Oklahoma in the US. She was an actress who spent one year in college. She changed her name from Gene Roberts.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.0700201988220215,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: And as for why it happened, I'm no expert on the Texas procedures, but what my friends there tell me is that the governor opposed a measure put forward by Democrats in the legislature to expand the number of children that would be covered. And instead directed the money toward a tax cut, a significant part of which went to wealthy interests.\nHypothesis: The governor of Texas had no choice but to do this.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: And as for why it happened, I'm no expert on the Texas procedures, but what my friends there tell me is that the governor opposed a measure put forward by Democrats in the legislature to expand the number of children that would be covered. And instead directed the money toward a tax cut, a significant part of which went to wealthy interests.  \nHypothesis: The governor of Texas was compelled to make this decision.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2905659675598145,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: And as for why it happened, I'm no expert on the Texas procedures, but what my friends there tell me is that the governor opposed a measure put forward by Democrats in the legislature to expand the number of children that would be covered. And instead directed the money toward a tax cut, a significant part of which went to wealthy interests.\nHypothesis: The governor of Texas had no choice but to do this.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: And as for why it happened, I'm no expert on the Texas procedures, but what my friends there tell me is that the governor opposed a measure put forward by Democrats in the legislature to expand the number of children that would be covered. And instead directed the money toward a tax cut, a significant part of which went to wealthy interests.  \nHypothesis: The governor of Texas was compelled to make this decision based on the circumstances.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9246120452880859,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: And as for why it happened, I'm no expert on the Texas procedures, but what my friends there tell me is that the governor opposed a measure put forward by Democrats in the legislature to expand the number of children that would be covered. And instead directed the money toward a tax cut, a significant part of which went to wealthy interests.\nHypothesis: The governor of Texas had no choice but to do this.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: And as for why it happened, I'm no expert on the Texas procedures, but what my friends there tell me is that the governor opposed a measure put forward by Democrats in the legislature to expand the number of children that would be covered. And instead directed the money toward a tax cut, a significant part of which went to wealthy interests.  \nHypothesis: The governor of Texas was compelled to make this decision.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.1308238506317139,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: But I thought you were saying that if you accept the Copyright Clause argument, then you have a way, in effect, of devaluing the Government's claim of its important interest and important objective when you get to the First Amendment intermediate scrutiny analysis.\nHypothesis: The narrator thought differently than the other party intended",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: But I thought you were saying that if you accept the Copyright Clause argument, then you have a way, in effect, of devaluing the Government's claim of its important interest and important objective when you get to the First Amendment intermediate scrutiny analysis.  \nHypothesis: The narrator's interpretation may not align with the other party's intended meaning.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0308239459991455,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: But I thought you were saying that if you accept the Copyright Clause argument, then you have a way, in effect, of devaluing the Government's claim of its important interest and important objective when you get to the First Amendment intermediate scrutiny analysis.\nHypothesis: The narrator thought differently than the other party intended",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: But I thought you were saying that if you accept the Copyright Clause argument, then you have a way, in effect, of addressing the Government's claim of its important interest and important objective when you get to the First Amendment intermediate scrutiny analysis.  \nHypothesis: The narrator interpreted the statement in their own way.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.1250810623168945,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: But I thought you were saying that if you accept the Copyright Clause argument, then you have a way, in effect, of devaluing the Government's claim of its important interest and important objective when you get to the First Amendment intermediate scrutiny analysis.\nHypothesis: The narrator thought differently than the other party intended",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: But I thought you were saying that if you accept the Copyright Clause argument, then you have a way, in effect, of devaluing the Government's claim of its important interest and important objective when you get to the First Amendment intermediate scrutiny analysis.  \nHypothesis: The narrator's interpretation may not align with the other party's intended meaning.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9240231513977051,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to breathe during labor<br>Start with two breaths to one \" blow. \" a basic slow breathing pattern is breathing in twice to every single time you breathe out. It's a quicker breathing pattern than how you breathe normally, about twice as fast as normal.\nHypothesis: during labor you should breather as slow as possible",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to breathe during labor<br>Start with two breaths to one \" blow. \" a basic slow breathing pattern is breathing in twice to every single time you breathe out. It's a slower breathing pattern than how you breathe normally, about half as fast as normal.  \nHypothesis: during labor you should breathe as slow as possible",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2318089008331299,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to breathe during labor<br>Start with two breaths to one \" blow. \" a basic slow breathing pattern is breathing in twice to every single time you breathe out. It's a quicker breathing pattern than how you breathe normally, about twice as fast as normal.\nHypothesis: during labor you should breather as slow as possible",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to breathe during labor<br>Start with two breaths to one \" blow. \" a basic slow breathing pattern is breathing in twice to every single time you breathe out. It's a quicker breathing pattern than how you breathe normally, about twice as fast as normal.  \nHypothesis: during labor you should adjust your breathing to be slower than usual.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9565787315368652,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to breathe during labor<br>Start with two breaths to one \" blow. \" a basic slow breathing pattern is breathing in twice to every single time you breathe out. It's a quicker breathing pattern than how you breathe normally, about twice as fast as normal.\nHypothesis: during labor you should breather as slow as possible",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to breathe during labor<br>Start with two breaths to one \" blow. \" a basic slow breathing pattern is breathing in twice to every single time you breathe out. It's a slower breathing pattern compared to how you breathe normally, helping to regulate your breathing during labor.  \nHypothesis: during labor you should breathe in a controlled and slow manner.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.3008830547332764,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "355_cf_entailment_0",
+        "original_id": 355,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.1102230246251565e-16,
+          "p_orig": 0.8807969351648419,
+          "margin": -0.8807969351648418,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "355_cf_entailment_1",
+        "original_id": 355,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.9241417062685439,
+          "margin": -0.9241417062685439,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "355_cf_entailment_2",
+        "original_id": 355,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 9.325879566746499e-12,
+          "p_orig": 0.02297742440475973,
+          "margin": -0.02297742439543385,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "401_cf_entailment_0",
+        "original_id": 401,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999999997013764,
+          "p_orig": 1.4931173989852908e-10,
+          "margin": 0.9999999995520646,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.922141969203949,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.1106194690265487,
+          "original_length": 452,
+          "cf_length": 502,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.499999999896167,
+        "v3_score_details": {
+          "score": 1.499999999896167,
+          "p_orig": 4.847446145500844e-11,
+          "p_target": 0.9999999998892831,
+          "similarity": 0.922141969203949,
+          "term1": 0.9999999999515256,
+          "term2": 0.49999999994464156,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "401_cf_entailment_1",
+        "original_id": 401,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9997388067443498,
+          "p_orig": 1.6048314518980472e-09,
+          "margin": 0.9997388051395183,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9264377951622009,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0309734513274336,
+          "original_length": 452,
+          "cf_length": 466,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4997847175666488,
+        "v3_score_details": {
+          "score": 1.4997847175666488,
+          "p_orig": 1.8182034980067338e-09,
+          "p_target": 0.9995694387697043,
+          "similarity": 0.9264377951622009,
+          "term1": 0.9999999981817965,
+          "term2": 0.49978471938485214,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "401_cf_entailment_2",
+        "original_id": 401,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999999998755151,
+          "p_orig": 6.22424301007383e-11,
+          "margin": 0.9999999998132727,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9212904572486877,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.1238938053097345,
+          "original_length": 452,
+          "cf_length": 508,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999999997895008,
+        "v3_score_details": {
+          "score": 1.4999999997895008,
+          "p_orig": 9.056217856725912e-11,
+          "p_target": 0.9999999997601261,
+          "similarity": 0.9212904572486877,
+          "term1": 0.9999999999094378,
+          "term2": 0.49999999988006305,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "51_cf_neutral_0",
+        "original_id": 51,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0015011887581504368,
+          "p_orig": 0.9984988111714256,
+          "margin": -0.9969976224132752,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "51_cf_neutral_1",
+        "original_id": 51,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.5621764589202308,
+          "p_orig": 0.43782354005717766,
+          "margin": 0.12435291886305316,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.988040030002594,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "51_cf_neutral_2",
+        "original_id": 51,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.022977426133847945,
+          "p_orig": 0.9770225690352491,
+          "margin": -0.9540451429014012,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "347_cf_entailment_0",
+        "original_id": 347,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.599121885633152e-10,
+          "p_orig": 0.9999999988709197,
+          "margin": -0.9999999984110075,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "347_cf_entailment_1",
+        "original_id": 347,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.8807969303400012,
+          "p_orig": 0.11920306951097467,
+          "margin": 0.7615938608290265,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9807128310203552,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "347_cf_entailment_2",
+        "original_id": 347,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.5621764594951077,
+          "p_orig": 0.4378235405048923,
+          "margin": 0.12435291899021544,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9856805205345154,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "411_cf_contradiction_0",
+        "original_id": 411,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.999999999330832,
+          "p_orig": 0.0,
+          "margin": 0.999999999330832,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9992926120758057,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "411_cf_contradiction_1",
+        "original_id": 411,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.000709673799443515,
+          "p_orig": 3.0966764096204494e-12,
+          "margin": 0.0007096737963468386,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "411_cf_contradiction_2",
+        "original_id": 411,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999983916512,
+          "p_orig": 3.0988743716016482e-12,
+          "margin": 0.9999999983885524,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9992926120758057,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "146_cf_entailment_0",
+        "original_id": 146,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999938557643895,
+          "p_orig": 6.144221722385388e-06,
+          "margin": 0.9999877115426671,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9881547689437866,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "146_cf_entailment_1",
+        "original_id": 146,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999417082704177,
+          "p_orig": 5.8291659056605996e-05,
+          "margin": 0.9998834166113612,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9881547689437866,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "146_cf_entailment_2",
+        "original_id": 146,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999869927473964,
+          "p_orig": 1.3007223202768179e-05,
+          "margin": 0.9999739855241937,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9881547689437866,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "223_cf_entailment_0",
+        "original_id": 223,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999943422032,
+          "p_orig": 5.4928756087798763e-11,
+          "margin": 0.9999999942872745,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9958704710006714,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "223_cf_entailment_1",
+        "original_id": 223,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999935711985,
+          "p_orig": 7.99208483021666e-11,
+          "margin": 0.9999999934912777,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9958704710006714,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "223_cf_entailment_2",
+        "original_id": 223,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999935711985,
+          "p_orig": 7.99208483021666e-11,
+          "margin": 0.9999999934912777,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9958704710006714,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "277_cf_entailment_0",
+        "original_id": 277,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.9388586482418925e-11,
+          "p_orig": 0.999569440609041,
+          "margin": -0.9995694405796524,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "277_cf_entailment_1",
+        "original_id": 277,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 8.591468261450808e-10,
+          "p_orig": 0.9999038961437354,
+          "margin": -0.9999038952845886,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "277_cf_entailment_2",
+        "original_id": 277,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 7.030614252782808e-11,
+          "p_orig": 0.9968273046313344,
+          "margin": -0.9968273045610283,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "237_cf_neutral_0",
+        "original_id": 237,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00043055941256133173,
+          "p_orig": 0.9995694398294986,
+          "margin": -0.9991388804169373,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "237_cf_neutral_1",
+        "original_id": 237,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.09534955130075926,
+          "p_orig": 0.904649992436685,
+          "margin": -0.8093004411359257,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "237_cf_neutral_2",
+        "original_id": 237,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0007096738834063126,
+          "p_orig": 0.9992903253588648,
+          "margin": -0.9985806514754585,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "239_cf_entailment_0",
+        "original_id": 239,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00033452296481264527,
+          "p_orig": 0.002471805628045455,
+          "margin": -0.0021372826632328097,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "239_cf_entailment_1",
+        "original_id": 239,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.1032566735771819e-09,
+          "p_orig": 0.9999869916735545,
+          "margin": -0.9999869905702978,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "239_cf_entailment_2",
+        "original_id": 239,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999999955937027,
+          "p_orig": 4.27785655016322e-11,
+          "margin": 0.9999999955509241,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.973186731338501,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.1151515151515152,
+          "original_length": 330,
+          "cf_length": 368,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999999963387203,
+        "v3_score_details": {
+          "score": 1.4999999963387203,
+          "p_orig": 4.277856538053871e-11,
+          "p_target": 0.9999999927629978,
+          "similarity": 0.973186731338501,
+          "term1": 0.9999999999572214,
+          "term2": 0.4999999963814989,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      }
+    ]
+  },
+  "num_generated": 2,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 2,
+    "num_final_selected": 2,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

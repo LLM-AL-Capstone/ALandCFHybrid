@@ -1,0 +1,1243 @@
+{
+  "iteration": 2,
+  "timestamp": "20251207_233509",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 48,
+      "text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.\nHypothesis: The misfits released their album under a self-titled record company.",
+      "label": "entailment"
+    },
+    {
+      "id": 327,
+      "text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.\nHypothesis: There are 5x5 teams.",
+      "label": "entailment"
+    },
+    {
+      "id": 150,
+      "text": "Premise: After months of planning and build-up, Supreme Commander Dwight Eisenhower set Operation Overlord for June 6, 1944: some 7000 ships in the British Isles set to sea and sailed across the English Channel, and, under the leadership of Field Marshall Bernard Montgomery, 135,000 troops landed and stormed Feldmarschal Erwin Rommel's German positions along 80 km of the Normandy coast.\nHypothesis: Field Marshall Bernard Montgomery was English.",
+      "label": "neutral"
+    },
+    {
+      "id": 336,
+      "text": "Premise: The Hill Country Film Festival is a yearly film festival in Fredericksburg, Texas, United States. It was established in 2010. The executive director is Chad Matthews, and it is presented by the Hill Country Film Society, who hold free screenings at the festival and, afterward, monthly. In 2013, \"Texas Monthly\" selected it as a \"quirky, discerning\" pick.\nHypothesis: Fredericksburg, Texas was established in 1910.",
+      "label": "neutral"
+    },
+    {
+      "id": 256,
+      "text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.\nHypothesis: The person believes government should do little",
+      "label": "entailment"
+    },
+    {
+      "id": 177,
+      "text": "Premise: NASA John H. Glenn Research Center at Lewis Field is a NASA center, located within the cities of Brook Park and Cleveland between Cleveland Hopkins International Airport and the Cleveland Metroparks's Rocky River Reservation, with a subsidiary facility in Sandusky, Ohio. Its director is Janet L. Kavandi.\nHypothesis: NASA John H. Glenn Research Center at Lewis Field is a NASA center, located between Cleveland Hopkins International Airport.",
+      "label": "entailment"
+    },
+    {
+      "id": 421,
+      "text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.\nHypothesis: The lesser eyed hawkmoth dates back to 1937.",
+      "label": "entailment"
+    },
+    {
+      "id": 124,
+      "text": "Premise: High Noon is a retailer and auction consulting company. They specialize in Western American art & antique Americana, including cowboy and American Indian artifacts and fine western art. The company is known for founding the High Noon Western Americana Auction and Antique Show in 1991, held every January at the Phoenix Mesa Marriott in Mesa, Arizona.\nHypothesis: There are many examples of fine western art.",
+      "label": "neutral"
+    },
+    {
+      "id": 99,
+      "text": "Premise: How to make popcorn on the stove<br>Heat the oil in a 3-quart (or larger) saucepan on medium-high heat. You'll want to use an oil with a high smoke point, like peanut, canola or coconut. If using coconut oil, allow all of the solid oil to melt before adding kernels.\nHypothesis: Nut-based oils tend to have a higher smoke point.",
+      "label": "neutral"
+    },
+    {
+      "id": 285,
+      "text": "Premise: How to manage cash flow for a business<br>Write down your business's balance at the beginning of each month. Check your business's bank account to see how much cash you have on hand. You will need to do this for a few months before you have a good idea of what your cash flow is like.\nHypothesis: The beginning of each month you should visit your bank to see if they have toasters.",
+      "label": "contradiction"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "327_cf_contradiction_1",
+      "text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.  \nHypothesis: There are no teams ranked in the top five.",
+      "label": "contradiction",
+      "original_id": 327,
+      "original_label": "entailment",
+      "v3_score": 1.4999999999868794,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.9999999999934397,
+        "term2": 0.4999999999934397,
+        "term3": 0.0,
+        "total": 1.4999999999868794,
+        "p_orig": 6.560313797015969e-12,
+        "p_target": 0.9999999999868794,
+        "similarity": 0.9589658379554749
+      }
+    },
+    {
+      "id": "285_cf_entailment_1",
+      "text": "Premise: How to manage cash flow for a business<br>Write down your business's balance at the beginning of each month. Check your business's bank account to see how much cash you have on hand. You will need to do this for a few months before you have a good idea of what your cash flow is like.  \nHypothesis: The beginning of each month you should check your bank account to review your cash balance.",
+      "label": "entailment",
+      "original_id": 285,
+      "original_label": "contradiction",
+      "v3_score": 1.499999995851227,
+      "v3_rank": 2,
+      "v3_score_breakdown": {
+        "term1": 0.9999999999515256,
+        "term2": 0.4999999958997014,
+        "term3": 0.0,
+        "total": 1.499999995851227,
+        "p_orig": 4.8474461062855844e-11,
+        "p_target": 0.9999999917994028,
+        "similarity": 0.9429831504821777
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "327_cf_contradiction_1",
+    "285_cf_entailment_1"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 2,
+    "num_added": 2,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.\nHypothesis: The misfits released their album under a self-titled record company.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.  \nHypothesis: The album was released under a record company associated with the Misfits.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2937531471252441,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.\nHypothesis: The misfits released their album under a self-titled record company.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.  \nHypothesis: The album was released under the Misfits Records label.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.0020809173583984,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.\nHypothesis: The misfits released their album under a self-titled record company.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.  \nHypothesis: The Misfits may have released their album under a self-titled record company.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.2322940826416016,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.\nHypothesis: There are 5x5 teams.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona rose to No. 13 from No. 17 in the AP Top 25 college basketball poll. Virginia (23-2) remained at No. 1, with Villanova (23-2) staying at No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.8739509582519531,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.\nHypothesis: There are 5x5 teams.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.  \nHypothesis: There are no teams ranked in the top five.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.6212100982666016,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.\nHypothesis: There are 5x5 teams.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: TUCSON, Ariz. - After losing to UCLA last week before toppling Southern Cal, Arizona fell to No. 17 from No. 13 in the AP Top 25 college basketball poll. Virginia (23-2) replaced Villanova (23-2) at No. 1, with Villanova slipping to No. 3. Michigan State (24-3) is No. 2, and Xavier (23-3) and Cincinnati (23-2) rounded out the top five. Arizona (20-6, 10-3 Pac-12) visits No. 25 Arizona State (19-6, 7-6) at 7 p.m. Thursday on ESPN.  \nHypothesis: There are fewer than five teams.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.2038121223449707,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: After months of planning and build-up, Supreme Commander Dwight Eisenhower set Operation Overlord for June 6, 1944: some 7000 ships in the British Isles set to sea and sailed across the English Channel, and, under the leadership of Field Marshall Bernard Montgomery, 135,000 troops landed and stormed Feldmarschal Erwin Rommel's German positions along 80 km of the Normandy coast.\nHypothesis: Field Marshall Bernard Montgomery was English.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: After months of planning and build-up, Supreme Commander Dwight Eisenhower set Operation Overlord for June 6, 1944: some 7000 ships in the British Isles set to sea and sailed across the English Channel, and, under the leadership of English Field Marshall Bernard Montgomery, 135,000 troops landed and stormed Feldmarschal Erwin Rommel's German positions along 80 km of the Normandy coast.  \nHypothesis: Field Marshall Bernard Montgomery was English.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2162492275238037,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: After months of planning and build-up, Supreme Commander Dwight Eisenhower set Operation Overlord for June 6, 1944: some 7000 ships in the British Isles set to sea and sailed across the English Channel, and, under the leadership of Field Marshall Bernard Montgomery, 135,000 troops landed and stormed Feldmarschal Erwin Rommel's German positions along 80 km of the Normandy coast.\nHypothesis: Field Marshall Bernard Montgomery was English.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: After months of planning and build-up, Supreme Commander Dwight Eisenhower set Operation Overlord for June 6, 1944: some 7000 ships in the British Isles set to sea and sailed across the English Channel, and, under the leadership of Field Marshall Bernard Montgomery, 135,000 troops landed and stormed Feldmarschal Erwin Rommel's German positions along 80 km of the Normandy coast.  \nHypothesis: Field Marshall Bernard Montgomery, leading the operation from the British Isles, was English.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9704239368438721,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: After months of planning and build-up, Supreme Commander Dwight Eisenhower set Operation Overlord for June 6, 1944: some 7000 ships in the British Isles set to sea and sailed across the English Channel, and, under the leadership of Field Marshall Bernard Montgomery, 135,000 troops landed and stormed Feldmarschal Erwin Rommel's German positions along 80 km of the Normandy coast.\nHypothesis: Field Marshall Bernard Montgomery was English.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: After months of planning and build-up, Supreme Commander Dwight Eisenhower set Operation Overlord for June 6, 1944: some 7000 ships in the British Isles set to sea and sailed across the English Channel, and, under the leadership of English Field Marshall Bernard Montgomery, 135,000 troops landed and stormed Feldmarschal Erwin Rommel's German positions along 80 km of the Normandy coast.  \nHypothesis: Field Marshall Bernard Montgomery was English.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8005101680755615,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Hill Country Film Festival is a yearly film festival in Fredericksburg, Texas, United States. It was established in 2010. The executive director is Chad Matthews, and it is presented by the Hill Country Film Society, who hold free screenings at the festival and, afterward, monthly. In 2013, \"Texas Monthly\" selected it as a \"quirky, discerning\" pick.\nHypothesis: Fredericksburg, Texas was established in 1910.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The Hill Country Film Festival is a yearly film festival in Fredericksburg, Texas, United States. It was established in 2010. The executive director is Chad Matthews, and it is presented by the Hill Country Film Society, who hold free screenings at the festival and, afterward, monthly. In 2013, \"Texas Monthly\" selected it as a \"quirky, discerning\" pick.  \nHypothesis: Fredericksburg, Texas was established in 2010.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9468979835510254,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Hill Country Film Festival is a yearly film festival in Fredericksburg, Texas, United States. It was established in 2010. The executive director is Chad Matthews, and it is presented by the Hill Country Film Society, who hold free screenings at the festival and, afterward, monthly. In 2013, \"Texas Monthly\" selected it as a \"quirky, discerning\" pick.\nHypothesis: Fredericksburg, Texas was established in 1910.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The Hill Country Film Festival is a yearly film festival in Fredericksburg, Texas, United States. It was established in 2010. The executive director is Chad Matthews, and it is presented by the Hill Country Film Society, who hold free screenings at the festival and, afterward, monthly. In 2013, \"Texas Monthly\" selected it as a \"quirky, discerning\" pick.  \nHypothesis: Fredericksburg, Texas was established long before 1910.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.0279829502105713,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Hill Country Film Festival is a yearly film festival in Fredericksburg, Texas, United States. It was established in 2010. The executive director is Chad Matthews, and it is presented by the Hill Country Film Society, who hold free screenings at the festival and, afterward, monthly. In 2013, \"Texas Monthly\" selected it as a \"quirky, discerning\" pick.\nHypothesis: Fredericksburg, Texas was established in 1910.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The Hill Country Film Festival is a yearly film festival in Fredericksburg, Texas, United States. It was established in 2010. The executive director is Chad Matthews, and it is presented by the Hill Country Film Society, who hold free screenings at the festival and, afterward, monthly. In 2013, \"Texas Monthly\" selected it as a \"quirky, discerning\" pick.  \nHypothesis: Fredericksburg, Texas was established in 1910, though the festival predates this claim by a century.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.0276398658752441,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.\nHypothesis: The person believes government should do little",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.  \nHypothesis: The person believes government should have focused priorities.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8242170810699463,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.\nHypothesis: The person believes government should do little",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.  \nHypothesis: The person mentions limited government and tax relief.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.0360538959503174,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.\nHypothesis: The person believes government should do little",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: And finally, I do believe in tax relief. I believe we can set our priorities. I don't believe, like the vice president does, in huge government. I believe in limited government. By having a limited government and a focused government, we can send some of the money back to the people who pay the bills.  \nHypothesis: The person may not necessarily believe government should do little.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7584588527679443,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: NASA John H. Glenn Research Center at Lewis Field is a NASA center, located within the cities of Brook Park and Cleveland between Cleveland Hopkins International Airport and the Cleveland Metroparks's Rocky River Reservation, with a subsidiary facility in Sandusky, Ohio. Its director is Janet L. Kavandi.\nHypothesis: NASA John H. Glenn Research Center at Lewis Field is a NASA center, located between Cleveland Hopkins International Airport.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: NASA John H. Glenn Research Center at Lewis Field is a NASA center, located within the cities of Brook Park and Cleveland between Cleveland Hopkins International Airport and the Cleveland Metroparks's Rocky River Reservation, with a subsidiary facility in Sandusky, Ohio. Its director is Janet L. Kavandi.  \nHypothesis: NASA John H. Glenn Research Center at Lewis Field is a NASA center, located near Cleveland Hopkins International Airport.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1617588996887207,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: NASA John H. Glenn Research Center at Lewis Field is a NASA center, located within the cities of Brook Park and Cleveland between Cleveland Hopkins International Airport and the Cleveland Metroparks's Rocky River Reservation, with a subsidiary facility in Sandusky, Ohio. Its director is Janet L. Kavandi.\nHypothesis: NASA John H. Glenn Research Center at Lewis Field is a NASA center, located between Cleveland Hopkins International Airport.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: NASA John H. Glenn Research Center at Lewis Field is a NASA center, located within the cities of Brook Park and Cleveland between Cleveland Hopkins International Airport and the Cleveland Metroparks's Rocky River Reservation, with a subsidiary facility in Sandusky, Ohio. Its director is Janet L. Kavandi.  \nHypothesis: NASA John H. Glenn Research Center at Lewis Field may be located near Cleveland Hopkins International Airport.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9511439800262451,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: NASA John H. Glenn Research Center at Lewis Field is a NASA center, located within the cities of Brook Park and Cleveland between Cleveland Hopkins International Airport and the Cleveland Metroparks's Rocky River Reservation, with a subsidiary facility in Sandusky, Ohio. Its director is Janet L. Kavandi.\nHypothesis: NASA John H. Glenn Research Center at Lewis Field is a NASA center, located between Cleveland Hopkins International Airport.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: NASA John H. Glenn Research Center at Lewis Field is a NASA center, located within the cities of Brook Park and Cleveland between Cleveland Hopkins International Airport and the Cleveland Metroparks's Rocky River Reservation, with a subsidiary facility in Sandusky, Ohio. Its director is Janet L. Kavandi.  \nHypothesis: NASA John H. Glenn Research Center at Lewis Field might be located between Cleveland Hopkins International Airport.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8547918796539307,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.\nHypothesis: The lesser eyed hawkmoth dates back to 1937.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.  \nHypothesis: The lesser eyed hawkmoth might have originated in 1937.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.3024451732635498,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.\nHypothesis: The lesser eyed hawkmoth dates back to 1937.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.  \nHypothesis: The lesser eyed hawkmoth was first formally described in 1937.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.2335119247436523,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.\nHypothesis: The lesser eyed hawkmoth dates back to 1937.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Smerinthus minor (lesser eyed hawkmoth) is a moth of the family Sphingidae. It was described by Mell in 1937. It is a montane species found from the Taibai Shan area, western Qinling Mountains in Shaanxi, China eastwards along the Qinling to southern Shanxi and then north to just west of Beijing. It has also been recorded from the Miaofeng Mountains near Beijing and the Wuling Mountains in Hunan.  \nHypothesis: The lesser eyed hawkmoth may have been described in 1937.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.2317798137664795,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: High Noon is a retailer and auction consulting company. They specialize in Western American art & antique Americana, including cowboy and American Indian artifacts and fine western art. The company is known for founding the High Noon Western Americana Auction and Antique Show in 1991, held every January at the Phoenix Mesa Marriott in Mesa, Arizona.\nHypothesis: There are many examples of fine western art.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: High Noon is a retailer and auction consulting company. They specialize in Western American art & antique Americana, including cowboy and American Indian artifacts and fine western art. The company is known for founding the High Noon Western Americana Auction and Antique Show in 1991, held every January at the Phoenix Mesa Marriott in Mesa, Arizona.  \nHypothesis: High Noon provides many examples of fine western art.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.133864164352417,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: High Noon is a retailer and auction consulting company. They specialize in Western American art & antique Americana, including cowboy and American Indian artifacts and fine western art. The company is known for founding the High Noon Western Americana Auction and Antique Show in 1991, held every January at the Phoenix Mesa Marriott in Mesa, Arizona.\nHypothesis: There are many examples of fine western art.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: High Noon is a retailer and auction consulting company. They specialize in Western American art & antique Americana, including cowboy and American Indian artifacts and fine western art. The company is known for founding the High Noon Western Americana Auction and Antique Show in 1991, held every January at the Phoenix Mesa Marriott in Mesa, Arizona.  \nHypothesis: The company showcases many examples of fine western art.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.3336288928985596,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: High Noon is a retailer and auction consulting company. They specialize in Western American art & antique Americana, including cowboy and American Indian artifacts and fine western art. The company is known for founding the High Noon Western Americana Auction and Antique Show in 1991, held every January at the Phoenix Mesa Marriott in Mesa, Arizona.\nHypothesis: There are many examples of fine western art.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: High Noon is a retailer and auction consulting company. They specialize in Western American art & antique Americana, including cowboy and American Indian artifacts and fine western art. The company is known for founding the High Noon Western Americana Auction and Antique Show in 1991, held every January at the Phoenix Mesa Marriott in Mesa, Arizona.  \nHypothesis: High Noon showcases many examples of fine western art.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9193272590637207,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to make popcorn on the stove<br>Heat the oil in a 3-quart (or larger) saucepan on medium-high heat. You'll want to use an oil with a high smoke point, like peanut, canola or coconut. If using coconut oil, allow all of the solid oil to melt before adding kernels.\nHypothesis: Nut-based oils tend to have a higher smoke point.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to make popcorn on the stove<br>Heat the oil in a 3-quart (or larger) saucepan on medium-high heat. You'll want to use an oil with a high smoke point, like peanut, canola or coconut. If using coconut oil, allow all of the solid oil to melt before adding kernels.  \nHypothesis: Peanut, canola, and coconut oils are examples of nut-based oils with high smoke points.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.330629825592041,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to make popcorn on the stove<br>Heat the oil in a 3-quart (or larger) saucepan on medium-high heat. You'll want to use an oil with a high smoke point, like peanut, canola or coconut. If using coconut oil, allow all of the solid oil to melt before adding kernels.\nHypothesis: Nut-based oils tend to have a higher smoke point.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to make popcorn on the stove<br>Heat the oil in a 3-quart (or larger) saucepan on medium-high heat. You'll want to use an oil with a high smoke point, like peanut, canola or coconut. If using coconut oil, allow all of the solid oil to melt before adding kernels.  \nHypothesis: Peanut, canola, and coconut oils are examples of nut-based oils with high smoke points.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.1586213111877441,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to make popcorn on the stove<br>Heat the oil in a 3-quart (or larger) saucepan on medium-high heat. You'll want to use an oil with a high smoke point, like peanut, canola or coconut. If using coconut oil, allow all of the solid oil to melt before adding kernels.\nHypothesis: Nut-based oils tend to have a higher smoke point.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to make popcorn on the stove<br>Heat the oil in a 3-quart (or larger) saucepan on medium-high heat. You'll want to use an oil with a high smoke point, like peanut, canola or coconut. If using coconut oil, allow all of the solid oil to melt before adding kernels.  \nHypothesis: Peanut and coconut oils, being nut-based, are examples of oils with a higher smoke point.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.5158698558807373,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to manage cash flow for a business<br>Write down your business's balance at the beginning of each month. Check your business's bank account to see how much cash you have on hand. You will need to do this for a few months before you have a good idea of what your cash flow is like.\nHypothesis: The beginning of each month you should visit your bank to see if they have toasters.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to manage cash flow for a business<br>Write down your business's balance at the beginning of each month. Check your business's bank account to see how much cash you have on hand. You will need to do this for a few months before you have a good idea of what your cash flow is like.  \nHypothesis: The beginning of each month you should visit your bank to check your account balance and manage your cash flow effectively.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.178664207458496,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to manage cash flow for a business<br>Write down your business's balance at the beginning of each month. Check your business's bank account to see how much cash you have on hand. You will need to do this for a few months before you have a good idea of what your cash flow is like.\nHypothesis: The beginning of each month you should visit your bank to see if they have toasters.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to manage cash flow for a business<br>Write down your business's balance at the beginning of each month. Check your business's bank account to see how much cash you have on hand. You will need to do this for a few months before you have a good idea of what your cash flow is like.  \nHypothesis: The beginning of each month you should check your bank account to review your cash balance.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.1855700016021729,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to manage cash flow for a business<br>Write down your business's balance at the beginning of each month. Check your business's bank account to see how much cash you have on hand. You will need to do this for a few months before you have a good idea of what your cash flow is like.\nHypothesis: The beginning of each month you should visit your bank to see if they have toasters.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to manage cash flow for a business<br>Write down your business's balance at the beginning of each month. Check your business's bank account to see how much cash you have on hand. You will need to do this for a few months before you have a good idea of what your cash flow is like.  \nHypothesis: The beginning of each month you should visit your bank to review your account and assess available resources.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.945357084274292,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "48_cf_neutral_0",
+        "original_id": 48,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.061181347151579e-09,
+          "p_orig": 0.9999999979209859,
+          "margin": -0.9999999958598046,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "48_cf_neutral_1",
+        "original_id": 48,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.78950937190996e-10,
+          "p_orig": 0.9999999997071609,
+          "margin": -0.9999999994282099,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "48_cf_neutral_2",
+        "original_id": 48,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.014063625987178517,
+          "p_orig": 0.9859335124934188,
+          "margin": -0.9718698865062403,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "327_cf_contradiction_0",
+        "original_id": 327,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0009099911617843537,
+          "p_orig": 0.0011684515842017669,
+          "margin": -0.0002584604224174132,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "327_cf_contradiction_1",
+        "original_id": 327,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999999999393504,
+          "p_orig": 2.2897725806286168e-11,
+          "margin": 0.9999999999164527,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9589658379554749,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0505263157894738,
+          "original_length": 475,
+          "cf_length": 499,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999999999868794,
+        "v3_score_details": {
+          "score": 1.4999999999868794,
+          "p_orig": 6.560313797015969e-12,
+          "p_target": 0.9999999999868794,
+          "similarity": 0.9589658379554749,
+          "term1": 0.9999999999934397,
+          "term2": 0.4999999999934397,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "327_cf_contradiction_2",
+        "original_id": 327,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.999999967754248,
+          "p_orig": 3.511484297594874e-12,
+          "margin": 0.9999999677507365,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9842093586921692,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "150_cf_entailment_0",
+        "original_id": 150,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999713001468,
+          "p_orig": 2.8453679819141835e-08,
+          "margin": 0.999999942846467,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9977228045463562,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "150_cf_entailment_1",
+        "original_id": 150,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00026119177266161066,
+          "p_orig": 0.9997387963691705,
+          "margin": -0.9994776045965089,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "150_cf_entailment_2",
+        "original_id": 150,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999825727725,
+          "p_orig": 1.7258035190830613e-08,
+          "margin": 0.9999999653147372,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9977228045463562,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "336_cf_contradiction_0",
+        "original_id": 336,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999967112041227,
+          "p_orig": 3.2887756702596484e-06,
+          "margin": 0.9999934224284525,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9979150891304016,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "336_cf_contradiction_1",
+        "original_id": 336,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.927898935975034e-07,
+          "p_orig": 0.9999987756743147,
+          "margin": -0.9999983828844211,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "336_cf_contradiction_2",
+        "original_id": 336,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999977396392231,
+          "p_orig": 2.2603450395900586e-06,
+          "margin": 0.9999954792941835,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.997638463973999,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "256_cf_neutral_0",
+        "original_id": 256,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.3983123823463444e-09,
+          "p_orig": 0.9999999965877995,
+          "margin": -0.9999999931894871,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "256_cf_neutral_1",
+        "original_id": 256,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.940125697556486e-11,
+          "p_orig": 0.9999999999446523,
+          "margin": -0.999999999915251,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "256_cf_neutral_2",
+        "original_id": 256,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.8807617196263251,
+          "p_orig": 0.11919829359522037,
+          "margin": 0.7615634260311047,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9953144192695618,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "177_cf_neutral_0",
+        "original_id": 177,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.0587111627855143e-10,
+          "p_orig": 0.9999999995712312,
+          "margin": -0.9999999991653601,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "177_cf_neutral_1",
+        "original_id": 177,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 9.736336197635323e-10,
+          "p_orig": 0.999999998996965,
+          "margin": -0.9999999980233314,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "177_cf_neutral_2",
+        "original_id": 177,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 9.610304704220373e-05,
+          "p_orig": 0.9999038196153666,
+          "margin": -0.9998077165683243,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "421_cf_neutral_0",
+        "original_id": 421,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.904648303901381,
+          "p_orig": 2.317085177653864e-06,
+          "margin": 0.9046459868162033,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9961994290351868,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "421_cf_neutral_1",
+        "original_id": 421,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.646608791185748e-09,
+          "p_orig": 0.9999999972040794,
+          "margin": -0.9999999945574706,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "421_cf_neutral_2",
+        "original_id": 421,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.0590544553506945e-07,
+          "p_orig": 0.9999996939253621,
+          "margin": -0.9999993880199166,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "124_cf_entailment_0",
+        "original_id": 124,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999317432001,
+          "p_orig": 6.825679988194164e-08,
+          "margin": 0.9999998634864002,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9956351518630981,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "124_cf_entailment_1",
+        "original_id": 124,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999976266238,
+          "p_orig": 2.3356242579444804e-09,
+          "margin": 0.9999999952909996,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9977889060974121,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "124_cf_entailment_2",
+        "original_id": 124,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999956242249,
+          "p_orig": 4.363518734789555e-09,
+          "margin": 0.9999999912607062,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9945842027664185,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "99_cf_entailment_0",
+        "original_id": 99,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0004276788132590289,
+          "p_orig": 0.9928823113214216,
+          "margin": -0.9924546325081626,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "99_cf_entailment_1",
+        "original_id": 99,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0007074239231118772,
+          "p_orig": 0.9961221252115022,
+          "margin": -0.9954147012883904,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "99_cf_entailment_2",
+        "original_id": 99,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.999964623939976,
+          "p_orig": 3.535650481383671e-05,
+          "margin": 0.9999292674351622,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9926308989524841,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "285_cf_entailment_0",
+        "original_id": 285,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.022961495235185016,
+          "p_orig": 0.000693378542661218,
+          "margin": 0.022268116692523796,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "285_cf_entailment_1",
+        "original_id": 285,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999999825247176,
+          "p_orig": 2.172472411229959e-10,
+          "margin": 0.9999999823074703,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9429831504821777,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.023076923076923,
+          "original_length": 390,
+          "cf_length": 399,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.499999995851227,
+        "v3_score_details": {
+          "score": 1.499999995851227,
+          "p_orig": 4.8474461062855844e-11,
+          "p_target": 0.9999999917994028,
+          "similarity": 0.9429831504821777,
+          "term1": 0.9999999999515256,
+          "term2": 0.4999999958997014,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "285_cf_entailment_2",
+        "original_id": 285,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.18241890769962774,
+          "p_orig": 3.7116689842199404e-05,
+          "margin": 0.18238179100978555,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 2,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 2,
+    "num_final_selected": 2,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

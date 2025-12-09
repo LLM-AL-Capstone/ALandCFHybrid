@@ -1,0 +1,1269 @@
+{
+  "iteration": 6,
+  "timestamp": "20251208_055948",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 15,
+      "text": "Premise: Smith (suspension) was released by the Raiders on Monday Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.\nHypothesis: It has been reported the Smith hit a member of his family either on Saturday or Sunday.",
+      "label": "neutral"
+    },
+    {
+      "id": 196,
+      "text": "Premise: The Metal Men are a group of superheroes that appear in DC Comics. The characters first appeared in \"Showcase\" #37 and were created by writer Robert Kanigher and penciller Ross Andru. Debuting in the Silver Age of Comic Books, the characters have appeared in comic books and other \"DC Comics\"-related products such as animated television series, clothing, figurines and trading cards.\nHypothesis: The Metal Men were the only superheroes in \"Showcase\" #37.",
+      "label": "neutral"
+    },
+    {
+      "id": 301,
+      "text": "Premise: Paulina G\u00f3mez Torres (born 29 July 1991) known professionally as Paulina Goto is a Mexican actress, singer, and television hostess, who first gained popularity for her debut role in the Mexican telenovela \"Ni\u00f1a de mi Coraz\u00f3n\" in 2010. She was a member of the popular Mexican-Argentine pop group, Eme 15, formed by Televisa producer Pedro Dami\u00e1n, from 2011 to 2014.\nHypothesis: Paulina Goto has been popular for 9 years, since 2010.",
+      "label": "neutral"
+    },
+    {
+      "id": 211,
+      "text": "Premise: How to grow freesias<br>Find out when to plant your freesias. Freesias grow from bulbs that must be planted at a particular time of year to thrive. The season when you plant your freesias depends on what growing zone you live in.\nHypothesis: Freesias will not grow well in the winter",
+      "label": "neutral"
+    },
+    {
+      "id": 93,
+      "text": "Premise: YouTube user Streetcap1 posted a series of pictures taken from Chinese lunar rover Change\u2019e 3. It appears to have a distinguishable face as well as a body and limbs, while lying in front of a rock. After posting the clip to YouTube, Streetcap1 said: \u201cAll body parts are in the correct place here and the head looks like it is wearing a helmet with a visor. \u201cYou can see what look like hands at the sides.\nHypothesis: Change\u2019e 3 did not post clips to Youtube.",
+      "label": "entailment"
+    },
+    {
+      "id": 178,
+      "text": "Premise: Cruel World is a 2005 American horror comedy film co-produced and directed by Kelsey T. Howard. The film is about a psychotic man who loses a reality game show and subsequently kills the host. He uses the house where the show took place to film his own reality show. In the show, several contestants perform challenges, and the losers are killed rather than being sent home.\nHypothesis: Cruel World is more horror than comedy",
+      "label": "neutral"
+    },
+    {
+      "id": 295,
+      "text": "Premise: How to take revenge on your enemies<br>Call your enemy out. Before giving in to revenge, try telling your enemy exactly what it is that you want him to stop doing. Stay calm and take control of the situation.\nHypothesis: Revenge on your enemies requires a few things such as patience. ",
+      "label": "entailment"
+    },
+    {
+      "id": 16,
+      "text": "Premise: The Maschinengewehr (Schwarzlose) M. 7, also known as the Schwarzlose MG, is a medium machine-gun, used as a standard issue firearm in the Austro-Hungarian Army throughout World War I. It was utilized by the Dutch, Greek and Hungarian armies during World War II. It was routinely issued to Italian colonial troops, alongside the Mannlicher M1895 rifle.\nHypothesis: The gun was used by the Greek army in World War 1.",
+      "label": "contradiction"
+    },
+    {
+      "id": 200,
+      "text": "Premise: Ride to Lowell<br>My sister-in-law had jury duty in 2010. The trial was in Lowell, 29 miles away from Cambridge. She does not like driving, so I took her there. I stayed in the library while she went to court. She did not get picked and we went home at noon.\nHypothesis: sister-in-law has a s",
+      "label": "entailment"
+    },
+    {
+      "id": 88,
+      "text": "Premise: How to address an archbishop<br>Greet an archbishop formally by saying \" your excellency. \" when you approach an archbishop, it's best to give them a formal salutation. Both \" your excellency \" and \" your grace \" are acceptable and highly respectful greetings.\nHypothesis: You can use the same greeting for an archbishop as you would for a king",
+      "label": "neutral"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "200_cf_contradiction_2",
+      "text": "Premise: Ride to Lowell  \nMy sister-in-law had jury duty in 2010. The trial was in Lowell, 29 miles away from Cambridge. She does not like driving, so I took her there. I stayed in the library while she went to court. She did not get picked and we went home at noon.  \nHypothesis: My sister-in-law did not have jury duty in 2010.",
+      "label": "contradiction",
+      "original_id": 200,
+      "original_label": "entailment",
+      "v3_score": 1.499999999903051,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.9999999999515256,
+        "term2": 0.49999999995152555,
+        "term3": 0.0,
+        "total": 1.499999999903051,
+        "p_orig": 4.8474470840939344e-11,
+        "p_target": 0.9999999999030511,
+        "similarity": 0.9365139603614807
+      }
+    },
+    {
+      "id": "178_cf_entailment_1",
+      "text": "Premise: Cruel World is a 2005 American horror comedy film co-produced and directed by Kelsey T. Howard. The film follows a psychotic man who, after losing a reality game show, kills the host and uses the house where the show was filmed to create his own twisted reality show. In his show, contestants face challenges where losing leads to death rather than elimination.  \nHypothesis: Cruel World leans heavily into horror elements over comedy.",
+      "label": "entailment",
+      "original_id": 178,
+      "original_label": "neutral",
+      "v3_score": 1.4098698705480186,
+      "v3_rank": 2,
+      "v3_score_breakdown": {
+        "term1": 0.9399132485811503,
+        "term2": 0.46995662196686816,
+        "term3": 0.0,
+        "total": 1.4098698705480186,
+        "p_orig": 0.06008675141884971,
+        "p_target": 0.9399132439337363,
+        "similarity": 0.978187620639801
+      }
+    },
+    {
+      "id": "295_cf_neutral_1",
+      "text": "Premise: How to take revenge on your enemies<br>Call your enemy out. Before considering revenge, try addressing your enemy directly about their behavior. Stay composed and manage the situation effectively.  \nHypothesis: Revenge on your enemies may involve certain factors like patience.",
+      "label": "neutral",
+      "original_id": 295,
+      "original_label": "entailment",
+      "v3_score": 1.018767883870428,
+      "v3_rank": 3,
+      "v3_score_breakdown": {
+        "term1": 0.6791785893185132,
+        "term2": 0.3395892945519149,
+        "term3": 0.0,
+        "total": 1.018767883870428,
+        "p_orig": 0.3208214106814868,
+        "p_target": 0.6791785891038298,
+        "similarity": 0.9440063238143921
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "200_cf_contradiction_2",
+    "178_cf_entailment_1",
+    "295_cf_neutral_1"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 3,
+    "num_added": 3,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "Premise: Smith (suspension) was released by the Raiders on Monday Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.\nHypothesis: It has been reported the Smith hit a member of his family either on Saturday or Sunday.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Smith (suspension) was released by the Raiders on Monday Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.  \nHypothesis: Smith was involved in a domestic violence incident with a member of his family over the weekend.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 2.1098852157592773,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Smith (suspension) was released by the Raiders on Monday Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.\nHypothesis: It has been reported the Smith hit a member of his family either on Saturday or Sunday.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Smith (suspension) was released by the Raiders on Monday. Per NFL.com's Ian Rapoport, Smith is confirmed as a suspect in an alleged domestic violence incident that occurred over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.  \nHypothesis: It has been reported that Smith hit a member of his family either on Saturday or Sunday.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.0229740142822266,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Smith (suspension) was released by the Raiders on Monday Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.\nHypothesis: It has been reported the Smith hit a member of his family either on Saturday or Sunday.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Smith (suspension) was released by the Raiders on Monday. Per NFL.com's Ian Rapoport, Smith is a suspect in an alleged domestic violence incident that took place over the weekend. Smith hasn't played in a game since 2015 due to repeat violations of the NFL's substance-abuse policy.  \nHypothesis: Smith reportedly hit a member of his family during the weekend.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.0340468883514404,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Metal Men are a group of superheroes that appear in DC Comics. The characters first appeared in \"Showcase\" #37 and were created by writer Robert Kanigher and penciller Ross Andru. Debuting in the Silver Age of Comic Books, the characters have appeared in comic books and other \"DC Comics\"-related products such as animated television series, clothing, figurines and trading cards.\nHypothesis: The Metal Men were the only superheroes in \"Showcase\" #37.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Metal Men are a group of superheroes that appear in DC Comics. The characters first appeared in \"Showcase\" #37 and were created by writer Robert Kanigher and penciller Ross Andru. Debuting in the Silver Age of Comic Books, the characters have appeared in comic books and other \"DC Comics\"-related products such as animated television series, clothing, figurines and trading cards.  \nHypothesis: The Metal Men were the featured superheroes in \"Showcase\" #37.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.73956298828125,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Metal Men are a group of superheroes that appear in DC Comics. The characters first appeared in \"Showcase\" #37 and were created by writer Robert Kanigher and penciller Ross Andru. Debuting in the Silver Age of Comic Books, the characters have appeared in comic books and other \"DC Comics\"-related products such as animated television series, clothing, figurines and trading cards.\nHypothesis: The Metal Men were the only superheroes in \"Showcase\" #37.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Metal Men are a group of superheroes that appear in DC Comics. The characters first appeared in \"Showcase\" #37 and were created by writer Robert Kanigher and penciller Ross Andru. Debuting in the Silver Age of Comic Books, the characters have appeared in comic books and other \"DC Comics\"-related products such as animated television series, clothing, figurines and trading cards.  \nHypothesis: The Metal Men were prominently featured as the only superheroes introduced in \"Showcase\" #37.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.1254339218139648,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Metal Men are a group of superheroes that appear in DC Comics. The characters first appeared in \"Showcase\" #37 and were created by writer Robert Kanigher and penciller Ross Andru. Debuting in the Silver Age of Comic Books, the characters have appeared in comic books and other \"DC Comics\"-related products such as animated television series, clothing, figurines and trading cards.\nHypothesis: The Metal Men were the only superheroes in \"Showcase\" #37.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Metal Men are a group of superheroes that appear in DC Comics. The characters first appeared in \"Showcase\" #37 and were created by writer Robert Kanigher and penciller Ross Andru. Debuting in the Silver Age of Comic Books, the characters have appeared in comic books and other \"DC Comics\"-related products such as animated television series, clothing, figurines and trading cards.  \nHypothesis: The Metal Men, introduced in \"Showcase\" #37, were the featured superheroes of that issue.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.0270979404449463,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Paulina G\u00f3mez Torres (born 29 July 1991) known professionally as Paulina Goto is a Mexican actress, singer, and television hostess, who first gained popularity for her debut role in the Mexican telenovela \"Ni\u00f1a de mi Coraz\u00f3n\" in 2010. She was a member of the popular Mexican-Argentine pop group, Eme 15, formed by Televisa producer Pedro Dami\u00e1n, from 2011 to 2014.\nHypothesis: Paulina Goto has been popular for 9 years, since 2010.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Paulina G\u00f3mez Torres (born 29 July 1991) known professionally as Paulina Goto is a Mexican actress, singer, and television hostess, who first gained popularity for her debut role in the Mexican telenovela \"Ni\u00f1a de mi Coraz\u00f3n\" in 2010. She was a member of the popular Mexican-Argentine pop group, Eme 15, formed by Televisa producer Pedro Dami\u00e1n, from 2011 to 2014.  \nHypothesis: Paulina Goto has not been popular for 9 years, since 2010.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.6490769386291504,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Paulina G\u00f3mez Torres (born 29 July 1991) known professionally as Paulina Goto is a Mexican actress, singer, and television hostess, who first gained popularity for her debut role in the Mexican telenovela \"Ni\u00f1a de mi Coraz\u00f3n\" in 2010. She was a member of the popular Mexican-Argentine pop group, Eme 15, formed by Televisa producer Pedro Dami\u00e1n, from 2011 to 2014.\nHypothesis: Paulina Goto has been popular for 9 years, since 2010.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Hypothesis: Paulina Goto has not been consistently popular for 9 years, as her fame fluctuated significantly after her debut in 2010.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.017127275466919,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Paulina G\u00f3mez Torres (born 29 July 1991) known professionally as Paulina Goto is a Mexican actress, singer, and television hostess, who first gained popularity for her debut role in the Mexican telenovela \"Ni\u00f1a de mi Coraz\u00f3n\" in 2010. She was a member of the popular Mexican-Argentine pop group, Eme 15, formed by Televisa producer Pedro Dami\u00e1n, from 2011 to 2014.\nHypothesis: Paulina Goto has been popular for 9 years, since 2010.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Paulina G\u00f3mez Torres (born 29 July 1991) known professionally as Paulina Goto is a Mexican actress, singer, and television hostess, who first gained popularity for her debut role in the Mexican telenovela \"Ni\u00f1a de mi Coraz\u00f3n\" in 2010. She was a member of the popular Mexican-Argentine pop group, Eme 15, formed by Televisa producer Pedro Dami\u00e1n, from 2011 to 2014.  \nHypothesis: Paulina Goto has not been popular for 9 years, despite her debut in 2010.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.1446893215179443,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to grow freesias<br>Find out when to plant your freesias. Freesias grow from bulbs that must be planted at a particular time of year to thrive. The season when you plant your freesias depends on what growing zone you live in.\nHypothesis: Freesias will not grow well in the winter",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to grow freesias<br>Find out when to plant your freesias. Freesias grow from bulbs that must be planted at a particular time of year to thrive. The season when you plant your freesias depends on what growing zone you live in.  \nHypothesis: Freesias thrive when planted in the winter.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1037120819091797,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to grow freesias<br>Find out when to plant your freesias. Freesias grow from bulbs that must be planted at a particular time of year to thrive. The season when you plant your freesias depends on what growing zone you live in.\nHypothesis: Freesias will not grow well in the winter",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to grow freesias<br>Find out when to plant your freesias. Freesias grow from bulbs that must be planted at a particular time of year to thrive. The season when you plant your freesias depends on what growing zone you live in.  \nHypothesis: Freesias can thrive even when planted in the winter.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8246440887451172,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to grow freesias<br>Find out when to plant your freesias. Freesias grow from bulbs that must be planted at a particular time of year to thrive. The season when you plant your freesias depends on what growing zone you live in.\nHypothesis: Freesias will not grow well in the winter",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to grow freesias  \nFind out when to plant your freesias. Freesias grow from bulbs that must be planted at a particular time of year to thrive. The season when you plant your freesias depends on what growing zone you live in.  \nHypothesis: Freesias will grow well in the winter.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7147378921508789,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: YouTube user Streetcap1 posted a series of pictures taken from Chinese lunar rover Change\u2019e 3. It appears to have a distinguishable face as well as a body and limbs, while lying in front of a rock. After posting the clip to YouTube, Streetcap1 said: \u201cAll body parts are in the correct place here and the head looks like it is wearing a helmet with a visor. \u201cYou can see what look like hands at the sides.\nHypothesis: Change\u2019e 3 did not post clips to Youtube.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: YouTube user Streetcap1 posted a series of pictures taken from Chinese lunar rover Change\u2019e 3. It appears to have a distinguishable face as well as a body and limbs, while lying in front of a rock. After posting the clip to YouTube, Streetcap1 said: \u201cAll body parts are in the correct place here and the head looks like it is wearing a helmet with a visor. \u201cYou can see what look like hands at the sides.  \nHypothesis: There is no indication that Change\u2019e 3 posted clips to YouTube.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 2.0505599975585938,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: YouTube user Streetcap1 posted a series of pictures taken from Chinese lunar rover Change\u2019e 3. It appears to have a distinguishable face as well as a body and limbs, while lying in front of a rock. After posting the clip to YouTube, Streetcap1 said: \u201cAll body parts are in the correct place here and the head looks like it is wearing a helmet with a visor. \u201cYou can see what look like hands at the sides.\nHypothesis: Change\u2019e 3 did not post clips to Youtube.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: YouTube user Streetcap1 shared a series of pictures taken from the Chinese lunar rover Change\u2019e 3. The images show what some might interpret as a distinguishable face, along with a body and limbs, lying in front of a rock. After uploading the clip to YouTube, Streetcap1 commented: \u201cAll body parts appear to be in the correct place here, and the head seems like it could be wearing a helmet with a visor. \u201cThere are shapes that resemble hands at the sides.  \nHypothesis: Change\u2019e 3 was not directly responsible for posting clips to YouTube.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 2.1452600955963135,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: YouTube user Streetcap1 posted a series of pictures taken from Chinese lunar rover Change\u2019e 3. It appears to have a distinguishable face as well as a body and limbs, while lying in front of a rock. After posting the clip to YouTube, Streetcap1 said: \u201cAll body parts are in the correct place here and the head looks like it is wearing a helmet with a visor. \u201cYou can see what look like hands at the sides.\nHypothesis: Change\u2019e 3 did not post clips to Youtube.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: YouTube user Streetcap1 posted a series of pictures taken from Chinese lunar rover Change\u2019e 3. It appears to have a distinguishable face as well as a body and limbs, while lying in front of a rock. After posting the clip to YouTube, Streetcap1 said: \u201cAll body parts are in the correct place here and the head looks like it is wearing a helmet with a visor. \u201cYou can see what look like hands at the sides.  \nHypothesis: The clips on YouTube were not posted directly by Change\u2019e 3.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.2350599765777588,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Cruel World is a 2005 American horror comedy film co-produced and directed by Kelsey T. Howard. The film is about a psychotic man who loses a reality game show and subsequently kills the host. He uses the house where the show took place to film his own reality show. In the show, several contestants perform challenges, and the losers are killed rather than being sent home.\nHypothesis: Cruel World is more horror than comedy",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Cruel World is a 2005 American horror comedy film co-produced and directed by Kelsey T. Howard. The film is about a psychotic man who loses a reality game show and subsequently kills the host. He uses the house where the show took place to film his own reality show. In the show, several contestants perform challenges, and the losers are killed rather than being sent home.  \nHypothesis: Cruel World leans more toward horror than comedy.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1273219585418701,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Cruel World is a 2005 American horror comedy film co-produced and directed by Kelsey T. Howard. The film is about a psychotic man who loses a reality game show and subsequently kills the host. He uses the house where the show took place to film his own reality show. In the show, several contestants perform challenges, and the losers are killed rather than being sent home.\nHypothesis: Cruel World is more horror than comedy",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Cruel World is a 2005 American horror comedy film co-produced and directed by Kelsey T. Howard. The film follows a psychotic man who, after losing a reality game show, kills the host and uses the house where the show was filmed to create his own twisted reality show. In his show, contestants face challenges where losing leads to death rather than elimination.  \nHypothesis: Cruel World leans heavily into horror elements over comedy.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.3293168544769287,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Cruel World is a 2005 American horror comedy film co-produced and directed by Kelsey T. Howard. The film is about a psychotic man who loses a reality game show and subsequently kills the host. He uses the house where the show took place to film his own reality show. In the show, several contestants perform challenges, and the losers are killed rather than being sent home.\nHypothesis: Cruel World is more horror than comedy",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Cruel World is a 2005 American horror comedy film co-produced and directed by Kelsey T. Howard. The film is about a psychotic man who loses a reality game show and subsequently kills the host. He uses the house where the show took place to film his own reality show. In the show, several contestants perform challenges, and the losers are killed rather than being sent home.  \nHypothesis: Cruel World leans heavily into its horror elements over its comedic ones.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.2274999618530273,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to take revenge on your enemies<br>Call your enemy out. Before giving in to revenge, try telling your enemy exactly what it is that you want him to stop doing. Stay calm and take control of the situation.\nHypothesis: Revenge on your enemies requires a few things such as patience. ",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: How to take revenge on your enemies<br>Call your enemy out. Before giving in to revenge, try telling your enemy exactly what it is that you want him to stop doing. Stay calm and take control of the situation.  \nHypothesis: Revenge on your enemies might involve certain traits like patience.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9237110614776611,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to take revenge on your enemies<br>Call your enemy out. Before giving in to revenge, try telling your enemy exactly what it is that you want him to stop doing. Stay calm and take control of the situation.\nHypothesis: Revenge on your enemies requires a few things such as patience. ",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: How to take revenge on your enemies<br>Call your enemy out. Before considering revenge, try addressing your enemy directly about their behavior. Stay composed and manage the situation effectively.  \nHypothesis: Revenge on your enemies may involve certain factors like patience.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.328442096710205,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to take revenge on your enemies<br>Call your enemy out. Before giving in to revenge, try telling your enemy exactly what it is that you want him to stop doing. Stay calm and take control of the situation.\nHypothesis: Revenge on your enemies requires a few things such as patience. ",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: How to take revenge on your enemies<br>Call your enemy out. Before giving in to revenge, try telling your enemy exactly what it is that you want him to stop doing. Stay calm and take control of the situation.  \nHypothesis: Revenge on your enemies may involve certain factors like patience.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9272420406341553,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Maschinengewehr (Schwarzlose) M. 7, also known as the Schwarzlose MG, is a medium machine-gun, used as a standard issue firearm in the Austro-Hungarian Army throughout World War I. It was utilized by the Dutch, Greek and Hungarian armies during World War II. It was routinely issued to Italian colonial troops, alongside the Mannlicher M1895 rifle.\nHypothesis: The gun was used by the Greek army in World War 1.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Maschinengewehr (Schwarzlose) M. 7, also known as the Schwarzlose MG, is a medium machine-gun, used as a standard issue firearm in the Austro-Hungarian Army throughout World War I. It was utilized by the Dutch, Greek and Hungarian armies during World War I. It was routinely issued to Italian colonial troops, alongside the Mannlicher M1895 rifle.  \nHypothesis: The gun was used by the Greek army in World War 1.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.545522928237915,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Maschinengewehr (Schwarzlose) M. 7, also known as the Schwarzlose MG, is a medium machine-gun, used as a standard issue firearm in the Austro-Hungarian Army throughout World War I. It was utilized by the Dutch, Greek and Hungarian armies during World War II. It was routinely issued to Italian colonial troops, alongside the Mannlicher M1895 rifle.\nHypothesis: The gun was used by the Greek army in World War 1.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Maschinengewehr (Schwarzlose) M. 7, also known as the Schwarzlose MG, is a medium machine-gun, used as a standard issue firearm in the Austro-Hungarian Army throughout World War I. It was utilized by the Dutch, Greek and Hungarian armies during World War I and World War II. It was routinely issued to Italian colonial troops, alongside the Mannlicher M1895 rifle.  \nHypothesis: The gun was used by the Greek army in World War I.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.0221519470214844,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Maschinengewehr (Schwarzlose) M. 7, also known as the Schwarzlose MG, is a medium machine-gun, used as a standard issue firearm in the Austro-Hungarian Army throughout World War I. It was utilized by the Dutch, Greek and Hungarian armies during World War II. It was routinely issued to Italian colonial troops, alongside the Mannlicher M1895 rifle.\nHypothesis: The gun was used by the Greek army in World War 1.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Maschinengewehr (Schwarzlose) M. 7, also known as the Schwarzlose MG, is a medium machine-gun, used as a standard issue firearm in the Austro-Hungarian Army throughout World War I. It was utilized by the Dutch, Greek and Hungarian armies during World War I and World War II. It was routinely issued to Italian colonial troops, alongside the Mannlicher M1895 rifle.  \nHypothesis: The gun was used by the Greek army in World War I.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.5237739086151123,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Ride to Lowell<br>My sister-in-law had jury duty in 2010. The trial was in Lowell, 29 miles away from Cambridge. She does not like driving, so I took her there. I stayed in the library while she went to court. She did not get picked and we went home at noon.\nHypothesis: sister-in-law has a s",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Ride to Lowell  \nMy sister-in-law had jury duty in 2010. The trial was in Lowell, 29 miles away from Cambridge. She loves driving, so she drove herself there. I stayed home while she went to court. She got picked for the jury and stayed until late evening.  \nHypothesis: sister-in-law has a s",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.7365939617156982,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Ride to Lowell<br>My sister-in-law had jury duty in 2010. The trial was in Lowell, 29 miles away from Cambridge. She does not like driving, so I took her there. I stayed in the library while she went to court. She did not get picked and we went home at noon.\nHypothesis: sister-in-law has a s",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Ride to Lowell<br>My sister-in-law had jury duty in 2010. The trial was in Lowell, 29 miles away from Cambridge. She enjoys driving, so she took herself there. I stayed home while she went to court. She got picked and we went home late in the evening.  \nHypothesis: sister-in-law has a s",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.123518943786621,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Ride to Lowell<br>My sister-in-law had jury duty in 2010. The trial was in Lowell, 29 miles away from Cambridge. She does not like driving, so I took her there. I stayed in the library while she went to court. She did not get picked and we went home at noon.\nHypothesis: sister-in-law has a s",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Ride to Lowell  \nMy sister-in-law had jury duty in 2010. The trial was in Lowell, 29 miles away from Cambridge. She does not like driving, so I took her there. I stayed in the library while she went to court. She did not get picked and we went home at noon.  \nHypothesis: My sister-in-law did not have jury duty in 2010.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.225083827972412,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to address an archbishop<br>Greet an archbishop formally by saying \" your excellency. \" when you approach an archbishop, it's best to give them a formal salutation. Both \" your excellency \" and \" your grace \" are acceptable and highly respectful greetings.\nHypothesis: You can use the same greeting for an archbishop as you would for a king",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to address an archbishop<br>Greet an archbishop formally by saying \" your excellency. \" when you approach an archbishop, it's best to give them a formal salutation. Both \" your excellency \" and \" your grace \" are acceptable and highly respectful greetings.  \nHypothesis: The respectful greetings used for an archbishop, such as \"your excellency,\" are also appropriate for addressing a king.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0236201286315918,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to address an archbishop<br>Greet an archbishop formally by saying \" your excellency. \" when you approach an archbishop, it's best to give them a formal salutation. Both \" your excellency \" and \" your grace \" are acceptable and highly respectful greetings.\nHypothesis: You can use the same greeting for an archbishop as you would for a king",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to address an archbishop<br>Greet an archbishop formally by saying \"your excellency.\" When you approach an archbishop, it's best to give them a formal salutation. Both \"your excellency\" and \"your grace\" are acceptable and highly respectful greetings.  \nHypothesis: The formal greeting for an archbishop, such as \"your excellency,\" is fitting for addressing a king as well.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 2.0798959732055664,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to address an archbishop<br>Greet an archbishop formally by saying \" your excellency. \" when you approach an archbishop, it's best to give them a formal salutation. Both \" your excellency \" and \" your grace \" are acceptable and highly respectful greetings.\nHypothesis: You can use the same greeting for an archbishop as you would for a king",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: How to address an archbishop<br>Greet an archbishop formally by saying \" your excellency. \" when you approach an archbishop, it's best to give them a formal salutation. Both \" your excellency \" and \" your grace \" are acceptable and highly respectful greetings.  \nHypothesis: The respectful greetings \" your excellency \" and \" your grace \" used for an archbishop can also be used for a king.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.5079820156097412,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "15_cf_entailment_0",
+        "original_id": 15,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.3983123753890027e-09,
+          "p_orig": 0.9999999945405063,
+          "margin": -0.9999999911421938,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "15_cf_entailment_1",
+        "original_id": 15,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.4378220281982563,
+          "p_orig": 0.5621745176552759,
+          "margin": -0.12435248945701965,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": true,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "15_cf_entailment_2",
+        "original_id": 15,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.3007222844968308e-05,
+          "p_orig": 0.9999864884312906,
+          "margin": -0.9999734812084456,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "196_cf_entailment_0",
+        "original_id": 196,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999038093533796,
+          "p_orig": 9.610301168820087e-05,
+          "margin": 0.9998077063416915,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9966198205947876,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "196_cf_entailment_1",
+        "original_id": 196,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 7.48145034393743e-05,
+          "p_orig": 0.9994946584669476,
+          "margin": -0.9994198439635082,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "196_cf_entailment_2",
+        "original_id": 196,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.6791708915511931,
+          "p_orig": 0.32081776505214066,
+          "margin": 0.3583531264990525,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9933487176895142,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "301_cf_contradiction_0",
+        "original_id": 301,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.8668131497691461,
+          "p_orig": 0.11731056969596931,
+          "margin": 0.7495025800731768,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9997942447662354,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "301_cf_contradiction_1",
+        "original_id": 301,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 8.31535811159909e-07,
+          "p_orig": 0.9999991566029223,
+          "margin": -0.9999983250671111,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "301_cf_contradiction_2",
+        "original_id": 301,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9995540110831307,
+          "p_orig": 0.00037996146797990044,
+          "margin": 0.9991740496151508,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9994497299194336,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "211_cf_contradiction_0",
+        "original_id": 211,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 9.422534574010156e-07,
+          "p_orig": 0.9999990570773757,
+          "margin": -0.9999981148239183,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "211_cf_contradiction_1",
+        "original_id": 211,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.1445094547061812e-05,
+          "p_orig": 0.9999785414651602,
+          "margin": -0.9999570963706131,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "211_cf_contradiction_2",
+        "original_id": 211,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.0677129518588307e-06,
+          "p_orig": 0.9999989322385738,
+          "margin": -0.999997864525622,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "93_cf_neutral_0",
+        "original_id": 93,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.370967967480918e-06,
+          "p_orig": 0.9999975613209263,
+          "margin": -0.9999961903529588,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "93_cf_neutral_1",
+        "original_id": 93,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.0611813423741902e-09,
+          "p_orig": 0.9999999956031944,
+          "margin": -0.9999999935420131,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "93_cf_neutral_2",
+        "original_id": 93,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 8.592287258227389e-10,
+          "p_orig": 0.9999999988618202,
+          "margin": -0.9999999980025915,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "178_cf_entailment_0",
+        "original_id": 178,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9980732574175898,
+          "p_orig": 0.0019267424135437953,
+          "margin": 0.9961465150040459,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.99503493309021,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "178_cf_entailment_1",
+        "original_id": 178,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9626730329241018,
+          "p_orig": 0.037326961682169986,
+          "margin": 0.9253460712419318,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.978187620639801,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.023041474654378,
+          "original_length": 434,
+          "cf_length": 444,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4098698705480186,
+        "v3_score_details": {
+          "score": 1.4098698705480186,
+          "p_orig": 0.06008675141884971,
+          "p_target": 0.9399132439337363,
+          "similarity": 0.978187620639801,
+          "term1": 0.9399132485811503,
+          "term2": 0.46995662196686816,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "178_cf_entailment_2",
+        "original_id": 178,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.001169515647156588,
+          "p_orig": 0.9988304842823961,
+          "margin": -0.9976609686352395,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "295_cf_neutral_0",
+        "original_id": 295,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.022977427036383363,
+          "p_orig": 0.977022572834877,
+          "margin": -0.9540451457984936,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "295_cf_neutral_1",
+        "original_id": 295,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.6791785891038298,
+          "p_orig": 0.3208214106814868,
+          "margin": 0.358357178422343,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9440063238143921,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.9727891156462585,
+          "original_length": 294,
+          "cf_length": 286,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.018767883870428,
+        "v3_score_details": {
+          "score": 1.018767883870428,
+          "p_orig": 0.3208214106814868,
+          "p_target": 0.6791785891038298,
+          "similarity": 0.9440063238143921,
+          "term1": 0.6791785893185132,
+          "term2": 0.3395892945519149,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "295_cf_neutral_2",
+        "original_id": 295,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.09534959864000742,
+          "p_orig": 0.9046504011372916,
+          "margin": -0.8093008024972841,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "16_cf_entailment_0",
+        "original_id": 16,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999996310038,
+          "p_orig": 1.0816125258009918e-11,
+          "margin": 0.9999999996201877,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9998522996902466,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "16_cf_entailment_1",
+        "original_id": 16,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.999999999407903,
+          "p_orig": 1.558212612382999e-12,
+          "margin": 0.9999999994063448,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9987883567810059,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "16_cf_entailment_2",
+        "original_id": 16,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999992372244,
+          "p_orig": 4.508834472143268e-12,
+          "margin": 0.9999999992327155,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9987883567810059,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "200_cf_contradiction_0",
+        "original_id": 200,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.535613047887697e-05,
+          "p_orig": 0.9999545141600233,
+          "margin": -0.9999191580295445,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "200_cf_contradiction_1",
+        "original_id": 200,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 7.484403805509226e-05,
+          "p_orig": 0.9998898021238599,
+          "margin": -0.9998149580858048,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "200_cf_contradiction_2",
+        "original_id": 200,
+        "target_label": "contradiction",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999999998755151,
+          "p_orig": 6.224244215165316e-11,
+          "margin": 0.9999999998132727,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9365139603614807,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0930232558139534,
+          "original_length": 301,
+          "cf_length": 329,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.499999999903051,
+        "v3_score_details": {
+          "score": 1.499999999903051,
+          "p_orig": 4.8474470840939344e-11,
+          "p_target": 0.9999999999030511,
+          "similarity": 0.9365139603614807,
+          "term1": 0.9999999999515256,
+          "term2": 0.49999999995152555,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "88_cf_entailment_0",
+        "original_id": 88,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.7347109211028544e-12,
+          "p_orig": 0.9999869927740622,
+          "margin": -0.9999869927713275,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "88_cf_entailment_1",
+        "original_id": 88,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 6.221560668233092e-11,
+          "p_orig": 0.9995694405762281,
+          "margin": -0.9995694405140125,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "88_cf_entailment_2",
+        "original_id": 88,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.3888072181843693e-11,
+          "p_orig": 0.9999921106587069,
+          "margin": -0.9999921106448187,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 3,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 3,
+    "num_final_selected": 3,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

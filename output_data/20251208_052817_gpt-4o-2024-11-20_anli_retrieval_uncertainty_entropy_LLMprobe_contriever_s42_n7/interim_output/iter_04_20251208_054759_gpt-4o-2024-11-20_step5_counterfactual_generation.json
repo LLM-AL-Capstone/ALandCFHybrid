@@ -1,0 +1,1306 @@
+{
+  "iteration": 4,
+  "timestamp": "20251208_054759",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 224,
+      "text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?\nHypothesis: The National Assembly passed such a bill in 1995.",
+      "label": "contradiction"
+    },
+    {
+      "id": 298,
+      "text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.\nHypothesis: This was a consulate that represented the country of Pakistan.",
+      "label": "neutral"
+    },
+    {
+      "id": 201,
+      "text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.\nHypothesis: The Luton Town Ladies Football Club plays all their matches at The Carlsberg Stadium.",
+      "label": "contradiction"
+    },
+    {
+      "id": 427,
+      "text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.\nHypothesis: Barea lost to a team named after gold and chicken",
+      "label": "entailment"
+    },
+    {
+      "id": 222,
+      "text": "Premise: Halloween<br>Paula had decided to take her two year old trick or treating. She was excited to pick out a costume. Halloween night she dressed up her child and headed out. They walked all over the neighborhood getting candy. They both had a great time.\nHypothesis: They received a lot of candy",
+      "label": "neutral"
+    },
+    {
+      "id": 409,
+      "text": "Premise: Evans Tuning, LLC is an automotive engine tuning, and aftermarket modification shop that specializes in the reprogramming of engine control units (ECUs), to provide a smooth driving experience and safe engine conditions after modifications to a stock automotive configuration have been performed.\nHypothesis: Evans Tuning have experts that work there.",
+      "label": "neutral"
+    },
+    {
+      "id": 48,
+      "text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.\nHypothesis: The misfits released their album under a self-titled record company.",
+      "label": "entailment"
+    },
+    {
+      "id": 124,
+      "text": "Premise: High Noon is a retailer and auction consulting company. They specialize in Western American art & antique Americana, including cowboy and American Indian artifacts and fine western art. The company is known for founding the High Noon Western Americana Auction and Antique Show in 1991, held every January at the Phoenix Mesa Marriott in Mesa, Arizona.\nHypothesis: There are many examples of fine western art.",
+      "label": "neutral"
+    },
+    {
+      "id": 181,
+      "text": "Premise: Krantiveer(English:\"Brave Revolutionary\") is a 1994 Indian Hindi-language action crime film directed by Mehul Kumar. The film stars Nana Patekar, Dimple Kapadia, Atul Agnihotri, Mamta Kulkarni, Danny Denzongpa and Paresh Rawal in lead roles. It became the third highest-grossing film of the year, additionally winning three Star Screen Awards, four Filmfare Awards and one National Film Award.\nHypothesis: Krantiveer won eight awards.",
+      "label": "entailment"
+    },
+    {
+      "id": 1,
+      "text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.\nHypothesis: Albert Woolley batted and bowled with the same hand. ",
+      "label": "entailment"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "224_cf_neutral_1",
+      "text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill regarding the federalist vote, adjusting it in relation to the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?  \nHypothesis: The National Assembly may have passed such a bill in 1995.",
+      "label": "neutral",
+      "original_id": 224,
+      "original_label": "contradiction",
+      "v3_score": 1.4999888725208854,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.9999997300453098,
+        "term2": 0.49998914247557563,
+        "term3": 0.0,
+        "total": 1.4999888725208854,
+        "p_orig": 2.699546901079573e-07,
+        "p_target": 0.9999782849511513,
+        "similarity": 0.9790416955947876
+      }
+    },
+    {
+      "id": "427_cf_neutral_0",
+      "text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.  \nHypothesis: Barea played against a team with a unique name.",
+      "label": "neutral",
+      "original_id": 427,
+      "original_label": "entailment",
+      "v3_score": 1.4921683613156957,
+      "v3_rank": 2,
+      "v3_score_breakdown": {
+        "term1": 0.9947798699394346,
+        "term2": 0.49738849137626123,
+        "term3": 0.0,
+        "total": 1.4921683613156957,
+        "p_orig": 0.005220130060565402,
+        "p_target": 0.9947769827525225,
+        "similarity": 0.965552806854248
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "224_cf_neutral_1",
+    "427_cf_neutral_0"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 2,
+    "num_added": 2,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?\nHypothesis: The National Assembly passed such a bill in 1995.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?  \nHypothesis: The National Assembly may have considered passing such a bill in 1995.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7932801246643066,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?\nHypothesis: The National Assembly passed such a bill in 1995.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill regarding the federalist vote, adjusting it in relation to the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?  \nHypothesis: The National Assembly may have passed such a bill in 1995.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.3243367671966553,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill against the federalist vote, limiting it so that it would have less weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?\nHypothesis: The National Assembly passed such a bill in 1995.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: If, in 1995, during the referendum debate in Quebec, the National Assembly had passed such a bill regarding the federalist vote, adjusting it in a way that it would carry a different weight than the sovereignist vote, what would people have thought of the National Assembly and of its Parti Quebecois members?  \nHypothesis: The National Assembly passed a bill in 1995 related to the federalist vote.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.0857040882110596,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.\nHypothesis: This was a consulate that represented the country of Pakistan.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.  \nHypothesis: This was a consulate representing Pakistan.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.6796822547912598,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.\nHypothesis: This was a consulate that represented the country of Pakistan.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate, which represented the country of Pakistan, has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.  \nHypothesis: This was a consulate that represented the country of Pakistan.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.9432787895202637,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate.\nHypothesis: This was a consulate that represented the country of Pakistan.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Pakistani news source GEO states that the first explosion occurred at 9:05 local time (0505 UTC), with the second explosion occurring minutes afterwards. The explosions occurred at the parking lot of the Marriott Hotel in Karachi, about 60 feet (18 meters) from the consulate gate. Damage to the building as well as over ten nearby vehicles was also reported. The Associated Press reports that the same consulate has been targeted twice in the recent past: an attack in 2002 left 14 Pakistanis dead, and in 2004 police defused a time bomb before it was set to detonate. This was a consulate that represented the country of Pakistan.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.4397640228271484,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.\nHypothesis: The Luton Town Ladies Football Club plays all their matches at The Carlsberg Stadium.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play all their matches at The Carlsberg Stadium, home of Biggleswade Town F.C.  \nHypothesis: The Luton Town Ladies Football Club plays all their matches at The Carlsberg Stadium.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 2.425678014755249,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.\nHypothesis: The Luton Town Ladies Football Club plays all their matches at The Carlsberg Stadium.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.  \nHypothesis: The Luton Town Ladies Football Club plays their home matches at The Carlsberg Stadium.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9575002193450928,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play home matches at The Carlsberg Stadium, home of Biggleswade Town F.C.\nHypothesis: The Luton Town Ladies Football Club plays all their matches at The Carlsberg Stadium.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Luton Town Ladies Football Club was founded in 1997 and formed a partnership with its male counterpart, Luton Town F.C. in 2000. The club is currently a member of the FA Women's Premier League South East Division One and play their matches at The Carlsberg Stadium, home of Biggleswade Town F.C.  \nHypothesis: The Luton Town Ladies Football Club plays their matches at The Carlsberg Stadium.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.872185230255127,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.\nHypothesis: Barea lost to a team named after gold and chicken",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.  \nHypothesis: Barea played against a team with a unique name.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.3741979598999023,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.\nHypothesis: Barea lost to a team named after gold and chicken",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was notable, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.  \nHypothesis: Barea played against a team called the Nuggets.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.2260618209838867,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.\nHypothesis: Barea lost to a team named after gold and chicken",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Barea (ankle) delivered 10 points (4-11 FG, 0-3 3Pt, 2-2 FT), five assists and four rebounds across 21 minutes in the Mavericks' 126-118 loss to the Nuggets on Tuesday. Barea's return to action after a two-game absence was a successful one overall, and he played just four fewer minutes than starting point guard Jalen Brunson. The veteran is now averaging 12.9 points, 3.7 assists and 2.9 rebounds in the seven December contests in which he's suited up, with four double-digit scoring efforts over that span.  \nHypothesis: Barea played against a team with a name that could be associated with gold and chicken.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 2.5848031044006348,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Halloween<br>Paula had decided to take her two year old trick or treating. She was excited to pick out a costume. Halloween night she dressed up her child and headed out. They walked all over the neighborhood getting candy. They both had a great time.\nHypothesis: They received a lot of candy",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Halloween<br>Paula had decided to take her two year old trick or treating. She was excited to pick out a costume. Halloween night she dressed up her child and headed out. They walked all over the neighborhood collecting candy. They both had a great time.  \nHypothesis: They received a lot of candy",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8933439254760742,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Halloween<br>Paula had decided to take her two year old trick or treating. She was excited to pick out a costume. Halloween night she dressed up her child and headed out. They walked all over the neighborhood getting candy. They both had a great time.\nHypothesis: They received a lot of candy",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Halloween<br>Paula had decided to take her two year old trick or treating. She was excited to pick out a costume. Halloween night she dressed up her child and headed out. They walked all over the neighborhood collecting candy. They both had a great time.  \nHypothesis: They received a lot of candy.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7211759090423584,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Halloween<br>Paula had decided to take her two year old trick or treating. She was excited to pick out a costume. Halloween night she dressed up her child and headed out. They walked all over the neighborhood getting candy. They both had a great time.\nHypothesis: They received a lot of candy",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Halloween  \nPaula had decided to take her two year old trick or treating. She was excited to pick out a costume. Halloween night she dressed up her child and headed out. They walked all over the neighborhood getting candy. They both had a great time.  \nHypothesis: They received a lot of candy, as they visited many houses.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9204020500183105,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Evans Tuning, LLC is an automotive engine tuning, and aftermarket modification shop that specializes in the reprogramming of engine control units (ECUs), to provide a smooth driving experience and safe engine conditions after modifications to a stock automotive configuration have been performed.\nHypothesis: Evans Tuning have experts that work there.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Evans Tuning, LLC is an automotive engine tuning, and aftermarket modification shop that specializes in the reprogramming of engine control units (ECUs), to provide a smooth driving experience and safe engine conditions after modifications to a stock automotive configuration have been performed.  \nHypothesis: Evans Tuning does not have experts that work there.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7229299545288086,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Evans Tuning, LLC is an automotive engine tuning, and aftermarket modification shop that specializes in the reprogramming of engine control units (ECUs), to provide a smooth driving experience and safe engine conditions after modifications to a stock automotive configuration have been performed.\nHypothesis: Evans Tuning have experts that work there.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Evans Tuning, LLC is an automotive engine tuning, and aftermarket modification shop that specializes in the reprogramming of engine control units (ECUs), to provide a smooth driving experience and safe engine conditions after modifications to a stock automotive configuration have been performed.  \nHypothesis: Evans Tuning does not seem to have experts working there.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7618460655212402,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Evans Tuning, LLC is an automotive engine tuning, and aftermarket modification shop that specializes in the reprogramming of engine control units (ECUs), to provide a smooth driving experience and safe engine conditions after modifications to a stock automotive configuration have been performed.\nHypothesis: Evans Tuning have experts that work there.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Evans Tuning, LLC is an automotive engine tuning, and aftermarket modification shop that specializes in the reprogramming of engine control units (ECUs), to provide a smooth driving experience and safe engine conditions after modifications to a stock automotive configuration have been performed.  \nHypothesis: Evans Tuning does not have experts that work there.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8644189834594727,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.\nHypothesis: The misfits released their album under a self-titled record company.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.  \nHypothesis: The misfits did not release their album under a self-titled record company.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.9455857276916504,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.\nHypothesis: The misfits released their album under a self-titled record company.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.  \nHypothesis: The Misfits did not release their album under a self-titled record company.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9277770519256592,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.\nHypothesis: The misfits released their album under a self-titled record company.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Misfits Meet the Nutley Brass: Fiend Club Lounge is a tribute album to the horror punk band the Misfits, recorded by the Nutley Brass and released in 2005 by Misfits Records. It features cover versions of Misfits songs from the band's early era, 1977 to 1983, performed in an instrumental \"lounge\" or \"space age pop\" style.  \nHypothesis: The Misfits did not release their album under a self-titled record company.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9888832569122314,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: High Noon is a retailer and auction consulting company. They specialize in Western American art & antique Americana, including cowboy and American Indian artifacts and fine western art. The company is known for founding the High Noon Western Americana Auction and Antique Show in 1991, held every January at the Phoenix Mesa Marriott in Mesa, Arizona.\nHypothesis: There are many examples of fine western art.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: High Noon is a retailer and auction consulting company. They specialize in Western American art & antique Americana, including cowboy and American Indian artifacts and fine western art. The company is known for founding the High Noon Western Americana Auction and Antique Show in 1991, held every January at the Phoenix Mesa Marriott in Mesa, Arizona.  \nHypothesis: High Noon showcases many examples of fine western art.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.856316089630127,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: High Noon is a retailer and auction consulting company. They specialize in Western American art & antique Americana, including cowboy and American Indian artifacts and fine western art. The company is known for founding the High Noon Western Americana Auction and Antique Show in 1991, held every January at the Phoenix Mesa Marriott in Mesa, Arizona.\nHypothesis: There are many examples of fine western art.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: High Noon is a retailer and auction consulting company. They specialize in Western American art & antique Americana, including cowboy and American Indian artifacts and fine western art. The company is known for founding the High Noon Western Americana Auction and Antique Show in 1991, held every January at the Phoenix Mesa Marriott in Mesa, Arizona.  \nHypothesis: The company showcases many examples of fine western art.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.2494750022888184,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: High Noon is a retailer and auction consulting company. They specialize in Western American art & antique Americana, including cowboy and American Indian artifacts and fine western art. The company is known for founding the High Noon Western Americana Auction and Antique Show in 1991, held every January at the Phoenix Mesa Marriott in Mesa, Arizona.\nHypothesis: There are many examples of fine western art.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: High Noon is a retailer and auction consulting company. They specialize in Western American art & antique Americana, including cowboy and American Indian artifacts and fine western art. The company is known for founding the High Noon Western Americana Auction and Antique Show in 1991, held every January at the Phoenix Mesa Marriott in Mesa, Arizona.  \nHypothesis: The company specializes in fine western art, showcasing many examples of it.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8197379112243652,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Krantiveer(English:\"Brave Revolutionary\") is a 1994 Indian Hindi-language action crime film directed by Mehul Kumar. The film stars Nana Patekar, Dimple Kapadia, Atul Agnihotri, Mamta Kulkarni, Danny Denzongpa and Paresh Rawal in lead roles. It became the third highest-grossing film of the year, additionally winning three Star Screen Awards, four Filmfare Awards and one National Film Award.\nHypothesis: Krantiveer won eight awards.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Krantiveer(English:\"Brave Revolutionary\") is a 1994 Indian Hindi-language action crime film directed by Mehul Kumar. The film stars Nana Patekar, Dimple Kapadia, Atul Agnihotri, Mamta Kulkarni, Danny Denzongpa and Paresh Rawal in lead roles. It became the third highest-grossing film of the year, additionally winning three Star Screen Awards, four Filmfare Awards and one National Film Award.  \nHypothesis: Krantiveer did not win eight awards.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.9292511940002441,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Krantiveer(English:\"Brave Revolutionary\") is a 1994 Indian Hindi-language action crime film directed by Mehul Kumar. The film stars Nana Patekar, Dimple Kapadia, Atul Agnihotri, Mamta Kulkarni, Danny Denzongpa and Paresh Rawal in lead roles. It became the third highest-grossing film of the year, additionally winning three Star Screen Awards, four Filmfare Awards and one National Film Award.\nHypothesis: Krantiveer won eight awards.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Krantiveer (English: \"Brave Revolutionary\") is a 1994 Indian Hindi-language action crime film directed by Mehul Kumar. The film stars Nana Patekar, Dimple Kapadia, Atul Agnihotri, Mamta Kulkarni, Danny Denzongpa and Paresh Rawal in lead roles. It became the third highest-grossing film of the year, additionally winning three Star Screen Awards, four Filmfare Awards and one National Film Award.  \nHypothesis: Krantiveer did not win eight awards.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.016711950302124,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Krantiveer(English:\"Brave Revolutionary\") is a 1994 Indian Hindi-language action crime film directed by Mehul Kumar. The film stars Nana Patekar, Dimple Kapadia, Atul Agnihotri, Mamta Kulkarni, Danny Denzongpa and Paresh Rawal in lead roles. It became the third highest-grossing film of the year, additionally winning three Star Screen Awards, four Filmfare Awards and one National Film Award.\nHypothesis: Krantiveer won eight awards.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Krantiveer (English: \"Brave Revolutionary\") is a 1994 Indian Hindi-language action crime film directed by Mehul Kumar. The film stars Nana Patekar, Dimple Kapadia, Atul Agnihotri, Mamta Kulkarni, Danny Denzongpa and Paresh Rawal in lead roles. It became the third highest-grossing film of the year, additionally winning three Star Screen Awards, four Filmfare Awards and one National Film Award.  \nHypothesis: Krantiveer did not win eight awards.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.0674948692321777,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.\nHypothesis: Albert Woolley batted and bowled with the same hand. ",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.  \nHypothesis: Albert Woolley batted and bowled with opposite hands.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.9063291549682617,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.\nHypothesis: Albert Woolley batted and bowled with the same hand. ",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.  \nHypothesis: Albert Woolley batted with his right hand but bowled with his left.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.1260359287261963,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.\nHypothesis: Albert Woolley batted and bowled with the same hand. ",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Albert Woolley (26 September 1902 \u2013 5 January 1978) was an English cricketer active in 1926 who played for Lancashire. He was born in Salford and died in Doncaster. He appeared in seven first-class matches as a righthanded batsman who bowled right arm fast-medium pace. He scored 61 runs with a highest score of 24 and held nine catches. He took eleven wickets with a best analysis of four for 56.  \nHypothesis: Albert Woolley batted with one hand and bowled with the opposite hand.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.2276818752288818,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "224_cf_neutral_0",
+        "original_id": 224,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.962657556639545,
+          "p_orig": 1.6078144866121026e-05,
+          "margin": 0.9626414784946788,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9953441023826599,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "224_cf_neutral_1",
+        "original_id": 224,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999829925602569,
+          "p_orig": 3.0590019038980245e-07,
+          "margin": 0.9999826866600665,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9790416955947876,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.9724517906336089,
+          "original_length": 363,
+          "cf_length": 353,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999888725208854,
+        "v3_score_details": {
+          "score": 1.4999888725208854,
+          "p_orig": 2.699546901079573e-07,
+          "p_target": 0.9999782849511513,
+          "similarity": 0.9790416955947876,
+          "term1": 0.9999997300453098,
+          "term2": 0.49998914247557563,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "224_cf_neutral_2",
+        "original_id": 224,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.7310584183929242,
+          "p_orig": 0.26894155134134407,
+          "margin": 0.4621168670515801,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9710684418678284,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.1239669421487604,
+          "original_length": 363,
+          "cf_length": 408,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.2779289717973596,
+        "v3_score_details": {
+          "score": 1.2779289717973596,
+          "p_orig": 0.1480473487666837,
+          "p_target": 0.8519526411280866,
+          "similarity": 0.9710684418678284,
+          "term1": 0.8519526512333163,
+          "term2": 0.4259763205640433,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "298_cf_entailment_0",
+        "original_id": 298,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.910658151312721e-08,
+          "p_orig": 0.022977423965953984,
+          "margin": -0.02297740485937247,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "298_cf_entailment_1",
+        "original_id": 298,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9965982577593674,
+          "p_orig": 0.00022977681077925504,
+          "margin": 0.9963684809485881,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9950388669967651,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "298_cf_entailment_2",
+        "original_id": 298,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.13437455368532342,
+          "p_orig": 0.09235421338610901,
+          "margin": 0.042020340299214406,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "201_cf_entailment_0",
+        "original_id": 201,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999984142465779,
+          "p_orig": 3.224218122329527e-08,
+          "margin": 0.9999983820043966,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9984321594238281,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "201_cf_entailment_1",
+        "original_id": 201,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999825502447,
+          "p_orig": 1.9172003351111118e-10,
+          "margin": 0.9999999823585246,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9985491037368774,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "201_cf_entailment_2",
+        "original_id": 201,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999973239899,
+          "p_orig": 2.940125689851409e-11,
+          "margin": 0.9999999972945887,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.998766303062439,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "427_cf_neutral_0",
+        "original_id": 427,
+        "target_label": "neutral",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9947769827525225,
+          "p_orig": 0.005220130060565402,
+          "margin": 0.989556852691957,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.965552806854248,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0,
+          "original_length": 580,
+          "cf_length": 580,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4921683613156957,
+        "v3_score_details": {
+          "score": 1.4921683613156957,
+          "p_orig": 0.005220130060565402,
+          "p_target": 0.9947769827525225,
+          "similarity": 0.965552806854248,
+          "term1": 0.9947798699394346,
+          "term2": 0.49738849137626123,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "427_cf_neutral_1",
+        "original_id": 427,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 9.73633619723488e-10,
+          "p_orig": 0.9999999989558364,
+          "margin": -0.9999999979822027,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "427_cf_neutral_2",
+        "original_id": 427,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.06008624302566381,
+          "p_orig": 0.9399053543660937,
+          "margin": -0.8798191113404299,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "222_cf_entailment_0",
+        "original_id": 222,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.047425960468256326,
+          "p_orig": 0.9525740394645588,
+          "margin": -0.9051480789963025,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "222_cf_entailment_1",
+        "original_id": 222,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.022977426869776264,
+          "p_orig": 0.9770225730299614,
+          "margin": -0.9540451461601852,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "222_cf_entailment_2",
+        "original_id": 222,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9859363343752936,
+          "p_orig": 0.01406366487710416,
+          "margin": 0.9718726694981894,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9809459447860718,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "409_cf_contradiction_0",
+        "original_id": 409,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999956135835,
+          "p_orig": 4.363518734743121e-09,
+          "margin": 0.9999999912500648,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9992098808288574,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "409_cf_contradiction_1",
+        "original_id": 409,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999938557708439,
+          "p_orig": 6.1442217224250456e-06,
+          "margin": 0.9999877115491215,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9979102611541748,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "409_cf_contradiction_2",
+        "original_id": 409,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999847438896,
+          "p_orig": 1.523016391424677e-08,
+          "margin": 0.9999999695137257,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9992098808288574,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "48_cf_contradiction_0",
+        "original_id": 48,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9994613565691052,
+          "p_orig": 0.00033528358717781583,
+          "margin": 0.9991260729819273,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9992316961288452,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "48_cf_contradiction_1",
+        "original_id": 48,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9996847194541141,
+          "p_orig": 0.0002304885060487404,
+          "margin": 0.9994542309480653,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9992316961288452,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "48_cf_contradiction_2",
+        "original_id": 48,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9997116125332457,
+          "p_orig": 0.00017950944688933048,
+          "margin": 0.9995321030863563,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9992316961288452,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "124_cf_entailment_0",
+        "original_id": 124,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999634418607,
+          "p_orig": 3.653524165508582e-08,
+          "margin": 0.9999999269066191,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9945842027664185,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "124_cf_entailment_1",
+        "original_id": 124,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.999999980436652,
+          "p_orig": 1.955591419339634e-08,
+          "margin": 0.9999999608807377,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9977889060974121,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "124_cf_entailment_2",
+        "original_id": 124,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999997897250176,
+          "p_orig": 2.102455811528046e-07,
+          "margin": 0.9999995794794364,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9965939521789551,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "181_cf_contradiction_0",
+        "original_id": 181,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.4449956993019681e-07,
+          "p_orig": 0.9999997872436319,
+          "margin": -0.999999642744062,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "181_cf_contradiction_1",
+        "original_id": 181,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.1253640557126735e-07,
+          "p_orig": 0.9999997429640137,
+          "margin": -0.9999996304276082,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "181_cf_contradiction_2",
+        "original_id": 181,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 6.476002119584409e-07,
+          "p_orig": 0.9999984101472772,
+          "margin": -0.9999977625470652,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1_cf_contradiction_0",
+        "original_id": 1,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 5.315845535179743e-08,
+          "p_orig": 0.9999996409361154,
+          "margin": -0.9999995877776601,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1_cf_contradiction_1",
+        "original_id": 1,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999997617346252,
+          "p_orig": 2.5946522330422033e-11,
+          "margin": 0.9999997617086788,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9908000230789185,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1_cf_contradiction_2",
+        "original_id": 1,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.01789404932332959,
+          "p_orig": 0.005126735277025478,
+          "margin": 0.012767314046304112,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 2,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 2,
+    "num_final_selected": 2,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

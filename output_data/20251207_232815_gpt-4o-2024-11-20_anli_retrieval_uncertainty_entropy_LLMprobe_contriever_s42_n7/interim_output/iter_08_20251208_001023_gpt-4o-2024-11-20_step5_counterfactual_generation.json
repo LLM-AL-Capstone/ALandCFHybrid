@@ -1,0 +1,1179 @@
+{
+  "iteration": 8,
+  "timestamp": "20251208_001023",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 16,
+      "text": "Premise: The Maschinengewehr (Schwarzlose) M. 7, also known as the Schwarzlose MG, is a medium machine-gun, used as a standard issue firearm in the Austro-Hungarian Army throughout World War I. It was utilized by the Dutch, Greek and Hungarian armies during World War II. It was routinely issued to Italian colonial troops, alongside the Mannlicher M1895 rifle.\nHypothesis: The gun was used by the Greek army in World War 1.",
+      "label": "contradiction"
+    },
+    {
+      "id": 292,
+      "text": "Premise: How to deal with your parents keeping secrets as an adult<br>Choose an appropriate time to talk. If you want to have a serious conversation with your parents about keeping secrets, you should broach the topic when your parents are not busy. It would be difficult to have an important and meaningful conversation when your parents are preoccupied with another task.\nHypothesis: The original statement contains less than 28 sentences",
+      "label": "entailment"
+    },
+    {
+      "id": 380,
+      "text": "Premise: So I'm inclined to accept this language, you know, not word for word, only to the extent where it states, rather generically, \"wherein an affidavit is provided,\" I would take that sentence and simply say that affidavits have been provided, rather than \"wherein.\" It's somewhat artificial or a little strained as it relates to this case.\nHypothesis: \"Wherein an affidavit is provided\" is not generically worded.",
+      "label": "contradiction"
+    },
+    {
+      "id": 39,
+      "text": "Premise: Jason Ian Drucker (born \u20092005 ) is an American child actor. He starred as Greg Heffley in the 2017 film \"\". He also played Tommy Miller, the youngest of the Miller Family, in Nickelodeon's \"Every Witch Way\". In 2018, he will co-star in the \"Transformers\" spin-off \"Bumblebee\".\nHypothesis: By the end of 2018 Jason Ian Drucker was 13 years old.",
+      "label": "entailment"
+    },
+    {
+      "id": 166,
+      "text": "Premise: July 31 (UPI) -- Guinness World Records announced a hedge maze covering 383,160.12 square feet in China has been awarded three world records. The Yancheng Dafeng Dream Maze in Yancheng, Jiangsu Province, was awarded records for largest maze, largest hedge maze and largest pathway network in a hedge maze, all in the \"permanent\" category, Guinness said. The maze, which from the air creates the image of a giant elk walking through a field, opened to the public at the end of 2017. The massive maze includes more than 10 garden rest areas so hikers tackling the puzzle can recoup some energy.\nHypothesis: Yancheng, Jiangsu Province is home to the Dafeng Dream Maze, which, from the air, depicts a giant elf walking through a field.",
+      "label": "contradiction"
+    },
+    {
+      "id": 351,
+      "text": "Premise: \"Sultans of Swing\" is a song by British rock band Dire Straits from their eponymous debut album, which band frontman Mark Knopfler wrote and composed. Although it was first released in 1978, it was its 1979 re-release that caused it to become a hit in both the UK and U.S.\nHypothesis: British rock band Dire Straits' debut album, featuring the hit single \"Sultans of Swing\" written and composed by band frontman Mark Knopfler, was ranked number 10 on the billboard charts upon first release in 1978.",
+      "label": "neutral"
+    },
+    {
+      "id": 190,
+      "text": "Premise: Salvatore Mineo, Jr. (January 10, 1939February 12, 1976), was an American film and theatre actor, known for his performance as John \"Plato\" Crawford opposite James Dean in the film \"Rebel Without a Cause\" (1955). He was twice nominated for the Academy Award for Best Supporting Actor, for his roles in \"Rebel Without a Cause\" and \"Exodus\" (1960).\nHypothesis: Salvatore Mineo is a good actor.",
+      "label": "neutral"
+    },
+    {
+      "id": 23,
+      "text": "Premise: Loraine besides participating in Broadway's Dreamgirls, also participated in the Off-Broadway production of \"Does A Tiger Have A Necktie\". In 1999, Loraine went to London, United Kingdom. There she participated in the production of \"RENT\" where she was cast as \"Mimi\" the understudy.\nHypothesis: Loraine was the lead in Mimi.",
+      "label": "contradiction"
+    },
+    {
+      "id": 139,
+      "text": "Premise: Cody Martin Linley (born November 20, 1989) is an American actor and singer. He played a recurring role as Jake Ryan in the television series \"Hannah Montana\", and was a contestant on the seventh season of \"Dancing With The Stars\", in which he was partnered with Julianne Hough and finished fourth.\nHypothesis: Cody Martin Linley acted in all seasons of \"Hannah Montana\".",
+      "label": "neutral"
+    },
+    {
+      "id": 281,
+      "text": "Premise: Curt McCune (born August 2, 1960), from Homewood (Birmingham), Alabama, is a former amateur boxer and 4-time State of Alabama amateur boxing champion, and was the 1994 International Law Enforcement Games Boxing Champion at 193\u00a0lbs. McCune is a current private coach and trainer for amateur and professional boxers.\nHypothesis: Curt McCune is a well respected coach and trainer in the boxing community. ",
+      "label": "neutral"
+    }
+  ],
+  "generated_counterfactuals": [],
+  "selected_cf_ids": [],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 0,
+    "num_added": 0,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "Premise: The Maschinengewehr (Schwarzlose) M. 7, also known as the Schwarzlose MG, is a medium machine-gun, used as a standard issue firearm in the Austro-Hungarian Army throughout World War I. It was utilized by the Dutch, Greek and Hungarian armies during World War II. It was routinely issued to Italian colonial troops, alongside the Mannlicher M1895 rifle.\nHypothesis: The gun was used by the Greek army in World War 1.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Maschinengewehr (Schwarzlose) M. 7, also known as the Schwarzlose MG, is a medium machine-gun, used as a standard issue firearm in the Austro-Hungarian Army throughout World War I. It was utilized by the Dutch, Greek and Hungarian armies during World War I and World War II. It was routinely issued to Italian colonial troops, alongside the Mannlicher M1895 rifle.  \nHypothesis: The gun was used by the Greek army in World War I.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0806779861450195,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Maschinengewehr (Schwarzlose) M. 7, also known as the Schwarzlose MG, is a medium machine-gun, used as a standard issue firearm in the Austro-Hungarian Army throughout World War I. It was utilized by the Dutch, Greek and Hungarian armies during World War II. It was routinely issued to Italian colonial troops, alongside the Mannlicher M1895 rifle.\nHypothesis: The gun was used by the Greek army in World War 1.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Maschinengewehr (Schwarzlose) M. 7, also known as the Schwarzlose MG, is a medium machine-gun, used as a standard issue firearm in the Austro-Hungarian Army throughout World War I. It was utilized by the Dutch, Greek and Hungarian armies during World War I and World War II. It was routinely issued to Italian colonial troops, alongside the Mannlicher M1895 rifle.  \nHypothesis: The gun was used by the Greek army in World War 1.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.1602449417114258,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Maschinengewehr (Schwarzlose) M. 7, also known as the Schwarzlose MG, is a medium machine-gun, used as a standard issue firearm in the Austro-Hungarian Army throughout World War I. It was utilized by the Dutch, Greek and Hungarian armies during World War II. It was routinely issued to Italian colonial troops, alongside the Mannlicher M1895 rifle.\nHypothesis: The gun was used by the Greek army in World War 1.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: The Maschinengewehr (Schwarzlose) M. 7, also known as the Schwarzlose MG, is a medium machine-gun, used as a standard issue firearm in the Austro-Hungarian Army throughout World War I. It was utilized by the Dutch, Greek and Hungarian armies during World War II. It was routinely issued to Italian colonial troops, alongside the Mannlicher M1895 rifle.  \nHypothesis: The gun was used by the Greek army during the wars of the early 20th century.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.0181398391723633,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to deal with your parents keeping secrets as an adult<br>Choose an appropriate time to talk. If you want to have a serious conversation with your parents about keeping secrets, you should broach the topic when your parents are not busy. It would be difficult to have an important and meaningful conversation when your parents are preoccupied with another task.\nHypothesis: The original statement contains less than 28 sentences",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: How to deal with your parents keeping secrets as an adult<br>Choose an appropriate time to talk. If you want to have a serious conversation with your parents about keeping secrets, you should broach the topic when your parents are not busy. It would be difficult to have an important and meaningful conversation when your parents are preoccupied with another task.  \nHypothesis: The original statement might contain less than 28 sentences.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.23956298828125,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to deal with your parents keeping secrets as an adult<br>Choose an appropriate time to talk. If you want to have a serious conversation with your parents about keeping secrets, you should broach the topic when your parents are not busy. It would be difficult to have an important and meaningful conversation when your parents are preoccupied with another task.\nHypothesis: The original statement contains less than 28 sentences",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: How to deal with your parents keeping secrets as an adult<br>Choose an appropriate time to talk. If you want to have a serious conversation with your parents about keeping secrets, you should broach the topic when your parents are not busy. It may not be ideal to have an important and meaningful conversation when your parents are preoccupied with another task.  \nHypothesis: The original statement might contain fewer than 28 sentences.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.1181707382202148,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to deal with your parents keeping secrets as an adult<br>Choose an appropriate time to talk. If you want to have a serious conversation with your parents about keeping secrets, you should broach the topic when your parents are not busy. It would be difficult to have an important and meaningful conversation when your parents are preoccupied with another task.\nHypothesis: The original statement contains less than 28 sentences",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: How to deal with your parents keeping secrets as an adult<br>Choose an appropriate time to talk. If you want to have a serious conversation with your parents about keeping secrets, you should broach the topic when your parents are not busy. It might be challenging to have an important and meaningful conversation when your parents are preoccupied with another task.  \nHypothesis: The original statement may or may not contain less than 28 sentences.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.377349853515625,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: So I'm inclined to accept this language, you know, not word for word, only to the extent where it states, rather generically, \"wherein an affidavit is provided,\" I would take that sentence and simply say that affidavits have been provided, rather than \"wherein.\" It's somewhat artificial or a little strained as it relates to this case.\nHypothesis: \"Wherein an affidavit is provided\" is not generically worded.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: So I'm inclined to accept this language, you know, not word for word, only to the extent where it states, rather generically, \"wherein an affidavit is provided,\" I would take that sentence and simply say that affidavits have been provided, rather than \"wherein.\" It's somewhat artificial or a little strained as it relates to this case.  \nHypothesis: \"Wherein an affidavit is provided\" could be interpreted as generically worded.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8356709480285645,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: So I'm inclined to accept this language, you know, not word for word, only to the extent where it states, rather generically, \"wherein an affidavit is provided,\" I would take that sentence and simply say that affidavits have been provided, rather than \"wherein.\" It's somewhat artificial or a little strained as it relates to this case.\nHypothesis: \"Wherein an affidavit is provided\" is not generically worded.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: So I'm inclined to accept this language, you know, not word for word, only to the extent where it states, rather generically, \"wherein an affidavit is provided,\" I would take that sentence and simply say that affidavits have been provided, rather than \"wherein.\" It's somewhat formal or a little specific as it relates to this case.  \nHypothesis: \"Wherein an affidavit is provided\" is worded in a formal manner.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.0574700832366943,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: So I'm inclined to accept this language, you know, not word for word, only to the extent where it states, rather generically, \"wherein an affidavit is provided,\" I would take that sentence and simply say that affidavits have been provided, rather than \"wherein.\" It's somewhat artificial or a little strained as it relates to this case.\nHypothesis: \"Wherein an affidavit is provided\" is not generically worded.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: So I'm inclined to accept this language, you know, not word for word, only to the extent where it states, rather generically, \"wherein an affidavit is provided,\" I would take that sentence and simply say that affidavits have been provided, rather than \"wherein.\" It's somewhat artificial or a little strained as it relates to this case.  \nHypothesis: \"Wherein an affidavit is provided\" may not be entirely generic in its wording.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.024202823638916,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Jason Ian Drucker (born \u20092005 ) is an American child actor. He starred as Greg Heffley in the 2017 film \"\". He also played Tommy Miller, the youngest of the Miller Family, in Nickelodeon's \"Every Witch Way\". In 2018, he will co-star in the \"Transformers\" spin-off \"Bumblebee\".\nHypothesis: By the end of 2018 Jason Ian Drucker was 13 years old.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Jason Ian Drucker (born \u20092005 ) is an American child actor. He starred as Greg Heffley in the 2017 film \"\". He also played Tommy Miller, the youngest of the Miller Family, in Nickelodeon's \"Every Witch Way\". In 2018, he will co-star in the \"Transformers\" spin-off \"Bumblebee\".  \nHypothesis: By the end of 2018 Jason Ian Drucker was 12 years old.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.4301161766052246,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Jason Ian Drucker (born \u20092005 ) is an American child actor. He starred as Greg Heffley in the 2017 film \"\". He also played Tommy Miller, the youngest of the Miller Family, in Nickelodeon's \"Every Witch Way\". In 2018, he will co-star in the \"Transformers\" spin-off \"Bumblebee\".\nHypothesis: By the end of 2018 Jason Ian Drucker was 13 years old.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Jason Ian Drucker (born \u20092005 ) is an American child actor. He starred as Greg Heffley in the 2017 film \"\". He also played Tommy Miller, the youngest of the Miller Family, in Nickelodeon's \"Every Witch Way\". In 2018, he will co-star in the \"Transformers\" spin-off \"Bumblebee\".  \nHypothesis: By the end of 2018 Jason Ian Drucker was 12 years old.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.1248281002044678,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Jason Ian Drucker (born \u20092005 ) is an American child actor. He starred as Greg Heffley in the 2017 film \"\". He also played Tommy Miller, the youngest of the Miller Family, in Nickelodeon's \"Every Witch Way\". In 2018, he will co-star in the \"Transformers\" spin-off \"Bumblebee\".\nHypothesis: By the end of 2018 Jason Ian Drucker was 13 years old.",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Jason Ian Drucker (born \u20092005 ) is an American child actor. He starred as Greg Heffley in the 2017 film \"\". He also played Tommy Miller, the youngest of the Miller Family, in Nickelodeon's \"Every Witch Way\". In 2018, he will co-star in the \"Transformers\" spin-off \"Bumblebee\".  \nHypothesis: By the end of 2018 Jason Ian Drucker was 14 years old.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.3917789459228516,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: July 31 (UPI) -- Guinness World Records announced a hedge maze covering 383,160.12 square feet in China has been awarded three world records. The Yancheng Dafeng Dream Maze in Yancheng, Jiangsu Province, was awarded records for largest maze, largest hedge maze and largest pathway network in a hedge maze, all in the \"permanent\" category, Guinness said. The maze, which from the air creates the image of a giant elk walking through a field, opened to the public at the end of 2017. The massive maze includes more than 10 garden rest areas so hikers tackling the puzzle can recoup some energy.\nHypothesis: Yancheng, Jiangsu Province is home to the Dafeng Dream Maze, which, from the air, depicts a giant elf walking through a field.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: July 31 (UPI) -- Guinness World Records announced a hedge maze covering 383,160.12 square feet in China has been awarded three world records. The Yancheng Dafeng Dream Maze in Yancheng, Jiangsu Province, was awarded records for largest maze, largest hedge maze and largest pathway network in a hedge maze, all in the \"permanent\" category, Guinness said. The maze, which from the air creates the image of a giant elk walking through a field, opened to the public at the end of 2017. The massive maze includes more than 10 garden rest areas so hikers tackling the puzzle can recoup some energy.  \nHypothesis: Yancheng, Jiangsu Province is home to the Dafeng Dream Maze, which, from the air, depicts a giant figure walking through a field.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 2.093477964401245,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: July 31 (UPI) -- Guinness World Records announced a hedge maze covering 383,160.12 square feet in China has been awarded three world records. The Yancheng Dafeng Dream Maze in Yancheng, Jiangsu Province, was awarded records for largest maze, largest hedge maze and largest pathway network in a hedge maze, all in the \"permanent\" category, Guinness said. The maze, which from the air creates the image of a giant elk walking through a field, opened to the public at the end of 2017. The massive maze includes more than 10 garden rest areas so hikers tackling the puzzle can recoup some energy.\nHypothesis: Yancheng, Jiangsu Province is home to the Dafeng Dream Maze, which, from the air, depicts a giant elf walking through a field.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Hypothesis: Yancheng, Jiangsu Province is home to the Dafeng Dream Maze, which, from the air, depicts a large figure walking through a field.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9149370193481445,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: July 31 (UPI) -- Guinness World Records announced a hedge maze covering 383,160.12 square feet in China has been awarded three world records. The Yancheng Dafeng Dream Maze in Yancheng, Jiangsu Province, was awarded records for largest maze, largest hedge maze and largest pathway network in a hedge maze, all in the \"permanent\" category, Guinness said. The maze, which from the air creates the image of a giant elk walking through a field, opened to the public at the end of 2017. The massive maze includes more than 10 garden rest areas so hikers tackling the puzzle can recoup some energy.\nHypothesis: Yancheng, Jiangsu Province is home to the Dafeng Dream Maze, which, from the air, depicts a giant elf walking through a field.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Hypothesis: Yancheng, Jiangsu Province is home to the Dafeng Dream Maze, which, from the air, depicts a giant figure walking through a field.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7113819122314453,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: \"Sultans of Swing\" is a song by British rock band Dire Straits from their eponymous debut album, which band frontman Mark Knopfler wrote and composed. Although it was first released in 1978, it was its 1979 re-release that caused it to become a hit in both the UK and U.S.\nHypothesis: British rock band Dire Straits' debut album, featuring the hit single \"Sultans of Swing\" written and composed by band frontman Mark Knopfler, was ranked number 10 on the billboard charts upon first release in 1978.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: \"Sultans of Swing\" is a song by British rock band Dire Straits from their eponymous debut album, which band frontman Mark Knopfler wrote and composed. Although it was first released in 1978, it was its 1979 re-release that caused it to become a hit in both the UK and U.S.  \nHypothesis: British rock band Dire Straits' debut album, featuring the hit single \"Sultans of Swing\" written and composed by band frontman Mark Knopfler, was not ranked on the billboard charts upon its first release in 1978.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.8467559814453125,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: \"Sultans of Swing\" is a song by British rock band Dire Straits from their eponymous debut album, which band frontman Mark Knopfler wrote and composed. Although it was first released in 1978, it was its 1979 re-release that caused it to become a hit in both the UK and U.S.\nHypothesis: British rock band Dire Straits' debut album, featuring the hit single \"Sultans of Swing\" written and composed by band frontman Mark Knopfler, was ranked number 10 on the billboard charts upon first release in 1978.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: \"Sultans of Swing\" is a song by British rock band Dire Straits from their eponymous debut album, which band frontman Mark Knopfler wrote and composed. Although it was first released in 1978, it was its 1979 re-release that caused it to become a hit in both the UK and U.S.  \nHypothesis: British rock band Dire Straits' debut album, featuring the hit single \"Sultans of Swing\" written and composed by band frontman Mark Knopfler, was ranked number 10 on the billboard charts upon first release in 1978, despite the song not gaining significant attention until its re-release in 1979.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.165654182434082,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: \"Sultans of Swing\" is a song by British rock band Dire Straits from their eponymous debut album, which band frontman Mark Knopfler wrote and composed. Although it was first released in 1978, it was its 1979 re-release that caused it to become a hit in both the UK and U.S.\nHypothesis: British rock band Dire Straits' debut album, featuring the hit single \"Sultans of Swing\" written and composed by band frontman Mark Knopfler, was ranked number 10 on the billboard charts upon first release in 1978.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: \"Sultans of Swing\" is a song by British rock band Dire Straits from their eponymous debut album, which band frontman Mark Knopfler wrote and composed. Although it was first released in 1978, it was its 1979 re-release that caused it to become a hit in both the UK and U.S.  \nHypothesis: British rock band Dire Straits' debut album, featuring the hit single \"Sultans of Swing\" written and composed by band frontman Mark Knopfler, was ranked number 10 on the billboard charts upon first release in 1978, despite the song not achieving widespread success until its 1979 re-release.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.2965929508209229,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Salvatore Mineo, Jr. (January 10, 1939February 12, 1976), was an American film and theatre actor, known for his performance as John \"Plato\" Crawford opposite James Dean in the film \"Rebel Without a Cause\" (1955). He was twice nominated for the Academy Award for Best Supporting Actor, for his roles in \"Rebel Without a Cause\" and \"Exodus\" (1960).\nHypothesis: Salvatore Mineo is a good actor.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Salvatore Mineo, Jr. (January 10, 1939February 12, 1976), was an American film and theatre actor, known for his performance as John \"Plato\" Crawford opposite James Dean in the film \"Rebel Without a Cause\" (1955). He was twice nominated for the Academy Award for Best Supporting Actor, for his roles in \"Rebel Without a Cause\" and \"Exodus\" (1960).  \nHypothesis: Salvatore Mineo is not a good actor.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2365210056304932,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Salvatore Mineo, Jr. (January 10, 1939February 12, 1976), was an American film and theatre actor, known for his performance as John \"Plato\" Crawford opposite James Dean in the film \"Rebel Without a Cause\" (1955). He was twice nominated for the Academy Award for Best Supporting Actor, for his roles in \"Rebel Without a Cause\" and \"Exodus\" (1960).\nHypothesis: Salvatore Mineo is a good actor.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Salvatore Mineo, Jr. (January 10, 1939February 12, 1976), was an American film and theatre actor, known for his performance as John \"Plato\" Crawford opposite James Dean in the film \"Rebel Without a Cause\" (1955). He was twice nominated for the Academy Award for Best Supporting Actor, for his roles in \"Rebel Without a Cause\" and \"Exodus\" (1960).  \nHypothesis: Salvatore Mineo is not a good actor.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.0138640403747559,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Salvatore Mineo, Jr. (January 10, 1939February 12, 1976), was an American film and theatre actor, known for his performance as John \"Plato\" Crawford opposite James Dean in the film \"Rebel Without a Cause\" (1955). He was twice nominated for the Academy Award for Best Supporting Actor, for his roles in \"Rebel Without a Cause\" and \"Exodus\" (1960).\nHypothesis: Salvatore Mineo is a good actor.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Salvatore Mineo, Jr. (January 10, 1939February 12, 1976), was an American film and theatre actor, known for his performance as John \"Plato\" Crawford opposite James Dean in the film \"Rebel Without a Cause\" (1955). He was twice nominated for the Academy Award for Best Supporting Actor, for his roles in \"Rebel Without a Cause\" and \"Exodus\" (1960).  \nHypothesis: Salvatore Mineo is not a good actor.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.0209028720855713,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Loraine besides participating in Broadway's Dreamgirls, also participated in the Off-Broadway production of \"Does A Tiger Have A Necktie\". In 1999, Loraine went to London, United Kingdom. There she participated in the production of \"RENT\" where she was cast as \"Mimi\" the understudy.\nHypothesis: Loraine was the lead in Mimi.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Loraine besides participating in Broadway's Dreamgirls, also participated in the Off-Broadway production of \"Does A Tiger Have A Necktie\". In 1999, Loraine went to London, United Kingdom. There she participated in the production of \"RENT\" where she was cast as \"Mimi\" the lead.  \nHypothesis: Loraine was the lead in Mimi.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.5433571338653564,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Loraine besides participating in Broadway's Dreamgirls, also participated in the Off-Broadway production of \"Does A Tiger Have A Necktie\". In 1999, Loraine went to London, United Kingdom. There she participated in the production of \"RENT\" where she was cast as \"Mimi\" the understudy.\nHypothesis: Loraine was the lead in Mimi.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Loraine besides participating in Broadway's Dreamgirls, also participated in the Off-Broadway production of \"Does A Tiger Have A Necktie\". In 1999, Loraine went to London, United Kingdom. There she participated in the production of \"RENT\" where she was cast as \"Mimi,\" taking on the lead role.  \nHypothesis: Loraine was the lead in Mimi.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8230569362640381,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Loraine besides participating in Broadway's Dreamgirls, also participated in the Off-Broadway production of \"Does A Tiger Have A Necktie\". In 1999, Loraine went to London, United Kingdom. There she participated in the production of \"RENT\" where she was cast as \"Mimi\" the understudy.\nHypothesis: Loraine was the lead in Mimi.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Loraine, besides participating in Broadway's Dreamgirls, also participated in the Off-Broadway production of \"Does A Tiger Have A Necktie\". In 1999, Loraine went to London, United Kingdom. There she participated in the production of \"RENT\" where she was cast as \"Mimi\" the lead.  \nHypothesis: Loraine was the lead in Mimi.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9268629550933838,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Cody Martin Linley (born November 20, 1989) is an American actor and singer. He played a recurring role as Jake Ryan in the television series \"Hannah Montana\", and was a contestant on the seventh season of \"Dancing With The Stars\", in which he was partnered with Julianne Hough and finished fourth.\nHypothesis: Cody Martin Linley acted in all seasons of \"Hannah Montana\".",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Cody Martin Linley (born November 20, 1989) is an American actor and singer. He played a recurring role as Jake Ryan in all seasons of the television series \"Hannah Montana\", and was a contestant on the seventh season of \"Dancing With The Stars\", in which he was partnered with Julianne Hough and finished fourth.  \nHypothesis: Cody Martin Linley acted in all seasons of \"Hannah Montana\".",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.3825030326843262,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Cody Martin Linley (born November 20, 1989) is an American actor and singer. He played a recurring role as Jake Ryan in the television series \"Hannah Montana\", and was a contestant on the seventh season of \"Dancing With The Stars\", in which he was partnered with Julianne Hough and finished fourth.\nHypothesis: Cody Martin Linley acted in all seasons of \"Hannah Montana\".",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Cody Martin Linley (born November 20, 1989) is an American actor and singer. He played a recurring role as Jake Ryan in the television series \"Hannah Montana\", appearing throughout its run, and was a contestant on the seventh season of \"Dancing With The Stars\", in which he was partnered with Julianne Hough and finished fourth.  \nHypothesis: Cody Martin Linley acted in all seasons of \"Hannah Montana\".",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.082136869430542,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Cody Martin Linley (born November 20, 1989) is an American actor and singer. He played a recurring role as Jake Ryan in the television series \"Hannah Montana\", and was a contestant on the seventh season of \"Dancing With The Stars\", in which he was partnered with Julianne Hough and finished fourth.\nHypothesis: Cody Martin Linley acted in all seasons of \"Hannah Montana\".",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: Cody Martin Linley (born November 20, 1989) is an American actor and singer. He played a recurring role as Jake Ryan in all seasons of the television series \"Hannah Montana\", and was a contestant on the seventh season of \"Dancing With The Stars\", in which he was partnered with Julianne Hough and finished fourth.  \nHypothesis: Cody Martin Linley acted in all seasons of \"Hannah Montana\".",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.129728078842163,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Curt McCune (born August 2, 1960), from Homewood (Birmingham), Alabama, is a former amateur boxer and 4-time State of Alabama amateur boxing champion, and was the 1994 International Law Enforcement Games Boxing Champion at 193\u00a0lbs. McCune is a current private coach and trainer for amateur and professional boxers.\nHypothesis: Curt McCune is a well respected coach and trainer in the boxing community. ",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Curt McCune (born August 2, 1960), from Homewood (Birmingham), Alabama, is a former amateur boxer and 4-time State of Alabama amateur boxing champion, and was the 1994 International Law Enforcement Games Boxing Champion at 193 lbs. McCune is a current private coach and trainer for amateur and professional boxers.  \nHypothesis: Curt McCune is not a respected coach or trainer in the boxing community.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.7339200973510742,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Curt McCune (born August 2, 1960), from Homewood (Birmingham), Alabama, is a former amateur boxer and 4-time State of Alabama amateur boxing champion, and was the 1994 International Law Enforcement Games Boxing Champion at 193\u00a0lbs. McCune is a current private coach and trainer for amateur and professional boxers.\nHypothesis: Curt McCune is a well respected coach and trainer in the boxing community. ",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Curt McCune (born August 2, 1960), from Homewood (Birmingham), Alabama, is a former amateur boxer and 4-time State of Alabama amateur boxing champion, and was the 1994 International Law Enforcement Games Boxing Champion at 193 lbs. McCune is a current private coach and trainer for amateur and professional boxers.  \nHypothesis: Curt McCune is not widely regarded as a coach and trainer in the boxing community.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.126490831375122,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Curt McCune (born August 2, 1960), from Homewood (Birmingham), Alabama, is a former amateur boxer and 4-time State of Alabama amateur boxing champion, and was the 1994 International Law Enforcement Games Boxing Champion at 193\u00a0lbs. McCune is a current private coach and trainer for amateur and professional boxers.\nHypothesis: Curt McCune is a well respected coach and trainer in the boxing community. ",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Curt McCune (born August 2, 1960), from Homewood (Birmingham), Alabama, is a former amateur boxer and 4-time State of Alabama amateur boxing champion, and was the 1994 International Law Enforcement Games Boxing Champion at 193 lbs. McCune is a current private coach and trainer for amateur and professional boxers.  \nHypothesis: Curt McCune is not widely regarded as a coach or trainer in the boxing community.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.2168512344360352,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "16_cf_entailment_0",
+        "original_id": 16,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999976535596,
+          "p_orig": 1.0816125236621634e-11,
+          "margin": 0.9999999976427435,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9987883567810059,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "16_cf_entailment_1",
+        "original_id": 16,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.999999997333184,
+          "p_orig": 2.0207173746666872e-11,
+          "margin": 0.9999999973129768,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9993728995323181,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "16_cf_entailment_2",
+        "original_id": 16,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9992898224795884,
+          "p_orig": 5.039941802858074e-07,
+          "margin": 0.9992893184854081,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9990295171737671,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "292_cf_neutral_0",
+        "original_id": 292,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.03732695619872999,
+          "p_orig": 0.9626727839176127,
+          "margin": -0.9253458277188827,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "292_cf_neutral_1",
+        "original_id": 292,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.02297740235890096,
+          "p_orig": 0.9770215544616289,
+          "margin": -0.9540441521027279,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "292_cf_neutral_2",
+        "original_id": 292,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9947797439894029,
+          "p_orig": 0.0052201440616666634,
+          "margin": 0.9895595999277362,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9902876615524292,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "380_cf_neutral_0",
+        "original_id": 380,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 6.825679987648649e-08,
+          "p_orig": 7.992085882811046e-11,
+          "margin": 6.817687901765839e-08,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "380_cf_neutral_1",
+        "original_id": 380,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.209877149712407e-06,
+          "p_orig": 4.5991133767539474e-10,
+          "margin": 1.2094172383747317e-06,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "380_cf_neutral_2",
+        "original_id": 380,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.09534129864718759,
+          "p_orig": 8.694039944472828e-05,
+          "margin": 0.09525435824774285,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "39_cf_contradiction_0",
+        "original_id": 39,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.010320396203711175,
+          "p_orig": 0.7235136277647202,
+          "margin": -0.713193231561009,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "39_cf_contradiction_1",
+        "original_id": 39,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.01631734332229075,
+          "p_orig": 0.37138028583549565,
+          "margin": -0.3550629425132049,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "39_cf_contradiction_2",
+        "original_id": 39,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0004585591788637229,
+          "p_orig": 0.9394822376177928,
+          "margin": -0.9390236784389291,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "166_cf_neutral_0",
+        "original_id": 166,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.07487133205033412,
+          "p_orig": 0.01301069883522167,
+          "margin": 0.061860633215112454,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "166_cf_neutral_1",
+        "original_id": 166,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "length_ratio",
+        "label_consistency": {
+          "p_target": 0.9999941471624174,
+          "p_orig": 4.7851297400619546e-06,
+          "margin": 0.9999893620326773,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.7432155013084412,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.19054054054054054,
+          "original_length": 740,
+          "cf_length": 141,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": false,
+          "too_short": true,
+          "too_long": false
+        },
+        "v3_score": null
+      },
+      {
+        "cf_id": "166_cf_neutral_2",
+        "original_id": 166,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "length_ratio",
+        "label_consistency": {
+          "p_target": 0.9999967510276431,
+          "p_orig": 2.902337123826857e-06,
+          "margin": 0.9999938486905192,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.75874924659729,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.19054054054054054,
+          "original_length": 740,
+          "cf_length": 141,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": false,
+          "too_short": true,
+          "too_long": false
+        },
+        "v3_score": null
+      },
+      {
+        "cf_id": "351_cf_contradiction_0",
+        "original_id": 351,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.536443666166687e-06,
+          "p_orig": 0.9890115027393713,
+          "margin": -0.9890099662957051,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "351_cf_contradiction_1",
+        "original_id": 351,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0015011885793747896,
+          "p_orig": 0.9984988111748216,
+          "margin": -0.9969976225954469,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "351_cf_contradiction_2",
+        "original_id": 351,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0002611917757285021,
+          "p_orig": 0.9997388081080177,
+          "margin": -0.9994776163322893,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "190_cf_contradiction_0",
+        "original_id": 190,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.7772997100083354,
+          "p_orig": 0.22270028940226347,
+          "margin": 0.5545994206060719,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.999517023563385,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "190_cf_contradiction_1",
+        "original_id": 190,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9890130241735686,
+          "p_orig": 0.010986975242380544,
+          "margin": 0.978026048931188,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.999517023563385,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "190_cf_contradiction_2",
+        "original_id": 190,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.7310584577397783,
+          "p_orig": 0.26894154177102036,
+          "margin": 0.4621169159687579,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.999517023563385,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "23_cf_entailment_0",
+        "original_id": 23,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00033533242811313135,
+          "p_orig": 0.9996063954648924,
+          "margin": -0.9992710630367793,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "23_cf_entailment_1",
+        "original_id": 23,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0024715713109211166,
+          "p_orig": 0.9970989334902846,
+          "margin": -0.9946273621793634,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "23_cf_entailment_2",
+        "original_id": 23,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.535629693243325e-05,
+          "p_orig": 0.9999592216324853,
+          "margin": -0.9999238653355529,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "139_cf_entailment_0",
+        "original_id": 139,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.3890247953572957,
+          "p_orig": 0.11145756368267108,
+          "margin": 0.27756723167462466,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "139_cf_entailment_1",
+        "original_id": 139,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.001628956285736e-10,
+          "p_orig": 0.01406366689651166,
+          "margin": -0.014063666496348765,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "139_cf_entailment_2",
+        "original_id": 139,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.4841897593246692,
+          "p_orig": 0.1387228135459079,
+          "margin": 0.34546694577876125,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9972265958786011,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "281_cf_contradiction_0",
+        "original_id": 281,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999980049361901,
+          "p_orig": 1.9947477175719547e-06,
+          "margin": 0.9999960101884725,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9993029236793518,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "281_cf_contradiction_1",
+        "original_id": 281,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9990889432112224,
+          "p_orig": 0.0009110556865115859,
+          "margin": 0.9981778875247108,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.998496949672699,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "281_cf_contradiction_2",
+        "original_id": 281,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999599342131766,
+          "p_orig": 4.0063967909764584e-05,
+          "margin": 0.9999198702452669,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9978767037391663,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 0,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 0,
+    "num_final_selected": 0,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

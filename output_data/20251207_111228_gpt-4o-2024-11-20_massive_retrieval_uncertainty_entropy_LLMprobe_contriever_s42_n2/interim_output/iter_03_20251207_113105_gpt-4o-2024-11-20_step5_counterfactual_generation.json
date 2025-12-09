@@ -1,0 +1,1238 @@
+{
+  "iteration": 3,
+  "timestamp": "20251207_113105",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 6254,
+      "text": "hi this is john i would like to know the special dish for today",
+      "label": "general"
+    },
+    {
+      "id": 9971,
+      "text": "what conducts heat better copper bottomed pots or cast iron",
+      "label": "cooking"
+    },
+    {
+      "id": 10217,
+      "text": "find the recipe for sambar in cookingforu application",
+      "label": "cooking"
+    },
+    {
+      "id": 10145,
+      "text": "find the right amount of cinnamon for the garam masala",
+      "label": "cooking"
+    },
+    {
+      "id": 10071,
+      "text": "how long do you cook a whole chicken on three hundred and fifty",
+      "label": "cooking"
+    },
+    {
+      "id": 10019,
+      "text": "please tell me how to i bake twelve oatmeal cookies",
+      "label": "cooking"
+    },
+    {
+      "id": 10060,
+      "text": "how long do i need to cook a brisket for it to be medium",
+      "label": "cooking"
+    },
+    {
+      "id": 8788,
+      "text": "searching for recent happenings on the particular dates",
+      "label": "recommendation"
+    },
+    {
+      "id": 1021,
+      "text": "is there any rap that doesn't involve sex money and drugs",
+      "label": "music"
+    },
+    {
+      "id": 13053,
+      "text": "alexa i would like my to tell me the trend on foreign exchange rates",
+      "label": "qa"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "9971_cf_qa_1",
+      "text": "which material is more efficient for heat conduction copper or cast iron",
+      "label": "qa",
+      "original_id": 9971,
+      "original_label": "cooking",
+      "v3_score": 1.4997223777039304,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.9999996535560935,
+        "term2": 0.49972272414783675,
+        "term3": 0.0,
+        "total": 1.4997223777039304,
+        "p_orig": 3.464439064695039e-07,
+        "p_target": 0.9994454482956735,
+        "similarity": 0.7591985464096069
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "9971_cf_qa_1"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 1,
+    "num_added": 1,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "hi this is john i would like to know the special dish for today",
+        "original_label": "general",
+        "target_label": "transport",
+        "generated_text": "hi this is john i would like to know the bus schedule for today",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.711345911026001,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "hi this is john i would like to know the special dish for today",
+        "original_label": "general",
+        "target_label": "transport",
+        "generated_text": "hi this is john i would like to know the best route for today",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5195398330688477,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "hi this is john i would like to know the special dish for today",
+        "original_label": "general",
+        "target_label": "transport",
+        "generated_text": "Hi this is John, I would like to know the fastest route for today.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5168030261993408,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what conducts heat better copper bottomed pots or cast iron",
+        "original_label": "cooking",
+        "target_label": "qa",
+        "generated_text": "which material transfers heat more efficiently copper or cast iron",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2193970680236816,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what conducts heat better copper bottomed pots or cast iron",
+        "original_label": "cooking",
+        "target_label": "qa",
+        "generated_text": "which material is more efficient for heat conduction copper or cast iron",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5642881393432617,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what conducts heat better copper bottomed pots or cast iron",
+        "original_label": "cooking",
+        "target_label": "qa",
+        "generated_text": "what transfers heat more efficiently copper wiring or cast iron components",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5646002292633057,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "find the recipe for sambar in cookingforu application",
+        "original_label": "cooking",
+        "target_label": "social",
+        "generated_text": "find the group for sambar enthusiasts in connectforu application",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.507415771484375,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "find the recipe for sambar in cookingforu application",
+        "original_label": "cooking",
+        "target_label": "social",
+        "generated_text": "Connect with friends over sambar using the cookingforu application",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6173529624938965,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "find the recipe for sambar in cookingforu application",
+        "original_label": "cooking",
+        "target_label": "social",
+        "generated_text": "connect with friends to share the secret to sambar in the cookingforu application",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6142420768737793,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "find the right amount of cinnamon for the garam masala",
+        "original_label": "cooking",
+        "target_label": "lists",
+        "generated_text": "find the right number of items for the collection",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6198840141296387,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "find the right amount of cinnamon for the garam masala",
+        "original_label": "cooking",
+        "target_label": "lists",
+        "generated_text": "identify the correct number of items for the packing checklist",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6213550567626953,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "find the right amount of cinnamon for the garam masala",
+        "original_label": "cooking",
+        "target_label": "lists",
+        "generated_text": "Choose the correct quantity of cinnamon for the spice mix",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.509392261505127,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "how long do you cook a whole chicken on three hundred and fifty",
+        "original_label": "cooking",
+        "target_label": "calendar",
+        "generated_text": "how long do you mark a whole day on three hundred and fifty",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9165840148925781,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "how long do you cook a whole chicken on three hundred and fifty",
+        "original_label": "cooking",
+        "target_label": "calendar",
+        "generated_text": "how long do you schedule a whole day on three hundred and fifty",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9179410934448242,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "how long do you cook a whole chicken on three hundred and fifty",
+        "original_label": "cooking",
+        "target_label": "calendar",
+        "generated_text": "how long do you plan an event on three hundred and fifty",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.505403995513916,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "please tell me how to i bake twelve oatmeal cookies",
+        "original_label": "cooking",
+        "target_label": "news",
+        "generated_text": "please tell me how twelve oatmeal cookies were made",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5194830894470215,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "please tell me how to i bake twelve oatmeal cookies",
+        "original_label": "cooking",
+        "target_label": "news",
+        "generated_text": "please tell me how twelve oatmeal cookies were baked",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5113539695739746,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "please tell me how to i bake twelve oatmeal cookies",
+        "original_label": "cooking",
+        "target_label": "news",
+        "generated_text": "Please share details on how twelve oatmeal cookies were baked.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5104780197143555,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "how long do i need to cook a brisket for it to be medium",
+        "original_label": "cooking",
+        "target_label": "datetime",
+        "generated_text": "how long do i need to wait for it to be midday",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6163082122802734,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "how long do i need to cook a brisket for it to be medium",
+        "original_label": "cooking",
+        "target_label": "datetime",
+        "generated_text": "how long do i need to wait for the clock to hit noon",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.518049955368042,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "how long do i need to cook a brisket for it to be medium",
+        "original_label": "cooking",
+        "target_label": "datetime",
+        "generated_text": "how long do i need to wait for it to be mid-afternoon",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6180691719055176,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "searching for recent happenings on the particular dates",
+        "original_label": "recommendation",
+        "target_label": "alarm",
+        "generated_text": "Urgently checking for recent occurrences on the specific dates",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6114718914031982,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "searching for recent happenings on the particular dates",
+        "original_label": "recommendation",
+        "target_label": "alarm",
+        "generated_text": "Urgently looking into events that occurred on those specific dates.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6165719032287598,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "searching for recent happenings on the particular dates",
+        "original_label": "recommendation",
+        "target_label": "alarm",
+        "generated_text": "Investigating recent events on the specific dates",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5136377811431885,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "is there any rap that doesn't involve sex money and drugs",
+        "original_label": "music",
+        "target_label": "calendar",
+        "generated_text": "is there any month that doesn't involve holidays, work, and deadlines",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6162240505218506,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "is there any rap that doesn't involve sex money and drugs",
+        "original_label": "music",
+        "target_label": "calendar",
+        "generated_text": "Is there any month that doesn't revolve around holidays, deadlines, and events?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.606726884841919,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "is there any rap that doesn't involve sex money and drugs",
+        "original_label": "music",
+        "target_label": "calendar",
+        "generated_text": "is there any date that doesn't involve work, errands, and deadlines",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7192721366882324,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "alexa i would like my to tell me the trend on foreign exchange rates",
+        "original_label": "qa",
+        "target_label": "alarm",
+        "generated_text": "Alexa, I need you to alert me about sudden changes in foreign exchange rates.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0215847492218018,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "alexa i would like my to tell me the trend on foreign exchange rates",
+        "original_label": "qa",
+        "target_label": "alarm",
+        "generated_text": "Alexa, I need you to tell me what's happening with the foreign exchange rates right now!",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5781800746917725,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "alexa i would like my to tell me the trend on foreign exchange rates",
+        "original_label": "qa",
+        "target_label": "alarm",
+        "generated_text": "Alexa, I need you to tell me what's happening with the foreign exchange rates right now.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.660768985748291,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "6254_cf_transport_0",
+        "original_id": 6254,
+        "target_label": "transport",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999784629435962,
+          "p_orig": 3.224156482288292e-08,
+          "margin": 0.9999784307020313,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.4059318006038666,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6254_cf_transport_1",
+        "original_id": 6254,
+        "target_label": "transport",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999499228552141,
+          "p_orig": 2.9021987840438456e-06,
+          "margin": 0.99994702065643,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.40556687116622925,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6254_cf_transport_2",
+        "original_id": 6254,
+        "target_label": "transport",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999989072017897,
+          "p_orig": 2.2159711426968902e-08,
+          "margin": 0.9999988850420783,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.3439697027206421,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "9971_cf_qa_0",
+        "original_id": 9971,
+        "target_label": "qa",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9982985357882078,
+          "p_orig": 0.0001581925920338962,
+          "margin": 0.998140343196174,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.7484943866729736,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.11864406779661,
+          "original_length": 59,
+          "cf_length": 66,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.49899107530207,
+        "v3_score_details": {
+          "score": 1.49899107530207,
+          "p_orig": 0.0001581925920338962,
+          "p_target": 0.9982985357882078,
+          "similarity": 0.7484943866729736,
+          "term1": 0.9998418074079661,
+          "term2": 0.4991492678941039,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "9971_cf_qa_1",
+        "original_id": 9971,
+        "target_label": "qa",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.999445835650186,
+          "p_orig": 2.6981090344320094e-07,
+          "margin": 0.9994455658392826,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.7591985464096069,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.2203389830508475,
+          "original_length": 59,
+          "cf_length": 72,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4997223777039304,
+        "v3_score_details": {
+          "score": 1.4997223777039304,
+          "p_orig": 3.464439064695039e-07,
+          "p_target": 0.9994454482956735,
+          "similarity": 0.7591985464096069,
+          "term1": 0.9999996535560935,
+          "term2": 0.49972272414783675,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "9971_cf_qa_2",
+        "original_id": 9971,
+        "target_label": "qa",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9984964887144036,
+          "p_orig": 4.4442057314238017e-07,
+          "margin": 0.9984960442938304,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.6776512861251831,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "10217_cf_social_0",
+        "original_id": 10217,
+        "target_label": "social",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9983684889446763,
+          "p_orig": 2.099025415658724e-07,
+          "margin": 0.9983682790421348,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.5562521815299988,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "10217_cf_social_1",
+        "original_id": 10217,
+        "target_label": "social",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.8892887231068359,
+          "p_orig": 0.02685425486692673,
+          "margin": 0.8624344682399092,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.6735768914222717,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "10217_cf_social_2",
+        "original_id": 10217,
+        "target_label": "social",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9886867975585638,
+          "p_orig": 0.002777028659797151,
+          "margin": 0.9859097688987667,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.667809247970581,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "10145_cf_lists_0",
+        "original_id": 10145,
+        "target_label": "lists",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.7962409668202347,
+          "p_orig": 9.251858538542972e-18,
+          "margin": 0.7962409668202347,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.17789144814014435,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "10145_cf_lists_1",
+        "original_id": 10145,
+        "target_label": "lists",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9994842870346258,
+          "p_orig": 8.147916108475614e-09,
+          "margin": 0.9994842788867097,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.1604968160390854,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "10145_cf_lists_2",
+        "original_id": 10145,
+        "target_label": "lists",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.0218359575611238e-12,
+          "p_orig": 0.19999999248486885,
+          "margin": -0.199999992483847,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "10071_cf_calendar_0",
+        "original_id": 10071,
+        "target_label": "calendar",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.1257616067208831,
+          "p_orig": 0.1257616067208831,
+          "margin": 0.0,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "10071_cf_calendar_1",
+        "original_id": 10071,
+        "target_label": "calendar",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.17600186441180726,
+          "p_orig": 0.17600186441180726,
+          "margin": 0.0,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "10071_cf_calendar_2",
+        "original_id": 10071,
+        "target_label": "calendar",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.6558903695768628,
+          "p_orig": 0.0064301423540146395,
+          "margin": 0.6494602272228481,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.5511218309402466,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "10019_cf_news_0",
+        "original_id": 10019,
+        "target_label": "news",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.19999858439577844,
+          "margin": -0.19999858439577844,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "10019_cf_news_1",
+        "original_id": 10019,
+        "target_label": "news",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.233581138472396e-17,
+          "p_orig": 0.19999889158659545,
+          "margin": -0.19999889158659545,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "10019_cf_news_2",
+        "original_id": 10019,
+        "target_label": "news",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.19999999112099667,
+          "margin": -0.19999999112099667,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "10060_cf_datetime_0",
+        "original_id": 10060,
+        "target_label": "datetime",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9977703098867978,
+          "p_orig": 0.0,
+          "margin": 0.9977703098867978,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.27963340282440186,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "10060_cf_datetime_1",
+        "original_id": 10060,
+        "target_label": "datetime",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9943991938730733,
+          "p_orig": 1.0092936587501423e-17,
+          "margin": 0.9943991938730733,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.20366638898849487,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "10060_cf_datetime_2",
+        "original_id": 10060,
+        "target_label": "datetime",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9988309368320674,
+          "p_orig": 1.7237852629972977e-08,
+          "margin": 0.9988309195942148,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.27939102053642273,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "8788_cf_alarm_0",
+        "original_id": 8788,
+        "target_label": "alarm",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.6263360466450894e-06,
+          "p_orig": 2.0882564687998782e-06,
+          "margin": -4.6192042215478886e-07,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "8788_cf_alarm_1",
+        "original_id": 8788,
+        "target_label": "alarm",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.3560578078180612e-07,
+          "p_orig": 1.135411678339639e-06,
+          "margin": -9.998058975578329e-07,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "8788_cf_alarm_2",
+        "original_id": 8788,
+        "target_label": "alarm",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.018587317500284e-17,
+          "p_orig": 4.849959995616358e-06,
+          "margin": -4.849959995596172e-06,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1021_cf_calendar_0",
+        "original_id": 1021,
+        "target_label": "calendar",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.000619153218344794,
+          "p_orig": 0.0,
+          "margin": 0.000619153218344794,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1021_cf_calendar_1",
+        "original_id": 1021,
+        "target_label": "calendar",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0005000718466194304,
+          "p_orig": 0.0,
+          "margin": 0.0005000718466194304,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1021_cf_calendar_2",
+        "original_id": 1021,
+        "target_label": "calendar",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.057590586529936226,
+          "p_orig": 0.0,
+          "margin": 0.057590586529936226,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "13053_cf_alarm_0",
+        "original_id": 13053,
+        "target_label": "alarm",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.005702775172484615,
+          "p_orig": 0.0006811003397628846,
+          "margin": 0.00502167483272173,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "13053_cf_alarm_1",
+        "original_id": 13053,
+        "target_label": "alarm",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.5411170255065803,
+          "margin": -0.5411170255065803,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "13053_cf_alarm_2",
+        "original_id": 13053,
+        "target_label": "alarm",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.35401649133362945,
+          "margin": -0.35401649133362945,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 1,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 1,
+    "num_final_selected": 1,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

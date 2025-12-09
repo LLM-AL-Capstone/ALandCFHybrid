@@ -1,0 +1,1182 @@
+{
+  "iteration": 10,
+  "timestamp": "20251208_062407",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 255,
+      "text": "Premise: Kilham is a village and civil parish in the East Riding of Yorkshire, England. It is situated about 5 mi north-east of Driffield town centre. According to the 2011 UK census, Kilham parish had a population of 1,088, an increase on the 2001 UK census figure of 1,010.\nHypothesis: Many people moved to Kilham between 2001 and 2011.",
+      "label": "neutral"
+    },
+    {
+      "id": 351,
+      "text": "Premise: \"Sultans of Swing\" is a song by British rock band Dire Straits from their eponymous debut album, which band frontman Mark Knopfler wrote and composed. Although it was first released in 1978, it was its 1979 re-release that caused it to become a hit in both the UK and U.S.\nHypothesis: British rock band Dire Straits' debut album, featuring the hit single \"Sultans of Swing\" written and composed by band frontman Mark Knopfler, was ranked number 10 on the billboard charts upon first release in 1978.",
+      "label": "neutral"
+    },
+    {
+      "id": 302,
+      "text": "Premise: The Program in Creative Writing, more commonly known as the Iowa Writers' Workshop, at the University of Iowa in Iowa City, Iowa, is a much-celebrated graduate-level creative writing program in the United States. Writer Lan Samantha Chang is its director. Graduates earn a Master of Fine Arts (MFA) degree in Creative Writing.\nHypothesis: The Iowa Writer's Workshop is a Master's level program.",
+      "label": "entailment"
+    },
+    {
+      "id": 92,
+      "text": "Premise: Zale Dalen is a Canadian film and television director. He is best known for the 1980 film \"The Hounds of Notre Dame\", for which he garnered a Genie Award nomination for Best Director at the 2nd Genie Awards in 1981, and the cult films \"Skip Tracer\" (1977) and \"Terminal City Ricochet\" (1990).\nHypothesis: Zale Dalen earned a Genie Award nomination for best director from his movie Skip Tracer.",
+      "label": "contradiction"
+    },
+    {
+      "id": 95,
+      "text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:\nHypothesis: bunson is middleweight.",
+      "label": "entailment"
+    },
+    {
+      "id": 292,
+      "text": "Premise: How to deal with your parents keeping secrets as an adult<br>Choose an appropriate time to talk. If you want to have a serious conversation with your parents about keeping secrets, you should broach the topic when your parents are not busy. It would be difficult to have an important and meaningful conversation when your parents are preoccupied with another task.\nHypothesis: The original statement contains less than 28 sentences",
+      "label": "entailment"
+    },
+    {
+      "id": 276,
+      "text": "Premise: Some people may think that there is no other way to grow plants other than in soil; there is however, another way.\nHypothesis: Plants need soil to grow.",
+      "label": "contradiction"
+    },
+    {
+      "id": 283,
+      "text": "Premise: Johnny's Surprise<br>Yesterday was Johnny's birthday. His parents decided to throw him a party. All of his little friends came. They ate cake and ice cream and played games. As he opened his gifts, his parents surprised him with a new bike.\nHypothesis: Only one of Johnnys parents gave him a gift",
+      "label": "contradiction"
+    },
+    {
+      "id": 360,
+      "text": "Premise: The 1924\u201325 WPI Engineers men's basketball team represented Worcester Polytechnic Institute during the 1924\u201325 NCAA men's basketball season. They were coached by Ivan Bigler. The Engineers played their home games at Alumni Gym in Worcester, Massachusetts. The team finished the season with 5 wins and 9 losses.\nHypothesis: The team did not win the New England Championships back to back,",
+      "label": "neutral"
+    },
+    {
+      "id": 320,
+      "text": "Premise: Lansdown is a suburb of the World Heritage City of Bath, England, that extends northwards from the city centre up a hill of the same name. Among its most distinctive architectural features are Lansdown Crescent and Sion Hill Place, which includes a campus of Bath Spa University.\nHypothesis: Sion Hill Place is located on a hill.",
+      "label": "entailment"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "283_cf_entailment_2",
+      "text": "Premise: Johnny's Surprise  \nYesterday was Johnny's birthday. His parents decided to throw him a party. All of his little friends came. They ate cake and ice cream and played games. As he opened his gifts, his parents surprised him with a new bike.  \nHypothesis: One of Johnny's parents gave him a gift.",
+      "label": "entailment",
+      "original_id": 283,
+      "original_label": "contradiction",
+      "v3_score": 1.4999891086451282,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.9999998874660051,
+        "term2": 0.4999892211791232,
+        "term3": 0.0,
+        "total": 1.4999891086451282,
+        "p_orig": 1.125339949410781e-07,
+        "p_target": 0.9999784423582464,
+        "similarity": 0.9697198271751404
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "283_cf_entailment_2"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 1,
+    "num_added": 1,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "Premise: Kilham is a village and civil parish in the East Riding of Yorkshire, England. It is situated about 5 mi north-east of Driffield town centre. According to the 2011 UK census, Kilham parish had a population of 1,088, an increase on the 2001 UK census figure of 1,010.\nHypothesis: Many people moved to Kilham between 2001 and 2011.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Kilham is a village and civil parish in the East Riding of Yorkshire, England. It is situated about 5 mi north-east of Driffield town centre. According to the 2011 UK census, Kilham parish had a population of 1,088, an increase on the 2001 UK census figure of 1,010.  \nHypothesis: Few people moved to Kilham between 2001 and 2011.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1933271884918213,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Kilham is a village and civil parish in the East Riding of Yorkshire, England. It is situated about 5 mi north-east of Driffield town centre. According to the 2011 UK census, Kilham parish had a population of 1,088, an increase on the 2001 UK census figure of 1,010.\nHypothesis: Many people moved to Kilham between 2001 and 2011.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Kilham is a village and civil parish in the East Riding of Yorkshire, England. It is situated about 5 mi north-east of Driffield town centre. According to the 2011 UK census, Kilham parish had a population of 1,088, an increase on the 2001 UK census figure of 1,010.  \nHypothesis: Few people moved to Kilham between 2001 and 2011.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.0216810703277588,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Kilham is a village and civil parish in the East Riding of Yorkshire, England. It is situated about 5 mi north-east of Driffield town centre. According to the 2011 UK census, Kilham parish had a population of 1,088, an increase on the 2001 UK census figure of 1,010.\nHypothesis: Many people moved to Kilham between 2001 and 2011.",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: Kilham is a village and civil parish in the East Riding of Yorkshire, England. It is situated about 5 mi north-east of Driffield town centre. According to the 2011 UK census, Kilham parish had a population of 1,088, an increase on the 2001 UK census figure of 1,010.  \nHypothesis: Few people moved to Kilham between 2001 and 2011.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9187941551208496,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: \"Sultans of Swing\" is a song by British rock band Dire Straits from their eponymous debut album, which band frontman Mark Knopfler wrote and composed. Although it was first released in 1978, it was its 1979 re-release that caused it to become a hit in both the UK and U.S.\nHypothesis: British rock band Dire Straits' debut album, featuring the hit single \"Sultans of Swing\" written and composed by band frontman Mark Knopfler, was ranked number 10 on the billboard charts upon first release in 1978.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: \"Sultans of Swing\" is a song by British rock band Dire Straits from their eponymous debut album, which band frontman Mark Knopfler wrote and composed. Although it was first released in 1978, it was its 1979 re-release that caused it to become a hit in both the UK and U.S.  \nHypothesis: British rock band Dire Straits' debut album, featuring the hit single \"Sultans of Swing\" written and composed by band frontman Mark Knopfler, became a hit following its re-release in 1979.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.5385799407958984,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: \"Sultans of Swing\" is a song by British rock band Dire Straits from their eponymous debut album, which band frontman Mark Knopfler wrote and composed. Although it was first released in 1978, it was its 1979 re-release that caused it to become a hit in both the UK and U.S.\nHypothesis: British rock band Dire Straits' debut album, featuring the hit single \"Sultans of Swing\" written and composed by band frontman Mark Knopfler, was ranked number 10 on the billboard charts upon first release in 1978.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: \"Sultans of Swing\" is a song by British rock band Dire Straits from their eponymous debut album, which band frontman Mark Knopfler wrote and composed. Although it was first released in 1978, it was its 1979 re-release that caused it to become a hit in both the UK and U.S.  \nHypothesis: British rock band Dire Straits' debut album, featuring the hit single \"Sultans of Swing\" written and composed by band frontman Mark Knopfler, gained significant recognition and success, eventually ranking number 10 on the billboard charts.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.2276649475097656,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: \"Sultans of Swing\" is a song by British rock band Dire Straits from their eponymous debut album, which band frontman Mark Knopfler wrote and composed. Although it was first released in 1978, it was its 1979 re-release that caused it to become a hit in both the UK and U.S.\nHypothesis: British rock band Dire Straits' debut album, featuring the hit single \"Sultans of Swing\" written and composed by band frontman Mark Knopfler, was ranked number 10 on the billboard charts upon first release in 1978.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: \"Sultans of Swing\" is a song by British rock band Dire Straits from their eponymous debut album, which band frontman Mark Knopfler wrote and composed. Although it was first released in 1978, it was its 1979 re-release that caused it to become a hit in both the UK and U.S.  \nHypothesis: British rock band Dire Straits' debut album, featuring the hit single \"Sultans of Swing\" written and composed by band frontman Mark Knopfler, achieved notable success, including being ranked number 10 on the billboard charts upon its initial release in 1978.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.4304089546203613,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Program in Creative Writing, more commonly known as the Iowa Writers' Workshop, at the University of Iowa in Iowa City, Iowa, is a much-celebrated graduate-level creative writing program in the United States. Writer Lan Samantha Chang is its director. Graduates earn a Master of Fine Arts (MFA) degree in Creative Writing.\nHypothesis: The Iowa Writer's Workshop is a Master's level program.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: The Program in Creative Writing, more commonly known as the Iowa Writers' Workshop, at the University of Iowa in Iowa City, Iowa, is a much-celebrated graduate-level creative writing program in the United States. Writer Lan Samantha Chang is its director. Graduates earn a Master of Fine Arts (MFA) degree in Creative Writing.  \nHypothesis: The Iowa Writer's Workshop might be a Master's level program.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2684729099273682,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Program in Creative Writing, more commonly known as the Iowa Writers' Workshop, at the University of Iowa in Iowa City, Iowa, is a much-celebrated graduate-level creative writing program in the United States. Writer Lan Samantha Chang is its director. Graduates earn a Master of Fine Arts (MFA) degree in Creative Writing.\nHypothesis: The Iowa Writer's Workshop is a Master's level program.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: The Program in Creative Writing, more commonly known as the Iowa Writers' Workshop, at the University of Iowa in Iowa City, Iowa, is a graduate-level creative writing program in the United States. Writer Lan Samantha Chang is its director. Graduates earn a Master of Fine Arts (MFA) degree in Creative Writing.  \nHypothesis: The Iowa Writers' Workshop may be considered a Master's level program.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.0335450172424316,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Program in Creative Writing, more commonly known as the Iowa Writers' Workshop, at the University of Iowa in Iowa City, Iowa, is a much-celebrated graduate-level creative writing program in the United States. Writer Lan Samantha Chang is its director. Graduates earn a Master of Fine Arts (MFA) degree in Creative Writing.\nHypothesis: The Iowa Writer's Workshop is a Master's level program.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: The Program in Creative Writing, more commonly known as the Iowa Writers' Workshop, at the University of Iowa in Iowa City, Iowa, is a much-celebrated graduate-level creative writing program in the United States. Writer Lan Samantha Chang is its director. Graduates earn a Master of Fine Arts (MFA) degree in Creative Writing.  \nHypothesis: The Iowa Writer's Workshop may be considered a Master's level program.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.0876100063323975,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Zale Dalen is a Canadian film and television director. He is best known for the 1980 film \"The Hounds of Notre Dame\", for which he garnered a Genie Award nomination for Best Director at the 2nd Genie Awards in 1981, and the cult films \"Skip Tracer\" (1977) and \"Terminal City Ricochet\" (1990).\nHypothesis: Zale Dalen earned a Genie Award nomination for best director from his movie Skip Tracer.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Zale Dalen is a Canadian film and television director. He is best known for the 1980 film \"The Hounds of Notre Dame\", for which he garnered a Genie Award nomination for Best Director at the 2nd Genie Awards in 1981, and the cult films \"Skip Tracer\" (1977) and \"Terminal City Ricochet\" (1990).  \nHypothesis: Zale Dalen may have earned a Genie Award nomination for best director from his movie Skip Tracer.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1297109127044678,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Zale Dalen is a Canadian film and television director. He is best known for the 1980 film \"The Hounds of Notre Dame\", for which he garnered a Genie Award nomination for Best Director at the 2nd Genie Awards in 1981, and the cult films \"Skip Tracer\" (1977) and \"Terminal City Ricochet\" (1990).\nHypothesis: Zale Dalen earned a Genie Award nomination for best director from his movie Skip Tracer.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Zale Dalen is a Canadian film and television director. He is best known for the 1980 film \"The Hounds of Notre Dame\", for which he garnered a Genie Award nomination for Best Director at the 2nd Genie Awards in 1981, and the cult films \"Skip Tracer\" (1977) and \"Terminal City Ricochet\" (1990).  \nHypothesis: Zale Dalen is associated with a Genie Award nomination for Best Director.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.1263947486877441,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Zale Dalen is a Canadian film and television director. He is best known for the 1980 film \"The Hounds of Notre Dame\", for which he garnered a Genie Award nomination for Best Director at the 2nd Genie Awards in 1981, and the cult films \"Skip Tracer\" (1977) and \"Terminal City Ricochet\" (1990).\nHypothesis: Zale Dalen earned a Genie Award nomination for best director from his movie Skip Tracer.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Zale Dalen is a Canadian film and television director. He is best known for the 1980 film \"The Hounds of Notre Dame\", for which he garnered a Genie Award nomination for Best Director at the 2nd Genie Awards in 1981, and the cult films \"Skip Tracer\" (1977) and \"Terminal City Ricochet\" (1990).  \nHypothesis: Zale Dalen was involved in the movie \"Skip Tracer,\" which is one of his notable works.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.7404868602752686,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:\nHypothesis: bunson is middleweight.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:  \nHypothesis: Brunson might be middleweight.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.840467929840088,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:\nHypothesis: bunson is middleweight.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Hypothesis: Brunson competes in the middleweight division.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6118040084838867,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:\nHypothesis: bunson is middleweight.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:  \nHypothesis: Brunson might be middleweight.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9557909965515137,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to deal with your parents keeping secrets as an adult<br>Choose an appropriate time to talk. If you want to have a serious conversation with your parents about keeping secrets, you should broach the topic when your parents are not busy. It would be difficult to have an important and meaningful conversation when your parents are preoccupied with another task.\nHypothesis: The original statement contains less than 28 sentences",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to deal with your parents keeping secrets as an adult<br>Choose an appropriate time to talk. If you want to have a serious conversation with your parents about keeping secrets, you should broach the topic when your parents are not busy. It would be difficult to have an important and meaningful conversation when your parents are preoccupied with another task.  \nHypothesis: The original statement contains more than 28 sentences.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.811326026916504,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to deal with your parents keeping secrets as an adult<br>Choose an appropriate time to talk. If you want to have a serious conversation with your parents about keeping secrets, you should broach the topic when your parents are not busy. It would be difficult to have an important and meaningful conversation when your parents are preoccupied with another task.\nHypothesis: The original statement contains less than 28 sentences",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to deal with your parents keeping secrets as an adult<br>Choose an appropriate time to talk. If you want to have a serious conversation with your parents about keeping secrets, you should broach the topic when your parents are not busy. It would be difficult to have an important and meaningful conversation when your parents are preoccupied with another task.  \nHypothesis: The original statement contains 28 sentences or more.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8494479656219482,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: How to deal with your parents keeping secrets as an adult<br>Choose an appropriate time to talk. If you want to have a serious conversation with your parents about keeping secrets, you should broach the topic when your parents are not busy. It would be difficult to have an important and meaningful conversation when your parents are preoccupied with another task.\nHypothesis: The original statement contains less than 28 sentences",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: How to deal with your parents keeping secrets as an adult<br>Choose an appropriate time to talk. If you want to have a serious conversation with your parents about keeping secrets, you should broach the topic when your parents are not busy. It would be difficult to have an important and meaningful conversation when your parents are preoccupied with another task.  \nHypothesis: The original statement contains more than 28 sentences.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9917130470275879,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Some people may think that there is no other way to grow plants other than in soil; there is however, another way.\nHypothesis: Plants need soil to grow.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Some people may think that there is no other way to grow plants other than in soil; there is however, another way.  \nHypothesis: Plants can grow in soil.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7201941013336182,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Some people may think that there is no other way to grow plants other than in soil; there is however, another way.\nHypothesis: Plants need soil to grow.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Some people may think that there is no other way to grow plants other than in soil; there is however, another way.  \nHypothesis: Soil is one common method for growing plants.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9124619960784912,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Some people may think that there is no other way to grow plants other than in soil; there is however, another way.\nHypothesis: Plants need soil to grow.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Some people may think that growing plants in soil is the most common method, though there are alternative ways to cultivate plants.  \nHypothesis: Plants often grow in soil.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.918100118637085,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Johnny's Surprise<br>Yesterday was Johnny's birthday. His parents decided to throw him a party. All of his little friends came. They ate cake and ice cream and played games. As he opened his gifts, his parents surprised him with a new bike.\nHypothesis: Only one of Johnnys parents gave him a gift",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Johnny's Surprise<br>Yesterday was Johnny's birthday. His parents decided to throw him a party. All of his little friends came. They ate cake and ice cream and played games. As he opened his gifts, one of his parents surprised him with a new bike.  \nHypothesis: Only one of Johnny's parents gave him a gift.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9191379547119141,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Johnny's Surprise<br>Yesterday was Johnny's birthday. His parents decided to throw him a party. All of his little friends came. They ate cake and ice cream and played games. As he opened his gifts, his parents surprised him with a new bike.\nHypothesis: Only one of Johnnys parents gave him a gift",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Johnny's Surprise<br>Yesterday was Johnny's birthday. His parents decided to throw him a party. All of his little friends came. They ate cake and ice cream and played games. As he opened his gifts, one of his parents surprised him with a new bike.  \nHypothesis: Only one of Johnny's parents gave him a gift.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9217140674591064,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Johnny's Surprise<br>Yesterday was Johnny's birthday. His parents decided to throw him a party. All of his little friends came. They ate cake and ice cream and played games. As he opened his gifts, his parents surprised him with a new bike.\nHypothesis: Only one of Johnnys parents gave him a gift",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Johnny's Surprise  \nYesterday was Johnny's birthday. His parents decided to throw him a party. All of his little friends came. They ate cake and ice cream and played games. As he opened his gifts, his parents surprised him with a new bike.  \nHypothesis: One of Johnny's parents gave him a gift.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.0968101024627686,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The 1924\u201325 WPI Engineers men's basketball team represented Worcester Polytechnic Institute during the 1924\u201325 NCAA men's basketball season. They were coached by Ivan Bigler. The Engineers played their home games at Alumni Gym in Worcester, Massachusetts. The team finished the season with 5 wins and 9 losses.\nHypothesis: The team did not win the New England Championships back to back,",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The 1924\u201325 WPI Engineers men's basketball team represented Worcester Polytechnic Institute during the 1924\u201325 NCAA men's basketball season. They were coached by Ivan Bigler. The Engineers played their home games at Alumni Gym in Worcester, Massachusetts. The team finished the season with 5 wins and 9 losses.  \nHypothesis: The team did not win the New England Championships back to back, as their record indicates they had a losing season.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 2.385313034057617,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The 1924\u201325 WPI Engineers men's basketball team represented Worcester Polytechnic Institute during the 1924\u201325 NCAA men's basketball season. They were coached by Ivan Bigler. The Engineers played their home games at Alumni Gym in Worcester, Massachusetts. The team finished the season with 5 wins and 9 losses.\nHypothesis: The team did not win the New England Championships back to back,",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The 1924\u201325 WPI Engineers men's basketball team represented Worcester Polytechnic Institute during the 1924\u201325 NCAA men's basketball season. They were coached by Ivan Bigler. The Engineers played their home games at Alumni Gym in Worcester, Massachusetts. The team finished the season with 5 wins and 9 losses.  \nHypothesis: Given their record, the team did not win the New England Championships back to back.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.0262162685394287,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The 1924\u201325 WPI Engineers men's basketball team represented Worcester Polytechnic Institute during the 1924\u201325 NCAA men's basketball season. They were coached by Ivan Bigler. The Engineers played their home games at Alumni Gym in Worcester, Massachusetts. The team finished the season with 5 wins and 9 losses.\nHypothesis: The team did not win the New England Championships back to back,",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The 1924\u201325 WPI Engineers men's basketball team represented Worcester Polytechnic Institute during the 1924\u201325 NCAA men's basketball season. They were coached by Ivan Bigler. The Engineers played their home games at Alumni Gym in Worcester, Massachusetts. The team finished the season with 5 wins and 9 losses.  \nHypothesis: Given their record of 5 wins and 9 losses, the team did not win the New England Championships back to back.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.1295311450958252,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Lansdown is a suburb of the World Heritage City of Bath, England, that extends northwards from the city centre up a hill of the same name. Among its most distinctive architectural features are Lansdown Crescent and Sion Hill Place, which includes a campus of Bath Spa University.\nHypothesis: Sion Hill Place is located on a hill.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Lansdown is a suburb of the World Heritage City of Bath, England, that extends northwards from the city centre up a hill of the same name. Among its most distinctive architectural features are Lansdown Crescent and Sion Hill Place, which includes a campus of Bath Spa University.  \nHypothesis: Sion Hill Place might be located on a hill.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8254210948944092,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Lansdown is a suburb of the World Heritage City of Bath, England, that extends northwards from the city centre up a hill of the same name. Among its most distinctive architectural features are Lansdown Crescent and Sion Hill Place, which includes a campus of Bath Spa University.\nHypothesis: Sion Hill Place is located on a hill.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Lansdown is a suburb of the World Heritage City of Bath, England, that extends northwards from the city centre up a hill of the same name. Among its most distinctive architectural features are Lansdown Crescent and Sion Hill Place, which includes a campus of Bath Spa University.  \nHypothesis: Sion Hill Place may be situated on a hill.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9228019714355469,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Lansdown is a suburb of the World Heritage City of Bath, England, that extends northwards from the city centre up a hill of the same name. Among its most distinctive architectural features are Lansdown Crescent and Sion Hill Place, which includes a campus of Bath Spa University.\nHypothesis: Sion Hill Place is located on a hill.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Lansdown is a suburb of the World Heritage City of Bath, England, that extends northwards from the city centre up a hill of the same name. Among its most distinctive architectural features are Lansdown Crescent and Sion Hill Place, which includes a campus of Bath Spa University.  \nHypothesis: Sion Hill Place might be located on a hill.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.2213561534881592,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "255_cf_contradiction_0",
+        "original_id": 255,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.8045486340604911e-06,
+          "p_orig": 0.09534943238229282,
+          "margin": -0.09534762783365876,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "255_cf_contradiction_1",
+        "original_id": 255,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.990902740112454e-06,
+          "p_orig": 0.22269983584108,
+          "margin": -0.22269784493833988,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "255_cf_contradiction_2",
+        "original_id": 255,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 9.509080884262582e-06,
+          "p_orig": 0.2689389962345804,
+          "margin": -0.26892948715369613,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "351_cf_entailment_0",
+        "original_id": 351,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999249895740295,
+          "p_orig": 7.484669880706015e-05,
+          "margin": 0.9998501428752224,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9961590766906738,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "351_cf_entailment_1",
+        "original_id": 351,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 5.715057875765007e-07,
+          "p_orig": 0.9999993870943594,
+          "margin": -0.9999988155885718,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "351_cf_entailment_2",
+        "original_id": 351,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.3420388334561616e-08,
+          "p_orig": 0.9984987980200144,
+          "margin": -0.998498784599626,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "302_cf_neutral_0",
+        "original_id": 302,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00043055935759499166,
+          "p_orig": 0.999569431408817,
+          "margin": -0.9991388720512221,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "302_cf_neutral_1",
+        "original_id": 302,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.120212700359674e-05,
+          "p_orig": 0.9999687757139157,
+          "margin": -0.9999375735869122,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "302_cf_neutral_2",
+        "original_id": 302,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.000203428121726287,
+          "p_orig": 0.9997964274081272,
+          "margin": -0.999592999286401,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "92_cf_neutral_0",
+        "original_id": 92,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9998766019794532,
+          "p_orig": 0.00012339537426609386,
+          "margin": 0.9997532066051871,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9997885823249817,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "92_cf_neutral_1",
+        "original_id": 92,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 7.582667531853289e-10,
+          "p_orig": 1.2256274568842649e-11,
+          "margin": 7.460104786164863e-10,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "92_cf_neutral_2",
+        "original_id": 92,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.5946520395417164e-11,
+          "p_orig": 1.1102230246251565e-16,
+          "margin": 2.59464093731147e-11,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "95_cf_neutral_0",
+        "original_id": 95,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0005527815009976626,
+          "p_orig": 0.9994472176402485,
+          "margin": -0.9988944361392508,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "95_cf_neutral_1",
+        "original_id": 95,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999992655815416,
+          "p_orig": 5.905389439186665e-10,
+          "margin": 0.9999992649910027,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.6628820896148682,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "95_cf_neutral_2",
+        "original_id": 95,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0011695157810039352,
+          "p_orig": 0.9988304832465015,
+          "margin": -0.9976609674654976,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "292_cf_contradiction_0",
+        "original_id": 292,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9988304709436189,
+          "p_orig": 1.3424842771003444e-08,
+          "margin": 0.9988304575187761,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9967625141143799,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "292_cf_contradiction_1",
+        "original_id": 292,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9984988103202955,
+          "p_orig": 1.1016144240534775e-09,
+          "margin": 0.9984988092186811,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9967546463012695,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "292_cf_contradiction_2",
+        "original_id": 292,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9959297598199527,
+          "p_orig": 8.728676349841624e-08,
+          "margin": 0.9959296725331892,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9967625141143799,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "276_cf_neutral_0",
+        "original_id": 276,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.2752042927081953e-07,
+          "p_orig": 6.224243421834435e-11,
+          "margin": 1.274581868366012e-07,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "276_cf_neutral_1",
+        "original_id": 276,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.0677129511961091e-06,
+          "p_orig": 6.691668942339332e-10,
+          "margin": 1.0670437843018753e-06,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "276_cf_neutral_2",
+        "original_id": 276,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00026119180678607195,
+          "p_orig": 3.580865325040488e-10,
+          "margin": 0.00026119144869953947,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "283_cf_entailment_0",
+        "original_id": 283,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 8.46482128537242e-05,
+          "p_orig": 0.119192977637542,
+          "margin": -0.11910832942468827,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "283_cf_entailment_1",
+        "original_id": 283,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00042972983791642137,
+          "p_orig": 0.22260457826078475,
+          "margin": -0.22217484842286833,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "283_cf_entailment_2",
+        "original_id": 283,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999909828884411,
+          "p_orig": 7.734431474471119e-08,
+          "margin": 0.9999909055441264,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9697198271751404,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.9934426229508196,
+          "original_length": 305,
+          "cf_length": 303,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999891086451282,
+        "v3_score_details": {
+          "score": 1.4999891086451282,
+          "p_orig": 1.125339949410781e-07,
+          "p_target": 0.9999784423582464,
+          "similarity": 0.9697198271751404,
+          "term1": 0.9999998874660051,
+          "term2": 0.4999892211791232,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "360_cf_entailment_0",
+        "original_id": 360,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999984346267373,
+          "p_orig": 1.5535120132487932e-06,
+          "margin": 0.9999968811147241,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9958628416061401,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "360_cf_entailment_1",
+        "original_id": 360,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999921080297878,
+          "p_orig": 7.889323622225882e-06,
+          "margin": 0.9999842187061655,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9955126643180847,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "360_cf_entailment_2",
+        "original_id": 360,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999967098061426,
+          "p_orig": 3.2887772337977213e-06,
+          "margin": 0.9999934210289089,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9927037358283997,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "320_cf_neutral_0",
+        "original_id": 320,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.753588760337768e-05,
+          "p_orig": 0.9999724641123966,
+          "margin": -0.9999449282247932,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "320_cf_neutral_1",
+        "original_id": 320,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.12021351335974e-05,
+          "p_orig": 0.9999687978648664,
+          "margin": -0.9999375957297327,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "320_cf_neutral_2",
+        "original_id": 320,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.753588760337768e-05,
+          "p_orig": 0.9999724641123966,
+          "margin": -0.9999449282247932,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 1,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 1,
+    "num_final_selected": 1,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

@@ -1,0 +1,1352 @@
+{
+  "iteration": 6,
+  "timestamp": "20251207_115818",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 1964,
+      "text": "hey olly play me an automated playlist based on songs heard in gaana app this week",
+      "label": "play"
+    },
+    {
+      "id": 1195,
+      "text": "i'd love to hear any song that i've given five stars by serge gainsbourg",
+      "label": "play"
+    },
+    {
+      "id": 6835,
+      "text": "give me the address of my hairdresser for the meeting today",
+      "label": "calendar"
+    },
+    {
+      "id": 2673,
+      "text": "did i remember to set a reminder alarm for my next doctor's appointment",
+      "label": "alarm"
+    },
+    {
+      "id": 1302,
+      "text": "is narendra modi the indian prime minister visiting any country now",
+      "label": "news"
+    },
+    {
+      "id": 992,
+      "text": "after this song ends i want to hear hotel california next",
+      "label": "play"
+    },
+    {
+      "id": 5233,
+      "text": "who was appointed as deputy centimeter of uttar pradesh",
+      "label": "qa"
+    },
+    {
+      "id": 1902,
+      "text": "what does the analysts say about the new immigration policies",
+      "label": "news"
+    },
+    {
+      "id": 1231,
+      "text": "can you direct me to the menu for the highest rated chinese carry-out near me",
+      "label": "takeaway"
+    },
+    {
+      "id": 11613,
+      "text": "what baseball games are scheduled for this week in tulsa",
+      "label": "recommendation"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "1195_cf_recommendation_0",
+      "text": "I'd suggest any song that I've given five stars by Serge Gainsbourg.",
+      "label": "recommendation",
+      "original_id": 1195,
+      "original_label": "play",
+      "v3_score": 1.4853197588799232,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.9999837880096714,
+        "term2": 0.48533597087025176,
+        "term3": 0.0,
+        "total": 1.4853197588799232,
+        "p_orig": 1.6211990328624507e-05,
+        "p_target": 0.9706719417405035,
+        "similarity": 0.8868401050567627
+      }
+    },
+    {
+      "id": "11613_cf_calendar_1",
+      "text": "Baseball games happening this week in Tulsa?",
+      "label": "calendar",
+      "original_id": 11613,
+      "original_label": "recommendation",
+      "v3_score": 0.8439426959473685,
+      "v3_rank": 2,
+      "v3_score_breakdown": {
+        "term1": 0.5640703996321865,
+        "term2": 0.27987229631518196,
+        "term3": 0.0,
+        "total": 0.8439426959473685,
+        "p_orig": 0.4359296003678134,
+        "p_target": 0.5597445926303639,
+        "similarity": 0.8746455311775208
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "1195_cf_recommendation_0",
+    "11613_cf_calendar_1"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 2,
+    "num_added": 2,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "hey olly play me an automated playlist based on songs heard in gaana app this week",
+        "original_label": "play",
+        "target_label": "calendar",
+        "generated_text": "hey olly show me an automated schedule based on events marked in gaana app this week",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.812586784362793,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "hey olly play me an automated playlist based on songs heard in gaana app this week",
+        "original_label": "play",
+        "target_label": "calendar",
+        "generated_text": "hey olly remind me of events based on activities noted in gaana app this week",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6174330711364746,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "hey olly play me an automated playlist based on songs heard in gaana app this week",
+        "original_label": "play",
+        "target_label": "calendar",
+        "generated_text": "hey olly schedule an automated reminder based on events noted in gaana app this week",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5814778804779053,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i'd love to hear any song that i've given five stars by serge gainsbourg",
+        "original_label": "play",
+        "target_label": "recommendation",
+        "generated_text": "I'd suggest any song that I've given five stars by Serge Gainsbourg.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.47791099548339844,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i'd love to hear any song that i've given five stars by serge gainsbourg",
+        "original_label": "play",
+        "target_label": "recommendation",
+        "generated_text": "You should definitely check out any song I've rated five stars by Serge Gainsbourg.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.4886598587036133,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i'd love to hear any song that i've given five stars by serge gainsbourg",
+        "original_label": "play",
+        "target_label": "recommendation",
+        "generated_text": "I highly suggest any song by Serge Gainsbourg that I've rated five stars.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6128730773925781,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "give me the address of my hairdresser for the meeting today",
+        "original_label": "calendar",
+        "target_label": "alarm",
+        "generated_text": "remind me to visit my hairdresser for the appointment today",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.613684892654419,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "give me the address of my hairdresser for the meeting today",
+        "original_label": "calendar",
+        "target_label": "alarm",
+        "generated_text": "tell me where my hairdresser is right now, it's urgent",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6211400032043457,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "give me the address of my hairdresser for the meeting today",
+        "original_label": "calendar",
+        "target_label": "alarm",
+        "generated_text": "Remind me where my hairdresser is for the appointment today",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5171248912811279,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "did i remember to set a reminder alarm for my next doctor's appointment",
+        "original_label": "alarm",
+        "target_label": "music",
+        "generated_text": "did i remember to play a tune to remind me of my next doctor's appointment",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6121411323547363,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "did i remember to set a reminder alarm for my next doctor's appointment",
+        "original_label": "alarm",
+        "target_label": "music",
+        "generated_text": "did i remember to set a playlist for my next doctor's appointment",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.517535924911499,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "did i remember to set a reminder alarm for my next doctor's appointment",
+        "original_label": "alarm",
+        "target_label": "music",
+        "generated_text": "Did I remember to queue a tune for my next doctor's appointment?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5189580917358398,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "is narendra modi the indian prime minister visiting any country now",
+        "original_label": "news",
+        "target_label": "transport",
+        "generated_text": "is narendra modi the indian prime minister traveling to any destination now",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.516575813293457,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "is narendra modi the indian prime minister visiting any country now",
+        "original_label": "news",
+        "target_label": "transport",
+        "generated_text": "Is Narendra Modi traveling to any destination now?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5138881206512451,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "is narendra modi the indian prime minister visiting any country now",
+        "original_label": "news",
+        "target_label": "transport",
+        "generated_text": "is narendra modi the indian prime minister traveling to any destination now",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5204768180847168,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "after this song ends i want to hear hotel california next",
+        "original_label": "play",
+        "target_label": "email",
+        "generated_text": "after this message ends i want to read the one about hotel california next",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6063947677612305,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "after this song ends i want to hear hotel california next",
+        "original_label": "play",
+        "target_label": "email",
+        "generated_text": "After this message wraps up, I\u2019d like to see the one about Hotel California next.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.528709888458252,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "after this song ends i want to hear hotel california next",
+        "original_label": "play",
+        "target_label": "email",
+        "generated_text": "after this message is sent i want to forward hotel california next",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6071169376373291,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "who was appointed as deputy centimeter of uttar pradesh",
+        "original_label": "qa",
+        "target_label": "calendar",
+        "generated_text": "when was the appointment of the deputy centimeter of uttar pradesh scheduled",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5110678672790527,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "who was appointed as deputy centimeter of uttar pradesh",
+        "original_label": "qa",
+        "target_label": "calendar",
+        "generated_text": "when is the appointment date for the deputy centimeter of uttar pradesh",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7218351364135742,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "who was appointed as deputy centimeter of uttar pradesh",
+        "original_label": "qa",
+        "target_label": "calendar",
+        "generated_text": "Appointment of deputy centimeter of Uttar Pradesh marked on the schedule",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5172271728515625,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what does the analysts say about the new immigration policies",
+        "original_label": "news",
+        "target_label": "iot",
+        "generated_text": "what do the experts say about the latest smart device protocols",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5146899223327637,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what does the analysts say about the new immigration policies",
+        "original_label": "news",
+        "target_label": "iot",
+        "generated_text": "How do experts evaluate the impact of connected systems on immigration policies?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.500683069229126,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what does the analysts say about the new immigration policies",
+        "original_label": "news",
+        "target_label": "iot",
+        "generated_text": "What do analysts say about the latest smart system policies?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.4265131950378418,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "can you direct me to the menu for the highest rated chinese carry-out near me",
+        "original_label": "takeaway",
+        "target_label": "transport",
+        "generated_text": "can you direct me to the schedule for the highest rated chinese shuttle near me",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5194759368896484,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "can you direct me to the menu for the highest rated chinese carry-out near me",
+        "original_label": "takeaway",
+        "target_label": "transport",
+        "generated_text": "Can you direct me to the schedule for the highest rated Chinese bus route near me?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5127139091491699,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "can you direct me to the menu for the highest rated chinese carry-out near me",
+        "original_label": "takeaway",
+        "target_label": "transport",
+        "generated_text": "can you direct me to the route for the highest rated chinese destination near me",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5212738513946533,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what baseball games are scheduled for this week in tulsa",
+        "original_label": "recommendation",
+        "target_label": "calendar",
+        "generated_text": "what baseball games are happening this week in tulsa",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9153079986572266,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what baseball games are scheduled for this week in tulsa",
+        "original_label": "recommendation",
+        "target_label": "calendar",
+        "generated_text": "Baseball games happening this week in Tulsa?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5215930938720703,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what baseball games are scheduled for this week in tulsa",
+        "original_label": "recommendation",
+        "target_label": "calendar",
+        "generated_text": "what baseball games are on the schedule for this week in tulsa",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5156922340393066,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "1964_cf_calendar_0",
+        "original_id": 1964,
+        "target_label": "calendar",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9992932409573224,
+          "p_orig": 2.3807098485097015e-07,
+          "margin": 0.9992930028863376,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.5570083856582642,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1964_cf_calendar_1",
+        "original_id": 1964,
+        "target_label": "calendar",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.922779497449102,
+          "p_orig": 4.415644146499565e-06,
+          "margin": 0.9227750818049555,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.5575991868972778,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1964_cf_calendar_2",
+        "original_id": 1964,
+        "target_label": "calendar",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9995322451361943,
+          "p_orig": 5.313359019986441e-08,
+          "margin": 0.9995321920026041,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.540622353553772,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1195_cf_recommendation_0",
+        "original_id": 1195,
+        "target_label": "recommendation",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.939816993036731,
+          "p_orig": 0.00010235493207878174,
+          "margin": 0.9397146381046523,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.8868401050567627,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.9444444444444444,
+          "original_length": 72,
+          "cf_length": 68,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4853197588799232,
+        "v3_score_details": {
+          "score": 1.4853197588799232,
+          "p_orig": 1.6211990328624507e-05,
+          "p_target": 0.9706719417405035,
+          "similarity": 0.8868401050567627,
+          "term1": 0.9999837880096714,
+          "term2": 0.48533597087025176,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "1195_cf_recommendation_1",
+        "original_id": 1195,
+        "target_label": "recommendation",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9515127087529045,
+          "p_orig": 0.0011141120350740702,
+          "margin": 0.9503985967178304,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.8538620471954346,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.1527777777777777,
+          "original_length": 72,
+          "cf_length": 83,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.481046395376673,
+        "v3_score_details": {
+          "score": 1.481046395376673,
+          "p_orig": 0.0001958362687507559,
+          "p_target": 0.9624844632908477,
+          "similarity": 0.8538620471954346,
+          "term1": 0.9998041637312493,
+          "term2": 0.48124223164542385,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "1195_cf_recommendation_2",
+        "original_id": 1195,
+        "target_label": "recommendation",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9517471882684746,
+          "p_orig": 0.0008678851670713017,
+          "margin": 0.9508793031014033,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.8590936064720154,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0138888888888888,
+          "original_length": 72,
+          "cf_length": 73,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4741757391058392,
+        "v3_score_details": {
+          "score": 1.4741757391058392,
+          "p_orig": 0.001430095006365102,
+          "p_target": 0.9512116682244086,
+          "similarity": 0.8590936064720154,
+          "term1": 0.9985699049936348,
+          "term2": 0.4756058341122043,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "6835_cf_alarm_0",
+        "original_id": 6835,
+        "target_label": "alarm",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 7.734508649849378e-08,
+          "p_orig": 0.999999529972874,
+          "margin": -0.9999994526277876,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6835_cf_alarm_1",
+        "original_id": 6835,
+        "target_label": "alarm",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 8.255292037583741e-06,
+          "margin": -8.255292037583741e-06,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6835_cf_alarm_2",
+        "original_id": 6835,
+        "target_label": "alarm",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.9986861527337108,
+          "margin": -0.9986861527337108,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "2673_cf_music_0",
+        "original_id": 2673,
+        "target_label": "music",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.006668932967535833,
+          "p_orig": 0.0009025431462428301,
+          "margin": 0.0057663898212930035,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "2673_cf_music_1",
+        "original_id": 2673,
+        "target_label": "music",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.39651396014705304,
+          "p_orig": 2.1500153503590375e-06,
+          "margin": 0.39651181013170267,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "2673_cf_music_2",
+        "original_id": 2673,
+        "target_label": "music",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.2147219948758085,
+          "p_orig": 8.602961223800815e-06,
+          "margin": 0.21471339191458472,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1302_cf_transport_0",
+        "original_id": 1302,
+        "target_label": "transport",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.15886420222315584,
+          "p_orig": 0.12372358589915763,
+          "margin": 0.0351406163239982,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1302_cf_transport_1",
+        "original_id": 1302,
+        "target_label": "transport",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.08232331890944884,
+          "p_orig": 0.13572817749172017,
+          "margin": -0.05340485858227133,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1302_cf_transport_2",
+        "original_id": 1302,
+        "target_label": "transport",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.09705488262533633,
+          "p_orig": 0.33875454122830495,
+          "margin": -0.2416996586029686,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "992_cf_email_0",
+        "original_id": 992,
+        "target_label": "email",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.5501529118699338,
+          "p_orig": 0.0007299353703629941,
+          "margin": 0.5494229764995707,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.6641436219215393,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "992_cf_email_1",
+        "original_id": 992,
+        "target_label": "email",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 7.46260131367292e-05,
+          "p_orig": 0.0014988998028356772,
+          "margin": -0.001424273789698948,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "992_cf_email_2",
+        "original_id": 992,
+        "target_label": "email",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9957495138132315,
+          "p_orig": 5.122652571587369e-05,
+          "margin": 0.9956982872875156,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.5295582413673401,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "5233_cf_calendar_0",
+        "original_id": 5233,
+        "target_label": "calendar",
+        "passed": false,
+        "rejection_stage": "length_ratio",
+        "label_consistency": {
+          "p_target": 0.5093684351355645,
+          "p_orig": 0.39669660286519015,
+          "margin": 0.11267183227037436,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9528213739395142,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.3818181818181818,
+          "original_length": 55,
+          "cf_length": 76,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": false,
+          "too_short": false,
+          "too_long": true
+        },
+        "v3_score": null
+      },
+      {
+        "cf_id": "5233_cf_calendar_1",
+        "original_id": 5233,
+        "target_label": "calendar",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.2830919643140354,
+          "p_orig": 0.5993054265337133,
+          "margin": -0.31621346221967794,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "5233_cf_calendar_2",
+        "original_id": 5233,
+        "target_label": "calendar",
+        "passed": false,
+        "rejection_stage": "length_ratio",
+        "label_consistency": {
+          "p_target": 0.9919814244373313,
+          "p_orig": 0.00010803612699530351,
+          "margin": 0.991873388310336,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.825972318649292,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.309090909090909,
+          "original_length": 55,
+          "cf_length": 72,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": false,
+          "too_short": false,
+          "too_long": true
+        },
+        "v3_score": null
+      },
+      {
+        "cf_id": "1902_cf_iot_0",
+        "original_id": 1902,
+        "target_label": "iot",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.5606646406615919,
+          "p_orig": 0.001574798186555228,
+          "margin": 0.5590898424750367,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.2649693787097931,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1902_cf_iot_1",
+        "original_id": 1902,
+        "target_label": "iot",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 8.540177112501206e-18,
+          "p_orig": 1.3440471759810619e-08,
+          "margin": -1.3440471751270442e-08,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1902_cf_iot_2",
+        "original_id": 1902,
+        "target_label": "iot",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0012377564094011501,
+          "p_orig": 0.4993445000392214,
+          "margin": -0.4981067436298202,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1231_cf_transport_0",
+        "original_id": 1231,
+        "target_label": "transport",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9036088187674535,
+          "p_orig": 0.0007271673351702933,
+          "margin": 0.9028816514322832,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.5748206377029419,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1231_cf_transport_1",
+        "original_id": 1231,
+        "target_label": "transport",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9984983090743031,
+          "p_orig": 1.1102230246251564e-17,
+          "margin": 0.9984983090743031,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.574886679649353,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1231_cf_transport_2",
+        "original_id": 1231,
+        "target_label": "transport",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.6222909145323111,
+          "p_orig": 0.00026804862277130746,
+          "margin": 0.6220228659095398,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.6672607064247131,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "11613_cf_calendar_0",
+        "original_id": 11613,
+        "target_label": "calendar",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.604210631317956,
+          "p_orig": 0.3664723960729725,
+          "margin": 0.23773823524498355,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9740157127380371,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.9285714285714286,
+          "original_length": 56,
+          "cf_length": 52,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 0.7560847468071679,
+        "v3_score_details": {
+          "score": 0.7560847468071679,
+          "p_orig": 0.4878305063856643,
+          "p_target": 0.4878305063856643,
+          "similarity": 0.9740157127380371,
+          "term1": 0.5121694936143357,
+          "term2": 0.24391525319283214,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "11613_cf_calendar_1",
+        "original_id": 11613,
+        "target_label": "calendar",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.6207554324233586,
+          "p_orig": 0.3765073285772584,
+          "margin": 0.24424810384610024,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.8746455311775208,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.7857142857142857,
+          "original_length": 56,
+          "cf_length": 44,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 0.8439426959473685,
+        "v3_score_details": {
+          "score": 0.8439426959473685,
+          "p_orig": 0.4359296003678134,
+          "p_target": 0.5597445926303639,
+          "similarity": 0.8746455311775208,
+          "term1": 0.5640703996321865,
+          "term2": 0.27987229631518196,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "11613_cf_calendar_2",
+        "original_id": 11613,
+        "target_label": "calendar",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.8719832780979284,
+          "p_orig": 0.11801026267871424,
+          "margin": 0.7539730154192141,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9857009649276733,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 2,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 2,
+    "num_final_selected": 2,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

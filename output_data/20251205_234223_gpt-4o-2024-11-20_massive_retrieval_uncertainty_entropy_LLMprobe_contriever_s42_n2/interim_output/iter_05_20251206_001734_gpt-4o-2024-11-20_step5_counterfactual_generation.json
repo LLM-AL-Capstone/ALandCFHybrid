@@ -1,0 +1,1484 @@
+{
+  "iteration": 5,
+  "timestamp": "20251206_001734",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 10221,
+      "text": "setting up a food processing business in our home has advantages and disadvantages",
+      "label": "cooking"
+    },
+    {
+      "id": 11685,
+      "text": "i would be happy if you update me the events going on our area",
+      "label": "recommendation"
+    },
+    {
+      "id": 6818,
+      "text": "i need to remember to get to the shops before they close",
+      "label": "calendar"
+    },
+    {
+      "id": 1347,
+      "text": "one hundred and fifty thousand two hundred and seventeenth",
+      "label": "datetime"
+    },
+    {
+      "id": 185,
+      "text": "turn on my playlist and play third song in the queue",
+      "label": "play"
+    },
+    {
+      "id": 6188,
+      "text": "dolores do you notice something odd about your world",
+      "label": "general"
+    },
+    {
+      "id": 1693,
+      "text": "what music service has some soul music i can listen to",
+      "label": "music"
+    },
+    {
+      "id": 1708,
+      "text": "change the speaker volume to sixty five percent",
+      "label": "audio"
+    },
+    {
+      "id": 1193,
+      "text": "olly i need to hear notorious thugs by bone thugs now",
+      "label": "play"
+    },
+    {
+      "id": 729,
+      "text": "play the latest songs by senelena gomez after this one",
+      "label": "play"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "11685_cf_transport_2",
+      "text": "I would be happy if you update me on the routes going through our area.",
+      "label": "transport",
+      "original_id": 11685,
+      "original_label": "recommendation",
+      "v3_score": 1.4999623651275746,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.999999986560443,
+        "term2": 0.4999623785671316,
+        "term3": 0.0,
+        "total": 1.4999623651275746,
+        "p_orig": 1.3439557038209874e-08,
+        "p_target": 0.9999247571342632,
+        "similarity": 0.7120614051818848
+      }
+    },
+    {
+      "id": "1347_cf_general_1",
+      "text": "one hundred and fifty thousand two hundred and seventeen things",
+      "label": "general",
+      "original_id": 1347,
+      "original_label": "datetime",
+      "v3_score": 1.4997739940208115,
+      "v3_rank": 2,
+      "v3_score_breakdown": {
+        "term1": 0.9999999936539877,
+        "term2": 0.49977400036682373,
+        "term3": 0.0,
+        "total": 1.4997739940208115,
+        "p_orig": 6.346012301442961e-09,
+        "p_target": 0.9995480007336475,
+        "similarity": 0.841988742351532
+      }
+    },
+    {
+      "id": "6818_cf_weather_1",
+      "text": "I need to remember to get to the shops before the rain starts.",
+      "label": "weather",
+      "original_id": 6818,
+      "original_label": "calendar",
+      "v3_score": 1.490613122726656,
+      "v3_rank": 3,
+      "v3_score_breakdown": {
+        "term1": 0.9947963667572586,
+        "term2": 0.4958167559693973,
+        "term3": 0.0,
+        "total": 1.490613122726656,
+        "p_orig": 0.005203633242741402,
+        "p_target": 0.9916335119387946,
+        "similarity": 0.7129525542259216
+      }
+    },
+    {
+      "id": "185_cf_music_1",
+      "text": "turn on my playlist and let the third song in the queue flow",
+      "label": "music",
+      "original_id": 185,
+      "original_label": "play",
+      "v3_score": 1.2765280745848153,
+      "v3_rank": 4,
+      "v3_score_breakdown": {
+        "term1": 0.852698891979175,
+        "term2": 0.42382918260564034,
+        "term3": 0.0,
+        "total": 1.2765280745848153,
+        "p_orig": 0.14730110802082497,
+        "p_target": 0.8476583652112807,
+        "similarity": 0.9575573801994324
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "11685_cf_transport_2",
+    "1347_cf_general_1",
+    "6818_cf_weather_1",
+    "185_cf_music_1"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 4,
+    "num_added": 4,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "setting up a food processing business in our home has advantages and disadvantages",
+        "original_label": "cooking",
+        "target_label": "weather",
+        "generated_text": "Setting up a climate monitoring system in our home has advantages and disadvantages",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6043012142181396,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "setting up a food processing business in our home has advantages and disadvantages",
+        "original_label": "cooking",
+        "target_label": "weather",
+        "generated_text": "Planning for seasonal changes in our area has benefits and challenges.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5745339393615723,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "setting up a food processing business in our home has advantages and disadvantages",
+        "original_label": "cooking",
+        "target_label": "weather",
+        "generated_text": "Experiencing seasonal changes from the comfort of our home has benefits and drawbacks",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.702483892440796,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i would be happy if you update me the events going on our area",
+        "original_label": "recommendation",
+        "target_label": "transport",
+        "generated_text": "I would be happy if you update me on the routes going through our area.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5993847846984863,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i would be happy if you update me the events going on our area",
+        "original_label": "recommendation",
+        "target_label": "transport",
+        "generated_text": "I would be happy if you update me on the routes available in our area.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.614264726638794,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i would be happy if you update me the events going on our area",
+        "original_label": "recommendation",
+        "target_label": "transport",
+        "generated_text": "I would be happy if you update me on the routes going through our area.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.4999229907989502,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i need to remember to get to the shops before they close",
+        "original_label": "calendar",
+        "target_label": "weather",
+        "generated_text": "I need to remember to get to the shops before the rain starts.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5144507884979248,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i need to remember to get to the shops before they close",
+        "original_label": "calendar",
+        "target_label": "weather",
+        "generated_text": "I need to remember to get to the shops before the rain starts.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.515538215637207,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i need to remember to get to the shops before they close",
+        "original_label": "calendar",
+        "target_label": "weather",
+        "generated_text": "I need to remember to get to the shops before the storm hits.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.496567964553833,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "one hundred and fifty thousand two hundred and seventeenth",
+        "original_label": "datetime",
+        "target_label": "general",
+        "generated_text": "one hundred and fifty thousand two hundred and seventeen",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5367600917816162,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "one hundred and fifty thousand two hundred and seventeenth",
+        "original_label": "datetime",
+        "target_label": "general",
+        "generated_text": "one hundred and fifty thousand two hundred and seventeen things",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5177247524261475,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "one hundred and fifty thousand two hundred and seventeenth",
+        "original_label": "datetime",
+        "target_label": "general",
+        "generated_text": "one hundred and fifty thousand two hundred and seventeen",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.4930989742279053,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "turn on my playlist and play third song in the queue",
+        "original_label": "play",
+        "target_label": "music",
+        "generated_text": "turn on my playlist and start the third track in the queue",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6640019416809082,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "turn on my playlist and play third song in the queue",
+        "original_label": "play",
+        "target_label": "music",
+        "generated_text": "turn on my playlist and let the third song in the queue flow",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6684360504150391,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "turn on my playlist and play third song in the queue",
+        "original_label": "play",
+        "target_label": "music",
+        "generated_text": "Turn on my playlist and start the third track in the queue.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5105669498443604,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "dolores do you notice something odd about your world",
+        "original_label": "general",
+        "target_label": "lists",
+        "generated_text": "Dolores, do you notice odd things about your world?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.47167301177978516,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "dolores do you notice something odd about your world",
+        "original_label": "general",
+        "target_label": "lists",
+        "generated_text": "Dolores, do you notice the peculiar details about your world?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.551724910736084,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "dolores do you notice something odd about your world",
+        "original_label": "general",
+        "target_label": "lists",
+        "generated_text": "Dolores, do you notice anything unusual about your surroundings, your routines, or your interactions?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7218797206878662,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what music service has some soul music i can listen to",
+        "original_label": "music",
+        "target_label": "iot",
+        "generated_text": "what smart home service has some useful devices i can explore",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5804398059844971,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what music service has some soul music i can listen to",
+        "original_label": "music",
+        "target_label": "iot",
+        "generated_text": "what smart home system has some connected devices i can explore",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6372160911560059,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what music service has some soul music i can listen to",
+        "original_label": "music",
+        "target_label": "iot",
+        "generated_text": "what smart home system has some cool features i can try out",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.60701584815979,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "change the speaker volume to sixty five percent",
+        "original_label": "audio",
+        "target_label": "qa",
+        "generated_text": "Set the answer accuracy to sixty five percent",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5095741748809814,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "change the speaker volume to sixty five percent",
+        "original_label": "audio",
+        "target_label": "qa",
+        "generated_text": "set the question difficulty to sixty five percent",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5534851551055908,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "change the speaker volume to sixty five percent",
+        "original_label": "audio",
+        "target_label": "qa",
+        "generated_text": "Set the answer confidence level to sixty five percent",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6137731075286865,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "olly i need to hear notorious thugs by bone thugs now",
+        "original_label": "play",
+        "target_label": "datetime",
+        "generated_text": "olly i need to know the time notorious thugs by bone thugs came out",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6135082244873047,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "olly i need to hear notorious thugs by bone thugs now",
+        "original_label": "play",
+        "target_label": "datetime",
+        "generated_text": "Olly, I need to know the exact time Bone Thugs released Notorious Thugs.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5643832683563232,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "olly i need to hear notorious thugs by bone thugs now",
+        "original_label": "play",
+        "target_label": "datetime",
+        "generated_text": "Olly, I need to know the time for Notorious Thugs by Bone Thugs now.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5535218715667725,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "play the latest songs by senelena gomez after this one",
+        "original_label": "play",
+        "target_label": "alarm",
+        "generated_text": "set a reminder for the latest songs by selena gomez after this one",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6190540790557861,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "play the latest songs by senelena gomez after this one",
+        "original_label": "play",
+        "target_label": "alarm",
+        "generated_text": "Stop everything\u2014something's off with the latest songs by Selena Gomez after this one!",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.1241490840911865,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "play the latest songs by senelena gomez after this one",
+        "original_label": "play",
+        "target_label": "alarm",
+        "generated_text": "sound the latest alerts by senelena gomez after this one",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6150839328765869,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "10221_cf_weather_0",
+        "original_id": 10221,
+        "target_label": "weather",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.5288367604758935e-05,
+          "p_orig": 0.0,
+          "margin": 3.5288367604758935e-05,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "10221_cf_weather_1",
+        "original_id": 10221,
+        "target_label": "weather",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9988274186369169,
+          "p_orig": 1.1102230246251568e-17,
+          "margin": 0.9988274186369169,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.29863667488098145,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "10221_cf_weather_2",
+        "original_id": 10221,
+        "target_label": "weather",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.6224424890731272,
+          "p_orig": 1.0092936587501423e-17,
+          "margin": 0.6224424890731272,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.24235109984874725,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "11685_cf_transport_0",
+        "original_id": 11685,
+        "target_label": "transport",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999642165918937,
+          "p_orig": 1.1860851940707039e-08,
+          "margin": 0.9999642047310418,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.7120614051818848,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.1451612903225807,
+          "original_length": 62,
+          "cf_length": 71,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999622722906256,
+        "v3_score_details": {
+          "score": 1.4999622722906256,
+          "p_orig": 1.7256737132186843e-08,
+          "p_target": 0.9999245790947258,
+          "similarity": 0.7120614051818848,
+          "term1": 0.9999999827432628,
+          "term2": 0.4999622895473629,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "11685_cf_transport_1",
+        "original_id": 11685,
+        "target_label": "transport",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999997923130008,
+          "p_orig": 1.2752044945766686e-07,
+          "margin": 0.9999996647925514,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.6689625978469849,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "11685_cf_transport_2",
+        "original_id": 11685,
+        "target_label": "transport",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999413103561124,
+          "p_orig": 1.5229273184656383e-08,
+          "margin": 0.9999412951268393,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.7120614051818848,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.1451612903225807,
+          "original_length": 62,
+          "cf_length": 71,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999623651275746,
+        "v3_score_details": {
+          "score": 1.4999623651275746,
+          "p_orig": 1.3439557038209874e-08,
+          "p_target": 0.9999247571342632,
+          "similarity": 0.7120614051818848,
+          "term1": 0.999999986560443,
+          "term2": 0.4999623785671316,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "6818_cf_weather_0",
+        "original_id": 6818,
+        "target_label": "weather",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9916335119387946,
+          "p_orig": 0.005203633242741402,
+          "margin": 0.9864298786960531,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.7129525542259216,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.1071428571428572,
+          "original_length": 56,
+          "cf_length": 62,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.490172812170128,
+        "v3_score_details": {
+          "score": 1.490172812170128,
+          "p_orig": 0.0051989625410658186,
+          "p_target": 0.9907435494223877,
+          "similarity": 0.7129525542259216,
+          "term1": 0.9948010374589342,
+          "term2": 0.49537177471119387,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "6818_cf_weather_1",
+        "original_id": 6818,
+        "target_label": "weather",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9931177693663792,
+          "p_orig": 0.004058659390129496,
+          "margin": 0.9890591099762497,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.7129525542259216,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.1071428571428572,
+          "original_length": 56,
+          "cf_length": 62,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.490613122726656,
+        "v3_score_details": {
+          "score": 1.490613122726656,
+          "p_orig": 0.005203633242741402,
+          "p_target": 0.9916335119387946,
+          "similarity": 0.7129525542259216,
+          "term1": 0.9947963667572586,
+          "term2": 0.4958167559693973,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "6818_cf_weather_2",
+        "original_id": 6818,
+        "target_label": "weather",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.8657275737878742,
+          "p_orig": 0.00961739287161211,
+          "margin": 0.8561101809162621,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.6614715456962585,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1347_cf_general_0",
+        "original_id": 1347,
+        "target_label": "general",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.8805366426170623,
+          "p_orig": 0.0002953887828659534,
+          "margin": 0.8802412538341964,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.8962783217430115,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.9655172413793104,
+          "original_length": 58,
+          "cf_length": 56,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4941204321639887,
+        "v3_score_details": {
+          "score": 1.4941204321639887,
+          "p_orig": 0.0002583228066073144,
+          "p_target": 0.9887575099411922,
+          "similarity": 0.8962783217430115,
+          "term1": 0.9997416771933927,
+          "term2": 0.4943787549705961,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "1347_cf_general_1",
+        "original_id": 1347,
+        "target_label": "general",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9995480007336475,
+          "p_orig": 6.346012301442961e-09,
+          "margin": 0.9995479943876352,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.841988742351532,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0862068965517242,
+          "original_length": 58,
+          "cf_length": 63,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4997739940208115,
+        "v3_score_details": {
+          "score": 1.4997739940208115,
+          "p_orig": 6.346012301442961e-09,
+          "p_target": 0.9995480007336475,
+          "similarity": 0.841988742351532,
+          "term1": 0.9999999936539877,
+          "term2": 0.49977400036682373,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "1347_cf_general_2",
+        "original_id": 1347,
+        "target_label": "general",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.8805366426170623,
+          "p_orig": 0.0002953887828659534,
+          "margin": 0.8802412538341964,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.8962783217430115,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.9655172413793104,
+          "original_length": 58,
+          "cf_length": 56,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4907089871843613,
+        "v3_score_details": {
+          "score": 1.4907089871843613,
+          "p_orig": 0.00019976985891166293,
+          "p_target": 0.9818175140865458,
+          "similarity": 0.8962783217430115,
+          "term1": 0.9998002301410883,
+          "term2": 0.4909087570432729,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "185_cf_music_0",
+        "original_id": 185,
+        "target_label": "music",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.8806576450212196,
+          "p_orig": 0.11918421038651376,
+          "margin": 0.7614734346347058,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9408172965049744,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.1153846153846154,
+          "original_length": 52,
+          "cf_length": 58,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.1658320187817206,
+        "v3_score_details": {
+          "score": 1.1658320187817206,
+          "p_orig": 0.22254254442246613,
+          "p_target": 0.7767491264083732,
+          "similarity": 0.9408172965049744,
+          "term1": 0.7774574555775339,
+          "term2": 0.3883745632041866,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "185_cf_music_1",
+        "original_id": 185,
+        "target_label": "music",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.8110732002133184,
+          "p_orig": 0.18097506756545922,
+          "margin": 0.6300981326478592,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9575573801994324,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.1538461538461537,
+          "original_length": 52,
+          "cf_length": 60,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.2765280745848153,
+        "v3_score_details": {
+          "score": 1.2765280745848153,
+          "p_orig": 0.14730110802082497,
+          "p_target": 0.8476583652112807,
+          "similarity": 0.9575573801994324,
+          "term1": 0.852698891979175,
+          "term2": 0.42382918260564034,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "185_cf_music_2",
+        "original_id": 185,
+        "target_label": "music",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.851919694499425,
+          "p_orig": 0.14804162790616895,
+          "margin": 0.703878066593256,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.8815370798110962,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.1346153846153846,
+          "original_length": 52,
+          "cf_length": 59,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.0187663109153655,
+        "v3_score_details": {
+          "score": 1.0187663109153655,
+          "p_orig": 0.32079452231913047,
+          "p_target": 0.6791216664689917,
+          "similarity": 0.8815370798110962,
+          "term1": 0.6792054776808696,
+          "term2": 0.3395608332344959,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "6188_cf_lists_0",
+        "original_id": 6188,
+        "target_label": "lists",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 8.540177112501206e-18,
+          "p_orig": 0.0066928700012241155,
+          "margin": -0.006692870001224107,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6188_cf_lists_1",
+        "original_id": 6188,
+        "target_label": "lists",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.022977418202704228,
+          "margin": -0.022977418202704228,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6188_cf_lists_2",
+        "original_id": 6188,
+        "target_label": "lists",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.243755954542121e-08,
+          "p_orig": 0.09534605297848836,
+          "margin": -0.09534601054092881,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1693_cf_iot_0",
+        "original_id": 1693,
+        "target_label": "iot",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9820049301276619,
+          "p_orig": 1.708035422500241e-17,
+          "margin": 0.9820049301276619,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.21866478025913239,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1693_cf_iot_1",
+        "original_id": 1693,
+        "target_label": "iot",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9947462770563961,
+          "p_orig": 6.789812610443151e-08,
+          "margin": 0.99474620915827,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.1737799197435379,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1693_cf_iot_2",
+        "original_id": 1693,
+        "target_label": "iot",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.962630724498701,
+          "p_orig": 8.540177112501206e-18,
+          "margin": 0.962630724498701,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.1621401458978653,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1708_cf_qa_0",
+        "original_id": 1708,
+        "target_label": "qa",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 6.916906348661529e-05,
+          "p_orig": 1.2668789977665934e-06,
+          "margin": 6.790218448884869e-05,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1708_cf_qa_1",
+        "original_id": 1708,
+        "target_label": "qa",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.962640133504326,
+          "p_orig": 3.9853131130062926e-08,
+          "margin": 0.9626400936511949,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.47497615218162537,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1708_cf_qa_2",
+        "original_id": 1708,
+        "target_label": "qa",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.7482818486993844e-05,
+          "p_orig": 2.0983459663272852e-07,
+          "margin": 2.7272983890361117e-05,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1193_cf_datetime_0",
+        "original_id": 1193,
+        "target_label": "datetime",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.011259626383108413,
+          "p_orig": 7.437767706388498e-07,
+          "margin": 0.011258882606337775,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1193_cf_datetime_1",
+        "original_id": 1193,
+        "target_label": "datetime",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.007955226633366192,
+          "p_orig": 1.0092936587501423e-17,
+          "margin": 0.007955226633366182,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1193_cf_datetime_2",
+        "original_id": 1193,
+        "target_label": "datetime",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.209203577886146e-06,
+          "p_orig": 3.724606415838349e-06,
+          "margin": -2.515402837952203e-06,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "729_cf_alarm_0",
+        "original_id": 729,
+        "target_label": "alarm",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.0010106438951693e-05,
+          "p_orig": 1.1342935672600285e-05,
+          "margin": -1.3328292336485916e-06,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "729_cf_alarm_1",
+        "original_id": 729,
+        "target_label": "alarm",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.9171859939656156e-10,
+          "p_orig": 2.9023235390670538e-06,
+          "margin": -2.902131820467657e-06,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "729_cf_alarm_2",
+        "original_id": 729,
+        "target_label": "alarm",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 5.404475094820455e-05,
+          "p_orig": 2.095546986594304e-06,
+          "margin": 5.194920396161025e-05,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 4,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 4,
+    "num_final_selected": 4,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

@@ -1,0 +1,1285 @@
+{
+  "iteration": 6,
+  "timestamp": "20251207_013931",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 1194,
+      "text": "play rein in blood by slayer at five am tomorrow to make sure i actually wake up",
+      "label": "play"
+    },
+    {
+      "id": 736,
+      "text": "could you please yell the answer out to me",
+      "label": "audio"
+    },
+    {
+      "id": 6430,
+      "text": "where can i find a preparation professional for under dollars",
+      "label": "general"
+    },
+    {
+      "id": 2100,
+      "text": "how much does general tsos chicken cost at peking garden",
+      "label": "takeaway"
+    },
+    {
+      "id": 1195,
+      "text": "i'd love to hear any song that i've given five stars by serge gainsbourg",
+      "label": "play"
+    },
+    {
+      "id": 1693,
+      "text": "what music service has some soul music i can listen to",
+      "label": "music"
+    },
+    {
+      "id": 13189,
+      "text": "tell me which stocks were the biggest gainers in stock market nasdaq today",
+      "label": "qa"
+    },
+    {
+      "id": 254,
+      "text": "olly play a good track from my favorite jazz player",
+      "label": "play"
+    },
+    {
+      "id": 593,
+      "text": "can i hear the fifty hits that you can hear on radios now",
+      "label": "play"
+    },
+    {
+      "id": 1302,
+      "text": "is narendra modi the indian prime minister visiting any country now",
+      "label": "news"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "1194_cf_alarm_0",
+      "text": "set rein in blood by slayer to go off at five am tomorrow to make sure i actually wake up",
+      "label": "alarm",
+      "original_id": 1194,
+      "original_label": "play",
+      "v3_score": 1.4999877661195948,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.9999996941018683,
+        "term2": 0.4999880720177265,
+        "term3": 0.0,
+        "total": 1.4999877661195948,
+        "p_orig": 3.0589813174260485e-07,
+        "p_target": 0.999976144035453,
+        "similarity": 0.9244150519371033
+      }
+    },
+    {
+      "id": "1195_cf_recommendation_0",
+      "text": "I'd suggest any song that I've given five stars by Serge Gainsbourg.",
+      "label": "recommendation",
+      "original_id": 1195,
+      "original_label": "play",
+      "v3_score": 1.488471240793457,
+      "v3_rank": 2,
+      "v3_score_breakdown": {
+        "term1": 0.9999730968015391,
+        "term2": 0.4884981439919179,
+        "term3": 0.0,
+        "total": 1.488471240793457,
+        "p_orig": 2.6903198460862246e-05,
+        "p_target": 0.9769962879838358,
+        "similarity": 0.8868401050567627
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "1194_cf_alarm_0",
+    "1195_cf_recommendation_0"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 2,
+    "num_added": 2,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "play rein in blood by slayer at five am tomorrow to make sure i actually wake up",
+        "original_label": "play",
+        "target_label": "alarm",
+        "generated_text": "set rein in blood by slayer to go off at five am tomorrow to make sure i actually wake up",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.48608994483947754,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "play rein in blood by slayer at five am tomorrow to make sure i actually wake up",
+        "original_label": "play",
+        "target_label": "alarm",
+        "generated_text": "blast rein in blood by slayer at five am tomorrow to jolt me awake for sure",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5412180423736572,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "play rein in blood by slayer at five am tomorrow to make sure i actually wake up",
+        "original_label": "play",
+        "target_label": "alarm",
+        "generated_text": "set rein in blood by slayer to go off at five am tomorrow to make sure i actually wake up",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5154070854187012,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "could you please yell the answer out to me",
+        "original_label": "audio",
+        "target_label": "lists",
+        "generated_text": "Could you please write the answer down for me?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5088779926300049,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "could you please yell the answer out to me",
+        "original_label": "audio",
+        "target_label": "lists",
+        "generated_text": "Could you please write the answer down for me in steps?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.0183908939361572,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "could you please yell the answer out to me",
+        "original_label": "audio",
+        "target_label": "lists",
+        "generated_text": "Could you please write the answer down for me?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5239050388336182,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "where can i find a preparation professional for under dollars",
+        "original_label": "general",
+        "target_label": "lists",
+        "generated_text": "Where are the options to find a preparation professional for under dollars?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5022151470184326,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "where can i find a preparation professional for under dollars",
+        "original_label": "general",
+        "target_label": "lists",
+        "generated_text": "Where can I find options for preparation professionals under dollars?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5213751792907715,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "where can i find a preparation professional for under dollars",
+        "original_label": "general",
+        "target_label": "lists",
+        "generated_text": "Where can I find options for preparation professionals under dollars?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8153541088104248,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "how much does general tsos chicken cost at peking garden",
+        "original_label": "takeaway",
+        "target_label": "recommendation",
+        "generated_text": "You should check how much General Tso's chicken costs at Peking Garden.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5162639617919922,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "how much does general tsos chicken cost at peking garden",
+        "original_label": "takeaway",
+        "target_label": "recommendation",
+        "generated_text": "You should check out the price of General Tso's chicken at Peking Garden.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6147468090057373,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "how much does general tsos chicken cost at peking garden",
+        "original_label": "takeaway",
+        "target_label": "recommendation",
+        "generated_text": "You might want to check the price of General Tso's chicken at Peking Garden.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6127982139587402,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i'd love to hear any song that i've given five stars by serge gainsbourg",
+        "original_label": "play",
+        "target_label": "recommendation",
+        "generated_text": "I'd suggest any song that I've given five stars by Serge Gainsbourg.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.44645094871520996,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i'd love to hear any song that i've given five stars by serge gainsbourg",
+        "original_label": "play",
+        "target_label": "recommendation",
+        "generated_text": "You should definitely check out any song I've rated five stars by Serge Gainsbourg.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5867018699645996,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i'd love to hear any song that i've given five stars by serge gainsbourg",
+        "original_label": "play",
+        "target_label": "recommendation",
+        "generated_text": "I'd suggest any song I've given five stars by Serge Gainsbourg.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 5.01412296295166,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what music service has some soul music i can listen to",
+        "original_label": "music",
+        "target_label": "news",
+        "generated_text": "what platform has some stories i can read about",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.517625093460083,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what music service has some soul music i can listen to",
+        "original_label": "music",
+        "target_label": "news",
+        "generated_text": "what platform has some latest updates i can follow",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.609583854675293,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what music service has some soul music i can listen to",
+        "original_label": "music",
+        "target_label": "news",
+        "generated_text": "what platform has some updates i can follow",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.49004483222961426,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "tell me which stocks were the biggest gainers in stock market nasdaq today",
+        "original_label": "qa",
+        "target_label": "recommendation",
+        "generated_text": "Suggest the stocks that had the biggest gains in the Nasdaq stock market today.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5328059196472168,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "tell me which stocks were the biggest gainers in stock market nasdaq today",
+        "original_label": "qa",
+        "target_label": "recommendation",
+        "generated_text": "Consider looking into the biggest gainers in the Nasdaq stock market today for potential opportunities.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5196027755737305,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "tell me which stocks were the biggest gainers in stock market nasdaq today",
+        "original_label": "qa",
+        "target_label": "recommendation",
+        "generated_text": "You should check out which stocks had the biggest gains in the Nasdaq stock market today.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7194888591766357,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "olly play a good track from my favorite jazz player",
+        "original_label": "play",
+        "target_label": "qa",
+        "generated_text": "olly find a good track from my favorite jazz player",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5117108821868896,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "olly play a good track from my favorite jazz player",
+        "original_label": "play",
+        "target_label": "qa",
+        "generated_text": "olly find a good track from my favorite jazz player",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5190050601959229,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "olly play a good track from my favorite jazz player",
+        "original_label": "play",
+        "target_label": "qa",
+        "generated_text": "olly find a good track from my favorite jazz player",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.41085386276245117,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "can i hear the fifty hits that you can hear on radios now",
+        "original_label": "play",
+        "target_label": "takeaway",
+        "generated_text": "can i get the fifty hits that you can find on radios now",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5153541564941406,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "can i hear the fifty hits that you can hear on radios now",
+        "original_label": "play",
+        "target_label": "takeaway",
+        "generated_text": "can i get the fifty hits that you find on radios now",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5107789039611816,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "can i hear the fifty hits that you can hear on radios now",
+        "original_label": "play",
+        "target_label": "takeaway",
+        "generated_text": "can i get the fifty hits that you hear on radios now",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5090212821960449,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "is narendra modi the indian prime minister visiting any country now",
+        "original_label": "news",
+        "target_label": "audio",
+        "generated_text": "is narendra modi the indian prime minister speaking about any country now",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5076868534088135,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "is narendra modi the indian prime minister visiting any country now",
+        "original_label": "news",
+        "target_label": "audio",
+        "generated_text": "Is there a recording or speech of Indian Prime Minister Narendra Modi from his visit to any country now?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.8188390731811523,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "is narendra modi the indian prime minister visiting any country now",
+        "original_label": "news",
+        "target_label": "audio",
+        "generated_text": "is narendra modi the indian prime minister speaking about visiting any country now",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5182931423187256,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "1194_cf_alarm_0",
+        "original_id": 1194,
+        "target_label": "alarm",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999637826273878,
+          "p_orig": 1.209834216513141e-06,
+          "margin": 0.9999625727931714,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9244150519371033,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.1125,
+          "original_length": 80,
+          "cf_length": 89,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999877661195948,
+        "v3_score_details": {
+          "score": 1.4999877661195948,
+          "p_orig": 3.0589813174260485e-07,
+          "p_target": 0.999976144035453,
+          "similarity": 0.9244150519371033,
+          "term1": 0.9999996941018683,
+          "term2": 0.4999880720177265,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "1194_cf_alarm_1",
+        "original_id": 1194,
+        "target_label": "alarm",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.989730733149308,
+          "p_orig": 0.001488006351741685,
+          "margin": 0.9882427267975663,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.79915452003479,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.9375,
+          "original_length": 80,
+          "cf_length": 75,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4929396579620444,
+        "v3_score_details": {
+          "score": 1.4929396579620444,
+          "p_orig": 0.0014866866967183012,
+          "p_target": 0.9888526893175252,
+          "similarity": 0.79915452003479,
+          "term1": 0.9985133133032817,
+          "term2": 0.4944263446587626,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "1194_cf_alarm_2",
+        "original_id": 1194,
+        "target_label": "alarm",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999597285411808,
+          "p_orig": 7.337989046174396e-07,
+          "margin": 0.9999589947422761,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9244150519371033,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.1125,
+          "original_length": 80,
+          "cf_length": 89,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.499977441977441,
+        "v3_score_details": {
+          "score": 1.499977441977441,
+          "p_orig": 1.6373217071614768e-07,
+          "p_target": 0.9999552114192235,
+          "similarity": 0.9244150519371033,
+          "term1": 0.9999998362678293,
+          "term2": 0.49997760570961175,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "736_cf_lists_0",
+        "original_id": 736,
+        "target_label": "lists",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 9.25185853854297e-18,
+          "p_orig": 9.25185853854297e-18,
+          "margin": 0.0,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "736_cf_lists_1",
+        "original_id": 736,
+        "target_label": "lists",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.2204460492503132e-17,
+          "p_orig": 2.2204460492503132e-17,
+          "margin": 0.0,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "736_cf_lists_2",
+        "original_id": 736,
+        "target_label": "lists",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.0,
+          "margin": 0.0,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6430_cf_lists_0",
+        "original_id": 6430,
+        "target_label": "lists",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.03469176790498483,
+          "margin": -0.03469176790498483,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6430_cf_lists_1",
+        "original_id": 6430,
+        "target_label": "lists",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.1102230246251564e-17,
+          "p_orig": 0.004555433065437677,
+          "margin": -0.004555433065437666,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6430_cf_lists_2",
+        "original_id": 6430,
+        "target_label": "lists",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.0048402519296973714,
+          "margin": -0.0048402519296973714,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "2100_cf_recommendation_0",
+        "original_id": 2100,
+        "target_label": "recommendation",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 7.402244484689499e-05,
+          "p_orig": 0.9889128616240791,
+          "margin": -0.9888388391792322,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "2100_cf_recommendation_1",
+        "original_id": 2100,
+        "target_label": "recommendation",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0030217177381277943,
+          "p_orig": 0.9493919926202314,
+          "margin": -0.9463702748821037,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "2100_cf_recommendation_2",
+        "original_id": 2100,
+        "target_label": "recommendation",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0018920144192464535,
+          "p_orig": 0.9800836753376042,
+          "margin": -0.9781916609183577,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1195_cf_recommendation_0",
+        "original_id": 1195,
+        "target_label": "recommendation",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9769962879838358,
+          "p_orig": 2.6903198460862246e-05,
+          "margin": 0.9769693847853749,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.8868401050567627,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.9444444444444444,
+          "original_length": 72,
+          "cf_length": 68,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.488471240793457,
+        "v3_score_details": {
+          "score": 1.488471240793457,
+          "p_orig": 2.6903198460862246e-05,
+          "p_target": 0.9769962879838358,
+          "similarity": 0.8868401050567627,
+          "term1": 0.9999730968015391,
+          "term2": 0.4884981439919179,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "1195_cf_recommendation_1",
+        "original_id": 1195,
+        "target_label": "recommendation",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.7770395557505393,
+          "p_orig": 0.00033470579705786765,
+          "margin": 0.7767048499534814,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.8538620471954346,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.1527777777777777,
+          "original_length": 72,
+          "cf_length": 83,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.3649773020573641,
+        "v3_score_details": {
+          "score": 1.3649773020573641,
+          "p_orig": 0.0004041755355426548,
+          "p_target": 0.7307629551858134,
+          "similarity": 0.8538620471954346,
+          "term1": 0.9995958244644574,
+          "term2": 0.3653814775929067,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "1195_cf_recommendation_2",
+        "original_id": 1195,
+        "target_label": "recommendation",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9206645587084408,
+          "p_orig": 0.003762558701840564,
+          "margin": 0.9169020000066002,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.8783106803894043,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.875,
+          "original_length": 72,
+          "cf_length": 63,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4611119103988246,
+        "v3_score_details": {
+          "score": 1.4611119103988246,
+          "p_orig": 0.0006558743899361932,
+          "p_target": 0.9235355695775217,
+          "similarity": 0.8783106803894043,
+          "term1": 0.9993441256100638,
+          "term2": 0.46176778478876085,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "1693_cf_news_0",
+        "original_id": 1693,
+        "target_label": "news",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.3538154070331002,
+          "p_orig": 0.0,
+          "margin": 0.3538154070331002,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1693_cf_news_1",
+        "original_id": 1693,
+        "target_label": "news",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.4946734355411168,
+          "p_orig": 8.099750971983087e-08,
+          "margin": 0.4946733545436071,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.21930740773677826,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1693_cf_news_2",
+        "original_id": 1693,
+        "target_label": "news",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.017902231684557797,
+          "p_orig": 4.0465275278483294e-08,
+          "margin": 0.017902191219282517,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "13189_cf_recommendation_0",
+        "original_id": 13189,
+        "target_label": "recommendation",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.019017416148053294,
+          "p_orig": 0.4904645838227595,
+          "margin": -0.4714471676747062,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "13189_cf_recommendation_1",
+        "original_id": 13189,
+        "target_label": "recommendation",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0002487897434906489,
+          "p_orig": 0.04741078822705512,
+          "margin": -0.04716199848356447,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "13189_cf_recommendation_2",
+        "original_id": 13189,
+        "target_label": "recommendation",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.175941664505876e-06,
+          "p_orig": 0.03732635638796853,
+          "margin": -0.03732418044630403,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "254_cf_qa_0",
+        "original_id": 254,
+        "target_label": "qa",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.1817764044319224e-06,
+          "p_orig": 0.0001529538972197165,
+          "margin": -0.00015077212081528456,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "254_cf_qa_1",
+        "original_id": 254,
+        "target_label": "qa",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.181816095646163e-06,
+          "p_orig": 0.0001349838074857465,
+          "margin": -0.00013280199139010035,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "254_cf_qa_2",
+        "original_id": 254,
+        "target_label": "qa",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.181816095646163e-06,
+          "p_orig": 0.0001349838074857465,
+          "margin": -0.00013280199139010035,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "593_cf_takeaway_0",
+        "original_id": 593,
+        "target_label": "takeaway",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.233581138472396e-17,
+          "p_orig": 0.04600340770949575,
+          "margin": -0.046003407709495736,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "593_cf_takeaway_1",
+        "original_id": 593,
+        "target_label": "takeaway",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.06482543704140958,
+          "margin": -0.06482543704140958,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "593_cf_takeaway_2",
+        "original_id": 593,
+        "target_label": "takeaway",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.1102230246251564e-17,
+          "p_orig": 0.053302773256850844,
+          "margin": -0.05330277325685083,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1302_cf_audio_0",
+        "original_id": 1302,
+        "target_label": "audio",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.9768754194277842,
+          "margin": -0.9768754194277842,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1302_cf_audio_1",
+        "original_id": 1302,
+        "target_label": "audio",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.086180204537734e-07,
+          "p_orig": 0.8517704199598937,
+          "margin": -0.8517703113418732,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1302_cf_audio_2",
+        "original_id": 1302,
+        "target_label": "audio",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.8172768568182679,
+          "margin": -0.8172768568182679,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 2,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 2,
+    "num_final_selected": 2,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

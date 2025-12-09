@@ -1,0 +1,1154 @@
+{
+  "iteration": 10,
+  "timestamp": "20251208_002228",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 60,
+      "text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.\nHypothesis: the agent is aged more than 0.3",
+      "label": "entailment"
+    },
+    {
+      "id": 344,
+      "text": "Premise: The State of the Art is a short story collection by Scottish writer Iain M. Banks, first published in 1991. The collection includes some stories originally published under his other byline, Iain Banks as well as the title novella and others set in Banks' Culture fictional universe.\nHypothesis: Banks only had one byline",
+      "label": "contradiction"
+    },
+    {
+      "id": 276,
+      "text": "Premise: Some people may think that there is no other way to grow plants other than in soil; there is however, another way.\nHypothesis: Plants need soil to grow.",
+      "label": "contradiction"
+    },
+    {
+      "id": 73,
+      "text": "Premise: In 1986 he became the head of London European Airways, a business in which Ryanair had bought an 85% stake. This position, however, quickly disappeared as the carrier became Ryanair UK and was then merged entirely with Ryanair. Over the next decade, Cathal worked both on the executive board of the airline and as a pilot, although he resigned from the latter by 1996. He remained with Ryanair until leaving the board 2002, by which time he was a multi-millionaire due to the success of the airline.\nHypothesis: Ryanair went bankrupt in 2010.",
+      "label": "neutral"
+    },
+    {
+      "id": 133,
+      "text": "Premise: Don't let up in fight against tax avoidance, Moscovici urges EU states VALLETTA, April 8 European Union states should continue reforming corporate rules to tackle tax avoidance, EU tax commissioner Pierre Moscovici told finance ministers on Saturday, as some smaller nations urged slower reform to avoid scaring away big corporations.\nHypothesis: Some smaller nations urged slower reform to avoid scaring away small-businesses.",
+      "label": "contradiction"
+    },
+    {
+      "id": 141,
+      "text": "Premise: The Veterinary Medical College Application Service (VMCAS) is a centralized application service for students applying to veterinary school. Created by the Association of American Veterinary Medical Colleges (AAVMC) in 1995, VMCAS handles applications for most of the veterinary schools in the United States, as well as several in Canada, the United Kingdom, New Zealand and Australia.\nHypothesis: The Veterinary Medical College Application Service (VMCAS) is the only application service for students applying for veterinary school",
+      "label": "neutral"
+    },
+    {
+      "id": 172,
+      "text": "Premise: The McLaren MP4/1 (initially known as the MP4) was a Formula One racing car produced by the McLaren team. It was used during the 1981, 1982 and 1983 seasons. It was the first Formula One car to use a carbon fibre composite monocoque, a concept which is now ubiquitous.\nHypothesis: The McLaren team were not proud of the McLaren MP4/1 as it crashed too much",
+      "label": "neutral"
+    },
+    {
+      "id": 417,
+      "text": "Premise: Journalists of the concealed BBC, that was made happen through advisers of London industralists, asked Slavkov.\nHypothesis: Journalists worked for Fox News ",
+      "label": "contradiction"
+    },
+    {
+      "id": 92,
+      "text": "Premise: Zale Dalen is a Canadian film and television director. He is best known for the 1980 film \"The Hounds of Notre Dame\", for which he garnered a Genie Award nomination for Best Director at the 2nd Genie Awards in 1981, and the cult films \"Skip Tracer\" (1977) and \"Terminal City Ricochet\" (1990).\nHypothesis: Zale Dalen earned a Genie Award nomination for best director from his movie Skip Tracer.",
+      "label": "contradiction"
+    },
+    {
+      "id": 95,
+      "text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:\nHypothesis: bunson is middleweight.",
+      "label": "entailment"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "417_cf_entailment_0",
+      "text": "Premise: Journalists of the concealed BBC, that was made happen through advisers of London industrialists, also worked for Fox News.  \nHypothesis: Journalists worked for Fox News.",
+      "label": "entailment",
+      "original_id": 417,
+      "original_label": "contradiction",
+      "v3_score": 1.4998690469087448,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.9999997618229222,
+        "term2": 0.4998692850858225,
+        "term3": 0.0,
+        "total": 1.4998690469087448,
+        "p_orig": 2.381770778235906e-07,
+        "p_target": 0.999738570171645,
+        "similarity": 0.8894136548042297
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "417_cf_entailment_0"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 1,
+    "num_added": 1,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.\nHypothesis: the agent is aged more than 0.3",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E is not harmful.  \nHypothesis: the agent is aged more than 0.3",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.811690092086792,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.\nHypothesis: the agent is aged more than 0.3",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.  \nHypothesis: the agent is not aged more than 0.3.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6567518711090088,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.\nHypothesis: the agent is aged more than 0.3",
+        "original_label": "entailment",
+        "target_label": "contradiction",
+        "generated_text": "Premise: If you have rheumatic heart disease, high blood pressure, or diabetes, or take digitalis drugs, vitamin E can be harmful.  \nHypothesis: the agent is not aged more than 0.3.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7838568687438965,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The State of the Art is a short story collection by Scottish writer Iain M. Banks, first published in 1991. The collection includes some stories originally published under his other byline, Iain Banks as well as the title novella and others set in Banks' Culture fictional universe.\nHypothesis: Banks only had one byline",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: The State of the Art is a short story collection by Scottish writer Iain M. Banks, first published in 1991. The collection includes some stories originally published under his other byline, Iain Banks as well as the title novella and others set in Banks' Culture fictional universe.  \nHypothesis: Banks may have used more than one byline.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.0179088115692139,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The State of the Art is a short story collection by Scottish writer Iain M. Banks, first published in 1991. The collection includes some stories originally published under his other byline, Iain Banks as well as the title novella and others set in Banks' Culture fictional universe.\nHypothesis: Banks only had one byline",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: The State of the Art is a short story collection by Scottish writer Iain M. Banks, first published in 1991. The collection includes some stories originally published under his other byline, Iain Banks, as well as the title novella and others set in Banks' Culture fictional universe.  \nHypothesis: Banks is known for using different bylines for his works.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9273209571838379,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The State of the Art is a short story collection by Scottish writer Iain M. Banks, first published in 1991. The collection includes some stories originally published under his other byline, Iain Banks as well as the title novella and others set in Banks' Culture fictional universe.\nHypothesis: Banks only had one byline",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: The State of the Art is a short story collection by Scottish writer Iain M. Banks, first published in 1991. The collection includes some stories originally published under his other byline, Iain Banks, as well as the title novella and others set in Banks' Culture fictional universe.  \nHypothesis: Banks is known for using the byline Iain Banks in addition to Iain M. Banks.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.057055950164795,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Some people may think that there is no other way to grow plants other than in soil; there is however, another way.\nHypothesis: Plants need soil to grow.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Some people may think that there is no other way to grow plants other than in soil; there is however, another way.  \nHypothesis: Plants can grow in soil.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8253428936004639,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Some people may think that there is no other way to grow plants other than in soil; there is however, another way.\nHypothesis: Plants need soil to grow.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Some people may think that there is no other way to grow plants other than in soil; there is however, another way.  \nHypothesis: Soil is one way plants can grow.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7860867977142334,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Some people may think that there is no other way to grow plants other than in soil; there is however, another way.\nHypothesis: Plants need soil to grow.",
+        "original_label": "contradiction",
+        "target_label": "neutral",
+        "generated_text": "Premise: Some people may think that growing plants in soil is the most common method; there are also alternative ways to grow plants.  \nHypothesis: Plants often grow in soil.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.891895055770874,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: In 1986 he became the head of London European Airways, a business in which Ryanair had bought an 85% stake. This position, however, quickly disappeared as the carrier became Ryanair UK and was then merged entirely with Ryanair. Over the next decade, Cathal worked both on the executive board of the airline and as a pilot, although he resigned from the latter by 1996. He remained with Ryanair until leaving the board 2002, by which time he was a multi-millionaire due to the success of the airline.\nHypothesis: Ryanair went bankrupt in 2010.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: In 1986 he became the head of London European Airways, a business in which Ryanair had bought an 85% stake. This position, however, quickly disappeared as the carrier became Ryanair UK and was then merged entirely with Ryanair. Over the next decade, Cathal worked both on the executive board of the airline and as a pilot, although he resigned from the latter by 1996. He remained with Ryanair until leaving the board 2002, by which time he was a multi-millionaire due to the success of the airline.  \nHypothesis: Ryanair, despite its earlier success, went bankrupt in 2010.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 2.171099901199341,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: In 1986 he became the head of London European Airways, a business in which Ryanair had bought an 85% stake. This position, however, quickly disappeared as the carrier became Ryanair UK and was then merged entirely with Ryanair. Over the next decade, Cathal worked both on the executive board of the airline and as a pilot, although he resigned from the latter by 1996. He remained with Ryanair until leaving the board 2002, by which time he was a multi-millionaire due to the success of the airline.\nHypothesis: Ryanair went bankrupt in 2010.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: In 1986 he became the head of London European Airways, a business in which Ryanair had bought an 85% stake. This position, however, quickly disappeared as the carrier became Ryanair UK and was then merged entirely with Ryanair. Over the next decade, Cathal worked both on the executive board of the airline and as a pilot, although he resigned from the latter by 1996. He remained with Ryanair until leaving the board in 2002, by which time he was a multi-millionaire due to the success of the airline. However, the airline's financial struggles eventually led to its bankruptcy in 2010.  \nHypothesis: Ryanair went bankrupt in 2010.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.2251429557800293,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: In 1986 he became the head of London European Airways, a business in which Ryanair had bought an 85% stake. This position, however, quickly disappeared as the carrier became Ryanair UK and was then merged entirely with Ryanair. Over the next decade, Cathal worked both on the executive board of the airline and as a pilot, although he resigned from the latter by 1996. He remained with Ryanair until leaving the board 2002, by which time he was a multi-millionaire due to the success of the airline.\nHypothesis: Ryanair went bankrupt in 2010.",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: In 1986 he became the head of London European Airways, a business in which Ryanair had bought an 85% stake. This position, however, quickly disappeared as the carrier became Ryanair UK and was then merged entirely with Ryanair. Over the next decade, Cathal worked both on the executive board of the airline and as a pilot, although he resigned from the latter by 1996. He remained with Ryanair until leaving the board in 2002, by which time he was a multi-millionaire due to the success of the airline. By 2010, Ryanair, despite its earlier achievements, faced financial difficulties and declared bankruptcy.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.32753586769104,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Don't let up in fight against tax avoidance, Moscovici urges EU states VALLETTA, April 8 European Union states should continue reforming corporate rules to tackle tax avoidance, EU tax commissioner Pierre Moscovici told finance ministers on Saturday, as some smaller nations urged slower reform to avoid scaring away big corporations.\nHypothesis: Some smaller nations urged slower reform to avoid scaring away small-businesses.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Don't let up in fight against tax avoidance, Moscovici urges EU states VALLETTA, April 8 European Union states should continue reforming corporate rules to tackle tax avoidance, EU tax commissioner Pierre Moscovici told finance ministers on Saturday, as some smaller nations urged slower reform to avoid scaring away small-businesses.  \nHypothesis: Some smaller nations urged slower reform to avoid scaring away small-businesses.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2340259552001953,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Don't let up in fight against tax avoidance, Moscovici urges EU states VALLETTA, April 8 European Union states should continue reforming corporate rules to tackle tax avoidance, EU tax commissioner Pierre Moscovici told finance ministers on Saturday, as some smaller nations urged slower reform to avoid scaring away big corporations.\nHypothesis: Some smaller nations urged slower reform to avoid scaring away small-businesses.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Don't let up in fight against tax avoidance, Moscovici urges EU states VALLETTA, April 8 European Union states should continue reforming corporate rules to tackle tax avoidance, EU tax commissioner Pierre Moscovici told finance ministers on Saturday, as some smaller nations urged slower reform to avoid scaring away big corporations.  \nHypothesis: Some smaller nations urged slower reform to avoid scaring away businesses.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.0209999084472656,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Don't let up in fight against tax avoidance, Moscovici urges EU states VALLETTA, April 8 European Union states should continue reforming corporate rules to tackle tax avoidance, EU tax commissioner Pierre Moscovici told finance ministers on Saturday, as some smaller nations urged slower reform to avoid scaring away big corporations.\nHypothesis: Some smaller nations urged slower reform to avoid scaring away small-businesses.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Don't let up in fight against tax avoidance, Moscovici urges EU states VALLETTA, April 8 European Union states should continue reforming corporate rules to tackle tax avoidance, EU tax commissioner Pierre Moscovici told finance ministers on Saturday, as some smaller nations urged slower reform to avoid scaring away businesses.  \nHypothesis: Some smaller nations urged slower reform to avoid scaring away small-businesses.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9216341972351074,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Veterinary Medical College Application Service (VMCAS) is a centralized application service for students applying to veterinary school. Created by the Association of American Veterinary Medical Colleges (AAVMC) in 1995, VMCAS handles applications for most of the veterinary schools in the United States, as well as several in Canada, the United Kingdom, New Zealand and Australia.\nHypothesis: The Veterinary Medical College Application Service (VMCAS) is the only application service for students applying for veterinary school",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The Veterinary Medical College Application Service (VMCAS) is a centralized application service for students applying to veterinary school. Created by the Association of American Veterinary Medical Colleges (AAVMC) in 1995, VMCAS handles applications for most of the veterinary schools in the United States, as well as several in Canada, the United Kingdom, New Zealand and Australia.  \nHypothesis: The Veterinary Medical College Application Service (VMCAS) is not the only application service for students applying for veterinary school.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1462209224700928,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Veterinary Medical College Application Service (VMCAS) is a centralized application service for students applying to veterinary school. Created by the Association of American Veterinary Medical Colleges (AAVMC) in 1995, VMCAS handles applications for most of the veterinary schools in the United States, as well as several in Canada, the United Kingdom, New Zealand and Australia.\nHypothesis: The Veterinary Medical College Application Service (VMCAS) is the only application service for students applying for veterinary school",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The Veterinary Medical College Application Service (VMCAS) is a centralized application service for students applying to veterinary school. Created by the Association of American Veterinary Medical Colleges (AAVMC) in 1995, VMCAS handles applications for most of the veterinary schools in the United States, as well as several in Canada, the United Kingdom, New Zealand and Australia.  \nHypothesis: The Veterinary Medical College Application Service (VMCAS) is not the only application service for students applying for veterinary school.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9977719783782959,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The Veterinary Medical College Application Service (VMCAS) is a centralized application service for students applying to veterinary school. Created by the Association of American Veterinary Medical Colleges (AAVMC) in 1995, VMCAS handles applications for most of the veterinary schools in the United States, as well as several in Canada, the United Kingdom, New Zealand and Australia.\nHypothesis: The Veterinary Medical College Application Service (VMCAS) is the only application service for students applying for veterinary school",
+        "original_label": "neutral",
+        "target_label": "contradiction",
+        "generated_text": "Premise: The Veterinary Medical College Application Service (VMCAS) is a centralized application service for students applying to veterinary school. Created by the Association of American Veterinary Medical Colleges (AAVMC) in 1995, VMCAS handles applications for most of the veterinary schools in the United States, as well as several in Canada, the United Kingdom, New Zealand and Australia.  \nHypothesis: The Veterinary Medical College Application Service (VMCAS) is not the only application service for students applying for veterinary school.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.0347959995269775,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The McLaren MP4/1 (initially known as the MP4) was a Formula One racing car produced by the McLaren team. It was used during the 1981, 1982 and 1983 seasons. It was the first Formula One car to use a carbon fibre composite monocoque, a concept which is now ubiquitous.\nHypothesis: The McLaren team were not proud of the McLaren MP4/1 as it crashed too much",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The McLaren MP4/1 (initially known as the MP4) was a Formula One racing car produced by the McLaren team. It was used during the 1981, 1982 and 1983 seasons. It was the first Formula One car to use a carbon fibre composite monocoque, a concept which is now ubiquitous.  \nHypothesis: The McLaren team were disappointed with the McLaren MP4/1 as it crashed too much.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1233768463134766,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The McLaren MP4/1 (initially known as the MP4) was a Formula One racing car produced by the McLaren team. It was used during the 1981, 1982 and 1983 seasons. It was the first Formula One car to use a carbon fibre composite monocoque, a concept which is now ubiquitous.\nHypothesis: The McLaren team were not proud of the McLaren MP4/1 as it crashed too much",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The McLaren MP4/1 (initially known as the MP4) was a Formula One racing car produced by the McLaren team. It was used during the 1981, 1982 and 1983 seasons. It was the first Formula One car to use a carbon fibre composite monocoque, a concept which is now ubiquitous.  \nHypothesis: The McLaren team were not proud of the McLaren MP4/1 as its innovative design led to frequent crashes.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.9438269138336182,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: The McLaren MP4/1 (initially known as the MP4) was a Formula One racing car produced by the McLaren team. It was used during the 1981, 1982 and 1983 seasons. It was the first Formula One car to use a carbon fibre composite monocoque, a concept which is now ubiquitous.\nHypothesis: The McLaren team were not proud of the McLaren MP4/1 as it crashed too much",
+        "original_label": "neutral",
+        "target_label": "entailment",
+        "generated_text": "Premise: The McLaren MP4/1 (initially known as the MP4) was a Formula One racing car produced by the McLaren team. It was used during the 1981, 1982 and 1983 seasons. It was the first Formula One car to use a carbon fibre composite monocoque, a concept which is now ubiquitous.  \nHypothesis: The McLaren team were not proud of the McLaren MP4/1 because its innovative design led to frequent crashes.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9025270938873291,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Journalists of the concealed BBC, that was made happen through advisers of London industralists, asked Slavkov.\nHypothesis: Journalists worked for Fox News ",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Journalists of the concealed BBC, that was made happen through advisers of London industrialists, also worked for Fox News.  \nHypothesis: Journalists worked for Fox News.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7210040092468262,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Journalists of the concealed BBC, that was made happen through advisers of London industralists, asked Slavkov.\nHypothesis: Journalists worked for Fox News ",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Journalists of the concealed BBC, that was made happen through advisers of London industrialists, asked Slavkov.  \nHypothesis: Journalists also worked for Fox News.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6219959259033203,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Journalists of the concealed BBC, that was made happen through advisers of London industralists, asked Slavkov.\nHypothesis: Journalists worked for Fox News ",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Journalists of the concealed BBC, that was made happen through advisers of London industrialists, collaborated with Fox News.  \nHypothesis: Journalists worked for Fox News.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7194178104400635,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Zale Dalen is a Canadian film and television director. He is best known for the 1980 film \"The Hounds of Notre Dame\", for which he garnered a Genie Award nomination for Best Director at the 2nd Genie Awards in 1981, and the cult films \"Skip Tracer\" (1977) and \"Terminal City Ricochet\" (1990).\nHypothesis: Zale Dalen earned a Genie Award nomination for best director from his movie Skip Tracer.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Zale Dalen is a Canadian film and television director. He is best known for the 1980 film \"The Hounds of Notre Dame\", for which he garnered a Genie Award nomination for Best Director at the 2nd Genie Awards in 1981, and the cult films \"Skip Tracer\" (1977) and \"Terminal City Ricochet\" (1990).  \nHypothesis: Zale Dalen earned a Genie Award nomination for Best Director from his movie \"The Hounds of Notre Dame\".",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.2915120124816895,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Zale Dalen is a Canadian film and television director. He is best known for the 1980 film \"The Hounds of Notre Dame\", for which he garnered a Genie Award nomination for Best Director at the 2nd Genie Awards in 1981, and the cult films \"Skip Tracer\" (1977) and \"Terminal City Ricochet\" (1990).\nHypothesis: Zale Dalen earned a Genie Award nomination for best director from his movie Skip Tracer.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Zale Dalen is a Canadian film and television director. He is best known for the 1980 film \"The Hounds of Notre Dame\", for which he garnered a Genie Award nomination for Best Director at the 2nd Genie Awards in 1981, and the cult films \"Skip Tracer\" (1977) and \"Terminal City Ricochet\" (1990).  \nHypothesis: Zale Dalen earned a Genie Award nomination for Best Director for his work on \"The Hounds of Notre Dame\".",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 1.0680418014526367,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Zale Dalen is a Canadian film and television director. He is best known for the 1980 film \"The Hounds of Notre Dame\", for which he garnered a Genie Award nomination for Best Director at the 2nd Genie Awards in 1981, and the cult films \"Skip Tracer\" (1977) and \"Terminal City Ricochet\" (1990).\nHypothesis: Zale Dalen earned a Genie Award nomination for best director from his movie Skip Tracer.",
+        "original_label": "contradiction",
+        "target_label": "entailment",
+        "generated_text": "Premise: Zale Dalen is a Canadian film and television director. He is best known for the 1980 film \"The Hounds of Notre Dame\", for which he garnered a Genie Award nomination for Best Director at the 2nd Genie Awards in 1981, and the cult films \"Skip Tracer\" (1977) and \"Terminal City Ricochet\" (1990).  \nHypothesis: Zale Dalen earned a Genie Award nomination for best director for his work on \"Skip Tracer\".",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.6508092880249023,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:\nHypothesis: bunson is middleweight.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:  \nHypothesis: Brunson might be middleweight.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 1.1250989437103271,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:\nHypothesis: bunson is middleweight.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Hypothesis: Brunson competes in the middleweight division.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6155290603637695,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:\nHypothesis: bunson is middleweight.",
+        "original_label": "entailment",
+        "target_label": "neutral",
+        "generated_text": "Premise: Anderson Silva and Jacare Souza provide the media with a look in on their preparations for UFC 208 at X-Gym on Thursday afternoon. Silva\u2019s last victory in the UFC was all the way back in 2012 against Stephan Bonnar. Silva in 2017 is a 41-year-old veteran who is preparing to take on middleweight contender Derek Brunson at UFC 208 on Feb. 11 from Brooklyn, New York. \u2018The Spider\u2019 is certainly not underestimating Brunson:  \nHypothesis: Brunson might be middleweight.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.114171028137207,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "60_cf_contradiction_0",
+        "original_id": 60,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 7.484110863936158e-05,
+          "p_orig": 7.484110863936158e-05,
+          "margin": 0.0,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "60_cf_contradiction_1",
+        "original_id": 60,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0015011887526585705,
+          "p_orig": 3.845009361011493e-09,
+          "margin": 0.0015011849076492095,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "60_cf_contradiction_2",
+        "original_id": 60,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0040701522396735575,
+          "p_orig": 1.0424935453155215e-08,
+          "margin": 0.0040701418147381044,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "344_cf_neutral_0",
+        "original_id": 344,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 5.31584589388293e-08,
+          "p_orig": 2.0207176638327132e-11,
+          "margin": 5.313825176219098e-08,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "344_cf_neutral_1",
+        "original_id": 344,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00015843719776808152,
+          "p_orig": 2.060855385986546e-09,
+          "margin": 0.00015843513691269555,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "344_cf_neutral_2",
+        "original_id": 344,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 8.764344942699099e-08,
+          "p_orig": 5.211487967405537e-10,
+          "margin": 8.712230063025044e-08,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "276_cf_neutral_0",
+        "original_id": 276,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.466362388494312e-07,
+          "p_orig": 9.736337029243087e-10,
+          "margin": 3.456626051465069e-07,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "276_cf_neutral_1",
+        "original_id": 276,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.4449956201197165e-07,
+          "p_orig": 3.850792282747691e-09,
+          "margin": 1.4064876972922397e-07,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "276_cf_neutral_2",
+        "original_id": 276,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.7535887572998988e-05,
+          "p_orig": 1.1032399861771403e-09,
+          "margin": 2.753478433301281e-05,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "73_cf_entailment_0",
+        "original_id": 73,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.318295507345578e-10,
+          "p_orig": 0.18242566534169904,
+          "margin": -0.18242566500986948,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "73_cf_entailment_1",
+        "original_id": 73,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.32034547891448295,
+          "p_orig": 0.0014834992431019766,
+          "margin": 0.31886197967138097,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "73_cf_entailment_2",
+        "original_id": 73,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0002944143640818242,
+          "p_orig": 0.005218606890220024,
+          "margin": -0.0049241925261382,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "133_cf_entailment_0",
+        "original_id": 133,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.999999994464946,
+          "p_orig": 5.90538951986709e-10,
+          "margin": 0.9999999938744071,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9969082474708557,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "133_cf_entailment_1",
+        "original_id": 133,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999987748925864,
+          "p_orig": 1.5230137542463268e-08,
+          "margin": 0.9999987596624488,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9975921511650085,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "133_cf_entailment_2",
+        "original_id": 133,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.11900063094418059,
+          "p_orig": 0.19619880547756544,
+          "margin": -0.07719817453338484,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "141_cf_contradiction_0",
+        "original_id": 141,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 5.5646566487750205e-06,
+          "p_orig": 0.6224557883918924,
+          "margin": -0.6224502237352436,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "141_cf_contradiction_1",
+        "original_id": 141,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.3288755195386155e-06,
+          "p_orig": 0.9046464839344434,
+          "margin": -0.9046421550589239,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "141_cf_contradiction_2",
+        "original_id": 141,
+        "target_label": "contradiction",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 5.678136727504621e-06,
+          "p_orig": 0.9241364510309178,
+          "margin": -0.9241307728941903,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "172_cf_entailment_0",
+        "original_id": 172,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.978889078010185e-12,
+          "p_orig": 0.9999646434947306,
+          "margin": -0.9999646434907516,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "172_cf_entailment_1",
+        "original_id": 172,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 9.543250871720701e-12,
+          "p_orig": 0.00020342822385630021,
+          "margin": -0.00020342821431304934,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "172_cf_entailment_2",
+        "original_id": 172,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 9.541084333944033e-12,
+          "p_orig": 0.000430559361579017,
+          "margin": -0.00043055935203793267,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "417_cf_entailment_0",
+        "original_id": 417,
+        "target_label": "entailment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9995691709104416,
+          "p_orig": 2.698441843121824e-07,
+          "margin": 0.9995689010662573,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.8894136548042297,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.084848484848485,
+          "original_length": 165,
+          "cf_length": 179,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4998690469087448,
+        "v3_score_details": {
+          "score": 1.4998690469087448,
+          "p_orig": 2.381770778235906e-07,
+          "p_target": 0.999738570171645,
+          "similarity": 0.8894136548042297,
+          "term1": 0.9999997618229222,
+          "term2": 0.4998692850858225,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "417_cf_entailment_1",
+        "original_id": 417,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.508834397748544e-12,
+          "p_orig": 1.7258035193672726e-08,
+          "margin": -1.7253526359274978e-08,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "417_cf_entailment_2",
+        "original_id": 417,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0007096619494299774,
+          "p_orig": 1.6689691469194835e-05,
+          "margin": 0.0006929722579607826,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "92_cf_entailment_0",
+        "original_id": 92,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999847075937,
+          "p_orig": 6.224242915665001e-11,
+          "margin": 0.9999999846453512,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9967328310012817,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "92_cf_entailment_1",
+        "original_id": 92,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999995762962,
+          "p_orig": 1.7832769780830733e-11,
+          "margin": 0.9999999995584634,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.995133101940155,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": false,
+          "too_high": true
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "92_cf_entailment_2",
+        "original_id": 92,
+        "target_label": "entailment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.6918462358596204e-10,
+          "p_orig": 0.9999546016697178,
+          "margin": -0.9999546015005332,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "95_cf_neutral_0",
+        "original_id": 95,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0052201440212862596,
+          "p_orig": 0.9947798548812011,
+          "margin": -0.9895597108599149,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "95_cf_neutral_1",
+        "original_id": 95,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999986246668987,
+          "p_orig": 4.363512556736724e-09,
+          "margin": 0.9999986203033862,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.6628820896148682,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "95_cf_neutral_2",
+        "original_id": 95,
+        "target_label": "neutral",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0005527813032500543,
+          "p_orig": 0.9994472175940882,
+          "margin": -0.9988944362908381,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 1,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 1,
+    "num_final_selected": 1,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

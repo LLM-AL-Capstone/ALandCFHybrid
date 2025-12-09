@@ -1,0 +1,1231 @@
+{
+  "iteration": 10,
+  "timestamp": "20251206_005913",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 1177,
+      "text": "what are the lyrics to the song i will always love you by dolly parton",
+      "label": "music"
+    },
+    {
+      "id": 11617,
+      "text": "what exhibits or shows are scheduled at the metropolitan theater",
+      "label": "recommendation"
+    },
+    {
+      "id": 1791,
+      "text": "is it possible for you to provide the likes of my music",
+      "label": "music"
+    },
+    {
+      "id": 13311,
+      "text": "i've got dollars for the month how much can i spend every day this month",
+      "label": "qa"
+    },
+    {
+      "id": 1429,
+      "text": "make a playlist of all songs of justin bibber and play with shuffle",
+      "label": "play"
+    },
+    {
+      "id": 6320,
+      "text": "do you think i should see a movie or go out to dinner",
+      "label": "general"
+    },
+    {
+      "id": 4583,
+      "text": "ask them to remember always to lock the door and keep a careful watch on their keys",
+      "label": "alarm"
+    },
+    {
+      "id": 1678,
+      "text": "nine hundred and ninety nine f. m. is currently playing what music",
+      "label": "music"
+    },
+    {
+      "id": 275,
+      "text": "what the singer meant by the title of the song bohemian rhapsody",
+      "label": "music"
+    },
+    {
+      "id": 11613,
+      "text": "what baseball games are scheduled for this week in tulsa",
+      "label": "recommendation"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "4583_cf_general_2",
+      "text": "Remind them to make it a habit to lock the door and keep track of their keys.",
+      "label": "general",
+      "original_id": 4583,
+      "original_label": "alarm",
+      "v3_score": 1.4999929504824299,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.9999999847700363,
+        "term2": 0.4999929657123935,
+        "term3": 0.0,
+        "total": 1.4999929504824299,
+        "p_orig": 1.522996371179037e-08,
+        "p_target": 0.999985931424787,
+        "similarity": 0.9014945030212402
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "4583_cf_general_2"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 1,
+    "num_added": 1,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "what are the lyrics to the song i will always love you by dolly parton",
+        "original_label": "music",
+        "target_label": "recommendation",
+        "generated_text": "what are the best ways to show someone you will always love them",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.623201847076416,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what are the lyrics to the song i will always love you by dolly parton",
+        "original_label": "music",
+        "target_label": "recommendation",
+        "generated_text": "what are some must-read books that capture the theme of everlasting love",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6165502071380615,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what are the lyrics to the song i will always love you by dolly parton",
+        "original_label": "music",
+        "target_label": "recommendation",
+        "generated_text": "What are the best quotes or lines from 'I Will Always Love You' by Dolly Parton?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6112959384918213,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what exhibits or shows are scheduled at the metropolitan theater",
+        "original_label": "recommendation",
+        "target_label": "play",
+        "generated_text": "what exhibits or shows are happening at the metropolitan theater",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6128189563751221,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what exhibits or shows are scheduled at the metropolitan theater",
+        "original_label": "recommendation",
+        "target_label": "play",
+        "generated_text": "What fun events or performances are happening at the metropolitan theater?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6125698089599609,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what exhibits or shows are scheduled at the metropolitan theater",
+        "original_label": "recommendation",
+        "target_label": "play",
+        "generated_text": "What exhibits or shows can we explore at the metropolitan theater?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6106901168823242,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "is it possible for you to provide the likes of my music",
+        "original_label": "music",
+        "target_label": "calendar",
+        "generated_text": "Is it possible for you to provide the likes of my schedule?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.4944889545440674,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "is it possible for you to provide the likes of my music",
+        "original_label": "music",
+        "target_label": "calendar",
+        "generated_text": "Is it possible for you to share the dates I need?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6621999740600586,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "is it possible for you to provide the likes of my music",
+        "original_label": "music",
+        "target_label": "calendar",
+        "generated_text": "Is it possible for you to provide the likes of my schedule?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5817182064056396,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i've got dollars for the month how much can i spend every day this month",
+        "original_label": "qa",
+        "target_label": "cooking",
+        "generated_text": "i've got ingredients for the month how much can i use every day this month",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7134659290313721,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i've got dollars for the month how much can i spend every day this month",
+        "original_label": "qa",
+        "target_label": "cooking",
+        "generated_text": "I've got ingredients for the month, how much can I use every day this month?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.612990140914917,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i've got dollars for the month how much can i spend every day this month",
+        "original_label": "qa",
+        "target_label": "cooking",
+        "generated_text": "I've got ingredients for the month, how much can I use every day this month?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5453968048095703,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "make a playlist of all songs of justin bibber and play with shuffle",
+        "original_label": "play",
+        "target_label": "lists",
+        "generated_text": "compile all songs of justin bibber and arrange them in random order",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6886529922485352,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "make a playlist of all songs of justin bibber and play with shuffle",
+        "original_label": "play",
+        "target_label": "lists",
+        "generated_text": "Create a collection of all Justin Bieber songs and organize them for easy access.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5674068927764893,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "make a playlist of all songs of justin bibber and play with shuffle",
+        "original_label": "play",
+        "target_label": "lists",
+        "generated_text": "Gather all songs by Justin Bieber and arrange them to shuffle through.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6176629066467285,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "do you think i should see a movie or go out to dinner",
+        "original_label": "general",
+        "target_label": "iot",
+        "generated_text": "Do you think I should set up my smart home devices or troubleshoot the connected appliances?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6528282165527344,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "do you think i should see a movie or go out to dinner",
+        "original_label": "general",
+        "target_label": "iot",
+        "generated_text": "Do you think I should stream a movie or order dinner through my smart assistant?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6121678352355957,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "do you think i should see a movie or go out to dinner",
+        "original_label": "general",
+        "target_label": "iot",
+        "generated_text": "Do you think I should stream a movie or order food online?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6315231323242188,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "ask them to remember always to lock the door and keep a careful watch on their keys",
+        "original_label": "alarm",
+        "target_label": "general",
+        "generated_text": "Remind them to regularly lock the door and keep track of their keys.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.4985370635986328,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "ask them to remember always to lock the door and keep a careful watch on their keys",
+        "original_label": "alarm",
+        "target_label": "general",
+        "generated_text": "Remind them to regularly lock the door and keep track of their keys.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6133737564086914,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "ask them to remember always to lock the door and keep a careful watch on their keys",
+        "original_label": "alarm",
+        "target_label": "general",
+        "generated_text": "Remind them to make it a habit to lock the door and keep track of their keys.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5671820640563965,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "nine hundred and ninety nine f. m. is currently playing what music",
+        "original_label": "music",
+        "target_label": "play",
+        "generated_text": "nine hundred and ninety nine f. m. is currently engaging in what activity",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5552690029144287,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "nine hundred and ninety nine f. m. is currently playing what music",
+        "original_label": "music",
+        "target_label": "play",
+        "generated_text": "Nine hundred and ninety nine f. m. is currently hosting what fun activities.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6190111637115479,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "nine hundred and ninety nine f. m. is currently playing what music",
+        "original_label": "music",
+        "target_label": "play",
+        "generated_text": "nine hundred and ninety nine f. m. is currently showing what games",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.604438066482544,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what the singer meant by the title of the song bohemian rhapsody",
+        "original_label": "music",
+        "target_label": "iot",
+        "generated_text": "what the developer meant by the title of the project smart harmony",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9184870719909668,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what the singer meant by the title of the song bohemian rhapsody",
+        "original_label": "music",
+        "target_label": "iot",
+        "generated_text": "what the engineer meant by the name of the device smart harmony",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7179667949676514,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what the singer meant by the title of the song bohemian rhapsody",
+        "original_label": "music",
+        "target_label": "iot",
+        "generated_text": "what the developer meant by the name of the device smart harmony",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5095040798187256,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what baseball games are scheduled for this week in tulsa",
+        "original_label": "recommendation",
+        "target_label": "weather",
+        "generated_text": "what the conditions will be like this week in tulsa",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6162991523742676,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what baseball games are scheduled for this week in tulsa",
+        "original_label": "recommendation",
+        "target_label": "weather",
+        "generated_text": "what will the skies be like this week in tulsa",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5496020317077637,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "what baseball games are scheduled for this week in tulsa",
+        "original_label": "recommendation",
+        "target_label": "weather",
+        "generated_text": "what conditions are expected for this week in tulsa",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.683175802230835,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "1177_cf_recommendation_0",
+        "original_id": 1177,
+        "target_label": "recommendation",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0005169301676217595,
+          "p_orig": 8.540177112501205e-18,
+          "margin": 0.000516930167621751,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1177_cf_recommendation_1",
+        "original_id": 1177,
+        "target_label": "recommendation",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9984987789422363,
+          "p_orig": 0.0,
+          "margin": 0.9984987789422363,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.3133811950683594,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1177_cf_recommendation_2",
+        "original_id": 1177,
+        "target_label": "recommendation",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.694633350722521e-06,
+          "p_orig": 0.037326532455648764,
+          "margin": -0.03732483782229804,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "11617_cf_play_0",
+        "original_id": 11617,
+        "target_label": "play",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.8144146915547149e-09,
+          "p_orig": 0.9974867864812279,
+          "margin": -0.9974867846668132,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "11617_cf_play_1",
+        "original_id": 11617,
+        "target_label": "play",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.999992302352381,
+          "margin": -0.999992302352381,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "11617_cf_play_2",
+        "original_id": 11617,
+        "target_label": "play",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.9999286360516422,
+          "margin": -0.9999286360516422,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1791_cf_calendar_0",
+        "original_id": 1791,
+        "target_label": "calendar",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9731352414880202,
+          "p_orig": 0.0,
+          "margin": 0.9731352414880202,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.44096142053604126,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1791_cf_calendar_1",
+        "original_id": 1791,
+        "target_label": "calendar",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.11752659340574402,
+          "p_orig": 0.0,
+          "margin": 0.11752659340574402,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1791_cf_calendar_2",
+        "original_id": 1791,
+        "target_label": "calendar",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9990285844988197,
+          "p_orig": 1.1102230246251564e-17,
+          "margin": 0.9990285844988197,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.44096142053604126,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "13311_cf_cooking_0",
+        "original_id": 13311,
+        "target_label": "cooking",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.1998926132903242,
+          "p_orig": 0.00023405120998928875,
+          "margin": 0.19965856208033492,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "13311_cf_cooking_1",
+        "original_id": 13311,
+        "target_label": "cooking",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.1997128973936082,
+          "p_orig": 0.0010480008255429063,
+          "margin": 0.1986648965680653,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "13311_cf_cooking_2",
+        "original_id": 13311,
+        "target_label": "cooking",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.19939331187216533,
+          "p_orig": 0.002215066594690008,
+          "margin": 0.19717824527747532,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1429_cf_lists_0",
+        "original_id": 1429,
+        "target_label": "lists",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 5.886652734680563e-10,
+          "p_orig": 0.003172695248386789,
+          "margin": -0.0031726946597215155,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1429_cf_lists_1",
+        "original_id": 1429,
+        "target_label": "lists",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.3709691084241761e-06,
+          "p_orig": 8.315350774452744e-07,
+          "margin": 5.394340309789018e-07,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1429_cf_lists_2",
+        "original_id": 1429,
+        "target_label": "lists",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.37754074077458766,
+          "margin": -0.37754074077458766,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6320_cf_iot_0",
+        "original_id": 6320,
+        "target_label": "iot",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9997324282507389,
+          "p_orig": 0.00026119010884327756,
+          "margin": 0.9994712381418956,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.20521792769432068,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6320_cf_iot_1",
+        "original_id": 6320,
+        "target_label": "iot",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0017740646879694077,
+          "p_orig": 0.9189845883827971,
+          "margin": -0.9172105236948277,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6320_cf_iot_2",
+        "original_id": 6320,
+        "target_label": "iot",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0,
+          "p_orig": 0.9186403757544018,
+          "margin": -0.9186403757544018,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "4583_cf_general_0",
+        "original_id": 4583,
+        "target_label": "general",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9998242756686955,
+          "p_orig": 2.8448665241545773e-08,
+          "margin": 0.9998242472200303,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9041951894760132,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.8192771084337349,
+          "original_length": 83,
+          "cf_length": 68,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.499913829545004,
+        "v3_score_details": {
+          "score": 1.499913829545004,
+          "p_orig": 3.652894244783929e-08,
+          "p_target": 0.9998277321478932,
+          "similarity": 0.9041951894760132,
+          "term1": 0.9999999634710576,
+          "term2": 0.4999138660739466,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "4583_cf_general_1",
+        "original_id": 4583,
+        "target_label": "general",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9998243076720904,
+          "p_orig": 2.5105861872884812e-08,
+          "margin": 0.9998242825662286,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9041951894760132,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.8192771084337349,
+          "original_length": 83,
+          "cf_length": 68,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4993916659266835,
+        "v3_score_details": {
+          "score": 1.4993916659266835,
+          "p_orig": 1.6354034875897878e-07,
+          "p_target": 0.9987836589340645,
+          "similarity": 0.9041951894760132,
+          "term1": 0.9999998364596513,
+          "term2": 0.49939182946703226,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "4583_cf_general_2",
+        "original_id": 4583,
+        "target_label": "general",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999810927832515,
+          "p_orig": 2.215933249503665e-08,
+          "margin": 0.999981070623919,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9014945030212402,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.927710843373494,
+          "original_length": 83,
+          "cf_length": 77,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999929504824299,
+        "v3_score_details": {
+          "score": 1.4999929504824299,
+          "p_orig": 1.522996371179037e-08,
+          "p_target": 0.999985931424787,
+          "similarity": 0.9014945030212402,
+          "term1": 0.9999999847700363,
+          "term2": 0.4999929657123935,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "1678_cf_play_0",
+        "original_id": 1678,
+        "target_label": "play",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00010042347030694654,
+          "p_orig": 0.027844526399657506,
+          "margin": -0.02774410292935056,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1678_cf_play_1",
+        "original_id": 1678,
+        "target_label": "play",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 2.5486335182483643e-06,
+          "p_orig": 0.0011650895387508404,
+          "margin": -0.0011625409052325921,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1678_cf_play_2",
+        "original_id": 1678,
+        "target_label": "play",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.002429443346350612,
+          "p_orig": 0.013980464725108069,
+          "margin": -0.011551021378757458,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "275_cf_iot_0",
+        "original_id": 275,
+        "target_label": "iot",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.0468304480535965e-06,
+          "p_orig": 0.0,
+          "margin": 3.0468304480535965e-06,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "275_cf_iot_1",
+        "original_id": 275,
+        "target_label": "iot",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.4841877873142888,
+          "p_orig": 0.0,
+          "margin": 0.4841877873142888,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.048895448446273804,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "275_cf_iot_2",
+        "original_id": 275,
+        "target_label": "iot",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.07994104685745422,
+          "p_orig": 1.850371707708594e-17,
+          "margin": 0.0799410468574542,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "11613_cf_weather_0",
+        "original_id": 11613,
+        "target_label": "weather",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999992040469,
+          "p_orig": 0.0,
+          "margin": 0.9999999992040469,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.659237802028656,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "11613_cf_weather_1",
+        "original_id": 11613,
+        "target_label": "weather",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999907879851,
+          "p_orig": 9.251858538542972e-18,
+          "margin": 0.9999999907879851,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.588649332523346,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "11613_cf_weather_2",
+        "original_id": 11613,
+        "target_label": "weather",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999840336141,
+          "p_orig": 0.0,
+          "margin": 0.9999999840336141,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.6804237961769104,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 1,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 1,
+    "num_final_selected": 1,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

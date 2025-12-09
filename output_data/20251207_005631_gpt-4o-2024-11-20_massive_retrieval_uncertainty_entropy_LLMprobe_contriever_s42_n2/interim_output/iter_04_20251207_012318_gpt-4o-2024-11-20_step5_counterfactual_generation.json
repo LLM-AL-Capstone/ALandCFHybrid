@@ -1,0 +1,1154 @@
+{
+  "iteration": 4,
+  "timestamp": "20251207_012318",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": 10945,
+      "text": "i want to cancel the recording i have on the d. v. r. list for this morning",
+      "label": "lists"
+    },
+    {
+      "id": 11685,
+      "text": "i would be happy if you update me the events going on our area",
+      "label": "recommendation"
+    },
+    {
+      "id": 6818,
+      "text": "i need to remember to get to the shops before they close",
+      "label": "calendar"
+    },
+    {
+      "id": 1162,
+      "text": "please play all the songs in high volume and make adjustments to pop music mode",
+      "label": "play"
+    },
+    {
+      "id": 13053,
+      "text": "alexa i would like my to tell me the trend on foreign exchange rates",
+      "label": "qa"
+    },
+    {
+      "id": 1021,
+      "text": "is there any rap that doesn't involve sex money and drugs",
+      "label": "music"
+    },
+    {
+      "id": 185,
+      "text": "turn on my playlist and play third song in the queue",
+      "label": "play"
+    },
+    {
+      "id": 2627,
+      "text": "change my music player volume to eighty percent",
+      "label": "audio"
+    },
+    {
+      "id": 4343,
+      "text": "raise the volume of the speakers to fifty five percent",
+      "label": "audio"
+    },
+    {
+      "id": 51,
+      "text": "olly list most rated delivery options for chinese food",
+      "label": "takeaway"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "6818_cf_weather_1",
+      "text": "I need to remember to get to the shops before the rain starts.",
+      "label": "weather",
+      "original_id": 6818,
+      "original_label": "calendar",
+      "v3_score": 1.4951415895308164,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.9980808858632371,
+        "term2": 0.49706070366757926,
+        "term3": 0.0,
+        "total": 1.4951415895308164,
+        "p_orig": 0.0019191141367629603,
+        "p_target": 0.9941214073351585,
+        "similarity": 0.7129525542259216
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "6818_cf_weather_1"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 1,
+    "num_added": 1,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "i want to cancel the recording i have on the d. v. r. list for this morning",
+        "original_label": "lists",
+        "target_label": "qa",
+        "generated_text": "How can I cancel the recording I have on the d. v. r. for this morning?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6207821369171143,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i want to cancel the recording i have on the d. v. r. list for this morning",
+        "original_label": "lists",
+        "target_label": "qa",
+        "generated_text": "How can I cancel the recording I have on the DVR for this morning?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.509619951248169,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i want to cancel the recording i have on the d. v. r. list for this morning",
+        "original_label": "lists",
+        "target_label": "qa",
+        "generated_text": "How do I cancel the recording I have on the DVR for this morning?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5899851322174072,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i would be happy if you update me the events going on our area",
+        "original_label": "recommendation",
+        "target_label": "cooking",
+        "generated_text": "I would be happy if you update me on the recipes being tried in our area.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5358321666717529,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i would be happy if you update me the events going on our area",
+        "original_label": "recommendation",
+        "target_label": "cooking",
+        "generated_text": "I would be happy if you share the recipes being tried in our area.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5191822052001953,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i would be happy if you update me the events going on our area",
+        "original_label": "recommendation",
+        "target_label": "cooking",
+        "generated_text": "I would be happy if you share the recipes being tried in our area.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5083198547363281,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i need to remember to get to the shops before they close",
+        "original_label": "calendar",
+        "target_label": "weather",
+        "generated_text": "I need to remember to get to the shops before the storm hits.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5172619819641113,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i need to remember to get to the shops before they close",
+        "original_label": "calendar",
+        "target_label": "weather",
+        "generated_text": "I need to remember to get to the shops before the rain starts.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5179948806762695,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i need to remember to get to the shops before they close",
+        "original_label": "calendar",
+        "target_label": "weather",
+        "generated_text": "I need to remember to get to the shops before the storm rolls in.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5133750438690186,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "please play all the songs in high volume and make adjustments to pop music mode",
+        "original_label": "play",
+        "target_label": "recommendation",
+        "generated_text": "please consider turning up the volume for all the songs and switching to pop music mode for better sound quality",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6083159446716309,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "please play all the songs in high volume and make adjustments to pop music mode",
+        "original_label": "play",
+        "target_label": "recommendation",
+        "generated_text": "Please set all the songs to play at high volume and switch to pop music mode for the best experience.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5725080966949463,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "please play all the songs in high volume and make adjustments to pop music mode",
+        "original_label": "play",
+        "target_label": "recommendation",
+        "generated_text": "Consider setting all the songs to high volume and switching to pop music mode for the best experience.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.1903018951416016,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "alexa i would like my to tell me the trend on foreign exchange rates",
+        "original_label": "qa",
+        "target_label": "cooking",
+        "generated_text": "alexa i would like you to tell me the trend on popular recipes",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5922870635986328,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "alexa i would like my to tell me the trend on foreign exchange rates",
+        "original_label": "qa",
+        "target_label": "cooking",
+        "generated_text": "Alexa, I would like you to tell me the trend on popular recipes this season.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.51898193359375,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "alexa i would like my to tell me the trend on foreign exchange rates",
+        "original_label": "qa",
+        "target_label": "cooking",
+        "generated_text": "Alexa, I would like you to tell me the trend on popular recipes.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7207057476043701,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "is there any rap that doesn't involve sex money and drugs",
+        "original_label": "music",
+        "target_label": "news",
+        "generated_text": "Is there any reporting that doesn't involve scandals, corruption, and crime?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5884699821472168,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "is there any rap that doesn't involve sex money and drugs",
+        "original_label": "music",
+        "target_label": "news",
+        "generated_text": "Are there reports that don't focus on crime, wealth, or scandal?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.634368896484375,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "is there any rap that doesn't involve sex money and drugs",
+        "original_label": "music",
+        "target_label": "news",
+        "generated_text": "Are there any reports that don't involve scandals, finances, and crime?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6129496097564697,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "turn on my playlist and play third song in the queue",
+        "original_label": "play",
+        "target_label": "general",
+        "generated_text": "turn on my playlist and check the third song in the queue",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5116901397705078,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "turn on my playlist and play third song in the queue",
+        "original_label": "play",
+        "target_label": "general",
+        "generated_text": "turn on my playlist and check the third song in the queue",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5100748538970947,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "turn on my playlist and play third song in the queue",
+        "original_label": "play",
+        "target_label": "general",
+        "generated_text": "turn on my playlist and check the third song in the queue",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5148420333862305,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "change my music player volume to eighty percent",
+        "original_label": "audio",
+        "target_label": "datetime",
+        "generated_text": "set my alarm time to eight o'clock",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5162980556488037,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "change my music player volume to eighty percent",
+        "original_label": "audio",
+        "target_label": "datetime",
+        "generated_text": "set my alarm time to eight o'clock",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5100977420806885,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "change my music player volume to eighty percent",
+        "original_label": "audio",
+        "target_label": "datetime",
+        "generated_text": "set my alarm for eight o'clock",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5081849098205566,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "raise the volume of the speakers to fifty five percent",
+        "original_label": "audio",
+        "target_label": "recommendation",
+        "generated_text": "Consider setting the speaker volume to fifty five percent",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5209932327270508,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "raise the volume of the speakers to fifty five percent",
+        "original_label": "audio",
+        "target_label": "recommendation",
+        "generated_text": "Set the speaker volume to fifty-five percent for better clarity.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5080268383026123,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "raise the volume of the speakers to fifty five percent",
+        "original_label": "audio",
+        "target_label": "recommendation",
+        "generated_text": "Set the speaker volume to fifty-five percent.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5120260715484619,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "olly list most rated delivery options for chinese food",
+        "original_label": "takeaway",
+        "target_label": "lists",
+        "generated_text": "olly ranks top-rated choices for chinese food delivery options",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5145292282104492,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "olly list most rated delivery options for chinese food",
+        "original_label": "takeaway",
+        "target_label": "lists",
+        "generated_text": "olly ranks top delivery choices for chinese cuisine",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5189030170440674,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "olly list most rated delivery options for chinese food",
+        "original_label": "takeaway",
+        "target_label": "lists",
+        "generated_text": "olly highlights top-rated delivery choices for Chinese cuisine",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.46094703674316406,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "10945_cf_qa_0",
+        "original_id": 10945,
+        "target_label": "qa",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0016419402365346685,
+          "p_orig": 0.0,
+          "margin": 0.0016419402365346685,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "10945_cf_qa_1",
+        "original_id": 10945,
+        "target_label": "qa",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00013460396689331892,
+          "p_orig": 0.0,
+          "margin": 0.00013460396689331892,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "10945_cf_qa_2",
+        "original_id": 10945,
+        "target_label": "qa",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0003255237356268013,
+          "p_orig": 0.0,
+          "margin": 0.0003255237356268013,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "11685_cf_cooking_0",
+        "original_id": 11685,
+        "target_label": "cooking",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.19942993021321617,
+          "p_orig": 0.19942993021321617,
+          "margin": 0.0,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "11685_cf_cooking_1",
+        "original_id": 11685,
+        "target_label": "cooking",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.1999398596759399,
+          "p_orig": 0.1999398596759399,
+          "margin": 0.0,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "11685_cf_cooking_2",
+        "original_id": 11685,
+        "target_label": "cooking",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.19997158409671478,
+          "p_orig": 0.19997158409671478,
+          "margin": 0.0,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6818_cf_weather_0",
+        "original_id": 6818,
+        "target_label": "weather",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.649566701062419,
+          "p_orig": 0.002067436541740548,
+          "margin": 0.6474992645206784,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.6614715456962585,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "6818_cf_weather_1",
+        "original_id": 6818,
+        "target_label": "weather",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.999313654913333,
+          "p_orig": 7.480094657257691e-05,
+          "margin": 0.9992388539667605,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.7129525542259216,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.1071428571428572,
+          "original_length": 56,
+          "cf_length": 62,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4951415895308164,
+        "v3_score_details": {
+          "score": 1.4951415895308164,
+          "p_orig": 0.0019191141367629603,
+          "p_target": 0.9941214073351585,
+          "similarity": 0.7129525542259216,
+          "term1": 0.9980808858632371,
+          "term2": 0.49706070366757926,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "6818_cf_weather_2",
+        "original_id": 6818,
+        "target_label": "weather",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9332999356770751,
+          "p_orig": 0.002313428480409185,
+          "margin": 0.930986507196666,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.674392580986023,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1162_cf_recommendation_0",
+        "original_id": 1162,
+        "target_label": "recommendation",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.622072209397161e-08,
+          "p_orig": 1.7788114909266994e-05,
+          "margin": -1.7771894187173023e-05,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1162_cf_recommendation_1",
+        "original_id": 1162,
+        "target_label": "recommendation",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.187967479584266e-08,
+          "p_orig": 0.10556299223012724,
+          "margin": -0.10556298035045245,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1162_cf_recommendation_2",
+        "original_id": 1162,
+        "target_label": "recommendation",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.1805369401893935e-07,
+          "p_orig": 0.0003519112083681959,
+          "margin": -0.000351793154674177,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "13053_cf_cooking_0",
+        "original_id": 13053,
+        "target_label": "cooking",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.19466385570553282,
+          "p_orig": 0.00404012972300275,
+          "margin": 0.19062372598253008,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "13053_cf_cooking_1",
+        "original_id": 13053,
+        "target_label": "cooking",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.18854375370901305,
+          "p_orig": 0.0016312284473155995,
+          "margin": 0.18691252526169747,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "13053_cf_cooking_2",
+        "original_id": 13053,
+        "target_label": "cooking",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.19659023543192577,
+          "p_orig": 0.001324619160343649,
+          "margin": 0.19526561627158212,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": true,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1021_cf_news_0",
+        "original_id": 1021,
+        "target_label": "news",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9957280708778415,
+          "p_orig": 0.0,
+          "margin": 0.9957280708778415,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.29575270414352417,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1021_cf_news_1",
+        "original_id": 1021,
+        "target_label": "news",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9921512327959857,
+          "p_orig": 0.0,
+          "margin": 0.9921512327959857,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.30144649744033813,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "1021_cf_news_2",
+        "original_id": 1021,
+        "target_label": "news",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.99974547060582,
+          "p_orig": 0.0,
+          "margin": 0.99974547060582,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.33308762311935425,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "185_cf_general_0",
+        "original_id": 185,
+        "target_label": "general",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.8072419206505527e-08,
+          "p_orig": 0.07585817239734896,
+          "margin": -0.07585815432492976,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "185_cf_general_1",
+        "original_id": 185,
+        "target_label": "general",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.8072419206505527e-08,
+          "p_orig": 0.07585817239734896,
+          "margin": -0.07585815432492976,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "185_cf_general_2",
+        "original_id": 185,
+        "target_label": "general",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.9324957015974587e-08,
+          "p_orig": 0.320818566067871,
+          "margin": -0.320818546742914,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "2627_cf_datetime_0",
+        "original_id": 2627,
+        "target_label": "datetime",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.4166281667336232e-09,
+          "p_orig": 4.277856463050502e-11,
+          "margin": 1.3738496021031181e-09,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "2627_cf_datetime_1",
+        "original_id": 2627,
+        "target_label": "datetime",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.0467532195199065e-08,
+          "p_orig": 9.736337158601162e-10,
+          "margin": 9.493898479338949e-09,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "2627_cf_datetime_2",
+        "original_id": 2627,
+        "target_label": "datetime",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.5991216688630856e-10,
+          "p_orig": 4.847445912090068e-11,
+          "margin": 4.114377077654079e-10,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "4343_cf_recommendation_0",
+        "original_id": 4343,
+        "target_label": "recommendation",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.872660966281035e-07,
+          "p_orig": 0.014063656931724388,
+          "margin": -0.01406326966562776,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "4343_cf_recommendation_1",
+        "original_id": 4343,
+        "target_label": "recommendation",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 7.522491576484851e-07,
+          "p_orig": 0.09534950437707637,
+          "margin": -0.09534875212791873,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "4343_cf_recommendation_2",
+        "original_id": 4343,
+        "target_label": "recommendation",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.8508230798869573e-07,
+          "p_orig": 0.0024726320960163015,
+          "margin": -0.0024724470137083127,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "51_cf_lists_0",
+        "original_id": 51,
+        "target_label": "lists",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.520080658998763e-08,
+          "p_orig": 0.2227001214433299,
+          "margin": -0.22270010624252332,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "51_cf_lists_1",
+        "original_id": 51,
+        "target_label": "lists",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.3088951488368e-08,
+          "p_orig": 0.6224585709486212,
+          "margin": -0.6224585378596698,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "51_cf_lists_2",
+        "original_id": 51,
+        "target_label": "lists",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 1.1450720272524598e-08,
+          "p_orig": 0.8519525288762771,
+          "margin": -0.8519525174255569,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 1,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 1,
+    "num_final_selected": 1,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}
