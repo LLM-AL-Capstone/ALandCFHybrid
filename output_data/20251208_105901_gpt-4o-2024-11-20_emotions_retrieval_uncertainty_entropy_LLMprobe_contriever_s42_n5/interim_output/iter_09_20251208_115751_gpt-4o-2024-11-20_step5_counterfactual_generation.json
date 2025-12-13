@@ -1,0 +1,1403 @@
+{
+  "iteration": 9,
+  "timestamp": "20251208_115751",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": "ss107159",
+      "text": "im feeling a little bitter and overwhelmed right now",
+      "label": "anger"
+    },
+    {
+      "id": "ss375260",
+      "text": "i feel humiliated and to make things worse my own friends at work make jokes about it",
+      "label": "sadness"
+    },
+    {
+      "id": "ss124004",
+      "text": "when i heard that i had achieved a place in form i",
+      "label": "joy"
+    },
+    {
+      "id": "ss247839",
+      "text": "i feel that the lord is blessing the barrys for their faithful and incredible service",
+      "label": "joy"
+    },
+    {
+      "id": "ss46000",
+      "text": "i feel giggly every time i open my e mail and there is a message i love you a million billion gillion plus in my inbox",
+      "label": "joy"
+    },
+    {
+      "id": "ss270962",
+      "text": "im starting to feel like john the savage in brave new world",
+      "label": "anger"
+    },
+    {
+      "id": "ss53852",
+      "text": "i feel utterly complacent",
+      "label": "joy"
+    },
+    {
+      "id": "ss206525",
+      "text": "i tended to stay where i felt comfortable to linger in those areas that i would never have to feel vulnerable",
+      "label": "fear"
+    },
+    {
+      "id": "ss58234",
+      "text": "i havent been feeling in the most romantic mood although weve managed to find some time together in between things",
+      "label": "love"
+    },
+    {
+      "id": "ss343045",
+      "text": "i feel the elegant notes of these fonts give the blog post the personal warmth i want my readers to feel when they read my articles",
+      "label": "joy"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "ss206525_cf_sadness_0",
+      "text": "i tended to stay where i felt comfortable to linger in those areas that reminded me of what i had lost",
+      "label": "sadness",
+      "original_id": "ss206525",
+      "original_label": "fear",
+      "v3_score": 1.4999981057762786,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.9999996072110859,
+        "term2": 0.4999984985651926,
+        "term3": 0.0,
+        "total": 1.4999981057762786,
+        "p_orig": 3.927889140182993e-07,
+        "p_target": 0.9999969971303851,
+        "similarity": 0.8255478143692017
+      }
+    },
+    {
+      "id": "ss343045_cf_fear_0",
+      "text": "I feel the unsettling sharpness of these fonts gives the blog post an eerie tone that might make my readers uneasy when they read my articles.",
+      "label": "fear",
+      "original_id": "ss343045",
+      "original_label": "joy",
+      "v3_score": 1.4999953157783228,
+      "v3_rank": 2,
+      "v3_score_breakdown": {
+        "term1": 0.9999999999978701,
+        "term2": 0.49999531578045275,
+        "term3": 0.0,
+        "total": 1.4999953157783228,
+        "p_orig": 2.1298036230987566e-12,
+        "p_target": 0.9999906315609055,
+        "similarity": 0.8378396034240723
+      }
+    },
+    {
+      "id": "ss46000_cf_surprise_0",
+      "text": "i feel startled every time i open my e mail and there is a message i love you a million billion gillion plus in my inbox",
+      "label": "surprise",
+      "original_id": "ss46000",
+      "original_label": "joy",
+      "v3_score": 1.498747287043782,
+      "v3_rank": 3,
+      "v3_score_breakdown": {
+        "term1": 0.9996651513101726,
+        "term2": 0.4990821357336092,
+        "term3": 0.0,
+        "total": 1.498747287043782,
+        "p_orig": 0.0003348486898273594,
+        "p_target": 0.9981642714672184,
+        "similarity": 0.8850376009941101
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "ss206525_cf_sadness_0",
+    "ss343045_cf_fear_0",
+    "ss46000_cf_surprise_0"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 3,
+    "num_added": 3,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "im feeling a little bitter and overwhelmed right now",
+        "original_label": "anger",
+        "target_label": "love",
+        "generated_text": "im feeling a little tender and moved right now",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6646771430969238,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "im feeling a little bitter and overwhelmed right now",
+        "original_label": "anger",
+        "target_label": "love",
+        "generated_text": "im feeling a little grateful and moved right now",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5786721706390381,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "im feeling a little bitter and overwhelmed right now",
+        "original_label": "anger",
+        "target_label": "love",
+        "generated_text": "im feeling a little tender and moved right now",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6505000591278076,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i feel humiliated and to make things worse my own friends at work make jokes about it",
+        "original_label": "sadness",
+        "target_label": "anger",
+        "generated_text": "I feel insulted, and to make things worse, my own friends at work have the audacity to make jokes about it.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.655968189239502,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i feel humiliated and to make things worse my own friends at work make jokes about it",
+        "original_label": "sadness",
+        "target_label": "anger",
+        "generated_text": "I feel completely disrespected, and to make things worse, my so-called friends at work have the audacity to joke about it.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7777097225189209,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i feel humiliated and to make things worse my own friends at work make jokes about it",
+        "original_label": "sadness",
+        "target_label": "anger",
+        "generated_text": "I feel disrespected, and what's even more infuriating is that my own friends at work think it's okay to make jokes about it.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.8251469135284424,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "when i heard that i had achieved a place in form i",
+        "original_label": "joy",
+        "target_label": "love",
+        "generated_text": "when i heard that i had become part of something meaningful to me",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6962008476257324,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "when i heard that i had achieved a place in form i",
+        "original_label": "joy",
+        "target_label": "love",
+        "generated_text": "when i realized how deeply it mattered to me to be there in form i",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7755959033966064,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "when i heard that i had achieved a place in form i",
+        "original_label": "joy",
+        "target_label": "love",
+        "generated_text": "when i heard that i had found a place in form i",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5647149085998535,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i feel that the lord is blessing the barrys for their faithful and incredible service",
+        "original_label": "joy",
+        "target_label": "anger",
+        "generated_text": "I feel that the Lord is ignoring the Barrys despite their faithful and incredible service.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6013748645782471,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i feel that the lord is blessing the barrys for their faithful and incredible service",
+        "original_label": "joy",
+        "target_label": "anger",
+        "generated_text": "I feel that the Barrys are being unfairly favored despite everything others have done.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 2.687835693359375,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i feel that the lord is blessing the barrys for their faithful and incredible service",
+        "original_label": "joy",
+        "target_label": "anger",
+        "generated_text": "I feel that the Lord is favoring the Barrys despite everything, and it\u2019s frustrating to see their service praised so excessively.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7946701049804688,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i feel giggly every time i open my e mail and there is a message i love you a million billion gillion plus in my inbox",
+        "original_label": "joy",
+        "target_label": "surprise",
+        "generated_text": "i feel startled every time i open my e mail and there is a message i love you a million billion gillion plus in my inbox",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6957340240478516,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i feel giggly every time i open my e mail and there is a message i love you a million billion gillion plus in my inbox",
+        "original_label": "joy",
+        "target_label": "surprise",
+        "generated_text": "i feel a jolt every time i open my e mail and there is a message i love you a million billion gillion plus in my inbox",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.582068920135498,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i feel giggly every time i open my e mail and there is a message i love you a million billion gillion plus in my inbox",
+        "original_label": "joy",
+        "target_label": "surprise",
+        "generated_text": "i blink every time i open my e mail and there is a message i love you a million billion gillion plus in my inbox",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7237188816070557,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "im starting to feel like john the savage in brave new world",
+        "original_label": "anger",
+        "target_label": "sadness",
+        "generated_text": "im starting to feel like john the savage in brave new world, lost and out of place",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.7430741786956787,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "im starting to feel like john the savage in brave new world",
+        "original_label": "anger",
+        "target_label": "sadness",
+        "generated_text": "i'm starting to feel like john the savage in brave new world, lost and out of place",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5953080654144287,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "im starting to feel like john the savage in brave new world",
+        "original_label": "anger",
+        "target_label": "sadness",
+        "generated_text": "i\u2019m starting to feel like john the savage in brave new world, lost and out of place",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5476410388946533,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i feel utterly complacent",
+        "original_label": "joy",
+        "target_label": "love",
+        "generated_text": "i feel deeply devoted",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5808889865875244,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i feel utterly complacent",
+        "original_label": "joy",
+        "target_label": "love",
+        "generated_text": "I feel deeply cherished.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.4347808361053467,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i feel utterly complacent",
+        "original_label": "joy",
+        "target_label": "love",
+        "generated_text": "i feel utterly devoted",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5336389541625977,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i tended to stay where i felt comfortable to linger in those areas that i would never have to feel vulnerable",
+        "original_label": "fear",
+        "target_label": "sadness",
+        "generated_text": "i tended to stay where i felt comfortable to linger in those areas that reminded me of what i had lost",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6005029678344727,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i tended to stay where i felt comfortable to linger in those areas that i would never have to feel vulnerable",
+        "original_label": "fear",
+        "target_label": "sadness",
+        "generated_text": "i tended to stay where i felt familiar to linger in those areas that reminded me of what i\u2019d lost",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.740123987197876,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i tended to stay where i felt comfortable to linger in those areas that i would never have to feel vulnerable",
+        "original_label": "fear",
+        "target_label": "sadness",
+        "generated_text": "i tended to stay where i felt familiar to linger in those areas that reminded me of what i'd lost",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.9015281200408936,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i havent been feeling in the most romantic mood although weve managed to find some time together in between things",
+        "original_label": "love",
+        "target_label": "anger",
+        "generated_text": "i havent been feeling in the best mood and weve barely managed to find any proper time together with everything getting in the way",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.9039452075958252,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i havent been feeling in the most romantic mood although weve managed to find some time together in between things",
+        "original_label": "love",
+        "target_label": "anger",
+        "generated_text": "i havent been feeling in the best mood lately and it\u2019s frustrating how little time we\u2019ve managed to find together in between everything",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.7736210823059082,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i havent been feeling in the most romantic mood although weve managed to find some time together in between things",
+        "original_label": "love",
+        "target_label": "anger",
+        "generated_text": "i havent been feeling in the best mood although weve been forced to squeeze in time together in between things",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 1.0660722255706787,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i feel the elegant notes of these fonts give the blog post the personal warmth i want my readers to feel when they read my articles",
+        "original_label": "joy",
+        "target_label": "fear",
+        "generated_text": "I feel the unsettling sharpness of these fonts gives the blog post an eerie tone that might make my readers uneasy when they read my articles.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6660168170928955,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i feel the elegant notes of these fonts give the blog post the personal warmth i want my readers to feel when they read my articles",
+        "original_label": "joy",
+        "target_label": "fear",
+        "generated_text": "I sense the unsettling sharpness of these fonts might give the blog post an uneasy edge, the kind that leaves my readers tense as they navigate my articles.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 3.983301877975464,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i feel the elegant notes of these fonts give the blog post the personal warmth i want my readers to feel when they read my articles",
+        "original_label": "joy",
+        "target_label": "fear",
+        "generated_text": "I sense the sharp edges of these fonts might cast an unsettling tone, leaving my readers with an uneasy feeling as they navigate my articles.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7747159004211426,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "ss107159_cf_love_0",
+        "original_id": "ss107159",
+        "target_label": "love",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9994733810123398,
+          "p_orig": 2.7880421181038863e-10,
+          "margin": 0.9994733807335356,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.4057890772819519,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss107159_cf_love_1",
+        "original_id": "ss107159",
+        "target_label": "love",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.5621759992525056,
+          "p_orig": 0.0,
+          "margin": 0.5621759992525056,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.48511597514152527,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss107159_cf_love_2",
+        "original_id": "ss107159",
+        "target_label": "love",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9994733810123398,
+          "p_orig": 2.7880421181038863e-10,
+          "margin": 0.9994733807335356,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.4057890772819519,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss375260_cf_anger_0",
+        "original_id": "ss375260",
+        "target_label": "anger",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999803932501,
+          "p_orig": 1.9555924972225696e-08,
+          "margin": 0.9999999608373251,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.667635440826416,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss375260_cf_anger_1",
+        "original_id": "ss375260",
+        "target_label": "anger",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999999865044886,
+          "p_orig": 1.3440582644871273e-08,
+          "margin": 0.999999973063906,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.6468580365180969,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss375260_cf_anger_2",
+        "original_id": "ss375260",
+        "target_label": "anger",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.999999999746367,
+          "p_orig": 2.461734064146708e-10,
+          "margin": 0.9999999995001936,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.6834383010864258,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss124004_cf_love_0",
+        "original_id": "ss124004",
+        "target_label": "love",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00017946876755403743,
+          "p_orig": 0.9994850472628624,
+          "margin": -0.9993055784953083,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss124004_cf_love_1",
+        "original_id": "ss124004",
+        "target_label": "love",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9468809153811544,
+          "p_orig": 0.022268562886011697,
+          "margin": 0.9246123524951427,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.6570391058921814,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss124004_cf_love_2",
+        "original_id": "ss124004",
+        "target_label": "love",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 3.0089406669111193e-05,
+          "p_orig": 0.14788157991112236,
+          "margin": -0.14785149050445326,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss247839_cf_anger_0",
+        "original_id": "ss247839",
+        "target_label": "anger",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0011694902806514852,
+          "p_orig": 0.0,
+          "margin": 0.0011694902806514852,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss247839_cf_anger_1",
+        "original_id": "ss247839",
+        "target_label": "anger",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999951952681576,
+          "p_orig": 1.1628366641849963e-10,
+          "margin": 0.999995195151874,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.5605578422546387,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss247839_cf_anger_2",
+        "original_id": "ss247839",
+        "target_label": "anger",
+        "passed": false,
+        "rejection_stage": "length_ratio",
+        "label_consistency": {
+          "p_target": 0.999871240164719,
+          "p_orig": 3.653053221648148e-08,
+          "margin": 0.9998712036341867,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.860364556312561,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.5176470588235293,
+          "original_length": 85,
+          "cf_length": 129,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": false,
+          "too_short": false,
+          "too_long": true
+        },
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss46000_cf_surprise_0",
+        "original_id": "ss46000",
+        "target_label": "surprise",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9991318533187821,
+          "p_orig": 0.00015832463593400334,
+          "margin": 0.998973528682848,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.8850376009941101,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0169491525423728,
+          "original_length": 118,
+          "cf_length": 120,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.498747287043782,
+        "v3_score_details": {
+          "score": 1.498747287043782,
+          "p_orig": 0.0003348486898273594,
+          "p_target": 0.9981642714672184,
+          "similarity": 0.8850376009941101,
+          "term1": 0.9996651513101726,
+          "term2": 0.4990821357336092,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "ss46000_cf_surprise_1",
+        "original_id": "ss46000",
+        "target_label": "surprise",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00025144480601925197,
+          "p_orig": 0.03731758359494027,
+          "margin": -0.03706613878892102,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss46000_cf_surprise_2",
+        "original_id": "ss46000",
+        "target_label": "surprise",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00012233707611490122,
+          "p_orig": 0.00857646255853368,
+          "margin": -0.008454125482418778,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss270962_cf_sadness_0",
+        "original_id": "ss270962",
+        "target_label": "sadness",
+        "passed": false,
+        "rejection_stage": "length_ratio",
+        "label_consistency": {
+          "p_target": 0.9984909006682333,
+          "p_orig": 7.877480011831172e-06,
+          "margin": 0.9984830231882215,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9690506458282471,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.3898305084745763,
+          "original_length": 59,
+          "cf_length": 82,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": false,
+          "too_short": false,
+          "too_long": true
+        },
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss270962_cf_sadness_1",
+        "original_id": "ss270962",
+        "target_label": "sadness",
+        "passed": false,
+        "rejection_stage": "length_ratio",
+        "label_consistency": {
+          "p_target": 0.9990834940540374,
+          "p_orig": 5.417321620335042e-06,
+          "margin": 0.9990780767324171,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9644684791564941,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.4067796610169492,
+          "original_length": 59,
+          "cf_length": 83,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": false,
+          "too_short": false,
+          "too_long": true
+        },
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss270962_cf_sadness_2",
+        "original_id": "ss270962",
+        "target_label": "sadness",
+        "passed": false,
+        "rejection_stage": "length_ratio",
+        "label_consistency": {
+          "p_target": 0.9959132312729125,
+          "p_orig": 1.6633572871987605e-05,
+          "margin": 0.9958965977000406,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.9621178507804871,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.4067796610169492,
+          "original_length": 59,
+          "cf_length": 83,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": false,
+          "too_short": false,
+          "too_long": true
+        },
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss53852_cf_love_0",
+        "original_id": "ss53852",
+        "target_label": "love",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999998141382902,
+          "p_orig": 1.8554109427970354e-07,
+          "margin": 0.9999996285971959,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.42510196566581726,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss53852_cf_love_1",
+        "original_id": "ss53852",
+        "target_label": "love",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999962733272357,
+          "p_orig": 3.72667045076314e-06,
+          "margin": 0.9999925466567849,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.39895960688591003,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss53852_cf_love_2",
+        "original_id": "ss53852",
+        "target_label": "love",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999986256400422,
+          "p_orig": 1.3709690998447188e-06,
+          "margin": 0.9999972546709424,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.4593815207481384,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss206525_cf_sadness_0",
+        "original_id": "ss206525",
+        "target_label": "sadness",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999934307027607,
+          "p_orig": 1.0677073320521534e-06,
+          "margin": 0.9999923629954286,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.8255478143692017,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.9357798165137615,
+          "original_length": 109,
+          "cf_length": 102,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999981057762786,
+        "v3_score_details": {
+          "score": 1.4999981057762786,
+          "p_orig": 3.927889140182993e-07,
+          "p_target": 0.9999969971303851,
+          "similarity": 0.8255478143692017,
+          "term1": 0.9999996072110859,
+          "term2": 0.4999984985651926,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "ss206525_cf_sadness_1",
+        "original_id": "ss206525",
+        "target_label": "sadness",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999959150275455,
+          "p_orig": 5.043503183956878e-07,
+          "margin": 0.9999954106772271,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.6636425852775574,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss206525_cf_sadness_2",
+        "original_id": "ss206525",
+        "target_label": "sadness",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9999952526755435,
+          "p_orig": 5.715038333795325e-07,
+          "margin": 0.9999946811717101,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.6706101298332214,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss58234_cf_anger_0",
+        "original_id": "ss58234",
+        "target_label": "anger",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 4.5397869357400236e-05,
+          "p_orig": 9.930775044377791e-08,
+          "margin": 4.529856160695646e-05,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss58234_cf_anger_1",
+        "original_id": "ss58234",
+        "target_label": "anger",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.00015843640292905617,
+          "p_orig": 9.929681631357128e-08,
+          "margin": 0.0001583371061127426,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss58234_cf_anger_2",
+        "original_id": "ss58234",
+        "target_label": "anger",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.0004878232877513121,
+          "p_orig": 2.1433504467912664e-05,
+          "margin": 0.00046638978328339945,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss343045_cf_fear_0",
+        "original_id": "ss343045",
+        "target_label": "fear",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.999995387494011,
+          "p_orig": 2.1298157840249095e-12,
+          "margin": 0.9999953874918811,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.8378396034240723,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.083969465648855,
+          "original_length": 131,
+          "cf_length": 142,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.4999953157783228,
+        "v3_score_details": {
+          "score": 1.4999953157783228,
+          "p_orig": 2.1298036230987566e-12,
+          "p_target": 0.9999906315609055,
+          "similarity": 0.8378396034240723,
+          "term1": 0.9999999999978701,
+          "term2": 0.49999531578045275,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "ss343045_cf_fear_1",
+        "original_id": "ss343045",
+        "target_label": "fear",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9999234767021875,
+          "p_orig": 0.0,
+          "margin": 0.9999234767021875,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.7928937077522278,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.1908396946564885,
+          "original_length": 131,
+          "cf_length": 156,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.499951304157742,
+        "v3_score_details": {
+          "score": 1.499951304157742,
+          "p_orig": 0.0,
+          "p_target": 0.9999026083154836,
+          "similarity": 0.7928937077522278,
+          "term1": 1.0,
+          "term2": 0.4999513041577418,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "ss343045_cf_fear_2",
+        "original_id": "ss343045",
+        "target_label": "fear",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.999976750443268,
+          "p_orig": 2.12977532681047e-12,
+          "margin": 0.9999767504411382,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.6878663301467896,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 3,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 3,
+    "num_final_selected": 3,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

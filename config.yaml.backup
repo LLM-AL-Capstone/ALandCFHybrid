@@ -1,0 +1,226 @@
+# Active Learning Configuration File
+# Configure all settings for the AL system
+
+# ============================================
+# LLM CONFIGURATION
+# ============================================
+llm:
+  # Provider options: 'ollama', 'openai', or 'gemini'
+  provider: openai
+  
+  # Ollama settings (when provider=ollama)
+  ollama:
+    base_url: http://localhost:11434
+    model: qwen:7b-chat  
+  
+  # OpenAI settings (when provider=openai)
+  # Supports both standard OpenAI and Azure OpenAI
+  openai: 
+    api_key: a6705b22532443ee8c0cfda232e57e06
+    azure_endpoint: https://vietgpt.openai.azure.com/
+    model: gpt-4o-2024-11-20 
+    
+  # Gemini settings (when provider=gemini)
+  gemini:
+    api_key: 
+    model:
+
+# ============================================
+# DATASET CONFIGURATION
+# ============================================
+dataset:
+  # Training dataset (for AL pool)
+  train_file: amazon_train.csv  # filename in input_data/ folder
+  
+  # Test dataset (for evaluation)
+  test_file: amazon_test.csv   # filename in input_data/ folder
+  
+  # Column names in CSV
+  columns:
+    id: id
+    text: example
+    label: Label
+  
+  # Labels to exclude from processing (e.g., 'none', 'neutral', null values)
+  exclude_labels:
+    - none
+    - None
+    - null
+    - ""
+
+# ============================================
+# PROCESSING SETTINGS
+# ============================================
+processing:
+  # Random seed for reproducibility
+  seed: 42
+
+# ============================================
+# DIRECTORY CONFIGURATION
+# ============================================
+directories:
+  input_data: input_data
+  output_data: output_data
+
+# ============================================
+# ACTIVE LEARNING CONFIGURATION
+# ============================================
+active_learning:
+  enabled: true
+  
+  # Budget and batch settings
+  total_budget: 100            # Total examples to label
+  batch_size: 10               # Examples per iteration
+  initial_labeled_per_class: 4  # Initial seed set per class
+  
+  # Query strategy settings
+  query_strategy: "uncertainty"  # Options: "uncertainty", "random" (put uncertainty_method as "" if query_strategy="random")
+  uncertainty_method: "entropy"  # Options: "entropy", "margin", "least_confident" (LLM-based), "probe_entropy" (V2 - embedding-based)
+  
+  # AL-Internal Classifier (for uncertainty estimation, target-label selection, CF filtering)
+  # Mentor directive: Keep this static and factual-only for stable AL dynamics
+  al_internal_classifier:
+    type: "static"              # Always static for AL decisions (no retrieval)
+    use_factuals_only: true     # Exclude CFs from ICL prompt (only seed + acquired factuals)
+  
+  # V2: Probe-based Entropy Uncertainty (only used when uncertainty_method="probe_entropy")
+  probe_uncertainty:
+    enabled: false  # Set to true AND set uncertainty_method="probe_entropy" to use V2
+    embedding_model: "bge-large-en-v1.5"  # Options: "E5-large-v2", "bge-large-en-v1.5", "gpt-5-mini-embed"
+    device: "cpu"  # or "cuda" for GPU acceleration
+    # LR probe training settings
+    max_iter: 1000  # Maximum iterations for Logistic Regression
+    C: 1.0  # Regularization parameter (inverse of regularization strength)
+  
+  # Counterfactual augmentation with quality filtering (Paper's Algorithm 1)
+  counterfactuals:
+    enabled: true              # Enable/disable counterfactual generation
+    
+    # Generation budget (Version 3: Per-round budget)
+    max_per_example: 3          # Number of CF candidates generated per labeled example
+    alpha_cf: 1.0               # Per-round budget multiplier: |C_t| <= alpha_cf * |F_t| (default: 1.0, range: {0.5, 1.0, 2.0})
+    # Legacy: cf_total_budget (for backward compatibility, ignored if alpha_cf is set)
+    cf_total_budget: -1         # Total CFs across entire AL run (-1 for unlimited, legacy mode)
+    
+    # Quality filtering (Version 3: Enhanced filtering with 3 filters)
+    quality_filtering:
+      enabled: true
+      # Filter 1: Label-consistency (3 explicit conditions)
+      # Condition 1: p(y_target | u') > p(y_label | u')
+      # Condition 2: p(y_target | u') >= tau_conf
+      # Condition 3: p(y_target | u') - p(y_label | u') >= delta
+      tau_conf: 0.4            # Confidence threshold (default: 0.4, range: [0.3, 0.5])
+      delta: 0.1               # Margin threshold (default: 0.1, range: [0.05, 0.2])
+      # Filter 2: Semantic similarity band
+      # s_min <= cos(E(u), E(u')) <= s_max
+      s_min: 0.7               # Minimum similarity (default: 0.7, range: [0.65, 0.75])
+      s_max: 0.98              # Maximum similarity (default: 0.98, range: [0.95, 0.99])
+      # Filter 3: Length ratio constraint
+      # r_min <= |u'| / |u| <= r_max
+      r_min: 0.7               # Minimum length ratio (default: 0.7, range: [0.6, 1.4])
+      r_max: 1.3               # Maximum length ratio (default: 1.3)
+      # V3 Scoring weights
+      alpha: 0.3               # Weight for semantic similarity in scoring (default: 0.3, range: [0.2, 0.4])
+      beta: 0.5                # Weight for target label probability in scoring (default: 0.5, range: [0.3, 0.7])
+      embedding_model: "all-MiniLM-L6-v2"  # Model for semantic similarity
+    
+    # Target label selection (Version 3)
+    # Selects ONE target label per factual, then generates all CFs toward that label
+    target_label_selection:
+      strategy: "uniform"  # Options: "uniform", "confusion", "round_robin", "hybrid"
+      lambda: 0.5  # Trade-off parameter for hybrid strategy (λ > 0)
+    
+    # Legacy: distribution_strategy (for backward compatibility)
+    # If target_label_selection is not set, this will be used
+    distribution_strategy: "balanced"  # Options: "balanced", "priority", "random"
+    
+    # Generation settings
+    generation_temperature: 0.5   # Increased for diversity (mentor directive)
+    generation_top_p: 0.9         # Added for diversity (mentor directive)
+    max_tokens: 256
+    prompt_variation: true      # Use varied prompts for multiple CFs per label
+    
+    # Selection settings 
+    keep_best_per_factual: 1    # Keep only top-1 CF per factual after filtering
+    use_similarity_in_ranking: false  # Remove similarity term from ranking score
+  
+  # Stopping criteria
+  max_iterations: 50
+  early_stopping_patience: 10  # Stop if no improvement for N iterations
+  min_improvement: 0       # Minimum F1 Macro improvement threshold
+
+# ============================================
+# EVALUATION (inside AL loop) CONFIGURATION
+# ============================================
+evaluation:
+  # Classifier type: "static" (original) or "retrieval" (new)
+  classifier_type: "retrieval"  # Options: "static", "retrieval"
+  
+  max_icl_examples: 800     # Max examples to include in ICL prompt (for static ICL)
+  eval_every_iterations: 999  # Evaluate every N iterations
+  
+  # Retrieval-based ICL settings (used when classifier_type="retrieval")
+  retrieval:
+    # Embedding backend configuration
+    embedding_backend: "contriever"  # Options: sentence_transformers, openai, tfidf, bm25, contriever, bge_large
+    
+    # Sentence Transformers settings
+    sentence_transformers:
+      model: "all-MiniLM-L6-v2"  # Lightweight, fast model (22MB)
+      device: "cpu"  # or "cuda" for GPU acceleration
+      
+    # OpenAI embeddings settings (requires API key, costs money)
+    openai:
+      model: "text-embedding-3-small"
+      batch_size: 100
+      
+    # TF-IDF settings (lightweight fallback, no extra dependencies)
+    tfidf:
+      max_features: 1000
+      ngram_range: [1, 2]
+    
+    # BM25 settings (keyword-based retrieval)
+    bm25:
+      k1: 1.5  # BM25 parameter (term frequency saturation)
+      b: 0.75  # BM25 parameter (length normalization)
+    
+    # Contriever settings (contrastive learning model)
+    contriever:
+      model: "facebook/contriever"  # Options: "facebook/contriever", "facebook/contriever-msmarco"
+      device: "cpu"  # or "cuda" for GPU acceleration
+    
+    # BGE-Large settings (best semantic retriever, recommended for final results)
+    bge_large:
+      model: "BAAI/bge-large-en-v1.5"  # BGE-Large model
+      device: "cpu"  # or "cuda" for GPU acceleration
+      normalize_embeddings: true  # BGE requires normalization for best results
+    
+    # Retrieval strategy parameters
+    k_per_class: 0  # Number of examples to retrieve per class (balanced)
+    total_k_max: 20  # Maximum total examples to use (token budget limit)
+    fallback_strategy: "similarity"  # How to fill remaining: "similarity" or "none"
+    
+    # CF inclusion strategy 
+    # "mixed": CFs compete with factuals in retrieval pool (current behavior)
+    # "factual_anchored": Retrieve only factuals, then attach their CFs as paired augmentations
+    cf_inclusion_strategy: "factual_anchored"  # Options: "mixed", "factual_anchored"
+
+# ============================================
+# LOGGING CONFIGURATION
+# ============================================
+logging:
+  checkpoint_every: 1       # Save checkpoint every N iterations (1 = every iteration for full budget tracking)
+  checkpoint_dir: "output_data/al_checkpoints"
+  results_file: "output_data/al_results.csv"
+
+# ============================================
+# POST-HOC RETRIEVAL COMPARISON (Auto-run after AL)
+# ============================================
+post_hoc_evaluation:
+  enabled: true  # Automatically run retrieval comparison after AL completes
+  include_static: true  # Also evaluate Static ICL for comparison
+  retrievers: ["bm25", "contriever", "bge_large"]  # Retrievers to compare
+  cf_strategies: ["mixed", "factual_anchored"]  # CF inclusion strategies
+  k_values: [20]  # K values for retrieval budget
+  use_checkpoints: true  # Evaluate at each checkpoint (budget 10, 20, 30, ...)
+

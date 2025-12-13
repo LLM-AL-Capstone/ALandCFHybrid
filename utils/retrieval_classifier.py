@@ -40,7 +40,7 @@ class RetrievalICLClassifier(SimpleICLClassifier):
         self.total_k_max = self.retrieval_config.get('total_k_max', 50)
         self.fallback_strategy = self.retrieval_config.get('fallback_strategy', 'similarity')
         
-        # CF inclusion strategy (mentor directive)
+        # CF inclusion strategy 
         # "mixed": CFs compete with factuals in retrieval pool
         # "factual_anchored": Retrieve only factuals, then attach their CFs
         self.cf_inclusion_strategy = self.retrieval_config.get('cf_inclusion_strategy', 'mixed')
