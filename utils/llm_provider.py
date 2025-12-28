@@ -93,8 +93,29 @@ class OllamaProvider(LLMProvider):
         """
         try:
             import ollama
-            self.client = ollama.Client(host=config.get('base_url', 'http://localhost:11434'))
+            base_url = config.get('base_url', 'http://localhost:11434')
+            self.client = ollama.Client(host=base_url)
             self.model = config.get('model', 'qwen2.5:7b')
+            
+            # Also set up OpenAI-compatible client for logprobs support
+            # Ollama exposes OpenAI-compatible API at http://localhost:11434/v1
+            if not base_url.endswith('/v1'):
+                openai_base_url = f"{base_url.rstrip('/')}/v1"
+            else:
+                openai_base_url = base_url
+            
+            try:
+                from openai import OpenAI
+                self.openai_client = OpenAI(
+                    api_key="ollama",  # Ollama doesn't require real API key
+                    base_url=openai_base_url
+                )
+                self.has_openai_compat = True
+            except Exception as e:
+                self.openai_client = None
+                self.has_openai_compat = False
+                print(f"WARNING: Could not initialize OpenAI-compatible client for logprobs: {e}")
+            
             print(f"INFO: Initialized Ollama provider with model: {self.model}")
         except ImportError:
             raise ImportError(
@@ -134,6 +155,107 @@ class OllamaProvider(LLMProvider):
             print(f"ERROR: Ollama API call failed: {e}")
             raise
     
+    def chat_completion_with_logprobs(
+        self,
+        messages: List[Dict[str, str]],
+        possible_labels: List[str],
+        temperature: float = 0.7,
+        max_tokens: int = 256,
+        stop: Optional[List[str]] = None
+    ) -> Dict:
+        """
+        Generate chat completion with log probabilities using Ollama's OpenAI-compatible API.
+        Falls back to regular completion if logprobs are not available.
+        """
+        if not self.has_openai_compat or self.openai_client is None:
+            # Fallback: regular completion without logprobs
+            prediction = self.chat_completion(messages, temperature, max_tokens, stop)
+            return {
+                'prediction': prediction,
+                'probabilities': None
+            }
+        
+        try:
+            # Use OpenAI-compatible API for logprobs support
+            response = self.openai_client.chat.completions.create(
+                model=self.model,
+                messages=messages,
+                temperature=temperature,
+                max_tokens=max_tokens,
+                logprobs=True,  # Request log probabilities
+                top_logprobs=20,  # Get top 20 token probabilities
+                stop=stop
+            )
+            
+            # Extract prediction
+            prediction = response.choices[0].message.content
+            if prediction is None:
+                prediction = ""
+            
+            # Extract log probabilities (similar to OpenAIProvider)
+            logprobs_data = response.choices[0].logprobs
+            
+            if logprobs_data and logprobs_data.content:
+                # Get probabilities for the first token (the label prediction)
+                first_token_logprobs = logprobs_data.content[0].top_logprobs
+                
+                # Build probability dictionary for possible labels
+                label_probs = {}
+                total_prob = 0.0
+                
+                # First, collect probabilities for labels that appear in top_logprobs
+                for logprob_entry in first_token_logprobs:
+                    token = logprob_entry.token.strip().lower()
+                    logprob = logprob_entry.logprob
+                    prob = 2.71828 ** logprob  # exp(logprob) to get probability
+                    
+                    # Check if this token matches any of our labels
+                    for label in possible_labels:
+                        if token == label.lower() or token in label.lower() or label.lower() in token:
+                            if label not in label_probs or prob > label_probs[label]:
+                                label_probs[label] = prob
+                                total_prob += prob
+                
+                # Normalize probabilities
+                if total_prob > 0:
+                    for label in label_probs:
+                        label_probs[label] = label_probs[label] / total_prob
+                
+                # For labels not in top logprobs, assign small probability
+                remaining_prob = max(0, 1.0 - sum(label_probs.values()))
+                missing_labels = [l for l in possible_labels if l not in label_probs]
+                
+                if missing_labels:
+                    small_prob = remaining_prob / len(missing_labels) if missing_labels else 0.0
+                    for label in missing_labels:
+                        label_probs[label] = small_prob
+                
+                # Normalize again to ensure sum = 1.0
+                total = sum(label_probs.values())
+                if total > 0:
+                    label_probs = {k: v/total for k, v in label_probs.items()}
+                
+                return {
+                    'prediction': prediction,
+                    'probabilities': label_probs
+                }
+            else:
+                # No logprobs available
+                return {
+                    'prediction': prediction,
+                    'probabilities': None
+                }
+                
+        except Exception as e:
+            print(f"WARNING: Failed to get logprobs from Ollama: {e}")
+            print(f"  Falling back to regular completion without logprobs")
+            # Fallback to regular completion
+            prediction = self.chat_completion(messages, temperature, max_tokens, stop)
+            return {
+                'prediction': prediction,
+                'probabilities': None
+            }
+    
     def count_tokens(self, text: str) -> int:
         """
         Approximate token count for Ollama models.
@@ -144,7 +266,7 @@ class OllamaProvider(LLMProvider):
 
 
 class OpenAIProvider(LLMProvider):
-    """OpenAI LLM provider (supports both standard OpenAI and Azure OpenAI)"""
+    """OpenAI LLM provider (supports standard OpenAI, Azure OpenAI, and custom OpenAI-compatible endpoints like DeepSeek)"""
     
     def __init__(self, config: dict):
         """
@@ -162,8 +284,10 @@ class OpenAIProvider(LLMProvider):
                     "OpenAI API key not configured. Add your key to config.yaml"
                 )
             
-            # Support for Azure OpenAI endpoint
+            # Support for Azure OpenAI endpoint OR custom base_url (for DeepSeek, etc.)
             azure_endpoint = config.get('azure_endpoint')
+            base_url = config.get('base_url')  # Support custom OpenAI-compatible endpoints
+            
             if azure_endpoint:
                 # Azure OpenAI configuration
                 from openai import AzureOpenAI
@@ -177,6 +301,16 @@ class OpenAIProvider(LLMProvider):
                     api_version="2024-08-01-preview"  # Use latest API version
                 )
                 print(f"INFO: Initialized Azure OpenAI provider with endpoint: {base_endpoint}")
+            elif base_url:
+                # Custom OpenAI-compatible endpoint (e.g., DeepSeek-R1-0528)
+                from openai import OpenAI
+                # Normalize base_url: remove trailing slashes
+                normalized_base_url = base_url.rstrip('/')
+                self.client = OpenAI(
+                    api_key=api_key,
+                    base_url=normalized_base_url
+                )
+                print(f"INFO: Initialized OpenAI-compatible provider with endpoint: {normalized_base_url}")
             else:
                 # Standard OpenAI configuration
                 from openai import OpenAI

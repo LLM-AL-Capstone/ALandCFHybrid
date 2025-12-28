@@ -64,6 +64,16 @@ llm:
     model: gpt-4o-2024-11-20
 ```
 
+**DeepSeek-R1-0528 (OpenAI-compatible)**
+```yaml
+llm:
+  provider: openai
+  openai:
+    api_key: YOUR_DEEPSEEK_API_KEY
+    base_url: https://your-deepseek-endpoint.com/openai/v1/
+    model: DeepSeek-R1-0528
+```
+
 **Google Gemini**
 ```yaml
 llm:
@@ -73,11 +83,15 @@ llm:
     model: gemini-2.5-flash
 ```
 
-**Ollama (Local)**
+**Ollama (Local - Supports logprobs for GPT-Neo, etc.)**
 ```bash
-# First, install and start Ollama
+# First, install and start Ollama (version >= 0.12.11 for logprobs support)
 ollama serve
-ollama pull qwen2.5:7b
+
+# Pull a model (e.g., GPT-Neo for open-source logprobs)
+ollama pull gpt-neo
+# Or other models:
+# ollama pull qwen2.5:7b
 ```
 
 ```yaml
@@ -85,8 +99,10 @@ llm:
   provider: ollama
   ollama:
     base_url: http://localhost:11434
-    model: qwen2.5:7b
+    model: gpt-neo  # GPT-Neo supports logprobs for uncertainty estimation
 ```
+
+**Note:** Ollama uses its OpenAI-compatible API endpoint for logprobs support. The provider automatically handles this for uncertainty estimation and CF filtering.
 
 ### 3. Configure Active Learning Settings
 

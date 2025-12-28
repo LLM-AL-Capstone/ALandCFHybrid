@@ -9,15 +9,21 @@ llm:
   provider: openai
   
   # Ollama settings (when provider=ollama)
+  # Note: Ollama version >= 0.12.11 supports logprobs via OpenAI-compatible API
+  # Pull models with: ollama pull gpt-neo (for logprobs support) or ollama pull qwen2.5:7b
   ollama:
     base_url: http://localhost:11434
-    model: qwen2.5:7b  
+    model: gpt-neo  # or qwen2.5:7b, llama2, etc.  
   
   # OpenAI settings (when provider=openai)
-  # Supports both standard OpenAI and Azure OpenAI
-  openai: 
+  # Supports standard OpenAI, Azure OpenAI, and custom OpenAI-compatible endpoints (e.g., DeepSeek)
+  openai:
     api_key: YOUR_API_KEY_HERE
+    # Option 1: Standard OpenAI (leave both azure_endpoint and base_url empty)
+    # Option 2: Azure OpenAI (set azure_endpoint)
     azure_endpoint: https://your-endpoint.openai.azure.com/
+    # Option 3: Custom OpenAI-compatible endpoint like DeepSeek-R1-0528 (set base_url)
+    # base_url: https://your-custom-endpoint.com/openai/v1/
     model: gpt-4o-2024-11-20 
     
   # Gemini settings (when provider=gemini)
@@ -54,7 +60,7 @@ dataset:
 processing:
   # Random seed for reproducibility
   seed: 42
-
+  
 # ============================================
 # DIRECTORY CONFIGURATION
 # ============================================
