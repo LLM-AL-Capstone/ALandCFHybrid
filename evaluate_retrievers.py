@@ -136,6 +136,58 @@ def count_cfs(pool: List[Dict]) -> int:
     return len([ex for ex in pool if is_counterfactual(ex)])
 
 
+def load_existing_results(run_folder: str) -> pd.DataFrame:
+    """Load existing results if available."""
+    results_path = os.path.join(run_folder, 'retrieval_comparison_results.csv')
+    if os.path.exists(results_path):
+        try:
+            df = pd.read_csv(results_path)
+            print(f"📂 Loaded {len(df)} existing results from previous run")
+            return df
+        except Exception as e:
+            print(f"⚠️  Could not load existing results: {e}")
+            return pd.DataFrame()
+    return pd.DataFrame()
+
+
+def normalize_k_max(k_max) -> str:
+    """Normalize k_max to string for comparison."""
+    if pd.isna(k_max) or k_max == '-' or k_max == '-':
+        return '-'
+    try:
+        return str(int(k_max))
+    except (ValueError, TypeError):
+        return '-'
+
+
+def get_evaluated_combinations(df: pd.DataFrame) -> set:
+    """Get set of already-evaluated combinations as tuples."""
+    if df.empty:
+        return set()
+    
+    evaluated = set()
+    for _, row in df.iterrows():
+        # Normalize k_max for consistent comparison
+        k_max_norm = normalize_k_max(row['k_max'])
+        key = (
+            int(row['iteration']),
+            str(row['retriever']),
+            str(row['cf_strategy']),
+            str(row['pool_type']),
+            k_max_norm
+        )
+        evaluated.add(key)
+    return evaluated
+
+
+def is_already_evaluated(iteration: int, retriever: str, cf_strategy: str, 
+                         pool_type: str, k_max, evaluated_combinations: set) -> bool:
+    """Check if an evaluation combination is already done."""
+    k_max_norm = normalize_k_max(k_max)
+    key = (iteration, retriever, cf_strategy, pool_type, k_max_norm)
+    return key in evaluated_combinations
+
+
 def get_retriever_class(retriever_name: str):
     """Get retriever class by name."""
     retrievers = {
@@ -286,6 +338,11 @@ def run_evaluation(
     # Get batch_size from config for budget calculation
     batch_size = config['active_learning'].get('batch_size', 10)
     
+    # Load existing results for resume functionality
+    existing_df = load_existing_results(run_folder)
+    evaluated_combinations = get_evaluated_combinations(existing_df)
+    print(f"📊 Found {len(evaluated_combinations)} already-evaluated combinations")
+    
     # Run evaluations
     all_results = []
     # Calculate total evaluations: retrievers * strategies * k_values * 2 (full/factuals_only) + static (if enabled) * 2
@@ -293,6 +350,7 @@ def run_evaluation(
     if include_static:
         total_evals += len(checkpoints) * 2  # Static ICL: full + factuals_only
     eval_count = 0
+    skipped_count = 0
     
     for checkpoint in checkpoints:
         iteration = checkpoint['iteration']
@@ -319,125 +377,165 @@ def run_evaluation(
         # ========== Static ICL Evaluation ==========
         if include_static:
             # Evaluate Static ICL on full pool
-            eval_count += 1
-            print(f"  [{eval_count}/{total_evals}] static / - / - / full...", end=" ")
-            
-            try:
-                classifier = SimpleICLClassifier(config, llm_provider)
-                classifier.train(labeled_pool)
+            if is_already_evaluated(iteration, 'static', '-', 'full', '-', evaluated_combinations):
+                print(f"  ⏭️  Skipping static / - / - / full (already done)")
+                skipped_count += 1
+            else:
+                eval_count += 1
+                print(f"  [{eval_count}/{total_evals}] static / - / - / full...", end=" ")
                 
-                metrics = evaluate_classifier(classifier, test_pool)
-                
-                result = {
-                    'iteration': iteration,
-                    'budget_used': budget_used,
-                    'pool_type': 'full',
-                    'retriever': 'static',
-                    'cf_strategy': '-',
-                    'k_max': '-',
-                    'labeled_pool_size': len(labeled_pool),
-                    'total_factuals': total_factuals,
-                    'total_cfs': total_cfs,
-                    **metrics
-                }
-                all_results.append(result)
-                print(f"F1={metrics.get('f1_macro', 'N/A'):.4f}" if metrics else "No metrics")
-            except Exception as e:
-                print(f"Error: {e}")
+                try:
+                    classifier = SimpleICLClassifier(config, llm_provider)
+                    classifier.train(labeled_pool)
+                    
+                    metrics = evaluate_classifier(classifier, test_pool)
+                    
+                    result = {
+                        'iteration': iteration,
+                        'budget_used': budget_used,
+                        'pool_type': 'full',
+                        'retriever': 'static',
+                        'cf_strategy': '-',
+                        'k_max': '-',
+                        'labeled_pool_size': len(labeled_pool),
+                        'total_factuals': total_factuals,
+                        'total_cfs': total_cfs,
+                        **metrics
+                    }
+                    all_results.append(result)
+                    print(f"F1={metrics.get('f1_macro', 'N/A'):.4f}" if metrics else "No metrics")
+                except Exception as e:
+                    print(f"Error: {e}")
             
             # Evaluate Static ICL on factuals-only pool
-            eval_count += 1
-            print(f"  [{eval_count}/{total_evals}] static / - / - / factuals_only...", end=" ")
-            
-            try:
-                classifier = SimpleICLClassifier(config, llm_provider)
-                classifier.train(factuals_only)
+            if is_already_evaluated(iteration, 'static', '-', 'factuals_only', '-', evaluated_combinations):
+                print(f"  ⏭️  Skipping static / - / - / factuals_only (already done)")
+                skipped_count += 1
+            else:
+                eval_count += 1
+                print(f"  [{eval_count}/{total_evals}] static / - / - / factuals_only...", end=" ")
                 
-                metrics = evaluate_classifier(classifier, test_pool)
-                
-                result = {
-                    'iteration': iteration,
-                    'budget_used': budget_used,
-                    'pool_type': 'factuals_only',
-                    'retriever': 'static',
-                    'cf_strategy': '-',
-                    'k_max': '-',
-                    'labeled_pool_size': len(factuals_only),
-                    'total_factuals': total_factuals,
-                    'total_cfs': 0,
-                    **metrics
-                }
-                all_results.append(result)
-                print(f"F1={metrics.get('f1_macro', 'N/A'):.4f}" if metrics else "No metrics")
-            except Exception as e:
-                print(f"Error: {e}")
+                try:
+                    classifier = SimpleICLClassifier(config, llm_provider)
+                    classifier.train(factuals_only)
+                    
+                    metrics = evaluate_classifier(classifier, test_pool)
+                    
+                    result = {
+                        'iteration': iteration,
+                        'budget_used': budget_used,
+                        'pool_type': 'factuals_only',
+                        'retriever': 'static',
+                        'cf_strategy': '-',
+                        'k_max': '-',
+                        'labeled_pool_size': len(factuals_only),
+                        'total_factuals': total_factuals,
+                        'total_cfs': 0,
+                        **metrics
+                    }
+                    all_results.append(result)
+                    print(f"F1={metrics.get('f1_macro', 'N/A'):.4f}" if metrics else "No metrics")
+                except Exception as e:
+                    print(f"Error: {e}")
         
         # ========== Retrieval-based Evaluation ==========
         for retriever_name in retrievers:
             for cf_strategy in cf_strategies:
                 for k_max in k_values:
                     # Evaluate on full pool (factuals + CFs)
-                    eval_count += 1
-                    print(f"  [{eval_count}/{total_evals}] {retriever_name} / {cf_strategy} / k={k_max} / full...", end=" ")
-                    
-                    try:
-                        retriever_config = create_retriever_config(config, retriever_name, cf_strategy, k_max)
-                        RetrieverClass = get_retriever_class(retriever_name)
-                        classifier = RetrieverClass(retriever_config, llm_provider)
-                        classifier.train(labeled_pool)
+                    if is_already_evaluated(iteration, retriever_name, cf_strategy, 'full', k_max, evaluated_combinations):
+                        print(f"  ⏭️  Skipping {retriever_name} / {cf_strategy} / k={k_max} / full (already done)")
+                        skipped_count += 1
+                    else:
+                        eval_count += 1
+                        print(f"  [{eval_count}/{total_evals}] {retriever_name} / {cf_strategy} / k={k_max} / full...", end=" ")
                         
-                        metrics = evaluate_classifier(classifier, test_pool)
-                        
-                        result = {
-                            'iteration': iteration,
-                            'budget_used': budget_used,
-                            'pool_type': 'full',
-                            'retriever': retriever_name,
-                            'cf_strategy': cf_strategy,
-                            'k_max': k_max,
-                            'labeled_pool_size': len(labeled_pool),
-                            'total_factuals': total_factuals,
-                            'total_cfs': total_cfs,
-                            **metrics
-                        }
-                        all_results.append(result)
-                        print(f"F1={metrics.get('f1_macro', 'N/A'):.4f}" if metrics else "No metrics")
-                    except Exception as e:
-                        print(f"Error: {e}")
+                        try:
+                            retriever_config = create_retriever_config(config, retriever_name, cf_strategy, k_max)
+                            RetrieverClass = get_retriever_class(retriever_name)
+                            classifier = RetrieverClass(retriever_config, llm_provider)
+                            classifier.train(labeled_pool)
+                            
+                            metrics = evaluate_classifier(classifier, test_pool)
+                            
+                            result = {
+                                'iteration': iteration,
+                                'budget_used': budget_used,
+                                'pool_type': 'full',
+                                'retriever': retriever_name,
+                                'cf_strategy': cf_strategy,
+                                'k_max': k_max,
+                                'labeled_pool_size': len(labeled_pool),
+                                'total_factuals': total_factuals,
+                                'total_cfs': total_cfs,
+                                **metrics
+                            }
+                            all_results.append(result)
+                            print(f"F1={metrics.get('f1_macro', 'N/A'):.4f}" if metrics else "No metrics")
+                        except Exception as e:
+                            print(f"Error: {e}")
                     
                     # Evaluate on factuals-only pool
-                    eval_count += 1
-                    print(f"  [{eval_count}/{total_evals}] {retriever_name} / - / k={k_max} / factuals_only...", end=" ")
-                    
-                    try:
-                        retriever_config = create_retriever_config(config, retriever_name, 'mixed', k_max)
-                        RetrieverClass = get_retriever_class(retriever_name)
-                        classifier = RetrieverClass(retriever_config, llm_provider)
-                        classifier.train(factuals_only)
+                    if is_already_evaluated(iteration, retriever_name, '-', 'factuals_only', k_max, evaluated_combinations):
+                        print(f"  ⏭️  Skipping {retriever_name} / - / k={k_max} / factuals_only (already done)")
+                        skipped_count += 1
+                    else:
+                        eval_count += 1
+                        print(f"  [{eval_count}/{total_evals}] {retriever_name} / - / k={k_max} / factuals_only...", end=" ")
                         
-                        metrics = evaluate_classifier(classifier, test_pool)
-                        
-                        result = {
-                            'iteration': iteration,
-                            'budget_used': budget_used,
-                            'pool_type': 'factuals_only',
-                            'retriever': retriever_name,
-                            'cf_strategy': '-',
-                            'k_max': k_max,
-                            'labeled_pool_size': len(factuals_only),
-                            'total_factuals': total_factuals,
-                            'total_cfs': 0,
-                            **metrics
-                        }
-                        all_results.append(result)
-                        print(f"F1={metrics.get('f1_macro', 'N/A'):.4f}" if metrics else "No metrics")
-                    except Exception as e:
-                        print(f"Error: {e}")
+                        try:
+                            retriever_config = create_retriever_config(config, retriever_name, 'mixed', k_max)
+                            RetrieverClass = get_retriever_class(retriever_name)
+                            classifier = RetrieverClass(retriever_config, llm_provider)
+                            classifier.train(factuals_only)
+                            
+                            metrics = evaluate_classifier(classifier, test_pool)
+                            
+                            result = {
+                                'iteration': iteration,
+                                'budget_used': budget_used,
+                                'pool_type': 'factuals_only',
+                                'retriever': retriever_name,
+                                'cf_strategy': '-',
+                                'k_max': k_max,
+                                'labeled_pool_size': len(factuals_only),
+                                'total_factuals': total_factuals,
+                                'total_cfs': 0,
+                                **metrics
+                            }
+                            all_results.append(result)
+                            print(f"F1={metrics.get('f1_macro', 'N/A'):.4f}" if metrics else "No metrics")
+                        except Exception as e:
+                            print(f"Error: {e}")
     
     # Save results
-    if all_results:
+    if all_results or not existing_df.empty:
         output_path = os.path.join(run_folder, 'retrieval_comparison_results.csv')
-        df_results = pd.DataFrame(all_results)
+        
+        # Merge existing and new results
+        if not existing_df.empty and all_results:
+            print(f"\n📊 Merging {len(existing_df)} existing results with {len(all_results)} new results")
+            new_df = pd.DataFrame(all_results)
+            
+            # Combine dataframes
+            combined_df = pd.concat([existing_df, new_df], ignore_index=True)
+            
+            # Remove duplicates (keep the new ones if there are any)
+            key_cols = ['iteration', 'retriever', 'cf_strategy', 'pool_type', 'k_max']
+            # Normalize k_max for deduplication
+            combined_df['k_max_norm'] = combined_df['k_max'].apply(normalize_k_max)
+            combined_df = combined_df.drop_duplicates(
+                subset=['iteration', 'retriever', 'cf_strategy', 'pool_type', 'k_max_norm'],
+                keep='last'
+            )
+            combined_df = combined_df.drop(columns=['k_max_norm'])
+            
+            df_results = combined_df
+        elif all_results:
+            df_results = pd.DataFrame(all_results)
+        else:
+            # No new results, just use existing
+            df_results = existing_df
         
         # Sort by (retriever, cf_strategy, pool_type, iteration) for easy table splitting
         sort_order = {
@@ -467,7 +565,9 @@ def run_evaluation(
         
         df_results.to_csv(output_path, index=False)
         print(f"\n✅ Results saved to: {output_path}")
-        print(f"   Total evaluations: {len(all_results)}")
+        print(f"   New evaluations: {len(all_results)}")
+        print(f"   Skipped (already done): {skipped_count}")
+        print(f"   Total results: {len(df_results)}")
         print(f"   Sorted by: retriever → cf_strategy → pool_type → iteration")
         
         # Create pivot table: strategies (rows) × budgets (columns)
