@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load the results
-results_path = 'output_data/20251227_232747_gemini-2.5-flash_yelp_retrieval_random_random_contriever_s42_n5/retrieval_comparison_results.csv'
+results_path = 'output_data/20251230_004345_qwen2.5-1.5b-instruct_yelp_retrieval_uncertainty_entropy_LLMprobe_contriever_s42_n5/retrieval_comparison_results.csv'
 df = pd.read_csv(results_path)
 
 # Create strategy column (same as in the script)
@@ -38,7 +38,7 @@ pivot_df = pivot_df.reindex(existing_strategies)
 pivot_df = pivot_df.reindex(sorted(pivot_df.columns), axis=1)
 
 # Save to CSV
-output_path = 'output_data/20251227_232747_gemini-2.5-flash_yelp_retrieval_random_random_contriever_s42_n5/retrieval_comparison_pivot_accuracy.csv'
+output_path = 'output_data/20251230_004345_qwen2.5-1.5b-instruct_yelp_retrieval_uncertainty_entropy_LLMprobe_contriever_s42_n5/retrieval_comparison_pivot_accuracy.csv'
 pivot_df.to_csv(output_path)
 print(f'✅ Accuracy pivot table saved to: {output_path}')
 print(f'\nAccuracy Pivot Table:')

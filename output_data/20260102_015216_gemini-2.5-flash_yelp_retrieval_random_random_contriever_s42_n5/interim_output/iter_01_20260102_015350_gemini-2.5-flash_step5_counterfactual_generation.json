@@ -1,0 +1,521 @@
+{
+  "iteration": 1,
+  "timestamp": "20260102_015350",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": "ss334",
+      "text": "this mall actually feels like one in las vegas . ",
+      "label": "environment"
+    },
+    {
+      "id": "ss425",
+      "text": "the only problem we really had was the ladies at the front office were sorta rude and looked annoyed at us . ",
+      "label": "service"
+    },
+    {
+      "id": "ss420",
+      "text": "he was super friendly and helpful and made me feel welcomed . ",
+      "label": "service"
+    },
+    {
+      "id": "ss465",
+      "text": "the waiter was friendly and helpful ",
+      "label": "service"
+    },
+    {
+      "id": "ss223",
+      "text": "we also ordered the parm chicken bites which were horrible and tasted like they were frozen and microwaved . ",
+      "label": "products"
+    },
+    {
+      "id": "ss212",
+      "text": "there 's construction right in front of the building so parking and getting around are a bit difficult ",
+      "label": "environment"
+    },
+    {
+      "id": "ss306",
+      "text": "all you can say is yuuummmmmmmmyy , the line was n't bad given we were there around 3 pm ",
+      "label": "service"
+    },
+    {
+      "id": "ss79",
+      "text": "the gentleman at the front desk is seriously one of the kindest people i 've met ",
+      "label": "service"
+    },
+    {
+      "id": "ss228",
+      "text": "she also refused to provide the name of her boss in order for me to complain about the experience . ",
+      "label": "service"
+    },
+    {
+      "id": "ss112",
+      "text": "the service is excellent and the family feel of this place is so great . ",
+      "label": "service"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "ss334_cf_products_0",
+      "text": "this mall actually feels like one in las vegas in terms of its merchandise.",
+      "label": "products",
+      "original_id": "ss334",
+      "original_label": "environment"
+    },
+    {
+      "id": "ss334_cf_products_1",
+      "text": "this mall actually feels like one in las vegas with all the high-end brands.",
+      "label": "products",
+      "original_id": "ss334",
+      "original_label": "environment"
+    },
+    {
+      "id": "ss334_cf_products_2",
+      "text": "this mall actually feels like one in las vegas, with all the high-end brands.",
+      "label": "products",
+      "original_id": "ss334",
+      "original_label": "environment"
+    },
+    {
+      "id": "ss425_cf_environment_0",
+      "text": "the only problem we really had was the ladies at the front office made the atmosphere feel sorta rude and looked annoyed at us .",
+      "label": "environment",
+      "original_id": "ss425",
+      "original_label": "service"
+    },
+    {
+      "id": "ss425_cf_environment_1",
+      "text": "the only problem we really had was the air in the front office was sorta stale and felt oppressive to us.",
+      "label": "environment",
+      "original_id": "ss425",
+      "original_label": "service"
+    },
+    {
+      "id": "ss425_cf_environment_2",
+      "text": "The only problem we really had was the air in the front office was sorta stale and felt oppressive to us.",
+      "label": "environment",
+      "original_id": "ss425",
+      "original_label": "service"
+    },
+    {
+      "id": "ss420_cf_environment_0",
+      "text": "he was super friendly and helpful and made me feel welcomed by the surroundings.",
+      "label": "environment",
+      "original_id": "ss420",
+      "original_label": "service"
+    },
+    {
+      "id": "ss420_cf_environment_1",
+      "text": "The air was super fresh and clean and made me feel revitalized.",
+      "label": "environment",
+      "original_id": "ss420",
+      "original_label": "service"
+    },
+    {
+      "id": "ss420_cf_environment_2",
+      "text": "The space felt incredibly inviting and accommodating, making me feel welcomed.",
+      "label": "environment",
+      "original_id": "ss420",
+      "original_label": "service"
+    },
+    {
+      "id": "ss465_cf_environment_0",
+      "text": "the forest was friendly and helpful",
+      "label": "environment",
+      "original_id": "ss465",
+      "original_label": "service"
+    }
+  ],
+  "selected_cf_ids": [
+    "ss334_cf_products_0",
+    "ss334_cf_products_1",
+    "ss334_cf_products_2",
+    "ss425_cf_environment_0",
+    "ss425_cf_environment_1",
+    "ss425_cf_environment_2",
+    "ss420_cf_environment_0",
+    "ss420_cf_environment_1",
+    "ss420_cf_environment_2",
+    "ss465_cf_environment_0"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 10,
+    "num_added": 10,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "this mall actually feels like one in las vegas . ",
+        "original_label": "environment",
+        "target_label": "products",
+        "generated_text": "this mall actually feels like one in las vegas in terms of its merchandise.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.4906890392303467,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "this mall actually feels like one in las vegas . ",
+        "original_label": "environment",
+        "target_label": "products",
+        "generated_text": "this mall actually feels like one in las vegas with all the high-end brands.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5099949836730957,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "this mall actually feels like one in las vegas . ",
+        "original_label": "environment",
+        "target_label": "products",
+        "generated_text": "this mall actually feels like one in las vegas, with all the high-end brands.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.4461488723754883,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the only problem we really had was the ladies at the front office were sorta rude and looked annoyed at us . ",
+        "original_label": "service",
+        "target_label": "environment",
+        "generated_text": "the only problem we really had was the ladies at the front office made the atmosphere feel sorta rude and looked annoyed at us .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5459980964660645,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the only problem we really had was the ladies at the front office were sorta rude and looked annoyed at us . ",
+        "original_label": "service",
+        "target_label": "environment",
+        "generated_text": "the only problem we really had was the air in the front office was sorta stale and felt oppressive to us.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5407469272613525,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the only problem we really had was the ladies at the front office were sorta rude and looked annoyed at us . ",
+        "original_label": "service",
+        "target_label": "environment",
+        "generated_text": "The only problem we really had was the air in the front office was sorta stale and felt oppressive to us.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5565769672393799,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "he was super friendly and helpful and made me feel welcomed . ",
+        "original_label": "service",
+        "target_label": "environment",
+        "generated_text": "he was super friendly and helpful and made me feel welcomed by the surroundings.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5227100849151611,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "he was super friendly and helpful and made me feel welcomed . ",
+        "original_label": "service",
+        "target_label": "environment",
+        "generated_text": "The air was super fresh and clean and made me feel revitalized.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5166158676147461,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "he was super friendly and helpful and made me feel welcomed . ",
+        "original_label": "service",
+        "target_label": "environment",
+        "generated_text": "The space felt incredibly inviting and accommodating, making me feel welcomed.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5218980312347412,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the waiter was friendly and helpful ",
+        "original_label": "service",
+        "target_label": "environment",
+        "generated_text": "the forest was friendly and helpful",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.4942800998687744,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the waiter was friendly and helpful ",
+        "original_label": "service",
+        "target_label": "environment",
+        "generated_text": "the forest was welcoming and vibrant",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.42958498001098633,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the waiter was friendly and helpful ",
+        "original_label": "service",
+        "target_label": "environment",
+        "generated_text": "the air was fresh and clean",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.49455928802490234,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "we also ordered the parm chicken bites which were horrible and tasted like they were frozen and microwaved . ",
+        "original_label": "products",
+        "target_label": "price",
+        "generated_text": "we also ordered the parm chicken bites which were horrible and and cost like they were frozen and microwaved .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.524616003036499,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "we also ordered the parm chicken bites which were horrible and tasted like they were frozen and microwaved . ",
+        "original_label": "products",
+        "target_label": "price",
+        "generated_text": "we also ordered the parm chicken bites which were horrible and felt like a complete rip-off for the cost.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5940279960632324,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "we also ordered the parm chicken bites which were horrible and tasted like they were frozen and microwaved . ",
+        "original_label": "products",
+        "target_label": "price",
+        "generated_text": "we also ordered the parm chicken bites which were horrible and tasted like they were cheap and overpriced.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6538519859313965,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "there 's construction right in front of the building so parking and getting around are a bit difficult ",
+        "original_label": "environment",
+        "target_label": "products",
+        "generated_text": "there 's a new software update right in front of the building so installing and getting it to work are a bit difficult",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.617872953414917,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "there 's construction right in front of the building so parking and getting around are a bit difficult ",
+        "original_label": "environment",
+        "target_label": "products",
+        "generated_text": "there 's a software update right in front of the building so installing and getting it to run are a bit difficult ",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5955629348754883,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "there 's construction right in front of the building so parking and getting around are a bit difficult ",
+        "original_label": "environment",
+        "target_label": "products",
+        "generated_text": "there 's a new software update right in front of the application so installing and navigating are a bit difficult ",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.535041093826294,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "all you can say is yuuummmmmmmmyy , the line was n't bad given we were there around 3 pm ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "all you can say is yuuummmmmmmmyy , the bill was n't bad given we were there around 3 pm",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.40418505668640137,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "all you can say is yuuummmmmmmmyy , the line was n't bad given we were there around 3 pm ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "all you can say is yuuummmmmmmmyy , the bill wasn't bad given we were there around 3 pm",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5416302680969238,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "all you can say is yuuummmmmmmmyy , the line was n't bad given we were there around 3 pm ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "all you can say is yuuummmmmmmmyy , the bill wasn't bad given we were there around 3 pm",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5832388401031494,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the gentleman at the front desk is seriously one of the kindest people i 've met ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "the gentleman at the front desk is seriously one of the cheapest people i 've met",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5364069938659668,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the gentleman at the front desk is seriously one of the kindest people i 've met ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "the gentleman at the front desk is seriously one of the most affordable people i 've met",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.44745326042175293,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the gentleman at the front desk is seriously one of the kindest people i 've met ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "the gentleman at the front desk seriously offers one of the best deals i've seen",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5615060329437256,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "she also refused to provide the name of her boss in order for me to complain about the experience . ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "she also refused to provide the name of her boss in order for me to complain about the cost .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.3988010883331299,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "she also refused to provide the name of her boss in order for me to complain about the experience . ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "She also refused to provide the full cost breakdown in order for me to understand the charges.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.4164249897003174,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "she also refused to provide the name of her boss in order for me to complain about the experience . ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "she also refused to provide the name of her boss in order for me to complain about the cost.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5476610660552979,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the service is excellent and the family feel of this place is so great . ",
+        "original_label": "service",
+        "target_label": "products",
+        "generated_text": "the items are excellent and the family feel of this place is so great .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5439670085906982,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the service is excellent and the family feel of this place is so great . ",
+        "original_label": "service",
+        "target_label": "products",
+        "generated_text": "the items are excellent and the family feel of this place is so great .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.38384103775024414,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the service is excellent and the family feel of this place is so great . ",
+        "original_label": "service",
+        "target_label": "products",
+        "generated_text": "the products are excellent and the family feel of this place is so great .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.39756226539611816,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": []
+  },
+  "num_generated": 10,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 10,
+    "num_final_selected": 10,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

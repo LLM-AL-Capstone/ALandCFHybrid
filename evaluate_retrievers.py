@@ -169,8 +169,10 @@ def get_evaluated_combinations(df: pd.DataFrame) -> set:
     for _, row in df.iterrows():
         # Normalize k_max for consistent comparison
         k_max_norm = normalize_k_max(row['k_max'])
+        # Use budget_used for comparison (more accurate than iteration for fractional iterations)
+        budget = int(row['budget_used']) if 'budget_used' in row else int(row.get('iteration', 0) * 10)
         key = (
-            int(row['iteration']),
+            budget,
             str(row['retriever']),
             str(row['cf_strategy']),
             str(row['pool_type']),
@@ -180,12 +182,127 @@ def get_evaluated_combinations(df: pd.DataFrame) -> set:
     return evaluated
 
 
-def is_already_evaluated(iteration: int, retriever: str, cf_strategy: str, 
+def is_already_evaluated(budget_used: int, retriever: str, cf_strategy: str, 
                          pool_type: str, k_max, evaluated_combinations: set) -> bool:
     """Check if an evaluation combination is already done."""
     k_max_norm = normalize_k_max(k_max)
-    key = (iteration, retriever, cf_strategy, pool_type, k_max_norm)
+    key = (int(budget_used), retriever, cf_strategy, pool_type, k_max_norm)
     return key in evaluated_combinations
+
+
+def load_checkpoints_with_custom_budgets(run_folder: str, checkpoint_dir: str, batch_size: int, custom_budgets: List[int] = None) -> List[Dict]:
+    """
+    Load checkpoints and create intermediate ones for custom budgets.
+    
+    Args:
+        run_folder: Run folder path
+        checkpoint_dir: Checkpoint directory
+        batch_size: Batch size for budget calculation
+        custom_budgets: List of custom budget values (e.g., [0, 2, 5])
+    
+    Returns:
+        List of checkpoint dictionaries with iteration, budget, and pool
+    """
+    checkpoints = []
+    
+    # Load existing checkpoints
+    if os.path.exists(checkpoint_dir):
+        checkpoint_files = sorted([
+            f for f in os.listdir(checkpoint_dir) 
+            if f.startswith('checkpoint_iter_') and f.endswith('.json')
+        ])
+        for cf in checkpoint_files:
+            iter_num = int(cf.split('_')[2].split('.')[0])
+            cp_data = load_checkpoint(os.path.join(checkpoint_dir, cf))
+            checkpoints.append({
+                'iteration': iter_num,
+                'budget': iter_num * batch_size,
+                'pool': cp_data['labeled_pool'],
+                'path': os.path.join(checkpoint_dir, cf)
+            })
+    
+    # Add final pool if exists
+    try:
+        final_pool = load_final_pool(run_folder)
+        results_path = os.path.join(run_folder, 'al_results.csv')
+        if os.path.exists(results_path):
+            df_results = pd.read_csv(results_path)
+            final_iter = int(df_results['iteration'].max())
+            final_budget = final_iter * batch_size
+        else:
+            final_iter = len(checkpoints) if checkpoints else 0
+            final_budget = final_iter * batch_size
+        
+        existing_budgets = {cp['budget'] for cp in checkpoints}
+        if final_budget not in existing_budgets:
+            checkpoints.append({
+                'iteration': final_iter,
+                'budget': final_budget,
+                'pool': final_pool,
+                'is_final': True
+            })
+    except FileNotFoundError:
+        pass
+    
+    # Sort by budget
+    checkpoints.sort(key=lambda x: x['budget'])
+    
+    # Create intermediate checkpoints for custom budgets
+    if custom_budgets:
+        for target_budget in custom_budgets:
+            # Check if already exists
+            if any(cp['budget'] == target_budget for cp in checkpoints):
+                continue
+            
+            # Find surrounding checkpoints
+            prev_cp = None
+            next_cp = None
+            for cp in checkpoints:
+                if cp['budget'] <= target_budget:
+                    prev_cp = cp
+                elif cp['budget'] > target_budget and next_cp is None:
+                    next_cp = cp
+                    break
+            
+            if prev_cp is None:
+                continue  # Can't create checkpoint before first one
+            
+            # Create intermediate pool
+            if next_cp is None:
+                # Use previous checkpoint's pool (budget >= target)
+                intermediate_pool = prev_cp['pool'].copy()
+            else:
+                # Interpolate: take first N factuals from next checkpoint
+                factuals_only = get_factuals_only(next_cp['pool'])
+                prev_factuals = get_factuals_only(prev_cp['pool'])
+                seed_size = len(prev_factuals)
+                num_factuals_needed = seed_size + target_budget
+                
+                if num_factuals_needed <= len(factuals_only):
+                    # Take first N factuals
+                    intermediate_pool = factuals_only[:num_factuals_needed].copy()
+                    # Add any CFs that belong to these factuals
+                    factual_ids = {f['id'] for f in intermediate_pool}
+                    for cf in next_cp['pool']:
+                        if is_counterfactual(cf) and cf.get('original_id') in factual_ids:
+                            intermediate_pool.append(cf)
+                else:
+                    # Fallback: use next checkpoint's pool
+                    intermediate_pool = next_cp['pool'].copy()
+            
+            # Calculate fractional iteration
+            fractional_iter = target_budget / batch_size
+            
+            checkpoints.append({
+                'iteration': fractional_iter,
+                'budget': target_budget,
+                'pool': intermediate_pool,
+                'is_intermediate': True
+            })
+    
+    # Re-sort by budget
+    checkpoints.sort(key=lambda x: x['budget'])
+    return checkpoints
 
 
 def get_retriever_class(retriever_name: str):
@@ -289,54 +406,48 @@ def run_evaluation(
     checkpoint_dir = os.path.join(run_folder, 'checkpoints')
     checkpoints = []
     
-    if use_checkpoints and os.path.exists(checkpoint_dir):
-        checkpoint_files = sorted([
-            f for f in os.listdir(checkpoint_dir) 
-            if f.startswith('checkpoint_iter_') and f.endswith('.json')
-        ])
-        for cf in checkpoint_files:
-            iter_num = int(cf.split('_')[2].split('.')[0])
-            checkpoints.append({
-                'iteration': iter_num,
-                'path': os.path.join(checkpoint_dir, cf)
-            })
-        print(f"Found {len(checkpoints)} checkpoints")
+    # Get batch_size from config for budget calculation
+    batch_size = config['active_learning'].get('batch_size', 10)
     
-    # Also add final pool (but avoid duplicates with checkpoints)
-    try:
-        final_pool = load_final_pool(run_folder)
-        # Determine iteration number from al_results.csv
-        results_path = os.path.join(run_folder, 'al_results.csv')
-        if os.path.exists(results_path):
-            df_results = pd.read_csv(results_path)
-            final_iter = int(df_results['iteration'].max())
-        else:
-            final_iter = len(checkpoints) + 1
-        
-        # Only add final pool if not already covered by a checkpoint
-        existing_iters = {cp['iteration'] for cp in checkpoints}
-        if final_iter not in existing_iters:
-            checkpoints.append({
+    # Custom budget points to evaluate (0, 2, 5 for low budgets)
+    custom_budgets = [0, 2, 5]
+    
+    if use_checkpoints:
+        checkpoints = load_checkpoints_with_custom_budgets(
+            run_folder,
+            checkpoint_dir,
+            batch_size,
+            custom_budgets=custom_budgets
+        )
+        print(f"Found {len(checkpoints)} checkpoints (including custom budgets)")
+        print(f"Budgets: {[cp['budget'] for cp in checkpoints]}")
+    else:
+        # Fallback: load final pool only
+        try:
+            final_pool = load_final_pool(run_folder)
+            results_path = os.path.join(run_folder, 'al_results.csv')
+            if os.path.exists(results_path):
+                df_results = pd.read_csv(results_path)
+                final_iter = int(df_results['iteration'].max())
+            else:
+                final_iter = 0
+            checkpoints = [{
                 'iteration': final_iter,
+                'budget': final_iter * batch_size,
                 'pool': final_pool,
                 'is_final': True
-            })
-            print(f"Added final pool (iteration {final_iter})")
-        else:
-            print(f"Final pool iteration {final_iter} already covered by checkpoint, skipping duplicate")
-    except FileNotFoundError:
-        print("Warning: No final_labeled_pool.csv found")
+            }]
+        except FileNotFoundError:
+            print("Error: No checkpoints or final pool found!")
+            return
     
-    # Sort checkpoints by iteration
-    checkpoints.sort(key=lambda x: x['iteration'])
-    print(f"Evaluating {len(checkpoints)} checkpoints: iterations {[cp['iteration'] for cp in checkpoints]}")
+    # Sort checkpoints by budget
+    checkpoints.sort(key=lambda x: x['budget'])
+    print(f"Evaluating {len(checkpoints)} checkpoints: budgets {[cp['budget'] for cp in checkpoints]}")
     
     if not checkpoints:
         print("Error: No checkpoints or final pool found!")
         return
-    
-    # Get batch_size from config for budget calculation
-    batch_size = config['active_learning'].get('batch_size', 10)
     
     # Load existing results for resume functionality
     existing_df = load_existing_results(run_folder)
@@ -365,19 +476,19 @@ def run_evaluation(
         # Get factuals-only pool
         factuals_only = get_factuals_only(labeled_pool)
         
-        # Calculate budget used = iteration * batch_size (simpler and more accurate)
+        # Calculate budget used - use budget from checkpoint if available, otherwise calculate
         # Budget represents factuals labeled beyond the seed set
-        budget_used = iteration * batch_size
+        budget_used = checkpoint.get('budget', iteration * batch_size)
         
         total_factuals = len(factuals_only)
         total_cfs = count_cfs(labeled_pool)
         
-        print(f"\n--- Iteration {iteration} (factuals: {total_factuals}, CFs: {total_cfs}) ---")
+        print(f"\n--- Iteration {iteration} (Budget: {budget_used}, factuals: {total_factuals}, CFs: {total_cfs}) ---")
         
         # ========== Static ICL Evaluation ==========
         if include_static:
             # Evaluate Static ICL on full pool
-            if is_already_evaluated(iteration, 'static', '-', 'full', '-', evaluated_combinations):
+            if is_already_evaluated(budget_used, 'static', '-', 'full', '-', evaluated_combinations):
                 print(f"  ⏭️  Skipping static / - / - / full (already done)")
                 skipped_count += 1
             else:
@@ -408,7 +519,7 @@ def run_evaluation(
                     print(f"Error: {e}")
             
             # Evaluate Static ICL on factuals-only pool
-            if is_already_evaluated(iteration, 'static', '-', 'factuals_only', '-', evaluated_combinations):
+            if is_already_evaluated(budget_used, 'static', '-', 'factuals_only', '-', evaluated_combinations):
                 print(f"  ⏭️  Skipping static / - / - / factuals_only (already done)")
                 skipped_count += 1
             else:
@@ -443,7 +554,7 @@ def run_evaluation(
             for cf_strategy in cf_strategies:
                 for k_max in k_values:
                     # Evaluate on full pool (factuals + CFs)
-                    if is_already_evaluated(iteration, retriever_name, cf_strategy, 'full', k_max, evaluated_combinations):
+                    if is_already_evaluated(budget_used, retriever_name, cf_strategy, 'full', k_max, evaluated_combinations):
                         print(f"  ⏭️  Skipping {retriever_name} / {cf_strategy} / k={k_max} / full (already done)")
                         skipped_count += 1
                     else:
@@ -476,7 +587,7 @@ def run_evaluation(
                             print(f"Error: {e}")
                     
                     # Evaluate on factuals-only pool
-                    if is_already_evaluated(iteration, retriever_name, '-', 'factuals_only', k_max, evaluated_combinations):
+                    if is_already_evaluated(budget_used, retriever_name, '-', 'factuals_only', k_max, evaluated_combinations):
                         print(f"  ⏭️  Skipping {retriever_name} / - / k={k_max} / factuals_only (already done)")
                         skipped_count += 1
                     else:

@@ -1,0 +1,521 @@
+{
+  "iteration": 5,
+  "timestamp": "20260102_015530",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": "ss32",
+      "text": "i can not give more than 4 stars though , because the prices were just too high for what you get . ",
+      "label": "price"
+    },
+    {
+      "id": "ss99",
+      "text": "they should make it easier to make a reservation online ! ",
+      "label": "service"
+    },
+    {
+      "id": "ss26",
+      "text": "it was very affordable too . ",
+      "label": "price"
+    },
+    {
+      "id": "ss4",
+      "text": "prices are high the bud is not the best . ",
+      "label": "products"
+    },
+    {
+      "id": "ss404",
+      "text": "very well ran and maintained museum . take your time and take everything in . some beautiful things await you here ! ",
+      "label": "environment"
+    },
+    {
+      "id": "ss445",
+      "text": "all of the mexican food was half price . ",
+      "label": "products"
+    },
+    {
+      "id": "ss434",
+      "text": "the food was n't half bad either , but i had the bar food staples . ",
+      "label": "products"
+    },
+    {
+      "id": "ss458",
+      "text": "they have added some new smoothie flavors but i still stick to my standard . ",
+      "label": "products"
+    },
+    {
+      "id": "ss35",
+      "text": "they do not fill up your ice cream because they say they leave room so you can take your cap off , what about the big hole in the center of the lid ? ",
+      "label": "products"
+    },
+    {
+      "id": "ss105",
+      "text": "i was looking for golf shoes , and found some that felt good and fit well but had no price . ",
+      "label": "products"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "ss32_cf_products_0",
+      "text": "i can not give more than 4 stars though , because the items were just too low quality for what you pay .",
+      "label": "products",
+      "original_id": "ss32",
+      "original_label": "price"
+    },
+    {
+      "id": "ss32_cf_products_1",
+      "text": "i can not give more than 4 stars though , because the items were just too low quality for what you pay . ",
+      "label": "products",
+      "original_id": "ss32",
+      "original_label": "price"
+    },
+    {
+      "id": "ss32_cf_products_2",
+      "text": "i can not give more than 4 stars though, because the items were just too basic for what you pay.",
+      "label": "products",
+      "original_id": "ss32",
+      "original_label": "price"
+    },
+    {
+      "id": "ss99_cf_products_0",
+      "text": "they should make it easier to buy an item online !",
+      "label": "products",
+      "original_id": "ss99",
+      "original_label": "service"
+    },
+    {
+      "id": "ss99_cf_products_1",
+      "text": "they should make it easier to order their items online !",
+      "label": "products",
+      "original_id": "ss99",
+      "original_label": "service"
+    },
+    {
+      "id": "ss99_cf_products_2",
+      "text": "they should make it easier to buy a product online !",
+      "label": "products",
+      "original_id": "ss99",
+      "original_label": "service"
+    },
+    {
+      "id": "ss26_cf_environment_0",
+      "text": "it was very sustainable too .",
+      "label": "environment",
+      "original_id": "ss26",
+      "original_label": "price"
+    },
+    {
+      "id": "ss26_cf_environment_1",
+      "text": "it was very sustainable too.",
+      "label": "environment",
+      "original_id": "ss26",
+      "original_label": "price"
+    },
+    {
+      "id": "ss26_cf_environment_2",
+      "text": "it was very sustainable too .",
+      "label": "environment",
+      "original_id": "ss26",
+      "original_label": "price"
+    },
+    {
+      "id": "ss4_cf_service_0",
+      "text": "prices are high the care is not the best .",
+      "label": "service",
+      "original_id": "ss4",
+      "original_label": "products"
+    }
+  ],
+  "selected_cf_ids": [
+    "ss32_cf_products_0",
+    "ss32_cf_products_1",
+    "ss32_cf_products_2",
+    "ss99_cf_products_0",
+    "ss99_cf_products_1",
+    "ss99_cf_products_2",
+    "ss26_cf_environment_0",
+    "ss26_cf_environment_1",
+    "ss26_cf_environment_2",
+    "ss4_cf_service_0"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 10,
+    "num_added": 10,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "i can not give more than 4 stars though , because the prices were just too high for what you get . ",
+        "original_label": "price",
+        "target_label": "products",
+        "generated_text": "i can not give more than 4 stars though , because the items were just too low quality for what you pay .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5037620067596436,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i can not give more than 4 stars though , because the prices were just too high for what you get . ",
+        "original_label": "price",
+        "target_label": "products",
+        "generated_text": "i can not give more than 4 stars though , because the items were just too low quality for what you pay . ",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5139210224151611,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i can not give more than 4 stars though , because the prices were just too high for what you get . ",
+        "original_label": "price",
+        "target_label": "products",
+        "generated_text": "i can not give more than 4 stars though, because the items were just too basic for what you pay.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5315909385681152,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "they should make it easier to make a reservation online ! ",
+        "original_label": "service",
+        "target_label": "products",
+        "generated_text": "they should make it easier to buy an item online !",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.4984297752380371,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "they should make it easier to make a reservation online ! ",
+        "original_label": "service",
+        "target_label": "products",
+        "generated_text": "they should make it easier to order their items online !",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.4094107151031494,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "they should make it easier to make a reservation online ! ",
+        "original_label": "service",
+        "target_label": "products",
+        "generated_text": "they should make it easier to buy a product online !",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.49631500244140625,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "it was very affordable too . ",
+        "original_label": "price",
+        "target_label": "environment",
+        "generated_text": "it was very sustainable too .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.3489518165588379,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "it was very affordable too . ",
+        "original_label": "price",
+        "target_label": "environment",
+        "generated_text": "it was very sustainable too.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.3924679756164551,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "it was very affordable too . ",
+        "original_label": "price",
+        "target_label": "environment",
+        "generated_text": "it was very sustainable too .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5039942264556885,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "prices are high the bud is not the best . ",
+        "original_label": "products",
+        "target_label": "service",
+        "generated_text": "prices are high the care is not the best .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5305652618408203,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "prices are high the bud is not the best . ",
+        "original_label": "products",
+        "target_label": "service",
+        "generated_text": "rates are high the assistance is not the best.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5204222202301025,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "prices are high the bud is not the best . ",
+        "original_label": "products",
+        "target_label": "service",
+        "generated_text": "the rates are high the assistance is not the best.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.48998308181762695,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "very well ran and maintained museum . take your time and take everything in . some beautiful things await you here ! ",
+        "original_label": "environment",
+        "target_label": "products",
+        "generated_text": "very well made and maintained item . take your time and take every detail in . some beautiful things await you here !",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5775680541992188,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "very well ran and maintained museum . take your time and take everything in . some beautiful things await you here ! ",
+        "original_label": "environment",
+        "target_label": "products",
+        "generated_text": "very well crafted and maintained items. take your time and take everything in. some beautiful pieces await you here!",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.579401969909668,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "very well ran and maintained museum . take your time and take everything in . some beautiful things await you here ! ",
+        "original_label": "environment",
+        "target_label": "products",
+        "generated_text": "very well crafted and maintained items. take your time and take everything in. some beautiful things await you here!",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6064271926879883,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "all of the mexican food was half price . ",
+        "original_label": "products",
+        "target_label": "environment",
+        "generated_text": "all of the natural areas were half price.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5244641304016113,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "all of the mexican food was half price . ",
+        "original_label": "products",
+        "target_label": "environment",
+        "generated_text": "all of the natural resources were half price.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.3984107971191406,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "all of the mexican food was half price . ",
+        "original_label": "products",
+        "target_label": "environment",
+        "generated_text": "all of the natural areas were half price.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5097086429595947,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the food was n't half bad either , but i had the bar food staples . ",
+        "original_label": "products",
+        "target_label": "service",
+        "generated_text": "the food was n't half bad either , but i had the bar food staples delivered .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5163249969482422,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the food was n't half bad either , but i had the bar food staples . ",
+        "original_label": "products",
+        "target_label": "service",
+        "generated_text": "the food wasn't half bad either, but I was well taken care of with the bar food staples.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6148197650909424,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the food was n't half bad either , but i had the bar food staples . ",
+        "original_label": "products",
+        "target_label": "service",
+        "generated_text": "the food wasn't half bad either, but I had the bar staff staples.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5433778762817383,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "they have added some new smoothie flavors but i still stick to my standard . ",
+        "original_label": "products",
+        "target_label": "price",
+        "generated_text": "they have added some new smoothie deals but i still stick to my standard .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.4745619297027588,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "they have added some new smoothie flavors but i still stick to my standard . ",
+        "original_label": "products",
+        "target_label": "price",
+        "generated_text": "they have added some new smoothie options that are a bit more but i still stick to my standard . ",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5265030860900879,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "they have added some new smoothie flavors but i still stick to my standard . ",
+        "original_label": "products",
+        "target_label": "price",
+        "generated_text": "they have added some new smoothie deals but i still stick to my standard .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5031270980834961,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "they do not fill up your ice cream because they say they leave room so you can take your cap off , what about the big hole in the center of the lid ? ",
+        "original_label": "products",
+        "target_label": "service",
+        "generated_text": "they do not fill up your order because they say they leave room so you can take your cap off, what about the big hole in the center of the lid?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.429699182510376,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "they do not fill up your ice cream because they say they leave room so you can take your cap off , what about the big hole in the center of the lid ? ",
+        "original_label": "products",
+        "target_label": "service",
+        "generated_text": "they do not fulfill your request because they say they leave room so you can provide your feedback, what about the big gap in the center of the experience?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.45499682426452637,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "they do not fill up your ice cream because they say they leave room so you can take your cap off , what about the big hole in the center of the lid ? ",
+        "original_label": "products",
+        "target_label": "service",
+        "generated_text": "they do not fulfill your request because they say they leave room so you can take your cap off, what about the big hole in the center of the lid?",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5100679397583008,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i was looking for golf shoes , and found some that felt good and fit well but had no price . ",
+        "original_label": "products",
+        "target_label": "price",
+        "generated_text": "i was looking for golf shoes , and found some that felt good and fit well but had no cost .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.518761157989502,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i was looking for golf shoes , and found some that felt good and fit well but had no price . ",
+        "original_label": "products",
+        "target_label": "price",
+        "generated_text": "i was looking for golf shoes , and found some that felt good and fit well but had no cost listed .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5022530555725098,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i was looking for golf shoes , and found some that felt good and fit well but had no price . ",
+        "original_label": "products",
+        "target_label": "price",
+        "generated_text": "i was looking for golf shoes , and found some that felt good and fit well but had no cost .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.3954277038574219,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": []
+  },
+  "num_generated": 10,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 10,
+    "num_final_selected": 10,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

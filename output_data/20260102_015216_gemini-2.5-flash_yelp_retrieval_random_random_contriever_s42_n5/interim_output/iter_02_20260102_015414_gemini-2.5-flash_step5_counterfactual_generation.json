@@ -1,0 +1,521 @@
+{
+  "iteration": 2,
+  "timestamp": "20260102_015414",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": "ss125",
+      "text": "the lines may be long at times ",
+      "label": "service"
+    },
+    {
+      "id": "ss206",
+      "text": "he was also slow on refilling our waters throughout the meal . ",
+      "label": "service"
+    },
+    {
+      "id": "ss85",
+      "text": "not a cheap date , my pup ",
+      "label": "price"
+    },
+    {
+      "id": "ss291",
+      "text": "i highly recommend the beet salad , and order a side of the avocado fries for the \" table \" - you 'll love them ! ",
+      "label": "products"
+    },
+    {
+      "id": "ss376",
+      "text": "they have jamaican beef patties ",
+      "label": "products"
+    },
+    {
+      "id": "ss457",
+      "text": "employees have horrible attitudes ! ",
+      "label": "service"
+    },
+    {
+      "id": "ss101",
+      "text": "matt slowik was excellent and professional throughout ",
+      "label": "service"
+    },
+    {
+      "id": "ss477",
+      "text": "he cares about his clients and is always available when we need him . ",
+      "label": "service"
+    },
+    {
+      "id": "ss287",
+      "text": "and they let me apply the discount to both of our tickets . ",
+      "label": "price"
+    },
+    {
+      "id": "ss496",
+      "text": "and it 's terribly over priced for the quality . ",
+      "label": "price"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "ss125_cf_price_0",
+      "text": "the costs may be high at times",
+      "label": "price",
+      "original_id": "ss125",
+      "original_label": "service"
+    },
+    {
+      "id": "ss125_cf_price_1",
+      "text": "the costs may be high at times",
+      "label": "price",
+      "original_id": "ss125",
+      "original_label": "service"
+    },
+    {
+      "id": "ss125_cf_price_2",
+      "text": "the costs may be high at times",
+      "label": "price",
+      "original_id": "ss125",
+      "original_label": "service"
+    },
+    {
+      "id": "ss206_cf_price_0",
+      "text": "he was also slow on adjusting our bill throughout the meal.",
+      "label": "price",
+      "original_id": "ss206",
+      "original_label": "service"
+    },
+    {
+      "id": "ss206_cf_price_1",
+      "text": "he was also slow on bringing the bill throughout the meal.",
+      "label": "price",
+      "original_id": "ss206",
+      "original_label": "service"
+    },
+    {
+      "id": "ss206_cf_price_2",
+      "text": "he was also slow on refilling our waters throughout the meal, despite the high cost.",
+      "label": "price",
+      "original_id": "ss206",
+      "original_label": "service"
+    },
+    {
+      "id": "ss85_cf_products_0",
+      "text": "not a cheap brand , my pup",
+      "label": "products",
+      "original_id": "ss85",
+      "original_label": "price"
+    },
+    {
+      "id": "ss85_cf_products_1",
+      "text": "a pampered pup, my pup",
+      "label": "products",
+      "original_id": "ss85",
+      "original_label": "price"
+    },
+    {
+      "id": "ss85_cf_products_2",
+      "text": "not a cheap date, my pup, with all his gourmet kibble and designer chew toys",
+      "label": "products",
+      "original_id": "ss85",
+      "original_label": "price"
+    },
+    {
+      "id": "ss291_cf_service_0",
+      "text": "i highly recommend the beet salad , and ask for a side of the avocado fries for the \" table \" - you 'll love them !",
+      "label": "service",
+      "original_id": "ss291",
+      "original_label": "products"
+    }
+  ],
+  "selected_cf_ids": [
+    "ss125_cf_price_0",
+    "ss125_cf_price_1",
+    "ss125_cf_price_2",
+    "ss206_cf_price_0",
+    "ss206_cf_price_1",
+    "ss206_cf_price_2",
+    "ss85_cf_products_0",
+    "ss85_cf_products_1",
+    "ss85_cf_products_2",
+    "ss291_cf_service_0"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 10,
+    "num_added": 10,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "the lines may be long at times ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "the costs may be high at times",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.3899672031402588,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the lines may be long at times ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "the costs may be high at times",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.3451240062713623,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the lines may be long at times ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "the costs may be high at times",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.4194660186767578,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "he was also slow on refilling our waters throughout the meal . ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "he was also slow on adjusting our bill throughout the meal.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.46326398849487305,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "he was also slow on refilling our waters throughout the meal . ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "he was also slow on bringing the bill throughout the meal.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5206179618835449,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "he was also slow on refilling our waters throughout the meal . ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "he was also slow on refilling our waters throughout the meal, despite the high cost.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.41536712646484375,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "not a cheap date , my pup ",
+        "original_label": "price",
+        "target_label": "products",
+        "generated_text": "not a cheap brand , my pup",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.37059807777404785,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "not a cheap date , my pup ",
+        "original_label": "price",
+        "target_label": "products",
+        "generated_text": "a pampered pup, my pup",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.371614933013916,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "not a cheap date , my pup ",
+        "original_label": "price",
+        "target_label": "products",
+        "generated_text": "not a cheap date, my pup, with all his gourmet kibble and designer chew toys",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.42591118812561035,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i highly recommend the beet salad , and order a side of the avocado fries for the \" table \" - you 'll love them ! ",
+        "original_label": "products",
+        "target_label": "service",
+        "generated_text": "i highly recommend the beet salad , and ask for a side of the avocado fries for the \" table \" - you 'll love them !",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.4523749351501465,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i highly recommend the beet salad , and order a side of the avocado fries for the \" table \" - you 'll love them ! ",
+        "original_label": "products",
+        "target_label": "service",
+        "generated_text": "I highly recommend our attentive staff; they'll ensure your table is well-cared for \u2013 you'll love their dedication!",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5378890037536621,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i highly recommend the beet salad , and order a side of the avocado fries for the \" table \" - you 'll love them ! ",
+        "original_label": "products",
+        "target_label": "service",
+        "generated_text": "I highly recommend the beet salad, and ask for a side of the avocado fries for the \"table\" - you'll love how they're prepared!",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5835990905761719,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "they have jamaican beef patties ",
+        "original_label": "products",
+        "target_label": "service",
+        "generated_text": "they offer jamaican beef patties",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.4672539234161377,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "they have jamaican beef patties ",
+        "original_label": "products",
+        "target_label": "service",
+        "generated_text": "they offer to prepare jamaican beef patties",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5563712120056152,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "they have jamaican beef patties ",
+        "original_label": "products",
+        "target_label": "service",
+        "generated_text": "they serve jamaican beef patties",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.47017598152160645,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "employees have horrible attitudes ! ",
+        "original_label": "service",
+        "target_label": "environment",
+        "generated_text": "areas have horrible conditions!",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.37597203254699707,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "employees have horrible attitudes ! ",
+        "original_label": "service",
+        "target_label": "environment",
+        "generated_text": "The air quality is horrible!",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5531477928161621,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "employees have horrible attitudes ! ",
+        "original_label": "service",
+        "target_label": "environment",
+        "generated_text": "ecosystems have horrible imbalances!",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5145788192749023,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "matt slowik was excellent and professional throughout ",
+        "original_label": "service",
+        "target_label": "environment",
+        "generated_text": "matt slowik was excellent and professional throughout the natural world",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.38588976860046387,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "matt slowik was excellent and professional throughout ",
+        "original_label": "service",
+        "target_label": "environment",
+        "generated_text": "matt slowik was a natural and vital part of the ecosystem throughout",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.4370260238647461,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "matt slowik was excellent and professional throughout ",
+        "original_label": "service",
+        "target_label": "environment",
+        "generated_text": "The air quality was excellent and refreshing throughout.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.47948122024536133,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "he cares about his clients and is always available when we need him . ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "he cares about his clients and is always affordable when we need him .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5381431579589844,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "he cares about his clients and is always available when we need him . ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "he cares about his clients and is always a good value when we need him .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5094547271728516,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "he cares about his clients and is always available when we need him . ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "he's a great value and always within our budget when we need him.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5357928276062012,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "and they let me apply the discount to both of our tickets . ",
+        "original_label": "price",
+        "target_label": "environment",
+        "generated_text": "and they let me apply the the green initiative to both of our tickets.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.515404224395752,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "and they let me apply the discount to both of our tickets . ",
+        "original_label": "price",
+        "target_label": "environment",
+        "generated_text": "and they let me apply the green initiative to both of our tickets.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.42139434814453125,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "and they let me apply the discount to both of our tickets . ",
+        "original_label": "price",
+        "target_label": "environment",
+        "generated_text": "and they let me apply the eco-friendly option to both of our tickets.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.487839937210083,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "and it 's terribly over priced for the quality . ",
+        "original_label": "price",
+        "target_label": "service",
+        "generated_text": "and it 's terribly underperforming for the quality .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.3851768970489502,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "and it 's terribly over priced for the quality . ",
+        "original_label": "price",
+        "target_label": "service",
+        "generated_text": "and it's terribly understaffed for the quality.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5682861804962158,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "and it 's terribly over priced for the quality . ",
+        "original_label": "price",
+        "target_label": "service",
+        "generated_text": "and it's terribly lacking in quality.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5224850177764893,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": []
+  },
+  "num_generated": 10,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 10,
+    "num_final_selected": 10,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

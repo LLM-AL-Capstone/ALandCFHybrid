@@ -1,0 +1,521 @@
+{
+  "iteration": 3,
+  "timestamp": "20260102_015438",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": "ss95",
+      "text": "our waitress and the manager are what make good establishments exceptional . ",
+      "label": "service"
+    },
+    {
+      "id": "ss127",
+      "text": "go every 6 weeks or less and get 20 % discount which makes an hour massage $ 56 instead of $ 70 ",
+      "label": "price"
+    },
+    {
+      "id": "ss452",
+      "text": "i am very dissatisfied with the customer service but on a positive note , i have no problem with the tanning equipment ",
+      "label": "service"
+    },
+    {
+      "id": "ss329",
+      "text": "my parents told me a horror story about their friends ' wedding photographer , who insisted on always getting the shot he wanted . ",
+      "label": "service"
+    },
+    {
+      "id": "ss27",
+      "text": "great doner as well as warm and cold salads and dishes ",
+      "label": "products"
+    },
+    {
+      "id": "ss229",
+      "text": "i went by around 1:30p on a friday and there were still plenty of tables available even though they were busy and had nice outdoor seating as well . ",
+      "label": "environment"
+    },
+    {
+      "id": "ss213",
+      "text": "super helpful and friendly . ",
+      "label": "service"
+    },
+    {
+      "id": "ss81",
+      "text": "i had the pho real and it was one of the best sandwiches of my life . ",
+      "label": "products"
+    },
+    {
+      "id": "ss301",
+      "text": "the restaurant was clean . ",
+      "label": "environment"
+    },
+    {
+      "id": "ss264",
+      "text": "  banh mi should be the common man 's poor people food and is $ 8 + in the austin area ",
+      "label": "price"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "ss95_cf_price_0",
+      "text": "our waitress and the manager are what make good establishments exceptional value.",
+      "label": "price",
+      "original_id": "ss95",
+      "original_label": "service"
+    },
+    {
+      "id": "ss95_cf_price_1",
+      "text": "the bill and the tab are what make good establishments exceptional.",
+      "label": "price",
+      "original_id": "ss95",
+      "original_label": "service"
+    },
+    {
+      "id": "ss95_cf_price_2",
+      "text": "the value and the specials are what make good establishments exceptional.",
+      "label": "price",
+      "original_id": "ss95",
+      "original_label": "service"
+    },
+    {
+      "id": "ss127_cf_environment_0",
+      "text": "go every 6 weeks or less and get 20 % more natural surroundings which makes an hour massage $ 56 instead of $ 70",
+      "label": "environment",
+      "original_id": "ss127",
+      "original_label": "price"
+    },
+    {
+      "id": "ss127_cf_environment_1",
+      "text": "go every 6 weeks or less and get a 20 % wellness boost which makes an hour massage a refreshing experience instead of just a service",
+      "label": "environment",
+      "original_id": "ss127",
+      "original_label": "price"
+    },
+    {
+      "id": "ss127_cf_environment_2",
+      "text": "go every 6 weeks or less and get a 20% natural boost which makes an hour massage a $56 dose of tranquility instead of $70.",
+      "label": "environment",
+      "original_id": "ss127",
+      "original_label": "price"
+    },
+    {
+      "id": "ss452_cf_environment_0",
+      "text": "i am very dissatisfied with the natural surroundings but on a positive note , i have no problem with the tanning equipment",
+      "label": "environment",
+      "original_id": "ss452",
+      "original_label": "service"
+    },
+    {
+      "id": "ss452_cf_environment_1",
+      "text": "i am very dissatisfied with the natural surroundings but on a positive note , i have no problem with the tanning equipment",
+      "label": "environment",
+      "original_id": "ss452",
+      "original_label": "service"
+    },
+    {
+      "id": "ss452_cf_environment_2",
+      "text": "I am very dissatisfied with the air quality but on a positive note, I have no problem with the tanning equipment.",
+      "label": "environment",
+      "original_id": "ss452",
+      "original_label": "service"
+    },
+    {
+      "id": "ss329_cf_products_0",
+      "text": "my parents told me a horror story about their friends' wedding album, which insisted on always getting the shot it wanted.",
+      "label": "products",
+      "original_id": "ss329",
+      "original_label": "service"
+    }
+  ],
+  "selected_cf_ids": [
+    "ss95_cf_price_0",
+    "ss95_cf_price_1",
+    "ss95_cf_price_2",
+    "ss127_cf_environment_0",
+    "ss127_cf_environment_1",
+    "ss127_cf_environment_2",
+    "ss452_cf_environment_0",
+    "ss452_cf_environment_1",
+    "ss452_cf_environment_2",
+    "ss329_cf_products_0"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 10,
+    "num_added": 10,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "our waitress and the manager are what make good establishments exceptional . ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "our waitress and the manager are what make good establishments exceptional value.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5167849063873291,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "our waitress and the manager are what make good establishments exceptional . ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "the bill and the tab are what make good establishments exceptional.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.4561150074005127,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "our waitress and the manager are what make good establishments exceptional . ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "the value and the specials are what make good establishments exceptional.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.49250197410583496,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "go every 6 weeks or less and get 20 % discount which makes an hour massage $ 56 instead of $ 70 ",
+        "original_label": "price",
+        "target_label": "environment",
+        "generated_text": "go every 6 weeks or less and get 20 % more natural surroundings which makes an hour massage $ 56 instead of $ 70",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.43671584129333496,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "go every 6 weeks or less and get 20 % discount which makes an hour massage $ 56 instead of $ 70 ",
+        "original_label": "price",
+        "target_label": "environment",
+        "generated_text": "go every 6 weeks or less and get a 20 % wellness boost which makes an hour massage a refreshing experience instead of just a service",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.4837629795074463,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "go every 6 weeks or less and get 20 % discount which makes an hour massage $ 56 instead of $ 70 ",
+        "original_label": "price",
+        "target_label": "environment",
+        "generated_text": "go every 6 weeks or less and get a 20% natural boost which makes an hour massage a $56 dose of tranquility instead of $70.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.652864933013916,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i am very dissatisfied with the customer service but on a positive note , i have no problem with the tanning equipment ",
+        "original_label": "service",
+        "target_label": "environment",
+        "generated_text": "i am very dissatisfied with the natural surroundings but on a positive note , i have no problem with the tanning equipment",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.715914249420166,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i am very dissatisfied with the customer service but on a positive note , i have no problem with the tanning equipment ",
+        "original_label": "service",
+        "target_label": "environment",
+        "generated_text": "i am very dissatisfied with the natural surroundings but on a positive note , i have no problem with the tanning equipment",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5173108577728271,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i am very dissatisfied with the customer service but on a positive note , i have no problem with the tanning equipment ",
+        "original_label": "service",
+        "target_label": "environment",
+        "generated_text": "I am very dissatisfied with the air quality but on a positive note, I have no problem with the tanning equipment.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6199071407318115,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "my parents told me a horror story about their friends ' wedding photographer , who insisted on always getting the shot he wanted . ",
+        "original_label": "service",
+        "target_label": "products",
+        "generated_text": "my parents told me a horror story about their friends' wedding album, which insisted on always getting the shot it wanted.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5420939922332764,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "my parents told me a horror story about their friends ' wedding photographer , who insisted on always getting the shot he wanted . ",
+        "original_label": "service",
+        "target_label": "products",
+        "generated_text": "my parents told me a horror story about their friends ' wedding album , which had a bunch of photos that were clearly just the photographer's vision .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.498898983001709,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "my parents told me a horror story about their friends ' wedding photographer , who insisted on always getting the shot he wanted . ",
+        "original_label": "service",
+        "target_label": "products",
+        "generated_text": "my parents told me a horror story about their friends' wedding album, which insisted on always getting the shot it wanted.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.41771602630615234,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "great doner as well as warm and cold salads and dishes ",
+        "original_label": "products",
+        "target_label": "price",
+        "generated_text": "great doner as well as warm and cold salads and dishes value",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5107588768005371,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "great doner as well as warm and cold salads and dishes ",
+        "original_label": "products",
+        "target_label": "price",
+        "generated_text": "great value as well as affordable and premium options",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5547668933868408,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "great doner as well as warm and cold salads and dishes ",
+        "original_label": "products",
+        "target_label": "price",
+        "generated_text": "great doner as well as warm and cold salads and dishes for a good deal",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.3881399631500244,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i went by around 1:30p on a friday and there were still plenty of tables available even though they were busy and had nice outdoor seating as well . ",
+        "original_label": "environment",
+        "target_label": "service",
+        "generated_text": "i went by around 1:30p on a friday and there were still plenty of staff available even though they were busy and had nice outdoor assistance as well .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6827089786529541,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i went by around 1:30p on a friday and there were still plenty of tables available even though they were busy and had nice outdoor seating as well . ",
+        "original_label": "environment",
+        "target_label": "service",
+        "generated_text": "i went by around 1:30p on a friday and the staff were still very attentive even though they were busy and had nice outdoor seating as well.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.628375768661499,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i went by around 1:30p on a friday and there were still plenty of tables available even though they were busy and had nice outdoor seating as well . ",
+        "original_label": "environment",
+        "target_label": "service",
+        "generated_text": "i went by around 1:30p on a friday and there were still plenty of tables available even though they were busy and had nice outdoor seating as well, and the staff were quick to get everyone seated.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.520460844039917,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "super helpful and friendly . ",
+        "original_label": "service",
+        "target_label": "environment",
+        "generated_text": "super natural and thriving.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.33640408515930176,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "super helpful and friendly . ",
+        "original_label": "service",
+        "target_label": "environment",
+        "generated_text": "super vibrant and thriving.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.4466590881347656,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "super helpful and friendly . ",
+        "original_label": "service",
+        "target_label": "environment",
+        "generated_text": "super helpful and inviting.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.3369600772857666,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i had the pho real and it was one of the best sandwiches of my life . ",
+        "original_label": "products",
+        "target_label": "environment",
+        "generated_text": "i had the pho real and it was one of the best natural settings of my life .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5229809284210205,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i had the pho real and it was one of the best sandwiches of my life . ",
+        "original_label": "products",
+        "target_label": "environment",
+        "generated_text": "i had the fresh air and it was one of the best experiences of my life.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.4916391372680664,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i had the pho real and it was one of the best sandwiches of my life . ",
+        "original_label": "products",
+        "target_label": "environment",
+        "generated_text": "i had the pho real and it was one of the best experiences of my life.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5134308338165283,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the restaurant was clean . ",
+        "original_label": "environment",
+        "target_label": "products",
+        "generated_text": "the restaurant's dishes were clean .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5561981201171875,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the restaurant was clean . ",
+        "original_label": "environment",
+        "target_label": "products",
+        "generated_text": "the dishes were clean.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.43685293197631836,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the restaurant was clean . ",
+        "original_label": "environment",
+        "target_label": "products",
+        "generated_text": "the restaurant's dishes were clean.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.524709939956665,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "  banh mi should be the common man 's poor people food and is $ 8 + in the austin area ",
+        "original_label": "price",
+        "target_label": "products",
+        "generated_text": "banh mi should be the common man 's poor people food and is a specialty item in the austin area",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.43306493759155273,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "  banh mi should be the common man 's poor people food and is $ 8 + in the austin area ",
+        "original_label": "price",
+        "target_label": "products",
+        "generated_text": "  banh mi should be the common man 's poor people food and is an artisanal item in the austin area ",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5659401416778564,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "  banh mi should be the common man 's poor people food and is $ 8 + in the austin area ",
+        "original_label": "price",
+        "target_label": "products",
+        "generated_text": "banh mi should be the common man 's poor people food and is a premium item in the austin area",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7217636108398438,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": []
+  },
+  "num_generated": 10,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 10,
+    "num_final_selected": 10,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}

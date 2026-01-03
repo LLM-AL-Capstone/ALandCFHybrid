@@ -1,0 +1,79 @@
+================================================================================
+EXPERIMENT CONFIGURATION
+================================================================================
+
+Run Timestamp: 20260102_015216
+Run Directory: output_data/20260102_015216_gemini-2.5-flash_yelp_retrieval_random_random_contriever_s42_n5
+
+--------------------------------------------------------------------------------
+LLM CONFIGURATION
+--------------------------------------------------------------------------------
+Provider: gemini
+Model: gemini-2.5-flash
+API Keys/Endpoints: ***REDACTED FOR SECURITY***
+
+--------------------------------------------------------------------------------
+DATASET CONFIGURATION
+--------------------------------------------------------------------------------
+Train File: yelp_train.csv
+Test File: yelp_test.csv
+Text Column: example
+Label Column: Label
+Exclude Labels: ['none', 'None', None, '']
+
+--------------------------------------------------------------------------------
+ACTIVE LEARNING CONFIGURATION
+--------------------------------------------------------------------------------
+Query Strategy: random
+Uncertainty Method: 
+
+Total Budget: 50
+Batch Size: 10
+Initial Labeled per Class: 5
+Random Seed: 42
+Max Iterations: 50
+Early Stopping Patience: 10
+Min Improvement: 0
+
+--------------------------------------------------------------------------------
+COUNTERFACTUAL CONFIGURATION (Version 3)
+--------------------------------------------------------------------------------
+Enabled: True
+Max CFs per Example: 3
+Per-Round Budget (alpha_cf): 1.0
+Temperature: 0.5
+Max Tokens: 256
+Prompt Variation: True
+
+Target Label Selection (V3):
+  Strategy: uniform
+
+Quality Filtering: Disabled
+
+--------------------------------------------------------------------------------
+EVALUATION CONFIGURATION
+--------------------------------------------------------------------------------
+Classifier Type: retrieval
+Max ICL Examples: 800
+Eval Every N Iterations: 999
+
+Retrieval Settings:
+  Embedding Backend: contriever
+  K per Class: 0
+  Total K Max: 20
+  Fallback Strategy: similarity
+
+  Contriever Configuration:
+    Model: facebook/contriever
+    Device: cpu
+  Total K Max: 20
+  Fallback Strategy: similarity
+
+--------------------------------------------------------------------------------
+LOGGING CONFIGURATION
+--------------------------------------------------------------------------------
+Checkpoint Every: 1 iterations
+
+================================================================================
+END OF CONFIGURATION
+================================================================================

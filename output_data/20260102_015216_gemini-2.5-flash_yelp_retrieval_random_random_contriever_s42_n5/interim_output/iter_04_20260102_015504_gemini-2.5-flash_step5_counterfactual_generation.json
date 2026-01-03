@@ -1,0 +1,521 @@
+{
+  "iteration": 4,
+  "timestamp": "20260102_015504",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": "ss209",
+      "text": "not the cheapest but fresh and delicious ! love the veggie green machine . ",
+      "label": "products"
+    },
+    {
+      "id": "ss108",
+      "text": "i felt like i was at a fine dining establishment . ",
+      "label": "environment"
+    },
+    {
+      "id": "ss78",
+      "text": "i love this restaurant all of my experiences there have been great . i encourage everyone to try it someday but beware it 's pricy . ",
+      "label": "price"
+    },
+    {
+      "id": "ss284",
+      "text": "my other dining companions seemed pleased with their food   one ordered a veal marsala that i did not try and the other - my favorite - ordered off the menu , actually , a request they were kind enough to accommodate - it was gnocchi caprese with pesto sauce instead of tomato sauce , and it was gooeyyummydelicious   ! ",
+      "label": "products"
+    },
+    {
+      "id": "ss230",
+      "text": "too salty . it tasted not bad when you ate inside . however your stomach will feel uncomfortable afterwards . ",
+      "label": "products"
+    },
+    {
+      "id": "ss170",
+      "text": "the building is pretty shanty like but the food is good . ",
+      "label": "environment"
+    },
+    {
+      "id": "ss268",
+      "text": "good steak and service but holy moly the place is freezing ! bring a jacket . we were here in june and it was probably 60 degrees f inside . i was shivering the whole time . ",
+      "label": "environment"
+    },
+    {
+      "id": "ss200",
+      "text": "went there after purchasing a groupon . huge mistake . rolls were not good . looked stale . ",
+      "label": "products"
+    },
+    {
+      "id": "ss178",
+      "text": "for how much it cost , it could have been better . ",
+      "label": "price"
+    },
+    {
+      "id": "ss266",
+      "text": "they should be shut down for terrible service . ",
+      "label": "service"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "ss209_cf_environment_0",
+      "text": "not the cheapest but fresh and delicious! love the veggie green space.",
+      "label": "environment",
+      "original_id": "ss209",
+      "original_label": "products"
+    },
+    {
+      "id": "ss209_cf_environment_1",
+      "text": "not the cheapest but fresh and vibrant! love the veggie green spaces.",
+      "label": "environment",
+      "original_id": "ss209",
+      "original_label": "products"
+    },
+    {
+      "id": "ss209_cf_environment_2",
+      "text": "not the cheapest but fresh and delicious! love the vibrant green spaces.",
+      "label": "environment",
+      "original_id": "ss209",
+      "original_label": "products"
+    },
+    {
+      "id": "ss108_cf_price_0",
+      "text": "i felt like i was at a fine dining establishment's register.",
+      "label": "price",
+      "original_id": "ss108",
+      "original_label": "environment"
+    },
+    {
+      "id": "ss108_cf_price_1",
+      "text": "i felt like i was at a very expensive dining establishment .",
+      "label": "price",
+      "original_id": "ss108",
+      "original_label": "environment"
+    },
+    {
+      "id": "ss108_cf_price_2",
+      "text": "i felt like i was at a fine dining establishment.",
+      "label": "price",
+      "original_id": "ss108",
+      "original_label": "environment"
+    },
+    {
+      "id": "ss78_cf_service_0",
+      "text": "i love this restaurant all of my experiences there have been great . i encourage everyone to try it someday but beware it 's popular .",
+      "label": "service",
+      "original_id": "ss78",
+      "original_label": "price"
+    },
+    {
+      "id": "ss78_cf_service_1",
+      "text": "i love this restaurant all of my experiences there have been great. i encourage everyone to try it someday, and you'll find it's worth every penny.",
+      "label": "service",
+      "original_id": "ss78",
+      "original_label": "price"
+    },
+    {
+      "id": "ss78_cf_service_2",
+      "text": "i love this restaurant all of my experiences there have been great . i encourage everyone to try it someday but beware it's very popular.",
+      "label": "service",
+      "original_id": "ss78",
+      "original_label": "price"
+    },
+    {
+      "id": "ss284_cf_price_0",
+      "text": "my other dining companions seemed pleased with their food   one ordered a veal marsala that i did not try and the other - my favorite - ordered off the menu , actually , a request they were kind enough to accommodate - it was gnocchi caprese with pesto sauce instead of tomato sauce , and it was gooeyyummydelicious   !",
+      "label": "price",
+      "original_id": "ss284",
+      "original_label": "products"
+    }
+  ],
+  "selected_cf_ids": [
+    "ss209_cf_environment_0",
+    "ss209_cf_environment_1",
+    "ss209_cf_environment_2",
+    "ss108_cf_price_0",
+    "ss108_cf_price_1",
+    "ss108_cf_price_2",
+    "ss78_cf_service_0",
+    "ss78_cf_service_1",
+    "ss78_cf_service_2",
+    "ss284_cf_price_0"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 10,
+    "num_added": 10,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "not the cheapest but fresh and delicious ! love the veggie green machine . ",
+        "original_label": "products",
+        "target_label": "environment",
+        "generated_text": "not the cheapest but fresh and delicious! love the veggie green space.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.555354118347168,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "not the cheapest but fresh and delicious ! love the veggie green machine . ",
+        "original_label": "products",
+        "target_label": "environment",
+        "generated_text": "not the cheapest but fresh and vibrant! love the veggie green spaces.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.43401098251342773,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "not the cheapest but fresh and delicious ! love the veggie green machine . ",
+        "original_label": "products",
+        "target_label": "environment",
+        "generated_text": "not the cheapest but fresh and delicious! love the vibrant green spaces.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.47802066802978516,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i felt like i was at a fine dining establishment . ",
+        "original_label": "environment",
+        "target_label": "price",
+        "generated_text": "i felt like i was at a fine dining establishment's register.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5866870880126953,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i felt like i was at a fine dining establishment . ",
+        "original_label": "environment",
+        "target_label": "price",
+        "generated_text": "i felt like i was at a very expensive dining establishment .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.4685938358306885,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i felt like i was at a fine dining establishment . ",
+        "original_label": "environment",
+        "target_label": "price",
+        "generated_text": "i felt like i was at a fine dining establishment.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.37129926681518555,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i love this restaurant all of my experiences there have been great . i encourage everyone to try it someday but beware it 's pricy . ",
+        "original_label": "price",
+        "target_label": "service",
+        "generated_text": "i love this restaurant all of my experiences there have been great . i encourage everyone to try it someday but beware it 's popular .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5540730953216553,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i love this restaurant all of my experiences there have been great . i encourage everyone to try it someday but beware it 's pricy . ",
+        "original_label": "price",
+        "target_label": "service",
+        "generated_text": "i love this restaurant all of my experiences there have been great. i encourage everyone to try it someday, and you'll find it's worth every penny.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6164708137512207,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "i love this restaurant all of my experiences there have been great . i encourage everyone to try it someday but beware it 's pricy . ",
+        "original_label": "price",
+        "target_label": "service",
+        "generated_text": "i love this restaurant all of my experiences there have been great . i encourage everyone to try it someday but beware it's very popular.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5309963226318359,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "my other dining companions seemed pleased with their food   one ordered a veal marsala that i did not try and the other - my favorite - ordered off the menu , actually , a request they were kind enough to accommodate - it was gnocchi caprese with pesto sauce instead of tomato sauce , and it was gooeyyummydelicious   ! ",
+        "original_label": "products",
+        "target_label": "price",
+        "generated_text": "my other dining companions seemed pleased with their food   one ordered a veal marsala that i did not try and the other - my favorite - ordered off the menu , actually , a request they were kind enough to accommodate - it was gnocchi caprese with pesto sauce instead of tomato sauce , and it was gooeyyummydelicious   !",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.8127238750457764,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "my other dining companions seemed pleased with their food   one ordered a veal marsala that i did not try and the other - my favorite - ordered off the menu , actually , a request they were kind enough to accommodate - it was gnocchi caprese with pesto sauce instead of tomato sauce , and it was gooeyyummydelicious   ! ",
+        "original_label": "products",
+        "target_label": "price",
+        "generated_text": "my other dining companions seemed pleased with their tabs   one ordered a veal marsala that i did not try and the other - my favorite - ordered off the menu , actually , a request they were kind enough to accommodate - it was gnocchi caprese with pesto sauce instead of tomato sauce , and it was gooeyyummydelicious   !",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6102173328399658,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "my other dining companions seemed pleased with their food   one ordered a veal marsala that i did not try and the other - my favorite - ordered off the menu , actually , a request they were kind enough to accommodate - it was gnocchi caprese with pesto sauce instead of tomato sauce , and it was gooeyyummydelicious   ! ",
+        "original_label": "products",
+        "target_label": "price",
+        "generated_text": "my other dining companions seemed pleased with their meals   one ordered a veal marsala that i did not try and the other - my favorite - ordered off the menu , actually , a request they were kind enough to accommodate - it was gnocchi caprese with pesto sauce instead of tomato sauce , and it was gooeyyummydelicious   !",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.7177960872650146,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "too salty . it tasted not bad when you ate inside . however your stomach will feel uncomfortable afterwards . ",
+        "original_label": "products",
+        "target_label": "service",
+        "generated_text": "too salty. it felt not bad when you ate inside. however your stomach will feel uncomfortable afterwards.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.515355110168457,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "too salty . it tasted not bad when you ate inside . however your stomach will feel uncomfortable afterwards . ",
+        "original_label": "products",
+        "target_label": "service",
+        "generated_text": "The waiting time was too long. The staff seemed nice when you were being assisted. However, your request will feel unattended afterwards.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5516409873962402,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "too salty . it tasted not bad when you ate inside . however your stomach will feel uncomfortable afterwards . ",
+        "original_label": "products",
+        "target_label": "service",
+        "generated_text": "The experience was too intense. It felt not bad when you were there, but your stomach will feel uncomfortable afterwards.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.49250364303588867,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the building is pretty shanty like but the food is good . ",
+        "original_label": "environment",
+        "target_label": "service",
+        "generated_text": "the building is pretty shanty like but the care is good .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.6119821071624756,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the building is pretty shanty like but the food is good . ",
+        "original_label": "environment",
+        "target_label": "service",
+        "generated_text": "the building is pretty shanty like but the care is good .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5142097473144531,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the building is pretty shanty like but the food is good . ",
+        "original_label": "environment",
+        "target_label": "service",
+        "generated_text": "the help is pretty shanty like but the food is good.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.3984529972076416,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "good steak and service but holy moly the place is freezing ! bring a jacket . we were here in june and it was probably 60 degrees f inside . i was shivering the whole time . ",
+        "original_label": "environment",
+        "target_label": "products",
+        "generated_text": "good steak and service but holy moly the items are freezing! bring a jacket. we were here in june and they were probably 60 degrees f inside. i was shivering the whole time.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5076322555541992,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "good steak and service but holy moly the place is freezing ! bring a jacket . we were here in june and it was probably 60 degrees f inside . i was shivering the whole time . ",
+        "original_label": "environment",
+        "target_label": "products",
+        "generated_text": "good steak and service but holy moly the portions are tiny ! bring a snack . we were here in june and it was probably a 6oz steak inside . i was hungry the whole time .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5801639556884766,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "good steak and service but holy moly the place is freezing ! bring a jacket . we were here in june and it was probably 60 degrees f inside . i was shivering the whole time . ",
+        "original_label": "environment",
+        "target_label": "products",
+        "generated_text": "good steak and service but holy moly the plates are freezing! bring a jacket. we were here in june and it was probably 60 degrees f inside. i was shivering the whole time.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5898439884185791,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "went there after purchasing a groupon . huge mistake . rolls were not good . looked stale . ",
+        "original_label": "products",
+        "target_label": "environment",
+        "generated_text": "went there after purchasing a groupon . huge mistake . air was not good . smelled stale .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.43116092681884766,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "went there after purchasing a groupon . huge mistake . rolls were not good . looked stale . ",
+        "original_label": "products",
+        "target_label": "environment",
+        "generated_text": "went there after seeing a clear-cut . huge mistake . the trees were not good . looked stale .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5787510871887207,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "went there after purchasing a groupon . huge mistake . rolls were not good . looked stale . ",
+        "original_label": "products",
+        "target_label": "environment",
+        "generated_text": "went there after purchasing a groupon. huge mistake. the air was not good. smelled stale.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5246789455413818,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "for how much it cost , it could have been better . ",
+        "original_label": "price",
+        "target_label": "environment",
+        "generated_text": "for how much it impacted the planet, it could have been better.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5180857181549072,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "for how much it cost , it could have been better . ",
+        "original_label": "price",
+        "target_label": "environment",
+        "generated_text": "for how much it impacts the planet, it could have been better.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.6164569854736328,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "for how much it cost , it could have been better . ",
+        "original_label": "price",
+        "target_label": "environment",
+        "generated_text": "For how natural it was, it could have been better.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.47507190704345703,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "they should be shut down for terrible service . ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "they should be shut down for terrible value.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.4574708938598633,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "they should be shut down for terrible service . ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "they should be shut down for terrible value.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5158610343933105,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "they should be shut down for terrible service . ",
+        "original_label": "service",
+        "target_label": "price",
+        "generated_text": "they should be shut down for terrible value.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.3430469036102295,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": []
+  },
+  "num_generated": 10,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 10,
+    "num_final_selected": 10,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}
