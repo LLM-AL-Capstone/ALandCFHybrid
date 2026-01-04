@@ -190,7 +190,7 @@ def is_already_evaluated(budget_used: int, retriever: str, cf_strategy: str,
     return key in evaluated_combinations
 
 
-def load_checkpoints_with_custom_budgets(run_folder: str, checkpoint_dir: str, batch_size: int, custom_budgets: List[int] = None) -> List[Dict]:
+def load_checkpoints_with_custom_budgets(run_folder: str, checkpoint_dir: str, batch_size: int, config: dict, custom_budgets: List[int] = None) -> List[Dict]:
     """
     Load checkpoints and create intermediate ones for custom budgets.
     
@@ -198,6 +198,7 @@ def load_checkpoints_with_custom_budgets(run_folder: str, checkpoint_dir: str, b
         run_folder: Run folder path
         checkpoint_dir: Checkpoint directory
         batch_size: Batch size for budget calculation
+        config: Configuration dictionary (needed for seed size calculation)
         custom_budgets: List of custom budget values (e.g., [0, 2, 5])
     
     Returns:
@@ -249,20 +250,78 @@ def load_checkpoints_with_custom_budgets(run_folder: str, checkpoint_dir: str, b
     
     # Create intermediate checkpoints for custom budgets
     if custom_budgets:
+        # Get seed size from config for budget 0
+        initial_per_class = config.get('active_learning', {}).get('initial_labeled_per_class', 5)
+        
+        # Get number of classes from first checkpoint or al_results
+        num_classes = None
+        if checkpoints:
+            first_cp_factuals = get_factuals_only(checkpoints[0]['pool'])
+            if first_cp_factuals:
+                labels = {ex['label'] for ex in first_cp_factuals}
+                num_classes = len(labels)
+        
         for target_budget in custom_budgets:
             # Check if already exists
             if any(cp['budget'] == target_budget for cp in checkpoints):
                 continue
             
-            # Find surrounding checkpoints
+            # Special handling for budget 0 (seed set)
+            if target_budget == 0:
+                if not checkpoints:
+                    continue  # Can't create budget 0 without any checkpoints
+                
+                # Extract seed set from first checkpoint
+                first_cp = checkpoints[0]
+                first_cp_factuals = get_factuals_only(first_cp['pool'])
+                
+                # Get seed size
+                if num_classes:
+                    seed_size = initial_per_class * num_classes
+                else:
+                    # Fallback: use labeled_pool_size from al_results for iteration 0
+                    try:
+                        results_path = os.path.join(run_folder, 'al_results.csv')
+                        if os.path.exists(results_path):
+                            df_results = pd.read_csv(results_path)
+                            seed_row = df_results[df_results['iteration'] == 0]
+                            if not seed_row.empty:
+                                seed_size = int(seed_row['labeled_pool_size'].iloc[0])
+                            else:
+                                seed_size = len(first_cp_factuals) - batch_size  # Approximate
+                        else:
+                            seed_size = len(first_cp_factuals) - batch_size  # Approximate
+                    except:
+                        seed_size = len(first_cp_factuals) - batch_size  # Approximate
+                
+                # Take first seed_size factuals (seed set)
+                seed_pool = first_cp_factuals[:seed_size].copy()
+                
+                checkpoints.append({
+                    'iteration': 0.0,
+                    'budget': 0,
+                    'pool': seed_pool,
+                    'is_intermediate': True,
+                    'is_seed': True
+                })
+                # Re-sort after adding budget 0 so it's in correct position for next iterations
+                checkpoints.sort(key=lambda x: x['budget'])
+                continue
+            
+            # For budgets 2, 5, etc. - find surrounding checkpoints
+            # Find the largest checkpoint <= target_budget (prev_cp)
+            # Find the smallest checkpoint > target_budget (next_cp)
             prev_cp = None
             next_cp = None
             for cp in checkpoints:
                 if cp['budget'] <= target_budget:
-                    prev_cp = cp
-                elif cp['budget'] > target_budget and next_cp is None:
-                    next_cp = cp
-                    break
+                    # Keep the largest one <= target_budget
+                    if prev_cp is None or cp['budget'] > prev_cp['budget']:
+                        prev_cp = cp
+                elif cp['budget'] > target_budget:
+                    # Keep the smallest one > target_budget
+                    if next_cp is None or cp['budget'] < next_cp['budget']:
+                        next_cp = cp
             
             if prev_cp is None:
                 continue  # Can't create checkpoint before first one
@@ -275,7 +334,27 @@ def load_checkpoints_with_custom_budgets(run_folder: str, checkpoint_dir: str, b
                 # Interpolate: take first N factuals from next checkpoint
                 factuals_only = get_factuals_only(next_cp['pool'])
                 prev_factuals = get_factuals_only(prev_cp['pool'])
-                seed_size = len(prev_factuals)
+                
+                # Calculate seed size - find budget 0 checkpoint if it exists
+                seed_cp = None
+                for cp in checkpoints:
+                    if cp['budget'] == 0:
+                        seed_cp = cp
+                        break
+                
+                if seed_cp:
+                    # Use actual seed size from budget 0 checkpoint
+                    seed_factuals = get_factuals_only(seed_cp['pool'])
+                    seed_size = len(seed_factuals)
+                elif prev_cp['budget'] == 0:
+                    # prev_cp is budget 0
+                    seed_size = len(prev_factuals)
+                else:
+                    # Estimate seed size from previous checkpoint
+                    # prev_cp has budget B, so it has seed_size + B factuals
+                    # Therefore: seed_size = len(prev_factuals) - B
+                    seed_size = len(prev_factuals) - prev_cp['budget']
+                
                 num_factuals_needed = seed_size + target_budget
                 
                 if num_factuals_needed <= len(factuals_only):
@@ -299,8 +378,10 @@ def load_checkpoints_with_custom_budgets(run_folder: str, checkpoint_dir: str, b
                 'pool': intermediate_pool,
                 'is_intermediate': True
             })
+            # Re-sort after adding intermediate checkpoint for next iterations
+            checkpoints.sort(key=lambda x: x['budget'])
     
-    # Re-sort by budget
+    # Final re-sort by budget (redundant but safe)
     checkpoints.sort(key=lambda x: x['budget'])
     return checkpoints
 
@@ -417,10 +498,20 @@ def run_evaluation(
             run_folder,
             checkpoint_dir,
             batch_size,
+            config,  # Pass config for seed size calculation
             custom_budgets=custom_budgets
         )
         print(f"Found {len(checkpoints)} checkpoints (including custom budgets)")
         print(f"Budgets: {[cp['budget'] for cp in checkpoints]}")
+        
+        # Filter checkpoints by max_budget if specified (to save tokens)
+        post_hoc_config = config.get('post_hoc_evaluation', {})
+        max_budget = post_hoc_config.get('max_budget', None)
+        
+        if max_budget is not None:
+            original_count = len(checkpoints)
+            checkpoints = [cp for cp in checkpoints if cp['budget'] <= max_budget]
+            print(f"📊 Filtered to budgets <= {max_budget}: {[cp['budget'] for cp in checkpoints]} (removed {original_count - len(checkpoints)} checkpoints)")
     else:
         # Fallback: load final pool only
         try:

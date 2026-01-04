@@ -1,0 +1,1257 @@
+{
+  "iteration": 4,
+  "timestamp": "20260103_072541",
+  "step": "counterfactual_generation",
+  "input_examples": [
+    {
+      "id": "ss0",
+      "text": "we really enjoyed the bbq ribs , brisket , and pulled pork . ",
+      "label": "products"
+    },
+    {
+      "id": "ss135",
+      "text": "there were different dessert options from soft serve to interesting boba flavors had are not offered elsewhere in beaverton ",
+      "label": "products"
+    },
+    {
+      "id": "ss117",
+      "text": "tasty cousine ,    large selection of food ,    you can fine everything what you want ",
+      "label": "products"
+    },
+    {
+      "id": "ss120",
+      "text": "home run on everything -- food drink atmosphere . for oyster lovers a meal at neptune is a religious experience . ",
+      "label": "products"
+    },
+    {
+      "id": "ss123",
+      "text": "  the spicy serrano salmon balanced bangin ' spicy with cooling cucumber and crunchy wonton ",
+      "label": "products"
+    },
+    {
+      "id": "ss382",
+      "text": "also , do n't forget to try their spicy cheese if you like spicy food . ",
+      "label": "products"
+    },
+    {
+      "id": "ss128",
+      "text": "the product itself is a repellent combination of over intense flavours ",
+      "label": "products"
+    },
+    {
+      "id": "ss376",
+      "text": "they have jamaican beef patties ",
+      "label": "products"
+    },
+    {
+      "id": "ss370",
+      "text": "the pork belly rice is also really good ",
+      "label": "products"
+    },
+    {
+      "id": "ss188",
+      "text": "the portions are perfectly sized to fill you up without any leftovers . ",
+      "label": "products"
+    }
+  ],
+  "generated_counterfactuals": [
+    {
+      "id": "ss120_cf_price_0",
+      "text": "home run on everything -- value cost affordability. for oyster lovers a meal at neptune is a religious experience.",
+      "label": "price",
+      "original_id": "ss120",
+      "original_label": "products",
+      "v3_score": 1.425,
+      "v3_rank": 1,
+      "v3_score_breakdown": {
+        "term1": 0.975,
+        "term2": 0.45,
+        "term3": 0.0,
+        "total": 1.425,
+        "p_orig": 0.025,
+        "p_target": 0.9,
+        "similarity": 0.8314955830574036
+      }
+    },
+    {
+      "id": "ss128_cf_environment_0",
+      "text": "the setting itself is a repellent combination of over intense flavours",
+      "label": "environment",
+      "original_id": "ss128",
+      "original_label": "products",
+      "v3_score": 1.425,
+      "v3_rank": 2,
+      "v3_score_breakdown": {
+        "term1": 0.975,
+        "term2": 0.45,
+        "term3": 0.0,
+        "total": 1.425,
+        "p_orig": 0.025,
+        "p_target": 0.9,
+        "similarity": 0.8013437390327454
+      }
+    }
+  ],
+  "selected_cf_ids": [
+    "ss120_cf_price_0",
+    "ss128_cf_environment_0"
+  ],
+  "generation_details": {
+    "num_examples": 10,
+    "num_generated": 30,
+    "num_filtered": 2,
+    "num_added": 2,
+    "alpha_cf": 1.0,
+    "max_cfs_this_round": 10,
+    "generation_details": [
+      {
+        "original_text": "we really enjoyed the bbq ribs , brisket , and pulled pork . ",
+        "original_label": "products",
+        "target_label": "service",
+        "generated_text": "we really enjoyed the bbq ribs , brisket , and pulled pork that were prepared for us.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.45976996421813965,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "we really enjoyed the bbq ribs , brisket , and pulled pork . ",
+        "original_label": "products",
+        "target_label": "service",
+        "generated_text": "we really enjoyed the bbq ribs , brisket , and pulled pork that was prepared for us.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5488770008087158,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "we really enjoyed the bbq ribs , brisket , and pulled pork . ",
+        "original_label": "products",
+        "target_label": "service",
+        "generated_text": "we really enjoyed the bbq ribs, brisket, and pulled pork.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5303571224212646,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "there were different dessert options from soft serve to interesting boba flavors had are not offered elsewhere in beaverton ",
+        "original_label": "products",
+        "target_label": "price",
+        "generated_text": "there were different dessert options from soft serve to interesting boba flavors had are not offered elsewhere in beaverton at that cost",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5706360340118408,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "there were different dessert options from soft serve to interesting boba flavors had are not offered elsewhere in beaverton ",
+        "original_label": "products",
+        "target_label": "price",
+        "generated_text": "there were different dessert options from soft serve to interesting boba flavors had are not offered elsewhere in beaverton at that cost",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5652141571044922,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "there were different dessert options from soft serve to interesting boba flavors had are not offered elsewhere in beaverton ",
+        "original_label": "products",
+        "target_label": "price",
+        "generated_text": "there were different dessert options from soft serve to interesting boba flavors had are not offered elsewhere in beaverton for the same value",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.4903068542480469,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "tasty cousine ,    large selection of food ,    you can fine everything what you want ",
+        "original_label": "products",
+        "target_label": "environment",
+        "generated_text": "tasty nature ,    large selection of flora ,    you can fine everything what you want",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5718820095062256,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "tasty cousine ,    large selection of food ,    you can fine everything what you want ",
+        "original_label": "products",
+        "target_label": "environment",
+        "generated_text": "Lush greenery, diverse ecosystems, you can find everything nature offers.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.49837231636047363,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "tasty cousine ,    large selection of food ,    you can fine everything what you want ",
+        "original_label": "products",
+        "target_label": "environment",
+        "generated_text": "beautiful scenery, diverse ecosystems, you can find everything you want",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5320351123809814,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "home run on everything -- food drink atmosphere . for oyster lovers a meal at neptune is a religious experience . ",
+        "original_label": "products",
+        "target_label": "price",
+        "generated_text": "home run on everything -- value cost affordability. for oyster lovers a meal at neptune is a religious experience.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5217771530151367,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "home run on everything -- food drink atmosphere . for oyster lovers a meal at neptune is a religious experience . ",
+        "original_label": "products",
+        "target_label": "price",
+        "generated_text": "home run on everything -- food drink atmosphere . for oyster lovers a meal at neptune is a worthwhile investment .",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.42746806144714355,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "home run on everything -- food drink atmosphere . for oyster lovers a meal at neptune is a religious experience . ",
+        "original_label": "products",
+        "target_label": "price",
+        "generated_text": "home run on everything -- food drink atmosphere. for oyster lovers a meal at neptune is a religious experience, even at a premium.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.6373870372772217,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "  the spicy serrano salmon balanced bangin ' spicy with cooling cucumber and crunchy wonton ",
+        "original_label": "products",
+        "target_label": "price",
+        "generated_text": "the spicy serrano salmon balanced bangin ' spicy with cooling cucumber and crunchy wonton cost",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.4603419303894043,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "  the spicy serrano salmon balanced bangin ' spicy with cooling cucumber and crunchy wonton ",
+        "original_label": "products",
+        "target_label": "price",
+        "generated_text": "the spicy serrano salmon's cost balanced bangin ' spicy with cooling cucumber and crunchy wonton",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5293099880218506,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "  the spicy serrano salmon balanced bangin ' spicy with cooling cucumber and crunchy wonton ",
+        "original_label": "products",
+        "target_label": "price",
+        "generated_text": "the spicy serrano salmon balanced bangin ' spicy with cooling cucumber and crunchy wonton for a steal",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.532027006149292,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "also , do n't forget to try their spicy cheese if you like spicy food . ",
+        "original_label": "products",
+        "target_label": "service",
+        "generated_text": "also, don't forget to try their spicy massage if you like spicy sensations.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.4993579387664795,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "also , do n't forget to try their spicy cheese if you like spicy food . ",
+        "original_label": "products",
+        "target_label": "service",
+        "generated_text": "also, don't forget to ask for their spicy cheese if you like spicy food.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5940978527069092,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "also , do n't forget to try their spicy cheese if you like spicy food . ",
+        "original_label": "products",
+        "target_label": "service",
+        "generated_text": "Also, don't forget to try their spicy cheese if you like spicy food.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5260839462280273,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the product itself is a repellent combination of over intense flavours ",
+        "original_label": "products",
+        "target_label": "environment",
+        "generated_text": "the setting itself is a repellent combination of over intense flavours",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.4593358039855957,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the product itself is a repellent combination of over intense flavours ",
+        "original_label": "products",
+        "target_label": "environment",
+        "generated_text": "the ecosystem itself is a repellent combination of over intense human activities",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5638160705566406,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the product itself is a repellent combination of over intense flavours ",
+        "original_label": "products",
+        "target_label": "environment",
+        "generated_text": "the place itself is a repellent combination of over intense flavours",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.3608691692352295,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "they have jamaican beef patties ",
+        "original_label": "products",
+        "target_label": "environment",
+        "generated_text": "they have jamaican beef patties within nature",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.49582600593566895,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "they have jamaican beef patties ",
+        "original_label": "products",
+        "target_label": "environment",
+        "generated_text": "they have vibrant green spaces",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.4585700035095215,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "they have jamaican beef patties ",
+        "original_label": "products",
+        "target_label": "environment",
+        "generated_text": "they have lush green pastures",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5003008842468262,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the pork belly rice is also really good ",
+        "original_label": "products",
+        "target_label": "environment",
+        "generated_text": "the forest canopy is also really good",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.4915950298309326,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the pork belly rice is also really good ",
+        "original_label": "products",
+        "target_label": "environment",
+        "generated_text": "the forest's quiet peace is also really good",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.4545309543609619,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the pork belly rice is also really good ",
+        "original_label": "products",
+        "target_label": "environment",
+        "generated_text": "the forest's quiet beauty is also really good",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.5418310165405273,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the portions are perfectly sized to fill you up without any leftovers . ",
+        "original_label": "products",
+        "target_label": "environment",
+        "generated_text": "the ecosystems are perfectly sized to fill you up without any leftovers.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 0,
+        "generation_time_seconds": 0.5462620258331299,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the portions are perfectly sized to fill you up without any leftovers . ",
+        "original_label": "products",
+        "target_label": "environment",
+        "generated_text": "The natural resources are perfectly sized to sustain us without any leftovers.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 1,
+        "generation_time_seconds": 0.5262608528137207,
+        "is_identical_to_original": false
+      },
+      {
+        "original_text": "the portions are perfectly sized to fill you up without any leftovers . ",
+        "original_label": "products",
+        "target_label": "environment",
+        "generated_text": "the portions are perfectly sized to nourish you without any waste.",
+        "temperature": 0.5,
+        "top_p": 0.9,
+        "max_tokens": 256,
+        "variation_idx": 2,
+        "generation_time_seconds": 0.35372090339660645,
+        "is_identical_to_original": false
+      }
+    ],
+    "filtering_details": [
+      {
+        "cf_id": "ss0_cf_service_0",
+        "original_id": "ss0",
+        "target_label": "service",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.025,
+          "p_orig": 0.9,
+          "margin": -0.875,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss0_cf_service_1",
+        "original_id": "ss0",
+        "target_label": "service",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.025,
+          "p_orig": 0.9,
+          "margin": -0.875,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss0_cf_service_2",
+        "original_id": "ss0",
+        "target_label": "service",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.025,
+          "p_orig": 0.9,
+          "margin": -0.875,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss135_cf_price_0",
+        "original_id": "ss135",
+        "target_label": "price",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.025,
+          "p_orig": 0.9,
+          "margin": -0.875,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss135_cf_price_1",
+        "original_id": "ss135",
+        "target_label": "price",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.025,
+          "p_orig": 0.9,
+          "margin": -0.875,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss135_cf_price_2",
+        "original_id": "ss135",
+        "target_label": "price",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.025,
+          "p_orig": 0.9,
+          "margin": -0.875,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss117_cf_environment_0",
+        "original_id": "ss117",
+        "target_label": "environment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.025,
+          "p_orig": 0.9,
+          "margin": -0.875,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss117_cf_environment_1",
+        "original_id": "ss117",
+        "target_label": "environment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9,
+          "p_orig": 0.025,
+          "margin": 0.875,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.40479522943496704,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss117_cf_environment_2",
+        "original_id": "ss117",
+        "target_label": "environment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9,
+          "p_orig": 0.025,
+          "margin": 0.875,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.42235323786735535,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss120_cf_price_0",
+        "original_id": "ss120",
+        "target_label": "price",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9,
+          "p_orig": 0.025,
+          "margin": 0.875,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.8314955830574036,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 1.0,
+          "original_length": 114,
+          "cf_length": 114,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.425,
+        "v3_score_details": {
+          "score": 1.425,
+          "p_orig": 0.025,
+          "p_target": 0.9,
+          "similarity": 0.8314955830574036,
+          "term1": 0.975,
+          "term2": 0.45,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "ss120_cf_price_1",
+        "original_id": "ss120",
+        "target_label": "price",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.025,
+          "p_orig": 0.9,
+          "margin": -0.875,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss120_cf_price_2",
+        "original_id": "ss120",
+        "target_label": "price",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.025,
+          "p_orig": 0.9,
+          "margin": -0.875,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss123_cf_price_0",
+        "original_id": "ss123",
+        "target_label": "price",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.025,
+          "p_orig": 0.9,
+          "margin": -0.875,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss123_cf_price_1",
+        "original_id": "ss123",
+        "target_label": "price",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.025,
+          "p_orig": 0.9,
+          "margin": -0.875,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss123_cf_price_2",
+        "original_id": "ss123",
+        "target_label": "price",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.025,
+          "p_orig": 0.9,
+          "margin": -0.875,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss382_cf_service_0",
+        "original_id": "ss382",
+        "target_label": "service",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.025,
+          "p_orig": 0.9,
+          "margin": -0.875,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss382_cf_service_1",
+        "original_id": "ss382",
+        "target_label": "service",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.025,
+          "p_orig": 0.9,
+          "margin": -0.875,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss382_cf_service_2",
+        "original_id": "ss382",
+        "target_label": "service",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.025,
+          "p_orig": 0.9,
+          "margin": -0.875,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss128_cf_environment_0",
+        "original_id": "ss128",
+        "target_label": "environment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9,
+          "p_orig": 0.025,
+          "margin": 0.875,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.8013437390327454,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.9859154929577465,
+          "original_length": 71,
+          "cf_length": 70,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.425,
+        "v3_score_details": {
+          "score": 1.425,
+          "p_orig": 0.025,
+          "p_target": 0.9,
+          "similarity": 0.8013437390327454,
+          "term1": 0.975,
+          "term2": 0.45,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "ss128_cf_environment_1",
+        "original_id": "ss128",
+        "target_label": "environment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9,
+          "p_orig": 0.025,
+          "margin": 0.875,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.43295612931251526,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss128_cf_environment_2",
+        "original_id": "ss128",
+        "target_label": "environment",
+        "passed": true,
+        "rejection_stage": "none",
+        "label_consistency": {
+          "p_target": 0.9,
+          "p_orig": 0.025,
+          "margin": 0.875,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.8464155197143555,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": true,
+          "too_low": false,
+          "too_high": false
+        },
+        "length_ratio": {
+          "ratio": 0.9577464788732394,
+          "original_length": 71,
+          "cf_length": 68,
+          "r_min": 0.7,
+          "r_max": 1.3,
+          "passes": true,
+          "too_short": false,
+          "too_long": false
+        },
+        "v3_score": 1.425,
+        "v3_score_details": {
+          "score": 1.425,
+          "p_orig": 0.025,
+          "p_target": 0.9,
+          "similarity": 0.8464155197143555,
+          "term1": 0.975,
+          "term2": 0.45,
+          "term3": 0.0,
+          "alpha": 0.3,
+          "beta": 0.5,
+          "use_similarity_in_ranking": false
+        }
+      },
+      {
+        "cf_id": "ss376_cf_environment_0",
+        "original_id": "ss376",
+        "target_label": "environment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.025,
+          "p_orig": 0.9,
+          "margin": -0.875,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss376_cf_environment_1",
+        "original_id": "ss376",
+        "target_label": "environment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9,
+          "p_orig": 0.025,
+          "margin": 0.875,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.26666006445884705,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss376_cf_environment_2",
+        "original_id": "ss376",
+        "target_label": "environment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9,
+          "p_orig": 0.025,
+          "margin": 0.875,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.3586922585964203,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss370_cf_environment_0",
+        "original_id": "ss370",
+        "target_label": "environment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9,
+          "p_orig": 0.025,
+          "margin": 0.875,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.3125170171260834,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss370_cf_environment_1",
+        "original_id": "ss370",
+        "target_label": "environment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9,
+          "p_orig": 0.025,
+          "margin": 0.875,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.3083266615867615,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss370_cf_environment_2",
+        "original_id": "ss370",
+        "target_label": "environment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9,
+          "p_orig": 0.025,
+          "margin": 0.875,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.3144987225532532,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss188_cf_environment_0",
+        "original_id": "ss188",
+        "target_label": "environment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.025,
+          "p_orig": 0.9,
+          "margin": -0.875,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss188_cf_environment_1",
+        "original_id": "ss188",
+        "target_label": "environment",
+        "passed": false,
+        "rejection_stage": "semantic_similarity",
+        "label_consistency": {
+          "p_target": 0.9,
+          "p_orig": 0.025,
+          "margin": 0.875,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": true,
+          "condition2_passes": true,
+          "condition3_passes": true,
+          "passes": true
+        },
+        "semantic_similarity": {
+          "similarity": 0.5565682649612427,
+          "s_min": 0.7,
+          "s_max": 0.98,
+          "passes": false,
+          "too_low": true,
+          "too_high": false
+        },
+        "length_ratio": {},
+        "v3_score": null
+      },
+      {
+        "cf_id": "ss188_cf_environment_2",
+        "original_id": "ss188",
+        "target_label": "environment",
+        "passed": false,
+        "rejection_stage": "label_consistency",
+        "label_consistency": {
+          "p_target": 0.025,
+          "p_orig": 0.9,
+          "margin": -0.875,
+          "tau_conf": 0.4,
+          "delta": 0.1,
+          "condition1_passes": false,
+          "condition2_passes": false,
+          "condition3_passes": false,
+          "passes": false
+        },
+        "semantic_similarity": {},
+        "length_ratio": {},
+        "v3_score": null
+      }
+    ]
+  },
+  "num_generated": 2,
+  "summary": {
+    "num_input_examples": 10,
+    "num_candidates_generated": 30,
+    "num_after_filtering": 2,
+    "num_final_selected": 2,
+    "budget_remaining_before": -1,
+    "budget_remaining_after": -1
+  }
+}
