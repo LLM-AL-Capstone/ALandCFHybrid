@@ -16,7 +16,7 @@ import os
 import pandas as pd
 import json
 import numpy as np
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 from sklearn.metrics import accuracy_score, f1_score, precision_recall_fscore_support, classification_report
 
 
@@ -340,6 +340,52 @@ def save_checkpoint(iteration: int, labeled_pool: List[Dict], unlabeled_pool: Li
         json.dump(checkpoint, f, indent=2)
     
     print(f"  Checkpoint saved: {checkpoint_file}")
+
+
+def load_latest_checkpoint(checkpoint_dir: str) -> Optional[Dict]:
+    """
+    Load the latest checkpoint from checkpoint directory.
+    
+    Args:
+        checkpoint_dir: Directory containing checkpoints
+    
+    Returns:
+        Checkpoint dictionary with iteration, labeled_pool, unlabeled_pool, results
+        or None if no checkpoint found
+    """
+    import glob
+    import os
+    
+    if not os.path.exists(checkpoint_dir):
+        return None
+    
+    # Find all checkpoint files
+    checkpoint_files = glob.glob(f"{checkpoint_dir}/checkpoint_iter_*.json")
+    
+    if not checkpoint_files:
+        return None
+    
+    # Get the latest checkpoint (highest iteration number)
+    def get_iteration(filepath):
+        filename = os.path.basename(filepath)
+        # Extract iteration number from "checkpoint_iter_N.json"
+        try:
+            return int(filename.replace('checkpoint_iter_', '').replace('.json', ''))
+        except:
+            return -1
+    
+    latest_checkpoint_file = max(checkpoint_files, key=get_iteration)
+    
+    print(f"\n🔄 Found checkpoint: {latest_checkpoint_file}")
+    with open(latest_checkpoint_file, 'r') as f:
+        checkpoint = json.load(f)
+    
+    print(f"  Resuming from iteration {checkpoint['iteration']}")
+    print(f"  Labeled pool: {len(checkpoint['labeled_pool'])} examples")
+    print(f"  Unlabeled pool: {len(checkpoint['unlabeled_pool'])} examples")
+    print(f"  Previous results: {len(checkpoint['results'])} iterations")
+    
+    return checkpoint
 
 
 def save_results(results: List[Dict], run_dir: str, classifier_type: str):
@@ -757,6 +803,77 @@ def active_learning_loop(config: dict):
     print(f"\n📁 Run directory: {run_dir}")
     print(f"   All outputs will be saved here")
     
+    # Check for existing checkpoint to resume from
+    checkpoint = load_latest_checkpoint(checkpoint_dir)
+    resume_from_checkpoint = checkpoint is not None
+    
+    # Restore state from checkpoint if available
+    if resume_from_checkpoint:
+        print(f"\n⚠️  Resuming from checkpoint at iteration {checkpoint['iteration']}")
+        print(f"   To start fresh, delete checkpoints in: {checkpoint_dir}")
+        
+        # Restore pools and results
+        labeled_pool = checkpoint['labeled_pool']
+        unlabeled_pool = checkpoint['unlabeled_pool']
+        results = checkpoint['results']
+        
+        # Calculate starting iteration (next after checkpoint)
+        start_iteration = checkpoint['iteration'] + 1
+        
+        # Recalculate budget from iteration
+        # Budget used = (iteration - 0) * batch_size (since iteration 0 is baseline)
+        budget_used = checkpoint['iteration'] * batch_size
+        budget = al_config['total_budget'] - budget_used
+        
+        # Restore best F1 Macro from results
+        if results:
+            best_f1_macro = max([r.get('f1_macro', 0) for r in results if 'f1_macro' in r], default=0.0)
+            # Calculate patience_counter from recent results
+            patience_counter = 0
+            if len(results) > 1:
+                recent_f1s = [r.get('f1_macro', 0) for r in results[-al_config['early_stopping_patience']:] if 'f1_macro' in r]
+                if len(recent_f1s) > 1:
+                    # Count how many recent iterations had no improvement
+                    for i in range(len(recent_f1s) - 1, 0, -1):
+                        if recent_f1s[i] < best_f1_macro - al_config['min_improvement']:
+                            patience_counter += 1
+                        else:
+                            break
+        else:
+            best_f1_macro = 0.0
+            patience_counter = 0
+        
+        print(f"   Resuming from iteration {start_iteration}")
+        print(f"   Budget remaining: {budget}/{al_config['total_budget']}")
+        print(f"   Best F1 Macro so far: {best_f1_macro:.4f}")
+        print(f"   Patience counter: {patience_counter}/{al_config['early_stopping_patience']}")
+        
+        # Retrain classifiers on restored pools
+        print(f"\n[Resume] Retraining classifiers on restored pools...")
+        if use_factuals_only:
+            factuals_only_pool = get_factuals_only_pool(labeled_pool)
+            al_internal_classifier.train(factuals_only_pool)
+            print(f"  ✓ AL-Internal classifier retrained on {len(factuals_only_pool)} factuals")
+        else:
+            al_internal_classifier.train(labeled_pool)
+            print(f"  ✓ AL-Internal classifier retrained on {len(labeled_pool)} examples")
+        
+        eval_classifier.train(labeled_pool)
+        print(f"  ✓ Evaluation classifier retrained on {len(labeled_pool)} examples")
+        
+        # Set iteration to start from
+        iteration = start_iteration - 1  # Will be incremented at start of loop
+        
+        # Ensure query_strategy is defined (needed for later code)
+        query_strategy = al_config.get('query_strategy', 'uncertainty')
+    else:
+        # Normal initialization
+        results = []
+        iteration = 0
+        best_f1_macro = 0.0
+        patience_counter = 0
+        print(f"\n🆕 Starting fresh experiment")
+    
     # Create selected samples tracking file
     samples_file = f"{run_dir}/selected_samples.txt"
     
@@ -790,11 +907,13 @@ def active_learning_loop(config: dict):
     # ========================================================================
     # BASELINE EVALUATION (Iteration 0) - Before any AL iterations
     # ========================================================================
-    print(f"\n{'='*80}")
-    print(f"Baseline Evaluation (Iteration 0)")
-    print(f"{'='*80}")
-    print(f"Labeled pool: {len(labeled_pool)} examples (seed set)")
-    print(f"Unlabeled pool: {len(unlabeled_pool)} examples")
+    # Skip baseline if resuming from checkpoint
+    if not resume_from_checkpoint:
+        print(f"\n{'='*80}")
+        print(f"Baseline Evaluation (Iteration 0)")
+        print(f"{'='*80}")
+        print(f"Labeled pool: {len(labeled_pool)} examples (seed set)")
+        print(f"Unlabeled pool: {len(unlabeled_pool)} examples")
     
     baseline_timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     
@@ -881,47 +1000,49 @@ def active_learning_loop(config: dict):
                 'test_pool_size': len(test_pool)
             }, f, indent=2)
         print(f"  ✓ Interim output saved: {baseline_step2_file}")
-    
-    # Save baseline results
-    query_strategy = al_config.get('query_strategy', 'uncertainty')
-    
-    # Get retrieval config for new columns
-    retrieval_config = eval_config.get('retrieval', {})
-    embedding_backend = retrieval_config.get('embedding_backend', 'N/A') if eval_config.get('classifier_type') == 'retrieval' else 'N/A'
-    cf_inclusion_strategy = retrieval_config.get('cf_inclusion_strategy', 'mixed') if eval_config.get('classifier_type') == 'retrieval' else 'N/A'
-    k_max = retrieval_config.get('total_k_max', 'N/A') if eval_config.get('classifier_type') == 'retrieval' else 'N/A'
-    target_label_strategy = al_config.get('counterfactuals', {}).get('target_label_selection', {}).get('strategy', 'N/A')
-    
-    # Count factuals and CFs in pool
-    total_factuals = len([ex for ex in labeled_pool if not is_counterfactual(ex)])
-    total_cfs = len([ex for ex in labeled_pool if is_counterfactual(ex)])
-    
-    baseline_result = {
-        'iteration': 0,
-        'budget_used': 0,  # New: cumulative budget consumed
-        'classifier_type': eval_config.get('classifier_type', 'static'),
-        'query_strategy': query_strategy,
-        'uncertainty_method': al_config['uncertainty_method'] if query_strategy == 'uncertainty' else 'N/A',
-        'embedding_backend': embedding_backend,  # New
-        'cf_inclusion_strategy': cf_inclusion_strategy,  # New
-        'k_max': k_max,  # New
-        'target_label_strategy': target_label_strategy,  # New
-        'labeled_pool_size': len(labeled_pool),
-        'unlabeled_pool_size': len(unlabeled_pool),
-        'total_factuals': total_factuals,  # New
-        'total_cfs': total_cfs,  # New
-        'num_factuals_added': 0,  # Renamed from num_real_examples
-        'num_cfs_added': 0,  # Renamed from num_counterfactuals
-        'cf_pass_rate': None,  # New: will be calculated when CFs are generated
-        'budget_remaining': budget,
-        'alpha_cf': alpha_cf
-    }
-    
-    if baseline_metrics:
-        baseline_result.update(baseline_metrics)
-    
-    results.append(baseline_result)
-    print(f"  ✓ Baseline results recorded (Iteration 0)")
+        
+        # Save baseline results
+        query_strategy = al_config.get('query_strategy', 'uncertainty')
+        
+        # Get retrieval config for new columns
+        retrieval_config = eval_config.get('retrieval', {})
+        embedding_backend = retrieval_config.get('embedding_backend', 'N/A') if eval_config.get('classifier_type') == 'retrieval' else 'N/A'
+        cf_inclusion_strategy = retrieval_config.get('cf_inclusion_strategy', 'mixed') if eval_config.get('classifier_type') == 'retrieval' else 'N/A'
+        k_max = retrieval_config.get('total_k_max', 'N/A') if eval_config.get('classifier_type') == 'retrieval' else 'N/A'
+        target_label_strategy = al_config.get('counterfactuals', {}).get('target_label_selection', {}).get('strategy', 'N/A')
+        
+        # Count factuals and CFs in pool
+        total_factuals = len([ex for ex in labeled_pool if not is_counterfactual(ex)])
+        total_cfs = len([ex for ex in labeled_pool if is_counterfactual(ex)])
+        
+        baseline_result = {
+            'iteration': 0,
+            'budget_used': 0,  # New: cumulative budget consumed
+            'classifier_type': eval_config.get('classifier_type', 'static'),
+            'query_strategy': query_strategy,
+            'uncertainty_method': al_config['uncertainty_method'] if query_strategy == 'uncertainty' else 'N/A',
+            'embedding_backend': embedding_backend,  # New
+            'cf_inclusion_strategy': cf_inclusion_strategy,  # New
+            'k_max': k_max,  # New
+            'target_label_strategy': target_label_strategy,  # New
+            'labeled_pool_size': len(labeled_pool),
+            'unlabeled_pool_size': len(unlabeled_pool),
+            'total_factuals': total_factuals,  # New
+            'total_cfs': total_cfs,  # New
+            'num_factuals_added': 0,  # Renamed from num_real_examples
+            'num_cfs_added': 0,  # Renamed from num_counterfactuals
+            'cf_pass_rate': None,  # New: will be calculated when CFs are generated
+            'budget_remaining': budget,
+            'alpha_cf': alpha_cf
+        }
+        
+        if baseline_metrics:
+            baseline_result.update(baseline_metrics)
+        
+        results.append(baseline_result)
+        print(f"  ✓ Baseline results recorded (Iteration 0)")
+    else:
+        print(f"\n⏭️  Skipping baseline evaluation (resuming from checkpoint)")
     
     # ========================================================================
     # MAIN ACTIVE LEARNING LOOP
